@@ -8,6 +8,8 @@ import subprocess
 from concurrent.futures import ProcessPoolExecutor, as_completed
 from modify_parameters import modify_gdpf_overwrite
 
+#zmiana
+
 def format_time(seconds):
     """Obliczanie czasu i sformatowanie > hh:mm:ss"""
     hours, remainder = divmod(seconds, 3600)
