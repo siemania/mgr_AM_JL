@@ -65,12 +65,12 @@ def process_docking(pdb_file):
         modify_gdpf_overwrite(f"grid_dock_files/{file_name}_dock.dpf", quiet=True) # Poprawki lokalizacyjne w pliku
         print(f"Parametry do dokowania {file_name} gotowe", flush=True)
         
-        # print(f"Rozpoczynanie procesu autodock4.exe dla {file_name} ...", flush=True)
-        # run_command(f'{autodock} -p {dpf} -l {dlg}')
-        # print(f"Dokowanie {file_name} zakonczono pomyslnie", flush=True)
+        print(f"Rozpoczynanie procesu autodock4.exe dla {file_name} ...", flush=True)
+        run_command(f'{autodock} -p {dpf} -l {dlg}')
+        print(f"Dokowanie {file_name} zakonczono pomyslnie", flush=True)
         
-        # run_command(f'"{python}" write_all_complexes.py -d {dlg} -r {receptor_pdbqt} -o output_files\\{file_name}_bestcomplex -b')
-        # print(f"Utworzono najlepszy kompleks ligand-receptor {file_name}", flush=True)
+        run_command(f'"{python}" write_all_complexes.py -d {dlg} -r {receptor_pdbqt} -o output_files\\{file_name}_bestcomplex -b')
+        print(f"Utworzono najlepszy kompleks ligand-receptor {file_name}", flush=True)
     # =============================================================================
     #                      koniec - Właściwy program
     # =============================================================================
