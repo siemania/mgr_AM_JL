@@ -78,8 +78,6 @@ def minimization_with_constrains (output_file_1):
 
     return output_file_2
 
-
-
 def optimize_rec (PDB_FILE_DIR):
     """Obsluga argumentow wywolania skryptu."""
     for pdb_file in os.listdir(PDB_FILE_DIR):
