@@ -40,8 +40,8 @@ def process_docking(pdb_file):
         dlg = os.path.join("grid_dock_files", f"{file_name}_dock.dlg")
     
         # Znalezienie nazwy użytkownika komputera
-        path = os.getcwd()
-        python = os.path.join(path, "MGLTools", "python.exe")
+        mgltools_dir = os.path.join(os.getcwd(), "MGLTools")
+        python = os.path.abspath(os.path.join(os.getcwd(), "MGLTools", "python.exe"))
         autogrid = "autogrid4.exe"
         autodock = "autodock4.exe"
     # =============================================================================
