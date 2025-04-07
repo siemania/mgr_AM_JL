@@ -48,6 +48,7 @@ def process_docking(pdb_file):
     #                       start - Właściwy program
     # =============================================================================    
         # Wykonywanie kolejnych kroków dockingu
+        # Tutaj -e -U oraz -A mogą generować błędy i nie wiem jak się ich wyzbyć
         run_command(f'"{python}" prepare_receptor4.py -r {receptor_pdb} -o {receptor_pdbqt} -A "bonds_hydrogens" -e "True" -U "nphs" "waters" "lps"')
         print(f"Receptor {file_name} gotowy", flush=True)
         
@@ -121,5 +122,5 @@ if __name__ == '__main__':
                 log_file.write(f"Progress: {progress.n}/{progress.total} ({(progress.n/progress.total)*100:.2f}%) | Czas: {estimated_time}\n")
     
     print(f'Czas zakończenia programu: {format_time(time.time() - start_time)}')
-    input("~~~~~~~~Naciśnij dowolny przycisk by zakończyć~~~~~~~~")
+    # input("~~~~~~~~Naciśnij dowolny przycisk by zakończyć~~~~~~~~")
     

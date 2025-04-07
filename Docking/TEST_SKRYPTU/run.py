@@ -41,7 +41,7 @@ def process_docking(pdb_file):
     
         # Znalezienie nazwy użytkownika komputera
         username = os.environ.get('USERNAME') or os.environ.get('USER')
-        python = f"C:\\Users\\{username}\\OneDrive\\Dyplom_AM_JL\\Skrypty\\Docking\\MGLTools-1.5.7\\python.exe"
+        python = f"C:\\Users\\{username}\\Desktop\\Skrypty-docking\\Docking\\MGLTools\\python.exe"
         autogrid = "autogrid4.exe"
         autodock = "autodock4.exe"
     # =============================================================================
@@ -65,12 +65,12 @@ def process_docking(pdb_file):
         modify_gdpf_overwrite(f"grid_dock_files/{file_name}_dock.dpf", quiet=True) # Poprawki lokalizacyjne w pliku
         print(f"Parametry do dokowania {file_name} gotowe", flush=True)
         
-        print(f"Rozpoczynanie procesu autodock4.exe dla {file_name} ...", flush=True)
-        run_command(f'{autodock} -p {dpf} -l {dlg}')
-        print(f"Dokowanie {file_name} zakonczono pomyslnie", flush=True)
+        # print(f"Rozpoczynanie procesu autodock4.exe dla {file_name} ...", flush=True)
+        # run_command(f'{autodock} -p {dpf} -l {dlg}')
+        # print(f"Dokowanie {file_name} zakonczono pomyslnie", flush=True)
         
-        run_command(f'"{python}" write_all_complexes.py -d {dlg} -r {receptor_pdbqt} -o output_files\\{file_name}_bestcomplex -b')
-        print(f"Utworzono najlepszy kompleks ligand-receptor {file_name}", flush=True)
+        # run_command(f'"{python}" write_all_complexes.py -d {dlg} -r {receptor_pdbqt} -o output_files\\{file_name}_bestcomplex -b')
+        # print(f"Utworzono najlepszy kompleks ligand-receptor {file_name}", flush=True)
     # =============================================================================
     #                      koniec - Właściwy program
     # =============================================================================
@@ -121,5 +121,5 @@ if __name__ == '__main__':
                 log_file.write(f"Progress: {progress.n}/{progress.total} ({(progress.n/progress.total)*100:.2f}%) | Czas: {estimated_time}\n")
     
     print(f'Czas zakończenia programu: {format_time(time.time() - start_time)}')
-    input("~~~~~~~~Naciśnij dowolny przycisk by zakończyć~~~~~~~~")
+    # input("~~~~~~~~Naciśnij dowolny przycisk by zakończyć~~~~~~~~")
     
