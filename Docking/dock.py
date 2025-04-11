@@ -84,8 +84,15 @@ def process_docking(pdb_file):
 
 if __name__ == '__main__':
 
-    # Pobranie listy plików PDB
-    pdb_directory = glob.glob("pdb_files\\*.pdb")
+    # Pobranie listy plików PDB za pomocą parsera argparse
+    parser = argparse.ArgumentParser(description="Process docking files.")
+    parser.add_argument("-f", "--file", help="Podaj ścieżki do plików PDB", type=str, nargs='*', default=None)
+    args = parser.parse_args()
+
+    if args.file:
+        pdb_directory = args.file
+    else:
+        pdb_directory = glob.glob("pdb_files\\*.pdb")
     
     # Ustawienie liczby równoległych procesów
     max_workers = 4
@@ -119,7 +126,8 @@ if __name__ == '__main__':
                 # Aktualizacja paska postępu i zapis do pliku
                 progress.update(1)
                 estimated_time = format_time(progress.format_dict.get("elapsed")) # Pozostały czas bez ms
-                log_file.write(f"Progress: {progress.n}/{progress.total} ({(progress.n/progress.total)*100:.2f}%) | Czas: {estimated_time}\n")
+                log_file.write(
+                    f"Progress: {progress.n}/{progress.total} ({(progress.n/progress.total)*100:.2f}%) | Czas: {estimated_time}\n")
     
     print(f'Czas zakończenia programu: {format_time(time.time() - start_time)}')
     # input("~~~~~~~~Naciśnij dowolny przycisk by zakończyć~~~~~~~~")

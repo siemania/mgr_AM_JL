@@ -1,5 +1,6 @@
 # Python 3.12.7
 import os
+import argparse
 import glob
 import time
 from datetime import date
@@ -84,43 +85,49 @@ def process_docking(pdb_file):
 
 if __name__ == '__main__':
 
-    # Pobranie listy plików PDB
-    pdb_directory = glob.glob("pdb_files\\*.pdb")
-    
+    # Pobranie listy plików PDB za pomocą parsera argparse
+    parser = argparse.ArgumentParser(description="Process docking files.")
+    parser.add_argument("-f", "--file", help="Podaj ścieżki do plików PDB", type=str, nargs='*', default=None)
+    args = parser.parse_args()
+
+    if args.file:
+        pdb_directory = args.file
+    else:
+        pdb_directory = glob.glob("pdb_files\\*.pdb")
+
     # Ustawienie liczby równoległych procesów
     max_workers = 4
-    
+
     # Tworzenie katalogów jeśli nie istnieją
     os.makedirs("pdbqt_files", exist_ok=True)
     os.makedirs("map_grid_files", exist_ok=True)
     os.makedirs("grid_dock_files", exist_ok=True)
     os.makedirs("output_files", exist_ok=True)
-    
+
     # Pomiar czasu
     date_stamp = date.isoformat(date.today())
     start_time = time.time()
-    
+
     # Uruchamianie przetwarzania w puli procesów + pasek postępu
     with ProcessPoolExecutor(max_workers=max_workers) as executor, tqdm(total=len(pdb_directory), desc="Docking Progress") as progress:
         future_to_file = {executor.submit(process_docking, pdb_file): pdb_file for pdb_file in pdb_directory}
-    
+
         # Zapis do Docking_log.txt
         with open(f"Docking_log_{date_stamp}.txt", "w", encoding="utf-8") as log_file:
-    
             # Monitorowanie zakończonych zadań w czasie rzeczywistym
             for future in as_completed(future_to_file):
                 result = future.result()
-                print(f"\n{result}") # Wypisuje komunikat o zakończonym pliku
-                
+                print(f"\n{result}")  # Wypisuje komunikat o zakończonym pliku
+
                 # Zapis do logu
                 log_file.write(result + "\n")
-                log_file.flush() # Zapis na bieżąco
+                log_file.flush()  # Zapis na bieżąco
 
                 # Aktualizacja paska postępu i zapis do pliku
                 progress.update(1)
-                estimated_time = format_time(progress.format_dict.get("elapsed")) # Pozostały czas bez ms
-                log_file.write(f"Progress: {progress.n}/{progress.total} ({(progress.n/progress.total)*100:.2f}%) | Czas: {estimated_time}\n")
-    
+                estimated_time = format_time(progress.format_dict.get("elapsed"))  # Pozostały czas bez ms
+                log_file.write(
+                    f"Progress: {progress.n}/{progress.total} ({(progress.n / progress.total) * 100:.2f}%) | Czas: {estimated_time}\n")
+
     print(f'Czas zakończenia programu: {format_time(time.time() - start_time)}')
     # input("~~~~~~~~Naciśnij dowolny przycisk by zakończyć~~~~~~~~")
-    
