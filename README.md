@@ -11,13 +11,12 @@ Projekt **mgr_AM_JL** to zestaw skryptów mających na celu automatyzację przyg
 
 - [Wymagania](#wymagania)
 - [Instalacja](#instalacja)
-<!-- - [Konfiguracja](#konfiguracja) -->
+- [Konfiguracja](#konfiguracja)
 - [Struktura projektu](#struktura-projektu)
 - [Sposób działania](#sposób-działania)
 - [Przykładowe użycie](#przykładowe-użycie)
 - [Plany rozwoju](#plany-rozwoju)
 - [Współpraca i GitHub](#współpraca-i-github)
-- [Licencja](#licencja)
 
 ## Wymagania
 
@@ -53,19 +52,18 @@ Projekt **mgr_AM_JL** to zestaw skryptów mających na celu automatyzację przyg
    pip install -r requirements.txt
    ```
    
-<!--
 ## Konfiguracja
 
 - **Plik `.env`:**  
   Utwórz lokalny plik `.env` (który nie jest commitowany) na podstawie szablonu `.env.example`. Plik ten powinien zawierać zmienne środowiskowe specyficzne dla Twojego systemu, np. ścieżki do interpretera Pythona, AutoGrid, AutoDock czy AutoDock-GPU.  
   Przykład:
   ```dotenv
-  PYTHON_PATH=
+  PYTHON_PATH=MGLTools/python.exe
   AUTOGRID_PATH=autogrid4.exe
   AUTODOCK_PATH=autodock4.exe
-  AUTODOCK_GPU_PATH=
+  AUTODOCK_GPU_PATH=./bin/autodock_gpu_128wi
   ```
--->
+  
 ## Struktura projektu
 
 ```
