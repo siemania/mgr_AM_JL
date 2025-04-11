@@ -121,11 +121,11 @@ if __name__ == '__main__':
 
                 # Zapis do logu
                 log_file.write(result + "\n")
-                log_file.flush()  # Zapis na bieżąco
+                log_file.flush() # Zapis na bieżąco
 
                 # Aktualizacja paska postępu i zapis do pliku
                 progress.update(1)
-                estimated_time = format_time(progress.format_dict.get("elapsed"))  # Pozostały czas bez ms
+                estimated_time = format_time(progress.format_dict.get("elapsed")) # Pozostały czas bez ms
                 log_file.write(
                     f"Progress: {progress.n}/{progress.total} ({(progress.n / progress.total) * 100:.2f}%) | Czas: {estimated_time}\n")
 

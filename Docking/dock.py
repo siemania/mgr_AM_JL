@@ -1,5 +1,6 @@
 # Python 3.12.7
 import os
+import argparse
 import glob
 import time
 from datetime import date
@@ -127,7 +128,7 @@ if __name__ == '__main__':
                 progress.update(1)
                 estimated_time = format_time(progress.format_dict.get("elapsed")) # Pozostały czas bez ms
                 log_file.write(
-                    f"Progress: {progress.n}/{progress.total} ({(progress.n/progress.total)*100:.2f}%) | Czas: {estimated_time}\n")
+                    f"Progress: {progress.n}/{progress.total} ({(progress.n / progress.total)*100:.2f}%) | Czas: {estimated_time}\n")
     
     print(f'Czas zakończenia programu: {format_time(time.time() - start_time)}')
     # input("~~~~~~~~Naciśnij dowolny przycisk by zakończyć~~~~~~~~")
