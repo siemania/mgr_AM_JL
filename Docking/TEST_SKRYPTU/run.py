@@ -1,8 +1,9 @@
-# Python 3.12.7
 import os
 import glob
 import time
 from datetime import date
+
+from config import PDB_FILES, PDBQT_FILES, MAP_GRID_FILES, OUTPUT_FILES, GRID_DOCK_FILES, LIGANDS
 from tqdm import tqdm # Do pobrania pasek postępu
 import subprocess
 from concurrent.futures import ProcessPoolExecutor, as_completed
@@ -30,17 +31,15 @@ def process_docking(pdb_file):
         file_name = os.path.splitext(os.path.basename(pdb_file))[0]
     
         # Ścieżki do plików
-        receptor_pdb = os.path.join("pdb_files", f"{file_name}.pdb")
-        ligand_pdb = os.path.join("ligands", f"{file_name}_ligand.pdb")
-        receptor_pdbqt = os.path.join("pdbqt_files", f"{file_name}_receptor.pdbqt")
-        ligand_pdbqt = os.path.join("pdbqt_files", f"{file_name}_ligand.pdbqt")
-        gpf = os.path.join("grid_dock_files", f"{file_name}_grid.gpf")
-        glg = os.path.join("grid_dock_files", f"{file_name}_grid.glg")
-        dpf = os.path.join("grid_dock_files", f"{file_name}_dock.dpf")
-        dlg = os.path.join("grid_dock_files", f"{file_name}_dock.dlg")
-    
-        # Znalezienie nazwy użytkownika komputera
-        username = os.environ.get('USERNAME') or os.environ.get('USER')
+        receptor_pdb = os.path.join(PDB_FILES, f"{file_name}.pdb")
+        ligand_pdb = os.path.join(LIGANDS, f"{file_name}_ligand.pdb")
+        receptor_pdbqt = os.path.join(PDBQT_FILES, f"{file_name}_receptor.pdbqt")
+        ligand_pdbqt = os.path.join(PDBQT_FILES, f"{file_name}_ligand.pdbqt")
+        gpf = os.path.join(GRID_DOCK_FILES, f"{file_name}_grid.gpf")
+        glg = os.path.join(GRID_DOCK_FILES, f"{file_name}_grid.glg")
+        dpf = os.path.join(GRID_DOCK_FILES, f"{file_name}_dock.dpf")
+        dlg = os.path.join(GRID_DOCK_FILES, f"{file_name}_dock.dlg")
+
         python = f"C:\\Users\\{username}\\OneDrive\\Dyplom_AM_JL\\Skrypty\\Docking\\MGLTools-1.5.7\\python.exe"
         autogrid = "autogrid4.exe"
         autodock = "autodock4.exe"
@@ -84,24 +83,24 @@ def process_docking(pdb_file):
 if __name__ == '__main__':
 
     # Pobranie listy plików PDB
-    pdb_directory = glob.glob("pdb_files\\*.pdb")
+    pdb_files = glob.glob(os.path.join(PDB_FILES, "*.pdb"))
     
     # Ustawienie liczby równoległych procesów
     max_workers = 4
     
     # Tworzenie katalogów jeśli nie istnieją
-    os.makedirs("pdbqt_files", exist_ok=True)
-    os.makedirs("map_grid_files", exist_ok=True)
-    os.makedirs("grid_dock_files", exist_ok=True)
-    os.makedirs("output_files", exist_ok=True)
+    os.makedirs(PDBQT_FILES, exist_ok=True)
+    os.makedirs(MAP_GRID_FILES, exist_ok=True)
+    os.makedirs(GRID_DOCK_FILES, exist_ok=True)
+    os.makedirs(OUTPUT_FILES, exist_ok=True)
     
     # Pomiar czasu
     date_stamp = date.isoformat(date.today())
     start_time = time.time()
     
     # Uruchamianie przetwarzania w puli procesów + pasek postępu
-    with ProcessPoolExecutor(max_workers=max_workers) as executor, tqdm(total=len(pdb_directory), desc="Docking Progress") as progress:
-        future_to_file = {executor.submit(process_docking, pdb_file): pdb_file for pdb_file in pdb_directory}
+    with ProcessPoolExecutor(max_workers=max_workers) as executor, tqdm(total=len(pdb_files), desc="Docking Progress") as progress:
+        future_to_file = {executor.submit(process_docking, pdb_file): pdb_file for pdb_file in pdb_files}
     
         # Zapis do Docking_log.txt
         with open(f"Docking_log_{date_stamp}.txt", "w", encoding="utf-8") as log_file:

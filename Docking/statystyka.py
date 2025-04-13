@@ -1,4 +1,5 @@
 ﻿# -*- coding: utf-8 -*-
+
 import os
 import sys
 import getopt
@@ -96,7 +97,7 @@ def main(argv):
             try:
                 exp_energy = float(arg)
             except ValueError:
-                print "Niepoprawna wartość eksperymentalnej Delta G. Wprowadź liczbę."
+                print "Niepoprawna wartość eksperymentalnej Delta G."
                 sys.exit(2)
 
     energy_results, rmsd_results = extract_best_values()
