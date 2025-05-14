@@ -53,19 +53,19 @@ def process_docking(pdb_file):
         run_command(f'"{python}" prepare_receptor4.py -r {receptor_pdb} -o {receptor_pdbqt} -A "bonds_hydrogens" -e "True" -U "nphs" "waters" "lps"')
         print(f"Receptor {file_name} gotowy", flush=True)
         
-        run_command(f'"{python}" prepare_ligand4.py -l {ligand_pdb} -o {ligand_pdbqt}')
-        print(f"Ligand {file_name} gotowy", flush=True)
-        
-        run_command(f'"{python}" prepare_gpf4.py -l {ligand_pdbqt} -r {receptor_pdbqt} -o {gpf}')
-        modify_gdpf_overwrite(f"grid_dock_files/{file_name}_grid.gpf", quiet=True) # Poprawki lokalizacyjne w pliku
-        print(f"Grid {file_name} gotowy", flush=True)
-        
-        run_command(f'{autogrid} -p {gpf} -l {glg}')
-        print(f"Mapy energetyczne {file_name} gotowe", flush=True)
-        
-        run_command(f'"{python}" prepare_dpf42.py -l {ligand_pdbqt} -r {receptor_pdbqt} -o {dpf}')
-        modify_gdpf_overwrite(f"grid_dock_files/{file_name}_dock.dpf", quiet=True) # Poprawki lokalizacyjne w pliku
-        print(f"Parametry do dokowania {file_name} gotowe", flush=True)
+        # run_command(f'"{python}" prepare_ligand4.py -l {ligand_pdb} -o {ligand_pdbqt}')
+        # print(f"Ligand {file_name} gotowy", flush=True)
+        #
+        # run_command(f'"{python}" prepare_gpf4.py -l {ligand_pdbqt} -r {receptor_pdbqt} -o {gpf}')
+        # modify_gdpf_overwrite(f"grid_dock_files/{file_name}_grid.gpf", quiet=True) # Poprawki lokalizacyjne w pliku
+        # print(f"Grid {file_name} gotowy", flush=True)
+        #
+        # run_command(f'{autogrid} -p {gpf} -l {glg}')
+        # print(f"Mapy energetyczne {file_name} gotowe", flush=True)
+        #
+        # run_command(f'"{python}" prepare_dpf42.py -l {ligand_pdbqt} -r {receptor_pdbqt} -o {dpf}')
+        # modify_gdpf_overwrite(f"grid_dock_files/{file_name}_dock.dpf", quiet=True) # Poprawki lokalizacyjne w pliku
+        # print(f"Parametry do dokowania {file_name} gotowe", flush=True)
         
         # print(f"Rozpoczynanie procesu autodock4.exe dla {file_name} ...", flush=True)
         # run_command(f'{autodock} -p {dpf} -l {dlg}')
