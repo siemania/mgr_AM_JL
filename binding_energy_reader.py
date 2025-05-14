@@ -12,10 +12,9 @@ def compute_delta_g(K_molar, temperature=298.15):
     R_kcal = 0.0019872036
     return R_kcal * temperature * math.log(K_molar)
 
-
 def parse_binding_constant(line):
     """
-    Parsuje linię pod kątem Ki, Kd, IC50 lub -log(Ki/Kd).
+    Parsuje linię pod kątem Ki, Kd, IC50 lub -log(Kd/Ki).
     Zwraca wartość stałej (M) oraz typ (str).
     """
     match = re.search(r"\b(Ki|Kd|IC50)\s*=\s*([0-9\.Ee+-]+)\s*([munp]?M)\b", line)
@@ -24,13 +23,12 @@ def parse_binding_constant(line):
         K = float(val)
         factors = {'M':1, 'mM':1e-3, 'uM':1e-6, 'nM':1e-9, 'pM':1e-12}
         return K * factors[unit], typ
-    match2 = re.search(r"-log\s*\((?:Ki|Kd)\)\s*=\s*([0-9\.Ee+-]+)\b", line)
+    match2 = re.search(r"-log\s*\((?:Kd|Ki)\)\s*=\s*([0-9\.Ee+-]+)\b", line)
     if match2:
         pval = float(match2.group(1))
         K = 10 ** (-pval)
-        return K, 'pKi'
+        return K, '-log(K)'
     return None, None
-
 
 def process_ligands(csv_path, biolip_txt, output_path, temperature=298.15):
     df = pd.read_csv(csv_path)
@@ -58,7 +56,7 @@ def process_ligands(csv_path, biolip_txt, output_path, temperature=298.15):
             results.append((ligand_id, None, None, msg))
             continue
         delta_g = compute_delta_g(K_molar, temperature)
-        results.append((ligand_id, typ, K_molar, f"{delta_g:.3f}"))
+        results.append((ligand_id, typ, round(K_molar, 3), f"{delta_g:.3f}"))
 
     with open(output_path, 'w') as out:
         header = "ID\tTyp\tK (M)\tDeltaG (kcal/mol)\n"
@@ -69,7 +67,6 @@ def process_ligands(csv_path, biolip_txt, output_path, temperature=298.15):
             # Informacja o zapisie każdego liganda
             print(f"Zapisano dla {lig}: Typ={typ or '-'}, K={K if K else '-'}, DeltaG={dg if dg else '-'}", flush=True)
     print(f"\nGotowe! Wszystkie wyniki zapisane w {output_path}")
-
 
 def main():
     parser = argparse.ArgumentParser(description="Obliczanie ΔG dla ligandów z BioLiP")
@@ -87,3 +84,4 @@ if __name__ == '__main__':
 
     # Użycie:
     # python binding_energy_reader.py -c baza_ids.csv -b BioLiP.txt -o pdb_energy/ligands_energy.txt
+	
