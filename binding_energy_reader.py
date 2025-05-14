@@ -30,6 +30,10 @@ def parse_binding_constant(line):
         return K, '-log(K)'
     return None, None
 
+def format_k_value(K):
+    """Zwraca wartość K zaokrągloną do 3 miejsc i notację naukową."""
+    return f"{K:.3e}"
+
 def process_ligands(csv_path, biolip_txt, output_path, temperature=298.15):
     df = pd.read_csv(csv_path)
     if 'id' not in df.columns:
@@ -56,7 +60,7 @@ def process_ligands(csv_path, biolip_txt, output_path, temperature=298.15):
             results.append((ligand_id, None, None, msg))
             continue
         delta_g = compute_delta_g(K_molar, temperature)
-        results.append((ligand_id, typ, round(K_molar, 3), f"{delta_g:.3f}"))
+        results.append((ligand_id, typ, format_k_value(K_molar), f"{delta_g:.3f}"))
 
     with open(output_path, 'w') as out:
         header = "ID\tTyp\tK (M)\tDeltaG (kcal/mol)\n"
@@ -72,7 +76,7 @@ def main():
     parser = argparse.ArgumentParser(description="Obliczanie ΔG dla ligandów z BioLiP")
     parser.add_argument('-c', '--csv', default='baza_ids.csv', help='Ścieżka do pliku CSV')
     parser.add_argument('-b', '--biolip', default='BioLiP.txt', help='Ścieżka do pliku BioLiP')
-    parser.add_argument('-o', '--output', default=os.path.join('pdb_energy', 'pdb_energy.txt'),
+    parser.add_argument('-o', '--output', default=os.path.join('pdb_energy', 'ligands_energy.txt'),
                         help='Plik wynikowy')
     parser.add_argument('-t', '--temp', type=float, default=298.15, help='Temperatura w K')
     args = parser.parse_args()
@@ -84,4 +88,3 @@ if __name__ == '__main__':
 
     # Użycie:
     # python binding_energy_reader.py -c baza_ids.csv -b BioLiP.txt -o pdb_energy/ligands_energy.txt
-	
