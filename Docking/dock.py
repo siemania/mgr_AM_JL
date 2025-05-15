@@ -7,7 +7,7 @@ from datetime import date
 from tqdm import tqdm # Do pobrania pasek postępu
 import subprocess
 from concurrent.futures import ProcessPoolExecutor, as_completed
-from modify_parameters import modify_gdpf_overwrite
+from modify_parameters import modify_gdpf_overwrite, modify_pdbqt_overwrite
 
 def format_time(seconds):
     """Obliczanie czasu i sformatowanie > hh:mm:ss"""
@@ -50,27 +50,28 @@ def process_docking(pdb_file):
     # =============================================================================    
         # Wykonywanie kolejnych kroków dockingu
         # Tutaj -e -U oraz -A mogą generować błędy i nie wiem jak się ich wyzbyć
-        run_command(f'"{python}" prepare_receptor4.py -r {receptor_pdb} -o {receptor_pdbqt} -A "bonds_hydrogens" -e "True" -U "nphs" "waters" "lps"')
+        run_command(f'"{python}" prepare_receptor4.py -r {receptor_pdb} -o {receptor_pdbqt} -A "checkhydrogens" -e "True" -U "nphs_lps_waters"')
+        modify_pdbqt_overwrite(f"{receptor_pdbqt}", quiet=True)
         print(f"Receptor {file_name} gotowy", flush=True)
         
-        # run_command(f'"{python}" prepare_ligand4.py -l {ligand_pdb} -o {ligand_pdbqt}')
-        # print(f"Ligand {file_name} gotowy", flush=True)
-        #
-        # run_command(f'"{python}" prepare_gpf4.py -l {ligand_pdbqt} -r {receptor_pdbqt} -o {gpf}')
-        # modify_gdpf_overwrite(f"grid_dock_files/{file_name}_grid.gpf", quiet=True) # Poprawki lokalizacyjne w pliku
-        # print(f"Grid {file_name} gotowy", flush=True)
-        #
-        # run_command(f'{autogrid} -p {gpf} -l {glg}')
-        # print(f"Mapy energetyczne {file_name} gotowe", flush=True)
-        #
-        # run_command(f'"{python}" prepare_dpf42.py -l {ligand_pdbqt} -r {receptor_pdbqt} -o {dpf}')
-        # modify_gdpf_overwrite(f"grid_dock_files/{file_name}_dock.dpf", quiet=True) # Poprawki lokalizacyjne w pliku
-        # print(f"Parametry do dokowania {file_name} gotowe", flush=True)
-        
+        run_command(f'"{python}" prepare_ligand4.py -l {ligand_pdb} -o {ligand_pdbqt}')
+        print(f"Ligand {file_name} gotowy", flush=True)
+
+        run_command(f'"{python}" prepare_gpf4.py -l {ligand_pdbqt} -r {receptor_pdbqt} -y -o {gpf}')
+        modify_gdpf_overwrite(f"grid_dock_files/{file_name}_grid.gpf", quiet=True) # Poprawki lokalizacyjne w pliku
+        print(f"Grid {file_name} gotowy", flush=True)
+
+        run_command(f'{autogrid} -p {gpf} -l {glg}')
+        print(f"Mapy energetyczne {file_name} gotowe", flush=True)
+
+        run_command(f'"{python}" prepare_dpf42.py -l {ligand_pdbqt} -r {receptor_pdbqt} -o {dpf}')
+        modify_gdpf_overwrite(f"grid_dock_files/{file_name}_dock.dpf", quiet=True) # Poprawki lokalizacyjne w pliku
+        print(f"Parametry do dokowania {file_name} gotowe", flush=True)
+
         # print(f"Rozpoczynanie procesu autodock4.exe dla {file_name} ...", flush=True)
         # run_command(f'{autodock} -p {dpf} -l {dlg}')
         # print(f"Dokowanie {file_name} zakonczono pomyslnie", flush=True)
-        
+        #
         # run_command(f'"{python}" write_all_complexes.py -d {dlg} -r {receptor_pdbqt} -o output_files\\{file_name}_bestcomplex -b')
         # print(f"Utworzono najlepszy kompleks ligand-receptor {file_name}", flush=True)
     # =============================================================================

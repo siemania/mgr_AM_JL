@@ -17,13 +17,13 @@ def parse_binding_constant(line):
     Parsuje linię pod kątem Ki, Kd, IC50 lub -log(Kd/Ki).
     Zwraca wartość stałej (M) oraz typ (str).
     """
-    match = re.search(r"\b(Ki|Kd|IC50)\s*=\s*([0-9\.Ee+-]+)\s*([munp]?M)\b", line)
+    match = re.search(r"\b([Kk]i|[Kk]d|[Ii][Cc]50)\s*=\s*([0-9\.Ee+-]+)\s*([munp]?M)\b", line)
     if match:
         typ, val, unit = match.groups()
         K = float(val)
         factors = {'M':1, 'mM':1e-3, 'uM':1e-6, 'nM':1e-9, 'pM':1e-12}
         return K * factors[unit], typ
-    match2 = re.search(r"-log\s*\((?:Kd|Ki)\)\s*=\s*([0-9\.Ee+-]+)\b", line)
+    match2 = re.search(r"-log\s*\((?:[Kk]d|[Kk]i)\)\s*=\s*([0-9\.Ee+-]+)\b", line)
     if match2:
         pval = float(match2.group(1))
         K = 10 ** (-pval)
@@ -76,7 +76,7 @@ def main():
     parser = argparse.ArgumentParser(description="Obliczanie ΔG dla ligandów z BioLiP")
     parser.add_argument('-c', '--csv', default='baza_ids.csv', help='Ścieżka do pliku CSV')
     parser.add_argument('-b', '--biolip', default='BioLiP.txt', help='Ścieżka do pliku BioLiP')
-    parser.add_argument('-o', '--output', default=os.path.join('pdb_energy', 'ligands_energy.txt'),
+    parser.add_argument('-o', '--output', default=os.path.join('pdb_energy', 'ligands_energy.tsv'),
                         help='Plik wynikowy')
     parser.add_argument('-t', '--temp', type=float, default=298.15, help='Temperatura w K')
     args = parser.parse_args()

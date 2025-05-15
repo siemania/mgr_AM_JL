@@ -86,6 +86,33 @@ def modify_gdpf_overwrite(input_gpf, map_dir="map_grid_files", receptor_dir="pdb
     if quiet != True: print(f"Plik {input_gpf} został zaktualizowany.") 
     return
 
+
+def modify_pdbqt_overwrite(input_pdbqt, quiet=False):
+    """Modyfikuje i nadpisuje plik .pdbqt usuwając wiersze na podstawie alternatywnej pozycji z kolumny 17 w pliku
+    receptora, gdzie znajduje się znak inny niż A lub biały znak, końcowo pozostałe wiersze w kolumnie 17 zastąpi znak
+    biały"""
+    # Wczytanie pliku i sprawdzenie, czy już zawiera poprawne ścieżki
+    with open(input_pdbqt, "r+") as f:
+        lines = f.readlines()
+        f.seek(0)  # Cofnięcie wskaźnika na początek pliku
+        f.truncate()  # Usunięcie starej zawartości
+
+        modified_lines = []
+        for line in lines:
+            if line[20] != " ": # Jeżeli znak 21 w PDB zawiera jakiś znak
+                temp = line[17] # Zachowujemy znak z kolumny 18 w PDB
+                new_line = line[:17] + "" + line[18:] # Usuwamy znak z kolumny 18 w PDB
+                new_line = new_line[:12] + temp + new_line[13:] # Dodajemy zachowany znak do kolumny 13 tak jak robi to ADT
+            else:
+                new_line = line  # Zostawiamy linię bez zmian
+
+            # Zapisujemy przetworzoną linię do pliku
+            f.write(new_line)
+
+        if quiet != True: print(f"Plik {input_pdbqt} został zaktualizowany.")
+        return
+
+
 if __name__ == '__main__':
 
     # Przykładowe użycie
