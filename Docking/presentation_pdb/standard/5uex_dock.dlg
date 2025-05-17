@@ -1,0 +1,1366 @@
+          AutoDock 4.2 Release 4.2.6   
+         (C) 1989-2012 The Scripps Research Institute
+        AutoDock comes with ABSOLUTELY NO WARRANTY.
+        AutoDock is free software, and you are welcome
+        to redistribute it under certain conditions;
+        for details type 'autodock4 -C'
+
+                     main.cc  $Revision: 1.213 $
+
+                   Compiled on Jul 18 2014 at 15:34:58
+
+
+This file was created at:			1:10 56" p.m., 05/16/2025
+                   on host:		"TAJGERO"
+Current Working Directory = "C:\Users\tygrys012\Desktop\skrypty-docking\Docking"
+
+      ________________________________________________________________
+
+                   SETTING UP DEFAULT PARAMETER LIBRARY
+      ________________________________________________________________
+
+
+Random number generator was seeded with values 12668, 1747393857.
+Docking parameter file (DPF) used for this docking:		grid_dock_files\5uex_dock.dpf
+DPF> autodock_parameter_version 4.2       # used by autodock to validate parameter set
+
+	Autodock parameter version 4.2.
+DPF> outlev 1                             # diagnostic output level
+
+Output Level = 1  ADT-COMPATIBLE OUTPUT DURING DOCKING.
+DPF> intelec                              # calculate internal electrostatics
+
+Electrostatic energies will be calculated for all non-bonds between moving atoms.
+DPF> seed pid time                        # seeds for random generator
+
+Random number generator was seeded with values 12668, 1747393857.
+DPF> ligand_types A C F OA N S HD         # atoms types in ligand
+
+DPF> fld map_grid_files/5uex_receptor.maps.fld           # grid_data_file
+
+Opening Grid Map Dimensions file:		map_grid_files/5uex_receptor.maps.fld
+Grid Point Spacing =				0.375 Angstroms
+
+Even Number of User-specified Grid Points =	40 x-points
+						40 y-points
+						40 z-points
+
+Coordinates of Central Grid Point of Maps =	(12.218, 12.346, 19.473)
+Macromolecule file used to create Grid Maps =	pdbqt_files/5uex_receptor.pdbqt
+Grid Parameter file used to create Grid Maps =	grid_dock_files\5uex_grid.gpf
+Minimum coordinates in grid = (4.718, 4.846, 11.973)
+Maximum coordinates in grid = (19.718, 19.846, 26.973)
+
+DPF> map map_grid_files/5uex_receptor.A.map              # atom-specific affinity map
+
+DPF> map map_grid_files/5uex_receptor.C.map              # atom-specific affinity map
+
+DPF> map map_grid_files/5uex_receptor.F.map              # atom-specific affinity map
+
+DPF> map map_grid_files/5uex_receptor.OA.map              # atom-specific affinity map
+
+DPF> map map_grid_files/5uex_receptor.N.map              # atom-specific affinity map
+
+DPF> map map_grid_files/5uex_receptor.S.map              # atom-specific affinity map
+
+DPF> map map_grid_files/5uex_receptor.HD.map              # atom-specific affinity map
+
+DPF> elecmap map_grid_files/5uex_receptor.e.map          # electrostatic potential map
+
+DPF> desolvmap map_grid_files/5uex_receptor.d.map        # desolvation map
+
+DPF> move pdbqt_files/5uex_ligand.pdbqt               # small molecule
+
+1,4-interactions will be _ignored_ in the non-bonded internal energy calculation.
+
+Ligand PDBQT file = "pdbqt_files/5uex_ligand.pdbqt"
+
+INPUT LIGAND PDBQT FILE:
+________________________
+
+INPUT-LIGAND-PDBQT: REMARK  3 active torsions:
+INPUT-LIGAND-PDBQT: REMARK  status: ('A' for Active; 'I' for Inactive)
+INPUT-LIGAND-PDBQT: REMARK    1  A    between atoms: C8_5  and  N26_26 
+INPUT-LIGAND-PDBQT: REMARK    2  A    between atoms: C24_13  and  S34_34 
+INPUT-LIGAND-PDBQT: REMARK    3  A    between atoms: N26_26  and  S34_34 
+INPUT-LIGAND-PDBQT: ROOT
+INPUT-LIGAND-PDBQT: HETATM    1  C4  89D A 501      13.491  13.683  24.262  1.00 44.01     0.052 A 
+INPUT-LIGAND-PDBQT: HETATM    2  C5  89D A 501      13.087  11.329  24.257  1.00 43.11     0.087 A 
+INPUT-LIGAND-PDBQT: HETATM    3  C6  89D A 501      12.045  12.113  18.765  1.00 39.90     0.014 A 
+INPUT-LIGAND-PDBQT: HETATM    4  C7  89D A 501      13.492  13.725  22.878  1.00 43.42    -0.018 A 
+INPUT-LIGAND-PDBQT: HETATM    5  C8  89D A 501       9.664  11.846  18.759  1.00 40.60     0.043 A 
+INPUT-LIGAND-PDBQT: HETATM    6  C10 89D A 501      13.289  12.538  22.184  1.00 42.53     0.121 A 
+INPUT-LIGAND-PDBQT: HETATM    7  C13 89D A 501      15.148  13.390  17.033  1.00 37.58     0.112 A 
+INPUT-LIGAND-PDBQT: HETATM    8  C15 89D A 501      13.268  12.187  17.976  1.00 38.67     0.026 A 
+INPUT-LIGAND-PDBQT: HETATM    9  C17 89D A 501      15.602  12.127  16.407  1.00 36.33     0.249 A 
+INPUT-LIGAND-PDBQT: HETATM   10  C20 89D A 501      13.753  16.174  20.057  1.00 42.04     0.027 C 
+INPUT-LIGAND-PDBQT: HETATM   11  C21 89D A 501      14.482  15.144  19.221  1.00 40.78     0.175 C 
+INPUT-LIGAND-PDBQT: HETATM   12  C1  89D A 501       9.660  12.013  20.125  1.00 40.58     0.033 A 
+INPUT-LIGAND-PDBQT: HETATM   13  C2  89D A 501      10.836  12.218  20.813  1.00 40.81     0.040 A 
+INPUT-LIGAND-PDBQT: HETATM   14  C3  89D A 501      10.865  11.895  18.080  1.00 40.14     0.045 A 
+INPUT-LIGAND-PDBQT: HETATM   15  C9  89D A 501      12.048  12.263  20.142  1.00 40.78     0.087 A 
+INPUT-LIGAND-PDBQT: HETATM   16  C11 89D A 501      13.271  12.507  24.940  1.00 43.91     0.120 A 
+INPUT-LIGAND-PDBQT: HETATM   17  C12 89D A 501      13.110  11.355  22.881  1.00 42.71     0.153 A 
+INPUT-LIGAND-PDBQT: HETATM   18  C14 89D A 501      13.672  11.064  17.385  1.00 37.35     0.108 A 
+INPUT-LIGAND-PDBQT: HETATM   19  C16 89D A 501      14.038  13.381  17.783  1.00 38.55     0.086 A 
+INPUT-LIGAND-PDBQT: HETATM   20  C18 89D A 501      13.782  15.069  22.268  1.00 43.08     0.042 C 
+INPUT-LIGAND-PDBQT: HETATM   21  C19 89D A 501      12.896  15.546  21.139  1.00 42.77     0.007 C 
+INPUT-LIGAND-PDBQT: HETATM   22  C23 89D A 501      15.191   9.773  16.005  1.00 36.21     0.159 C 
+INPUT-LIGAND-PDBQT: HETATM   23  N25 89D A 501      14.803  11.019  16.617  1.00 36.52    -0.328 N 
+INPUT-LIGAND-PDBQT: HETATM   24  O27 89D A 501      16.628  12.136  15.747  1.00 35.21    -0.268 OA
+INPUT-LIGAND-PDBQT: HETATM   25  O30 89D A 501      13.280  12.488  20.790  1.00 41.46    -0.306 OA
+INPUT-LIGAND-PDBQT: HETATM   26  O31 89D A 501      13.516  14.506  18.397  1.00 39.81    -0.350 OA
+INPUT-LIGAND-PDBQT: HETATM   27  F32 89D A 501      13.262  12.514  26.281  1.00 44.62    -0.206 F 
+INPUT-LIGAND-PDBQT: HETATM   28  F33 89D A 501      12.910  10.206  22.226  1.00 42.57    -0.203 F 
+INPUT-LIGAND-PDBQT: ENDROOT
+INPUT-LIGAND-PDBQT: BRANCH   5  29
+INPUT-LIGAND-PDBQT: HETATM   29  N26 89D A 501       8.373  11.621  18.159  1.00 41.13    -0.285 N 
+INPUT-LIGAND-PDBQT: HETATM   30  H26 89D A 501       7.748  11.027  18.719  1.00 41.15     0.178 HD
+INPUT-LIGAND-PDBQT: BRANCH  29  31
+INPUT-LIGAND-PDBQT: HETATM   31  S34 89D A 501       8.081  11.705  16.467  1.00 41.80     0.230 S 
+INPUT-LIGAND-PDBQT: HETATM   32  O29 89D A 501       8.883  12.738  15.841  1.00 41.83    -0.206 OA
+INPUT-LIGAND-PDBQT: HETATM   33  O28 89D A 501       6.646  11.682  16.262  1.00 41.82    -0.206 OA
+INPUT-LIGAND-PDBQT: BRANCH  31  34
+INPUT-LIGAND-PDBQT: HETATM   34  C24 89D A 501       8.685  10.127  15.923  1.00 42.09     0.159 C 
+INPUT-LIGAND-PDBQT: HETATM   35  C22 89D A 501       8.139   8.996  16.762  1.00 42.03     0.023 C 
+INPUT-LIGAND-PDBQT: ENDBRANCH  31  34
+INPUT-LIGAND-PDBQT: ENDBRANCH  29  31
+INPUT-LIGAND-PDBQT: ENDBRANCH   5  29
+INPUT-LIGAND-PDBQT: TORSDOF 3
+________________________________________________________________________________
+
+Total charge on ligand                               =	+0.000 e
+REMARK  3 active torsions:
+REMARK  status: ('A' for Active; 'I' for Inactive)
+REMARK    1  A    between atoms: C8_5  and  N26_26 
+REMARK    2  A    between atoms: C24_13  and  S34_34 
+REMARK    3  A    between atoms: N26_26  and  S34_34 
+
+
+Number of Rotatable Bonds in Small Molecule =	3 torsions
+Number of atoms in ligand:  35
+
+Number of non-hydrogen atoms in ligand:  34
+
+Number of vibrational degrees of freedom of ligand:  99
+
+
+Number of torsional degrees of freedom = 3
+Estimated loss of torsional free energy upon binding = +0.8949 kcal/mol
+
+
+DPF> about 12.218 12.346 19.473            # small molecule center
+
+Small molecule center of rotation =	(+12.218, +12.346, +19.473)
+
+DPF> tran0 random                         # initial coordinates/A or random
+
+Initial translation =			(10.857, 17.251, 18.026) Angstroms
+DPF> quaternion0 random                   # initial orientation
+
+Each run will begin with a new, random initial orientation.
+Initial quaternion,  (x,y,z,w) =	( -0.369, -0.809, 0.430, 0.154 ),
+DPF> dihe0 random                         # initial dihedrals (relative) or random
+
+DPF> torsdof 3                            # torsional degrees of freedom
+
+Number of torsional degrees of freedom = 3
+Free energy coefficient for torsional degrees of freedom = 0.2983, the factory default value.
+
+Estimated loss of torsional free energy upon binding = +0.8949 kcal/mol
+
+DPF> rmstol 2.0                           # cluster_tolerance/A
+
+Maximum RMS tolerance for conformational cluster analysis = 2.00 Angstroms
+DPF> extnrg 1000.0                        # external grid energy
+
+External grid energy (beyond grid map walls) = 1000.00
+
+DPF> e0max 0.0 10000                      # max initial energy; max number of retries
+
+Using user-specified maximum number of retries for simanneal initialization, 10000 retries.
+If the simanneal initial energy is greater than e0max, 0.000,
+then a new, random initial state will be created.
+
+DPF> ga_pop_size 150                      # number of individuals in population
+
+A population of 150 individuals will be used
+DPF> ga_num_evals 2500000                 # maximum number of energy evaluations
+
+There will be at most 2500000 function evaluations used.
+DPF> ga_num_generations 27000             # maximum number of generations
+
+The GA will run for at most 27000 generations.
+DPF> ga_elitism 1                         # number of top individuals to survive to next generation
+
+The 1 best will be preserved each GA generation.
+DPF> ga_mutation_rate 0.02                # rate of gene mutation
+
+The mutation rate is 0.020000.
+DPF> ga_crossover_rate 0.8                # rate of crossover
+
+The crossover rate is 0.800000.
+DPF> ga_window_size 10                    # 
+
+The GA's selection window is 10 generations.
+DPF> ga_cauchy_alpha 0.0                  # Alpha parameter of Cauchy distribution
+
+The alpha parameter (for the Cauchy distribution) is being set to 0.000000.
+DPF> ga_cauchy_beta 1.0                   # Beta parameter Cauchy distribution
+
+The beta parameter (for the Cauchy distribution) is being set to 1.000000.
+DPF> set_ga                               # set the above parameters for GA or LGA
+
+DPF> sw_max_its 300                       # iterations of Solis & Wets local search
+
+Solis & Wets algorithms will perform at most 300 iterations.
+DPF> sw_max_succ 4                        # consecutive successes before changing rho
+
+Solis & Wets algorithms expand rho every 4 in a row successes.
+DPF> sw_max_fail 4                        # consecutive failures before changing rho
+
+Solis & Wets algorithms contract rho every 4 in a row failures.
+DPF> sw_rho 1.0                           # size of local search space to sample
+
+rho is set to 1.000000.
+DPF> sw_lb_rho 0.01                       # lower bound on rho
+
+rho will never get smaller than 0.010000.
+DPF> ls_search_freq 0.06                  # probability of performing local search on individual
+
+Local search will be performed with frequency 0.060000.
+DPF> set_psw1                             # set the above pseudo-Solis & Wets parameters
+
+Creating a new Local Search object using the pseudo-Solis-Wets algorithm (pSW1) with the current settings.
+
+DPF> unbound_model bound                  # state of unbound ligand
+
+DPF> ga_run 10                            # do this many hybrid GA-LS runs
+
+centering ligand on specified point: 12.218 12.346 19.473
+Furthest true ligand atom from "about" center is 6.890 Angstroms (maxrad).
+Number of requested GA dockings = 10 runs
+Unbound model to be used is 'same as bound' [AutoDock 4.2 default].
+
+	BEGINNING GENETIC ALGORITHM DOCKING 1 of 10
+Run: 1 Seed: 2105168765 7490848 [ Run 1 of 10 GA/GALS ]
+Beginning LAMARCKIAN GENETIC ALGORITHM (LGA), with a maximum of 2500000 energy evaluations.
+
+Final-Value: -9.500
+
+
+	FINAL GENETIC ALGORITHM DOCKED STATE
+	_______________________________________________
+
+
+Detailed state:  trans 12.540 11.985 18.612 quatxyzw -0.016416 -0.014993 0.047474 -0.998625 center 12.218 12.346 19.473 ntor 3 2.1823 20.9793 31.1460
+State:	 12.540  11.985  18.612  -0.313 -0.286  0.906 -6.010      2.18   20.98   31.15
+
+DOCKED: MODEL        1
+DOCKED: USER    Run = 1
+DOCKED: USER    DPF = grid_dock_files\5uex_dock.dpf
+DOCKED: USER  
+DOCKED: USER    Estimated Free Energy of Binding    =   -8.27 kcal/mol  [=(1)+(2)+(3)-(4)]
+DOCKED: USER    Estimated Inhibition Constant, Ki   =  871.42 nM (nanomolar)  [Temperature = 298.15 K]
+DOCKED: USER    
+DOCKED: USER    (1) Final Intermolecular Energy     =   -9.16 kcal/mol
+DOCKED: USER        vdW + Hbond + desolv Energy     =   -9.37 kcal/mol
+DOCKED: USER        Electrostatic Energy            =   +0.21 kcal/mol
+DOCKED: USER    (2) Final Total Internal Energy     =   -0.34 kcal/mol
+DOCKED: USER    (3) Torsional Free Energy           =   +0.89 kcal/mol
+DOCKED: USER    (4) Unbound System's Energy  [=(2)] =   -0.34 kcal/mol
+DOCKED: USER    
+DOCKED: USER    
+DOCKED: USER    NEWDPF move pdbqt_files/5uex_ligand.pdbqt
+DOCKED: USER    NEWDPF about 12.218000 12.346000 19.473000
+DOCKED: USER    NEWDPF tran0 12.539684 11.984735 18.611613
+DOCKED: USER    NEWDPF quaternion0 -0.016416 -0.014993 0.047474 -0.998625
+DOCKED: USER    NEWDPF axisangle0 -0.313144 -0.286005 0.905617 -6.009878
+DOCKED: USER    NEWDPF quat0 -0.313144 -0.286005 0.905617 -6.009878
+DOCKED: USER    NEWDPF dihe0 2.18 20.98 31.15 
+DOCKED: USER  keepresnum = 1 
+DOCKED: USER  
+DOCKED: REMARK  3 active torsions:
+DOCKED: REMARK  status: ('A' for Active; 'I' for Inactive)
+DOCKED: REMARK    1  A    between atoms: C8_5  and  N26_26 
+DOCKED: REMARK    2  A    between atoms: C24_13  and  S34_34 
+DOCKED: REMARK    3  A    between atoms: N26_26  and  S34_34 
+DOCKED: USER                              x       y       z     vdW  Elec       q    Type
+DOCKED: USER                           _______ _______ _______ _____ _____    ______ ____
+DOCKED: ROOT
+DOCKED: ATOM      1  C4  89D A 501      13.529  13.587  23.386 -0.13 -0.12    +0.052 A 
+DOCKED: ATOM      2  C5  89D A 501      13.350  11.206  23.450 -0.35 -0.22    +0.087 A 
+DOCKED: ATOM      3  C6  89D A 501      12.412  11.714  17.907 -0.33 -0.04    +0.014 A 
+DOCKED: ATOM      4  C7  89D A 501      13.570  13.585  22.002 -0.21 +0.04    -0.018 A 
+DOCKED: ATOM      5  C8  89D A 501      10.068  11.221  17.843 -0.30 -0.12    +0.043 A 
+DOCKED: ATOM      6  C10 89D A 501      13.502  12.363  21.344 -0.21 -0.30    +0.121 A 
+DOCKED: ATOM      7  C13 89D A 501      15.434  13.226  16.221 -0.36 -0.38    +0.112 A 
+DOCKED: ATOM      8  C15 89D A 501      13.647  11.880  17.151 -0.33 -0.08    +0.026 A 
+DOCKED: ATOM      9  C17 89D A 501      16.024  11.993  15.652 -0.25 -0.89    +0.249 A 
+DOCKED: ATOM     10  C20 89D A 501      13.688  15.958  19.108 -0.35 -0.07    +0.027 C 
+DOCKED: ATOM     11  C21 89D A 501      14.536  14.976  18.328 -0.31 -0.51    +0.175 C 
+DOCKED: ATOM     12  C1  89D A 501      10.005  11.430  19.202 -0.30 -0.08    +0.033 A 
+DOCKED: ATOM     13  C2  89D A 501      11.134  11.768  19.915 -0.30 -0.10    +0.040 A 
+DOCKED: ATOM     14  C3  89D A 501      11.280  11.363  17.197 -0.31 -0.13    +0.045 A 
+DOCKED: ATOM     15  C9  89D A 501      12.357  11.907  19.278 -0.26 -0.22    +0.087 A 
+DOCKED: ATOM     16  C11 89D A 501      13.400  12.417  24.098 -0.21 -0.29    +0.120 A 
+DOCKED: ATOM     17  C12 89D A 501      13.413  11.191  22.075 -0.24 -0.38    +0.153 A 
+DOCKED: ATOM     18  C14 89D A 501      14.173  10.782  16.611 -0.31 -0.34    +0.108 A 
+DOCKED: ATOM     19  C16 89D A 501      14.306  13.135  16.940 -0.32 -0.26    +0.086 A 
+DOCKED: ATOM     20  C18 89D A 501      13.751  14.931  21.355 -0.23 -0.10    +0.042 C 
+DOCKED: ATOM     21  C19 89D A 501      12.860  15.285  20.186 -0.25 -0.02    +0.007 C 
+DOCKED: ATOM     22  C23 89D A 501      15.850   9.599  15.319 -0.33 -0.53    +0.159 C 
+DOCKED: ATOM     23  N25 89D A 501      15.327  10.821  15.877 -0.17 +1.08    -0.328 N 
+DOCKED: ATOM     24  O27 89D A 501      17.065  12.079  15.022 -0.40 +1.07    -0.268 OA
+DOCKED: ATOM     25  O30 89D A 501      13.542  12.269  19.953 -0.17 +0.79    -0.306 OA
+DOCKED: ATOM     26  O31 89D A 501      13.661  14.224  17.500 -0.18 +0.97    -0.350 OA
+DOCKED: ATOM     27  F32 89D A 501      13.348  12.465  25.437 -0.06 +0.53    -0.206 F 
+DOCKED: ATOM     28  F33 89D A 501      13.343  10.008  21.455 -0.03 +0.51    -0.203 F 
+DOCKED: ENDROOT
+DOCKED: BRANCH   5  29
+DOCKED: ATOM     29  N26 89D A 501       8.824  10.856  17.215 -0.13 +0.79    -0.285 N 
+DOCKED: ATOM     30  H26 89D A 501       8.055  10.681  17.875 +0.10 -0.45    +0.178 HD
+DOCKED: BRANCH  29  31
+DOCKED: ATOM     31  S34 89D A 501       8.719  10.119  15.665 -0.46 -0.76    +0.230 S 
+DOCKED: ATOM     32  O29 89D A 501       9.971  10.224  14.942 -0.45 +0.77    -0.206 OA
+DOCKED: ATOM     33  O28 89D A 501       7.487  10.563  15.044 -0.34 +0.66    -0.206 OA
+DOCKED: BRANCH  31  34
+DOCKED: ATOM     34  C24 89D A 501       8.470   8.415  16.098 -0.44 -0.56    +0.159 C 
+DOCKED: ATOM     35  C22 89D A 501       7.340   8.245  17.085 -0.48 -0.07    +0.023 C 
+DOCKED: ENDBRANCH  31  34
+DOCKED: ENDBRANCH  29  31
+DOCKED: ENDBRANCH   5  29
+DOCKED: TORSDOF 3
+DOCKED: TER
+DOCKED: ENDMDL
+________________________________________________________________________________
+
+
+	BEGINNING GENETIC ALGORITHM DOCKING 2 of 10
+Run: 2 Seed: 878892760 1775903944 [ Run 2 of 10 GA/GALS ]
+Beginning LAMARCKIAN GENETIC ALGORITHM (LGA), with a maximum of 2500000 energy evaluations.
+
+Final-Value: -9.506
+
+
+	FINAL GENETIC ALGORITHM DOCKED STATE
+	_______________________________________________
+
+
+Detailed state:  trans 12.530 11.984 18.645 quatxyzw 0.017041 0.006646 -0.038422 0.999094 center 12.218 12.346 19.473 ntor 3 5.2586 18.4413 28.1337
+State:	 12.530  11.984  18.645   0.400  0.156 -0.903  4.878      5.26   18.44   28.13
+
+DOCKED: MODEL        2
+DOCKED: USER    Run = 2
+DOCKED: USER    DPF = grid_dock_files\5uex_dock.dpf
+DOCKED: USER  
+DOCKED: USER    Estimated Free Energy of Binding    =   -8.27 kcal/mol  [=(1)+(2)+(3)-(4)]
+DOCKED: USER    Estimated Inhibition Constant, Ki   =  863.85 nM (nanomolar)  [Temperature = 298.15 K]
+DOCKED: USER    
+DOCKED: USER    (1) Final Intermolecular Energy     =   -9.17 kcal/mol
+DOCKED: USER        vdW + Hbond + desolv Energy     =   -9.34 kcal/mol
+DOCKED: USER        Electrostatic Energy            =   +0.18 kcal/mol
+DOCKED: USER    (2) Final Total Internal Energy     =   -0.34 kcal/mol
+DOCKED: USER    (3) Torsional Free Energy           =   +0.89 kcal/mol
+DOCKED: USER    (4) Unbound System's Energy  [=(2)] =   -0.34 kcal/mol
+DOCKED: USER    
+DOCKED: USER    
+DOCKED: USER    NEWDPF move pdbqt_files/5uex_ligand.pdbqt
+DOCKED: USER    NEWDPF about 12.218000 12.346000 19.473000
+DOCKED: USER    NEWDPF tran0 12.529933 11.984033 18.644859
+DOCKED: USER    NEWDPF quaternion0 0.017041 0.006646 -0.038422 0.999094
+DOCKED: USER    NEWDPF axisangle0 0.400455 0.156186 -0.902907 4.877789
+DOCKED: USER    NEWDPF quat0 0.400455 0.156186 -0.902907 4.877789
+DOCKED: USER    NEWDPF dihe0 5.26 18.44 28.13 
+DOCKED: USER  keepresnum = 1 
+DOCKED: USER  
+DOCKED: REMARK  3 active torsions:
+DOCKED: REMARK  status: ('A' for Active; 'I' for Inactive)
+DOCKED: REMARK    1  A    between atoms: C8_5  and  N26_26 
+DOCKED: REMARK    2  A    between atoms: C24_13  and  S34_34 
+DOCKED: REMARK    3  A    between atoms: N26_26  and  S34_34 
+DOCKED: USER                              x       y       z     vdW  Elec       q    Type
+DOCKED: USER                           _______ _______ _______ _____ _____    ______ ____
+DOCKED: ROOT
+DOCKED: ATOM      1  C4  89D A 501      13.627  13.575  23.400 -0.12 -0.12    +0.052 A 
+DOCKED: ATOM      2  C5  89D A 501      13.404  11.198  23.471 -0.35 -0.22    +0.087 A 
+DOCKED: ATOM      3  C6  89D A 501      12.386  11.715  17.943 -0.33 -0.04    +0.014 A 
+DOCKED: ATOM      4  C7  89D A 501      13.645  13.570  22.015 -0.22 +0.04    -0.018 A 
+DOCKED: ATOM      5  C8  89D A 501      10.032  11.265  17.918 -0.30 -0.12    +0.043 A 
+DOCKED: ATOM      6  C10 89D A 501      13.543  12.349  21.360 -0.20 -0.30    +0.121 A 
+DOCKED: ATOM      7  C13 89D A 501      15.407  13.168  16.205 -0.36 -0.38    +0.112 A 
+DOCKED: ATOM      8  C15 89D A 501      13.611  11.856  17.167 -0.33 -0.08    +0.026 A 
+DOCKED: ATOM      9  C17 89D A 501      15.965  11.924  15.629 -0.25 -0.88    +0.249 A 
+DOCKED: ATOM     10  C20 89D A 501      13.759  15.936  19.115 -0.35 -0.07    +0.027 C 
+DOCKED: ATOM     11  C21 89D A 501      14.577  14.938  18.323 -0.31 -0.51    +0.175 C 
+DOCKED: ATOM     12  C1  89D A 501       9.996  11.477  19.277 -0.30 -0.08    +0.033 A 
+DOCKED: ATOM     13  C2  89D A 501      11.142  11.795  19.972 -0.30 -0.10    +0.040 A 
+DOCKED: ATOM     14  C3  89D A 501      11.236  11.384  17.252 -0.31 -0.13    +0.045 A 
+DOCKED: ATOM     15  C9  89D A 501      12.357  11.911  19.314 -0.26 -0.22    +0.087 A 
+DOCKED: ATOM     16  C11 89D A 501      13.488  12.409  24.115 -0.21 -0.30    +0.120 A 
+DOCKED: ATOM     17  C12 89D A 501      13.445  11.180  22.096 -0.23 -0.38    +0.153 A 
+DOCKED: ATOM     18  C14 89D A 501      14.108  10.748  16.620 -0.31 -0.34    +0.108 A 
+DOCKED: ATOM     19  C16 89D A 501      14.290  13.099  16.942 -0.31 -0.26    +0.086 A 
+DOCKED: ATOM     20  C18 89D A 501      13.840  14.912  21.363 -0.23 -0.10    +0.042 C 
+DOCKED: ATOM     21  C19 89D A 501      12.937  15.281  20.207 -0.26 -0.02    +0.007 C 
+DOCKED: ATOM     22  C23 89D A 501      15.741   9.533  15.304 -0.32 -0.53    +0.159 C 
+DOCKED: ATOM     23  N25 89D A 501      15.250  10.765  15.868 -0.16 +1.07    -0.328 N 
+DOCKED: ATOM     24  O27 89D A 501      16.997  11.989  14.981 -0.40 +1.05    -0.268 OA
+DOCKED: ATOM     25  O30 89D A 501      13.559  12.251  19.969 -0.17 +0.79    -0.306 OA
+DOCKED: ATOM     26  O31 89D A 501      13.674  14.200  17.510 -0.18 +0.97    -0.350 OA
+DOCKED: ATOM     27  F32 89D A 501      13.459  12.460  25.455 -0.06 +0.54    -0.206 F 
+DOCKED: ATOM     28  F33 89D A 501      13.343   9.997  21.478 -0.03 +0.51    -0.203 F 
+DOCKED: ENDROOT
+DOCKED: BRANCH   5  29
+DOCKED: ATOM     29  N26 89D A 501       8.771  10.921  17.311 -0.12 +0.78    -0.285 N 
+DOCKED: ATOM     30  H26 89D A 501       8.024  10.714  17.985 +0.10 -0.45    +0.178 HD
+DOCKED: BRANCH  29  31
+DOCKED: ATOM     31  S34 89D A 501       8.624  10.252  15.734 -0.45 -0.74    +0.230 S 
+DOCKED: ATOM     32  O29 89D A 501       9.834  10.448  14.960 -0.45 +0.74    -0.206 OA
+DOCKED: ATOM     33  O28 89D A 501       7.345  10.669  15.193 -0.32 +0.64    -0.206 OA
+DOCKED: BRANCH  31  34
+DOCKED: ATOM     34  C24 89D A 501       8.470   8.521  16.095 -0.44 -0.55    +0.159 C 
+DOCKED: ATOM     35  C22 89D A 501       7.348   8.247  17.068 -0.48 -0.07    +0.023 C 
+DOCKED: ENDBRANCH  31  34
+DOCKED: ENDBRANCH  29  31
+DOCKED: ENDBRANCH   5  29
+DOCKED: TORSDOF 3
+DOCKED: TER
+DOCKED: ENDMDL
+________________________________________________________________________________
+
+
+	BEGINNING GENETIC ALGORITHM DOCKING 3 of 10
+Run: 3 Seed: 866535025 1219878114 [ Run 3 of 10 GA/GALS ]
+Beginning LAMARCKIAN GENETIC ALGORITHM (LGA), with a maximum of 2500000 energy evaluations.
+
+Final-Value: -9.503
+
+
+	FINAL GENETIC ALGORITHM DOCKED STATE
+	_______________________________________________
+
+
+Detailed state:  trans 12.587 12.139 18.535 quatxyzw 0.008232 0.017277 -0.035497 0.999187 center 12.218 12.346 19.473 ntor 3 -18.4028 14.7006 42.2732
+State:	 12.587  12.139  18.535   0.204  0.428 -0.880  4.622    -18.40   14.70   42.27
+
+DOCKED: MODEL        3
+DOCKED: USER    Run = 3
+DOCKED: USER    DPF = grid_dock_files\5uex_dock.dpf
+DOCKED: USER  
+DOCKED: USER    Estimated Free Energy of Binding    =   -8.23 kcal/mol  [=(1)+(2)+(3)-(4)]
+DOCKED: USER    Estimated Inhibition Constant, Ki   =  934.22 nM (nanomolar)  [Temperature = 298.15 K]
+DOCKED: USER    
+DOCKED: USER    (1) Final Intermolecular Energy     =   -9.12 kcal/mol
+DOCKED: USER        vdW + Hbond + desolv Energy     =   -9.36 kcal/mol
+DOCKED: USER        Electrostatic Energy            =   +0.24 kcal/mol
+DOCKED: USER    (2) Final Total Internal Energy     =   -0.38 kcal/mol
+DOCKED: USER    (3) Torsional Free Energy           =   +0.89 kcal/mol
+DOCKED: USER    (4) Unbound System's Energy  [=(2)] =   -0.38 kcal/mol
+DOCKED: USER    
+DOCKED: USER    
+DOCKED: USER    NEWDPF move pdbqt_files/5uex_ligand.pdbqt
+DOCKED: USER    NEWDPF about 12.218000 12.346000 19.473000
+DOCKED: USER    NEWDPF tran0 12.586610 12.138643 18.534633
+DOCKED: USER    NEWDPF quaternion0 0.008232 0.017277 -0.035497 0.999187
+DOCKED: USER    NEWDPF axisangle0 0.204119 0.428423 -0.880221 4.622391
+DOCKED: USER    NEWDPF quat0 0.204119 0.428423 -0.880221 4.622391
+DOCKED: USER    NEWDPF dihe0 -18.40 14.70 42.27 
+DOCKED: USER  keepresnum = 1 
+DOCKED: USER  
+DOCKED: REMARK  3 active torsions:
+DOCKED: REMARK  status: ('A' for Active; 'I' for Inactive)
+DOCKED: REMARK    1  A    between atoms: C8_5  and  N26_26 
+DOCKED: REMARK    2  A    between atoms: C24_13  and  S34_34 
+DOCKED: REMARK    3  A    between atoms: N26_26  and  S34_34 
+DOCKED: USER                              x       y       z     vdW  Elec       q    Type
+DOCKED: USER                           _______ _______ _______ _____ _____    ______ ____
+DOCKED: ROOT
+DOCKED: ATOM      1  C4  89D A 501      13.593  13.636  23.340 -0.12 -0.12    +0.052 A 
+DOCKED: ATOM      2  C5  89D A 501      13.357  11.259  23.363 -0.34 -0.22    +0.087 A 
+DOCKED: ATOM      3  C6  89D A 501      12.455  11.883  17.825 -0.33 -0.04    +0.014 A 
+DOCKED: ATOM      4  C7  89D A 501      13.640  13.657  21.956 -0.21 +0.04    -0.018 A 
+DOCKED: ATOM      5  C8  89D A 501      10.101  11.447  17.743 -0.29 -0.12    +0.043 A 
+DOCKED: ATOM      6  C10 89D A 501      13.546  12.448  21.277 -0.20 -0.30    +0.121 A 
+DOCKED: ATOM      7  C13 89D A 501      15.519  13.351  16.177 -0.38 -0.38    +0.112 A 
+DOCKED: ATOM      8  C15 89D A 501      13.697  12.032  17.077 -0.32 -0.08    +0.026 A 
+DOCKED: ATOM      9  C17 89D A 501      16.083  12.115  15.590 -0.25 -0.90    +0.249 A 
+DOCKED: ATOM     10  C20 89D A 501      13.826  16.075  19.103 -0.35 -0.07    +0.027 C 
+DOCKED: ATOM     11  C21 89D A 501      14.655  15.087  18.310 -0.30 -0.51    +0.175 C 
+DOCKED: ATOM     12  C1  89D A 501      10.037  11.634  19.105 -0.29 -0.08    +0.033 A 
+DOCKED: ATOM     13  C2  89D A 501      11.171  11.933  19.829 -0.29 -0.10    +0.040 A 
+DOCKED: ATOM     14  C3  89D A 501      11.319  11.571  17.105 -0.33 -0.13    +0.045 A 
+DOCKED: ATOM     15  C9  89D A 501      12.400  12.054  19.199 -0.26 -0.22    +0.087 A 
+DOCKED: ATOM     16  C11 89D A 501      13.433  12.457  24.031 -0.21 -0.29    +0.120 A 
+DOCKED: ATOM     17  C12 89D A 501      13.426  11.266  21.988 -0.22 -0.38    +0.153 A 
+DOCKED: ATOM     18  C14 89D A 501      14.200  10.932  16.520 -0.30 -0.34    +0.108 A 
+DOCKED: ATOM     19  C16 89D A 501      14.387  13.275  16.889 -0.33 -0.26    +0.086 A 
+DOCKED: ATOM     20  C18 89D A 501      13.855  15.008  21.333 -0.23 -0.10    +0.042 C 
+DOCKED: ATOM     21  C19 89D A 501      12.978  15.404  20.166 -0.27 -0.02    +0.007 C 
+DOCKED: ATOM     22  C23 89D A 501      15.854   9.731  15.216 -0.36 -0.54    +0.159 C 
+DOCKED: ATOM     23  N25 89D A 501      15.358  10.956  15.792 -0.16 +1.08    -0.328 N 
+DOCKED: ATOM     24  O27 89D A 501      17.129  12.187  14.965 -0.42 +1.08    -0.268 OA
+DOCKED: ATOM     25  O30 89D A 501      13.589  12.376  19.884 -0.17 +0.79    -0.306 OA
+DOCKED: ATOM     26  O31 89D A 501      13.766  14.369  17.465 -0.19 +0.98    -0.350 OA
+DOCKED: ATOM     27  F32 89D A 501      13.376  12.484  25.370 -0.06 +0.53    -0.206 F 
+DOCKED: ATOM     28  F33 89D A 501      13.331  10.096  21.347 -0.04 +0.51    -0.203 F 
+DOCKED: ENDROOT
+DOCKED: BRANCH   5  29
+DOCKED: ATOM     29  N26 89D A 501       8.851  11.122  17.104 -0.12 +0.79    -0.285 N 
+DOCKED: ATOM     30  H26 89D A 501       8.041  11.132  17.737 +0.10 -0.45    +0.178 HD
+DOCKED: BRANCH  29  31
+DOCKED: ATOM     31  S34 89D A 501       8.730  10.171  15.677 -0.45 -0.75    +0.230 S 
+DOCKED: ATOM     32  O29 89D A 501       9.980  10.155  14.943 -0.45 +0.77    -0.206 OA
+DOCKED: ATOM     33  O28 89D A 501       7.501  10.539  15.001 -0.35 +0.66    -0.206 OA
+DOCKED: BRANCH  31  34
+DOCKED: ATOM     34  C24 89D A 501       8.460   8.551  16.350 -0.43 -0.54    +0.159 C 
+DOCKED: ATOM     35  C22 89D A 501       7.719   8.605  17.665 -0.44 -0.07    +0.023 C 
+DOCKED: ENDBRANCH  31  34
+DOCKED: ENDBRANCH  29  31
+DOCKED: ENDBRANCH   5  29
+DOCKED: TORSDOF 3
+DOCKED: TER
+DOCKED: ENDMDL
+________________________________________________________________________________
+
+
+	BEGINNING GENETIC ALGORITHM DOCKING 4 of 10
+Run: 4 Seed: 448069627 419037830 [ Run 4 of 10 GA/GALS ]
+Beginning LAMARCKIAN GENETIC ALGORITHM (LGA), with a maximum of 2500000 energy evaluations.
+
+Final-Value: -9.501
+
+
+	FINAL GENETIC ALGORITHM DOCKED STATE
+	_______________________________________________
+
+
+Detailed state:  trans 12.526 11.995 18.627 quatxyzw -0.015828 -0.007436 0.039465 -0.999068 center 12.218 12.346 19.473 ntor 3 6.0538 17.9476 29.6891
+State:	 12.526  11.995  18.627  -0.367 -0.172  0.914 -4.948      6.05   17.95   29.69
+
+DOCKED: MODEL        4
+DOCKED: USER    Run = 4
+DOCKED: USER    DPF = grid_dock_files\5uex_dock.dpf
+DOCKED: USER  
+DOCKED: USER    Estimated Free Energy of Binding    =   -8.27 kcal/mol  [=(1)+(2)+(3)-(4)]
+DOCKED: USER    Estimated Inhibition Constant, Ki   =  871.20 nM (nanomolar)  [Temperature = 298.15 K]
+DOCKED: USER    
+DOCKED: USER    (1) Final Intermolecular Energy     =   -9.16 kcal/mol
+DOCKED: USER        vdW + Hbond + desolv Energy     =   -9.35 kcal/mol
+DOCKED: USER        Electrostatic Energy            =   +0.18 kcal/mol
+DOCKED: USER    (2) Final Total Internal Energy     =   -0.34 kcal/mol
+DOCKED: USER    (3) Torsional Free Energy           =   +0.89 kcal/mol
+DOCKED: USER    (4) Unbound System's Energy  [=(2)] =   -0.34 kcal/mol
+DOCKED: USER    
+DOCKED: USER    
+DOCKED: USER    NEWDPF move pdbqt_files/5uex_ligand.pdbqt
+DOCKED: USER    NEWDPF about 12.218000 12.346000 19.473000
+DOCKED: USER    NEWDPF tran0 12.526424 11.995261 18.627178
+DOCKED: USER    NEWDPF quaternion0 -0.015828 -0.007436 0.039465 -0.999068
+DOCKED: USER    NEWDPF axisangle0 -0.366680 -0.172254 0.914262 -4.948014
+DOCKED: USER    NEWDPF quat0 -0.366680 -0.172254 0.914262 -4.948014
+DOCKED: USER    NEWDPF dihe0 6.05 17.95 29.69 
+DOCKED: USER  keepresnum = 1 
+DOCKED: USER  
+DOCKED: REMARK  3 active torsions:
+DOCKED: REMARK  status: ('A' for Active; 'I' for Inactive)
+DOCKED: REMARK    1  A    between atoms: C8_5  and  N26_26 
+DOCKED: REMARK    2  A    between atoms: C24_13  and  S34_34 
+DOCKED: REMARK    3  A    between atoms: N26_26  and  S34_34 
+DOCKED: USER                              x       y       z     vdW  Elec       q    Type
+DOCKED: USER                           _______ _______ _______ _____ _____    ______ ____
+DOCKED: ROOT
+DOCKED: ATOM      1  C4  89D A 501      13.613  13.577  23.388 -0.13 -0.12    +0.052 A 
+DOCKED: ATOM      2  C5  89D A 501      13.396  11.199  23.453 -0.35 -0.22    +0.087 A 
+DOCKED: ATOM      3  C6  89D A 501      12.384  11.727  17.925 -0.33 -0.04    +0.014 A 
+DOCKED: ATOM      4  C7  89D A 501      13.633  13.576  22.003 -0.22 +0.04    -0.018 A 
+DOCKED: ATOM      5  C8  89D A 501      10.031  11.273  17.895 -0.30 -0.12    +0.043 A 
+DOCKED: ATOM      6  C10 89D A 501      13.535  12.355  21.345 -0.20 -0.30    +0.121 A 
+DOCKED: ATOM      7  C13 89D A 501      15.404  13.191  16.195 -0.36 -0.38    +0.112 A 
+DOCKED: ATOM      8  C15 89D A 501      13.610  11.873  17.151 -0.33 -0.08    +0.026 A 
+DOCKED: ATOM      9  C17 89D A 501      15.966  11.950  15.616 -0.25 -0.88    +0.249 A 
+DOCKED: ATOM     10  C20 89D A 501      13.746  15.949  19.108 -0.35 -0.07    +0.027 C 
+DOCKED: ATOM     11  C21 89D A 501      14.567  14.954  18.316 -0.31 -0.51    +0.175 C 
+DOCKED: ATOM     12  C1  89D A 501       9.992  11.481  19.255 -0.30 -0.08    +0.033 A 
+DOCKED: ATOM     13  C2  89D A 501      11.137  11.800  19.952 -0.30 -0.10    +0.040 A 
+DOCKED: ATOM     14  C3  89D A 501      11.236  11.396  17.231 -0.32 -0.13    +0.045 A 
+DOCKED: ATOM     15  C9  89D A 501      12.353  11.920  19.296 -0.26 -0.22    +0.087 A 
+DOCKED: ATOM     16  C11 89D A 501      13.475  12.409  24.100 -0.21 -0.30    +0.120 A 
+DOCKED: ATOM     17  C12 89D A 501      13.439  11.184  22.077 -0.23 -0.38    +0.153 A 
+DOCKED: ATOM     18  C14 89D A 501      14.110  10.768  16.602 -0.31 -0.34    +0.108 A 
+DOCKED: ATOM     19  C16 89D A 501      14.286  13.118  16.930 -0.31 -0.26    +0.086 A 
+DOCKED: ATOM     20  C18 89D A 501      13.826  14.919  21.354 -0.23 -0.10    +0.042 C 
+DOCKED: ATOM     21  C19 89D A 501      12.924  15.289  20.198 -0.26 -0.02    +0.007 C 
+DOCKED: ATOM     22  C23 89D A 501      15.748   9.559  15.285 -0.33 -0.53    +0.159 C 
+DOCKED: ATOM     23  N25 89D A 501      15.253  10.789  15.851 -0.16 +1.07    -0.328 N 
+DOCKED: ATOM     24  O27 89D A 501      16.999  12.019  14.970 -0.40 +1.05    -0.268 OA
+DOCKED: ATOM     25  O30 89D A 501      13.553  12.262  19.953 -0.17 +0.79    -0.306 OA
+DOCKED: ATOM     26  O31 89D A 501      13.668  14.217  17.500 -0.18 +0.97    -0.350 OA
+DOCKED: ATOM     27  F32 89D A 501      13.444  12.457  25.440 -0.06 +0.54    -0.206 F 
+DOCKED: ATOM     28  F33 89D A 501      13.340  10.003  21.457 -0.02 +0.51    -0.203 F 
+DOCKED: ENDROOT
+DOCKED: BRANCH   5  29
+DOCKED: ATOM     29  N26 89D A 501       8.772  10.928  17.285 -0.12 +0.78    -0.285 N 
+DOCKED: ATOM     30  H26 89D A 501       8.017  10.742  17.958 +0.10 -0.45    +0.178 HD
+DOCKED: BRANCH  29  31
+DOCKED: ATOM     31  S34 89D A 501       8.631  10.227  15.722 -0.45 -0.74    +0.230 S 
+DOCKED: ATOM     32  O29 89D A 501       9.844  10.405  14.949 -0.45 +0.75    -0.206 OA
+DOCKED: ATOM     33  O28 89D A 501       7.355  10.634  15.166 -0.33 +0.64    -0.206 OA
+DOCKED: BRANCH  31  34
+DOCKED: ATOM     34  C24 89D A 501       8.472   8.504  16.118 -0.44 -0.55    +0.159 C 
+DOCKED: ATOM     35  C22 89D A 501       7.333   8.249  17.076 -0.48 -0.07    +0.023 C 
+DOCKED: ENDBRANCH  31  34
+DOCKED: ENDBRANCH  29  31
+DOCKED: ENDBRANCH   5  29
+DOCKED: TORSDOF 3
+DOCKED: TER
+DOCKED: ENDMDL
+________________________________________________________________________________
+
+
+	BEGINNING GENETIC ALGORITHM DOCKING 5 of 10
+Run: 5 Seed: 1937918687 473087744 [ Run 5 of 10 GA/GALS ]
+Beginning LAMARCKIAN GENETIC ALGORITHM (LGA), with a maximum of 2500000 energy evaluations.
+
+Final-Value: -9.507
+
+
+	FINAL GENETIC ALGORITHM DOCKED STATE
+	_______________________________________________
+
+
+Detailed state:  trans 12.547 12.149 18.537 quatxyzw 0.008049 0.018815 -0.029487 0.999356 center 12.218 12.346 19.473 ntor 3 -16.0563 14.1642 38.1027
+State:	 12.547  12.149  18.537   0.224  0.524 -0.822  4.114    -16.06   14.16   38.10
+
+DOCKED: MODEL        5
+DOCKED: USER    Run = 5
+DOCKED: USER    DPF = grid_dock_files\5uex_dock.dpf
+DOCKED: USER  
+DOCKED: USER    Estimated Free Energy of Binding    =   -8.24 kcal/mol  [=(1)+(2)+(3)-(4)]
+DOCKED: USER    Estimated Inhibition Constant, Ki   =  917.33 nM (nanomolar)  [Temperature = 298.15 K]
+DOCKED: USER    
+DOCKED: USER    (1) Final Intermolecular Energy     =   -9.13 kcal/mol
+DOCKED: USER        vdW + Hbond + desolv Energy     =   -9.36 kcal/mol
+DOCKED: USER        Electrostatic Energy            =   +0.22 kcal/mol
+DOCKED: USER    (2) Final Total Internal Energy     =   -0.38 kcal/mol
+DOCKED: USER    (3) Torsional Free Energy           =   +0.89 kcal/mol
+DOCKED: USER    (4) Unbound System's Energy  [=(2)] =   -0.38 kcal/mol
+DOCKED: USER    
+DOCKED: USER    
+DOCKED: USER    NEWDPF move pdbqt_files/5uex_ligand.pdbqt
+DOCKED: USER    NEWDPF about 12.218000 12.346000 19.473000
+DOCKED: USER    NEWDPF tran0 12.547216 12.149444 18.536598
+DOCKED: USER    NEWDPF quaternion0 0.008049 0.018815 -0.029487 0.999356
+DOCKED: USER    NEWDPF axisangle0 0.224260 0.524200 -0.821536 4.113804
+DOCKED: USER    NEWDPF quat0 0.224260 0.524200 -0.821536 4.113804
+DOCKED: USER    NEWDPF dihe0 -16.06 14.16 38.10 
+DOCKED: USER  keepresnum = 1 
+DOCKED: USER  
+DOCKED: REMARK  3 active torsions:
+DOCKED: REMARK  status: ('A' for Active; 'I' for Inactive)
+DOCKED: REMARK    1  A    between atoms: C8_5  and  N26_26 
+DOCKED: REMARK    2  A    between atoms: C24_13  and  S34_34 
+DOCKED: REMARK    3  A    between atoms: N26_26  and  S34_34 
+DOCKED: USER                              x       y       z     vdW  Elec       q    Type
+DOCKED: USER                           _______ _______ _______ _____ _____    ______ ____
+DOCKED: ROOT
+DOCKED: ATOM      1  C4  89D A 501      13.556  13.631  23.346 -0.13 -0.12    +0.052 A 
+DOCKED: ATOM      2  C5  89D A 501      13.292  11.257  23.366 -0.34 -0.22    +0.087 A 
+DOCKED: ATOM      3  C6  89D A 501      12.415  11.896  17.827 -0.33 -0.04    +0.014 A 
+DOCKED: ATOM      4  C7  89D A 501      13.608  13.652  21.962 -0.21 +0.04    -0.018 A 
+DOCKED: ATOM      5  C8  89D A 501      10.056  11.488  17.737 -0.29 -0.12    +0.043 A 
+DOCKED: ATOM      6  C10 89D A 501      13.501  12.445  21.282 -0.20 -0.30    +0.121 A 
+DOCKED: ATOM      7  C13 89D A 501      15.502  13.329  16.189 -0.37 -0.38    +0.112 A 
+DOCKED: ATOM      8  C15 89D A 501      13.661  12.031  17.083 -0.32 -0.08    +0.026 A 
+DOCKED: ATOM      9  C17 89D A 501      16.053  12.085  15.603 -0.25 -0.90    +0.249 A 
+DOCKED: ATOM     10  C20 89D A 501      13.832  16.070  19.111 -0.35 -0.07    +0.027 C 
+DOCKED: ATOM     11  C21 89D A 501      14.651  15.073  18.321 -0.30 -0.51    +0.175 C 
+DOCKED: ATOM     12  C1  89D A 501       9.990  11.675  19.099 -0.29 -0.08    +0.033 A 
+DOCKED: ATOM     13  C2  89D A 501      11.125  11.960  19.826 -0.29 -0.10    +0.040 A 
+DOCKED: ATOM     14  C3  89D A 501      11.277  11.598  17.102 -0.33 -0.13    +0.045 A 
+DOCKED: ATOM     15  C9  89D A 501      12.357  12.067  19.200 -0.26 -0.22    +0.087 A 
+DOCKED: ATOM     16  C11 89D A 501      13.380  12.454  24.035 -0.20 -0.29    +0.120 A 
+DOCKED: ATOM     17  C12 89D A 501      13.365  11.264  21.992 -0.24 -0.38    +0.153 A 
+DOCKED: ATOM     18  C14 89D A 501      14.152  10.925  16.526 -0.30 -0.33    +0.108 A 
+DOCKED: ATOM     19  C16 89D A 501      14.366  13.265  16.898 -0.32 -0.26    +0.086 A 
+DOCKED: ATOM     20  C18 89D A 501      13.841  15.002  21.341 -0.23 -0.10    +0.042 C 
+DOCKED: ATOM     21  C19 89D A 501      12.972  15.409  20.171 -0.27 -0.02    +0.007 C 
+DOCKED: ATOM     22  C23 89D A 501      15.796   9.705  15.226 -0.36 -0.54    +0.159 C 
+DOCKED: ATOM     23  N25 89D A 501      15.312  10.935  15.802 -0.16 +1.08    -0.328 N 
+DOCKED: ATOM     24  O27 89D A 501      17.101  12.145  14.981 -0.41 +1.07    -0.268 OA
+DOCKED: ATOM     25  O30 89D A 501      13.548  12.374  19.889 -0.17 +0.79    -0.306 OA
+DOCKED: ATOM     26  O31 89D A 501      13.756  14.366  17.473 -0.19 +0.98    -0.350 OA
+DOCKED: ATOM     27  F32 89D A 501      13.320  12.481  25.375 -0.05 +0.53    -0.206 F 
+DOCKED: ATOM     28  F33 89D A 501      13.258  10.096  21.350 -0.04 +0.51    -0.203 F 
+DOCKED: ENDROOT
+DOCKED: BRANCH   5  29
+DOCKED: ATOM     29  N26 89D A 501       8.804  11.178  17.093 -0.12 +0.79    -0.285 N 
+DOCKED: ATOM     30  H26 89D A 501       8.003  11.131  17.736 +0.10 -0.45    +0.178 HD
+DOCKED: BRANCH  29  31
+DOCKED: ATOM     31  S34 89D A 501       8.683  10.318  15.610 -0.45 -0.75    +0.230 S 
+DOCKED: ATOM     32  O29 89D A 501       9.919  10.385  14.856 -0.44 +0.76    -0.206 OA
+DOCKED: ATOM     33  O28 89D A 501       7.432  10.693  14.980 -0.34 +0.67    -0.206 OA
+DOCKED: BRANCH  31  34
+DOCKED: ATOM     34  C24 89D A 501       8.470   8.651  16.181 -0.44 -0.54    +0.159 C 
+DOCKED: ATOM     35  C22 89D A 501       7.703   8.596  17.481 -0.46 -0.07    +0.023 C 
+DOCKED: ENDBRANCH  31  34
+DOCKED: ENDBRANCH  29  31
+DOCKED: ENDBRANCH   5  29
+DOCKED: TORSDOF 3
+DOCKED: TER
+DOCKED: ENDMDL
+________________________________________________________________________________
+
+
+	BEGINNING GENETIC ALGORITHM DOCKING 6 of 10
+Run: 6 Seed: 2097677917 1305260040 [ Run 6 of 10 GA/GALS ]
+Beginning LAMARCKIAN GENETIC ALGORITHM (LGA), with a maximum of 2500000 energy evaluations.
+
+Final-Value: -9.496
+
+
+	FINAL GENETIC ALGORITHM DOCKED STATE
+	_______________________________________________
+
+
+Detailed state:  trans 12.524 11.990 18.658 quatxyzw 0.020042 0.010746 -0.045256 0.998717 center 12.218 12.346 19.473 ntor 3 4.1576 20.8184 27.6552
+State:	 12.524  11.990  18.658   0.396  0.212 -0.894  5.806      4.16   20.82   27.66
+
+DOCKED: MODEL        6
+DOCKED: USER    Run = 6
+DOCKED: USER    DPF = grid_dock_files\5uex_dock.dpf
+DOCKED: USER  
+DOCKED: USER    Estimated Free Energy of Binding    =   -8.27 kcal/mol  [=(1)+(2)+(3)-(4)]
+DOCKED: USER    Estimated Inhibition Constant, Ki   =  870.34 nM (nanomolar)  [Temperature = 298.15 K]
+DOCKED: USER    
+DOCKED: USER    (1) Final Intermolecular Energy     =   -9.16 kcal/mol
+DOCKED: USER        vdW + Hbond + desolv Energy     =   -9.35 kcal/mol
+DOCKED: USER        Electrostatic Energy            =   +0.19 kcal/mol
+DOCKED: USER    (2) Final Total Internal Energy     =   -0.33 kcal/mol
+DOCKED: USER    (3) Torsional Free Energy           =   +0.89 kcal/mol
+DOCKED: USER    (4) Unbound System's Energy  [=(2)] =   -0.33 kcal/mol
+DOCKED: USER    
+DOCKED: USER    
+DOCKED: USER    NEWDPF move pdbqt_files/5uex_ligand.pdbqt
+DOCKED: USER    NEWDPF about 12.218000 12.346000 19.473000
+DOCKED: USER    NEWDPF tran0 12.524383 11.989984 18.657841
+DOCKED: USER    NEWDPF quaternion0 0.020042 0.010746 -0.045256 0.998717
+DOCKED: USER    NEWDPF axisangle0 0.395713 0.212164 -0.893531 5.806370
+DOCKED: USER    NEWDPF quat0 0.395713 0.212164 -0.893531 5.806370
+DOCKED: USER    NEWDPF dihe0 4.16 20.82 27.66 
+DOCKED: USER  keepresnum = 1 
+DOCKED: USER  
+DOCKED: REMARK  3 active torsions:
+DOCKED: REMARK  status: ('A' for Active; 'I' for Inactive)
+DOCKED: REMARK    1  A    between atoms: C8_5  and  N26_26 
+DOCKED: REMARK    2  A    between atoms: C24_13  and  S34_34 
+DOCKED: REMARK    3  A    between atoms: N26_26  and  S34_34 
+DOCKED: USER                              x       y       z     vdW  Elec       q    Type
+DOCKED: USER                           _______ _______ _______ _____ _____    ______ ____
+DOCKED: ROOT
+DOCKED: ATOM      1  C4  89D A 501      13.560  13.623  23.412 -0.13 -0.12    +0.052 A 
+DOCKED: ATOM      2  C5  89D A 501      13.370  11.244  23.496 -0.35 -0.22    +0.087 A 
+DOCKED: ATOM      3  C6  89D A 501      12.390  11.715  17.957 -0.33 -0.04    +0.014 A 
+DOCKED: ATOM      4  C7  89D A 501      13.590  13.611  22.028 -0.21 +0.04    -0.018 A 
+DOCKED: ATOM      5  C8  89D A 501      10.043  11.233  17.915 -0.30 -0.12    +0.043 A 
+DOCKED: ATOM      6  C10 89D A 501      13.510  12.384  21.379 -0.21 -0.30    +0.121 A 
+DOCKED: ATOM      7  C13 89D A 501      15.405  13.200  16.235 -0.36 -0.38    +0.112 A 
+DOCKED: ATOM      8  C15 89D A 501      13.619  11.869  17.190 -0.33 -0.08    +0.026 A 
+DOCKED: ATOM      9  C17 89D A 501      15.985  11.960  15.670 -0.25 -0.89    +0.249 A 
+DOCKED: ATOM     10  C20 89D A 501      13.695  15.961  19.114 -0.35 -0.07    +0.027 C 
+DOCKED: ATOM     11  C21 89D A 501      14.533  14.970  18.336 -0.31 -0.50    +0.175 C 
+DOCKED: ATOM     12  C1  89D A 501       9.992  11.452  19.273 -0.30 -0.08    +0.033 A 
+DOCKED: ATOM     13  C2  89D A 501      11.129  11.789  19.975 -0.30 -0.10    +0.040 A 
+DOCKED: ATOM     14  C3  89D A 501      11.250  11.364  17.258 -0.31 -0.13    +0.045 A 
+DOCKED: ATOM     15  C9  89D A 501      12.347  11.918  19.326 -0.26 -0.22    +0.087 A 
+DOCKED: ATOM     16  C11 89D A 501      13.431  12.459  24.133 -0.20 -0.29    +0.120 A 
+DOCKED: ATOM     17  C12 89D A 501      13.422  11.218  22.120 -0.24 -0.38    +0.153 A 
+DOCKED: ATOM     18  C14 89D A 501      14.136  10.765  16.653 -0.32 -0.33    +0.108 A 
+DOCKED: ATOM     19  C16 89D A 501      14.283  13.119  16.963 -0.31 -0.26    +0.086 A 
+DOCKED: ATOM     20  C18 89D A 501      13.772  14.951  21.369 -0.23 -0.10    +0.042 C 
+DOCKED: ATOM     21  C19 89D A 501      12.873  15.301  20.204 -0.25 -0.02    +0.007 C 
+DOCKED: ATOM     22  C23 89D A 501      15.797   9.564  15.357 -0.32 -0.53    +0.159 C 
+DOCKED: ATOM     23  N25 89D A 501      15.284  10.793  15.910 -0.17 +1.07    -0.328 N 
+DOCKED: ATOM     24  O27 89D A 501      17.021  12.036  15.031 -0.40 +1.06    -0.268 OA
+DOCKED: ATOM     25  O30 89D A 501      13.538  12.279  19.989 -0.17 +0.78    -0.306 OA
+DOCKED: ATOM     26  O31 89D A 501      13.647  14.215  17.520 -0.18 +0.97    -0.350 OA
+DOCKED: ATOM     27  F32 89D A 501      13.390  12.518  25.472 -0.06 +0.53    -0.206 F 
+DOCKED: ATOM     28  F33 89D A 501      13.342  10.031  21.509 -0.05 +0.51    -0.203 F 
+DOCKED: ENDROOT
+DOCKED: BRANCH   5  29
+DOCKED: ATOM     29  N26 89D A 501       8.792  10.868  17.299 -0.13 +0.78    -0.285 N 
+DOCKED: ATOM     30  H26 89D A 501       8.044  10.647  17.969 +0.10 -0.45    +0.178 HD
+DOCKED: BRANCH  29  31
+DOCKED: ATOM     31  S34 89D A 501       8.666  10.199  15.721 -0.45 -0.75    +0.230 S 
+DOCKED: ATOM     32  O29 89D A 501       9.896  10.368  14.973 -0.45 +0.75    -0.206 OA
+DOCKED: ATOM     33  O28 89D A 501       7.408  10.640  15.150 -0.33 +0.65    -0.206 OA
+DOCKED: BRANCH  31  34
+DOCKED: ATOM     34  C24 89D A 501       8.468   8.472  16.081 -0.43 -0.55    +0.159 C 
+DOCKED: ATOM     35  C22 89D A 501       7.336   8.226  17.050 -0.48 -0.07    +0.023 C 
+DOCKED: ENDBRANCH  31  34
+DOCKED: ENDBRANCH  29  31
+DOCKED: ENDBRANCH   5  29
+DOCKED: TORSDOF 3
+DOCKED: TER
+DOCKED: ENDMDL
+________________________________________________________________________________
+
+
+	BEGINNING GENETIC ALGORITHM DOCKING 7 of 10
+Run: 7 Seed: 757373154 242758739 [ Run 7 of 10 GA/GALS ]
+Beginning LAMARCKIAN GENETIC ALGORITHM (LGA), with a maximum of 2500000 energy evaluations.
+
+Final-Value: -9.499
+
+
+	FINAL GENETIC ALGORITHM DOCKED STATE
+	_______________________________________________
+
+
+Detailed state:  trans 12.564 12.149 18.540 quatxyzw -0.008918 -0.015531 0.026387 -0.999491 center 12.218 12.346 19.473 ntor 3 -12.4481 14.1242 36.8016
+State:	 12.564  12.149  18.540  -0.280 -0.487  0.827 -3.655    -12.45   14.12   36.80
+
+DOCKED: MODEL        7
+DOCKED: USER    Run = 7
+DOCKED: USER    DPF = grid_dock_files\5uex_dock.dpf
+DOCKED: USER  
+DOCKED: USER    Estimated Free Energy of Binding    =   -8.23 kcal/mol  [=(1)+(2)+(3)-(4)]
+DOCKED: USER    Estimated Inhibition Constant, Ki   =  922.24 nM (nanomolar)  [Temperature = 298.15 K]
+DOCKED: USER    
+DOCKED: USER    (1) Final Intermolecular Energy     =   -9.13 kcal/mol
+DOCKED: USER        vdW + Hbond + desolv Energy     =   -9.34 kcal/mol
+DOCKED: USER        Electrostatic Energy            =   +0.21 kcal/mol
+DOCKED: USER    (2) Final Total Internal Energy     =   -0.37 kcal/mol
+DOCKED: USER    (3) Torsional Free Energy           =   +0.89 kcal/mol
+DOCKED: USER    (4) Unbound System's Energy  [=(2)] =   -0.37 kcal/mol
+DOCKED: USER    
+DOCKED: USER    
+DOCKED: USER    NEWDPF move pdbqt_files/5uex_ligand.pdbqt
+DOCKED: USER    NEWDPF about 12.218000 12.346000 19.473000
+DOCKED: USER    NEWDPF tran0 12.564359 12.148582 18.539827
+DOCKED: USER    NEWDPF quaternion0 -0.008918 -0.015531 0.026387 -0.999491
+DOCKED: USER    NEWDPF axisangle0 -0.279647 -0.487011 0.827417 -3.655058
+DOCKED: USER    NEWDPF quat0 -0.279647 -0.487011 0.827417 -3.655058
+DOCKED: USER    NEWDPF dihe0 -12.45 14.12 36.80 
+DOCKED: USER  keepresnum = 1 
+DOCKED: USER  
+DOCKED: REMARK  3 active torsions:
+DOCKED: REMARK  status: ('A' for Active; 'I' for Inactive)
+DOCKED: REMARK    1  A    between atoms: C8_5  and  N26_26 
+DOCKED: REMARK    2  A    between atoms: C24_13  and  S34_34 
+DOCKED: REMARK    3  A    between atoms: N26_26  and  S34_34 
+DOCKED: USER                              x       y       z     vdW  Elec       q    Type
+DOCKED: USER                           _______ _______ _______ _____ _____    ______ ____
+DOCKED: ROOT
+DOCKED: ATOM      1  C4  89D A 501      13.614  13.632  23.340 -0.12 -0.12    +0.052 A 
+DOCKED: ATOM      2  C5  89D A 501      13.334  11.261  23.366 -0.34 -0.22    +0.087 A 
+DOCKED: ATOM      3  C6  89D A 501      12.426  11.895  17.831 -0.33 -0.04    +0.014 A 
+DOCKED: ATOM      4  C7  89D A 501      13.656  13.651  21.956 -0.21 +0.04    -0.018 A 
+DOCKED: ATOM      5  C8  89D A 501      10.064  11.502  17.758 -0.29 -0.12    +0.043 A 
+DOCKED: ATOM      6  C10 89D A 501      13.538  12.443  21.278 -0.20 -0.30    +0.121 A 
+DOCKED: ATOM      7  C13 89D A 501      15.511  13.305  16.172 -0.37 -0.38    +0.112 A 
+DOCKED: ATOM      8  C15 89D A 501      13.668  12.020  17.079 -0.32 -0.08    +0.026 A 
+DOCKED: ATOM      9  C17 89D A 501      16.050  12.057  15.583 -0.25 -0.90    +0.249 A 
+DOCKED: ATOM     10  C20 89D A 501      13.877  16.062  19.099 -0.35 -0.07    +0.027 C 
+DOCKED: ATOM     11  C21 89D A 501      14.685  15.058  18.305 -0.30 -0.51    +0.175 C 
+DOCKED: ATOM     12  C1  89D A 501      10.008  11.692  19.119 -0.29 -0.08    +0.033 A 
+DOCKED: ATOM     13  C2  89D A 501      11.149  11.970  19.839 -0.29 -0.10    +0.040 A 
+DOCKED: ATOM     14  C3  89D A 501      11.281  11.603  17.115 -0.33 -0.13    +0.045 A 
+DOCKED: ATOM     15  C9  89D A 501      12.378  12.068  19.205 -0.26 -0.22    +0.087 A 
+DOCKED: ATOM     16  C11 89D A 501      13.435  12.458  24.033 -0.21 -0.29    +0.120 A 
+DOCKED: ATOM     17  C12 89D A 501      13.399  11.264  21.991 -0.23 -0.38    +0.153 A 
+DOCKED: ATOM     18  C14 89D A 501      14.149  10.910  16.522 -0.30 -0.34    +0.108 A 
+DOCKED: ATOM     19  C16 89D A 501      14.380  13.250  16.887 -0.32 -0.26    +0.086 A 
+DOCKED: ATOM     20  C18 89D A 501      13.894  14.998  21.330 -0.23 -0.10    +0.042 C 
+DOCKED: ATOM     21  C19 89D A 501      13.021  15.408  20.166 -0.27 -0.02    +0.007 C 
+DOCKED: ATOM     22  C23 89D A 501      15.776   9.678  15.213 -0.36 -0.54    +0.159 C 
+DOCKED: ATOM     23  N25 89D A 501      15.304  10.912  15.789 -0.16 +1.08    -0.328 N 
+DOCKED: ATOM     24  O27 89D A 501      17.095  12.109  14.955 -0.41 +1.07    -0.268 OA
+DOCKED: ATOM     25  O30 89D A 501      13.575  12.369  19.886 -0.17 +0.79    -0.306 OA
+DOCKED: ATOM     26  O31 89D A 501      13.781  14.356  17.464 -0.19 +0.98    -0.350 OA
+DOCKED: ATOM     27  F32 89D A 501      13.383  12.487  25.372 -0.06 +0.53    -0.206 F 
+DOCKED: ATOM     28  F33 89D A 501      13.281  10.095  21.352 -0.04 +0.51    -0.203 F 
+DOCKED: ENDROOT
+DOCKED: BRANCH   5  29
+DOCKED: ATOM     29  N26 89D A 501       8.806  11.198  17.123 -0.12 +0.78    -0.285 N 
+DOCKED: ATOM     30  H26 89D A 501       8.012  11.137  17.773 +0.10 -0.45    +0.178 HD
+DOCKED: BRANCH  29  31
+DOCKED: ATOM     31  S34 89D A 501       8.671  10.365  15.625 -0.44 -0.75    +0.230 S 
+DOCKED: ATOM     32  O29 89D A 501       9.898  10.450  14.858 -0.44 +0.75    -0.206 OA
+DOCKED: ATOM     33  O28 89D A 501       7.411  10.745  15.017 -0.33 +0.66    -0.206 OA
+DOCKED: BRANCH  31  34
+DOCKED: ATOM     34  C24 89D A 501       8.472   8.687  16.169 -0.44 -0.54    +0.159 C 
+DOCKED: ATOM     35  C22 89D A 501       7.646   8.598  17.430 -0.46 -0.07    +0.023 C 
+DOCKED: ENDBRANCH  31  34
+DOCKED: ENDBRANCH  29  31
+DOCKED: ENDBRANCH   5  29
+DOCKED: TORSDOF 3
+DOCKED: TER
+DOCKED: ENDMDL
+________________________________________________________________________________
+
+
+	BEGINNING GENETIC ALGORITHM DOCKING 8 of 10
+Run: 8 Seed: 729852896 964235090 [ Run 8 of 10 GA/GALS ]
+Beginning LAMARCKIAN GENETIC ALGORITHM (LGA), with a maximum of 2500000 energy evaluations.
+
+Final-Value: -9.508
+
+
+	FINAL GENETIC ALGORITHM DOCKED STATE
+	_______________________________________________
+
+
+Detailed state:  trans 12.553 12.145 18.536 quatxyzw 0.008987 0.018069 -0.027378 0.999421 center 12.218 12.346 19.473 ntor 3 -15.7473 14.5967 36.0064
+State:	 12.553  12.145  18.536   0.264  0.531 -0.805  3.898    -15.75   14.60   36.01
+
+DOCKED: MODEL        8
+DOCKED: USER    Run = 8
+DOCKED: USER    DPF = grid_dock_files\5uex_dock.dpf
+DOCKED: USER  
+DOCKED: USER    Estimated Free Energy of Binding    =   -8.24 kcal/mol  [=(1)+(2)+(3)-(4)]
+DOCKED: USER    Estimated Inhibition Constant, Ki   =  911.20 nM (nanomolar)  [Temperature = 298.15 K]
+DOCKED: USER    
+DOCKED: USER    (1) Final Intermolecular Energy     =   -9.14 kcal/mol
+DOCKED: USER        vdW + Hbond + desolv Energy     =   -9.35 kcal/mol
+DOCKED: USER        Electrostatic Energy            =   +0.21 kcal/mol
+DOCKED: USER    (2) Final Total Internal Energy     =   -0.37 kcal/mol
+DOCKED: USER    (3) Torsional Free Energy           =   +0.89 kcal/mol
+DOCKED: USER    (4) Unbound System's Energy  [=(2)] =   -0.37 kcal/mol
+DOCKED: USER    
+DOCKED: USER    
+DOCKED: USER    NEWDPF move pdbqt_files/5uex_ligand.pdbqt
+DOCKED: USER    NEWDPF about 12.218000 12.346000 19.473000
+DOCKED: USER    NEWDPF tran0 12.552722 12.144908 18.536193
+DOCKED: USER    NEWDPF quaternion0 0.008987 0.018069 -0.027378 0.999421
+DOCKED: USER    NEWDPF axisangle0 0.264241 0.531251 -0.804953 3.898165
+DOCKED: USER    NEWDPF quat0 0.264241 0.531251 -0.804953 3.898165
+DOCKED: USER    NEWDPF dihe0 -15.75 14.60 36.01 
+DOCKED: USER  keepresnum = 1 
+DOCKED: USER  
+DOCKED: REMARK  3 active torsions:
+DOCKED: REMARK  status: ('A' for Active; 'I' for Inactive)
+DOCKED: REMARK    1  A    between atoms: C8_5  and  N26_26 
+DOCKED: REMARK    2  A    between atoms: C24_13  and  S34_34 
+DOCKED: REMARK    3  A    between atoms: N26_26  and  S34_34 
+DOCKED: USER                              x       y       z     vdW  Elec       q    Type
+DOCKED: USER                           _______ _______ _______ _____ _____    ______ ____
+DOCKED: ROOT
+DOCKED: ATOM      1  C4  89D A 501      13.575  13.631  23.341 -0.13 -0.12    +0.052 A 
+DOCKED: ATOM      2  C5  89D A 501      13.300  11.259  23.367 -0.34 -0.22    +0.087 A 
+DOCKED: ATOM      3  C6  89D A 501      12.419  11.891  17.827 -0.33 -0.04    +0.014 A 
+DOCKED: ATOM      4  C7  89D A 501      13.624  13.650  21.958 -0.21 +0.04    -0.018 A 
+DOCKED: ATOM      5  C8  89D A 501      10.058  11.493  17.741 -0.29 -0.12    +0.043 A 
+DOCKED: ATOM      6  C10 89D A 501      13.512  12.442  21.279 -0.20 -0.30    +0.121 A 
+DOCKED: ATOM      7  C13 89D A 501      15.509  13.307  16.183 -0.37 -0.38    +0.112 A 
+DOCKED: ATOM      8  C15 89D A 501      13.664  12.019  17.081 -0.32 -0.08    +0.026 A 
+DOCKED: ATOM      9  C17 89D A 501      16.054  12.061  15.597 -0.25 -0.90    +0.249 A 
+DOCKED: ATOM     10  C20 89D A 501      13.855  16.061  19.102 -0.35 -0.07    +0.027 C 
+DOCKED: ATOM     11  C21 89D A 501      14.669  15.059  18.312 -0.30 -0.51    +0.175 C 
+DOCKED: ATOM     12  C1  89D A 501       9.994  11.683  19.103 -0.29 -0.08    +0.033 A 
+DOCKED: ATOM     13  C2  89D A 501      11.132  11.964  19.828 -0.29 -0.10    +0.040 A 
+DOCKED: ATOM     14  C3  89D A 501      11.278  11.597  17.105 -0.33 -0.13    +0.045 A 
+DOCKED: ATOM     15  C9  89D A 501      12.363  12.064  19.200 -0.26 -0.22    +0.087 A 
+DOCKED: ATOM     16  C11 89D A 501      13.395  12.456  24.033 -0.20 -0.29    +0.120 A 
+DOCKED: ATOM     17  C12 89D A 501      13.372  11.263  21.992 -0.24 -0.38    +0.153 A 
+DOCKED: ATOM     18  C14 89D A 501      14.150  10.910  16.526 -0.30 -0.33    +0.108 A 
+DOCKED: ATOM     19  C16 89D A 501      14.374  13.250  16.893 -0.32 -0.26    +0.086 A 
+DOCKED: ATOM     20  C18 89D A 501      13.863  14.997  21.333 -0.23 -0.10    +0.042 C 
+DOCKED: ATOM     21  C19 89D A 501      12.994  15.405  20.164 -0.27 -0.02    +0.007 C 
+DOCKED: ATOM     22  C23 89D A 501      15.786   9.681  15.226 -0.35 -0.54    +0.159 C 
+DOCKED: ATOM     23  N25 89D A 501      15.309  10.914  15.800 -0.16 +1.08    -0.328 N 
+DOCKED: ATOM     24  O27 89D A 501      17.101  12.115  14.974 -0.41 +1.07    -0.268 OA
+DOCKED: ATOM     25  O30 89D A 501      13.556  12.367  19.887 -0.17 +0.79    -0.306 OA
+DOCKED: ATOM     26  O31 89D A 501      13.770  14.355  17.466 -0.19 +0.98    -0.350 OA
+DOCKED: ATOM     27  F32 89D A 501      13.336  12.486  25.373 -0.05 +0.53    -0.206 F 
+DOCKED: ATOM     28  F33 89D A 501      13.259  10.093  21.352 -0.04 +0.51    -0.203 F 
+DOCKED: ENDROOT
+DOCKED: BRANCH   5  29
+DOCKED: ATOM     29  N26 89D A 501       8.804  11.187  17.100 -0.12 +0.78    -0.285 N 
+DOCKED: ATOM     30  H26 89D A 501       8.009  11.111  17.748 +0.10 -0.45    +0.178 HD
+DOCKED: BRANCH  29  31
+DOCKED: ATOM     31  S34 89D A 501       8.679  10.370  15.593 -0.44 -0.75    +0.230 S 
+DOCKED: ATOM     32  O29 89D A 501       9.910  10.466  14.834 -0.44 +0.75    -0.206 OA
+DOCKED: ATOM     33  O28 89D A 501       7.422  10.757  14.981 -0.34 +0.67    -0.206 OA
+DOCKED: BRANCH  31  34
+DOCKED: ATOM     34  C24 89D A 501       8.478   8.686  16.116 -0.43 -0.54    +0.159 C 
+DOCKED: ATOM     35  C22 89D A 501       7.712   8.588  17.414 -0.46 -0.07    +0.023 C 
+DOCKED: ENDBRANCH  31  34
+DOCKED: ENDBRANCH  29  31
+DOCKED: ENDBRANCH   5  29
+DOCKED: TORSDOF 3
+DOCKED: TER
+DOCKED: ENDMDL
+________________________________________________________________________________
+
+
+	BEGINNING GENETIC ALGORITHM DOCKING 9 of 10
+Run: 9 Seed: 955657791 1221597335 [ Run 9 of 10 GA/GALS ]
+Beginning LAMARCKIAN GENETIC ALGORITHM (LGA), with a maximum of 2500000 energy evaluations.
+
+Final-Value: -9.506
+
+
+	FINAL GENETIC ALGORITHM DOCKED STATE
+	_______________________________________________
+
+
+Detailed state:  trans 12.581 12.147 18.542 quatxyzw 0.007171 0.016923 -0.032332 0.999308 center 12.218 12.346 19.473 ntor 3 -17.6666 16.6491 36.3703
+State:	 12.581  12.147  18.542   0.193  0.455 -0.869  4.263    -17.67   16.65   36.37
+
+DOCKED: MODEL        9
+DOCKED: USER    Run = 9
+DOCKED: USER    DPF = grid_dock_files\5uex_dock.dpf
+DOCKED: USER  
+DOCKED: USER    Estimated Free Energy of Binding    =   -8.24 kcal/mol  [=(1)+(2)+(3)-(4)]
+DOCKED: USER    Estimated Inhibition Constant, Ki   =  906.11 nM (nanomolar)  [Temperature = 298.15 K]
+DOCKED: USER    
+DOCKED: USER    (1) Final Intermolecular Energy     =   -9.14 kcal/mol
+DOCKED: USER        vdW + Hbond + desolv Energy     =   -9.36 kcal/mol
+DOCKED: USER        Electrostatic Energy            =   +0.22 kcal/mol
+DOCKED: USER    (2) Final Total Internal Energy     =   -0.37 kcal/mol
+DOCKED: USER    (3) Torsional Free Energy           =   +0.89 kcal/mol
+DOCKED: USER    (4) Unbound System's Energy  [=(2)] =   -0.37 kcal/mol
+DOCKED: USER    
+DOCKED: USER    
+DOCKED: USER    NEWDPF move pdbqt_files/5uex_ligand.pdbqt
+DOCKED: USER    NEWDPF about 12.218000 12.346000 19.473000
+DOCKED: USER    NEWDPF tran0 12.581342 12.147184 18.542350
+DOCKED: USER    NEWDPF quaternion0 0.007171 0.016923 -0.032332 0.999308
+DOCKED: USER    NEWDPF axisangle0 0.192827 0.455023 -0.869351 4.262746
+DOCKED: USER    NEWDPF quat0 0.192827 0.455023 -0.869351 4.262746
+DOCKED: USER    NEWDPF dihe0 -17.67 16.65 36.37 
+DOCKED: USER  keepresnum = 1 
+DOCKED: USER  
+DOCKED: REMARK  3 active torsions:
+DOCKED: REMARK  status: ('A' for Active; 'I' for Inactive)
+DOCKED: REMARK    1  A    between atoms: C8_5  and  N26_26 
+DOCKED: REMARK    2  A    between atoms: C24_13  and  S34_34 
+DOCKED: REMARK    3  A    between atoms: N26_26  and  S34_34 
+DOCKED: USER                              x       y       z     vdW  Elec       q    Type
+DOCKED: USER                           _______ _______ _______ _____ _____    ______ ____
+DOCKED: ROOT
+DOCKED: ATOM      1  C4  89D A 501      13.601  13.627  23.350 -0.12 -0.12    +0.052 A 
+DOCKED: ATOM      2  C5  89D A 501      13.349  11.252  23.368 -0.35 -0.22    +0.087 A 
+DOCKED: ATOM      3  C6  89D A 501      12.448  11.894  17.833 -0.33 -0.04    +0.014 A 
+DOCKED: ATOM      4  C7  89D A 501      13.646  13.651  21.966 -0.21 +0.04    -0.018 A 
+DOCKED: ATOM      5  C8  89D A 501      10.091  11.473  17.751 -0.29 -0.12    +0.043 A 
+DOCKED: ATOM      6  C10 89D A 501      13.544  12.444  21.284 -0.20 -0.30    +0.121 A 
+DOCKED: ATOM      7  C13 89D A 501      15.520  13.347  16.186 -0.37 -0.38    +0.112 A 
+DOCKED: ATOM      8  C15 89D A 501      13.690  12.037  17.084 -0.32 -0.08    +0.026 A 
+DOCKED: ATOM      9  C17 89D A 501      16.076  12.108  15.595 -0.25 -0.90    +0.249 A 
+DOCKED: ATOM     10  C20 89D A 501      13.846  16.074  19.118 -0.35 -0.07    +0.027 C 
+DOCKED: ATOM     11  C21 89D A 501      14.668  15.083  18.323 -0.30 -0.51    +0.175 C 
+DOCKED: ATOM     12  C1  89D A 501      10.029  11.658  19.114 -0.29 -0.08    +0.033 A 
+DOCKED: ATOM     13  C2  89D A 501      11.165  11.948  19.837 -0.29 -0.10    +0.040 A 
+DOCKED: ATOM     14  C3  89D A 501      11.309  11.591  17.112 -0.33 -0.13    +0.045 A 
+DOCKED: ATOM     15  C9  89D A 501      12.394  12.062  19.207 -0.26 -0.22    +0.087 A 
+DOCKED: ATOM     16  C11 89D A 501      13.434  12.449  24.038 -0.21 -0.29    +0.120 A 
+DOCKED: ATOM     17  C12 89D A 501      13.418  11.261  21.993 -0.22 -0.38    +0.153 A 
+DOCKED: ATOM     18  C14 89D A 501      14.186  10.935  16.524 -0.30 -0.34    +0.108 A 
+DOCKED: ATOM     19  C16 89D A 501      14.388  13.276  16.898 -0.33 -0.26    +0.086 A 
+DOCKED: ATOM     20  C18 89D A 501      13.870  15.003  21.346 -0.23 -0.10    +0.042 C 
+DOCKED: ATOM     21  C19 89D A 501      12.994  15.406  20.180 -0.27 -0.02    +0.007 C 
+DOCKED: ATOM     22  C23 89D A 501      15.831   9.727  15.216 -0.36 -0.54    +0.159 C 
+DOCKED: ATOM     23  N25 89D A 501      15.343  10.953  15.795 -0.16 +1.08    -0.328 N 
+DOCKED: ATOM     24  O27 89D A 501      17.121  12.174  14.969 -0.42 +1.08    -0.268 OA
+DOCKED: ATOM     25  O30 89D A 501      13.586  12.375  19.892 -0.17 +0.79    -0.306 OA
+DOCKED: ATOM     26  O31 89D A 501      13.774  14.372  17.477 -0.19 +0.98    -0.350 OA
+DOCKED: ATOM     27  F32 89D A 501      13.378  12.473  25.378 -0.06 +0.53    -0.206 F 
+DOCKED: ATOM     28  F33 89D A 501      13.315  10.093  21.350 -0.04 +0.51    -0.203 F 
+DOCKED: ENDROOT
+DOCKED: BRANCH   5  29
+DOCKED: ATOM     29  N26 89D A 501       8.838  11.157  17.112 -0.12 +0.79    -0.285 N 
+DOCKED: ATOM     30  H26 89D A 501       8.045  11.076  17.761 +0.10 -0.45    +0.178 HD
+DOCKED: BRANCH  29  31
+DOCKED: ATOM     31  S34 89D A 501       8.717  10.336  15.607 -0.45 -0.75    +0.230 S 
+DOCKED: ATOM     32  O29 89D A 501       9.963  10.398  14.867 -0.44 +0.76    -0.206 OA
+DOCKED: ATOM     33  O28 89D A 501       7.481  10.750  14.973 -0.34 +0.67    -0.206 OA
+DOCKED: BRANCH  31  34
+DOCKED: ATOM     34  C24 89D A 501       8.468   8.660  16.134 -0.44 -0.54    +0.159 C 
+DOCKED: ATOM     35  C22 89D A 501       7.719   8.588  17.444 -0.46 -0.07    +0.023 C 
+DOCKED: ENDBRANCH  31  34
+DOCKED: ENDBRANCH  29  31
+DOCKED: ENDBRANCH   5  29
+DOCKED: TORSDOF 3
+DOCKED: TER
+DOCKED: ENDMDL
+________________________________________________________________________________
+
+
+	BEGINNING GENETIC ALGORITHM DOCKING 10 of 10
+Run: 10 Seed: 1518848995 284363820 [ Run 10 of 10 GA/GALS ]
+Beginning LAMARCKIAN GENETIC ALGORITHM (LGA), with a maximum of 2500000 energy evaluations.
+
+Final-Value: -9.501
+
+
+	FINAL GENETIC ALGORITHM DOCKED STATE
+	_______________________________________________
+
+
+Detailed state:  trans 12.537 11.983 18.644 quatxyzw -0.018510 -0.006015 0.035654 -0.999175 center 12.218 12.346 19.473 ntor 3 8.2780 17.1443 28.0665
+State:	 12.537  11.983  18.644  -0.456 -0.148  0.878 -4.656      8.28   17.14   28.07
+
+DOCKED: MODEL       10
+DOCKED: USER    Run = 10
+DOCKED: USER    DPF = grid_dock_files\5uex_dock.dpf
+DOCKED: USER  
+DOCKED: USER    Estimated Free Energy of Binding    =   -8.27 kcal/mol  [=(1)+(2)+(3)-(4)]
+DOCKED: USER    Estimated Inhibition Constant, Ki   =  870.50 nM (nanomolar)  [Temperature = 298.15 K]
+DOCKED: USER    
+DOCKED: USER    (1) Final Intermolecular Energy     =   -9.16 kcal/mol
+DOCKED: USER        vdW + Hbond + desolv Energy     =   -9.33 kcal/mol
+DOCKED: USER        Electrostatic Energy            =   +0.17 kcal/mol
+DOCKED: USER    (2) Final Total Internal Energy     =   -0.34 kcal/mol
+DOCKED: USER    (3) Torsional Free Energy           =   +0.89 kcal/mol
+DOCKED: USER    (4) Unbound System's Energy  [=(2)] =   -0.34 kcal/mol
+DOCKED: USER    
+DOCKED: USER    
+DOCKED: USER    NEWDPF move pdbqt_files/5uex_ligand.pdbqt
+DOCKED: USER    NEWDPF about 12.218000 12.346000 19.473000
+DOCKED: USER    NEWDPF tran0 12.536661 11.983477 18.644258
+DOCKED: USER    NEWDPF quaternion0 -0.018510 -0.006015 0.035654 -0.999175
+DOCKED: USER    NEWDPF axisangle0 -0.455691 -0.148068 0.877737 -4.656020
+DOCKED: USER    NEWDPF quat0 -0.455691 -0.148068 0.877737 -4.656020
+DOCKED: USER    NEWDPF dihe0 8.28 17.14 28.07 
+DOCKED: USER  keepresnum = 1 
+DOCKED: USER  
+DOCKED: REMARK  3 active torsions:
+DOCKED: REMARK  status: ('A' for Active; 'I' for Inactive)
+DOCKED: REMARK    1  A    between atoms: C8_5  and  N26_26 
+DOCKED: REMARK    2  A    between atoms: C24_13  and  S34_34 
+DOCKED: REMARK    3  A    between atoms: N26_26  and  S34_34 
+DOCKED: USER                              x       y       z     vdW  Elec       q    Type
+DOCKED: USER                           _______ _______ _______ _____ _____    ______ ____
+DOCKED: ROOT
+DOCKED: ATOM      1  C4  89D A 501      13.647  13.582  23.393 -0.12 -0.12    +0.052 A 
+DOCKED: ATOM      2  C5  89D A 501      13.412  11.207  23.472 -0.35 -0.22    +0.087 A 
+DOCKED: ATOM      3  C6  89D A 501      12.390  11.713  17.944 -0.33 -0.04    +0.014 A 
+DOCKED: ATOM      4  C7  89D A 501      13.664  13.574  22.009 -0.22 +0.04    -0.018 A 
+DOCKED: ATOM      5  C8  89D A 501      10.034  11.276  17.922 -0.30 -0.12    +0.043 A 
+DOCKED: ATOM      6  C10 89D A 501      13.555  12.351  21.357 -0.20 -0.30    +0.121 A 
+DOCKED: ATOM      7  C13 89D A 501      15.417  13.144  16.198 -0.36 -0.38    +0.112 A 
+DOCKED: ATOM      8  C15 89D A 501      13.615  11.845  17.166 -0.33 -0.08    +0.026 A 
+DOCKED: ATOM      9  C17 89D A 501      15.968  11.895  15.625 -0.25 -0.88    +0.249 A 
+DOCKED: ATOM     10  C20 89D A 501      13.788  15.930  19.101 -0.35 -0.07    +0.027 C 
+DOCKED: ATOM     11  C21 89D A 501      14.599  14.925  18.312 -0.31 -0.51    +0.175 C 
+DOCKED: ATOM     12  C1  89D A 501      10.000  11.493  19.281 -0.30 -0.08    +0.033 A 
+DOCKED: ATOM     13  C2  89D A 501      11.149  11.806  19.973 -0.30 -0.10    +0.040 A 
+DOCKED: ATOM     14  C3  89D A 501      11.238  11.386  17.255 -0.31 -0.13    +0.045 A 
+DOCKED: ATOM     15  C9  89D A 501      12.364  11.913  19.314 -0.26 -0.22    +0.087 A 
+DOCKED: ATOM     16  C11 89D A 501      13.503  12.419  24.112 -0.21 -0.30    +0.120 A 
+DOCKED: ATOM     17  C12 89D A 501      13.451  11.184  22.096 -0.23 -0.38    +0.153 A 
+DOCKED: ATOM     18  C14 89D A 501      14.106  10.733  16.621 -0.32 -0.34    +0.108 A 
+DOCKED: ATOM     19  C16 89D A 501      14.301  13.083  16.936 -0.31 -0.26    +0.086 A 
+DOCKED: ATOM     20  C18 89D A 501      13.866  14.912  21.352 -0.23 -0.10    +0.042 C 
+DOCKED: ATOM     21  C19 89D A 501      12.963  15.283  20.197 -0.26 -0.02    +0.007 C 
+DOCKED: ATOM     22  C23 89D A 501      15.731   9.504  15.307 -0.32 -0.53    +0.159 C 
+DOCKED: ATOM     23  N25 89D A 501      15.247  10.741  15.868 -0.17 +1.07    -0.328 N 
+DOCKED: ATOM     24  O27 89D A 501      17.000  11.953  14.976 -0.40 +1.05    -0.268 OA
+DOCKED: ATOM     25  O30 89D A 501      13.568  12.249  19.966 -0.17 +0.79    -0.306 OA
+DOCKED: ATOM     26  O31 89D A 501      13.692  14.190  17.502 -0.18 +0.97    -0.350 OA
+DOCKED: ATOM     27  F32 89D A 501      13.475  12.474  25.452 -0.06 +0.54    -0.206 F 
+DOCKED: ATOM     28  F33 89D A 501      13.342  10.000  21.483 -0.03 +0.51    -0.203 F 
+DOCKED: ENDROOT
+DOCKED: BRANCH   5  29
+DOCKED: ATOM     29  N26 89D A 501       8.771  10.938  17.317 -0.12 +0.78    -0.285 N 
+DOCKED: ATOM     30  H26 89D A 501       8.023  10.736  17.993 +0.10 -0.45    +0.178 HD
+DOCKED: BRANCH  29  31
+DOCKED: ATOM     31  S34 89D A 501       8.618  10.267  15.742 -0.44 -0.74    +0.230 S 
+DOCKED: ATOM     32  O29 89D A 501       9.817  10.482  14.955 -0.45 +0.74    -0.206 OA
+DOCKED: ATOM     33  O28 89D A 501       7.327  10.663  15.214 -0.32 +0.64    -0.206 OA
+DOCKED: BRANCH  31  34
+DOCKED: ATOM     34  C24 89D A 501       8.495   8.533  16.104 -0.43 -0.55    +0.159 C 
+DOCKED: ATOM     35  C22 89D A 501       7.341   8.233  17.031 -0.49 -0.07    +0.023 C 
+DOCKED: ENDBRANCH  31  34
+DOCKED: ENDBRANCH  29  31
+DOCKED: ENDBRANCH   5  29
+DOCKED: TORSDOF 3
+DOCKED: TER
+DOCKED: ENDMDL
+________________________________________________________________________________
+
+DPF> analysis                             # perform a ranked cluster analysis
+
+
+		CLUSTER ANALYSIS OF CONFORMATIONS
+		_________________________________
+
+Number of conformations = 10
+
+RMSD cluster analysis will be performed using the ligand atoms only (35 / 35 total atoms).
+
+Outputting structurally similar clusters, ranked in order of increasing energy.
+
+
+________________________________________________________________________________
+
+Number of distinct conformational clusters found = 1,  out of 10 runs,
+Using an rmsd-tolerance of 2.0 A
+
+
+	CLUSTERING HISTOGRAM
+	____________________
+
+________________________________________________________________________________
+     |           |     |           |     |                                    
+Clus | Lowest    | Run | Mean      | Num | Histogram                          
+-ter | Binding   |     | Binding   | in  |                                    
+Rank | Energy    |     | Energy    | Clus|    5    10   15   20   25   30   35
+_____|___________|_____|___________|_____|____:____|____:____|____:____|____:___
+   1 |     -8.27 |   2 |     -8.25 |  10 |##########
+_____|___________|_____|___________|_____|______________________________________
+
+
+Number of multi-member conformational clusters found = 1, out of 10 runs.
+
+	RMSD TABLE
+	__________
+
+_____________________________________________________________________
+     |      |      |           |         |                 |
+Rank | Sub- | Run  | Binding   | Cluster | Reference       | Grep
+     | Rank |      | Energy    | RMSD    | RMSD            | Pattern
+_____|______|______|___________|_________|_________________|___________
+   1      1      2       -8.27      0.00      1.05           RANKING
+   1      2      6       -8.27      0.06      1.06           RANKING
+   1      3     10       -8.27      0.02      1.05           RANKING
+   1      4      4       -8.27      0.03      1.06           RANKING
+   1      5      1       -8.27      0.10      1.10           RANKING
+   1      6      9       -8.24      0.23      1.08           RANKING
+   1      7      8       -8.24      0.22      1.07           RANKING
+   1      8      5       -8.24      0.23      1.08           RANKING
+   1      9      7       -8.23      0.22      1.07           RANKING
+   1     10      3       -8.23      0.25      1.11           RANKING
+_______________________________________________________________________
+
+
+
+	INFORMATION ENTROPY ANALYSIS FOR THIS CLUSTERING
+	________________________________________________
+
+
+Information entropy for this clustering = 0.00  (rmstol = 2.00 Angstrom)
+
+_______________________________________________________________________
+
+
+	STATISTICAL MECHANICAL ANALYSIS
+	_______________________________
+
+
+Partition function, Q =    10.14            at Temperature, T = 298.15 K
+Free energy,        A ~ -1372.49 kcal/mol   at Temperature, T = 298.15 K
+Internal energy,    U =    -8.25 kcal/mol   at Temperature, T = 298.15 K
+Entropy,            S =     4.58 kcal/mol/K at Temperature, T = 298.15 K
+
+_______________________________________________________________________
+
+
+	LOWEST ENERGY DOCKED CONFORMATION from EACH CLUSTER
+	___________________________________________________
+
+
+
+Keeping original residue number (specified in the input PDBQ file) for outputting.
+
+MODEL        2
+USER    Run = 2
+USER    Cluster Rank = 1
+USER    Number of conformations in this cluster = 10
+USER  
+USER    RMSD from reference structure       = 1.053 A
+USER  
+USER    Estimated Free Energy of Binding    =   -8.27 kcal/mol  [=(1)+(2)+(3)-(4)]
+USER    Estimated Inhibition Constant, Ki   =  863.85 nM (nanomolar)  [Temperature = 298.15 K]
+USER    
+USER    (1) Final Intermolecular Energy     =   -9.17 kcal/mol
+USER        vdW + Hbond + desolv Energy     =   -9.34 kcal/mol
+USER        Electrostatic Energy            =   +0.18 kcal/mol
+USER    (2) Final Total Internal Energy     =   -0.34 kcal/mol
+USER    (3) Torsional Free Energy           =   +0.89 kcal/mol
+USER    (4) Unbound System's Energy  [=(2)] =   -0.34 kcal/mol
+USER    
+USER    
+USER  
+USER    DPF = grid_dock_files\5uex_dock.dpf
+USER    NEWDPF move	pdbqt_files/5uex_ligand.pdbqt
+USER    NEWDPF about	12.218000 12.346000 19.473000
+USER    NEWDPF tran0	12.529933 11.984033 18.644859
+USER    NEWDPF axisangle0	0.400455 0.156186 -0.902907 4.877789
+USER    NEWDPF quaternion0	0.017041 0.006646 -0.038422 0.999094
+USER    NEWDPF dihe0	5.26 18.44 28.13 
+USER  
+USER                              x       y       z    vdW   Elec        q     RMS 
+ATOM      1  C4  89D A 501      13.627  13.575  23.400 -0.12 -0.12    +0.052     1.053
+ATOM      2  C5  89D A 501      13.404  11.198  23.471 -0.35 -0.22    +0.087     1.053
+ATOM      3  C6  89D A 501      12.386  11.715  17.943 -0.33 -0.04    +0.014     1.053
+ATOM      4  C7  89D A 501      13.645  13.570  22.015 -0.22 +0.04    -0.018     1.053
+ATOM      5  C8  89D A 501      10.032  11.265  17.918 -0.30 -0.12    +0.043     1.053
+ATOM      6  C10 89D A 501      13.543  12.349  21.360 -0.20 -0.30    +0.121     1.053
+ATOM      7  C13 89D A 501      15.407  13.168  16.205 -0.36 -0.38    +0.112     1.053
+ATOM      8  C15 89D A 501      13.611  11.856  17.167 -0.33 -0.08    +0.026     1.053
+ATOM      9  C17 89D A 501      15.965  11.924  15.629 -0.25 -0.88    +0.249     1.053
+ATOM     10  C20 89D A 501      13.759  15.936  19.115 -0.35 -0.07    +0.027     1.053
+ATOM     11  C21 89D A 501      14.577  14.938  18.323 -0.31 -0.51    +0.175     1.053
+ATOM     12  C1  89D A 501       9.996  11.477  19.277 -0.30 -0.08    +0.033     1.053
+ATOM     13  C2  89D A 501      11.142  11.795  19.972 -0.30 -0.10    +0.040     1.053
+ATOM     14  C3  89D A 501      11.236  11.384  17.252 -0.31 -0.13    +0.045     1.053
+ATOM     15  C9  89D A 501      12.357  11.911  19.314 -0.26 -0.22    +0.087     1.053
+ATOM     16  C11 89D A 501      13.488  12.409  24.115 -0.21 -0.30    +0.120     1.053
+ATOM     17  C12 89D A 501      13.445  11.180  22.096 -0.23 -0.38    +0.153     1.053
+ATOM     18  C14 89D A 501      14.108  10.748  16.620 -0.31 -0.34    +0.108     1.053
+ATOM     19  C16 89D A 501      14.290  13.099  16.942 -0.31 -0.26    +0.086     1.053
+ATOM     20  C18 89D A 501      13.840  14.912  21.363 -0.23 -0.10    +0.042     1.053
+ATOM     21  C19 89D A 501      12.937  15.281  20.207 -0.26 -0.02    +0.007     1.053
+ATOM     22  C23 89D A 501      15.741   9.533  15.304 -0.32 -0.53    +0.159     1.053
+ATOM     23  N25 89D A 501      15.250  10.765  15.868 -0.16 +1.07    -0.328     1.053
+ATOM     24  O27 89D A 501      16.997  11.989  14.981 -0.40 +1.05    -0.268     1.053
+ATOM     25  O30 89D A 501      13.559  12.251  19.969 -0.17 +0.79    -0.306     1.053
+ATOM     26  O31 89D A 501      13.674  14.200  17.510 -0.18 +0.97    -0.350     1.053
+ATOM     27  F32 89D A 501      13.459  12.460  25.455 -0.06 +0.54    -0.206     1.053
+ATOM     28  F33 89D A 501      13.343   9.997  21.478 -0.03 +0.51    -0.203     1.053
+ATOM     29  N26 89D A 501       8.771  10.921  17.311 -0.12 +0.78    -0.285     1.053
+ATOM     30  H26 89D A 501       8.024  10.714  17.985 +0.10 -0.45    +0.178     1.053
+ATOM     31  S34 89D A 501       8.624  10.252  15.734 -0.45 -0.74    +0.230     1.053
+ATOM     32  O29 89D A 501       9.834  10.448  14.960 -0.45 +0.74    -0.206     1.053
+ATOM     33  O28 89D A 501       7.345  10.669  15.193 -0.32 +0.64    -0.206     1.053
+ATOM     34  C24 89D A 501       8.470   8.521  16.095 -0.44 -0.55    +0.159     1.053
+ATOM     35  C22 89D A 501       7.348   8.247  17.068 -0.48 -0.07    +0.023     1.053
+TER
+ENDMDL
+
+
+AVSFLD: # AVS field file
+AVSFLD: #
+AVSFLD: # Created by AutoDock
+AVSFLD: #
+AVSFLD: ndim=2           # number of dimensions in the field
+AVSFLD: nspace=1         # number of physical coordinates
+AVSFLD: veclen=7         # vector size
+AVSFLD: dim1=35          # atoms
+AVSFLD: dim2=1           # conformations
+AVSFLD: data=Real       # data type (byte,integer,Real,double)
+AVSFLD: field=uniform    # field coordinate layout
+AVSFLD: label= x y z vdW Elec q RMS
+AVSFLD: variable 1 file = grid_dock_files\5uex_dock.dlg.pdb filetype = ascii offset = 5 stride = 12
+AVSFLD: variable 2 file = grid_dock_files\5uex_dock.dlg.pdb filetype = ascii offset = 6 stride = 12
+AVSFLD: variable 3 file = grid_dock_files\5uex_dock.dlg.pdb filetype = ascii offset = 7 stride = 12
+AVSFLD: variable 4 file = grid_dock_files\5uex_dock.dlg.pdb filetype = ascii offset = 8 stride = 12
+AVSFLD: variable 5 file = grid_dock_files\5uex_dock.dlg.pdb filetype = ascii offset = 9 stride = 12
+AVSFLD: variable 6 file = grid_dock_files\5uex_dock.dlg.pdb filetype = ascii offset = 10 stride = 12
+AVSFLD: variable 7 file = grid_dock_files\5uex_dock.dlg.pdb filetype = ascii offset = 11 stride = 12
+AVSFLD: # end of file
+
+>>> Closing the docking parameter file (DPF)...
+This docking finished at:			1:17 31" p.m., 05/16/2025
+
+
+________________________________________________________________________________
+
+autodock4.exe: Successful Completion on "TAJGERO"
+
+Real= 6m 34.84s,  CPU= 6m 26.25s,  System= 0.66s
+________________________________________________________________________________
+

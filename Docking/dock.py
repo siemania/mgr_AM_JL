@@ -60,7 +60,7 @@ def process_docking(pdb_file):
 
         run_command(f'"{python}" prepare_gpf4.py -l {ligand_pdbqt} -r {receptor_pdbqt} -y -o {gpf}')
         modify_gdpf_overwrite(f"grid_dock_files/{file_name}_grid.gpf", quiet=True) # Poprawki lokalizacyjne w pliku
-        print(f"Grid {file_name} gotowy", flush=True)
+        print(f"Parametry do grida {file_name} gotowe", flush=True)
 
         run_command(f'{autogrid} -p {gpf} -l {glg}')
         print(f"Mapy energetyczne {file_name} gotowe", flush=True)
@@ -69,9 +69,9 @@ def process_docking(pdb_file):
         modify_gdpf_overwrite(f"grid_dock_files/{file_name}_dock.dpf", quiet=True) # Poprawki lokalizacyjne w pliku
         print(f"Parametry do dokowania {file_name} gotowe", flush=True)
 
-        # print(f"Rozpoczynanie procesu Autodock-GPU dla {file_name} ...", flush=True)
-        # run_command(f'wsl autodock_gpu_128wi --lfile {ligand_pdbqt} --ffile {fld} --import_dpf {dpf} --resnam {file_name}_lig')
-        # print(f"Dokowanie {file_name} zakonczono pomyslnie", flush=True)
+        ## print(f"Rozpoczynanie procesu Autodock-GPU dla {file_name} ...", flush=True)
+        ## run_command(f'wsl autodock_gpu_128wi --lfile {ligand_pdbqt} --ffile {fld} --import_dpf {dpf} --resnam {file_name}_lig')
+        ## print(f"Dokowanie {file_name} zakonczono pomyslnie", flush=True)
 
         print(f"Rozpoczynanie procesu autodock4.exe dla {file_name} ...", flush=True)
         run_command(f'{autodock} -p {dpf} -l {dlg}')
@@ -88,16 +88,21 @@ def process_docking(pdb_file):
         return f"❌ Błąd w {file_name}: {str(e)}"
 
 
-
 if __name__ == '__main__':
 
     # Pobranie listy plików PDB za pomocą parsera argparse
     parser = argparse.ArgumentParser(description="Process docking files.")
-    parser.add_argument("-f", "--file", help="Podaj ścieżki do plików PDB", type=str, nargs='*', default=None)
+    parser.add_argument("-f", "--file", help="Podaj ścieżki do plików PDB lub plik .txt z ID", type=str, nargs='*',
+                        default=None)
     args = parser.parse_args()
 
     if args.file:
-        pdb_directory = args.file
+        if len(args.file) == 1 and args.file[0].endswith('.txt'): # Sprawdza, czy podano jeden plik .txt
+            with open(args.file[0], 'r') as f:
+                ids = [line.split()[0].strip() for line in f] # Otwiera plik i pobiera ID z pierwszej kolumny
+            pdb_directory = [os.path.join('pdb_files', f'{id}.pdb') for id in ids] # Utworzy ścieżki do plików PDB na podstawie ID
+        else:
+            pdb_directory = args.file # Jeśli nie podano pliku .txt, użyje bezpośrednio podanych ścieżek
     else:
         pdb_directory = glob.glob("pdb_files\\*.pdb")
     

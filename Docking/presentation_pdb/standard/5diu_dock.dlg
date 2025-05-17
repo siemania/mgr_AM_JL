@@ -1,0 +1,2600 @@
+          AutoDock 4.2 Release 4.2.6   
+         (C) 1989-2012 The Scripps Research Institute
+        AutoDock comes with ABSOLUTELY NO WARRANTY.
+        AutoDock is free software, and you are welcome
+        to redistribute it under certain conditions;
+        for details type 'autodock4 -C'
+
+                     main.cc  $Revision: 1.213 $
+
+                   Compiled on Jul 18 2014 at 15:34:58
+
+
+This file was created at:			1:10 11" p.m., 05/16/2025
+                   on host:		"TAJGERO"
+Current Working Directory = "C:\Users\tygrys012\Desktop\skrypty-docking\Docking"
+
+      ________________________________________________________________
+
+                   SETTING UP DEFAULT PARAMETER LIBRARY
+      ________________________________________________________________
+
+
+Random number generator was seeded with values 6080, 1747393811.
+Docking parameter file (DPF) used for this docking:		grid_dock_files\5diu_dock.dpf
+DPF> autodock_parameter_version 4.2       # used by autodock to validate parameter set
+
+	Autodock parameter version 4.2.
+DPF> outlev 1                             # diagnostic output level
+
+Output Level = 1  ADT-COMPATIBLE OUTPUT DURING DOCKING.
+DPF> intelec                              # calculate internal electrostatics
+
+Electrostatic energies will be calculated for all non-bonds between moving atoms.
+DPF> seed pid time                        # seeds for random generator
+
+Random number generator was seeded with values 6080, 1747393811.
+DPF> ligand_types A NA C OA N             # atoms types in ligand
+
+DPF> fld map_grid_files/5diu_receptor.maps.fld           # grid_data_file
+
+Opening Grid Map Dimensions file:		map_grid_files/5diu_receptor.maps.fld
+Grid Point Spacing =				0.375 Angstroms
+
+Even Number of User-specified Grid Points =	40 x-points
+						40 y-points
+						40 z-points
+
+Coordinates of Central Grid Point of Maps =	(12.923, -3.459, -7.720)
+Macromolecule file used to create Grid Maps =	pdbqt_files/5diu_receptor.pdbqt
+Grid Parameter file used to create Grid Maps =	grid_dock_files\5diu_grid.gpf
+Minimum coordinates in grid = (5.423, -10.959, -15.220)
+Maximum coordinates in grid = (20.423, 4.041, -0.220)
+
+DPF> map map_grid_files/5diu_receptor.A.map              # atom-specific affinity map
+
+DPF> map map_grid_files/5diu_receptor.NA.map              # atom-specific affinity map
+
+DPF> map map_grid_files/5diu_receptor.C.map              # atom-specific affinity map
+
+DPF> map map_grid_files/5diu_receptor.OA.map              # atom-specific affinity map
+
+DPF> map map_grid_files/5diu_receptor.N.map              # atom-specific affinity map
+
+DPF> elecmap map_grid_files/5diu_receptor.e.map          # electrostatic potential map
+
+DPF> desolvmap map_grid_files/5diu_receptor.d.map        # desolvation map
+
+DPF> move pdbqt_files/5diu_ligand.pdbqt               # small molecule
+
+1,4-interactions will be _ignored_ in the non-bonded internal energy calculation.
+
+Ligand PDBQT file = "pdbqt_files/5diu_ligand.pdbqt"
+
+INPUT LIGAND PDBQT FILE:
+________________________
+
+INPUT-LIGAND-PDBQT: REMARK  17 active torsions:
+INPUT-LIGAND-PDBQT: REMARK  status: ('A' for Active; 'I' for Inactive)
+INPUT-LIGAND-PDBQT: REMARK    1  A    between atoms: OBH_1040  and  CBU_1041 
+INPUT-LIGAND-PDBQT: REMARK    2  A    between atoms: CBW_1043  and  OBJ_1044 
+INPUT-LIGAND-PDBQT: REMARK    3  A    between atoms: CBV_1046  and  OBI_1047 
+INPUT-LIGAND-PDBQT: REMARK    4  A    between atoms: CBR_1050  and  CCA_1051 
+INPUT-LIGAND-PDBQT: REMARK    5  A    between atoms: CCA_1051  and  CBN_1058 
+INPUT-LIGAND-PDBQT: REMARK    6  A    between atoms: CCA_1051  and  CBY_1052 
+INPUT-LIGAND-PDBQT: REMARK       I    between atoms: CBN_1058  and  N_1060 
+INPUT-LIGAND-PDBQT: REMARK    7  A    between atoms: CA_1065  and  C_1066 
+INPUT-LIGAND-PDBQT: REMARK       I    between atoms: C_1066  and  NBE_1068 
+INPUT-LIGAND-PDBQT: REMARK    8  A    between atoms: NBE_1068  and  CBX_1069 
+INPUT-LIGAND-PDBQT: REMARK    9  A    between atoms: CBX_1069  and  CBA_1081 
+INPUT-LIGAND-PDBQT: REMARK   10  A    between atoms: CBX_1069  and  CBQ_1070 
+INPUT-LIGAND-PDBQT: REMARK   11  A    between atoms: CBP_1075  and  OBK_1076 
+INPUT-LIGAND-PDBQT: REMARK   12  A    between atoms: OBK_1076  and  CBC_1077 
+INPUT-LIGAND-PDBQT: REMARK   13  A    between atoms: CBC_1077  and  CBL_1078 
+INPUT-LIGAND-PDBQT: REMARK   14  A    between atoms: CBA_1081  and  CAX_1082 
+INPUT-LIGAND-PDBQT: REMARK   15  A    between atoms: CAX_1082  and  CBO_1083 
+INPUT-LIGAND-PDBQT: REMARK   16  A    between atoms: CBS_1087  and  OBF_1088 
+INPUT-LIGAND-PDBQT: REMARK   17  A    between atoms: CBT_1090  and  OBG_1091 
+INPUT-LIGAND-PDBQT: ROOT
+INPUT-LIGAND-PDBQT: HETATM    1  CBN 5BG A 201      12.554  -5.079 -10.765  1.00 13.20     0.237 C 
+INPUT-LIGAND-PDBQT: HETATM    2  OAH 5BG A 201      13.251  -4.394 -11.491  1.00 13.62    -0.272 OA
+INPUT-LIGAND-PDBQT: HETATM    3  N   5BG A 201      11.448  -4.491 -10.166  1.00 12.30    -0.313 N 
+INPUT-LIGAND-PDBQT: HETATM    4  CBD 5BG A 201      10.597  -5.170  -9.137  1.00 12.65     0.104 C 
+INPUT-LIGAND-PDBQT: HETATM    5  CAW 5BG A 201       9.147  -4.856  -9.315  1.00 12.81     0.024 C 
+INPUT-LIGAND-PDBQT: HETATM    6  CAV 5BG A 201       8.842  -3.349  -9.465  1.00 12.74     0.004 C 
+INPUT-LIGAND-PDBQT: HETATM    7  CB  5BG A 201       9.695  -2.804 -10.592  1.00 12.15     0.032 C 
+INPUT-LIGAND-PDBQT: HETATM    8  CA  5BG A 201      11.209  -3.068 -10.387  1.00 12.05     0.164 C 
+INPUT-LIGAND-PDBQT: ENDROOT
+INPUT-LIGAND-PDBQT: BRANCH   8   9
+INPUT-LIGAND-PDBQT: HETATM    9  C   5BG A 201      11.669  -2.154  -9.211  1.00 12.35     0.272 C 
+INPUT-LIGAND-PDBQT: HETATM   10  O   5BG A 201      11.245  -1.037  -9.147  1.00 12.93    -0.269 OA
+INPUT-LIGAND-PDBQT: HETATM   11  NBE 5BG A 201      12.560  -2.708  -8.372  1.00 13.20    -0.234 NA
+INPUT-LIGAND-PDBQT: BRANCH  11  12
+INPUT-LIGAND-PDBQT: HETATM   12  CBX 5BG A 201      12.949  -1.959  -7.122  1.00 13.88     0.129 C 
+INPUT-LIGAND-PDBQT: BRANCH  12  13
+INPUT-LIGAND-PDBQT: HETATM   13  CBA 5BG A 201      14.440  -2.005  -6.938  1.00 14.35     0.034 C 
+INPUT-LIGAND-PDBQT: BRANCH  13  14
+INPUT-LIGAND-PDBQT: HETATM   14  CAX 5BG A 201      14.871  -0.873  -5.940  1.00 15.17     0.029 C 
+INPUT-LIGAND-PDBQT: BRANCH  14  15
+INPUT-LIGAND-PDBQT: HETATM   15  CBO 5BG A 201      14.745   0.444  -6.467  1.00 15.31    -0.020 A 
+INPUT-LIGAND-PDBQT: HETATM   16  CAO 5BG A 201      15.601   0.869  -7.497  1.00 18.39     0.022 A 
+INPUT-LIGAND-PDBQT: HETATM   17  CBT 5BG A 201      15.403   2.154  -8.011  1.00 17.76     0.116 A 
+INPUT-LIGAND-PDBQT: HETATM   18  CBS 5BG A 201      14.474   3.054  -7.612  1.00 17.01     0.116 A 
+INPUT-LIGAND-PDBQT: HETATM   19  CAN 5BG A 201      13.596   2.612  -6.576  1.00 18.77     0.026 A 
+INPUT-LIGAND-PDBQT: HETATM   20  CAM 5BG A 201      13.739   1.355  -6.065  1.00 15.98    -0.002 A 
+INPUT-LIGAND-PDBQT: BRANCH  17  21
+INPUT-LIGAND-PDBQT: HETATM   21  OBG 5BG A 201      16.085   2.715  -9.108  1.00 24.50    -0.326 OA
+INPUT-LIGAND-PDBQT: HETATM   22  CAB 5BG A 201      17.216   1.974  -9.531  1.00 33.09     0.181 C 
+INPUT-LIGAND-PDBQT: ENDBRANCH  17  21
+INPUT-LIGAND-PDBQT: BRANCH  18  23
+INPUT-LIGAND-PDBQT: HETATM   23  OBF 5BG A 201      14.416   4.295  -8.188  1.00 21.69    -0.326 OA
+INPUT-LIGAND-PDBQT: HETATM   24  CAA 5BG A 201      13.513   5.279  -7.719  1.00 21.44     0.181 C 
+INPUT-LIGAND-PDBQT: ENDBRANCH  18  23
+INPUT-LIGAND-PDBQT: ENDBRANCH  14  15
+INPUT-LIGAND-PDBQT: ENDBRANCH  13  14
+INPUT-LIGAND-PDBQT: ENDBRANCH  12  13
+INPUT-LIGAND-PDBQT: BRANCH  12  25
+INPUT-LIGAND-PDBQT: HETATM   25  CBQ 5BG A 201      12.187  -2.568  -6.023  1.00 14.19     0.002 A 
+INPUT-LIGAND-PDBQT: HETATM   26  CAL 5BG A 201      12.319  -3.893  -5.722  1.00 12.99    -0.002 A 
+INPUT-LIGAND-PDBQT: HETATM   27  CAJ 5BG A 201      11.544  -4.583  -4.810  1.00 13.77     0.002 A 
+INPUT-LIGAND-PDBQT: HETATM   28  CAK 5BG A 201      10.526  -3.832  -4.214  1.00 13.02     0.024 A 
+INPUT-LIGAND-PDBQT: HETATM   29  CBP 5BG A 201      10.311  -2.505  -4.496  1.00 14.10     0.095 A 
+INPUT-LIGAND-PDBQT: HETATM   30  CAP 5BG A 201      11.153  -1.857  -5.464  1.00 12.43     0.022 A 
+INPUT-LIGAND-PDBQT: BRANCH  29  31
+INPUT-LIGAND-PDBQT: HETATM   31  OBK 5BG A 201       9.282  -1.716  -3.979  1.00 16.42    -0.319 OA
+INPUT-LIGAND-PDBQT: BRANCH  31  32
+INPUT-LIGAND-PDBQT: HETATM   32  CBC 5BG A 201       8.354  -2.318  -3.074  1.00 15.66     0.246 C 
+INPUT-LIGAND-PDBQT: BRANCH  32  33
+INPUT-LIGAND-PDBQT: HETATM   33  CBL 5BG A 201       8.997  -2.607  -1.710  1.00 15.04     0.217 C 
+INPUT-LIGAND-PDBQT: HETATM   34  OAI 5BG A 201       8.370  -3.432  -1.059  1.00 16.73    -0.645 OA
+INPUT-LIGAND-PDBQT: HETATM   35  OAF 5BG A 201      10.068  -2.072  -1.420  1.00 15.54    -0.645 OA
+INPUT-LIGAND-PDBQT: ENDBRANCH  32  33
+INPUT-LIGAND-PDBQT: ENDBRANCH  31  32
+INPUT-LIGAND-PDBQT: ENDBRANCH  29  31
+INPUT-LIGAND-PDBQT: ENDBRANCH  12  25
+INPUT-LIGAND-PDBQT: ENDBRANCH  11  12
+INPUT-LIGAND-PDBQT: ENDBRANCH   8   9
+INPUT-LIGAND-PDBQT: BRANCH   1  36
+INPUT-LIGAND-PDBQT: HETATM   36  CCA 5BG A 201      12.860  -6.521 -10.419  1.00 14.26     0.101 C 
+INPUT-LIGAND-PDBQT: BRANCH  36  37
+INPUT-LIGAND-PDBQT: HETATM   37  CBY 5BG A 201      13.691  -7.179 -11.546  1.00 14.07     0.013 C 
+INPUT-LIGAND-PDBQT: HETATM   38  CAZ 5BG A 201      12.906  -7.275 -12.825  1.00 13.71     0.001 C 
+INPUT-LIGAND-PDBQT: HETATM   39  CAU 5BG A 201      13.665  -7.975 -13.979  1.00 16.84     0.000 C 
+INPUT-LIGAND-PDBQT: HETATM   40  CAS 5BG A 201      14.134  -9.320 -13.553  1.00 16.09     0.000 C 
+INPUT-LIGAND-PDBQT: HETATM   41  CAT 5BG A 201      15.013  -9.255 -12.255  1.00 15.47     0.000 C 
+INPUT-LIGAND-PDBQT: HETATM   42  CAY 5BG A 201      14.256  -8.503 -11.141  1.00 15.51     0.001 C 
+INPUT-LIGAND-PDBQT: ENDBRANCH  36  37
+INPUT-LIGAND-PDBQT: BRANCH  36  43
+INPUT-LIGAND-PDBQT: HETATM   43  CBR 5BG A 201      13.548  -6.550  -9.043  1.00 13.48    -0.010 A 
+INPUT-LIGAND-PDBQT: HETATM   44  CAR 5BG A 201      12.979  -7.330  -8.046  1.00 14.39     0.022 A 
+INPUT-LIGAND-PDBQT: HETATM   45  CBV 5BG A 201      13.607  -7.326  -6.799  1.00 16.63     0.118 A 
+INPUT-LIGAND-PDBQT: HETATM   46  CBW 5BG A 201      14.752  -6.639  -6.587  1.00 15.42     0.138 A 
+INPUT-LIGAND-PDBQT: HETATM   47  CBU 5BG A 201      15.323  -5.874  -7.543  1.00 15.79     0.118 A 
+INPUT-LIGAND-PDBQT: HETATM   48  CAQ 5BG A 201      14.732  -5.832  -8.830  1.00 15.29     0.022 A 
+INPUT-LIGAND-PDBQT: BRANCH  45  49
+INPUT-LIGAND-PDBQT: HETATM   49  OBI 5BG A 201      13.057  -8.066  -5.739  1.00 15.90    -0.326 OA
+INPUT-LIGAND-PDBQT: HETATM   50  CAD 5BG A 201      11.724  -8.630  -5.835  1.00 15.98     0.181 C 
+INPUT-LIGAND-PDBQT: ENDBRANCH  45  49
+INPUT-LIGAND-PDBQT: BRANCH  46  51
+INPUT-LIGAND-PDBQT: HETATM   51  OBJ 5BG A 201      15.287  -6.642  -5.256  1.00 18.03    -0.324 OA
+INPUT-LIGAND-PDBQT: HETATM   52  CAE 5BG A 201      16.360  -7.541  -5.144  1.00 21.83     0.182 C 
+INPUT-LIGAND-PDBQT: ENDBRANCH  46  51
+INPUT-LIGAND-PDBQT: BRANCH  47  53
+INPUT-LIGAND-PDBQT: HETATM   53  OBH 5BG A 201      16.450  -5.219  -7.254  1.00 17.78    -0.326 OA
+INPUT-LIGAND-PDBQT: HETATM   54  CAC 5BG A 201      17.126  -4.521  -8.297  1.00 17.82     0.181 C 
+INPUT-LIGAND-PDBQT: ENDBRANCH  47  53
+INPUT-LIGAND-PDBQT: ENDBRANCH  36  43
+INPUT-LIGAND-PDBQT: ENDBRANCH   1  36
+INPUT-LIGAND-PDBQT: TORSDOF 17
+________________________________________________________________________________
+
+Total charge on ligand                               =	-1.002 e
+REMARK  17 active torsions:
+REMARK  status: ('A' for Active; 'I' for Inactive)
+REMARK    1  A    between atoms: OBH_1040  and  CBU_1041 
+REMARK    2  A    between atoms: CBW_1043  and  OBJ_1044 
+REMARK    3  A    between atoms: CBV_1046  and  OBI_1047 
+REMARK    4  A    between atoms: CBR_1050  and  CCA_1051 
+REMARK    5  A    between atoms: CCA_1051  and  CBN_1058 
+REMARK    6  A    between atoms: CCA_1051  and  CBY_1052 
+REMARK       I    between atoms: CBN_1058  and  N_1060 
+REMARK    7  A    between atoms: CA_1065  and  C_1066 
+REMARK       I    between atoms: C_1066  and  NBE_1068 
+REMARK    8  A    between atoms: NBE_1068  and  CBX_1069 
+REMARK    9  A    between atoms: CBX_1069  and  CBA_1081 
+REMARK   10  A    between atoms: CBX_1069  and  CBQ_1070 
+REMARK   11  A    between atoms: CBP_1075  and  OBK_1076 
+REMARK   12  A    between atoms: OBK_1076  and  CBC_1077 
+REMARK   13  A    between atoms: CBC_1077  and  CBL_1078 
+REMARK   14  A    between atoms: CBA_1081  and  CAX_1082 
+REMARK   15  A    between atoms: CAX_1082  and  CBO_1083 
+REMARK   16  A    between atoms: CBS_1087  and  OBF_1088 
+REMARK   17  A    between atoms: CBT_1090  and  OBG_1091 
+
+
+Number of Rotatable Bonds in Small Molecule =	17 torsions
+Number of atoms in ligand:  54
+
+Number of non-hydrogen atoms in ligand:  54
+
+Number of vibrational degrees of freedom of ligand:  156
+
+
+Number of torsional degrees of freedom = 17
+Estimated loss of torsional free energy upon binding = +5.0711 kcal/mol
+
+
+DPF> about 12.923 -3.459 -7.720            # small molecule center
+
+Small molecule center of rotation =	(+12.923, -3.459, -7.720)
+
+DPF> tran0 random                         # initial coordinates/A or random
+
+Initial translation =			(9.734, -4.711, -14.583) Angstroms
+DPF> quaternion0 random                   # initial orientation
+
+Each run will begin with a new, random initial orientation.
+Initial quaternion,  (x,y,z,w) =	( 0.412, 0.124, 0.403, -0.808 ),
+DPF> dihe0 random                         # initial dihedrals (relative) or random
+
+DPF> torsdof 17                            # torsional degrees of freedom
+
+Number of torsional degrees of freedom = 17
+Free energy coefficient for torsional degrees of freedom = 0.2983, the factory default value.
+
+Estimated loss of torsional free energy upon binding = +5.0711 kcal/mol
+
+DPF> rmstol 2.0                           # cluster_tolerance/A
+
+Maximum RMS tolerance for conformational cluster analysis = 2.00 Angstroms
+DPF> extnrg 1000.0                        # external grid energy
+
+External grid energy (beyond grid map walls) = 1000.00
+
+DPF> e0max 0.0 10000                      # max initial energy; max number of retries
+
+Using user-specified maximum number of retries for simanneal initialization, 10000 retries.
+If the simanneal initial energy is greater than e0max, 0.000,
+then a new, random initial state will be created.
+
+DPF> ga_pop_size 150                      # number of individuals in population
+
+A population of 150 individuals will be used
+DPF> ga_num_evals 2500000                 # maximum number of energy evaluations
+
+There will be at most 2500000 function evaluations used.
+DPF> ga_num_generations 27000             # maximum number of generations
+
+The GA will run for at most 27000 generations.
+DPF> ga_elitism 1                         # number of top individuals to survive to next generation
+
+The 1 best will be preserved each GA generation.
+DPF> ga_mutation_rate 0.02                # rate of gene mutation
+
+The mutation rate is 0.020000.
+DPF> ga_crossover_rate 0.8                # rate of crossover
+
+The crossover rate is 0.800000.
+DPF> ga_window_size 10                    # 
+
+The GA's selection window is 10 generations.
+DPF> ga_cauchy_alpha 0.0                  # Alpha parameter of Cauchy distribution
+
+The alpha parameter (for the Cauchy distribution) is being set to 0.000000.
+DPF> ga_cauchy_beta 1.0                   # Beta parameter Cauchy distribution
+
+The beta parameter (for the Cauchy distribution) is being set to 1.000000.
+DPF> set_ga                               # set the above parameters for GA or LGA
+
+DPF> sw_max_its 300                       # iterations of Solis & Wets local search
+
+Solis & Wets algorithms will perform at most 300 iterations.
+DPF> sw_max_succ 4                        # consecutive successes before changing rho
+
+Solis & Wets algorithms expand rho every 4 in a row successes.
+DPF> sw_max_fail 4                        # consecutive failures before changing rho
+
+Solis & Wets algorithms contract rho every 4 in a row failures.
+DPF> sw_rho 1.0                           # size of local search space to sample
+
+rho is set to 1.000000.
+DPF> sw_lb_rho 0.01                       # lower bound on rho
+
+rho will never get smaller than 0.010000.
+DPF> ls_search_freq 0.06                  # probability of performing local search on individual
+
+Local search will be performed with frequency 0.060000.
+DPF> set_psw1                             # set the above pseudo-Solis & Wets parameters
+
+Creating a new Local Search object using the pseudo-Solis-Wets algorithm (pSW1) with the current settings.
+
+DPF> unbound_model bound                  # state of unbound ligand
+
+DPF> ga_run 10                            # do this many hybrid GA-LS runs
+
+centering ligand on specified point: 12.923 -3.459 -7.720
+Furthest true ligand atom from "about" center is 8.758 Angstroms (maxrad).
+Number of requested GA dockings = 10 runs
+Unbound model to be used is 'same as bound' [AutoDock 4.2 default].
+
+	BEGINNING GENETIC ALGORITHM DOCKING 1 of 10
+Run: 1 Seed: 827821177 1068489397 [ Run 1 of 10 GA/GALS ]
+Beginning LAMARCKIAN GENETIC ALGORITHM (LGA), with a maximum of 2500000 energy evaluations.
+
+Final-Value: -18.511
+
+
+	FINAL GENETIC ALGORITHM DOCKED STATE
+	_______________________________________________
+
+
+Detailed state:  trans 14.119 -3.685 -8.139 quatxyzw -0.086230 -0.176819 0.068903 0.978035 center 12.923 -3.459 -7.720 ntor 17 5.4694 81.9110 -33.6592 -7.1963 -42.0859 -172.0909 -180.0000 -180.0000 -44.9761 87.5542 159.3173 167.3178 -6.6935 -158.9297 10.3705 176.5833 -179.9097
+State:	 14.119  -3.685  -8.139  -0.414 -0.848  0.331 24.062      5.47   81.91  -33.66   -7.20  -42.09 -172.09 -180.00 -180.00  -44.98   87.55  159.32  167.32   -6.69 -158.93   10.37  176.58 -179.91
+
+DOCKED: MODEL        1
+DOCKED: USER    Run = 1
+DOCKED: USER    DPF = grid_dock_files\5diu_dock.dpf
+DOCKED: USER  
+DOCKED: USER    Estimated Free Energy of Binding    =   -6.89 kcal/mol  [=(1)+(2)+(3)-(4)]
+DOCKED: USER    Estimated Inhibition Constant, Ki   =    8.89 uM (micromolar)  [Temperature = 298.15 K]
+DOCKED: USER    
+DOCKED: USER    (1) Final Intermolecular Energy     =  -11.96 kcal/mol
+DOCKED: USER        vdW + Hbond + desolv Energy     =  -11.09 kcal/mol
+DOCKED: USER        Electrostatic Energy            =   -0.87 kcal/mol
+DOCKED: USER    (2) Final Total Internal Energy     =   -6.55 kcal/mol
+DOCKED: USER    (3) Torsional Free Energy           =   +5.07 kcal/mol
+DOCKED: USER    (4) Unbound System's Energy  [=(2)] =   -6.55 kcal/mol
+DOCKED: USER    
+DOCKED: USER    
+DOCKED: USER    NEWDPF move pdbqt_files/5diu_ligand.pdbqt
+DOCKED: USER    NEWDPF about 12.923000 -3.459000 -7.720000
+DOCKED: USER    NEWDPF tran0 14.119245 -3.685149 -8.138628
+DOCKED: USER    NEWDPF quaternion0 -0.086230 -0.176819 0.068903 0.978035
+DOCKED: USER    NEWDPF axisangle0 -0.413688 -0.848288 0.330560 24.062172
+DOCKED: USER    NEWDPF quat0 -0.413688 -0.848288 0.330560 24.062172
+DOCKED: USER    NEWDPF dihe0 5.47 81.91 -33.66 -7.20 -42.09 -172.09 -180.00 -180.00 -44.98 87.55 159.32 167.32 -6.69 -158.93 10.37 176.58 -179.91 
+DOCKED: USER  keepresnum = 1 
+DOCKED: USER  
+DOCKED: REMARK  17 active torsions:
+DOCKED: REMARK  status: ('A' for Active; 'I' for Inactive)
+DOCKED: REMARK    1  A    between atoms: OBH_1040  and  CBU_1041 
+DOCKED: REMARK    2  A    between atoms: CBW_1043  and  OBJ_1044 
+DOCKED: REMARK    3  A    between atoms: CBV_1046  and  OBI_1047 
+DOCKED: REMARK    4  A    between atoms: CBR_1050  and  CCA_1051 
+DOCKED: REMARK    5  A    between atoms: CCA_1051  and  CBN_1058 
+DOCKED: REMARK    6  A    between atoms: CCA_1051  and  CBY_1052 
+DOCKED: REMARK       I    between atoms: CBN_1058  and  N_1060 
+DOCKED: REMARK    7  A    between atoms: CA_1065  and  C_1066 
+DOCKED: REMARK       I    between atoms: C_1066  and  NBE_1068 
+DOCKED: REMARK    8  A    between atoms: NBE_1068  and  CBX_1069 
+DOCKED: REMARK    9  A    between atoms: CBX_1069  and  CBA_1081 
+DOCKED: REMARK   10  A    between atoms: CBX_1069  and  CBQ_1070 
+DOCKED: REMARK   11  A    between atoms: CBP_1075  and  OBK_1076 
+DOCKED: REMARK   12  A    between atoms: OBK_1076  and  CBC_1077 
+DOCKED: REMARK   13  A    between atoms: CBC_1077  and  CBL_1078 
+DOCKED: REMARK   14  A    between atoms: CBA_1081  and  CAX_1082 
+DOCKED: REMARK   15  A    between atoms: CAX_1082  and  CBO_1083 
+DOCKED: REMARK   16  A    between atoms: CBS_1087  and  OBF_1088 
+DOCKED: REMARK   17  A    between atoms: CBT_1090  and  OBG_1091 
+DOCKED: USER                              x       y       z     vdW  Elec       q    Type
+DOCKED: USER                           _______ _______ _______ _____ _____    ______ ____
+DOCKED: ROOT
+DOCKED: ATOM      1  CBN 5BG A 201      12.492  -4.639 -11.050 -0.29 -0.01    +0.237 C 
+DOCKED: ATOM      2  OAH 5BG A 201      13.010  -3.904 -11.870 -0.37 +0.02    -0.272 OA
+DOCKED: ATOM      3  N   5BG A 201      11.763  -4.066 -10.017 -0.13 -0.01    -0.313 N 
+DOCKED: ATOM      4  CBD 5BG A 201      11.205  -4.838  -8.861 -0.27 -0.00    +0.104 C 
+DOCKED: ATOM      5  CAW 5BG A 201       9.852  -4.346  -8.461 -0.42 +0.00    +0.024 C 
+DOCKED: ATOM      6  CAV 5BG A 201       9.768  -2.815  -8.273 -0.45 +0.00    +0.004 C 
+DOCKED: ATOM      7  CB  5BG A 201      10.273  -2.155  -9.539 -0.59 +0.01    +0.032 C 
+DOCKED: ATOM      8  CA  5BG A 201      11.703  -2.610  -9.930 -0.37 +0.03    +0.164 C 
+DOCKED: ENDROOT
+DOCKED: BRANCH   8   9
+DOCKED: ATOM      9  C   5BG A 201      12.673  -1.993  -8.877 -0.07 +0.09    +0.272 C 
+DOCKED: ATOM     10  O   5BG A 201      13.582  -2.657  -8.470 +0.18 -0.21    -0.269 OA
+DOCKED: ATOM     11  NBE 5BG A 201      12.368  -0.747  -8.480 -0.42 -0.09    -0.234 NA
+DOCKED: BRANCH  11  12
+DOCKED: ATOM     12  CBX 5BG A 201      13.330  -0.011  -7.581 -0.30 +0.02    +0.129 C 
+DOCKED: BRANCH  12  13
+DOCKED: ATOM     13  CBA 5BG A 201      14.743  -0.248  -8.036 -0.27 +0.01    +0.034 C 
+DOCKED: BRANCH  13  14
+DOCKED: ATOM     14  CAX 5BG A 201      15.644   0.945  -7.559 -0.18 +0.00    +0.029 C 
+DOCKED: BRANCH  14  15
+DOCKED: ATOM     15  CBO 5BG A 201      16.216   0.760  -6.268 -0.04 -0.00    -0.020 A 
+DOCKED: ATOM     16  CAO 5BG A 201      16.284  -0.528  -5.712 -0.03 +0.00    +0.022 A 
+DOCKED: ATOM     17  CBT 5BG A 201      16.899  -0.660  -4.463 +0.01 +0.01    +0.116 A 
+DOCKED: ATOM     18  CBS 5BG A 201      17.430   0.332  -3.711 +0.01 +0.01    +0.116 A 
+DOCKED: ATOM     19  CAN 5BG A 201      17.373   1.638  -4.287 +0.00 +0.00    +0.026 A 
+DOCKED: ATOM     20  CAM 5BG A 201      16.805   1.805  -5.516 -0.01 -0.00    -0.002 A 
+DOCKED: BRANCH  17  21
+DOCKED: ATOM     21  OBG 5BG A 201      17.156  -1.874  -3.797 +0.01 -0.05    -0.326 OA
+DOCKED: ATOM     22  CAB 5BG A 201      16.604  -3.014  -4.432 +0.01 +0.04    +0.181 C 
+DOCKED: ENDBRANCH  17  21
+DOCKED: BRANCH  18  23
+DOCKED: ATOM     23  OBF 5BG A 201      17.975   0.059  -2.485 +0.00 -0.03    -0.326 OA
+DOCKED: ATOM     24  CAA 5BG A 201      17.207   0.171  -1.301 +0.00 +0.02    +0.181 C 
+DOCKED: ENDBRANCH  18  23
+DOCKED: ENDBRANCH  14  15
+DOCKED: ENDBRANCH  13  14
+DOCKED: ENDBRANCH  12  13
+DOCKED: BRANCH  12  25
+DOCKED: ATOM     25  CBQ 5BG A 201      13.051  -0.473  -6.214 -0.19 +0.00    +0.002 A 
+DOCKED: ATOM     26  CAL 5BG A 201      12.927   0.412  -5.182 +0.01 +0.00    -0.002 A 
+DOCKED: ATOM     27  CAJ 5BG A 201      12.811   0.069  -3.849 -0.06 -0.00    +0.002 A 
+DOCKED: ATOM     28  CAK 5BG A 201      12.884  -1.303  -3.585 -0.05 +0.00    +0.024 A 
+DOCKED: ATOM     29  CBP 5BG A 201      13.045  -2.247  -4.569 -0.03 +0.01    +0.095 A 
+DOCKED: ATOM     30  CAP 5BG A 201      13.168  -1.812  -5.934 -0.10 +0.00    +0.022 A 
+DOCKED: BRANCH  29  31
+DOCKED: ATOM     31  OBK 5BG A 201      13.179  -3.622  -4.368 +0.00 -0.06    -0.319 OA
+DOCKED: BRANCH  31  32
+DOCKED: ATOM     32  CBC 5BG A 201      13.337  -4.463  -5.513 +0.01 +0.06    +0.246 C 
+DOCKED: BRANCH  32  33
+DOCKED: ATOM     33  CBL 5BG A 201      12.082  -5.307  -5.776 -0.03 +0.04    +0.217 C 
+DOCKED: ATOM     34  OAI 5BG A 201      11.062  -4.777  -5.354 +0.03 -0.14    -0.645 OA
+DOCKED: ATOM     35  OAF 5BG A 201      12.179  -6.355  -6.414 +0.05 -0.08    -0.645 OA
+DOCKED: ENDBRANCH  32  33
+DOCKED: ENDBRANCH  31  32
+DOCKED: ENDBRANCH  29  31
+DOCKED: ENDBRANCH  12  25
+DOCKED: ENDBRANCH  11  12
+DOCKED: ENDBRANCH   8   9
+DOCKED: BRANCH   1  36
+DOCKED: ATOM     36  CCA 5BG A 201      12.653  -6.145 -11.048 -0.33 -0.02    +0.101 C 
+DOCKED: BRANCH  36  37
+DOCKED: ATOM     37  CBY 5BG A 201      13.192  -6.629 -12.415 -0.55 -0.00    +0.013 C 
+DOCKED: ATOM     38  CAZ 5BG A 201      12.145  -7.389 -13.182 -0.63 -0.00    +0.001 C 
+DOCKED: ATOM     39  CAU 5BG A 201      12.640  -7.948 -14.539 -0.82 -0.00    +0.000 C 
+DOCKED: ATOM     40  CAS 5BG A 201      13.854  -8.784 -14.346 -0.96 +0.00    +0.000 C 
+DOCKED: ATOM     41  CAT 5BG A 201      14.996  -8.003 -13.605 -0.77 +0.00    +0.000 C 
+DOCKED: ATOM     42  CAY 5BG A 201      14.461  -7.409 -12.286 -0.54 +0.00    +0.001 C 
+DOCKED: ENDBRANCH  36  37
+DOCKED: BRANCH  36  43
+DOCKED: ATOM     43  CBR 5BG A 201      13.547  -6.532  -9.857 -0.23 -0.00    -0.010 A 
+DOCKED: ATOM     44  CAR 5BG A 201      14.573  -5.666  -9.503 -0.21 +0.00    +0.022 A 
+DOCKED: ATOM     45  CBV 5BG A 201      15.385  -6.046  -8.433 -0.16 +0.06    +0.118 A 
+DOCKED: ATOM     46  CBW 5BG A 201      15.148  -7.178  -7.734 -0.07 +0.13    +0.138 A 
+DOCKED: ATOM     47  CBU 5BG A 201      14.156  -8.035  -8.060 -0.10 +0.09    +0.118 A 
+DOCKED: ATOM     48  CAQ 5BG A 201      13.298  -7.709  -9.140 -0.18 -0.00    +0.022 A 
+DOCKED: BRANCH  45  49
+DOCKED: ATOM     49  OBI 5BG A 201      16.463  -5.230  -8.052 -0.12 -0.17    -0.326 OA
+DOCKED: ATOM     50  CAD 5BG A 201      17.363  -4.670  -9.043 -0.27 +0.09    +0.181 C 
+DOCKED: ENDBRANCH  45  49
+DOCKED: BRANCH  46  51
+DOCKED: ATOM     51  OBJ 5BG A 201      16.076  -7.518  -6.693 -0.59 -0.51    -0.324 OA
+DOCKED: ATOM     52  CAE 5BG A 201      15.634  -7.044  -5.447 -0.03 +0.13    +0.182 C 
+DOCKED: ENDBRANCH  46  51
+DOCKED: BRANCH  47  53
+DOCKED: ATOM     53  OBH 5BG A 201      13.990  -9.137  -7.325 -0.15 -0.33    -0.326 OA
+DOCKED: ATOM     54  CAC 5BG A 201      12.682  -9.466  -6.865 -0.04 -0.04    +0.181 C 
+DOCKED: ENDBRANCH  47  53
+DOCKED: ENDBRANCH  36  43
+DOCKED: ENDBRANCH   1  36
+DOCKED: TORSDOF 17
+DOCKED: TER
+DOCKED: ENDMDL
+________________________________________________________________________________
+
+
+	BEGINNING GENETIC ALGORITHM DOCKING 2 of 10
+Run: 2 Seed: 617152360 894499532 [ Run 2 of 10 GA/GALS ]
+Beginning LAMARCKIAN GENETIC ALGORITHM (LGA), with a maximum of 2500000 energy evaluations.
+
+Final-Value: -15.226
+
+
+	FINAL GENETIC ALGORITHM DOCKED STATE
+	_______________________________________________
+
+
+Detailed state:  trans 14.658 -0.494 -4.711 quatxyzw -0.136316 -0.169235 -0.735409 -0.641835 center 12.923 -3.459 -7.720 ntor 17 24.3674 91.0087 35.1495 -179.9104 80.1223 -123.3517 180.0000 -160.2360 127.5397 -139.8478 -42.1854 175.7429 180.0000 -62.4733 -15.1994 -60.4078 122.9081
+State:	 14.658  -0.494  -4.711  -0.178 -0.221 -0.959 -100.143     24.37   91.01   35.15 -179.91   80.12 -123.35  180.00 -160.24  127.54 -139.85  -42.19  175.74  180.00  -62.47  -15.20  -60.41  122.91
+
+DOCKED: MODEL        2
+DOCKED: USER    Run = 2
+DOCKED: USER    DPF = grid_dock_files\5diu_dock.dpf
+DOCKED: USER  
+DOCKED: USER    Estimated Free Energy of Binding    =   -3.10 kcal/mol  [=(1)+(2)+(3)-(4)]
+DOCKED: USER    Estimated Inhibition Constant, Ki   =    5.36 mM (millimolar)  [Temperature = 298.15 K]
+DOCKED: USER    
+DOCKED: USER    (1) Final Intermolecular Energy     =   -8.17 kcal/mol
+DOCKED: USER        vdW + Hbond + desolv Energy     =   -7.40 kcal/mol
+DOCKED: USER        Electrostatic Energy            =   -0.77 kcal/mol
+DOCKED: USER    (2) Final Total Internal Energy     =   -7.06 kcal/mol
+DOCKED: USER    (3) Torsional Free Energy           =   +5.07 kcal/mol
+DOCKED: USER    (4) Unbound System's Energy  [=(2)] =   -7.06 kcal/mol
+DOCKED: USER    
+DOCKED: USER    
+DOCKED: USER    NEWDPF move pdbqt_files/5diu_ligand.pdbqt
+DOCKED: USER    NEWDPF about 12.923000 -3.459000 -7.720000
+DOCKED: USER    NEWDPF tran0 14.658205 -0.494446 -4.710547
+DOCKED: USER    NEWDPF quaternion0 -0.136316 -0.169235 -0.735409 -0.641835
+DOCKED: USER    NEWDPF axisangle0 -0.177763 -0.220690 -0.959008 -100.142498
+DOCKED: USER    NEWDPF quat0 -0.177763 -0.220690 -0.959008 -100.142498
+DOCKED: USER    NEWDPF dihe0 24.37 91.01 35.15 -179.91 80.12 -123.35 180.00 -160.24 127.54 -139.85 -42.19 175.74 180.00 -62.47 -15.20 -60.41 122.91 
+DOCKED: USER  keepresnum = 1 
+DOCKED: USER  
+DOCKED: REMARK  17 active torsions:
+DOCKED: REMARK  status: ('A' for Active; 'I' for Inactive)
+DOCKED: REMARK    1  A    between atoms: OBH_1040  and  CBU_1041 
+DOCKED: REMARK    2  A    between atoms: CBW_1043  and  OBJ_1044 
+DOCKED: REMARK    3  A    between atoms: CBV_1046  and  OBI_1047 
+DOCKED: REMARK    4  A    between atoms: CBR_1050  and  CCA_1051 
+DOCKED: REMARK    5  A    between atoms: CCA_1051  and  CBN_1058 
+DOCKED: REMARK    6  A    between atoms: CCA_1051  and  CBY_1052 
+DOCKED: REMARK       I    between atoms: CBN_1058  and  N_1060 
+DOCKED: REMARK    7  A    between atoms: CA_1065  and  C_1066 
+DOCKED: REMARK       I    between atoms: C_1066  and  NBE_1068 
+DOCKED: REMARK    8  A    between atoms: NBE_1068  and  CBX_1069 
+DOCKED: REMARK    9  A    between atoms: CBX_1069  and  CBA_1081 
+DOCKED: REMARK   10  A    between atoms: CBX_1069  and  CBQ_1070 
+DOCKED: REMARK   11  A    between atoms: CBP_1075  and  OBK_1076 
+DOCKED: REMARK   12  A    between atoms: OBK_1076  and  CBC_1077 
+DOCKED: REMARK   13  A    between atoms: CBC_1077  and  CBL_1078 
+DOCKED: REMARK   14  A    between atoms: CBA_1081  and  CAX_1082 
+DOCKED: REMARK   15  A    between atoms: CAX_1082  and  CBO_1083 
+DOCKED: REMARK   16  A    between atoms: CBS_1087  and  OBF_1088 
+DOCKED: REMARK   17  A    between atoms: CBT_1090  and  OBG_1091 
+DOCKED: USER                              x       y       z     vdW  Elec       q    Type
+DOCKED: USER                           _______ _______ _______ _____ _____    ______ ____
+DOCKED: ROOT
+DOCKED: ATOM      1  CBN 5BG A 201      13.156  -1.261  -7.742 -0.21 +0.07    +0.237 C 
+DOCKED: ATOM      2  OAH 5BG A 201      13.750  -2.276  -8.057 -0.24 -0.19    -0.272 OA
+DOCKED: ATOM      3  N   5BG A 201      13.882  -0.084  -7.618 -0.16 -0.06    -0.313 N 
+DOCKED: ATOM      4  CBD 5BG A 201      13.311   1.197  -7.092 -0.26 +0.00    +0.104 C 
+DOCKED: ATOM      5  CAW 5BG A 201      13.826   2.386  -7.836 -0.30 -0.00    +0.024 C 
+DOCKED: ATOM      6  CAV 5BG A 201      15.363   2.417  -7.987 -0.21 +0.00    +0.004 C 
+DOCKED: ATOM      7  CB  5BG A 201      15.803   1.109  -8.611 -0.25 +0.00    +0.032 C 
+DOCKED: ATOM      8  CA  5BG A 201      15.328  -0.132  -7.813 -0.17 +0.04    +0.164 C 
+DOCKED: ENDROOT
+DOCKED: BRANCH   8   9
+DOCKED: ATOM      9  C   5BG A 201      16.150  -0.156  -6.488 -0.04 +0.04    +0.272 C 
+DOCKED: ATOM     10  O   5BG A 201      15.792   0.528  -5.574 -0.01 -0.02    -0.269 OA
+DOCKED: ATOM     11  NBE 5BG A 201      17.243  -0.935  -6.508 -0.05 -0.05    -0.234 NA
+DOCKED: BRANCH  11  12
+DOCKED: ATOM     12  CBX 5BG A 201      18.016  -1.141  -5.229 -0.02 +0.02    +0.129 C 
+DOCKED: BRANCH  12  13
+DOCKED: ATOM     13  CBA 5BG A 201      18.949  -2.311  -5.375 -0.05 +0.01    +0.034 C 
+DOCKED: BRANCH  13  14
+DOCKED: ATOM     14  CAX 5BG A 201      18.489  -3.188  -6.591 -0.04 +0.01    +0.029 C 
+DOCKED: BRANCH  14  15
+DOCKED: ATOM     15  CBO 5BG A 201      17.991  -4.471  -6.226 -0.08 -0.01    -0.020 A 
+DOCKED: ATOM     16  CAO 5BG A 201      17.026  -5.102  -7.031 -0.13 +0.01    +0.022 A 
+DOCKED: ATOM     17  CBT 5BG A 201      16.607  -6.381  -6.652 -0.07 +0.09    +0.116 A 
+DOCKED: ATOM     18  CBS 5BG A 201      17.022  -7.085  -5.573 -0.05 +0.09    +0.116 A 
+DOCKED: ATOM     19  CAN 5BG A 201      18.013  -6.448  -4.767 -0.03 +0.01    +0.026 A 
+DOCKED: ATOM     20  CAM 5BG A 201      18.468  -5.210  -5.117 -0.03 -0.00    -0.002 A 
+DOCKED: BRANCH  17  21
+DOCKED: ATOM     21  OBG 5BG A 201      15.735  -7.210  -7.383 -0.45 -0.40    -0.326 OA
+DOCKED: ATOM     22  CAB 5BG A 201      15.493  -6.775  -8.710 -0.16 +0.13    +0.181 C 
+DOCKED: ENDBRANCH  17  21
+DOCKED: BRANCH  18  23
+DOCKED: ATOM     23  OBF 5BG A 201      16.498  -8.322  -5.308 -0.42 -0.42    -0.326 OA
+DOCKED: ATOM     24  CAA 5BG A 201      15.284  -8.466  -4.594 -0.02 +0.13    +0.181 C 
+DOCKED: ENDBRANCH  18  23
+DOCKED: ENDBRANCH  14  15
+DOCKED: ENDBRANCH  13  14
+DOCKED: ENDBRANCH  12  13
+DOCKED: BRANCH  12  25
+DOCKED: ATOM     25  CBQ 5BG A 201      17.016  -1.296  -4.164 +0.00 +0.00    +0.002 A 
+DOCKED: ATOM     26  CAL 5BG A 201      17.035  -0.498  -3.056 +0.01 -0.00    -0.002 A 
+DOCKED: ATOM     27  CAJ 5BG A 201      16.234  -0.663  -1.943 +0.00 +0.00    +0.002 A 
+DOCKED: ATOM     28  CAK 5BG A 201      15.391  -1.778  -1.983 +0.00 +0.00    +0.024 A 
+DOCKED: ATOM     29  CBP 5BG A 201      15.345  -2.644  -3.048 +0.01 +0.01    +0.095 A 
+DOCKED: ATOM     30  CAP 5BG A 201      16.217  -2.413  -4.167 +0.00 +0.00    +0.022 A 
+DOCKED: BRANCH  29  31
+DOCKED: ATOM     31  OBK 5BG A 201      14.569  -3.802  -3.127 +0.01 -0.06    -0.319 OA
+DOCKED: BRANCH  31  32
+DOCKED: ATOM     32  CBC 5BG A 201      14.936  -4.801  -4.080 +0.02 +0.06    +0.246 C 
+DOCKED: BRANCH  32  33
+DOCKED: ATOM     33  CBL 5BG A 201      13.940  -4.865  -5.248 +0.02 +0.06    +0.217 C 
+DOCKED: ATOM     34  OAI 5BG A 201      14.078  -3.938  -6.035 +0.05 -0.18    -0.645 OA
+DOCKED: ATOM     35  OAF 5BG A 201      13.171  -5.823  -5.336 +0.06 -0.17    -0.645 OA
+DOCKED: ENDBRANCH  32  33
+DOCKED: ENDBRANCH  31  32
+DOCKED: ENDBRANCH  29  31
+DOCKED: ENDBRANCH  12  25
+DOCKED: ENDBRANCH  11  12
+DOCKED: ENDBRANCH   8   9
+DOCKED: BRANCH   1  36
+DOCKED: ATOM     36  CCA 5BG A 201      11.680  -1.218  -7.407 -0.31 +0.02    +0.101 C 
+DOCKED: BRANCH  36  37
+DOCKED: ATOM     37  CBY 5BG A 201      10.879  -2.095  -8.398 -0.44 +0.00    +0.013 C 
+DOCKED: ATOM     38  CAZ 5BG A 201      11.286  -3.540  -8.308 -0.30 +0.00    +0.001 C 
+DOCKED: ATOM     39  CAU 5BG A 201      10.557  -4.464  -9.315 -0.43 -0.00    +0.000 C 
+DOCKED: ATOM     40  CAS 5BG A 201      10.730  -3.959 -10.703 -0.54 +0.00    +0.000 C 
+DOCKED: ATOM     41  CAT 5BG A 201      10.255  -2.472 -10.854 -0.69 +0.00    +0.000 C 
+DOCKED: ATOM     42  CAY 5BG A 201      10.953  -1.585  -9.802 -0.55 +0.00    +0.001 C 
+DOCKED: ENDBRANCH  36  37
+DOCKED: BRANCH  36  43
+DOCKED: ATOM     43  CBR 5BG A 201      11.508  -1.630  -5.935 -0.23 +0.00    -0.010 A 
+DOCKED: ATOM     44  CAR 5BG A 201      12.111  -0.844  -4.963 -0.05 -0.00    +0.022 A 
+DOCKED: ATOM     45  CBV 5BG A 201      11.960  -1.247  -3.635 -0.07 -0.01    +0.118 A 
+DOCKED: ATOM     46  CBW 5BG A 201      11.212  -2.323  -3.304 -0.05 +0.01    +0.138 A 
+DOCKED: ATOM     47  CBU 5BG A 201      10.617  -3.103  -4.233 -0.10 +0.02    +0.118 A 
+DOCKED: ATOM     48  CAQ 5BG A 201      10.735  -2.750  -5.600 -0.19 +0.00    +0.022 A 
+DOCKED: BRANCH  45  49
+DOCKED: ATOM     49  OBI 5BG A 201      12.578  -0.513  -2.609 -0.03 +0.01    -0.326 OA
+DOCKED: ATOM     50  CAD 5BG A 201      12.931   0.882  -2.797 -0.07 -0.02    +0.181 C 
+DOCKED: ENDBRANCH  45  49
+DOCKED: BRANCH  46  51
+DOCKED: ATOM     51  OBJ 5BG A 201      11.170  -2.698  -1.920 +0.00 -0.06    -0.324 OA
+DOCKED: ATOM     52  CAE 5BG A 201      12.336  -3.387  -1.547 +0.01 +0.04    +0.182 C 
+DOCKED: ENDBRANCH  46  51
+DOCKED: BRANCH  47  53
+DOCKED: ATOM     53  OBH 5BG A 201       9.901  -4.154  -3.828 -0.07 -0.10    -0.326 OA
+DOCKED: ATOM     54  CAC 5BG A 201      10.441  -5.462  -4.000 -0.03 +0.07    +0.181 C 
+DOCKED: ENDBRANCH  47  53
+DOCKED: ENDBRANCH  36  43
+DOCKED: ENDBRANCH   1  36
+DOCKED: TORSDOF 17
+DOCKED: TER
+DOCKED: ENDMDL
+________________________________________________________________________________
+
+
+	BEGINNING GENETIC ALGORITHM DOCKING 3 of 10
+Run: 3 Seed: 91173539 437148781 [ Run 3 of 10 GA/GALS ]
+Beginning LAMARCKIAN GENETIC ALGORITHM (LGA), with a maximum of 2500000 energy evaluations.
+
+Final-Value: -21.176
+
+
+	FINAL GENETIC ALGORITHM DOCKED STATE
+	_______________________________________________
+
+
+Detailed state:  trans 12.519 -3.731 -7.846 quatxyzw 0.023216 0.139890 0.096262 0.985203 center 12.923 -3.459 -7.720 ntor 17 12.9217 6.6700 -7.2436 -24.5151 11.8472 -29.3388 26.1715 12.4548 175.4883 -165.9356 -62.0428 162.2874 -33.3557 -155.9735 -28.9465 48.6531 -23.0385
+State:	 12.519  -3.731  -7.846   0.135  0.816  0.562 19.737     12.92    6.67   -7.24  -24.52   11.85  -29.34   26.17   12.45  175.49 -165.94  -62.04  162.29  -33.36 -155.97  -28.95   48.65  -23.04
+
+DOCKED: MODEL        3
+DOCKED: USER    Run = 3
+DOCKED: USER    DPF = grid_dock_files\5diu_dock.dpf
+DOCKED: USER  
+DOCKED: USER    Estimated Free Energy of Binding    =  -10.84 kcal/mol  [=(1)+(2)+(3)-(4)]
+DOCKED: USER    Estimated Inhibition Constant, Ki   =   11.27 nM (nanomolar)  [Temperature = 298.15 K]
+DOCKED: USER    
+DOCKED: USER    (1) Final Intermolecular Energy     =  -15.91 kcal/mol
+DOCKED: USER        vdW + Hbond + desolv Energy     =  -14.42 kcal/mol
+DOCKED: USER        Electrostatic Energy            =   -1.49 kcal/mol
+DOCKED: USER    (2) Final Total Internal Energy     =   -5.26 kcal/mol
+DOCKED: USER    (3) Torsional Free Energy           =   +5.07 kcal/mol
+DOCKED: USER    (4) Unbound System's Energy  [=(2)] =   -5.26 kcal/mol
+DOCKED: USER    
+DOCKED: USER    
+DOCKED: USER    NEWDPF move pdbqt_files/5diu_ligand.pdbqt
+DOCKED: USER    NEWDPF about 12.923000 -3.459000 -7.720000
+DOCKED: USER    NEWDPF tran0 12.518610 -3.730910 -7.845646
+DOCKED: USER    NEWDPF quaternion0 0.023216 0.139890 0.096262 0.985203
+DOCKED: USER    NEWDPF axisangle0 0.135456 0.816209 0.561654 19.737266
+DOCKED: USER    NEWDPF quat0 0.135456 0.816209 0.561654 19.737266
+DOCKED: USER    NEWDPF dihe0 12.92 6.67 -7.24 -24.52 11.85 -29.34 26.17 12.45 175.49 -165.94 -62.04 162.29 -33.36 -155.97 -28.95 48.65 -23.04 
+DOCKED: USER  keepresnum = 1 
+DOCKED: USER  
+DOCKED: REMARK  17 active torsions:
+DOCKED: REMARK  status: ('A' for Active; 'I' for Inactive)
+DOCKED: REMARK    1  A    between atoms: OBH_1040  and  CBU_1041 
+DOCKED: REMARK    2  A    between atoms: CBW_1043  and  OBJ_1044 
+DOCKED: REMARK    3  A    between atoms: CBV_1046  and  OBI_1047 
+DOCKED: REMARK    4  A    between atoms: CBR_1050  and  CCA_1051 
+DOCKED: REMARK    5  A    between atoms: CCA_1051  and  CBN_1058 
+DOCKED: REMARK    6  A    between atoms: CCA_1051  and  CBY_1052 
+DOCKED: REMARK       I    between atoms: CBN_1058  and  N_1060 
+DOCKED: REMARK    7  A    between atoms: CA_1065  and  C_1066 
+DOCKED: REMARK       I    between atoms: C_1066  and  NBE_1068 
+DOCKED: REMARK    8  A    between atoms: NBE_1068  and  CBX_1069 
+DOCKED: REMARK    9  A    between atoms: CBX_1069  and  CBA_1081 
+DOCKED: REMARK   10  A    between atoms: CBX_1069  and  CBQ_1070 
+DOCKED: REMARK   11  A    between atoms: CBP_1075  and  OBK_1076 
+DOCKED: REMARK   12  A    between atoms: OBK_1076  and  CBC_1077 
+DOCKED: REMARK   13  A    between atoms: CBC_1077  and  CBL_1078 
+DOCKED: REMARK   14  A    between atoms: CBA_1081  and  CAX_1082 
+DOCKED: REMARK   15  A    between atoms: CAX_1082  and  CBO_1083 
+DOCKED: REMARK   16  A    between atoms: CBS_1087  and  OBF_1088 
+DOCKED: REMARK   17  A    between atoms: CBT_1090  and  OBG_1091 
+DOCKED: USER                              x       y       z     vdW  Elec       q    Type
+DOCKED: USER                           _______ _______ _______ _____ _____    ______ ____
+DOCKED: ROOT
+DOCKED: ATOM      1  CBN 5BG A 201      12.679  -5.473 -10.841 -0.23 -0.02    +0.237 C 
+DOCKED: ATOM      2  OAH 5BG A 201      13.667  -4.982 -11.356 -0.28 +0.02    -0.272 OA
+DOCKED: ATOM      3  N   5BG A 201      11.590  -4.650 -10.587 -0.15 +0.02    -0.313 N 
+DOCKED: ATOM      4  CBD 5BG A 201      10.375  -5.085  -9.825 -0.42 -0.02    +0.104 C 
+DOCKED: ATOM      5  CAW 5BG A 201       9.119  -4.525 -10.408 -0.59 -0.00    +0.024 C 
+DOCKED: ATOM      6  CAV 5BG A 201       9.168  -3.002 -10.666 -0.41 -0.00    +0.004 C 
+DOCKED: ATOM      7  CB  5BG A 201      10.384  -2.706 -11.519 -0.55 +0.00    +0.032 C 
+DOCKED: ATOM      8  CA  5BG A 201      11.703  -3.227 -10.893 -0.42 +0.01    +0.164 C 
+DOCKED: ENDROOT
+DOCKED: BRANCH   8   9
+DOCKED: ATOM      9  C   5BG A 201      11.997  -2.330  -9.652 -0.25 +0.05    +0.272 C 
+DOCKED: ATOM     10  O   5BG A 201      12.208  -1.164  -9.819 -0.61 -0.11    -0.269 OA
+DOCKED: ATOM     11  NBE 5BG A 201      12.028  -2.976  -8.475 -0.12 -0.05    -0.234 NA
+DOCKED: BRANCH  11  12
+DOCKED: ATOM     12  CBX 5BG A 201      12.154  -2.172  -7.205 -0.21 +0.02    +0.129 C 
+DOCKED: BRANCH  12  13
+DOCKED: ATOM     13  CBA 5BG A 201      13.603  -1.909  -6.905 -0.16 +0.01    +0.034 C 
+DOCKED: BRANCH  13  14
+DOCKED: ATOM     14  CAX 5BG A 201      13.808  -0.373  -6.657 -0.21 +0.00    +0.029 C 
+DOCKED: BRANCH  14  15
+DOCKED: ATOM     15  CBO 5BG A 201      14.904   0.189  -7.370 -0.19 -0.00    -0.020 A 
+DOCKED: ATOM     16  CAO 5BG A 201      14.697   1.296  -8.211 -0.26 +0.00    +0.022 A 
+DOCKED: ATOM     17  CBT 5BG A 201      15.815   1.838  -8.851 -0.18 +0.00    +0.116 A 
+DOCKED: ATOM     18  CBS 5BG A 201      17.094   1.402  -8.761 -0.13 +0.01    +0.116 A 
+DOCKED: ATOM     19  CAN 5BG A 201      17.302   0.287  -7.893 -0.10 +0.00    +0.026 A 
+DOCKED: ATOM     20  CAM 5BG A 201      16.241  -0.256  -7.229 -0.14 -0.00    -0.002 A 
+DOCKED: BRANCH  17  21
+DOCKED: ATOM     21  OBG 5BG A 201      15.826   3.003  -9.642 -0.13 +0.02    -0.326 OA
+DOCKED: ATOM     22  CAB 5BG A 201      14.568   3.647  -9.747 -0.28 -0.01    +0.181 C 
+DOCKED: ENDBRANCH  17  21
+DOCKED: BRANCH  18  23
+DOCKED: ATOM     23  OBF 5BG A 201      18.089   2.016  -9.473 -0.11 +0.00    -0.326 OA
+DOCKED: ATOM     24  CAA 5BG A 201      19.378   1.439  -9.576 -0.16 -0.01    +0.181 C 
+DOCKED: ENDBRANCH  18  23
+DOCKED: ENDBRANCH  14  15
+DOCKED: ENDBRANCH  13  14
+DOCKED: ENDBRANCH  12  13
+DOCKED: BRANCH  12  25
+DOCKED: ATOM     25  CBQ 5BG A 201      11.452  -2.935  -6.164 -0.17 +0.00    +0.002 A 
+DOCKED: ATOM     26  CAL 5BG A 201      10.654  -2.310  -5.248 -0.22 -0.00    -0.002 A 
+DOCKED: ATOM     27  CAJ 5BG A 201      10.074  -2.918  -4.152 -0.14 +0.00    +0.002 A 
+DOCKED: ATOM     28  CAK 5BG A 201      10.402  -4.267  -3.984 -0.08 +0.01    +0.024 A 
+DOCKED: ATOM     29  CBP 5BG A 201      11.227  -4.950  -4.844 -0.06 +0.02    +0.095 A 
+DOCKED: ATOM     30  CAP 5BG A 201      11.802  -4.247  -5.958 -0.09 +0.00    +0.022 A 
+DOCKED: BRANCH  29  31
+DOCKED: ATOM     31  OBK 5BG A 201      11.636  -6.277  -4.702 -0.03 -0.09    -0.319 OA
+DOCKED: BRANCH  31  32
+DOCKED: ATOM     32  CBC 5BG A 201      10.970  -7.094  -3.736 -0.04 +0.12    +0.246 C 
+DOCKED: BRANCH  32  33
+DOCKED: ATOM     33  CBL 5BG A 201       9.875  -7.956  -4.380 -0.13 +0.16    +0.217 C 
+DOCKED: ATOM     34  OAI 5BG A 201       9.434  -8.804  -3.616 -0.28 -0.81    -0.645 OA
+DOCKED: ATOM     35  OAF 5BG A 201       9.497  -7.700  -5.524 -0.34 -0.53    -0.645 OA
+DOCKED: ENDBRANCH  32  33
+DOCKED: ENDBRANCH  31  32
+DOCKED: ENDBRANCH  29  31
+DOCKED: ENDBRANCH  12  25
+DOCKED: ENDBRANCH  11  12
+DOCKED: ENDBRANCH   8   9
+DOCKED: BRANCH   1  36
+DOCKED: ATOM     36  CCA 5BG A 201      12.590  -6.917 -10.396 -0.26 -0.04    +0.101 C 
+DOCKED: BRANCH  36  37
+DOCKED: ATOM     37  CBY 5BG A 201      12.915  -7.864 -11.576 -0.46 -0.00    +0.013 C 
+DOCKED: ATOM     38  CAZ 5BG A 201      14.233  -8.561 -11.377 -0.54 +0.00    +0.001 C 
+DOCKED: ATOM     39  CAU 5BG A 201      14.641  -9.483 -12.552 -0.91 +0.00    +0.000 C 
+DOCKED: ATOM     40  CAS 5BG A 201      14.639  -8.727 -13.832 -0.96 +0.00    +0.000 C 
+DOCKED: ATOM     41  CAT 5BG A 201      13.258  -8.037 -14.109 -0.89 -0.00    +0.000 C 
+DOCKED: ATOM     42  CAY 5BG A 201      12.848  -7.171 -12.900 -0.64 -0.00    +0.001 C 
+DOCKED: ENDBRANCH  36  37
+DOCKED: BRANCH  36  43
+DOCKED: ATOM     43  CBR 5BG A 201      13.514  -7.104  -9.180 -0.19 -0.00    -0.010 A 
+DOCKED: ATOM     44  CAR 5BG A 201      14.665  -6.331  -9.111 -0.21 +0.01    +0.022 A 
+DOCKED: ATOM     45  CBV 5BG A 201      15.500  -6.530  -8.009 -0.12 +0.08    +0.118 A 
+DOCKED: ATOM     46  CBW 5BG A 201      15.174  -7.395  -7.023 +0.06 +0.15    +0.138 A 
+DOCKED: ATOM     47  CBU 5BG A 201      14.059  -8.157  -7.070 -0.08 +0.09    +0.118 A 
+DOCKED: ATOM     48  CAQ 5BG A 201      13.171  -8.005  -8.164 -0.14 -0.00    +0.022 A 
+DOCKED: BRANCH  45  49
+DOCKED: ATOM     49  OBI 5BG A 201      16.698  -5.805  -7.903 -0.12 -0.20    -0.326 OA
+DOCKED: ATOM     50  CAD 5BG A 201      17.293  -5.170  -9.064 -0.30 +0.09    +0.181 C 
+DOCKED: ENDBRANCH  45  49
+DOCKED: BRANCH  46  51
+DOCKED: ATOM     51  OBJ 5BG A 201      16.125  -7.581  -5.966 -0.64 -0.40    -0.324 OA
+DOCKED: ATOM     52  CAE 5BG A 201      16.096  -6.504  -5.065 -0.02 +0.10    +0.182 C 
+DOCKED: ENDBRANCH  46  51
+DOCKED: BRANCH  47  53
+DOCKED: ATOM     53  OBH 5BG A 201      13.810  -8.994  -6.060 -0.05 -0.21    -0.326 OA
+DOCKED: ATOM     54  CAC 5BG A 201      12.701  -9.884  -6.163 -0.09 -0.01    +0.181 C 
+DOCKED: ENDBRANCH  47  53
+DOCKED: ENDBRANCH  36  43
+DOCKED: ENDBRANCH   1  36
+DOCKED: TORSDOF 17
+DOCKED: TER
+DOCKED: ENDMDL
+________________________________________________________________________________
+
+
+	BEGINNING GENETIC ALGORITHM DOCKING 4 of 10
+Run: 4 Seed: 1750758219 915423695 [ Run 4 of 10 GA/GALS ]
+Beginning LAMARCKIAN GENETIC ALGORITHM (LGA), with a maximum of 2500000 energy evaluations.
+
+Final-Value: -15.591
+
+
+	FINAL GENETIC ALGORITHM DOCKED STATE
+	_______________________________________________
+
+
+Detailed state:  trans 14.773 -5.366 -7.079 quatxyzw -0.687324 -0.686522 0.139084 0.192169 center 12.923 -3.459 -7.720 ntor 17 -49.5422 71.3066 78.4773 -175.4155 -57.0553 -110.8943 -76.8856 103.2880 -34.8705 -39.8960 179.9753 108.9608 133.9769 14.8555 -17.4524 -33.9692 65.5790
+State:	 14.773  -5.366  -7.079  -0.700 -0.700  0.142 157.841    -49.54   71.31   78.48 -175.42  -57.06 -110.89  -76.89  103.29  -34.87  -39.90  179.98  108.96  133.98   14.86  -17.45  -33.97   65.58
+
+DOCKED: MODEL        4
+DOCKED: USER    Run = 4
+DOCKED: USER    DPF = grid_dock_files\5diu_dock.dpf
+DOCKED: USER  
+DOCKED: USER    Estimated Free Energy of Binding    =   -3.17 kcal/mol  [=(1)+(2)+(3)-(4)]
+DOCKED: USER    Estimated Inhibition Constant, Ki   =    4.71 mM (millimolar)  [Temperature = 298.15 K]
+DOCKED: USER    
+DOCKED: USER    (1) Final Intermolecular Energy     =   -8.25 kcal/mol
+DOCKED: USER        vdW + Hbond + desolv Energy     =   -6.84 kcal/mol
+DOCKED: USER        Electrostatic Energy            =   -1.41 kcal/mol
+DOCKED: USER    (2) Final Total Internal Energy     =   -7.34 kcal/mol
+DOCKED: USER    (3) Torsional Free Energy           =   +5.07 kcal/mol
+DOCKED: USER    (4) Unbound System's Energy  [=(2)] =   -7.34 kcal/mol
+DOCKED: USER    
+DOCKED: USER    
+DOCKED: USER    NEWDPF move pdbqt_files/5diu_ligand.pdbqt
+DOCKED: USER    NEWDPF about 12.923000 -3.459000 -7.720000
+DOCKED: USER    NEWDPF tran0 14.773143 -5.365541 -7.079126
+DOCKED: USER    NEWDPF quaternion0 -0.687324 -0.686522 0.139084 0.192169
+DOCKED: USER    NEWDPF axisangle0 -0.700378 -0.699561 0.141726 157.841160
+DOCKED: USER    NEWDPF quat0 -0.700378 -0.699561 0.141726 157.841160
+DOCKED: USER    NEWDPF dihe0 -49.54 71.31 78.48 -175.42 -57.06 -110.89 -76.89 103.29 -34.87 -39.90 179.98 108.96 133.98 14.86 -17.45 -33.97 65.58 
+DOCKED: USER  keepresnum = 1 
+DOCKED: USER  
+DOCKED: REMARK  17 active torsions:
+DOCKED: REMARK  status: ('A' for Active; 'I' for Inactive)
+DOCKED: REMARK    1  A    between atoms: OBH_1040  and  CBU_1041 
+DOCKED: REMARK    2  A    between atoms: CBW_1043  and  OBJ_1044 
+DOCKED: REMARK    3  A    between atoms: CBV_1046  and  OBI_1047 
+DOCKED: REMARK    4  A    between atoms: CBR_1050  and  CCA_1051 
+DOCKED: REMARK    5  A    between atoms: CCA_1051  and  CBN_1058 
+DOCKED: REMARK    6  A    between atoms: CCA_1051  and  CBY_1052 
+DOCKED: REMARK       I    between atoms: CBN_1058  and  N_1060 
+DOCKED: REMARK    7  A    between atoms: CA_1065  and  C_1066 
+DOCKED: REMARK       I    between atoms: C_1066  and  NBE_1068 
+DOCKED: REMARK    8  A    between atoms: NBE_1068  and  CBX_1069 
+DOCKED: REMARK    9  A    between atoms: CBX_1069  and  CBA_1081 
+DOCKED: REMARK   10  A    between atoms: CBX_1069  and  CBQ_1070 
+DOCKED: REMARK   11  A    between atoms: CBP_1075  and  OBK_1076 
+DOCKED: REMARK   12  A    between atoms: OBK_1076  and  CBC_1077 
+DOCKED: REMARK   13  A    between atoms: CBC_1077  and  CBL_1078 
+DOCKED: REMARK   14  A    between atoms: CBA_1081  and  CAX_1082 
+DOCKED: REMARK   15  A    between atoms: CAX_1082  and  CBO_1083 
+DOCKED: REMARK   16  A    between atoms: CBS_1087  and  OBF_1088 
+DOCKED: REMARK   17  A    between atoms: CBT_1090  and  OBG_1091 
+DOCKED: USER                              x       y       z     vdW  Elec       q    Type
+DOCKED: USER                           _______ _______ _______ _____ _____    ______ ____
+DOCKED: ROOT
+DOCKED: ATOM      1  CBN 5BG A 201      12.930  -4.335  -4.327 +0.01 +0.05    +0.237 C 
+DOCKED: ATOM      2  OAH 5BG A 201      13.573  -3.373  -3.950 +0.00 -0.05    -0.272 OA
+DOCKED: ATOM      3  N   5BG A 201      13.539  -5.582  -4.313 +0.02 -0.09    -0.313 N 
+DOCKED: ATOM      4  CBD 5BG A 201      12.921  -6.820  -4.888 -0.00 +0.03    +0.104 C 
+DOCKED: ATOM      5  CAW 5BG A 201      13.194  -8.024  -4.048 +0.01 +0.01    +0.024 C 
+DOCKED: ATOM      6  CAV 5BG A 201      14.680  -8.203  -3.665 +0.00 +0.00    +0.004 C 
+DOCKED: ATOM      7  CB  5BG A 201      15.157  -6.921  -3.014 +0.01 +0.01    +0.032 C 
+DOCKED: ATOM      8  CA  5BG A 201      14.937  -5.671  -3.904 +0.02 +0.05    +0.164 C 
+DOCKED: ENDROOT
+DOCKED: BRANCH   8   9
+DOCKED: ATOM      9  C   5BG A 201      15.943  -5.782  -5.090 +0.01 +0.11    +0.272 C 
+DOCKED: ATOM     10  O   5BG A 201      16.338  -6.864  -5.414 -0.11 -0.18    -0.269 OA
+DOCKED: ATOM     11  NBE 5BG A 201      16.318  -4.611  -5.631 -0.00 -0.08    -0.234 NA
+DOCKED: BRANCH  11  12
+DOCKED: ATOM     12  CBX 5BG A 201      17.168  -4.622  -6.877 -0.12 +0.06    +0.129 C 
+DOCKED: BRANCH  12  13
+DOCKED: ATOM     13  CBA 5BG A 201      17.691  -3.241  -7.155 -0.16 +0.02    +0.034 C 
+DOCKED: BRANCH  13  14
+DOCKED: ATOM     14  CAX 5BG A 201      16.485  -2.285  -7.463 -0.11 +0.01    +0.029 C 
+DOCKED: BRANCH  14  15
+DOCKED: ATOM     15  CBO 5BG A 201      16.234  -1.322  -6.446 -0.09 -0.01    -0.020 A 
+DOCKED: ATOM     16  CAO 5BG A 201      15.092  -1.441  -5.637 -0.04 +0.00    +0.022 A 
+DOCKED: ATOM     17  CBT 5BG A 201      14.918  -0.496  -4.622 -0.00 +0.01    +0.116 A 
+DOCKED: ATOM     18  CBS 5BG A 201      15.733   0.547  -4.335 +0.01 +0.01    +0.116 A 
+DOCKED: ATOM     19  CAN 5BG A 201      16.901   0.655  -5.149 -0.00 +0.00    +0.026 A 
+DOCKED: ATOM     20  CAM 5BG A 201      17.121  -0.263  -6.134 -0.05 -0.00    -0.002 A 
+DOCKED: BRANCH  17  21
+DOCKED: ATOM     21  OBG 5BG A 201      13.900  -0.511  -3.649 -0.01 -0.00    -0.326 OA
+DOCKED: ATOM     22  CAB 5BG A 201      12.589  -0.420  -4.177 -0.04 -0.04    +0.181 C 
+DOCKED: ENDBRANCH  17  21
+DOCKED: BRANCH  18  23
+DOCKED: ATOM     23  OBF 5BG A 201      15.419   1.417  -3.325 +0.00 -0.01    -0.326 OA
+DOCKED: ATOM     24  CAA 5BG A 201      14.909   2.708  -3.602 -0.03 -0.01    +0.181 C 
+DOCKED: ENDBRANCH  18  23
+DOCKED: ENDBRANCH  14  15
+DOCKED: ENDBRANCH  13  14
+DOCKED: ENDBRANCH  12  13
+DOCKED: BRANCH  12  25
+DOCKED: ATOM     25  CBQ 5BG A 201      16.323  -5.173  -7.947 -0.20 +0.00    +0.002 A 
+DOCKED: ATOM     26  CAL 5BG A 201      16.706  -5.103  -9.255 -0.32 -0.00    -0.002 A 
+DOCKED: ATOM     27  CAJ 5BG A 201      15.920  -5.459 -10.334 -0.08 +0.00    +0.002 A 
+DOCKED: ATOM     28  CAK 5BG A 201      14.623  -5.867 -10.010 -0.26 +0.00    +0.024 A 
+DOCKED: ATOM     29  CBP 5BG A 201      14.158  -5.927  -8.719 -0.13 +0.02    +0.095 A 
+DOCKED: ATOM     30  CAP 5BG A 201      15.031  -5.532  -7.648 -0.11 +0.01    +0.022 A 
+DOCKED: BRANCH  29  31
+DOCKED: ATOM     31  OBK 5BG A 201      12.861  -6.272  -8.333 -0.06 +0.01    -0.319 OA
+DOCKED: BRANCH  31  32
+DOCKED: ATOM     32  CBC 5BG A 201      12.636  -7.581  -7.804 -0.07 -0.06    +0.246 C 
+DOCKED: BRANCH  32  33
+DOCKED: ATOM     33  CBL 5BG A 201      13.899  -8.451  -7.884 -0.08 +0.14    +0.217 C 
+DOCKED: ATOM     34  OAI 5BG A 201      14.618  -8.328  -6.901 -0.10 -0.86    -0.645 OA
+DOCKED: ATOM     35  OAF 5BG A 201      14.050  -9.213  -8.839 -0.49 -0.54    -0.645 OA
+DOCKED: ENDBRANCH  32  33
+DOCKED: ENDBRANCH  31  32
+DOCKED: ENDBRANCH  29  31
+DOCKED: ENDBRANCH  12  25
+DOCKED: ENDBRANCH  11  12
+DOCKED: ENDBRANCH   8   9
+DOCKED: BRANCH   1  36
+DOCKED: ATOM     36  CCA 5BG A 201      11.522  -4.244  -4.879 -0.07 +0.02    +0.101 C 
+DOCKED: BRANCH  36  37
+DOCKED: ATOM     37  CBY 5BG A 201      10.664  -3.296  -4.008 -0.14 +0.00    +0.013 C 
+DOCKED: ATOM     38  CAZ 5BG A 201       9.789  -4.065  -3.057 -0.15 +0.00    +0.001 C 
+DOCKED: ATOM     39  CAU 5BG A 201       8.864  -3.174  -2.192 -0.19 +0.00    +0.000 C 
+DOCKED: ATOM     40  CAS 5BG A 201       8.041  -2.286  -3.056 -0.36 +0.00    +0.000 C 
+DOCKED: ATOM     41  CAT 5BG A 201       8.924  -1.417  -4.020 -0.38 -0.00    +0.000 C 
+DOCKED: ATOM     42  CAY 5BG A 201       9.875  -2.325  -4.826 -0.19 +0.00    +0.001 C 
+DOCKED: ENDBRANCH  36  37
+DOCKED: BRANCH  36  43
+DOCKED: ATOM     43  CBR 5BG A 201      11.611  -3.819  -6.355 -0.12 -0.00    -0.010 A 
+DOCKED: ATOM     44  CAR 5BG A 201      10.764  -4.437  -7.264 -0.19 +0.00    +0.022 A 
+DOCKED: ATOM     45  CBV 5BG A 201      10.875  -4.052  -8.602 -0.22 +0.01    +0.118 A 
+DOCKED: ATOM     46  CBW 5BG A 201      11.729  -3.078  -8.987 -0.22 +0.02    +0.138 A 
+DOCKED: ATOM     47  CBU 5BG A 201      12.562  -2.462  -8.120 -0.18 +0.03    +0.118 A 
+DOCKED: ATOM     48  CAQ 5BG A 201      12.502  -2.811  -6.748 -0.12 +0.00    +0.022 A 
+DOCKED: BRANCH  45  49
+DOCKED: ATOM     49  OBI 5BG A 201      10.071  -4.670  -9.574 -0.26 +0.02    -0.326 OA
+DOCKED: ATOM     50  CAD 5BG A 201       8.633  -4.483  -9.582 -0.49 -0.00    +0.181 C 
+DOCKED: ENDBRANCH  45  49
+DOCKED: BRANCH  46  51
+DOCKED: ATOM     51  OBJ 5BG A 201      11.820  -2.797 -10.391 -0.27 -0.03    -0.324 OA
+DOCKED: ATOM     52  CAE 5BG A 201      12.522  -3.809 -11.065 -0.25 -0.01    +0.182 C 
+DOCKED: ENDBRANCH  46  51
+DOCKED: BRANCH  47  53
+DOCKED: ATOM     53  OBH 5BG A 201      13.383  -1.514  -8.579 -0.17 -0.16    -0.326 OA
+DOCKED: ATOM     54  CAC 5BG A 201      13.231  -0.181  -8.098 -0.29 +0.05    +0.181 C 
+DOCKED: ENDBRANCH  47  53
+DOCKED: ENDBRANCH  36  43
+DOCKED: ENDBRANCH   1  36
+DOCKED: TORSDOF 17
+DOCKED: TER
+DOCKED: ENDMDL
+________________________________________________________________________________
+
+
+	BEGINNING GENETIC ALGORITHM DOCKING 5 of 10
+Run: 5 Seed: 738780555 1451363308 [ Run 5 of 10 GA/GALS ]
+Beginning LAMARCKIAN GENETIC ALGORITHM (LGA), with a maximum of 2500000 energy evaluations.
+
+Final-Value: -20.071
+
+
+	FINAL GENETIC ALGORITHM DOCKED STATE
+	_______________________________________________
+
+
+Detailed state:  trans 12.759 -3.717 -7.970 quatxyzw -0.020174 -0.060782 -0.048545 -0.996766 center 12.923 -3.459 -7.720 ntor 17 -26.2852 76.2781 34.9837 30.8997 10.7437 131.5796 -144.0843 147.4370 169.5904 -180.0000 -31.1119 -52.0955 134.7446 16.6251 -23.5450 22.0693 0.1211
+State:	 12.759  -3.717  -7.970  -0.251 -0.756 -0.604 -9.219    -26.29   76.28   34.98   30.90   10.74  131.58 -144.08  147.44  169.59 -180.00  -31.11  -52.10  134.74   16.63  -23.55   22.07    0.12
+
+DOCKED: MODEL        5
+DOCKED: USER    Run = 5
+DOCKED: USER    DPF = grid_dock_files\5diu_dock.dpf
+DOCKED: USER  
+DOCKED: USER    Estimated Free Energy of Binding    =   -7.35 kcal/mol  [=(1)+(2)+(3)-(4)]
+DOCKED: USER    Estimated Inhibition Constant, Ki   =    4.12 uM (micromolar)  [Temperature = 298.15 K]
+DOCKED: USER    
+DOCKED: USER    (1) Final Intermolecular Energy     =  -12.42 kcal/mol
+DOCKED: USER        vdW + Hbond + desolv Energy     =  -12.00 kcal/mol
+DOCKED: USER        Electrostatic Energy            =   -0.41 kcal/mol
+DOCKED: USER    (2) Final Total Internal Energy     =   -7.65 kcal/mol
+DOCKED: USER    (3) Torsional Free Energy           =   +5.07 kcal/mol
+DOCKED: USER    (4) Unbound System's Energy  [=(2)] =   -7.65 kcal/mol
+DOCKED: USER    
+DOCKED: USER    
+DOCKED: USER    NEWDPF move pdbqt_files/5diu_ligand.pdbqt
+DOCKED: USER    NEWDPF about 12.923000 -3.459000 -7.720000
+DOCKED: USER    NEWDPF tran0 12.759460 -3.716804 -7.969697
+DOCKED: USER    NEWDPF quaternion0 -0.020174 -0.060782 -0.048545 -0.996766
+DOCKED: USER    NEWDPF axisangle0 -0.251043 -0.756352 -0.604077 -9.218690
+DOCKED: USER    NEWDPF quat0 -0.251043 -0.756352 -0.604077 -9.218690
+DOCKED: USER    NEWDPF dihe0 -26.29 76.28 34.98 30.90 10.74 131.58 -144.08 147.44 169.59 -180.00 -31.11 -52.10 134.74 16.63 -23.55 22.07 0.12 
+DOCKED: USER  keepresnum = 1 
+DOCKED: USER  
+DOCKED: REMARK  17 active torsions:
+DOCKED: REMARK  status: ('A' for Active; 'I' for Inactive)
+DOCKED: REMARK    1  A    between atoms: OBH_1040  and  CBU_1041 
+DOCKED: REMARK    2  A    between atoms: CBW_1043  and  OBJ_1044 
+DOCKED: REMARK    3  A    between atoms: CBV_1046  and  OBI_1047 
+DOCKED: REMARK    4  A    between atoms: CBR_1050  and  CCA_1051 
+DOCKED: REMARK    5  A    between atoms: CCA_1051  and  CBN_1058 
+DOCKED: REMARK    6  A    between atoms: CCA_1051  and  CBY_1052 
+DOCKED: REMARK       I    between atoms: CBN_1058  and  N_1060 
+DOCKED: REMARK    7  A    between atoms: CA_1065  and  C_1066 
+DOCKED: REMARK       I    between atoms: C_1066  and  NBE_1068 
+DOCKED: REMARK    8  A    between atoms: NBE_1068  and  CBX_1069 
+DOCKED: REMARK    9  A    between atoms: CBX_1069  and  CBA_1081 
+DOCKED: REMARK   10  A    between atoms: CBX_1069  and  CBQ_1070 
+DOCKED: REMARK   11  A    between atoms: CBP_1075  and  OBK_1076 
+DOCKED: REMARK   12  A    between atoms: OBK_1076  and  CBC_1077 
+DOCKED: REMARK   13  A    between atoms: CBC_1077  and  CBL_1078 
+DOCKED: REMARK   14  A    between atoms: CBA_1081  and  CAX_1082 
+DOCKED: REMARK   15  A    between atoms: CAX_1082  and  CBO_1083 
+DOCKED: REMARK   16  A    between atoms: CBS_1087  and  OBF_1088 
+DOCKED: REMARK   17  A    between atoms: CBT_1090  and  OBG_1091 
+DOCKED: USER                              x       y       z     vdW  Elec       q    Type
+DOCKED: USER                           _______ _______ _______ _____ _____    ______ ____
+DOCKED: ROOT
+DOCKED: ATOM      1  CBN 5BG A 201      12.597  -5.433 -10.980 -0.25 -0.02    +0.237 C 
+DOCKED: ATOM      2  OAH 5BG A 201      13.440  -4.851 -11.637 -0.31 +0.02    -0.272 OA
+DOCKED: ATOM      3  N   5BG A 201      11.491  -4.717 -10.542 -0.15 +0.02    -0.313 N 
+DOCKED: ATOM      4  CBD 5BG A 201      10.461  -5.264  -9.603 -0.39 -0.02    +0.104 C 
+DOCKED: ATOM      5  CAW 5BG A 201       9.081  -4.823  -9.969 -0.65 -0.00    +0.024 C 
+DOCKED: ATOM      6  CAV 5BG A 201       8.947  -3.303 -10.207 -0.46 -0.00    +0.004 C 
+DOCKED: ATOM      7  CB  5BG A 201       9.978  -2.893 -11.238 -0.61 +0.00    +0.032 C 
+DOCKED: ATOM      8  CA  5BG A 201      11.423  -3.289 -10.839 -0.43 +0.01    +0.164 C 
+DOCKED: ENDROOT
+DOCKED: BRANCH   8   9
+DOCKED: ATOM      9  C   5BG A 201      11.828  -2.370  -9.648 -0.28 +0.06    +0.272 C 
+DOCKED: ATOM     10  O   5BG A 201      11.510  -1.216  -9.674 -0.92 -0.14    -0.269 OA
+DOCKED: ATOM     11  NBE 5BG A 201      12.555  -2.965  -8.688 -0.11 -0.06    -0.234 NA
+DOCKED: BRANCH  11  12
+DOCKED: ATOM     12  CBX 5BG A 201      12.865  -2.200  -7.426 -0.17 +0.04    +0.129 C 
+DOCKED: BRANCH  12  13
+DOCKED: ATOM     13  CBA 5BG A 201      14.339  -1.917  -7.345 -0.12 +0.02    +0.034 C 
+DOCKED: BRANCH  13  14
+DOCKED: ATOM     14  CAX 5BG A 201      15.120  -3.275  -7.249 -0.06 +0.02    +0.029 C 
+DOCKED: BRANCH  14  15
+DOCKED: ATOM     15  CBO 5BG A 201      15.547  -3.607  -5.932 -0.04 -0.01    -0.020 A 
+DOCKED: ATOM     16  CAO 5BG A 201      14.955  -4.688  -5.258 -0.00 +0.01    +0.022 A 
+DOCKED: ATOM     17  CBT 5BG A 201      15.445  -5.001  -3.986 +0.02 +0.03    +0.116 A 
+DOCKED: ATOM     18  CBS 5BG A 201      16.430  -4.360  -3.315 +0.01 +0.03    +0.116 A 
+DOCKED: ATOM     19  CAN 5BG A 201      17.040  -3.272  -4.011 +0.00 +0.01    +0.026 A 
+DOCKED: ATOM     20  CAM 5BG A 201      16.609  -2.951  -5.265 -0.02 -0.00    -0.002 A 
+DOCKED: BRANCH  17  21
+DOCKED: ATOM     21  OBG 5BG A 201      15.055  -6.105  -3.204 +0.01 -0.09    -0.326 OA
+DOCKED: ATOM     22  CAB 5BG A 201      13.675  -6.415  -3.279 +0.03 +0.05    +0.181 C 
+DOCKED: ENDBRANCH  17  21
+DOCKED: BRANCH  18  23
+DOCKED: ATOM     23  OBF 5BG A 201      16.787  -4.760  -2.055 +0.00 -0.06    -0.326 OA
+DOCKED: ATOM     24  CAA 5BG A 201      16.308  -4.082  -0.908 +0.00 +0.03    +0.181 C 
+DOCKED: ENDBRANCH  18  23
+DOCKED: ENDBRANCH  14  15
+DOCKED: ENDBRANCH  13  14
+DOCKED: ENDBRANCH  12  13
+DOCKED: BRANCH  12  25
+DOCKED: ATOM     25  CBQ 5BG A 201      12.345  -3.009  -6.315 -0.11 +0.00    +0.002 A 
+DOCKED: ATOM     26  CAL 5BG A 201      11.856  -4.266  -6.526 -0.11 -0.00    -0.002 A 
+DOCKED: ATOM     27  CAJ 5BG A 201      11.217  -5.041  -5.578 -0.10 +0.00    +0.002 A 
+DOCKED: ATOM     28  CAK 5BG A 201      11.037  -4.423  -4.336 -0.08 +0.01    +0.024 A 
+DOCKED: ATOM     29  CBP 5BG A 201      11.469  -3.148  -4.064 -0.06 +0.01    +0.095 A 
+DOCKED: ATOM     30  CAP 5BG A 201      12.118  -2.399  -5.105 -0.10 +0.00    +0.022 A 
+DOCKED: BRANCH  29  31
+DOCKED: ATOM     31  OBK 5BG A 201      11.272  -2.456  -2.868 -0.02 -0.04    -0.319 OA
+DOCKED: BRANCH  31  32
+DOCKED: ATOM     32  CBC 5BG A 201      12.278  -1.535  -2.442 -0.02 +0.01    +0.246 C 
+DOCKED: BRANCH  32  33
+DOCKED: ATOM     33  CBL 5BG A 201      13.533  -2.259  -1.936 +0.00 +0.03    +0.217 C 
+DOCKED: ATOM     34  OAI 5BG A 201      13.282  -3.355  -1.452 +0.01 -0.12    -0.645 OA
+DOCKED: ATOM     35  OAF 5BG A 201      14.640  -1.746  -2.107 +0.01 -0.08    -0.645 OA
+DOCKED: ENDBRANCH  32  33
+DOCKED: ENDBRANCH  31  32
+DOCKED: ENDBRANCH  29  31
+DOCKED: ENDBRANCH  12  25
+DOCKED: ENDBRANCH  11  12
+DOCKED: ENDBRANCH   8   9
+DOCKED: BRANCH   1  36
+DOCKED: ATOM     36  CCA 5BG A 201      12.715  -6.880 -10.549 -0.28 -0.03    +0.101 C 
+DOCKED: BRANCH  36  37
+DOCKED: ATOM     37  CBY 5BG A 201      13.066  -7.774 -11.762 -0.48 -0.00    +0.013 C 
+DOCKED: ATOM     38  CAZ 5BG A 201      14.511  -8.192 -11.739 -0.55 +0.00    +0.001 C 
+DOCKED: ATOM     39  CAU 5BG A 201      14.940  -9.045 -12.958 -0.88 +0.00    +0.000 C 
+DOCKED: ATOM     40  CAS 5BG A 201      14.622  -8.338 -14.226 -0.91 +0.00    +0.000 C 
+DOCKED: ATOM     41  CAT 5BG A 201      13.106  -7.943 -14.317 -0.89 -0.00    +0.000 C 
+DOCKED: ATOM     42  CAY 5BG A 201      12.692  -7.143 -13.065 -0.66 -0.00    +0.001 C 
+DOCKED: ENDBRANCH  36  37
+DOCKED: BRANCH  36  43
+DOCKED: ATOM     43  CBR 5BG A 201      13.739  -6.960  -9.403 -0.21 -0.00    -0.010 A 
+DOCKED: ATOM     44  CAR 5BG A 201      13.473  -7.824  -8.350 -0.17 +0.00    +0.022 A 
+DOCKED: ATOM     45  CBV 5BG A 201      14.403  -7.865  -7.310 -0.05 +0.11    +0.118 A 
+DOCKED: ATOM     46  CBW 5BG A 201      15.543  -7.139  -7.353 +0.00 +0.15    +0.138 A 
+DOCKED: ATOM     47  CBU 5BG A 201      15.822  -6.292  -8.368 -0.16 +0.08    +0.118 A 
+DOCKED: ATOM     48  CAQ 5BG A 201      14.915  -6.201  -9.453 -0.24 +0.01    +0.022 A 
+DOCKED: BRANCH  45  49
+DOCKED: ATOM     49  OBI 5BG A 201      14.171  -8.692  -6.199 -0.10 -0.28    -0.326 OA
+DOCKED: ATOM     50  CAD 5BG A 201      13.297  -9.846  -6.296 -0.10 +0.05    +0.181 C 
+DOCKED: ENDBRANCH  45  49
+DOCKED: BRANCH  46  51
+DOCKED: ATOM     51  OBJ 5BG A 201      16.406  -7.197  -6.209 -0.61 -0.35    -0.324 OA
+DOCKED: ATOM     52  CAE 5BG A 201      17.740  -7.413  -6.592 +0.12 +0.21    +0.182 C 
+DOCKED: ENDBRANCH  46  51
+DOCKED: BRANCH  47  53
+DOCKED: ATOM     53  OBH 5BG A 201      16.966  -5.604  -8.335 -0.16 -0.19    -0.326 OA
+DOCKED: ATOM     54  CAC 5BG A 201      17.217  -4.639  -9.354 -0.19 +0.08    +0.181 C 
+DOCKED: ENDBRANCH  47  53
+DOCKED: ENDBRANCH  36  43
+DOCKED: ENDBRANCH   1  36
+DOCKED: TORSDOF 17
+DOCKED: TER
+DOCKED: ENDMDL
+________________________________________________________________________________
+
+
+	BEGINNING GENETIC ALGORITHM DOCKING 6 of 10
+Run: 6 Seed: 741674659 1901339486 [ Run 6 of 10 GA/GALS ]
+Beginning LAMARCKIAN GENETIC ALGORITHM (LGA), with a maximum of 2500000 energy evaluations.
+
+Final-Value: -15.486
+
+
+	FINAL GENETIC ALGORITHM DOCKED STATE
+	_______________________________________________
+
+
+Detailed state:  trans 14.326 -6.202 -5.497 quatxyzw 0.499162 0.098341 0.854134 -0.107805 center 12.923 -3.459 -7.720 ntor 17 58.1059 -47.6636 54.5709 170.4667 9.4654 -115.5151 149.4989 156.7227 135.6407 168.4578 -42.7702 163.8058 -177.8923 -142.9416 -52.0810 -60.6980 39.3183
+State:	 14.326  -6.202  -5.497   0.502  0.099  0.859 -167.622     58.11  -47.66   54.57  170.47    9.47 -115.52  149.50  156.72  135.64  168.46  -42.77  163.81 -177.89 -142.94  -52.08  -60.70   39.32
+
+DOCKED: MODEL        6
+DOCKED: USER    Run = 6
+DOCKED: USER    DPF = grid_dock_files\5diu_dock.dpf
+DOCKED: USER  
+DOCKED: USER    Estimated Free Energy of Binding    =   -2.96 kcal/mol  [=(1)+(2)+(3)-(4)]
+DOCKED: USER    Estimated Inhibition Constant, Ki   =    6.75 mM (millimolar)  [Temperature = 298.15 K]
+DOCKED: USER    
+DOCKED: USER    (1) Final Intermolecular Energy     =   -8.03 kcal/mol
+DOCKED: USER        vdW + Hbond + desolv Energy     =   -7.15 kcal/mol
+DOCKED: USER        Electrostatic Energy            =   -0.88 kcal/mol
+DOCKED: USER    (2) Final Total Internal Energy     =   -7.45 kcal/mol
+DOCKED: USER    (3) Torsional Free Energy           =   +5.07 kcal/mol
+DOCKED: USER    (4) Unbound System's Energy  [=(2)] =   -7.45 kcal/mol
+DOCKED: USER    
+DOCKED: USER    
+DOCKED: USER    NEWDPF move pdbqt_files/5diu_ligand.pdbqt
+DOCKED: USER    NEWDPF about 12.923000 -3.459000 -7.720000
+DOCKED: USER    NEWDPF tran0 14.325988 -6.201532 -5.497453
+DOCKED: USER    NEWDPF quaternion0 0.499162 0.098341 0.854134 -0.107805
+DOCKED: USER    NEWDPF axisangle0 0.502088 0.098917 0.859141 -167.622402
+DOCKED: USER    NEWDPF quat0 0.502088 0.098917 0.859141 -167.622402
+DOCKED: USER    NEWDPF dihe0 58.11 -47.66 54.57 170.47 9.47 -115.52 149.50 156.72 135.64 168.46 -42.77 163.81 -177.89 -142.94 -52.08 -60.70 39.32 
+DOCKED: USER  keepresnum = 1 
+DOCKED: USER  
+DOCKED: REMARK  17 active torsions:
+DOCKED: REMARK  status: ('A' for Active; 'I' for Inactive)
+DOCKED: REMARK    1  A    between atoms: OBH_1040  and  CBU_1041 
+DOCKED: REMARK    2  A    between atoms: CBW_1043  and  OBJ_1044 
+DOCKED: REMARK    3  A    between atoms: CBV_1046  and  OBI_1047 
+DOCKED: REMARK    4  A    between atoms: CBR_1050  and  CCA_1051 
+DOCKED: REMARK    5  A    between atoms: CCA_1051  and  CBN_1058 
+DOCKED: REMARK    6  A    between atoms: CCA_1051  and  CBY_1052 
+DOCKED: REMARK       I    between atoms: CBN_1058  and  N_1060 
+DOCKED: REMARK    7  A    between atoms: CA_1065  and  C_1066 
+DOCKED: REMARK       I    between atoms: C_1066  and  NBE_1068 
+DOCKED: REMARK    8  A    between atoms: NBE_1068  and  CBX_1069 
+DOCKED: REMARK    9  A    between atoms: CBX_1069  and  CBA_1081 
+DOCKED: REMARK   10  A    between atoms: CBX_1069  and  CBQ_1070 
+DOCKED: REMARK   11  A    between atoms: CBP_1075  and  OBK_1076 
+DOCKED: REMARK   12  A    between atoms: OBK_1076  and  CBC_1077 
+DOCKED: REMARK   13  A    between atoms: CBC_1077  and  CBL_1078 
+DOCKED: REMARK   14  A    between atoms: CBA_1081  and  CAX_1082 
+DOCKED: REMARK   15  A    between atoms: CAX_1082  and  CBO_1083 
+DOCKED: REMARK   16  A    between atoms: CBS_1087  and  OBF_1088 
+DOCKED: REMARK   17  A    between atoms: CBT_1090  and  OBG_1091 
+DOCKED: USER                              x       y       z     vdW  Elec       q    Type
+DOCKED: USER                           _______ _______ _______ _____ _____    ______ ____
+DOCKED: ROOT
+DOCKED: ATOM      1  CBN 5BG A 201      11.981  -4.939  -7.719 -0.09 +0.02    +0.237 C 
+DOCKED: ATOM      2  OAH 5BG A 201      10.954  -5.441  -7.301 -0.15 -0.01    -0.272 OA
+DOCKED: ATOM      3  N   5BG A 201      12.983  -5.778  -8.188 -0.03 -0.03    -0.313 N 
+DOCKED: ATOM      4  CBD 5BG A 201      14.348  -5.306  -8.587 -0.14 +0.03    +0.104 C 
+DOCKED: ATOM      5  CAW 5BG A 201      14.859  -6.026  -9.792 -0.30 +0.01    +0.024 C 
+DOCKED: ATOM      6  CAV 5BG A 201      14.744  -7.564  -9.702 -0.33 +0.00    +0.004 C 
+DOCKED: ATOM      7  CB  5BG A 201      13.304  -7.913  -9.386 -0.21 -0.01    +0.032 C 
+DOCKED: ATOM      8  CA  5BG A 201      12.782  -7.221  -8.101 -0.12 -0.03    +0.164 C 
+DOCKED: ENDROOT
+DOCKED: BRANCH   8   9
+DOCKED: ATOM      9  C   5BG A 201      13.511  -7.895  -6.900 -0.07 +0.10    +0.272 C 
+DOCKED: ATOM     10  O   5BG A 201      14.281  -8.785  -7.116 -0.07 -0.33    -0.269 OA
+DOCKED: ATOM     11  NBE 5BG A 201      13.167  -7.428  -5.688 +0.00 -0.07    -0.234 NA
+DOCKED: BRANCH  11  12
+DOCKED: ATOM     12  CBX 5BG A 201      13.926  -7.910  -4.477 +0.01 +0.05    +0.129 C 
+DOCKED: BRANCH  12  13
+DOCKED: ATOM     13  CBA 5BG A 201      13.656  -7.006  -3.307 +0.02 +0.01    +0.034 C 
+DOCKED: BRANCH  13  14
+DOCKED: ATOM     14  CAX 5BG A 201      13.025  -5.666  -3.827 +0.01 +0.01    +0.029 C 
+DOCKED: BRANCH  14  15
+DOCKED: ATOM     15  CBO 5BG A 201      13.863  -4.527  -3.659 +0.01 -0.00    -0.020 A 
+DOCKED: ATOM     16  CAO 5BG A 201      14.616  -4.047  -4.744 +0.01 +0.01    +0.022 A 
+DOCKED: ATOM     17  CBT 5BG A 201      15.384  -2.898  -4.538 +0.01 +0.02    +0.116 A 
+DOCKED: ATOM     18  CBS 5BG A 201      15.498  -2.192  -3.388 +0.01 +0.02    +0.116 A 
+DOCKED: ATOM     19  CAN 5BG A 201      14.719  -2.674  -2.292 +0.00 +0.00    +0.026 A 
+DOCKED: ATOM     20  CAM 5BG A 201      13.935  -3.778  -2.460 +0.01 -0.00    -0.002 A 
+DOCKED: BRANCH  17  21
+DOCKED: ATOM     21  OBG 5BG A 201      16.117  -2.210  -5.525 -0.01 -0.07    -0.326 OA
+DOCKED: ATOM     22  CAB 5BG A 201      15.404  -1.989  -6.730 -0.09 +0.07    +0.181 C 
+DOCKED: ENDBRANCH  17  21
+DOCKED: BRANCH  18  23
+DOCKED: ATOM     23  OBF 5BG A 201      16.318  -1.097  -3.323 +0.01 -0.04    -0.326 OA
+DOCKED: ATOM     24  CAA 5BG A 201      15.901   0.092  -2.678 +0.01 +0.01    +0.181 C 
+DOCKED: ENDBRANCH  18  23
+DOCKED: ENDBRANCH  14  15
+DOCKED: ENDBRANCH  13  14
+DOCKED: ENDBRANCH  12  13
+DOCKED: BRANCH  12  25
+DOCKED: ATOM     25  CBQ 5BG A 201      15.339  -7.975  -4.876 -0.03 +0.00    +0.002 A 
+DOCKED: ATOM     26  CAL 5BG A 201      16.123  -9.036  -4.524 -0.04 -0.00    -0.002 A 
+DOCKED: ATOM     27  CAJ 5BG A 201      17.488  -9.117  -4.725 -0.06 +0.00    +0.002 A 
+DOCKED: ATOM     28  CAK 5BG A 201      18.070  -7.978  -5.290 -0.08 +0.02    +0.024 A 
+DOCKED: ATOM     29  CBP 5BG A 201      17.348  -6.861  -5.634 -0.06 +0.07    +0.095 A 
+DOCKED: ATOM     30  CAP 5BG A 201      15.933  -6.846  -5.386 -0.04 +0.01    +0.022 A 
+DOCKED: BRANCH  29  31
+DOCKED: ATOM     31  OBK 5BG A 201      17.875  -5.675  -6.149 -0.03 -0.15    -0.319 OA
+DOCKED: BRANCH  31  32
+DOCKED: ATOM     32  CBC 5BG A 201      17.015  -4.826  -6.912 -0.09 +0.11    +0.246 C 
+DOCKED: BRANCH  32  33
+DOCKED: ATOM     33  CBL 5BG A 201      17.736  -4.240  -8.135 -0.12 +0.13    +0.217 C 
+DOCKED: ATOM     34  OAI 5BG A 201      17.739  -5.005  -9.091 -0.12 -0.33    -0.645 OA
+DOCKED: ATOM     35  OAF 5BG A 201      18.169  -3.088  -8.089 -0.48 -0.59    -0.645 OA
+DOCKED: ENDBRANCH  32  33
+DOCKED: ENDBRANCH  31  32
+DOCKED: ENDBRANCH  29  31
+DOCKED: ENDBRANCH  12  25
+DOCKED: ENDBRANCH  11  12
+DOCKED: ENDBRANCH   8   9
+DOCKED: BRANCH   1  36
+DOCKED: ATOM     36  CCA 5BG A 201      12.261  -3.451  -7.696 -0.16 +0.02    +0.101 C 
+DOCKED: BRANCH  36  37
+DOCKED: ATOM     37  CBY 5BG A 201      11.520  -2.746  -8.857 -0.38 +0.00    +0.013 C 
+DOCKED: ATOM     38  CAZ 5BG A 201      10.034  -2.722  -8.629 -0.51 +0.00    +0.001 C 
+DOCKED: ATOM     39  CAU 5BG A 201       9.230  -2.077  -9.785 -0.69 +0.00    +0.000 C 
+DOCKED: ATOM     40  CAS 5BG A 201       9.549  -2.743 -11.075 -0.58 +0.00    +0.000 C 
+DOCKED: ATOM     41  CAT 5BG A 201      11.088  -2.731 -11.382 -0.54 +0.00    +0.000 C 
+DOCKED: ATOM     42  CAY 5BG A 201      11.868  -3.325 -10.191 -0.45 +0.00    +0.001 C 
+DOCKED: ENDBRANCH  36  37
+DOCKED: BRANCH  36  43
+DOCKED: ATOM     43  CBR 5BG A 201      11.885  -2.913  -6.304 -0.14 -0.00    -0.010 A 
+DOCKED: ATOM     44  CAR 5BG A 201      11.039  -3.679  -5.515 -0.13 +0.00    +0.022 A 
+DOCKED: ATOM     45  CBV 5BG A 201      10.694  -3.164  -4.264 -0.10 +0.02    +0.118 A 
+DOCKED: ATOM     46  CBW 5BG A 201      11.208  -1.996  -3.816 -0.08 +0.00    +0.138 A 
+DOCKED: ATOM     47  CBU 5BG A 201      12.033  -1.234  -4.566 -0.09 -0.01    +0.118 A 
+DOCKED: ATOM     48  CAQ 5BG A 201      12.418  -1.700  -5.848 -0.15 +0.00    +0.022 A 
+DOCKED: BRANCH  45  49
+DOCKED: ATOM     49  OBI 5BG A 201       9.810  -3.876  -3.436 -0.08 -0.10    -0.326 OA
+DOCKED: ATOM     50  CAD 5BG A 201       9.928  -5.313  -3.281 -0.06 +0.09    +0.181 C 
+DOCKED: ENDBRANCH  45  49
+DOCKED: BRANCH  46  51
+DOCKED: ATOM     51  OBJ 5BG A 201      10.744  -1.515  -2.546 -0.04 -0.01    -0.324 OA
+DOCKED: ATOM     52  CAE 5BG A 201       9.587  -0.732  -2.694 -0.16 -0.01    +0.182 C 
+DOCKED: ENDBRANCH  46  51
+DOCKED: BRANCH  47  53
+DOCKED: ATOM     53  OBH 5BG A 201      12.493  -0.090  -4.056 -0.06 +0.09    -0.326 OA
+DOCKED: ATOM     54  CAC 5BG A 201      13.308   0.749  -4.871 -0.09 -0.04    +0.181 C 
+DOCKED: ENDBRANCH  47  53
+DOCKED: ENDBRANCH  36  43
+DOCKED: ENDBRANCH   1  36
+DOCKED: TORSDOF 17
+DOCKED: TER
+DOCKED: ENDMDL
+________________________________________________________________________________
+
+
+	BEGINNING GENETIC ALGORITHM DOCKING 7 of 10
+Run: 7 Seed: 797615970 803231651 [ Run 7 of 10 GA/GALS ]
+Beginning LAMARCKIAN GENETIC ALGORITHM (LGA), with a maximum of 2500000 energy evaluations.
+
+Final-Value: -19.951
+
+
+	FINAL GENETIC ALGORITHM DOCKED STATE
+	_______________________________________________
+
+
+Detailed state:  trans 12.626 -3.807 -7.563 quatxyzw 0.024558 -0.043422 -0.082744 -0.995321 center 12.923 -3.459 -7.720 ntor 17 11.7352 61.4086 84.0128 -180.0000 20.2090 119.6883 50.8543 178.6242 180.0000 157.0482 135.7952 -4.4766 -117.0438 3.2515 -21.2256 179.4164 4.9397
+State:	 12.626  -3.807  -7.563   0.254 -0.449 -0.856 -11.089     11.74   61.41   84.01 -180.00   20.21  119.69   50.85  178.62  180.00  157.05  135.80   -4.48 -117.04    3.25  -21.23  179.42    4.94
+
+DOCKED: MODEL        7
+DOCKED: USER    Run = 7
+DOCKED: USER    DPF = grid_dock_files\5diu_dock.dpf
+DOCKED: USER  
+DOCKED: USER    Estimated Free Energy of Binding    =   -9.49 kcal/mol  [=(1)+(2)+(3)-(4)]
+DOCKED: USER    Estimated Inhibition Constant, Ki   =  110.78 nM (nanomolar)  [Temperature = 298.15 K]
+DOCKED: USER    
+DOCKED: USER    (1) Final Intermolecular Energy     =  -14.56 kcal/mol
+DOCKED: USER        vdW + Hbond + desolv Energy     =  -13.51 kcal/mol
+DOCKED: USER        Electrostatic Energy            =   -1.05 kcal/mol
+DOCKED: USER    (2) Final Total Internal Energy     =   -5.39 kcal/mol
+DOCKED: USER    (3) Torsional Free Energy           =   +5.07 kcal/mol
+DOCKED: USER    (4) Unbound System's Energy  [=(2)] =   -5.39 kcal/mol
+DOCKED: USER    
+DOCKED: USER    
+DOCKED: USER    NEWDPF move pdbqt_files/5diu_ligand.pdbqt
+DOCKED: USER    NEWDPF about 12.923000 -3.459000 -7.720000
+DOCKED: USER    NEWDPF tran0 12.626484 -3.807313 -7.562790
+DOCKED: USER    NEWDPF quaternion0 0.024558 -0.043422 -0.082744 -0.995321
+DOCKED: USER    NEWDPF axisangle0 0.254170 -0.449420 -0.856399 -11.088979
+DOCKED: USER    NEWDPF quat0 0.254170 -0.449420 -0.856399 -11.088979
+DOCKED: USER    NEWDPF dihe0 11.74 61.41 84.01 -180.00 20.21 119.69 50.85 178.62 180.00 157.05 135.80 -4.48 -117.04 3.25 -21.23 179.42 4.94 
+DOCKED: USER  keepresnum = 1 
+DOCKED: USER  
+DOCKED: REMARK  17 active torsions:
+DOCKED: REMARK  status: ('A' for Active; 'I' for Inactive)
+DOCKED: REMARK    1  A    between atoms: OBH_1040  and  CBU_1041 
+DOCKED: REMARK    2  A    between atoms: CBW_1043  and  OBJ_1044 
+DOCKED: REMARK    3  A    between atoms: CBV_1046  and  OBI_1047 
+DOCKED: REMARK    4  A    between atoms: CBR_1050  and  CCA_1051 
+DOCKED: REMARK    5  A    between atoms: CCA_1051  and  CBN_1058 
+DOCKED: REMARK    6  A    between atoms: CCA_1051  and  CBY_1052 
+DOCKED: REMARK       I    between atoms: CBN_1058  and  N_1060 
+DOCKED: REMARK    7  A    between atoms: CA_1065  and  C_1066 
+DOCKED: REMARK       I    between atoms: C_1066  and  NBE_1068 
+DOCKED: REMARK    8  A    between atoms: NBE_1068  and  CBX_1069 
+DOCKED: REMARK    9  A    between atoms: CBX_1069  and  CBA_1081 
+DOCKED: REMARK   10  A    between atoms: CBX_1069  and  CBQ_1070 
+DOCKED: REMARK   11  A    between atoms: CBP_1075  and  OBK_1076 
+DOCKED: REMARK   12  A    between atoms: OBK_1076  and  CBC_1077 
+DOCKED: REMARK   13  A    between atoms: CBC_1077  and  CBL_1078 
+DOCKED: REMARK   14  A    between atoms: CBA_1081  and  CAX_1082 
+DOCKED: REMARK   15  A    between atoms: CAX_1082  and  CBO_1083 
+DOCKED: REMARK   16  A    between atoms: CBS_1087  and  OBF_1088 
+DOCKED: REMARK   17  A    between atoms: CBT_1090  and  OBG_1091 
+DOCKED: USER                              x       y       z     vdW  Elec       q    Type
+DOCKED: USER                           _______ _______ _______ _____ _____    ______ ____
+DOCKED: ROOT
+DOCKED: ATOM      1  CBN 5BG A 201      12.276  -5.215 -10.714 -0.23 -0.02    +0.237 C 
+DOCKED: ATOM      2  OAH 5BG A 201      13.138  -4.626 -11.340 -0.29 +0.02    -0.272 OA
+DOCKED: ATOM      3  N   5BG A 201      11.231  -4.476 -10.176 -0.14 +0.01    -0.313 N 
+DOCKED: ATOM      4  CBD 5BG A 201      10.191  -5.046  -9.260 -0.41 -0.01    +0.104 C 
+DOCKED: ATOM      5  CAW 5BG A 201       8.834  -4.487  -9.539 -0.67 -0.00    +0.024 C 
+DOCKED: ATOM      6  CAV 5BG A 201       8.793  -2.945  -9.629 -0.64 +0.00    +0.004 C 
+DOCKED: ATOM      7  CB  5BG A 201       9.821  -2.504 -10.650 -0.68 +0.00    +0.032 C 
+DOCKED: ATOM      8  CA  5BG A 201      11.247  -3.025 -10.336 -0.41 +0.02    +0.164 C 
+DOCKED: ENDROOT
+DOCKED: BRANCH   8   9
+DOCKED: ATOM      9  C   5BG A 201      11.741  -2.250  -9.076 -0.27 +0.07    +0.272 C 
+DOCKED: ATOM     10  O   5BG A 201      11.425  -1.104  -8.942 -0.83 -0.14    -0.269 OA
+DOCKED: ATOM     11  NBE 5BG A 201      12.537  -2.951  -8.251 -0.10 -0.06    -0.234 NA
+DOCKED: BRANCH  11  12
+DOCKED: ATOM     12  CBX 5BG A 201      12.942  -2.338  -6.934 -0.13 +0.03    +0.129 C 
+DOCKED: BRANCH  12  13
+DOCKED: ATOM     13  CBA 5BG A 201      11.750  -1.700  -6.276 -0.25 +0.00    +0.034 C 
+DOCKED: BRANCH  13  14
+DOCKED: ATOM     14  CAX 5BG A 201      10.524  -2.675  -6.375 -0.23 +0.00    +0.029 C 
+DOCKED: BRANCH  14  15
+DOCKED: ATOM     15  CBO 5BG A 201      10.681  -3.882  -5.636 -0.06 -0.00    -0.020 A 
+DOCKED: ATOM     16  CAO 5BG A 201      10.295  -3.930  -4.285 -0.06 +0.01    +0.022 A 
+DOCKED: ATOM     17  CBT 5BG A 201      10.426  -5.152  -3.620 -0.06 +0.05    +0.116 A 
+DOCKED: ATOM     18  CBS 5BG A 201      10.903  -6.310  -4.134 -0.06 +0.05    +0.116 A 
+DOCKED: ATOM     19  CAN 5BG A 201      11.279  -6.261  -5.511 -0.11 +0.01    +0.026 A 
+DOCKED: ATOM     20  CAM 5BG A 201      11.142  -5.094  -6.204 -0.14 -0.00    -0.002 A 
+DOCKED: BRANCH  17  21
+DOCKED: ATOM     21  OBG 5BG A 201       9.997  -5.423  -2.306 -0.10 -0.21    -0.326 OA
+DOCKED: ATOM     22  CAB 5BG A 201       9.394  -4.321  -1.652 -0.07 +0.09    +0.181 C 
+DOCKED: ENDBRANCH  17  21
+DOCKED: BRANCH  18  23
+DOCKED: ATOM     23  OBF 5BG A 201      11.004  -7.429  -3.352 -0.03 -0.17    -0.326 OA
+DOCKED: ATOM     24  CAA 5BG A 201      12.265  -7.986  -3.030 +0.02 +0.07    +0.181 C 
+DOCKED: ENDBRANCH  18  23
+DOCKED: ENDBRANCH  14  15
+DOCKED: ENDBRANCH  13  14
+DOCKED: ENDBRANCH  12  13
+DOCKED: BRANCH  12  25
+DOCKED: ATOM     25  CBQ 5BG A 201      14.037  -1.405  -7.232 -0.17 +0.00    +0.002 A 
+DOCKED: ATOM     26  CAL 5BG A 201      13.887  -0.414  -8.159 -0.29 -0.00    -0.002 A 
+DOCKED: ATOM     27  CAJ 5BG A 201      14.897   0.413  -8.610 -0.17 +0.00    +0.002 A 
+DOCKED: ATOM     28  CAK 5BG A 201      16.163   0.140  -8.083 -0.10 +0.01    +0.024 A 
+DOCKED: ATOM     29  CBP 5BG A 201      16.395  -0.864  -7.174 -0.11 +0.03    +0.095 A 
+DOCKED: ATOM     30  CAP 5BG A 201      15.294  -1.691  -6.759 -0.11 +0.01    +0.022 A 
+DOCKED: BRANCH  29  31
+DOCKED: ATOM     31  OBK 5BG A 201      17.639  -1.223  -6.653 -0.07 -0.07    -0.319 OA
+DOCKED: BRANCH  31  32
+DOCKED: ATOM     32  CBC 5BG A 201      17.692  -2.277  -5.689 -0.04 +0.06    +0.246 C 
+DOCKED: BRANCH  32  33
+DOCKED: ATOM     33  CBL 5BG A 201      18.608  -3.421  -6.149 -0.04 +0.07    +0.217 C 
+DOCKED: ATOM     34  OAI 5BG A 201      18.474  -3.683  -7.337 -0.29 -0.51    -0.645 OA
+DOCKED: ATOM     35  OAF 5BG A 201      19.409  -3.912  -5.352 +0.04 -0.13    -0.645 OA
+DOCKED: ENDBRANCH  32  33
+DOCKED: ENDBRANCH  31  32
+DOCKED: ENDBRANCH  29  31
+DOCKED: ENDBRANCH  12  25
+DOCKED: ENDBRANCH  11  12
+DOCKED: ENDBRANCH   8   9
+DOCKED: BRANCH   1  36
+DOCKED: ATOM     36  CCA 5BG A 201      12.311  -6.701 -10.425 -0.27 -0.04    +0.101 C 
+DOCKED: BRANCH  36  37
+DOCKED: ATOM     37  CBY 5BG A 201      12.630  -7.491 -11.716 -0.47 -0.00    +0.013 C 
+DOCKED: ATOM     38  CAZ 5BG A 201      13.954  -8.197 -11.617 -0.52 -0.00    +0.001 C 
+DOCKED: ATOM     39  CAU 5BG A 201      14.357  -8.963 -12.901 -0.85 +0.00    +0.000 C 
+DOCKED: ATOM     40  CAS 5BG A 201      14.337  -8.055 -14.078 -0.87 +0.00    +0.000 C 
+DOCKED: ATOM     41  CAT 5BG A 201      12.948  -7.347 -14.254 -0.78 -0.00    +0.000 C 
+DOCKED: ATOM     42  CAY 5BG A 201      12.545  -6.640 -12.943 -0.53 -0.00    +0.001 C 
+DOCKED: ENDBRANCH  36  37
+DOCKED: BRANCH  36  43
+DOCKED: ATOM     43  CBR 5BG A 201      13.314  -6.946  -9.284 -0.19 +0.00    -0.010 A 
+DOCKED: ATOM     44  CAR 5BG A 201      12.881  -7.668  -8.181 -0.12 -0.01    +0.022 A 
+DOCKED: ATOM     45  CBV 5BG A 201      13.800  -7.861  -7.147 -0.09 +0.06    +0.118 A 
+DOCKED: ATOM     46  CBW 5BG A 201      15.073  -7.415  -7.241 +0.05 +0.15    +0.138 A 
+DOCKED: ATOM     47  CBU 5BG A 201      15.515  -6.710  -8.306 -0.13 +0.09    +0.118 A 
+DOCKED: ATOM     48  CAQ 5BG A 201      14.630  -6.476  -9.387 -0.23 +0.01    +0.022 A 
+DOCKED: BRANCH  45  49
+DOCKED: ATOM     49  OBI 5BG A 201      13.410  -8.552  -5.988 -0.04 -0.13    -0.326 OA
+DOCKED: ATOM     50  CAD 5BG A 201      13.198  -9.987  -6.009 -0.09 +0.04    +0.181 C 
+DOCKED: ENDBRANCH  45  49
+DOCKED: BRANCH  46  51
+DOCKED: ATOM     51  OBJ 5BG A 201      15.924  -7.603  -6.102 -0.64 -0.42    -0.324 OA
+DOCKED: ATOM     52  CAE 5BG A 201      15.659  -6.647  -5.108 -0.02 +0.10    +0.182 C 
+DOCKED: ENDBRANCH  46  51
+DOCKED: BRANCH  47  53
+DOCKED: ATOM     53  OBH 5BG A 201      16.784  -6.297  -8.321 -0.14 -0.24    -0.326 OA
+DOCKED: ATOM     54  CAC 5BG A 201      17.175  -5.313  -9.275 -0.29 +0.09    +0.181 C 
+DOCKED: ENDBRANCH  47  53
+DOCKED: ENDBRANCH  36  43
+DOCKED: ENDBRANCH   1  36
+DOCKED: TORSDOF 17
+DOCKED: TER
+DOCKED: ENDMDL
+________________________________________________________________________________
+
+
+	BEGINNING GENETIC ALGORITHM DOCKING 8 of 10
+Run: 8 Seed: 614661344 589696056 [ Run 8 of 10 GA/GALS ]
+Beginning LAMARCKIAN GENETIC ALGORITHM (LGA), with a maximum of 2500000 energy evaluations.
+
+Final-Value: -16.786
+
+
+	FINAL GENETIC ALGORITHM DOCKED STATE
+	_______________________________________________
+
+
+Detailed state:  trans 14.178 -4.971 -7.898 quatxyzw 0.754502 0.649570 0.080221 0.048482 center 12.923 -3.459 -7.720 ntor 17 107.4929 98.5164 119.0176 22.4365 33.1249 169.2551 7.6829 -164.0511 123.8540 92.5663 -102.4535 87.6691 -150.9155 165.6846 2.6352 -157.8166 33.6161
+State:	 14.178  -4.971  -7.898   0.755  0.650  0.080 174.442    107.49   98.52  119.02   22.44   33.12  169.26    7.68 -164.05  123.85   92.57 -102.45   87.67 -150.92  165.68    2.64 -157.82   33.62
+
+DOCKED: MODEL        8
+DOCKED: USER    Run = 8
+DOCKED: USER    DPF = grid_dock_files\5diu_dock.dpf
+DOCKED: USER  
+DOCKED: USER    Estimated Free Energy of Binding    =   -6.56 kcal/mol  [=(1)+(2)+(3)-(4)]
+DOCKED: USER    Estimated Inhibition Constant, Ki   =   15.50 uM (micromolar)  [Temperature = 298.15 K]
+DOCKED: USER    
+DOCKED: USER    (1) Final Intermolecular Energy     =  -11.63 kcal/mol
+DOCKED: USER        vdW + Hbond + desolv Energy     =  -10.61 kcal/mol
+DOCKED: USER        Electrostatic Energy            =   -1.03 kcal/mol
+DOCKED: USER    (2) Final Total Internal Energy     =   -5.15 kcal/mol
+DOCKED: USER    (3) Torsional Free Energy           =   +5.07 kcal/mol
+DOCKED: USER    (4) Unbound System's Energy  [=(2)] =   -5.15 kcal/mol
+DOCKED: USER    
+DOCKED: USER    
+DOCKED: USER    NEWDPF move pdbqt_files/5diu_ligand.pdbqt
+DOCKED: USER    NEWDPF about 12.923000 -3.459000 -7.720000
+DOCKED: USER    NEWDPF tran0 14.177788 -4.971400 -7.898334
+DOCKED: USER    NEWDPF quaternion0 0.754502 0.649570 0.080221 0.048482
+DOCKED: USER    NEWDPF axisangle0 0.755390 0.650335 0.080315 174.442177
+DOCKED: USER    NEWDPF quat0 0.755390 0.650335 0.080315 174.442177
+DOCKED: USER    NEWDPF dihe0 107.49 98.52 119.02 22.44 33.12 169.26 7.68 -164.05 123.85 92.57 -102.45 87.67 -150.92 165.68 2.64 -157.82 33.62 
+DOCKED: USER  keepresnum = 1 
+DOCKED: USER  
+DOCKED: REMARK  17 active torsions:
+DOCKED: REMARK  status: ('A' for Active; 'I' for Inactive)
+DOCKED: REMARK    1  A    between atoms: OBH_1040  and  CBU_1041 
+DOCKED: REMARK    2  A    between atoms: CBW_1043  and  OBJ_1044 
+DOCKED: REMARK    3  A    between atoms: CBV_1046  and  OBI_1047 
+DOCKED: REMARK    4  A    between atoms: CBR_1050  and  CCA_1051 
+DOCKED: REMARK    5  A    between atoms: CCA_1051  and  CBN_1058 
+DOCKED: REMARK    6  A    between atoms: CCA_1051  and  CBY_1052 
+DOCKED: REMARK       I    between atoms: CBN_1058  and  N_1060 
+DOCKED: REMARK    7  A    between atoms: CA_1065  and  C_1066 
+DOCKED: REMARK       I    between atoms: C_1066  and  NBE_1068 
+DOCKED: REMARK    8  A    between atoms: NBE_1068  and  CBX_1069 
+DOCKED: REMARK    9  A    between atoms: CBX_1069  and  CBA_1081 
+DOCKED: REMARK   10  A    between atoms: CBX_1069  and  CBQ_1070 
+DOCKED: REMARK   11  A    between atoms: CBP_1075  and  OBK_1076 
+DOCKED: REMARK   12  A    between atoms: OBK_1076  and  CBC_1077 
+DOCKED: REMARK   13  A    between atoms: CBC_1077  and  CBL_1078 
+DOCKED: REMARK   14  A    between atoms: CBA_1081  and  CAX_1082 
+DOCKED: REMARK   15  A    between atoms: CAX_1082  and  CBO_1083 
+DOCKED: REMARK   16  A    between atoms: CBS_1087  and  OBF_1088 
+DOCKED: REMARK   17  A    between atoms: CBT_1090  and  OBG_1091 
+DOCKED: USER                              x       y       z     vdW  Elec       q    Type
+DOCKED: USER                           _______ _______ _______ _____ _____    ______ ____
+DOCKED: ROOT
+DOCKED: ATOM      1  CBN 5BG A 201      12.348  -5.625  -5.025 -0.00 +0.06    +0.237 C 
+DOCKED: ATOM      2  OAH 5BG A 201      13.082  -5.180  -4.162 +0.01 -0.07    -0.272 OA
+DOCKED: ATOM      3  N   5BG A 201      12.805  -6.683  -5.799 +0.01 -0.07    -0.313 N 
+DOCKED: ATOM      4  CBD 5BG A 201      12.072  -7.226  -6.987 -0.13 -0.01    +0.104 C 
+DOCKED: ATOM      5  CAW 5BG A 201      12.164  -8.715  -7.070 -0.01 -0.01    +0.024 C 
+DOCKED: ATOM      6  CAV 5BG A 201      13.601  -9.266  -6.932 -0.15 +0.00    +0.004 C 
+DOCKED: ATOM      7  CB  5BG A 201      14.196  -8.719  -5.651 -0.06 +0.02    +0.032 C 
+DOCKED: ATOM      8  CA  5BG A 201      14.164  -7.170  -5.581 -0.01 +0.08    +0.164 C 
+DOCKED: ENDROOT
+DOCKED: BRANCH   8   9
+DOCKED: ATOM      9  C   5BG A 201      15.201  -6.653  -6.624 -0.04 +0.19    +0.272 C 
+DOCKED: ATOM     10  O   5BG A 201      15.906  -7.444  -7.179 -0.47 -0.42    -0.269 OA
+DOCKED: ATOM     11  NBE 5BG A 201      15.238  -5.319  -6.779 -0.02 -0.10    -0.234 NA
+DOCKED: BRANCH  11  12
+DOCKED: ATOM     12  CBX 5BG A 201      16.099  -4.735  -7.870 -0.16 +0.06    +0.129 C 
+DOCKED: BRANCH  12  13
+DOCKED: ATOM     13  CBA 5BG A 201      15.546  -5.108  -9.217 -0.01 +0.01    +0.034 C 
+DOCKED: BRANCH  13  14
+DOCKED: ATOM     14  CAX 5BG A 201      14.119  -5.733  -9.032 -0.21 +0.01    +0.029 C 
+DOCKED: BRANCH  14  15
+DOCKED: ATOM     15  CBO 5BG A 201      13.566  -6.280 -10.226 -0.25 +0.00    -0.020 A 
+DOCKED: ATOM     16  CAO 5BG A 201      14.417  -6.682 -11.269 -0.36 +0.00    +0.022 A 
+DOCKED: ATOM     17  CBT 5BG A 201      13.826  -7.257 -12.398 -0.38 -0.00    +0.116 A 
+DOCKED: ATOM     18  CBS 5BG A 201      12.504  -7.460 -12.608 -0.42 -0.02    +0.116 A 
+DOCKED: ATOM     19  CAN 5BG A 201      11.645  -7.065 -11.539 -0.34 -0.01    +0.026 A 
+DOCKED: ATOM     20  CAM 5BG A 201      12.184  -6.523 -10.408 -0.30 +0.00    -0.002 A 
+DOCKED: BRANCH  17  21
+DOCKED: ATOM     21  OBG 5BG A 201      14.514  -7.815 -13.493 -0.35 -0.03    -0.326 OA
+DOCKED: ATOM     22  CAB 5BG A 201      14.691  -9.218 -13.416 -0.78 +0.01    +0.181 C 
+DOCKED: ENDBRANCH  17  21
+DOCKED: BRANCH  18  23
+DOCKED: ATOM     23  OBF 5BG A 201      12.064  -8.008 -13.783 -0.43 +0.04    -0.326 OA
+DOCKED: ATOM     24  CAA 5BG A 201      11.993  -7.240 -14.970 -0.55 -0.02    +0.181 C 
+DOCKED: ENDBRANCH  18  23
+DOCKED: ENDBRANCH  14  15
+DOCKED: ENDBRANCH  13  14
+DOCKED: ENDBRANCH  12  13
+DOCKED: BRANCH  12  25
+DOCKED: ATOM     25  CBQ 5BG A 201      17.464  -5.221  -7.623 -0.22 +0.00    +0.002 A 
+DOCKED: ATOM     26  CAL 5BG A 201      18.321  -5.474  -8.655 -0.32 -0.00    -0.002 A 
+DOCKED: ATOM     27  CAJ 5BG A 201      19.562  -6.067  -8.531 -0.26 +0.00    +0.002 A 
+DOCKED: ATOM     28  CAK 5BG A 201      19.898  -6.467  -7.234 -0.25 +0.01    +0.024 A 
+DOCKED: ATOM     29  CBP 5BG A 201      19.070  -6.278  -6.154 -0.09 +0.04    +0.095 A 
+DOCKED: ATOM     30  CAP 5BG A 201      17.788  -5.662  -6.363 -0.10 +0.01    +0.022 A 
+DOCKED: BRANCH  29  31
+DOCKED: ATOM     31  OBK 5BG A 201      19.321  -6.702  -4.848 -0.01 -0.11    -0.319 OA
+DOCKED: BRANCH  31  32
+DOCKED: ATOM     32  CBC 5BG A 201      18.231  -6.738  -3.924 +0.00 +0.09    +0.246 C 
+DOCKED: BRANCH  32  33
+DOCKED: ATOM     33  CBL 5BG A 201      17.355  -7.982  -4.127 -0.03 +0.12    +0.217 C 
+DOCKED: ATOM     34  OAI 5BG A 201      17.841  -8.776  -4.922 -0.06 -0.58    -0.645 OA
+DOCKED: ATOM     35  OAF 5BG A 201      16.326  -8.113  -3.463 +0.01 -0.30    -0.645 OA
+DOCKED: ENDBRANCH  32  33
+DOCKED: ENDBRANCH  31  32
+DOCKED: ENDBRANCH  29  31
+DOCKED: ENDBRANCH  12  25
+DOCKED: ENDBRANCH  11  12
+DOCKED: ENDBRANCH   8   9
+DOCKED: BRANCH   1  36
+DOCKED: ATOM     36  CCA 5BG A 201      10.987  -5.048  -5.353 -0.08 +0.02    +0.101 C 
+DOCKED: BRANCH  36  37
+DOCKED: ATOM     37  CBY 5BG A 201      10.419  -4.283  -4.134 -0.09 +0.00    +0.013 C 
+DOCKED: ATOM     38  CAZ 5BG A 201      11.335  -3.170  -3.707 -0.09 +0.00    +0.001 C 
+DOCKED: ATOM     39  CAU 5BG A 201      10.849  -2.399  -2.455 -0.08 +0.00    +0.000 C 
+DOCKED: ATOM     40  CAS 5BG A 201      10.608  -3.337  -1.327 -0.02 +0.00    +0.000 C 
+DOCKED: ATOM     41  CAT 5BG A 201       9.604  -4.480  -1.714 -0.11 +0.00    +0.000 C 
+DOCKED: ATOM     42  CAY 5BG A 201      10.083  -5.193  -2.995 -0.13 +0.00    +0.001 C 
+DOCKED: ENDBRANCH  36  37
+DOCKED: BRANCH  36  43
+DOCKED: ATOM     43  CBR 5BG A 201      11.124  -4.183  -6.619 -0.15 -0.00    -0.010 A 
+DOCKED: ATOM     44  CAR 5BG A 201      11.818  -2.986  -6.518 -0.15 +0.00    +0.022 A 
+DOCKED: ATOM     45  CBV 5BG A 201      11.913  -2.207  -7.673 -0.21 +0.02    +0.118 A 
+DOCKED: ATOM     46  CBW 5BG A 201      11.401  -2.626  -8.852 -0.27 +0.03    +0.138 A 
+DOCKED: ATOM     47  CBU 5BG A 201      10.722  -3.788  -8.973 -0.26 +0.01    +0.118 A 
+DOCKED: ATOM     48  CAQ 5BG A 201      10.587  -4.623  -7.836 -0.25 +0.00    +0.022 A 
+DOCKED: BRANCH  45  49
+DOCKED: ATOM     49  OBI 5BG A 201      12.571  -0.966  -7.625 -0.21 -0.08    -0.326 OA
+DOCKED: ATOM     50  CAD 5BG A 201      13.875  -0.789  -8.235 -0.20 +0.07    +0.181 C 
+DOCKED: ENDBRANCH  45  49
+DOCKED: BRANCH  46  51
+DOCKED: ATOM     51  OBJ 5BG A 201      11.490  -1.728  -9.967 -0.64 -0.11    -0.324 OA
+DOCKED: ATOM     52  CAE 5BG A 201      12.145  -2.332 -11.053 -0.20 +0.02    +0.182 C 
+DOCKED: ENDBRANCH  46  51
+DOCKED: BRANCH  47  53
+DOCKED: ATOM     53  OBH 5BG A 201      10.240  -4.129 -10.170 -0.26 +0.00    -0.326 OA
+DOCKED: ATOM     54  CAC 5BG A 201       9.092  -4.971 -10.234 -0.47 -0.02    +0.181 C 
+DOCKED: ENDBRANCH  47  53
+DOCKED: ENDBRANCH  36  43
+DOCKED: ENDBRANCH   1  36
+DOCKED: TORSDOF 17
+DOCKED: TER
+DOCKED: ENDMDL
+________________________________________________________________________________
+
+
+	BEGINNING GENETIC ALGORITHM DOCKING 9 of 10
+Run: 9 Seed: 1297591517 2123327327 [ Run 9 of 10 GA/GALS ]
+Beginning LAMARCKIAN GENETIC ALGORITHM (LGA), with a maximum of 2500000 energy evaluations.
+
+Final-Value: -17.319
+
+
+	FINAL GENETIC ALGORITHM DOCKED STATE
+	_______________________________________________
+
+
+Detailed state:  trans 14.531 -3.501 -8.343 quatxyzw 0.057962 0.315973 -0.062461 -0.944934 center 12.923 -3.459 -7.720 ntor 17 109.8587 85.5738 -42.2208 -22.8294 20.4719 179.9728 51.4200 154.2751 -74.5037 52.8419 179.6804 163.5204 80.3410 -164.4389 19.5887 -52.6690 -31.0594
+State:	 14.531  -3.501  -8.343   0.177  0.966 -0.191 -38.205    109.86   85.57  -42.22  -22.83   20.47  179.97   51.42  154.28  -74.50   52.84  179.68  163.52   80.34 -164.44   19.59  -52.67  -31.06
+
+DOCKED: MODEL        9
+DOCKED: USER    Run = 9
+DOCKED: USER    DPF = grid_dock_files\5diu_dock.dpf
+DOCKED: USER  
+DOCKED: USER    Estimated Free Energy of Binding    =   -5.44 kcal/mol  [=(1)+(2)+(3)-(4)]
+DOCKED: USER    Estimated Inhibition Constant, Ki   =  102.77 uM (micromolar)  [Temperature = 298.15 K]
+DOCKED: USER    
+DOCKED: USER    (1) Final Intermolecular Energy     =  -10.51 kcal/mol
+DOCKED: USER        vdW + Hbond + desolv Energy     =   -9.77 kcal/mol
+DOCKED: USER        Electrostatic Energy            =   -0.75 kcal/mol
+DOCKED: USER    (2) Final Total Internal Energy     =   -6.81 kcal/mol
+DOCKED: USER    (3) Torsional Free Energy           =   +5.07 kcal/mol
+DOCKED: USER    (4) Unbound System's Energy  [=(2)] =   -6.81 kcal/mol
+DOCKED: USER    
+DOCKED: USER    
+DOCKED: USER    NEWDPF move pdbqt_files/5diu_ligand.pdbqt
+DOCKED: USER    NEWDPF about 12.923000 -3.459000 -7.720000
+DOCKED: USER    NEWDPF tran0 14.530548 -3.501348 -8.342986
+DOCKED: USER    NEWDPF quaternion0 0.057962 0.315973 -0.062461 -0.944934
+DOCKED: USER    NEWDPF axisangle0 0.177112 0.965507 -0.190858 -38.205299
+DOCKED: USER    NEWDPF quat0 0.177112 0.965507 -0.190858 -38.205299
+DOCKED: USER    NEWDPF dihe0 109.86 85.57 -42.22 -22.83 20.47 179.97 51.42 154.28 -74.50 52.84 179.68 163.52 80.34 -164.44 19.59 -52.67 -31.06 
+DOCKED: USER  keepresnum = 1 
+DOCKED: USER  
+DOCKED: REMARK  17 active torsions:
+DOCKED: REMARK  status: ('A' for Active; 'I' for Inactive)
+DOCKED: REMARK    1  A    between atoms: OBH_1040  and  CBU_1041 
+DOCKED: REMARK    2  A    between atoms: CBW_1043  and  OBJ_1044 
+DOCKED: REMARK    3  A    between atoms: CBV_1046  and  OBI_1047 
+DOCKED: REMARK    4  A    between atoms: CBR_1050  and  CCA_1051 
+DOCKED: REMARK    5  A    between atoms: CCA_1051  and  CBN_1058 
+DOCKED: REMARK    6  A    between atoms: CCA_1051  and  CBY_1052 
+DOCKED: REMARK       I    between atoms: CBN_1058  and  N_1060 
+DOCKED: REMARK    7  A    between atoms: CA_1065  and  C_1066 
+DOCKED: REMARK       I    between atoms: C_1066  and  NBE_1068 
+DOCKED: REMARK    8  A    between atoms: NBE_1068  and  CBX_1069 
+DOCKED: REMARK    9  A    between atoms: CBX_1069  and  CBA_1081 
+DOCKED: REMARK   10  A    between atoms: CBX_1069  and  CBQ_1070 
+DOCKED: REMARK   11  A    between atoms: CBP_1075  and  OBK_1076 
+DOCKED: REMARK   12  A    between atoms: OBK_1076  and  CBC_1077 
+DOCKED: REMARK   13  A    between atoms: CBC_1077  and  CBL_1078 
+DOCKED: REMARK   14  A    between atoms: CBA_1081  and  CAX_1082 
+DOCKED: REMARK   15  A    between atoms: CAX_1082  and  CBO_1083 
+DOCKED: REMARK   16  A    between atoms: CBS_1087  and  OBF_1088 
+DOCKED: REMARK   17  A    between atoms: CBT_1090  and  OBG_1091 
+DOCKED: USER                              x       y       z     vdW  Elec       q    Type
+DOCKED: USER                           _______ _______ _______ _____ _____    ______ ____
+DOCKED: ROOT
+DOCKED: ATOM      1  CBN 5BG A 201      12.191  -4.614 -10.650 -0.26 -0.01    +0.237 C 
+DOCKED: ATOM      2  OAH 5BG A 201      12.421  -3.888 -11.599 -0.36 +0.01    -0.272 OA
+DOCKED: ATOM      3  N   5BG A 201      11.759  -4.034  -9.465 -0.10 -0.02    -0.313 N 
+DOCKED: ATOM      4  CBD 5BG A 201      11.587  -4.787  -8.182 -0.19 +0.00    +0.104 C 
+DOCKED: ATOM      5  CAW 5BG A 201      10.381  -4.333  -7.424 -0.18 +0.00    +0.024 C 
+DOCKED: ATOM      6  CAV 5BG A 201      10.284  -2.801  -7.254 -0.29 +0.00    +0.004 C 
+DOCKED: ATOM      7  CB  5BG A 201      10.379  -2.165  -8.625 -0.47 +0.01    +0.032 C 
+DOCKED: ATOM      8  CA  5BG A 201      11.659  -2.579  -9.396 -0.34 +0.03    +0.164 C 
+DOCKED: ENDROOT
+DOCKED: BRANCH   8   9
+DOCKED: ATOM      9  C   5BG A 201      12.859  -1.891  -8.677 -0.05 +0.10    +0.272 C 
+DOCKED: ATOM     10  O   5BG A 201      12.996  -0.707  -8.784 -0.36 -0.10    -0.269 OA
+DOCKED: ATOM     11  NBE 5BG A 201      13.680  -2.722  -8.014 -0.13 -0.16    -0.234 NA
+DOCKED: BRANCH  11  12
+DOCKED: ATOM     12  CBX 5BG A 201      14.780  -2.137  -7.164 -0.05 +0.07    +0.129 C 
+DOCKED: BRANCH  12  13
+DOCKED: ATOM     13  CBA 5BG A 201      15.452  -3.224  -6.373 -0.09 +0.01    +0.034 C 
+DOCKED: BRANCH  13  14
+DOCKED: ATOM     14  CAX 5BG A 201      15.251  -2.946  -4.841 -0.01 +0.01    +0.029 C 
+DOCKED: BRANCH  14  15
+DOCKED: ATOM     15  CBO 5BG A 201      14.368  -3.859  -4.197 +0.01 -0.00    -0.020 A 
+DOCKED: ATOM     16  CAO 5BG A 201      13.512  -4.664  -4.967 +0.00 +0.01    +0.022 A 
+DOCKED: ATOM     17  CBT 5BG A 201      12.700  -5.577  -4.287 +0.01 +0.03    +0.116 A 
+DOCKED: ATOM     18  CBS 5BG A 201      12.635  -5.765  -2.948 +0.02 +0.03    +0.116 A 
+DOCKED: ATOM     19  CAN 5BG A 201      13.518  -4.956  -2.170 +0.01 +0.01    +0.026 A 
+DOCKED: ATOM     20  CAM 5BG A 201      14.346  -4.071  -2.798 +0.01 -0.00    -0.002 A 
+DOCKED: BRANCH  17  21
+DOCKED: ATOM     21  OBG 5BG A 201      11.861  -6.536  -4.886 -0.01 -0.09    -0.326 OA
+DOCKED: ATOM     22  CAB 5BG A 201      12.423  -7.834  -4.964 -0.01 +0.05    +0.181 C 
+DOCKED: ENDBRANCH  17  21
+DOCKED: BRANCH  18  23
+DOCKED: ATOM     23  OBF 5BG A 201      11.765  -6.679  -2.416 +0.01 -0.14    -0.326 OA
+DOCKED: ATOM     24  CAA 5BG A 201      10.447  -6.310  -2.053 -0.04 +0.13    +0.181 C 
+DOCKED: ENDBRANCH  18  23
+DOCKED: ENDBRANCH  14  15
+DOCKED: ENDBRANCH  13  14
+DOCKED: ENDBRANCH  12  13
+DOCKED: BRANCH  12  25
+DOCKED: ATOM     25  CBQ 5BG A 201      14.153  -1.093  -6.341 -0.12 +0.00    +0.002 A 
+DOCKED: ATOM     26  CAL 5BG A 201      14.762   0.114  -6.149 -0.09 -0.00    -0.002 A 
+DOCKED: ATOM     27  CAJ 5BG A 201      14.325   1.096  -5.282 -0.11 -0.00    +0.002 A 
+DOCKED: ATOM     28  CAK 5BG A 201      13.196   0.758  -4.529 -0.04 -0.01    +0.024 A 
+DOCKED: ATOM     29  CBP 5BG A 201      12.554  -0.451  -4.643 -0.03 -0.02    +0.095 A 
+DOCKED: ATOM     30  CAP 5BG A 201      13.074  -1.428  -5.560 -0.10 +0.00    +0.022 A 
+DOCKED: BRANCH  29  31
+DOCKED: ATOM     31  OBK 5BG A 201      11.460  -0.870  -3.883 -0.08 +0.08    -0.319 OA
+DOCKED: BRANCH  31  32
+DOCKED: ATOM     32  CBC 5BG A 201      10.577  -1.843  -4.446 -0.13 -0.01    +0.246 C 
+DOCKED: BRANCH  32  33
+DOCKED: ATOM     33  CBL 5BG A 201      10.462  -3.088  -3.555 -0.08 +0.04    +0.217 C 
+DOCKED: ATOM     34  OAI 5BG A 201      10.825  -2.880  -2.405 +0.06 -0.12    -0.645 OA
+DOCKED: ATOM     35  OAF 5BG A 201       9.976  -4.121  -4.018 +0.05 -0.18    -0.645 OA
+DOCKED: ENDBRANCH  32  33
+DOCKED: ENDBRANCH  31  32
+DOCKED: ENDBRANCH  29  31
+DOCKED: ENDBRANCH  12  25
+DOCKED: ENDBRANCH  11  12
+DOCKED: ENDBRANCH   8   9
+DOCKED: BRANCH   1  36
+DOCKED: ATOM     36  CCA 5BG A 201      12.415  -6.112 -10.661 -0.30 -0.02    +0.101 C 
+DOCKED: BRANCH  36  37
+DOCKED: ATOM     37  CBY 5BG A 201      12.795  -6.587 -12.084 -0.50 -0.00    +0.013 C 
+DOCKED: ATOM     38  CAZ 5BG A 201      12.126  -7.889 -12.426 -0.62 -0.00    +0.001 C 
+DOCKED: ATOM     39  CAU 5BG A 201      12.508  -8.447 -13.819 -0.78 -0.00    +0.000 C 
+DOCKED: ATOM     40  CAS 5BG A 201      13.985  -8.572 -13.942 -0.94 +0.00    +0.000 C 
+DOCKED: ATOM     41  CAT 5BG A 201      14.718  -7.214 -13.655 -0.59 +0.00    +0.000 C 
+DOCKED: ATOM     42  CAY 5BG A 201      14.275  -6.653 -12.288 -0.55 +0.00    +0.001 C 
+DOCKED: ENDBRANCH  36  37
+DOCKED: BRANCH  36  43
+DOCKED: ATOM     43  CBR 5BG A 201      13.469  -6.449  -9.592 -0.21 -0.00    -0.010 A 
+DOCKED: ATOM     44  CAR 5BG A 201      14.556  -5.597  -9.458 -0.18 +0.00    +0.022 A 
+DOCKED: ATOM     45  CBV 5BG A 201      15.512  -5.932  -8.496 -0.16 +0.06    +0.118 A 
+DOCKED: ATOM     46  CBW 5BG A 201      15.356  -7.007  -7.691 -0.06 +0.13    +0.138 A 
+DOCKED: ATOM     47  CBU 5BG A 201      14.306  -7.849  -7.805 -0.08 +0.10    +0.118 A 
+DOCKED: ATOM     48  CAQ 5BG A 201      13.303  -7.567  -8.765 -0.18 -0.00    +0.022 A 
+DOCKED: BRANCH  45  49
+DOCKED: ATOM     49  OBI 5BG A 201      16.654  -5.130  -8.339 -0.16 -0.17    -0.326 OA
+DOCKED: ATOM     50  CAD 5BG A 201      17.511  -4.821  -9.468 -0.18 +0.08    +0.181 C 
+DOCKED: ENDBRANCH  45  49
+DOCKED: BRANCH  46  51
+DOCKED: ATOM     51  OBJ 5BG A 201      16.422  -7.309  -6.779 -0.58 -0.45    -0.324 OA
+DOCKED: ATOM     52  CAE 5BG A 201      16.377  -6.470  -5.653 -0.04 +0.11    +0.182 C 
+DOCKED: ENDBRANCH  46  51
+DOCKED: BRANCH  47  53
+DOCKED: ATOM     53  OBH 5BG A 201      14.227  -8.894  -6.977 -0.04 -0.39    -0.326 OA
+DOCKED: ATOM     54  CAC 5BG A 201      13.310  -9.943  -7.280 -0.08 +0.03    +0.181 C 
+DOCKED: ENDBRANCH  47  53
+DOCKED: ENDBRANCH  36  43
+DOCKED: ENDBRANCH   1  36
+DOCKED: TORSDOF 17
+DOCKED: TER
+DOCKED: ENDMDL
+________________________________________________________________________________
+
+
+	BEGINNING GENETIC ALGORITHM DOCKING 10 of 10
+Run: 10 Seed: 1411512031 1421338825 [ Run 10 of 10 GA/GALS ]
+Beginning LAMARCKIAN GENETIC ALGORITHM (LGA), with a maximum of 2500000 energy evaluations.
+
+Final-Value: -20.135
+
+
+	FINAL GENETIC ALGORITHM DOCKED STATE
+	_______________________________________________
+
+
+Detailed state:  trans 11.950 -3.804 -7.021 quatxyzw -0.048876 0.123004 0.009717 0.991154 center 12.923 -3.459 -7.720 ntor 17 -42.4539 -1.2918 83.3766 3.1477 33.9853 179.8805 175.5850 159.4872 -151.7310 -43.4340 -34.3304 73.0139 173.2170 -180.0000 -45.1160 43.8172 19.8636
+State:	 11.950  -3.804  -7.021  -0.368  0.927  0.073 15.253    -42.45   -1.29   83.38    3.15   33.99  179.88  175.58  159.49 -151.73  -43.43  -34.33   73.01  173.22 -180.00  -45.12   43.82   19.86
+
+DOCKED: MODEL       10
+DOCKED: USER    Run = 10
+DOCKED: USER    DPF = grid_dock_files\5diu_dock.dpf
+DOCKED: USER  
+DOCKED: USER    Estimated Free Energy of Binding    =   -8.26 kcal/mol  [=(1)+(2)+(3)-(4)]
+DOCKED: USER    Estimated Inhibition Constant, Ki   =  879.10 nM (nanomolar)  [Temperature = 298.15 K]
+DOCKED: USER    
+DOCKED: USER    (1) Final Intermolecular Energy     =  -13.33 kcal/mol
+DOCKED: USER        vdW + Hbond + desolv Energy     =  -12.04 kcal/mol
+DOCKED: USER        Electrostatic Energy            =   -1.29 kcal/mol
+DOCKED: USER    (2) Final Total Internal Energy     =   -6.80 kcal/mol
+DOCKED: USER    (3) Torsional Free Energy           =   +5.07 kcal/mol
+DOCKED: USER    (4) Unbound System's Energy  [=(2)] =   -6.80 kcal/mol
+DOCKED: USER    
+DOCKED: USER    
+DOCKED: USER    NEWDPF move pdbqt_files/5diu_ligand.pdbqt
+DOCKED: USER    NEWDPF about 12.923000 -3.459000 -7.720000
+DOCKED: USER    NEWDPF tran0 11.949687 -3.804030 -7.021438
+DOCKED: USER    NEWDPF quaternion0 -0.048876 0.123004 0.009717 0.991154
+DOCKED: USER    NEWDPF axisangle0 -0.368277 0.926828 0.073218 15.253073
+DOCKED: USER    NEWDPF quat0 -0.368277 0.926828 0.073218 15.253073
+DOCKED: USER    NEWDPF dihe0 -42.45 -1.29 83.38 3.15 33.99 179.88 175.58 159.49 -151.73 -43.43 -34.33 73.01 173.22 -180.00 -45.12 43.82 19.86 
+DOCKED: USER  keepresnum = 1 
+DOCKED: USER  
+DOCKED: REMARK  17 active torsions:
+DOCKED: REMARK  status: ('A' for Active; 'I' for Inactive)
+DOCKED: REMARK    1  A    between atoms: OBH_1040  and  CBU_1041 
+DOCKED: REMARK    2  A    between atoms: CBW_1043  and  OBJ_1044 
+DOCKED: REMARK    3  A    between atoms: CBV_1046  and  OBI_1047 
+DOCKED: REMARK    4  A    between atoms: CBR_1050  and  CCA_1051 
+DOCKED: REMARK    5  A    between atoms: CCA_1051  and  CBN_1058 
+DOCKED: REMARK    6  A    between atoms: CCA_1051  and  CBY_1052 
+DOCKED: REMARK       I    between atoms: CBN_1058  and  N_1060 
+DOCKED: REMARK    7  A    between atoms: CA_1065  and  C_1066 
+DOCKED: REMARK       I    between atoms: C_1066  and  NBE_1068 
+DOCKED: REMARK    8  A    between atoms: NBE_1068  and  CBX_1069 
+DOCKED: REMARK    9  A    between atoms: CBX_1069  and  CBA_1081 
+DOCKED: REMARK   10  A    between atoms: CBX_1069  and  CBQ_1070 
+DOCKED: REMARK   11  A    between atoms: CBP_1075  and  OBK_1076 
+DOCKED: REMARK   12  A    between atoms: OBK_1076  and  CBC_1077 
+DOCKED: REMARK   13  A    between atoms: CBC_1077  and  CBL_1078 
+DOCKED: REMARK   14  A    between atoms: CBA_1081  and  CAX_1082 
+DOCKED: REMARK   15  A    between atoms: CAX_1082  and  CBO_1083 
+DOCKED: REMARK   16  A    between atoms: CBS_1087  and  OBF_1088 
+DOCKED: REMARK   17  A    between atoms: CBT_1090  and  OBG_1091 
+DOCKED: USER                              x       y       z     vdW  Elec       q    Type
+DOCKED: USER                           _______ _______ _______ _____ _____    ______ ____
+DOCKED: ROOT
+DOCKED: ATOM      1  CBN 5BG A 201      12.326  -5.117 -10.210 -0.20 -0.02    +0.237 C 
+DOCKED: ATOM      2  OAH 5BG A 201      13.184  -4.388 -10.673 -0.03 +0.04    -0.272 OA
+DOCKED: ATOM      3  N   5BG A 201      11.111  -4.554  -9.842 -0.13 +0.01    -0.313 N 
+DOCKED: ATOM      4  CBD 5BG A 201      10.029  -5.300  -9.124 -0.41 -0.02    +0.104 C 
+DOCKED: ATOM      5  CAW 5BG A 201       8.669  -4.925  -9.616 -0.61 -0.00    +0.024 C 
+DOCKED: ATOM      6  CAV 5BG A 201       8.421  -3.402  -9.686 -0.39 -0.00    +0.004 C 
+DOCKED: ATOM      7  CB  5BG A 201       9.528  -2.780 -10.512 -0.65 +0.00    +0.032 C 
+DOCKED: ATOM      8  CA  5BG A 201      10.944  -3.109  -9.972 -0.40 +0.02    +0.164 C 
+DOCKED: ENDROOT
+DOCKED: BRANCH   8   9
+DOCKED: ATOM      9  C   5BG A 201      11.108  -2.325  -8.635 -0.26 +0.06    +0.272 C 
+DOCKED: ATOM     10  O   5BG A 201      10.404  -1.381  -8.428 -0.37 -0.09    -0.269 OA
+DOCKED: ATOM     11  NBE 5BG A 201      12.085  -2.772  -7.828 -0.11 -0.05    -0.234 NA
+DOCKED: BRANCH  11  12
+DOCKED: ATOM     12  CBX 5BG A 201      12.222  -2.175  -6.450 -0.15 +0.02    +0.129 C 
+DOCKED: BRANCH  12  13
+DOCKED: ATOM     13  CBA 5BG A 201      13.165  -1.005  -6.487 -0.20 +0.00    +0.034 C 
+DOCKED: BRANCH  13  14
+DOCKED: ATOM     14  CAX 5BG A 201      14.144  -1.171  -7.703 -0.21 +0.01    +0.029 C 
+DOCKED: BRANCH  14  15
+DOCKED: ATOM     15  CBO 5BG A 201      15.457  -1.582  -7.338 -0.12 -0.01    -0.020 A 
+DOCKED: ATOM     16  CAO 5BG A 201      16.537  -0.699  -7.506 -0.09 +0.01    +0.022 A 
+DOCKED: ATOM     17  CBT 5BG A 201      17.798  -1.136  -7.088 -0.12 +0.03    +0.116 A 
+DOCKED: ATOM     18  CBS 5BG A 201      18.102  -2.337  -6.543 -0.09 +0.04    +0.116 A 
+DOCKED: ATOM     19  CAN 5BG A 201      16.999  -3.225  -6.360 -0.10 +0.01    +0.026 A 
+DOCKED: ATOM     20  CAM 5BG A 201      15.747  -2.827  -6.731 -0.11 -0.00    -0.002 A 
+DOCKED: BRANCH  17  21
+DOCKED: ATOM     21  OBG 5BG A 201      18.974  -0.361  -7.076 -0.07 -0.04    -0.326 OA
+DOCKED: ATOM     22  CAB 5BG A 201      19.294   0.230  -8.323 -0.14 +0.01    +0.181 C 
+DOCKED: ENDBRANCH  17  21
+DOCKED: BRANCH  18  23
+DOCKED: ATOM     23  OBF 5BG A 201      19.394  -2.641  -6.208 -0.06 -0.07    -0.326 OA
+DOCKED: ATOM     24  CAA 5BG A 201      19.739  -3.917  -5.700 -0.03 +0.03    +0.181 C 
+DOCKED: ENDBRANCH  18  23
+DOCKED: ENDBRANCH  14  15
+DOCKED: ENDBRANCH  13  14
+DOCKED: ENDBRANCH  12  13
+DOCKED: BRANCH  12  25
+DOCKED: ATOM     25  CBQ 5BG A 201      12.654  -3.270  -5.569 -0.05 +0.00    +0.002 A 
+DOCKED: ATOM     26  CAL 5BG A 201      13.695  -3.107  -4.700 -0.01 -0.00    -0.002 A 
+DOCKED: ATOM     27  CAJ 5BG A 201      14.263  -4.113  -3.942 +0.01 +0.00    +0.002 A 
+DOCKED: ATOM     28  CAK 5BG A 201      13.729  -5.387  -4.158 +0.02 +0.01    +0.024 A 
+DOCKED: ATOM     29  CBP 5BG A 201      12.708  -5.631  -5.044 -0.00 +0.02    +0.095 A 
+DOCKED: ATOM     30  CAP 5BG A 201      12.173  -4.535  -5.804 -0.05 +0.00    +0.022 A 
+DOCKED: BRANCH  29  31
+DOCKED: ATOM     31  OBK 5BG A 201      12.169  -6.883  -5.345 -0.01 -0.07    -0.319 OA
+DOCKED: BRANCH  31  32
+DOCKED: ATOM     32  CBC 5BG A 201      10.861  -6.939  -5.917 -0.10 +0.05    +0.246 C 
+DOCKED: BRANCH  32  33
+DOCKED: ATOM     33  CBL 5BG A 201       9.848  -7.583  -4.960 -0.11 +0.14    +0.217 C 
+DOCKED: ATOM     34  OAI 5BG A 201      10.235  -7.587  -3.799 +0.00 -0.45    -0.645 OA
+DOCKED: ATOM     35  OAF 5BG A 201       8.760  -7.962  -5.394 -0.61 -0.70    -0.645 OA
+DOCKED: ENDBRANCH  32  33
+DOCKED: ENDBRANCH  31  32
+DOCKED: ENDBRANCH  29  31
+DOCKED: ENDBRANCH  12  25
+DOCKED: ENDBRANCH  11  12
+DOCKED: ENDBRANCH   8   9
+DOCKED: BRANCH   1  36
+DOCKED: ATOM     36  CCA 5BG A 201      12.527  -6.594  -9.945 -0.23 -0.03    +0.101 C 
+DOCKED: BRANCH  36  37
+DOCKED: ATOM     37  CBY 5BG A 201      12.579  -7.376 -11.279 -0.41 -0.01    +0.013 C 
+DOCKED: ATOM     38  CAZ 5BG A 201      13.576  -8.501 -11.219 -0.45 -0.00    +0.001 C 
+DOCKED: ATOM     39  CAU 5BG A 201      13.715  -9.291 -12.543 -0.83 -0.00    +0.000 C 
+DOCKED: ATOM     40  CAS 5BG A 201      14.035  -8.371 -13.667 -0.87 +0.00    +0.000 C 
+DOCKED: ATOM     41  CAT 5BG A 201      12.980  -7.218 -13.804 -0.77 -0.00    +0.000 C 
+DOCKED: ATOM     42  CAY 5BG A 201      12.819  -6.485 -12.455 -0.55 -0.00    +0.001 C 
+DOCKED: ENDBRANCH  36  37
+DOCKED: BRANCH  36  43
+DOCKED: ATOM     43  CBR 5BG A 201      13.788  -6.759  -9.079 -0.19 -0.00    -0.010 A 
+DOCKED: ATOM     44  CAR 5BG A 201      14.978  -6.222  -9.549 -0.25 +0.01    +0.022 A 
+DOCKED: ATOM     45  CBV 5BG A 201      16.114  -6.402  -8.758 -0.15 +0.08    +0.118 A 
+DOCKED: ATOM     46  CBW 5BG A 201      16.048  -7.021  -7.558 +0.08 +0.16    +0.138 A 
+DOCKED: ATOM     47  CBU 5BG A 201      14.900  -7.550  -7.080 +0.02 +0.13    +0.118 A 
+DOCKED: ATOM     48  CAQ 5BG A 201      13.712  -7.406  -7.838 -0.14 +0.01    +0.022 A 
+DOCKED: BRANCH  45  49
+DOCKED: ATOM     49  OBI 5BG A 201      17.355  -5.914  -9.199 -0.23 -0.19    -0.326 OA
+DOCKED: ATOM     50  CAD 5BG A 201      17.633  -4.490  -9.220 -0.22 +0.09    +0.181 C 
+DOCKED: ENDBRANCH  45  49
+DOCKED: BRANCH  46  51
+DOCKED: ATOM     51  OBJ 5BG A 201      17.279  -7.216  -6.847 -0.43 -0.39    -0.324 OA
+DOCKED: ATOM     52  CAE 5BG A 201      17.394  -6.314  -5.777 -0.06 +0.11    +0.182 C 
+DOCKED: ENDBRANCH  46  51
+DOCKED: BRANCH  47  53
+DOCKED: ATOM     53  OBH 5BG A 201      14.918  -8.153  -5.889 -0.32 -0.35    -0.326 OA
+DOCKED: ATOM     54  CAC 5BG A 201      13.974  -9.190  -5.629 -0.04 +0.12    +0.181 C 
+DOCKED: ENDBRANCH  47  53
+DOCKED: ENDBRANCH  36  43
+DOCKED: ENDBRANCH   1  36
+DOCKED: TORSDOF 17
+DOCKED: TER
+DOCKED: ENDMDL
+________________________________________________________________________________
+
+DPF> analysis                             # perform a ranked cluster analysis
+
+
+		CLUSTER ANALYSIS OF CONFORMATIONS
+		_________________________________
+
+Number of conformations = 10
+
+RMSD cluster analysis will be performed using the ligand atoms only (54 / 54 total atoms).
+
+Outputting structurally similar clusters, ranked in order of increasing energy.
+
+
+________________________________________________________________________________
+
+Number of distinct conformational clusters found = 7,  out of 10 runs,
+Using an rmsd-tolerance of 2.0 A
+
+
+	CLUSTERING HISTOGRAM
+	____________________
+
+________________________________________________________________________________
+     |           |     |           |     |                                    
+Clus | Lowest    | Run | Mean      | Num | Histogram                          
+-ter | Binding   |     | Binding   | in  |                                    
+Rank | Energy    |     | Energy    | Clus|    5    10   15   20   25   30   35
+_____|___________|_____|___________|_____|____:____|____:____|____:____|____:___
+   1 |    -10.84 |   3 |     -9.53 |   3 |###
+   2 |     -7.35 |   5 |     -6.39 |   2 |##
+   3 |     -6.89 |   1 |     -6.89 |   1 |#
+   4 |     -6.56 |   8 |     -6.56 |   1 |#
+   5 |     -3.17 |   4 |     -3.17 |   1 |#
+   6 |     -3.10 |   2 |     -3.10 |   1 |#
+   7 |     -2.96 |   6 |     -2.96 |   1 |#
+_____|___________|_____|___________|_____|______________________________________
+
+
+Number of multi-member conformational clusters found = 2, out of 10 runs.
+
+	RMSD TABLE
+	__________
+
+_____________________________________________________________________
+     |      |      |           |         |                 |
+Rank | Sub- | Run  | Binding   | Cluster | Reference       | Grep
+     | Rank |      | Energy    | RMSD    | RMSD            | Pattern
+_____|______|______|___________|_________|_________________|___________
+   1      1      3      -10.84      0.00      1.42           RANKING
+   1      2      7       -9.49      1.62      1.68           RANKING
+   1      3     10       -8.26      1.72      2.03           RANKING
+   2      1      5       -7.35      0.00      2.14           RANKING
+   2      2      9       -5.44      1.93      1.83           RANKING
+   3      1      1       -6.89      0.00      2.38           RANKING
+   4      1      8       -6.56      0.00      2.79           RANKING
+   5      1      4       -3.17      0.00      2.71           RANKING
+   6      1      2       -3.10      0.00      2.96           RANKING
+   7      1      6       -2.96      0.00      2.68           RANKING
+_______________________________________________________________________
+
+
+
+	INFORMATION ENTROPY ANALYSIS FOR THIS CLUSTERING
+	________________________________________________
+
+
+Information entropy for this clustering = 0.80  (rmstol = 2.00 Angstrom)
+
+_______________________________________________________________________
+
+
+	STATISTICAL MECHANICAL ANALYSIS
+	_______________________________
+
+
+Partition function, Q =    10.11            at Temperature, T = 298.15 K
+Free energy,        A ~ -1370.65 kcal/mol   at Temperature, T = 298.15 K
+Internal energy,    U =    -6.42 kcal/mol   at Temperature, T = 298.15 K
+Entropy,            S =     4.58 kcal/mol/K at Temperature, T = 298.15 K
+
+_______________________________________________________________________
+
+
+	LOWEST ENERGY DOCKED CONFORMATION from EACH CLUSTER
+	___________________________________________________
+
+
+
+Keeping original residue number (specified in the input PDBQ file) for outputting.
+
+MODEL        3
+USER    Run = 3
+USER    Cluster Rank = 1
+USER    Number of conformations in this cluster = 3
+USER  
+USER    RMSD from reference structure       = 1.421 A
+USER  
+USER    Estimated Free Energy of Binding    =  -10.84 kcal/mol  [=(1)+(2)+(3)-(4)]
+USER    Estimated Inhibition Constant, Ki   =   11.27 nM (nanomolar)  [Temperature = 298.15 K]
+USER    
+USER    (1) Final Intermolecular Energy     =  -15.91 kcal/mol
+USER        vdW + Hbond + desolv Energy     =  -14.42 kcal/mol
+USER        Electrostatic Energy            =   -1.49 kcal/mol
+USER    (2) Final Total Internal Energy     =   -5.26 kcal/mol
+USER    (3) Torsional Free Energy           =   +5.07 kcal/mol
+USER    (4) Unbound System's Energy  [=(2)] =   -5.26 kcal/mol
+USER    
+USER    
+USER  
+USER    DPF = grid_dock_files\5diu_dock.dpf
+USER    NEWDPF move	pdbqt_files/5diu_ligand.pdbqt
+USER    NEWDPF about	12.923000 -3.459000 -7.720000
+USER    NEWDPF tran0	12.518610 -3.730910 -7.845646
+USER    NEWDPF axisangle0	0.135456 0.816209 0.561654 19.737266
+USER    NEWDPF quaternion0	0.023216 0.139890 0.096262 0.985203
+USER    NEWDPF dihe0	12.92 6.67 -7.24 -24.52 11.85 -29.34 26.17 12.45 175.49 -165.94 -62.04 162.29 -33.36 -155.97 -28.95 48.65 -23.04 
+USER  
+USER                              x       y       z    vdW   Elec        q     RMS 
+ATOM      1  CBN 5BG A 201      12.679  -5.473 -10.841 -0.23 -0.02    +0.237     1.421
+ATOM      2  OAH 5BG A 201      13.667  -4.982 -11.356 -0.28 +0.02    -0.272     1.421
+ATOM      3  N   5BG A 201      11.590  -4.650 -10.587 -0.15 +0.02    -0.313     1.421
+ATOM      4  CBD 5BG A 201      10.375  -5.085  -9.825 -0.42 -0.02    +0.104     1.421
+ATOM      5  CAW 5BG A 201       9.119  -4.525 -10.408 -0.59 -0.00    +0.024     1.421
+ATOM      6  CAV 5BG A 201       9.168  -3.002 -10.666 -0.41 -0.00    +0.004     1.421
+ATOM      7  CB  5BG A 201      10.384  -2.706 -11.519 -0.55 +0.00    +0.032     1.421
+ATOM      8  CA  5BG A 201      11.703  -3.227 -10.893 -0.42 +0.01    +0.164     1.421
+ATOM      9  C   5BG A 201      11.997  -2.330  -9.652 -0.25 +0.05    +0.272     1.421
+ATOM     10  O   5BG A 201      12.208  -1.164  -9.819 -0.61 -0.11    -0.269     1.421
+ATOM     11  NBE 5BG A 201      12.028  -2.976  -8.475 -0.12 -0.05    -0.234     1.421
+ATOM     12  CBX 5BG A 201      12.154  -2.172  -7.205 -0.21 +0.02    +0.129     1.421
+ATOM     13  CBA 5BG A 201      13.603  -1.909  -6.905 -0.16 +0.01    +0.034     1.421
+ATOM     14  CAX 5BG A 201      13.808  -0.373  -6.657 -0.21 +0.00    +0.029     1.421
+ATOM     15  CBO 5BG A 201      14.904   0.189  -7.370 -0.19 -0.00    -0.020     1.421
+ATOM     16  CAO 5BG A 201      14.697   1.296  -8.211 -0.26 +0.00    +0.022     1.421
+ATOM     17  CBT 5BG A 201      15.815   1.838  -8.851 -0.18 +0.00    +0.116     1.421
+ATOM     18  CBS 5BG A 201      17.094   1.402  -8.761 -0.13 +0.01    +0.116     1.421
+ATOM     19  CAN 5BG A 201      17.302   0.287  -7.893 -0.10 +0.00    +0.026     1.421
+ATOM     20  CAM 5BG A 201      16.241  -0.256  -7.229 -0.14 -0.00    -0.002     1.421
+ATOM     21  OBG 5BG A 201      15.826   3.003  -9.642 -0.13 +0.02    -0.326     1.421
+ATOM     22  CAB 5BG A 201      14.568   3.647  -9.747 -0.28 -0.01    +0.181     1.421
+ATOM     23  OBF 5BG A 201      18.089   2.016  -9.473 -0.11 +0.00    -0.326     1.421
+ATOM     24  CAA 5BG A 201      19.378   1.439  -9.576 -0.16 -0.01    +0.181     1.421
+ATOM     25  CBQ 5BG A 201      11.452  -2.935  -6.164 -0.17 +0.00    +0.002     1.421
+ATOM     26  CAL 5BG A 201      10.654  -2.310  -5.248 -0.22 -0.00    -0.002     1.421
+ATOM     27  CAJ 5BG A 201      10.074  -2.918  -4.152 -0.14 +0.00    +0.002     1.421
+ATOM     28  CAK 5BG A 201      10.402  -4.267  -3.984 -0.08 +0.01    +0.024     1.421
+ATOM     29  CBP 5BG A 201      11.227  -4.950  -4.844 -0.06 +0.02    +0.095     1.421
+ATOM     30  CAP 5BG A 201      11.802  -4.247  -5.958 -0.09 +0.00    +0.022     1.421
+ATOM     31  OBK 5BG A 201      11.636  -6.277  -4.702 -0.03 -0.09    -0.319     1.421
+ATOM     32  CBC 5BG A 201      10.970  -7.094  -3.736 -0.04 +0.12    +0.246     1.421
+ATOM     33  CBL 5BG A 201       9.875  -7.956  -4.380 -0.13 +0.16    +0.217     1.421
+ATOM     34  OAI 5BG A 201       9.434  -8.804  -3.616 -0.28 -0.81    -0.645     1.421
+ATOM     35  OAF 5BG A 201       9.497  -7.700  -5.524 -0.34 -0.53    -0.645     1.421
+ATOM     36  CCA 5BG A 201      12.590  -6.917 -10.396 -0.26 -0.04    +0.101     1.421
+ATOM     37  CBY 5BG A 201      12.915  -7.864 -11.576 -0.46 -0.00    +0.013     1.421
+ATOM     38  CAZ 5BG A 201      14.233  -8.561 -11.377 -0.54 +0.00    +0.001     1.421
+ATOM     39  CAU 5BG A 201      14.641  -9.483 -12.552 -0.91 +0.00    +0.000     1.421
+ATOM     40  CAS 5BG A 201      14.639  -8.727 -13.832 -0.96 +0.00    +0.000     1.421
+ATOM     41  CAT 5BG A 201      13.258  -8.037 -14.109 -0.89 -0.00    +0.000     1.421
+ATOM     42  CAY 5BG A 201      12.848  -7.171 -12.900 -0.64 -0.00    +0.001     1.421
+ATOM     43  CBR 5BG A 201      13.514  -7.104  -9.180 -0.19 -0.00    -0.010     1.421
+ATOM     44  CAR 5BG A 201      14.665  -6.331  -9.111 -0.21 +0.01    +0.022     1.421
+ATOM     45  CBV 5BG A 201      15.500  -6.530  -8.009 -0.12 +0.08    +0.118     1.421
+ATOM     46  CBW 5BG A 201      15.174  -7.395  -7.023 +0.06 +0.15    +0.138     1.421
+ATOM     47  CBU 5BG A 201      14.059  -8.157  -7.070 -0.08 +0.09    +0.118     1.421
+ATOM     48  CAQ 5BG A 201      13.171  -8.005  -8.164 -0.14 -0.00    +0.022     1.421
+ATOM     49  OBI 5BG A 201      16.698  -5.805  -7.903 -0.12 -0.20    -0.326     1.421
+ATOM     50  CAD 5BG A 201      17.293  -5.170  -9.064 -0.30 +0.09    +0.181     1.421
+ATOM     51  OBJ 5BG A 201      16.125  -7.581  -5.966 -0.64 -0.40    -0.324     1.421
+ATOM     52  CAE 5BG A 201      16.096  -6.504  -5.065 -0.02 +0.10    +0.182     1.421
+ATOM     53  OBH 5BG A 201      13.810  -8.994  -6.060 -0.05 -0.21    -0.326     1.421
+ATOM     54  CAC 5BG A 201      12.701  -9.884  -6.163 -0.09 -0.01    +0.181     1.421
+TER
+ENDMDL
+MODEL        5
+USER    Run = 5
+USER    Cluster Rank = 2
+USER    Number of conformations in this cluster = 2
+USER  
+USER    RMSD from reference structure       = 2.137 A
+USER  
+USER    Estimated Free Energy of Binding    =   -7.35 kcal/mol  [=(1)+(2)+(3)-(4)]
+USER    Estimated Inhibition Constant, Ki   =    4.12 uM (micromolar)  [Temperature = 298.15 K]
+USER    
+USER    (1) Final Intermolecular Energy     =  -12.42 kcal/mol
+USER        vdW + Hbond + desolv Energy     =  -12.00 kcal/mol
+USER        Electrostatic Energy            =   -0.41 kcal/mol
+USER    (2) Final Total Internal Energy     =   -7.65 kcal/mol
+USER    (3) Torsional Free Energy           =   +5.07 kcal/mol
+USER    (4) Unbound System's Energy  [=(2)] =   -7.65 kcal/mol
+USER    
+USER    
+USER  
+USER    DPF = grid_dock_files\5diu_dock.dpf
+USER    NEWDPF move	pdbqt_files/5diu_ligand.pdbqt
+USER    NEWDPF about	12.923000 -3.459000 -7.720000
+USER    NEWDPF tran0	12.759460 -3.716804 -7.969697
+USER    NEWDPF axisangle0	-0.251043 -0.756352 -0.604077 -9.218690
+USER    NEWDPF quaternion0	-0.020174 -0.060782 -0.048545 -0.996766
+USER    NEWDPF dihe0	-26.29 76.28 34.98 30.90 10.74 131.58 -144.08 147.44 169.59 -180.00 -31.11 -52.10 134.74 16.63 -23.55 22.07 0.12 
+USER  
+USER                              x       y       z    vdW   Elec        q     RMS 
+ATOM      1  CBN 5BG A 201      12.597  -5.433 -10.980 -0.25 -0.02    +0.237     2.137
+ATOM      2  OAH 5BG A 201      13.440  -4.851 -11.637 -0.31 +0.02    -0.272     2.137
+ATOM      3  N   5BG A 201      11.491  -4.717 -10.542 -0.15 +0.02    -0.313     2.137
+ATOM      4  CBD 5BG A 201      10.461  -5.264  -9.603 -0.39 -0.02    +0.104     2.137
+ATOM      5  CAW 5BG A 201       9.081  -4.823  -9.969 -0.65 -0.00    +0.024     2.137
+ATOM      6  CAV 5BG A 201       8.947  -3.303 -10.207 -0.46 -0.00    +0.004     2.137
+ATOM      7  CB  5BG A 201       9.978  -2.893 -11.238 -0.61 +0.00    +0.032     2.137
+ATOM      8  CA  5BG A 201      11.423  -3.289 -10.839 -0.43 +0.01    +0.164     2.137
+ATOM      9  C   5BG A 201      11.828  -2.370  -9.648 -0.28 +0.06    +0.272     2.137
+ATOM     10  O   5BG A 201      11.510  -1.216  -9.674 -0.92 -0.14    -0.269     2.137
+ATOM     11  NBE 5BG A 201      12.555  -2.965  -8.688 -0.11 -0.06    -0.234     2.137
+ATOM     12  CBX 5BG A 201      12.865  -2.200  -7.426 -0.17 +0.04    +0.129     2.137
+ATOM     13  CBA 5BG A 201      14.339  -1.917  -7.345 -0.12 +0.02    +0.034     2.137
+ATOM     14  CAX 5BG A 201      15.120  -3.275  -7.249 -0.06 +0.02    +0.029     2.137
+ATOM     15  CBO 5BG A 201      15.547  -3.607  -5.932 -0.04 -0.01    -0.020     2.137
+ATOM     16  CAO 5BG A 201      14.955  -4.688  -5.258 -0.00 +0.01    +0.022     2.137
+ATOM     17  CBT 5BG A 201      15.445  -5.001  -3.986 +0.02 +0.03    +0.116     2.137
+ATOM     18  CBS 5BG A 201      16.430  -4.360  -3.315 +0.01 +0.03    +0.116     2.137
+ATOM     19  CAN 5BG A 201      17.040  -3.272  -4.011 +0.00 +0.01    +0.026     2.137
+ATOM     20  CAM 5BG A 201      16.609  -2.951  -5.265 -0.02 -0.00    -0.002     2.137
+ATOM     21  OBG 5BG A 201      15.055  -6.105  -3.204 +0.01 -0.09    -0.326     2.137
+ATOM     22  CAB 5BG A 201      13.675  -6.415  -3.279 +0.03 +0.05    +0.181     2.137
+ATOM     23  OBF 5BG A 201      16.787  -4.760  -2.055 +0.00 -0.06    -0.326     2.137
+ATOM     24  CAA 5BG A 201      16.308  -4.082  -0.908 +0.00 +0.03    +0.181     2.137
+ATOM     25  CBQ 5BG A 201      12.345  -3.009  -6.315 -0.11 +0.00    +0.002     2.137
+ATOM     26  CAL 5BG A 201      11.856  -4.266  -6.526 -0.11 -0.00    -0.002     2.137
+ATOM     27  CAJ 5BG A 201      11.217  -5.041  -5.578 -0.10 +0.00    +0.002     2.137
+ATOM     28  CAK 5BG A 201      11.037  -4.423  -4.336 -0.08 +0.01    +0.024     2.137
+ATOM     29  CBP 5BG A 201      11.469  -3.148  -4.064 -0.06 +0.01    +0.095     2.137
+ATOM     30  CAP 5BG A 201      12.118  -2.399  -5.105 -0.10 +0.00    +0.022     2.137
+ATOM     31  OBK 5BG A 201      11.272  -2.456  -2.868 -0.02 -0.04    -0.319     2.137
+ATOM     32  CBC 5BG A 201      12.278  -1.535  -2.442 -0.02 +0.01    +0.246     2.137
+ATOM     33  CBL 5BG A 201      13.533  -2.259  -1.936 +0.00 +0.03    +0.217     2.137
+ATOM     34  OAI 5BG A 201      13.282  -3.355  -1.452 +0.01 -0.12    -0.645     2.137
+ATOM     35  OAF 5BG A 201      14.640  -1.746  -2.107 +0.01 -0.08    -0.645     2.137
+ATOM     36  CCA 5BG A 201      12.715  -6.880 -10.549 -0.28 -0.03    +0.101     2.137
+ATOM     37  CBY 5BG A 201      13.066  -7.774 -11.762 -0.48 -0.00    +0.013     2.137
+ATOM     38  CAZ 5BG A 201      14.511  -8.192 -11.739 -0.55 +0.00    +0.001     2.137
+ATOM     39  CAU 5BG A 201      14.940  -9.045 -12.958 -0.88 +0.00    +0.000     2.137
+ATOM     40  CAS 5BG A 201      14.622  -8.338 -14.226 -0.91 +0.00    +0.000     2.137
+ATOM     41  CAT 5BG A 201      13.106  -7.943 -14.317 -0.89 -0.00    +0.000     2.137
+ATOM     42  CAY 5BG A 201      12.692  -7.143 -13.065 -0.66 -0.00    +0.001     2.137
+ATOM     43  CBR 5BG A 201      13.739  -6.960  -9.403 -0.21 -0.00    -0.010     2.137
+ATOM     44  CAR 5BG A 201      13.473  -7.824  -8.350 -0.17 +0.00    +0.022     2.137
+ATOM     45  CBV 5BG A 201      14.403  -7.865  -7.310 -0.05 +0.11    +0.118     2.137
+ATOM     46  CBW 5BG A 201      15.543  -7.139  -7.353 +0.00 +0.15    +0.138     2.137
+ATOM     47  CBU 5BG A 201      15.822  -6.292  -8.368 -0.16 +0.08    +0.118     2.137
+ATOM     48  CAQ 5BG A 201      14.915  -6.201  -9.453 -0.24 +0.01    +0.022     2.137
+ATOM     49  OBI 5BG A 201      14.171  -8.692  -6.199 -0.10 -0.28    -0.326     2.137
+ATOM     50  CAD 5BG A 201      13.297  -9.846  -6.296 -0.10 +0.05    +0.181     2.137
+ATOM     51  OBJ 5BG A 201      16.406  -7.197  -6.209 -0.61 -0.35    -0.324     2.137
+ATOM     52  CAE 5BG A 201      17.740  -7.413  -6.592 +0.12 +0.21    +0.182     2.137
+ATOM     53  OBH 5BG A 201      16.966  -5.604  -8.335 -0.16 -0.19    -0.326     2.137
+ATOM     54  CAC 5BG A 201      17.217  -4.639  -9.354 -0.19 +0.08    +0.181     2.137
+TER
+ENDMDL
+MODEL        1
+USER    Run = 1
+USER    Cluster Rank = 3
+USER    Number of conformations in this cluster = 1
+USER  
+USER    RMSD from reference structure       = 2.380 A
+USER  
+USER    Estimated Free Energy of Binding    =   -6.89 kcal/mol  [=(1)+(2)+(3)-(4)]
+USER    Estimated Inhibition Constant, Ki   =    8.89 uM (micromolar)  [Temperature = 298.15 K]
+USER    
+USER    (1) Final Intermolecular Energy     =  -11.96 kcal/mol
+USER        vdW + Hbond + desolv Energy     =  -11.09 kcal/mol
+USER        Electrostatic Energy            =   -0.87 kcal/mol
+USER    (2) Final Total Internal Energy     =   -6.55 kcal/mol
+USER    (3) Torsional Free Energy           =   +5.07 kcal/mol
+USER    (4) Unbound System's Energy  [=(2)] =   -6.55 kcal/mol
+USER    
+USER    
+USER  
+USER    DPF = grid_dock_files\5diu_dock.dpf
+USER    NEWDPF move	pdbqt_files/5diu_ligand.pdbqt
+USER    NEWDPF about	12.923000 -3.459000 -7.720000
+USER    NEWDPF tran0	14.119245 -3.685149 -8.138628
+USER    NEWDPF axisangle0	-0.413688 -0.848288 0.330560 24.062172
+USER    NEWDPF quaternion0	-0.086230 -0.176819 0.068903 0.978035
+USER    NEWDPF dihe0	5.47 81.91 -33.66 -7.20 -42.09 -172.09 -180.00 -180.00 -44.98 87.55 159.32 167.32 -6.69 -158.93 10.37 176.58 -179.91 
+USER  
+USER                              x       y       z    vdW   Elec        q     RMS 
+ATOM      1  CBN 5BG A 201      12.492  -4.639 -11.050 -0.29 -0.01    +0.237     2.380
+ATOM      2  OAH 5BG A 201      13.010  -3.904 -11.870 -0.37 +0.02    -0.272     2.380
+ATOM      3  N   5BG A 201      11.763  -4.066 -10.017 -0.13 -0.01    -0.313     2.380
+ATOM      4  CBD 5BG A 201      11.205  -4.838  -8.861 -0.27 -0.00    +0.104     2.380
+ATOM      5  CAW 5BG A 201       9.852  -4.346  -8.461 -0.42 +0.00    +0.024     2.380
+ATOM      6  CAV 5BG A 201       9.768  -2.815  -8.273 -0.45 +0.00    +0.004     2.380
+ATOM      7  CB  5BG A 201      10.273  -2.155  -9.539 -0.59 +0.01    +0.032     2.380
+ATOM      8  CA  5BG A 201      11.703  -2.610  -9.930 -0.37 +0.03    +0.164     2.380
+ATOM      9  C   5BG A 201      12.673  -1.993  -8.877 -0.07 +0.09    +0.272     2.380
+ATOM     10  O   5BG A 201      13.582  -2.657  -8.470 +0.18 -0.21    -0.269     2.380
+ATOM     11  NBE 5BG A 201      12.368  -0.747  -8.480 -0.42 -0.09    -0.234     2.380
+ATOM     12  CBX 5BG A 201      13.330  -0.011  -7.581 -0.30 +0.02    +0.129     2.380
+ATOM     13  CBA 5BG A 201      14.743  -0.248  -8.036 -0.27 +0.01    +0.034     2.380
+ATOM     14  CAX 5BG A 201      15.644   0.945  -7.559 -0.18 +0.00    +0.029     2.380
+ATOM     15  CBO 5BG A 201      16.216   0.760  -6.268 -0.04 -0.00    -0.020     2.380
+ATOM     16  CAO 5BG A 201      16.284  -0.528  -5.712 -0.03 +0.00    +0.022     2.380
+ATOM     17  CBT 5BG A 201      16.899  -0.660  -4.463 +0.01 +0.01    +0.116     2.380
+ATOM     18  CBS 5BG A 201      17.430   0.332  -3.711 +0.01 +0.01    +0.116     2.380
+ATOM     19  CAN 5BG A 201      17.373   1.638  -4.287 +0.00 +0.00    +0.026     2.380
+ATOM     20  CAM 5BG A 201      16.805   1.805  -5.516 -0.01 -0.00    -0.002     2.380
+ATOM     21  OBG 5BG A 201      17.156  -1.874  -3.797 +0.01 -0.05    -0.326     2.380
+ATOM     22  CAB 5BG A 201      16.604  -3.014  -4.432 +0.01 +0.04    +0.181     2.380
+ATOM     23  OBF 5BG A 201      17.975   0.059  -2.485 +0.00 -0.03    -0.326     2.380
+ATOM     24  CAA 5BG A 201      17.207   0.171  -1.301 +0.00 +0.02    +0.181     2.380
+ATOM     25  CBQ 5BG A 201      13.051  -0.473  -6.214 -0.19 +0.00    +0.002     2.380
+ATOM     26  CAL 5BG A 201      12.927   0.412  -5.182 +0.01 +0.00    -0.002     2.380
+ATOM     27  CAJ 5BG A 201      12.811   0.069  -3.849 -0.06 -0.00    +0.002     2.380
+ATOM     28  CAK 5BG A 201      12.884  -1.303  -3.585 -0.05 +0.00    +0.024     2.380
+ATOM     29  CBP 5BG A 201      13.045  -2.247  -4.569 -0.03 +0.01    +0.095     2.380
+ATOM     30  CAP 5BG A 201      13.168  -1.812  -5.934 -0.10 +0.00    +0.022     2.380
+ATOM     31  OBK 5BG A 201      13.179  -3.622  -4.368 +0.00 -0.06    -0.319     2.380
+ATOM     32  CBC 5BG A 201      13.337  -4.463  -5.513 +0.01 +0.06    +0.246     2.380
+ATOM     33  CBL 5BG A 201      12.082  -5.307  -5.776 -0.03 +0.04    +0.217     2.380
+ATOM     34  OAI 5BG A 201      11.062  -4.777  -5.354 +0.03 -0.14    -0.645     2.380
+ATOM     35  OAF 5BG A 201      12.179  -6.355  -6.414 +0.05 -0.08    -0.645     2.380
+ATOM     36  CCA 5BG A 201      12.653  -6.145 -11.048 -0.33 -0.02    +0.101     2.380
+ATOM     37  CBY 5BG A 201      13.192  -6.629 -12.415 -0.55 -0.00    +0.013     2.380
+ATOM     38  CAZ 5BG A 201      12.145  -7.389 -13.182 -0.63 -0.00    +0.001     2.380
+ATOM     39  CAU 5BG A 201      12.640  -7.948 -14.539 -0.82 -0.00    +0.000     2.380
+ATOM     40  CAS 5BG A 201      13.854  -8.784 -14.346 -0.96 +0.00    +0.000     2.380
+ATOM     41  CAT 5BG A 201      14.996  -8.003 -13.605 -0.77 +0.00    +0.000     2.380
+ATOM     42  CAY 5BG A 201      14.461  -7.409 -12.286 -0.54 +0.00    +0.001     2.380
+ATOM     43  CBR 5BG A 201      13.547  -6.532  -9.857 -0.23 -0.00    -0.010     2.380
+ATOM     44  CAR 5BG A 201      14.573  -5.666  -9.503 -0.21 +0.00    +0.022     2.380
+ATOM     45  CBV 5BG A 201      15.385  -6.046  -8.433 -0.16 +0.06    +0.118     2.380
+ATOM     46  CBW 5BG A 201      15.148  -7.178  -7.734 -0.07 +0.13    +0.138     2.380
+ATOM     47  CBU 5BG A 201      14.156  -8.035  -8.060 -0.10 +0.09    +0.118     2.380
+ATOM     48  CAQ 5BG A 201      13.298  -7.709  -9.140 -0.18 -0.00    +0.022     2.380
+ATOM     49  OBI 5BG A 201      16.463  -5.230  -8.052 -0.12 -0.17    -0.326     2.380
+ATOM     50  CAD 5BG A 201      17.363  -4.670  -9.043 -0.27 +0.09    +0.181     2.380
+ATOM     51  OBJ 5BG A 201      16.076  -7.518  -6.693 -0.59 -0.51    -0.324     2.380
+ATOM     52  CAE 5BG A 201      15.634  -7.044  -5.447 -0.03 +0.13    +0.182     2.380
+ATOM     53  OBH 5BG A 201      13.990  -9.137  -7.325 -0.15 -0.33    -0.326     2.380
+ATOM     54  CAC 5BG A 201      12.682  -9.466  -6.865 -0.04 -0.04    +0.181     2.380
+TER
+ENDMDL
+MODEL        8
+USER    Run = 8
+USER    Cluster Rank = 4
+USER    Number of conformations in this cluster = 1
+USER  
+USER    RMSD from reference structure       = 2.792 A
+USER  
+USER    Estimated Free Energy of Binding    =   -6.56 kcal/mol  [=(1)+(2)+(3)-(4)]
+USER    Estimated Inhibition Constant, Ki   =   15.50 uM (micromolar)  [Temperature = 298.15 K]
+USER    
+USER    (1) Final Intermolecular Energy     =  -11.63 kcal/mol
+USER        vdW + Hbond + desolv Energy     =  -10.61 kcal/mol
+USER        Electrostatic Energy            =   -1.03 kcal/mol
+USER    (2) Final Total Internal Energy     =   -5.15 kcal/mol
+USER    (3) Torsional Free Energy           =   +5.07 kcal/mol
+USER    (4) Unbound System's Energy  [=(2)] =   -5.15 kcal/mol
+USER    
+USER    
+USER  
+USER    DPF = grid_dock_files\5diu_dock.dpf
+USER    NEWDPF move	pdbqt_files/5diu_ligand.pdbqt
+USER    NEWDPF about	12.923000 -3.459000 -7.720000
+USER    NEWDPF tran0	14.177788 -4.971400 -7.898334
+USER    NEWDPF axisangle0	0.755390 0.650335 0.080315 174.442177
+USER    NEWDPF quaternion0	0.754502 0.649570 0.080221 0.048482
+USER    NEWDPF dihe0	107.49 98.52 119.02 22.44 33.12 169.26 7.68 -164.05 123.85 92.57 -102.45 87.67 -150.92 165.68 2.64 -157.82 33.62 
+USER  
+USER                              x       y       z    vdW   Elec        q     RMS 
+ATOM      1  CBN 5BG A 201      12.348  -5.625  -5.025 -0.00 +0.06    +0.237     2.792
+ATOM      2  OAH 5BG A 201      13.082  -5.180  -4.162 +0.01 -0.07    -0.272     2.792
+ATOM      3  N   5BG A 201      12.805  -6.683  -5.799 +0.01 -0.07    -0.313     2.792
+ATOM      4  CBD 5BG A 201      12.072  -7.226  -6.987 -0.13 -0.01    +0.104     2.792
+ATOM      5  CAW 5BG A 201      12.164  -8.715  -7.070 -0.01 -0.01    +0.024     2.792
+ATOM      6  CAV 5BG A 201      13.601  -9.266  -6.932 -0.15 +0.00    +0.004     2.792
+ATOM      7  CB  5BG A 201      14.196  -8.719  -5.651 -0.06 +0.02    +0.032     2.792
+ATOM      8  CA  5BG A 201      14.164  -7.170  -5.581 -0.01 +0.08    +0.164     2.792
+ATOM      9  C   5BG A 201      15.201  -6.653  -6.624 -0.04 +0.19    +0.272     2.792
+ATOM     10  O   5BG A 201      15.906  -7.444  -7.179 -0.47 -0.42    -0.269     2.792
+ATOM     11  NBE 5BG A 201      15.238  -5.319  -6.779 -0.02 -0.10    -0.234     2.792
+ATOM     12  CBX 5BG A 201      16.099  -4.735  -7.870 -0.16 +0.06    +0.129     2.792
+ATOM     13  CBA 5BG A 201      15.546  -5.108  -9.217 -0.01 +0.01    +0.034     2.792
+ATOM     14  CAX 5BG A 201      14.119  -5.733  -9.032 -0.21 +0.01    +0.029     2.792
+ATOM     15  CBO 5BG A 201      13.566  -6.280 -10.226 -0.25 +0.00    -0.020     2.792
+ATOM     16  CAO 5BG A 201      14.417  -6.682 -11.269 -0.36 +0.00    +0.022     2.792
+ATOM     17  CBT 5BG A 201      13.826  -7.257 -12.398 -0.38 -0.00    +0.116     2.792
+ATOM     18  CBS 5BG A 201      12.504  -7.460 -12.608 -0.42 -0.02    +0.116     2.792
+ATOM     19  CAN 5BG A 201      11.645  -7.065 -11.539 -0.34 -0.01    +0.026     2.792
+ATOM     20  CAM 5BG A 201      12.184  -6.523 -10.408 -0.30 +0.00    -0.002     2.792
+ATOM     21  OBG 5BG A 201      14.514  -7.815 -13.493 -0.35 -0.03    -0.326     2.792
+ATOM     22  CAB 5BG A 201      14.691  -9.218 -13.416 -0.78 +0.01    +0.181     2.792
+ATOM     23  OBF 5BG A 201      12.064  -8.008 -13.783 -0.43 +0.04    -0.326     2.792
+ATOM     24  CAA 5BG A 201      11.993  -7.240 -14.970 -0.55 -0.02    +0.181     2.792
+ATOM     25  CBQ 5BG A 201      17.464  -5.221  -7.623 -0.22 +0.00    +0.002     2.792
+ATOM     26  CAL 5BG A 201      18.321  -5.474  -8.655 -0.32 -0.00    -0.002     2.792
+ATOM     27  CAJ 5BG A 201      19.562  -6.067  -8.531 -0.26 +0.00    +0.002     2.792
+ATOM     28  CAK 5BG A 201      19.898  -6.467  -7.234 -0.25 +0.01    +0.024     2.792
+ATOM     29  CBP 5BG A 201      19.070  -6.278  -6.154 -0.09 +0.04    +0.095     2.792
+ATOM     30  CAP 5BG A 201      17.788  -5.662  -6.363 -0.10 +0.01    +0.022     2.792
+ATOM     31  OBK 5BG A 201      19.321  -6.702  -4.848 -0.01 -0.11    -0.319     2.792
+ATOM     32  CBC 5BG A 201      18.231  -6.738  -3.924 +0.00 +0.09    +0.246     2.792
+ATOM     33  CBL 5BG A 201      17.355  -7.982  -4.127 -0.03 +0.12    +0.217     2.792
+ATOM     34  OAI 5BG A 201      17.841  -8.776  -4.922 -0.06 -0.58    -0.645     2.792
+ATOM     35  OAF 5BG A 201      16.326  -8.113  -3.463 +0.01 -0.30    -0.645     2.792
+ATOM     36  CCA 5BG A 201      10.987  -5.048  -5.353 -0.08 +0.02    +0.101     2.792
+ATOM     37  CBY 5BG A 201      10.419  -4.283  -4.134 -0.09 +0.00    +0.013     2.792
+ATOM     38  CAZ 5BG A 201      11.335  -3.170  -3.707 -0.09 +0.00    +0.001     2.792
+ATOM     39  CAU 5BG A 201      10.849  -2.399  -2.455 -0.08 +0.00    +0.000     2.792
+ATOM     40  CAS 5BG A 201      10.608  -3.337  -1.327 -0.02 +0.00    +0.000     2.792
+ATOM     41  CAT 5BG A 201       9.604  -4.480  -1.714 -0.11 +0.00    +0.000     2.792
+ATOM     42  CAY 5BG A 201      10.083  -5.193  -2.995 -0.13 +0.00    +0.001     2.792
+ATOM     43  CBR 5BG A 201      11.124  -4.183  -6.619 -0.15 -0.00    -0.010     2.792
+ATOM     44  CAR 5BG A 201      11.818  -2.986  -6.518 -0.15 +0.00    +0.022     2.792
+ATOM     45  CBV 5BG A 201      11.913  -2.207  -7.673 -0.21 +0.02    +0.118     2.792
+ATOM     46  CBW 5BG A 201      11.401  -2.626  -8.852 -0.27 +0.03    +0.138     2.792
+ATOM     47  CBU 5BG A 201      10.722  -3.788  -8.973 -0.26 +0.01    +0.118     2.792
+ATOM     48  CAQ 5BG A 201      10.587  -4.623  -7.836 -0.25 +0.00    +0.022     2.792
+ATOM     49  OBI 5BG A 201      12.571  -0.966  -7.625 -0.21 -0.08    -0.326     2.792
+ATOM     50  CAD 5BG A 201      13.875  -0.789  -8.235 -0.20 +0.07    +0.181     2.792
+ATOM     51  OBJ 5BG A 201      11.490  -1.728  -9.967 -0.64 -0.11    -0.324     2.792
+ATOM     52  CAE 5BG A 201      12.145  -2.332 -11.053 -0.20 +0.02    +0.182     2.792
+ATOM     53  OBH 5BG A 201      10.240  -4.129 -10.170 -0.26 +0.00    -0.326     2.792
+ATOM     54  CAC 5BG A 201       9.092  -4.971 -10.234 -0.47 -0.02    +0.181     2.792
+TER
+ENDMDL
+MODEL        4
+USER    Run = 4
+USER    Cluster Rank = 5
+USER    Number of conformations in this cluster = 1
+USER  
+USER    RMSD from reference structure       = 2.713 A
+USER  
+USER    Estimated Free Energy of Binding    =   -3.17 kcal/mol  [=(1)+(2)+(3)-(4)]
+USER    Estimated Inhibition Constant, Ki   =    4.71 mM (millimolar)  [Temperature = 298.15 K]
+USER    
+USER    (1) Final Intermolecular Energy     =   -8.25 kcal/mol
+USER        vdW + Hbond + desolv Energy     =   -6.84 kcal/mol
+USER        Electrostatic Energy            =   -1.41 kcal/mol
+USER    (2) Final Total Internal Energy     =   -7.34 kcal/mol
+USER    (3) Torsional Free Energy           =   +5.07 kcal/mol
+USER    (4) Unbound System's Energy  [=(2)] =   -7.34 kcal/mol
+USER    
+USER    
+USER  
+USER    DPF = grid_dock_files\5diu_dock.dpf
+USER    NEWDPF move	pdbqt_files/5diu_ligand.pdbqt
+USER    NEWDPF about	12.923000 -3.459000 -7.720000
+USER    NEWDPF tran0	14.773143 -5.365541 -7.079126
+USER    NEWDPF axisangle0	-0.700378 -0.699561 0.141726 157.841160
+USER    NEWDPF quaternion0	-0.687324 -0.686522 0.139084 0.192169
+USER    NEWDPF dihe0	-49.54 71.31 78.48 -175.42 -57.06 -110.89 -76.89 103.29 -34.87 -39.90 179.98 108.96 133.98 14.86 -17.45 -33.97 65.58 
+USER  
+USER                              x       y       z    vdW   Elec        q     RMS 
+ATOM      1  CBN 5BG A 201      12.930  -4.335  -4.327 +0.01 +0.05    +0.237     2.713
+ATOM      2  OAH 5BG A 201      13.573  -3.373  -3.950 +0.00 -0.05    -0.272     2.713
+ATOM      3  N   5BG A 201      13.539  -5.582  -4.313 +0.02 -0.09    -0.313     2.713
+ATOM      4  CBD 5BG A 201      12.921  -6.820  -4.888 -0.00 +0.03    +0.104     2.713
+ATOM      5  CAW 5BG A 201      13.194  -8.024  -4.048 +0.01 +0.01    +0.024     2.713
+ATOM      6  CAV 5BG A 201      14.680  -8.203  -3.665 +0.00 +0.00    +0.004     2.713
+ATOM      7  CB  5BG A 201      15.157  -6.921  -3.014 +0.01 +0.01    +0.032     2.713
+ATOM      8  CA  5BG A 201      14.937  -5.671  -3.904 +0.02 +0.05    +0.164     2.713
+ATOM      9  C   5BG A 201      15.943  -5.782  -5.090 +0.01 +0.11    +0.272     2.713
+ATOM     10  O   5BG A 201      16.338  -6.864  -5.414 -0.11 -0.18    -0.269     2.713
+ATOM     11  NBE 5BG A 201      16.318  -4.611  -5.631 -0.00 -0.08    -0.234     2.713
+ATOM     12  CBX 5BG A 201      17.168  -4.622  -6.877 -0.12 +0.06    +0.129     2.713
+ATOM     13  CBA 5BG A 201      17.691  -3.241  -7.155 -0.16 +0.02    +0.034     2.713
+ATOM     14  CAX 5BG A 201      16.485  -2.285  -7.463 -0.11 +0.01    +0.029     2.713
+ATOM     15  CBO 5BG A 201      16.234  -1.322  -6.446 -0.09 -0.01    -0.020     2.713
+ATOM     16  CAO 5BG A 201      15.092  -1.441  -5.637 -0.04 +0.00    +0.022     2.713
+ATOM     17  CBT 5BG A 201      14.918  -0.496  -4.622 -0.00 +0.01    +0.116     2.713
+ATOM     18  CBS 5BG A 201      15.733   0.547  -4.335 +0.01 +0.01    +0.116     2.713
+ATOM     19  CAN 5BG A 201      16.901   0.655  -5.149 -0.00 +0.00    +0.026     2.713
+ATOM     20  CAM 5BG A 201      17.121  -0.263  -6.134 -0.05 -0.00    -0.002     2.713
+ATOM     21  OBG 5BG A 201      13.900  -0.511  -3.649 -0.01 -0.00    -0.326     2.713
+ATOM     22  CAB 5BG A 201      12.589  -0.420  -4.177 -0.04 -0.04    +0.181     2.713
+ATOM     23  OBF 5BG A 201      15.419   1.417  -3.325 +0.00 -0.01    -0.326     2.713
+ATOM     24  CAA 5BG A 201      14.909   2.708  -3.602 -0.03 -0.01    +0.181     2.713
+ATOM     25  CBQ 5BG A 201      16.323  -5.173  -7.947 -0.20 +0.00    +0.002     2.713
+ATOM     26  CAL 5BG A 201      16.706  -5.103  -9.255 -0.32 -0.00    -0.002     2.713
+ATOM     27  CAJ 5BG A 201      15.920  -5.459 -10.334 -0.08 +0.00    +0.002     2.713
+ATOM     28  CAK 5BG A 201      14.623  -5.867 -10.010 -0.26 +0.00    +0.024     2.713
+ATOM     29  CBP 5BG A 201      14.158  -5.927  -8.719 -0.13 +0.02    +0.095     2.713
+ATOM     30  CAP 5BG A 201      15.031  -5.532  -7.648 -0.11 +0.01    +0.022     2.713
+ATOM     31  OBK 5BG A 201      12.861  -6.272  -8.333 -0.06 +0.01    -0.319     2.713
+ATOM     32  CBC 5BG A 201      12.636  -7.581  -7.804 -0.07 -0.06    +0.246     2.713
+ATOM     33  CBL 5BG A 201      13.899  -8.451  -7.884 -0.08 +0.14    +0.217     2.713
+ATOM     34  OAI 5BG A 201      14.618  -8.328  -6.901 -0.10 -0.86    -0.645     2.713
+ATOM     35  OAF 5BG A 201      14.050  -9.213  -8.839 -0.49 -0.54    -0.645     2.713
+ATOM     36  CCA 5BG A 201      11.522  -4.244  -4.879 -0.07 +0.02    +0.101     2.713
+ATOM     37  CBY 5BG A 201      10.664  -3.296  -4.008 -0.14 +0.00    +0.013     2.713
+ATOM     38  CAZ 5BG A 201       9.789  -4.065  -3.057 -0.15 +0.00    +0.001     2.713
+ATOM     39  CAU 5BG A 201       8.864  -3.174  -2.192 -0.19 +0.00    +0.000     2.713
+ATOM     40  CAS 5BG A 201       8.041  -2.286  -3.056 -0.36 +0.00    +0.000     2.713
+ATOM     41  CAT 5BG A 201       8.924  -1.417  -4.020 -0.38 -0.00    +0.000     2.713
+ATOM     42  CAY 5BG A 201       9.875  -2.325  -4.826 -0.19 +0.00    +0.001     2.713
+ATOM     43  CBR 5BG A 201      11.611  -3.819  -6.355 -0.12 -0.00    -0.010     2.713
+ATOM     44  CAR 5BG A 201      10.764  -4.437  -7.264 -0.19 +0.00    +0.022     2.713
+ATOM     45  CBV 5BG A 201      10.875  -4.052  -8.602 -0.22 +0.01    +0.118     2.713
+ATOM     46  CBW 5BG A 201      11.729  -3.078  -8.987 -0.22 +0.02    +0.138     2.713
+ATOM     47  CBU 5BG A 201      12.562  -2.462  -8.120 -0.18 +0.03    +0.118     2.713
+ATOM     48  CAQ 5BG A 201      12.502  -2.811  -6.748 -0.12 +0.00    +0.022     2.713
+ATOM     49  OBI 5BG A 201      10.071  -4.670  -9.574 -0.26 +0.02    -0.326     2.713
+ATOM     50  CAD 5BG A 201       8.633  -4.483  -9.582 -0.49 -0.00    +0.181     2.713
+ATOM     51  OBJ 5BG A 201      11.820  -2.797 -10.391 -0.27 -0.03    -0.324     2.713
+ATOM     52  CAE 5BG A 201      12.522  -3.809 -11.065 -0.25 -0.01    +0.182     2.713
+ATOM     53  OBH 5BG A 201      13.383  -1.514  -8.579 -0.17 -0.16    -0.326     2.713
+ATOM     54  CAC 5BG A 201      13.231  -0.181  -8.098 -0.29 +0.05    +0.181     2.713
+TER
+ENDMDL
+MODEL        2
+USER    Run = 2
+USER    Cluster Rank = 6
+USER    Number of conformations in this cluster = 1
+USER  
+USER    RMSD from reference structure       = 2.958 A
+USER  
+USER    Estimated Free Energy of Binding    =   -3.10 kcal/mol  [=(1)+(2)+(3)-(4)]
+USER    Estimated Inhibition Constant, Ki   =    5.36 mM (millimolar)  [Temperature = 298.15 K]
+USER    
+USER    (1) Final Intermolecular Energy     =   -8.17 kcal/mol
+USER        vdW + Hbond + desolv Energy     =   -7.40 kcal/mol
+USER        Electrostatic Energy            =   -0.77 kcal/mol
+USER    (2) Final Total Internal Energy     =   -7.06 kcal/mol
+USER    (3) Torsional Free Energy           =   +5.07 kcal/mol
+USER    (4) Unbound System's Energy  [=(2)] =   -7.06 kcal/mol
+USER    
+USER    
+USER  
+USER    DPF = grid_dock_files\5diu_dock.dpf
+USER    NEWDPF move	pdbqt_files/5diu_ligand.pdbqt
+USER    NEWDPF about	12.923000 -3.459000 -7.720000
+USER    NEWDPF tran0	14.658205 -0.494446 -4.710547
+USER    NEWDPF axisangle0	-0.177763 -0.220690 -0.959008 -100.142498
+USER    NEWDPF quaternion0	-0.136316 -0.169235 -0.735409 -0.641835
+USER    NEWDPF dihe0	24.37 91.01 35.15 -179.91 80.12 -123.35 180.00 -160.24 127.54 -139.85 -42.19 175.74 180.00 -62.47 -15.20 -60.41 122.91 
+USER  
+USER                              x       y       z    vdW   Elec        q     RMS 
+ATOM      1  CBN 5BG A 201      13.156  -1.261  -7.742 -0.21 +0.07    +0.237     2.958
+ATOM      2  OAH 5BG A 201      13.750  -2.276  -8.057 -0.24 -0.19    -0.272     2.958
+ATOM      3  N   5BG A 201      13.882  -0.084  -7.618 -0.16 -0.06    -0.313     2.958
+ATOM      4  CBD 5BG A 201      13.311   1.197  -7.092 -0.26 +0.00    +0.104     2.958
+ATOM      5  CAW 5BG A 201      13.826   2.386  -7.836 -0.30 -0.00    +0.024     2.958
+ATOM      6  CAV 5BG A 201      15.363   2.417  -7.987 -0.21 +0.00    +0.004     2.958
+ATOM      7  CB  5BG A 201      15.803   1.109  -8.611 -0.25 +0.00    +0.032     2.958
+ATOM      8  CA  5BG A 201      15.328  -0.132  -7.813 -0.17 +0.04    +0.164     2.958
+ATOM      9  C   5BG A 201      16.150  -0.156  -6.488 -0.04 +0.04    +0.272     2.958
+ATOM     10  O   5BG A 201      15.792   0.528  -5.574 -0.01 -0.02    -0.269     2.958
+ATOM     11  NBE 5BG A 201      17.243  -0.935  -6.508 -0.05 -0.05    -0.234     2.958
+ATOM     12  CBX 5BG A 201      18.016  -1.141  -5.229 -0.02 +0.02    +0.129     2.958
+ATOM     13  CBA 5BG A 201      18.949  -2.311  -5.375 -0.05 +0.01    +0.034     2.958
+ATOM     14  CAX 5BG A 201      18.489  -3.188  -6.591 -0.04 +0.01    +0.029     2.958
+ATOM     15  CBO 5BG A 201      17.991  -4.471  -6.226 -0.08 -0.01    -0.020     2.958
+ATOM     16  CAO 5BG A 201      17.026  -5.102  -7.031 -0.13 +0.01    +0.022     2.958
+ATOM     17  CBT 5BG A 201      16.607  -6.381  -6.652 -0.07 +0.09    +0.116     2.958
+ATOM     18  CBS 5BG A 201      17.022  -7.085  -5.573 -0.05 +0.09    +0.116     2.958
+ATOM     19  CAN 5BG A 201      18.013  -6.448  -4.767 -0.03 +0.01    +0.026     2.958
+ATOM     20  CAM 5BG A 201      18.468  -5.210  -5.117 -0.03 -0.00    -0.002     2.958
+ATOM     21  OBG 5BG A 201      15.735  -7.210  -7.383 -0.45 -0.40    -0.326     2.958
+ATOM     22  CAB 5BG A 201      15.493  -6.775  -8.710 -0.16 +0.13    +0.181     2.958
+ATOM     23  OBF 5BG A 201      16.498  -8.322  -5.308 -0.42 -0.42    -0.326     2.958
+ATOM     24  CAA 5BG A 201      15.284  -8.466  -4.594 -0.02 +0.13    +0.181     2.958
+ATOM     25  CBQ 5BG A 201      17.016  -1.296  -4.164 +0.00 +0.00    +0.002     2.958
+ATOM     26  CAL 5BG A 201      17.035  -0.498  -3.056 +0.01 -0.00    -0.002     2.958
+ATOM     27  CAJ 5BG A 201      16.234  -0.663  -1.943 +0.00 +0.00    +0.002     2.958
+ATOM     28  CAK 5BG A 201      15.391  -1.778  -1.983 +0.00 +0.00    +0.024     2.958
+ATOM     29  CBP 5BG A 201      15.345  -2.644  -3.048 +0.01 +0.01    +0.095     2.958
+ATOM     30  CAP 5BG A 201      16.217  -2.413  -4.167 +0.00 +0.00    +0.022     2.958
+ATOM     31  OBK 5BG A 201      14.569  -3.802  -3.127 +0.01 -0.06    -0.319     2.958
+ATOM     32  CBC 5BG A 201      14.936  -4.801  -4.080 +0.02 +0.06    +0.246     2.958
+ATOM     33  CBL 5BG A 201      13.940  -4.865  -5.248 +0.02 +0.06    +0.217     2.958
+ATOM     34  OAI 5BG A 201      14.078  -3.938  -6.035 +0.05 -0.18    -0.645     2.958
+ATOM     35  OAF 5BG A 201      13.171  -5.823  -5.336 +0.06 -0.17    -0.645     2.958
+ATOM     36  CCA 5BG A 201      11.680  -1.218  -7.407 -0.31 +0.02    +0.101     2.958
+ATOM     37  CBY 5BG A 201      10.879  -2.095  -8.398 -0.44 +0.00    +0.013     2.958
+ATOM     38  CAZ 5BG A 201      11.286  -3.540  -8.308 -0.30 +0.00    +0.001     2.958
+ATOM     39  CAU 5BG A 201      10.557  -4.464  -9.315 -0.43 -0.00    +0.000     2.958
+ATOM     40  CAS 5BG A 201      10.730  -3.959 -10.703 -0.54 +0.00    +0.000     2.958
+ATOM     41  CAT 5BG A 201      10.255  -2.472 -10.854 -0.69 +0.00    +0.000     2.958
+ATOM     42  CAY 5BG A 201      10.953  -1.585  -9.802 -0.55 +0.00    +0.001     2.958
+ATOM     43  CBR 5BG A 201      11.508  -1.630  -5.935 -0.23 +0.00    -0.010     2.958
+ATOM     44  CAR 5BG A 201      12.111  -0.844  -4.963 -0.05 -0.00    +0.022     2.958
+ATOM     45  CBV 5BG A 201      11.960  -1.247  -3.635 -0.07 -0.01    +0.118     2.958
+ATOM     46  CBW 5BG A 201      11.212  -2.323  -3.304 -0.05 +0.01    +0.138     2.958
+ATOM     47  CBU 5BG A 201      10.617  -3.103  -4.233 -0.10 +0.02    +0.118     2.958
+ATOM     48  CAQ 5BG A 201      10.735  -2.750  -5.600 -0.19 +0.00    +0.022     2.958
+ATOM     49  OBI 5BG A 201      12.578  -0.513  -2.609 -0.03 +0.01    -0.326     2.958
+ATOM     50  CAD 5BG A 201      12.931   0.882  -2.797 -0.07 -0.02    +0.181     2.958
+ATOM     51  OBJ 5BG A 201      11.170  -2.698  -1.920 +0.00 -0.06    -0.324     2.958
+ATOM     52  CAE 5BG A 201      12.336  -3.387  -1.547 +0.01 +0.04    +0.182     2.958
+ATOM     53  OBH 5BG A 201       9.901  -4.154  -3.828 -0.07 -0.10    -0.326     2.958
+ATOM     54  CAC 5BG A 201      10.441  -5.462  -4.000 -0.03 +0.07    +0.181     2.958
+TER
+ENDMDL
+MODEL        6
+USER    Run = 6
+USER    Cluster Rank = 7
+USER    Number of conformations in this cluster = 1
+USER  
+USER    RMSD from reference structure       = 2.676 A
+USER  
+USER    Estimated Free Energy of Binding    =   -2.96 kcal/mol  [=(1)+(2)+(3)-(4)]
+USER    Estimated Inhibition Constant, Ki   =    6.75 mM (millimolar)  [Temperature = 298.15 K]
+USER    
+USER    (1) Final Intermolecular Energy     =   -8.03 kcal/mol
+USER        vdW + Hbond + desolv Energy     =   -7.15 kcal/mol
+USER        Electrostatic Energy            =   -0.88 kcal/mol
+USER    (2) Final Total Internal Energy     =   -7.45 kcal/mol
+USER    (3) Torsional Free Energy           =   +5.07 kcal/mol
+USER    (4) Unbound System's Energy  [=(2)] =   -7.45 kcal/mol
+USER    
+USER    
+USER  
+USER    DPF = grid_dock_files\5diu_dock.dpf
+USER    NEWDPF move	pdbqt_files/5diu_ligand.pdbqt
+USER    NEWDPF about	12.923000 -3.459000 -7.720000
+USER    NEWDPF tran0	14.325988 -6.201532 -5.497453
+USER    NEWDPF axisangle0	0.502088 0.098917 0.859141 -167.622402
+USER    NEWDPF quaternion0	0.499162 0.098341 0.854134 -0.107805
+USER    NEWDPF dihe0	58.11 -47.66 54.57 170.47 9.47 -115.52 149.50 156.72 135.64 168.46 -42.77 163.81 -177.89 -142.94 -52.08 -60.70 39.32 
+USER  
+USER                              x       y       z    vdW   Elec        q     RMS 
+ATOM      1  CBN 5BG A 201      11.981  -4.939  -7.719 -0.09 +0.02    +0.237     2.676
+ATOM      2  OAH 5BG A 201      10.954  -5.441  -7.301 -0.15 -0.01    -0.272     2.676
+ATOM      3  N   5BG A 201      12.983  -5.778  -8.188 -0.03 -0.03    -0.313     2.676
+ATOM      4  CBD 5BG A 201      14.348  -5.306  -8.587 -0.14 +0.03    +0.104     2.676
+ATOM      5  CAW 5BG A 201      14.859  -6.026  -9.792 -0.30 +0.01    +0.024     2.676
+ATOM      6  CAV 5BG A 201      14.744  -7.564  -9.702 -0.33 +0.00    +0.004     2.676
+ATOM      7  CB  5BG A 201      13.304  -7.913  -9.386 -0.21 -0.01    +0.032     2.676
+ATOM      8  CA  5BG A 201      12.782  -7.221  -8.101 -0.12 -0.03    +0.164     2.676
+ATOM      9  C   5BG A 201      13.511  -7.895  -6.900 -0.07 +0.10    +0.272     2.676
+ATOM     10  O   5BG A 201      14.281  -8.785  -7.116 -0.07 -0.33    -0.269     2.676
+ATOM     11  NBE 5BG A 201      13.167  -7.428  -5.688 +0.00 -0.07    -0.234     2.676
+ATOM     12  CBX 5BG A 201      13.926  -7.910  -4.477 +0.01 +0.05    +0.129     2.676
+ATOM     13  CBA 5BG A 201      13.656  -7.006  -3.307 +0.02 +0.01    +0.034     2.676
+ATOM     14  CAX 5BG A 201      13.025  -5.666  -3.827 +0.01 +0.01    +0.029     2.676
+ATOM     15  CBO 5BG A 201      13.863  -4.527  -3.659 +0.01 -0.00    -0.020     2.676
+ATOM     16  CAO 5BG A 201      14.616  -4.047  -4.744 +0.01 +0.01    +0.022     2.676
+ATOM     17  CBT 5BG A 201      15.384  -2.898  -4.538 +0.01 +0.02    +0.116     2.676
+ATOM     18  CBS 5BG A 201      15.498  -2.192  -3.388 +0.01 +0.02    +0.116     2.676
+ATOM     19  CAN 5BG A 201      14.719  -2.674  -2.292 +0.00 +0.00    +0.026     2.676
+ATOM     20  CAM 5BG A 201      13.935  -3.778  -2.460 +0.01 -0.00    -0.002     2.676
+ATOM     21  OBG 5BG A 201      16.117  -2.210  -5.525 -0.01 -0.07    -0.326     2.676
+ATOM     22  CAB 5BG A 201      15.404  -1.989  -6.730 -0.09 +0.07    +0.181     2.676
+ATOM     23  OBF 5BG A 201      16.318  -1.097  -3.323 +0.01 -0.04    -0.326     2.676
+ATOM     24  CAA 5BG A 201      15.901   0.092  -2.678 +0.01 +0.01    +0.181     2.676
+ATOM     25  CBQ 5BG A 201      15.339  -7.975  -4.876 -0.03 +0.00    +0.002     2.676
+ATOM     26  CAL 5BG A 201      16.123  -9.036  -4.524 -0.04 -0.00    -0.002     2.676
+ATOM     27  CAJ 5BG A 201      17.488  -9.117  -4.725 -0.06 +0.00    +0.002     2.676
+ATOM     28  CAK 5BG A 201      18.070  -7.978  -5.290 -0.08 +0.02    +0.024     2.676
+ATOM     29  CBP 5BG A 201      17.348  -6.861  -5.634 -0.06 +0.07    +0.095     2.676
+ATOM     30  CAP 5BG A 201      15.933  -6.846  -5.386 -0.04 +0.01    +0.022     2.676
+ATOM     31  OBK 5BG A 201      17.875  -5.675  -6.149 -0.03 -0.15    -0.319     2.676
+ATOM     32  CBC 5BG A 201      17.015  -4.826  -6.912 -0.09 +0.11    +0.246     2.676
+ATOM     33  CBL 5BG A 201      17.736  -4.240  -8.135 -0.12 +0.13    +0.217     2.676
+ATOM     34  OAI 5BG A 201      17.739  -5.005  -9.091 -0.12 -0.33    -0.645     2.676
+ATOM     35  OAF 5BG A 201      18.169  -3.088  -8.089 -0.48 -0.59    -0.645     2.676
+ATOM     36  CCA 5BG A 201      12.261  -3.451  -7.696 -0.16 +0.02    +0.101     2.676
+ATOM     37  CBY 5BG A 201      11.520  -2.746  -8.857 -0.38 +0.00    +0.013     2.676
+ATOM     38  CAZ 5BG A 201      10.034  -2.722  -8.629 -0.51 +0.00    +0.001     2.676
+ATOM     39  CAU 5BG A 201       9.230  -2.077  -9.785 -0.69 +0.00    +0.000     2.676
+ATOM     40  CAS 5BG A 201       9.549  -2.743 -11.075 -0.58 +0.00    +0.000     2.676
+ATOM     41  CAT 5BG A 201      11.088  -2.731 -11.382 -0.54 +0.00    +0.000     2.676
+ATOM     42  CAY 5BG A 201      11.868  -3.325 -10.191 -0.45 +0.00    +0.001     2.676
+ATOM     43  CBR 5BG A 201      11.885  -2.913  -6.304 -0.14 -0.00    -0.010     2.676
+ATOM     44  CAR 5BG A 201      11.039  -3.679  -5.515 -0.13 +0.00    +0.022     2.676
+ATOM     45  CBV 5BG A 201      10.694  -3.164  -4.264 -0.10 +0.02    +0.118     2.676
+ATOM     46  CBW 5BG A 201      11.208  -1.996  -3.816 -0.08 +0.00    +0.138     2.676
+ATOM     47  CBU 5BG A 201      12.033  -1.234  -4.566 -0.09 -0.01    +0.118     2.676
+ATOM     48  CAQ 5BG A 201      12.418  -1.700  -5.848 -0.15 +0.00    +0.022     2.676
+ATOM     49  OBI 5BG A 201       9.810  -3.876  -3.436 -0.08 -0.10    -0.326     2.676
+ATOM     50  CAD 5BG A 201       9.928  -5.313  -3.281 -0.06 +0.09    +0.181     2.676
+ATOM     51  OBJ 5BG A 201      10.744  -1.515  -2.546 -0.04 -0.01    -0.324     2.676
+ATOM     52  CAE 5BG A 201       9.587  -0.732  -2.694 -0.16 -0.01    +0.182     2.676
+ATOM     53  OBH 5BG A 201      12.493  -0.090  -4.056 -0.06 +0.09    -0.326     2.676
+ATOM     54  CAC 5BG A 201      13.308   0.749  -4.871 -0.09 -0.04    +0.181     2.676
+TER
+ENDMDL
+
+
+AVSFLD: # AVS field file
+AVSFLD: #
+AVSFLD: # Created by AutoDock
+AVSFLD: #
+AVSFLD: ndim=2           # number of dimensions in the field
+AVSFLD: nspace=1         # number of physical coordinates
+AVSFLD: veclen=7         # vector size
+AVSFLD: dim1=54          # atoms
+AVSFLD: dim2=7           # conformations
+AVSFLD: data=Real       # data type (byte,integer,Real,double)
+AVSFLD: field=uniform    # field coordinate layout
+AVSFLD: label= x y z vdW Elec q RMS
+AVSFLD: variable 1 file = grid_dock_files\5diu_dock.dlg.pdb filetype = ascii offset = 5 stride = 12
+AVSFLD: variable 2 file = grid_dock_files\5diu_dock.dlg.pdb filetype = ascii offset = 6 stride = 12
+AVSFLD: variable 3 file = grid_dock_files\5diu_dock.dlg.pdb filetype = ascii offset = 7 stride = 12
+AVSFLD: variable 4 file = grid_dock_files\5diu_dock.dlg.pdb filetype = ascii offset = 8 stride = 12
+AVSFLD: variable 5 file = grid_dock_files\5diu_dock.dlg.pdb filetype = ascii offset = 9 stride = 12
+AVSFLD: variable 6 file = grid_dock_files\5diu_dock.dlg.pdb filetype = ascii offset = 10 stride = 12
+AVSFLD: variable 7 file = grid_dock_files\5diu_dock.dlg.pdb filetype = ascii offset = 11 stride = 12
+AVSFLD: # end of file
+
+>>> Closing the docking parameter file (DPF)...
+This docking finished at:			1:26 51" p.m., 05/16/2025
+
+
+________________________________________________________________________________
+
+autodock4.exe: Successful Completion on "TAJGERO"
+
+Real= 16m 39.40s,  CPU= 2m 03.77s,  System= 0.45s
+________________________________________________________________________________
+
