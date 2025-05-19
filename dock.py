@@ -6,11 +6,11 @@ import time
 from __builtin__ import raw_input
 from datetime import date
 
-from config import PYTHON_EXEC, PDBQT_FILES, PDB_FILES, GRID_DOCK_FILES, LIGANDS, MAP_GRID_FILES, OUTPUT_FILES, \
-    TEST_SKRYPTU_DIR
+from config import PYTHON_EXEC, PDBQT_FILES, PDB_FILES, GRID_DOCK_FILES, LIGANDS, MAP_GRID_FILES, OUTPUT_FILES
 from tqdm import tqdm  # Do pobrania pasek postepu
 import subprocess
-from multiprocessing import Pool  # Zamiast `ProcessPoolExecutor`
+
+
 # from modify_parameters import modify_gdpf_overwrite
 
 
@@ -119,14 +119,9 @@ if __name__ == '__main__':
     max_workers = 4
 
     # Tworzenie katalogow jesli nie istnieja
-    if not PDBQT_FILES.exists():
-        os.makedirs(str(PDBQT_FILES))
-    if not MAP_GRID_FILES.exists():
-        os.makedirs(str(MAP_GRID_FILES))
-    if not GRID_DOCK_FILES.exists():
-        os.makedirs(str(GRID_DOCK_FILES))
-    if not OUTPUT_FILES.exists():
-        os.makedirs(str(OUTPUT_FILES))
+    for path in [PDBQT_FILES, MAP_GRID_FILES, GRID_DOCK_FILES, OUTPUT_FILES]:
+        if not os.path.exists(str(path)):
+            os.makedirs(str(path))
 
     # Pomiar czasu
     date_stamp = date.isoformat(date.today())

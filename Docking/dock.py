@@ -4,15 +4,12 @@ import argparse
 import glob
 import sys
 import time
-from __builtin__ import raw_input
 from datetime import date
 
 from config import PYTHON_EXEC, PDBQT_FILES, PDB_FILES, GRID_DOCK_FILES, LIGANDS, MAP_GRID_FILES, OUTPUT_FILES #Sciezki dostepu do odpowiednich plikow
 from tqdm import tqdm  # Do pobrania pasek postepu
 import subprocess
-from concurrent.futures import ProcessPoolExecutor, as_completed
-import multiprocessing
-from multiprocessing import Pool  # Zamiast `ProcessPoolExecutor`
+from multiprocessing import Pool
 from modify_parameters import modify_gdpf_overwrite, modify_pdbqt_overwrite
 
 def format_time(seconds):
@@ -30,36 +27,37 @@ def process_docking(pdb_file):
         file_name = os.path.splitext(os.path.basename(pdb_file))[0]
 
         # Sciezki do plikow
-        receptor_pdb = os.path.join(PDB_FILES, file_name + ".pdb")
-        ligand_pdb = os.path.join(LIGANDS, file_name + "_ligand.pdb")
-        receptor_pdbqt = os.path.join(PDBQT_FILES, file_name + "_receptor.pdbqt")
-        ligand_pdbqt = os.path.join(PDBQT_FILES, file_name + "_ligand.pdbqt")
-        gpf = os.path.join(GRID_DOCK_FILES, file_name + "_grid.gpf")
-        glg = os.path.join(GRID_DOCK_FILES, file_name + "_grid.glg")
-        dpf = os.path.join(GRID_DOCK_FILES, file_name + "_dock.dpf")
-        dlg = os.path.join(GRID_DOCK_FILES, file_name + "_dock.dlg")
-        fld = os.path.join(MAP_GRID_FILES, file_name + "_receptor.maps.fld")
+        receptor_pdb = str(PDB_FILES / (file_name + ".pdb"))
+        ligand_pdb = str(LIGANDS / (file_name + "_ligand.pdb"))
+        receptor_pdbqt = str(PDBQT_FILES / (file_name + "_receptor.pdbqt"))
+        ligand_pdbqt = str(PDBQT_FILES / (file_name + "_ligand.pdbqt"))
+        gpf = str(GRID_DOCK_FILES / (file_name + "_grid.gpf"))
+        glg = str(GRID_DOCK_FILES / (file_name + "_grid.glg"))
+        dpf = str(GRID_DOCK_FILES / (file_name + "_dock.dpf"))
+        dlg = str(GRID_DOCK_FILES / (file_name + "_dock.dlg"))
+        fld = str(MAP_GRID_FILES / (file_name + "_receptor.maps.fld"))
 
         # =============================================================================
         #                       start - Wlasciwy program
         # =============================================================================
         # Wykonywanie kolejnych krokow dockingu
-        # Tutaj -e -U oraz -A mogą generowaC bLEdy i nie wiem jak się ich wyzbyC
+
+        python = str(PYTHON_EXEC)
 
         subprocess.call([
-            PYTHON_EXEC, "prepare_receptor4.py",
+            python, "prepare_receptor4.py",
             "-r", receptor_pdb,
             "-o", receptor_pdbqt,
             "-A", "checkhydrogens",
             "-e", "True",
             "-U", "nphs_waters_lps_nonstdres"
         ])
-        modify_pdbqt_overwrite("%s" % receptor_pdbqt, quiet=True)
+        modify_pdbqt_overwrite(receptor_pdbqt, quiet=True)
         print("Receptor %s gotowy" % file_name)
         sys.stdout.flush()
 
         subprocess.call([
-            PYTHON_EXEC, "prepare_ligand4.py",
+            python, "prepare_ligand4.py",
             "-l", ligand_pdb,
             "-o", ligand_pdbqt
         ])
@@ -67,18 +65,18 @@ def process_docking(pdb_file):
         sys.stdout.flush()
 
         subprocess.call([
-            PYTHON_EXEC, "prepare_gpf4.py",
+            python, "prepare_gpf4.py",
             "-l", ligand_pdbqt,
             "-r", receptor_pdbqt,
             "-y",
             "-o", gpf
         ])
-        modify_gdpf_overwrite(os.path.join(GRID_DOCK_FILES, "%s_grid.gpf" % file_name), quiet=True)  # Poprawki lokalizacyjne w pliku
+        modify_gdpf_overwrite(str(GRID_DOCK_FILES / ("%s_grid.gpf" % file_name)), quiet=True)  # Poprawki lokalizacyjne w pliku
         print("Grid %s gotowy" % file_name)
         sys.stdout.flush()
 
         subprocess.call([
-            PYTHON_EXEC, "autogrid4",
+            python, "autogrid4",
             "-p", gpf,
             "-l", glg
         ])
@@ -86,12 +84,12 @@ def process_docking(pdb_file):
         sys.stdout.flush()
 
         subprocess.call([
-            PYTHON_EXEC, "prepare_dpf42.py",
+            python, "prepare_dpf42.py",
             "-l", ligand_pdbqt,
             "-r", receptor_pdbqt,
             "-o", dpf
         ])
-        modify_gdpf_overwrite(os.path.join(GRID_DOCK_FILES, "%s_dock.dpf" % file_name), quiet=True)  # Poprawki lokalizacyjne w pliku
+        modify_gdpf_overwrite(str(GRID_DOCK_FILES / ("%s_dock.dpf" % file_name)), quiet=True)  # Poprawki lokalizacyjne w pliku
         print("Parametry do dokowania %s gotowe" % file_name)
         sys.stdout.flush()
 
@@ -126,55 +124,80 @@ if __name__ == '__main__':
         if len(args.file) == 1 and args.file[0].endswith('.txt'): # Sprawdza, czy podano jeden plik .txt
             with open(args.file[0], 'r') as f:
                 ids = [line.split()[0].strip() for line in f] # Otwiera plik i pobiera ID z pierwszej kolumny
-            pdb_directory = [os.path.join('pdb_files', f'{id}.pdb') for id in ids] # Utworzy ścieżki do plików PDB na podstawie ID
+            pdb_directory = [os.path.join('pdb_files', "%s.pdb" %id) for id in ids] # Utworzy ścieżki do plików PDB na podstawie ID
         else:
             pdb_directory = args.file # Jeśli nie podano pliku .txt, użyje bezpośrednio podanych ścieżek
     else:
-        pdb_directory = glob.glob(os.path.join(PDB_FILES, "*.pdb"))
+        pdb_directory = glob.glob(os.path.join(str(PDB_FILES), "*.pdb"))
+
 
     # Ustawienie liczby rownoleglych procesow
     max_workers = 4
 
     # Tworzenie katalogow jesli nie istnieja
-    if not os.path.exists(PDBQT_FILES):
-        os.makedirs(PDBQT_FILES)
-    if not os.path.exists(MAP_GRID_FILES):
-        os.makedirs(MAP_GRID_FILES)
-    if not os.path.exists(GRID_DOCK_FILES):
-        os.makedirs(GRID_DOCK_FILES)
-    if not os.path.exists(OUTPUT_FILES):
-        os.makedirs(OUTPUT_FILES)
+
+
 
     # Pomiar czasu
     date_stamp = date.isoformat(date.today())
     start_time = time.time()
     
     # Uruchamianie przetwarzania w puli procesów + pasek postępu
-    with ProcessPoolExecutor(max_workers=max_workers) as executor, tqdm(total=len(pdb_directory), desc="Docking Progress") as progress:
-        future_to_file = {executor.submit(process_docking, pdb_file): pdb_file for pdb_file in pdb_directory}
+    pool = Pool(processes=max_workers)
 
-        # Zapis do Docking_log.txt
-        with open("Docking_log_%s.txt" %date_stamp, "w") as log_file:
+    results = []
 
-            # Monitorowanie zakończonych zadań w czasie rzeczywistym
-            for future in as_completed(future_to_file):
-                result = future.result()
-                print("\n%s" %result) # Wypisuje komunikat o zakończonym pliku
+    with open("Docking_log_%s.txt" % date_stamp, "w") as log_file:
+        tqdm_results = tqdm(pool.imap_unordered(process_docking, pdb_directory), total=len(pdb_directory),
+                           desc="Docking Progress")
+        for file in pdb_directory:
+            process_docking(file)
 
-                # Zapis do logu
-                log_file.write(result + "\n")
-                log_file.flush() # Zapis na bieżąco
+        for result in tqdm_results:
+            print("\n%s" % result)
+            log_file.write(result + "\n")
+            log_file.flush()
 
-                # Aktualizacja paska postępu i zapis do pliku
-                progress.update(1)
-                estimated_time = format_time(progress.format_dict.get("elapsed")) # Pozostały czas bez ms
-                log_file.write(
-                    "Progress: %d/%d (%.2f%%) | Czas: %s\n" % (
-                        progress.n, progress.total,
-                        float(progress.n) / progress.total * 100,
-                        estimated_time
-                    )
-                )
+            elapsed = time.time() - start_time
+            estimated_time = format_time(elapsed)
+            completed = len(results) + 1
+            percent = float(completed) / len(pdb_directory) * 100
+            log_file.write("Progress: %d/%d (%.2f%%) | Czas: %s\n" % (
+                completed, len(pdb_directory), percent, estimated_time))
+            results.append(result)
+
+
+
+        pool.close()
+        pool.join()
+
+
+
+    # with ProcessPoolExecutor(max_workers=max_workers) as executor, tqdm(total=len(pdb_directory), desc="Docking Progress") as progress:
+    #     future_to_file = {executor.submit(process_docking, pdb_file): pdb_file for pdb_file in pdb_directory}
+    #
+    #     # Zapis do Docking_log.txt
+    #     with open("Docking_log_%s.txt" %date_stamp, "w") as log_file:
+    #
+    #         # Monitorowanie zakończonych zadań w czasie rzeczywistym
+    #         for future in as_completed(future_to_file):
+    #             result = future.result()
+    #             print("\n%s" %result) # Wypisuje komunikat o zakończonym pliku
+    #
+    #             # Zapis do logu
+    #             log_file.write(result + "\n")
+    #             log_file.flush() # Zapis na bieżąco
+    #
+    #             # Aktualizacja paska postępu i zapis do pliku
+    #             progress.update(1)
+    #             estimated_time = format_time(progress.format_dict.get("elapsed")) # Pozostały czas bez ms
+    #             log_file.write(
+    #                 "Progress: %d/%d (%.2f%%) | Czas: %s\n" % (
+    #                     progress.n, progress.total,
+    #                     float(progress.n) / progress.total * 100,
+    #                     estimated_time
+    #                 )
+    #             )
 
     print("Czas zakończenia programu: " + format_time(time.time() - start_time))
 
