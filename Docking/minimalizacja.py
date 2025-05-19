@@ -2,20 +2,6 @@
 import os
 import sys
 from openbabel import openbabel
-from rdkit import Chem
-from rdkit.Chem import AllChem
-
-
-
-# Sciezka do folderu z plikami receptorow z dodanymi wodorami
-username = os.environ.get('USERNAME') or os.environ.get('USER')
-PROJECT_ROOT = "/home/" + username + "/IdeaProjects/mgr_AM_JL"
-TEST_SKRYPTU_DIR = os.path.join(PROJECT_ROOT, "Docking/TEST_SKRYPTU")
-PDB_FILE_DIR = os.path.join(TEST_SKRYPTU_DIR, "pdb_files")
-MINIMIZATION_FILE_DIR = os.path.join(TEST_SKRYPTU_DIR, "minimization")
-MINI1_FILE_DIR = os.path.join(MINIMIZATION_FILE_DIR, "mini1")
-MINI2_FILE_DIR = os.path.join(MINIMIZATION_FILE_DIR, "mini2")
-
 
 def huge_minimization(pdb_file):
     """Ogolna minimalizacja wszystkiego."""

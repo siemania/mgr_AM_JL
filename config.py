@@ -1,9 +1,8 @@
-import os
 from pathlib import Path
 
 PROJECT_ROOT = Path(".").resolve()
 MGLTOOLS_DIR = PROJECT_ROOT / "MGLTools"
-DOCKING_DIR = MGLTOOLS_DIR / "Docking"
+DOCKING_DIR = PROJECT_ROOT / "Docking"
 PDB_FILES = DOCKING_DIR / "pdb_files"
 PDBQT_FILES = DOCKING_DIR / "pdbqt_files"
 MAP_GRID_FILES = DOCKING_DIR / "map_grid_files"
@@ -12,3 +11,8 @@ OUTPUT_FILES = DOCKING_DIR / "output_files"
 LIGANDS = DOCKING_DIR / "ligands"
 
 PYTHON_EXEC = MGLTOOLS_DIR / "bin" / "pythonsh"
+
+TEST_SKRYPTU_DIR = DOCKING_DIR / "TEST_SKRYPTU"
+MINIMIZATION_FILE_DIR = TEST_SKRYPTU_DIR / "minimization"
+MINI1_FILE_DIR = MINIMIZATION_FILE_DIR / "mini1"
+MINI2_FILE_DIR = MINIMIZATION_FILE_DIR / "mini2"

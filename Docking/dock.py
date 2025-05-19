@@ -6,11 +6,11 @@ import time
 from __builtin__ import raw_input
 from datetime import date
 
-from config import PYTHON_EXEC, PDBQT_FILES, PDB_FILES, GRID_DOCK_FILES, LIGANDS, MAP_GRID_FILES, OUTPUT_FILES
+from config import PYTHON_EXEC, PDBQT_FILES, PDB_FILES, GRID_DOCK_FILES, LIGANDS, MAP_GRID_FILES, OUTPUT_FILES #Sciezki dostepu do odpowiednich plikow
 from tqdm import tqdm  # Do pobrania pasek postepu
 import subprocess
 from multiprocessing import Pool  # Zamiast `ProcessPoolExecutor`
-from modify_parameters import modify_gdpf_overwrite
+from modify_parameters import modify_gdpf_overwrite, modify_pdbqt_overwrite
 
 
 def format_time(seconds):
@@ -18,6 +18,7 @@ def format_time(seconds):
     hours, remainder = divmod(seconds, 3600)
     minutes, seconds = divmod(remainder, 60)
     return "%02d:%02d:%02d" % (int(hours), int(minutes), int(seconds))
+
 
 
 # Funkcja przetwarzajaca pojedynczy plik PDB
@@ -35,20 +36,23 @@ def process_docking(pdb_file):
         glg = os.path.join(GRID_DOCK_FILES, file_name + "_grid.glg")
         dpf = os.path.join(GRID_DOCK_FILES, file_name + "_dock.dpf")
         dlg = os.path.join(GRID_DOCK_FILES, file_name + "_dock.dlg")
+        fld = os.path.join(MAP_GRID_FILES, file_name + "_receptor.maps.fld")
 
         # =============================================================================
         #                       start - Wlasciwy program
         # =============================================================================
         # Wykonywanie kolejnych krokow dockingu
+        # Tutaj -e -U oraz -A mogą generowaC bLEdy i nie wiem jak się ich wyzbyC
 
         subprocess.call([
             PYTHON_EXEC, "prepare_receptor4.py",
             "-r", receptor_pdb,
             "-o", receptor_pdbqt,
-            "-A", "bonds_hydrogens",
+            "-A", "checkhydrogens",
             "-e", "True",
-            "-U", "nphs_waters_lps"
+            "-U", "nphs_waters_lps_nonstdres"
         ])
+        modify_pdbqt_overwrite("%s" % receptor_pdbqt, quiet=True)
         print("Receptor %s gotowy" % file_name)
         sys.stdout.flush()
 
@@ -70,14 +74,31 @@ def process_docking(pdb_file):
         print("Grid %s gotowy" % file_name)
         sys.stdout.flush()
 
-        run_command('%s -p %s -l %s' % (autogrid, gpf, glg))
+        subprocess.call([
+            PYTHON_EXEC, "autogrid4",
+            "-p", gpf,
+            "-l", glg
+        ])
         print("Mapy energetyczne %s gotowe" % file_name)
         sys.stdout.flush()
 
-        run_command('"%s" prepare_dpf42.py -l %s -r %s -o %s' % (python, ligand_pdbqt, receptor_pdbqt, dpf))
-        modify_gdpf_overwrite("grid_dock_files/%s_dock.dpf" % file_name, quiet=True)  # Poprawki lokalizacyjne w pliku
+        subprocess.call([
+            PYTHON_EXEC, "prepare_dpf42.py",
+            "-l", ligand_pdbqt,
+            "-r", receptor_pdbqt,
+            "-o", dpf
+        ])
+        modify_gdpf_overwrite(os.path.join(GRID_DOCK_FILES, "%s_dock.dpf" % file_name), quiet=True)  # Poprawki lokalizacyjne w pliku
         print("Parametry do dokowania %s gotowe" % file_name)
         sys.stdout.flush()
+
+        ## print(f"Rozpoczynanie procesu Autodock-GPU dla {file_name} ...", flush=True)
+        ## run_command(f'wsl autodock_gpu_128wi --lfile {ligand_pdbqt} --ffile {fld} --import_dpf {dpf} --resnam {file_name}_lig')
+        ## print(f"Dokowanie {file_name} zakonczono pomyslnie", flush=True)
+
+
+
+
 
         # print("Rozpoczynanie procesu autodock4.exe dla %s ..." % file_name)
         # sys.stdout.flush()

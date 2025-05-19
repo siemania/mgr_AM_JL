@@ -4,12 +4,12 @@ import os
 import sys
 import getopt
 import matplotlib
+from config import PROJECT_ROOT, GRID_DOCK_FILES
 matplotlib.use('Agg')  # Use a non-interactive backend
 import matplotlib.pyplot as pl
 from AutoDockTools.Docking import Docking
+import csv
 
-# Ścieżka do folderu z plikami wynikowymi
-RESULTS_DIR = "/home/mateusz/IdeaProjects/mgr_AM_JL/Docking/TEST_SKRYPTU/grid_dock_files"
 
 
 def parse_dlg_file(file_path):
@@ -37,9 +37,9 @@ def extract_best_values():
     energy_results = {}
     rmsd_results = {}
 
-    for file in os.listdir(RESULTS_DIR):
+    for file in os.listdir(GRID_DOCK_FILES):
         if file.endswith(".dlg"):
-            file_path = os.path.join(RESULTS_DIR, file)
+            file_path = os.path.join(GRID_DOCK_FILES, file)
             id_pdb, energy_values, rmsd_values = parse_dlg_file(file_path)
 
             # Wyznaczanie najniższej energii
@@ -79,12 +79,26 @@ def plot_results(energy_data, rmsd_data, exp_energy):
         pl.savefig(os.path.join(output_dir, "rmsd_histogram.jpg"))
         pl.close()
 
+def extract_exp_energy (exp_energy):
+    exp_energy_dict = {}
+    with open(exp_energy, mode = "r", newline = "") as csvfile:
+        reader = csv.reader(csvfile)
+        next(reader)
+        for row in reader:
+            pdb_id = row[0]
+            energy = row[1]
+            exp_energy_dict[pdb_id] = energy
+    return exp_energy_dict
+
+
 
 def main(argv):
     """Obsluga argumentów wywołania skryptu."""
 
-    exp_energy = [-7.5, 5, 6, 67, 345, 211]  # Przykładowa wartość eksperymentalna Delta G
-
+    #exp_energy = [-7.5, 5, 6, 67, 345, 211]  # Przykładowa wartość eksperymentalna Delta G
+    exp_energy_dir =  PROJECT_ROOT / "baza_ids.csv"
+    exp_energy_dict = extract_exp_energy(exp_energy_dir)
+    exp_energy_value = exp_energy_dict.values()
 
     try:
         opts, _ = getopt.getopt(argv, "e:", ["exp_energy="])
@@ -95,7 +109,7 @@ def main(argv):
     for opt, arg in opts:
         if opt in ("-e", "--exp_energy"):
             try:
-                exp_energy = float(arg)
+                exp_energy_value = float(arg)
             except ValueError:
                 print "Niepoprawna wartość eksperymentalnej Delta G."
                 sys.exit(2)
@@ -104,7 +118,7 @@ def main(argv):
     print "Wyniki energii:", energy_results
     print "Wyniki RMSD:", rmsd_results
 
-    plots = plot_results(energy_results, rmsd_results, exp_energy)
+    plots = plot_results(energy_results, rmsd_results, exp_energy_value)
     print plots
 
 if __name__ == "__main__":
