@@ -107,7 +107,7 @@ def modify_pdbqt_overwrite(input_pdbqt, quiet=False):
             # Zapisujemy przetworzoną linię do pliku
             f.write(new_line)
 
-        if quiet != True: print(f"Plik {input_pdbqt} został zaktualizowany.")
+        if quiet != True: print("Plik" + input_pdbqt + "został zaktualizowany.")
         return
 
 
