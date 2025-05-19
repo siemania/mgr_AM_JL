@@ -10,6 +10,8 @@ from datetime import date
 from config import PYTHON_EXEC, PDBQT_FILES, PDB_FILES, GRID_DOCK_FILES, LIGANDS, MAP_GRID_FILES, OUTPUT_FILES #Sciezki dostepu do odpowiednich plikow
 from tqdm import tqdm  # Do pobrania pasek postepu
 import subprocess
+from concurrent.futures import ProcessPoolExecutor, as_completed
+import multiprocessing
 from multiprocessing import Pool  # Zamiast `ProcessPoolExecutor`
 from modify_parameters import modify_gdpf_overwrite, modify_pdbqt_overwrite
 
@@ -150,15 +152,15 @@ if __name__ == '__main__':
     # Uruchamianie przetwarzania w puli procesów + pasek postępu
     with ProcessPoolExecutor(max_workers=max_workers) as executor, tqdm(total=len(pdb_directory), desc="Docking Progress") as progress:
         future_to_file = {executor.submit(process_docking, pdb_file): pdb_file for pdb_file in pdb_directory}
-    
+
         # Zapis do Docking_log.txt
-        with open(f"Docking_log_{date_stamp}.txt", "w", encoding="utf-8") as log_file:
-    
+        with open("Docking_log_%s.txt" %date_stamp, "w") as log_file:
+
             # Monitorowanie zakończonych zadań w czasie rzeczywistym
             for future in as_completed(future_to_file):
                 result = future.result()
-                print(f"\n{result}") # Wypisuje komunikat o zakończonym pliku
-                
+                print("\n%s" %result) # Wypisuje komunikat o zakończonym pliku
+
                 # Zapis do logu
                 log_file.write(result + "\n")
                 log_file.flush() # Zapis na bieżąco
@@ -167,8 +169,14 @@ if __name__ == '__main__':
                 progress.update(1)
                 estimated_time = format_time(progress.format_dict.get("elapsed")) # Pozostały czas bez ms
                 log_file.write(
-                    f"Progress: {progress.n}/{progress.total} ({(progress.n / progress.total)*100:.2f}%) | Czas: {estimated_time}\n")
+                    "Progress: %d/%d (%.2f%%) | Czas: %s\n" % (
+                        progress.n, progress.total,
+                        float(progress.n) / progress.total * 100,
+                        estimated_time
+                    )
+                )
 
-    print(f'Czas zakończenia programu: {format_time(time.time() - start_time)}')
+    print("Czas zakończenia programu: " + format_time(time.time() - start_time))
+
     # input("~~~~~~~~Naciśnij dowolny przycisk by zakończyć~~~~~~~~")
     
