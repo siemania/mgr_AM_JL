@@ -127,6 +127,7 @@ Uczelnia macierzysta: [Politechnika Gdańska](https://pg.edu.pl)
 
 Za program odpowiedzialni są:  
 [inż. Jan Latt](https://www.github.com/Tajgero)  
-[inż. Anna Muńko](https://github.com/siemania)    
+[inż. Anna Muńko](https://github.com/siemania)
+
 Projekt jest hostowany na GitHubie i współpracujemy przy użyciu PyCharm:
 - **.gitignore:** Wszystkie pliki wynikowe, lokalne konfiguracje oraz foldery generowane automatycznie (takie jak `pdbqt_files/`, `output_files/`, `grid_dock_files/`, `ligands/`) są ignorowane przez Git.
