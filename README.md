@@ -5,7 +5,7 @@ Projekt **mgr_AM_JL** to zestaw skryptów mających na celu automatyzację przyg
 - Optymalizacji konformacji wybranych reszt (np. HIS, GLU, ASP)
 - Dokowania z wodą i bez wody
 - Optymalizacji układu wodorów (obrót grup metylowych itp.)
-- Dodatkowych algorytmów optymalizacyjnych wykorzystujących pole siłowe, np. OpenMM, OpenBabel czy inne
+- Dodatkowych algorytmów optymalizacyjnych wykorzystujących pola siłowe z programów jak np. OpenMM, OpenBabel, GROMACS
 
 ## Spis treści
 
@@ -51,7 +51,7 @@ Projekt **mgr_AM_JL** to zestaw skryptów mających na celu automatyzację przyg
    ```bash
    pip install -r requirements.txt
    ```
-   
+<!--   ALBO ZMODYFIKOWAĆ ALBO ZMIENIĆ, BO NIE WIADOMO CZY BĘDZIE POTRZEBNE
 ## Konfiguracja
 
 - **Plik `.env`:**  
@@ -63,7 +63,7 @@ Projekt **mgr_AM_JL** to zestaw skryptów mających na celu automatyzację przyg
   AUTODOCK_PATH=autodock4.exe
   AUTODOCK_GPU_PATH=./bin/autodock_gpu_128wi
   ```
-  
+-->
 ## Struktura projektu
 
 ```
@@ -86,7 +86,7 @@ mgr_AM_JL/
 
 ## Sposób działania
 
-Na ten moment projekt automatycznie wykonuje następujące kroki:
+Projekt automatycznie wykonuje następujące kroki:
 - **Przygotowanie receptora:**  
   Używając MGLTools, receptor (plik PDB) jest przekształcany do formatu PDBQT, dodawane są ładunki oraz inne niezbędne modyfikacje.
 - **Przygotowanie ligandu:**  
@@ -96,7 +96,7 @@ Na ten moment projekt automatycznie wykonuje następujące kroki:
 - **Dokowanie:**  
   Uruchamiane są odpowiednie polecenia AutoDock lub AutoDock-GPU.
 - **Minimalizacja receptora:**  
-  Do poprawienia konformacji receptora (m.in. dodania wodoru i minimalizacji energii) wykorzystywane są moduły takie jak OpenBabel. W ramach dalszego rozwoju chcemy dodać automatyczną optymalizację konformacyjną wybranych reszt (HIS, GLU, ASP) oraz innych aspektów.
+  Do poprawienia konformacji receptora (m.in. dodania wodoru i minimalizacji energii) wykorzystywane są wcześniej wspominane moduły. W ramach dalszego rozwoju chcemy dodać automatyczną optymalizację konformacyjną wybranych reszt (HIS, GLU, ASP) oraz innych aspektów.
 
 Wszystkie etapy są wywoływane automatycznie, a postęp monitorowany jest przy użyciu `tqdm`. Po zakończeniu, wyniki (przygotowane pliki receptorów, ligandów oraz kompleksów) są zapisywane w odpowiednich folderach, które nie są wersjonowane.
 
@@ -114,13 +114,19 @@ Wszystkie etapy są wywoływane automatycznie, a postęp monitorowany jest przy 
 
 W kolejnych etapach projektu planujemy:
 - Rozwój modułów optymalizacyjnych, takich jak:
-  - Minimalizacja konformacji receptorów za pomocą OpenBabel, RDKit lub dedykowanych skryptów z AutoDock Tools.
+  - Minimalizacja konformacji receptorów za pomocą OpenBabel, RDKit, GROMACS.
   - Automatyczne ustawianie wiązań (constraints) na ciężkie atomy, aby ich pozycje były modyfikowane łagodniej.
   - Opcjonalne dokowanie z wodą lub bez wody.
 - Dodanie interfejsu graficznego lub narzędzi do analizy wyników.
-- Rozbudowę konfiguracji za pomocą plików `.env` umożliwiających łatwe dostosowanie ścieżek i ustawień zależnych od systemu (Windows vs. Linux).
 
 ## Współpraca i GitHub
+Program został stworzony na potrzeby pracy magisterskiej pod tytułem:  
+> Procedura automatycznego przygotowania receptorów do symulacji dokowania  
 
+Uczelnia macierzysta: [Politechnika Gdańska](https://pg.edu.pl)
+
+Za program odpowiedzialni są:  
+[inż. Jan Latt](https://www.github.com/Tajgero)  
+[inż. Anna Muńko](https://github.com/siemania)    
 Projekt jest hostowany na GitHubie i współpracujemy przy użyciu PyCharm:
 - **.gitignore:** Wszystkie pliki wynikowe, lokalne konfiguracje oraz foldery generowane automatycznie (takie jak `pdbqt_files/`, `output_files/`, `grid_dock_files/`, `ligands/`) są ignorowane przez Git.
