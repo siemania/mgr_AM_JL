@@ -8,8 +8,8 @@ import matplotlib.pyplot as pl
 from AutoDockTools.Docking import Docking
 
 # Ścieżka do folderu z plikami wynikowymi
-RESULTS_DIR = "/home/mateusz/IdeaProjects/mgr_AM_JL/Docking/TEST_SKRYPTU/grid_dock_files"
-
+# RESULTS_DIR = "/home/mateusz/IdeaProjects/mgr_AM_JL/Docking/TEST_SKRYPTU/grid_dock_files"
+RESULTS_DIR = "presentation_pdb/out"
 
 def parse_dlg_file(file_path):
     """Parsuje plik .dlg, aby znaleźć wartości RMSD i energii (Delta G)."""
@@ -54,7 +54,8 @@ def extract_best_values():
 
 def plot_results(energy_data, rmsd_data, exp_energy):
     """Tworzy i zapisuje wykresy Delta G i histogram RMS."""
-    output_dir = "/home/mateusz/IdeaProjects/mgr_AM_JL/Docking/plots"
+    # output_dir = "/home/mateusz/IdeaProjects/mgr_AM_JL/Docking/plots"
+    output_dir = "plots"
     if not os.path.exists(output_dir):
         os.makedirs(output_dir)
 
@@ -88,7 +89,7 @@ def main(argv):
     try:
         opts, _ = getopt.getopt(argv, "e:", ["exp_energy="])
     except getopt.GetoptError:
-        print "Użycie: extract_energy.py -e <delta_g_eksperymentalne>"
+        print("Użycie: extract_energy.py -e <delta_g_eksperymentalne>")
         sys.exit(2)
 
     for opt, arg in opts:
@@ -96,15 +97,15 @@ def main(argv):
             try:
                 exp_energy = float(arg)
             except ValueError:
-                print "Niepoprawna wartość eksperymentalnej Delta G. Wprowadź liczbę."
+                print("Niepoprawna wartość eksperymentalnej Delta G. Wprowadź liczbę.")
                 sys.exit(2)
 
     energy_results, rmsd_results = extract_best_values()
-    print "Wyniki energii:", energy_results
-    print "Wyniki RMSD:", rmsd_results
+    print("Wyniki energii:", energy_results)
+    print ("Wyniki RMSD:", rmsd_results)
 
     plots = plot_results(energy_results, rmsd_results, exp_energy)
-    print plots
+    print (plots)
 
 if __name__ == "__main__":
     main(sys.argv[1:])

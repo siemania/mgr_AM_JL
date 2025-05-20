@@ -113,8 +113,20 @@ def modify_pdbqt_overwrite(input_pdbqt, quiet=False):
         return
 
 
-if __name__ == '__main__':
+def modify_fld_overwrite(input_fld, quiet=False):
+    """Modyfikuje i nadpisuje plik .fld usuwając wystąpienia 'map_grid_files' ze ścieżek"""
+    with open(input_fld, "r+") as f:
+        content = f.read()
+        f.seek(0)
+        f.truncate()
+        modified_content = content.replace("map_grid_files/", "")
+        f.write(modified_content)
 
+    if quiet != True: print(f"Plik {input_fld} został zaktualizowany.")
+    return
+
+if __name__ == '__main__':
     # Przykładowe użycie
     # modify_gpf("grid_dock_files/1hsg_grid.gpf", "output.gpf")
     modify_gdpf_overwrite("grid_dock_files/1hsg_grid.gpf")
+    # modify_fld_overwrite("map_grid_files/example.fld")
