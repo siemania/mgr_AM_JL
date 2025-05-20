@@ -110,6 +110,11 @@ Wszystkie etapy są wywoływane automatycznie, a postęp monitorowany jest przy 
 3. **Monitoruj postęp:**  
    Pasek postępu pojawi się w terminalu, a komunikaty zostaną wyświetlone na bieżąco.
 
+## Dodatkowe argumenty
+| Argument | | Description | Default value |
+| ----------- | - | ----------- | ---------- |
+| --file | -f | Pliki kompleksów w formacie .pdb |
+
 ## Plany rozwoju
 
 W kolejnych etapach projektu planujemy:
