@@ -68,20 +68,20 @@ Projekt **mgr_AM_JL** to zestaw skryptów mających na celu automatyzację przyg
 
 ```
 mgr_AM_JL/
-├── README.md              # Ten plik
-├── .gitignore             # Plik ignorujący pliki wynikowe i lokalne konfiguracje
-├── requirements.txt       # Lista zależności (m.in. tqdm, python-dotenv)
-├── .env.example           # Szablon zmiennych środowiskowych
-└── Docking/               # Folder główny projektu
-    ├── _INFO.txt              # Informacje o dock.py (część dokumentacyjna prywatne zmiany)
-    ├── TEST_SKRYPTU/          # Folder służący do testowania funkcji na kilku plikach
-    ├── dock.py                # Główny skrypt wywołujący automatyzację dokowania
-    ├── pdb_files/             # Pliki PDB receptorów (wejściowe)
-    ├── ligands/               # Pliki ligandów (wejściowe)
-    ├── pdbqt_files/           # Wynikowe pliki PDBQT (nie commitowane)
-    ├── grid_dock_files/       # Pliki parametrów siatki i logi AutoGrid/AutoDock (nie commitowane)
-    ├── output_files/          # Wynikowe kompleksy receptor-ligand (nie commitowane)
-    └── modify_parameters.py   # Moduł modyfikujący parametry (np. ścieżki, automatyzację)
+├── README.md                    # Ten plik
+├── .gitignore                   # Plik ignorujący pliki wynikowe i lokalne konfiguracje
+├── requirements.txt             # Lista zależności (m.in. tqdm, python-dotenv)
+├── request_pdb_files.py         # Pobiera z bazy RCSB.org pliki pdb na podstawie osobnego pliku .csv z id kompleksów w kolumnie
+├── binding_energy_reader.py     # Przelicza wartości eksperymentalne na kcal/mol z bazy BioLip.txt
+└── Docking/                     # Folder główny projektu
+    ├── _INFO.txt    DO ZMIANY   # Informacje o dock.py (część dokumentacyjna, prywatne zmiany)
+    ├── dock.py                  # Główny skrypt wywołujący automatyzację dokowania
+    ├── pdb_files/               # Pliki PDB receptorów (wejściowe)
+    ├── ligands/                 # Pliki ligandów (wejściowe)
+    ├── pdbqt_files/             # Wynikowe pliki PDBQT (nie commitowane)
+    ├── grid_dock_files/         # Pliki parametrów siatki i logi AutoGrid/AutoDock (nie commitowane)
+    ├── output_files/            # Wynikowe kompleksy receptor-ligand (nie commitowane)
+    └── *.py                     # Mnóstwo innych skryptów (AutoDockTools oraz własnych)
 ```
 
 ## Sposób działania
@@ -112,8 +112,10 @@ Wszystkie etapy są wywoływane automatycznie, a postęp monitorowany jest przy 
 
 ## Dodatkowe argumenty
 | Argument | | Description | Default value |
-| ----------- | - | ----------- | ---------- |
-| --file | -f | Pliki kompleksów w formacie .pdb |
+| ------ | -- | ------------------- | -- |
+| --help | -h | Wyświetlenie pomocy | No |
+| --file | -f | Pliki kompleksów w formacie .pdb | pdb_files/ |
+| --select_command | -s | Wybór komend do wykonania:<br> receptor, ligand, grid, autogrid, dock, autodock, complex | All |
 
 ## Plany rozwoju
 
