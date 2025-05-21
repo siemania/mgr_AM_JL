@@ -74,7 +74,6 @@ mgr_AM_JL/
 ├── request_pdb_files.py         # Pobiera z bazy RCSB.org pliki pdb na podstawie osobnego pliku .csv z id kompleksów w kolumnie
 ├── binding_energy_reader.py     # Przelicza wartości eksperymentalne na kcal/mol z bazy BioLip.txt
 └── Docking/                     # Folder główny projektu
-    ├── _INFO.txt    DO ZMIANY   # Informacje o dock.py (część dokumentacyjna, prywatne zmiany)
     ├── dock.py                  # Główny skrypt wywołujący automatyzację dokowania
     ├── pdb_files/               # Pliki PDB receptorów (wejściowe)
     ├── ligands/                 # Pliki ligandów (wejściowe)
