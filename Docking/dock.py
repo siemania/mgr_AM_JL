@@ -39,13 +39,15 @@ def process_docking(pdb_file, commands=None):
         gpf = os.path.join("grid_dock_files", f"{file_name}_grid.gpf")
         glg = os.path.join("grid_dock_files", f"{file_name}_grid.glg")
         dpf = os.path.join("grid_dock_files", f"{file_name}_dock.dpf")
-        dlg = os.path.join("grid_dock_files", f"{file_name}_dock.dlg")
+        dlg = os.path.join("grid_dock_files", f"{file_name}_ligand.dlg")
         fld = os.path.join("map_grid_files", f"{file_name}_receptor.maps.fld")
     
         # Ścieżki do innych programów (kompatybilność)
+        user = os.environ.get("USER") or os.environ.get("USERNAME")
         mgltools_dir = os.path.abspath(os.path.join(os.getcwd(), "MGLTools"))
         python = os.path.abspath(os.path.join(os.getcwd(), "MGLTools", "python.exe"))
         autogrid = os.path.abspath(os.path.join(os.getcwd(), "autogrid4.exe"))
+        autodock_gpu_path = glob(f"/home/{user}/**/autodock_*wi", recursive=True)[0]
         autodock = os.path.abspath(os.path.join(os.getcwd(), "autodock4.exe"))
     # =============================================================================
     #                       start - Właściwy program
@@ -109,29 +111,29 @@ def process_docking(pdb_file, commands=None):
             modify_gdpf_overwrite(f"grid_dock_files/{file_name}_dock.dpf", quiet=True) # Poprawki lokalizacyjne w pliku
             print(f"Parametry do dokowania {file_name} gotowe", flush=True)
 
-        # if not commands or 'autodock' in commands:
-        #     print(f"Rozpoczynanie procesu Autodock-GPU dla {file_name} ...", flush=True)
-        #     run_command([
-        #                     # Ścieżka do programu w systemie WSL (np. /home/user/AutoDock-GPU/...)
-        #                     "/home/tajgero/AutoDock-GPU/bin/autodock_gpu_128wi",
-        #                     "--lfile", ligand_pdbqt,
-        #                     "--ffile", fld,
-        #                     "--nrun 10"
-        #                 ])
-        #     move_dlg_xml_files("pdbqt_files", "output_files")
-        #     print(f"Dokowanie {file_name} zakonczono pomyslnie", flush=True)
-
         if not commands or 'autodock' in commands:
-            print(f"Rozpoczynanie procesu autodock4.exe dla {file_name} ...", flush=True)
+            print(f"Rozpoczynanie procesu Autodock-GPU dla {file_name} ...", flush=True)
             run_command([
-                            autodock,
-                            "-p", dpf,
-                            "-l", dlg
+                            # Ścieżka do programu w systemie WSL (np. /home/user/AutoDock-GPU/...)
+                            autodock_gpu_path,
+                            "--lfile", ligand_pdbqt,
+                            "--ffile", fld,
+                            "--nrun", "10",
                         ])
-
+            move_dlg_xml_files("pdbqt_files", "grid_dock_files")
             print(f"Dokowanie {file_name} zakonczono pomyslnie", flush=True)
 
-        # NIE DZIAŁA PRZY AUTODOCK-GPU !!!!
+        # DLA KOMPATYBILNOŚCI
+        # if not commands or 'autodock' in commands:
+        #     print(f"Rozpoczynanie procesu autodock4.exe dla {file_name} ...", flush=True)
+        #     run_command([
+        #                     autodock,
+        #                     "-p", dpf,
+        #                     "-l", dlg
+        #                 ])
+        #
+        #     print(f"Dokowanie {file_name} zakonczono pomyslnie", flush=True)
+
         if not commands or 'complex' in commands:
             run_command([
                             python,
@@ -152,7 +154,6 @@ def process_docking(pdb_file, commands=None):
 
 
 if __name__ == '__main__':
-
     # Pobranie listy plików PDB za pomocą parsera argparse
     parser = argparse.ArgumentParser(description="Process docking files.")
     parser.add_argument("-f", "--file", help="Podaj ścieżki do plików PDB lub plik .txt z ID", type=str, nargs='*',
