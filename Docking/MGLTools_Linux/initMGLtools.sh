@@ -1,5 +1,0 @@
-alias pmv='/home/kali/Desktop/mgr_AM_JL-main/Docking/MGLTools_Linux/bin/pmv'
-alias adt='/home/kali/Desktop/mgr_AM_JL-main/Docking/MGLTools_Linux/bin/adt'
-alias vision='/home/kali/Desktop/mgr_AM_JL-main/Docking/MGLTools_Linux/bin/vision'
-alias cadd='/home/kali/Desktop/mgr_AM_JL-main/Docking/MGLTools_Linux/bin/cadd'
-alias pythonsh='/home/kali/Desktop/mgr_AM_JL-main/Docking/MGLTools_Linux/bin/pythonsh'
