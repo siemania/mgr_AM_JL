@@ -17,10 +17,10 @@ def format_time(seconds):
     return f"{int(hours):02}:{int(minutes):02}:{int(seconds):02}"
 
 
-def run_command(command): # Pamiętać o podwójnym cudzysłowiu gdy są spacje!
+def run_command(command): # Pamiętać o podwójnym cudzysłowie, gdy są spacje!
     """Funkcja pomocnicza do uruchamiania poleceń
-    stdout=subprocess.DEVNULL > wyłącza widoczność strumienia danych z terminala"""
-    process = subprocess.run(command, stdout=subprocess.DEVNULL, shell=False) # shell=True czasami pomoże/zepsuje coś
+    stdout = subprocess.DEVNULL > wyłącza widoczność strumienia danych z terminala"""
+    process = subprocess.run(command, stdout=subprocess.DEVNULL, shell=False) # shell = True czasami pomoże/zepsuje coś
     if process.returncode != 0:
         raise RuntimeError(f"Błąd podczas wykonywania polecenia: {command}")
 
@@ -44,11 +44,20 @@ def process_docking(pdb_file, commands=None):
     
         # Ścieżki do innych programów (kompatybilność)
         user = os.environ.get("USER") or os.environ.get("USERNAME")
-        mgltools_dir = os.path.abspath(os.path.join(os.getcwd(), "MGLTools"))
-        python = os.path.abspath(os.path.join(os.getcwd(), "MGLTools", "python.exe"))
-        autogrid = os.path.abspath(os.path.join(os.getcwd(), "autogrid4.exe"))
-        autodock_gpu_path = glob(f"/home/{user}/**/autodock_*wi", recursive=True)[0]
-        autodock = os.path.abspath(os.path.join(os.getcwd(), "autodock4.exe"))
+        if os.name.startswith("nt"):
+            python = os.path.abspath(os.path.join(os.getcwd(), "MGLTools", "python.exe"))
+            autogrid = os.path.abspath(os.path.join(os.getcwd(), "autogrid4.exe"))
+            autodocklegacy = os.path.abspath(os.path.join(os.getcwd(), "autodock4.exe"))
+        else:
+            python = os.path.abspath(os.path.join(os.getcwd(), "MGLTools_Linux", "bin", "pythonsh"))
+            autogrid = os.path.abspath(os.path.join(os.getcwd(), "./autogrid4"))
+            autodocklegacy = os.path.abspath(os.path.join(os.getcwd(), "./autodock4"))
+
+        try:
+            autodock_gpu_path = glob(f"/home/{user}/**/autodock_*wi", recursive=True)[0]
+        except:
+            print("Nie znaleziono AutoDock-GPU !")
+            autodock_gpu_path = None
     # =============================================================================
     #                       start - Właściwy program
     # =============================================================================    
@@ -64,7 +73,7 @@ def process_docking(pdb_file, commands=None):
                             "-U", "nphs_lps_waters_nonstdres"
                         ])
             modify_pdbqt_overwrite(receptor_pdbqt, quiet=True)
-            print(f"\nReceptor {file_name} gotowy", flush=True)
+            print(f"Receptor {file_name} gotowy", flush=True)
 
         if not commands or 'ligand' in commands:
             # Przygotowanie ligandów
@@ -111,28 +120,29 @@ def process_docking(pdb_file, commands=None):
             modify_gdpf_overwrite(f"grid_dock_files/{file_name}_dock.dpf", quiet=True) # Poprawki lokalizacyjne w pliku
             print(f"Parametry do dokowania {file_name} gotowe", flush=True)
 
-        if not commands or 'autodock' in commands:
-            print(f"Rozpoczynanie procesu Autodock-GPU dla {file_name} ...", flush=True)
-            run_command([
-                            # Ścieżka do programu w systemie WSL (np. /home/user/AutoDock-GPU/...)
-                            autodock_gpu_path,
-                            "--lfile", ligand_pdbqt,
-                            "--ffile", fld,
-                            "--nrun", "10",
-                        ])
-            move_dlg_xml_files("pdbqt_files", "grid_dock_files")
-            print(f"Dokowanie {file_name} zakonczono pomyslnie", flush=True)
+        if autodock_gpu_path and (not commands or 'autodock' in commands):
+                # Wykryto program autodock-gpu
+                print(f"Rozpoczynanie procesu Autodock-GPU dla {file_name} ...", flush=True)
+                run_command([
+                                autodock_gpu_path,
+                                "--lfile", ligand_pdbqt,
+                                "--ffile", fld,
+                                "--nrun", "10",
+                            ])
+                move_dlg_xml_files("pdbqt_files", "grid_dock_files")
+                print(f"Dokowanie {file_name} zakonczono pomyslnie", flush=True)
 
         # DLA KOMPATYBILNOŚCI
-        # if not commands or 'autodock' in commands:
-        #     print(f"Rozpoczynanie procesu autodock4.exe dla {file_name} ...", flush=True)
-        #     run_command([
-        #                     autodock,
-        #                     "-p", dpf,
-        #                     "-l", dlg
-        #                 ])
-        #
-        #     print(f"Dokowanie {file_name} zakonczono pomyslnie", flush=True)
+        if (not commands and autodock_gpu_path is None) or (commands is not None and 'autodocklegacy' in commands):
+            # Brak programu autodock-gpu, wykonuje autodock4.exe/autodock4
+            print(f"Rozpoczynanie procesu autodock4|.exe dla {file_name} ...", flush=True)
+            run_command([
+                            autodocklegacy,
+                            "-p", dpf,
+                            "-l", dlg
+                        ])
+
+            print(f"Dokowanie {file_name} zakonczono pomyslnie", flush=True)
 
         if not commands or 'complex' in commands:
             run_command([
@@ -159,12 +169,12 @@ if __name__ == '__main__':
     parser.add_argument("-f", "--file", help="Podaj ścieżki do plików PDB lub plik .txt z ID", type=str, nargs='*',
                         default=None)
     parser.add_argument("-s", "--select_command",
-                        help="Wybierz komendy do wykonania: receptor, ligand, grid, autogrid, dock, autodock, complex.",
-                        type=str, nargs="+", choices=['receptor', 'ligand', 'grid', 'autogrid', 'dock', 'autodock', 'complex'])
-
+                        help="Wybierz komendy do wykonania: receptor, ligand, grid, autogrid, dock, autodock, autodocklegacy, complex.",
+                        type=str, nargs="+", choices=['receptor', 'ligand', 'grid', 'autogrid',
+                                                      'dock', 'autodock', 'autodocklegacy','complex'])
     args = parser.parse_args()
 
-    # Pozwala wykorzystać 1 kolumnę z pliku .txt lub wypisać własne ścieżki do plików lub wykorzysta folder pdb_files
+    # Pozwala wykorzystać 1 kolumnę z pliku .txt lub wypisać własne ścieżki do plików, lub wykorzysta folder pdb_files
     if args.file:
         if len(args.file) == 1 and args.file[0].endswith('.txt'): # Sprawdza, czy podano jeden plik .txt
             with open(args.file[0], 'r') as f:
@@ -173,12 +183,12 @@ if __name__ == '__main__':
         else:
             pdb_directory = args.file # Jeśli nie podano pliku .txt, użyje bezpośrednio podanych ścieżek
     else:
-        pdb_directory = glob("pdb_files\\*.pdb")
+        pdb_directory = glob("pdb_files/*.pdb")
     
     # Ustawienie liczby równoległych procesów
     max_workers = 4
     
-    # Tworzenie katalogów jeśli nie istnieją
+    # Tworzenie katalogów, jeśli nie istnieją
     os.makedirs("pdbqt_files", exist_ok=True)
     os.makedirs("map_grid_files", exist_ok=True)
     os.makedirs("grid_dock_files", exist_ok=True)
@@ -212,5 +222,4 @@ if __name__ == '__main__':
                     f"Progress: {progress.n}/{progress.total} ({(progress.n / progress.total)*100:.2f}%) | Czas: {estimated_time}\n")
     
     print(f'Czas zakończenia programu: {format_time(time.time() - start_time)}')
-    # input("~~~~~~~~Naciśnij dowolny przycisk by zakończyć~~~~~~~~")
-    
+    # input("~~~~~~~~Naciśnij dowolny przycisk, by zakończyć~~~~~~~~")
