@@ -4,6 +4,8 @@
 #
 # $Header: /mnt/raid/services/cvs/python/packages/share1.5/AutoDockTools/Utilities24/prepare_gpf4.py,v 1.18 2011/06/14 17:25:51 rhuey Exp $
 #
+from sys import path				# Folder ze zmodyfikowanymi
+path.insert(1, './MGLToolsPckgs')	# plikami .py
 
 import string
 import os.path

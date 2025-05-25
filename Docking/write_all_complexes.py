@@ -6,8 +6,10 @@
 #
 # $Id: write_all_complexes.py,v 1.2 2007/10/08 18:14:45 rhuey Exp $
 #
-import os
+from sys import path				# Folder ze zmodyfikowanymi
+path.insert(1, './MGLToolsPckgs')	# plikami .py
 
+import os
 from MolKit import Read
 from AutoDockTools.Docking import Docking
 

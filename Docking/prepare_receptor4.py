@@ -4,8 +4,10 @@
 #
 # $Header: /mnt/raid/services/cvs/python/packages/share1.5/AutoDockTools/Utilities24/prepare_receptor4.py,v 1.13.6.1 2015/08/26 22:45:31 sanner Exp $
 #
-import os 
+from sys import path				# Folder ze zmodyfikowanymi
+path.insert(1, './MGLToolsPckgs')	# plikami .py
 
+import os 
 from MolKit import Read
 import MolKit.molecule
 import MolKit.protein

@@ -6,8 +6,10 @@
 #
 # $Id: write_conformations_from_dlg.py,v 1.4.8.1 2015/08/26 22:45:31 sanner Exp $
 #
-import os
+from sys import path				# Folder ze zmodyfikowanymi
+path.insert(1, './MGLToolsPckgs')	# plikami .py
 
+import os
 from AutoDockTools.Docking import Docking
 
 

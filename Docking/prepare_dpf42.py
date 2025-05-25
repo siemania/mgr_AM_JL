@@ -4,6 +4,8 @@
 #
 # $Header: /mnt/raid/services/cvs/python/packages/share1.5/AutoDockTools/Utilities24/prepare_dpf42.py,v 1.13.2.3 2016/03/11 00:52:51 annao Exp $
 #
+from sys import path				# Folder ze zmodyfikowanymi
+path.insert(1, './MGLToolsPckgs')	# plikami .py
 
 import string
 import os.path

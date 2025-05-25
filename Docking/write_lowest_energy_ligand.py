@@ -4,8 +4,10 @@
 #
 # $Header: /mnt/raid/services/cvs/python/packages/share1.5/AutoDockTools/Utilities24/write_lowest_energy_ligand.py,v 1.3 2012/01/31 18:00:39 rhuey Exp $
 #
-import os, glob
+from sys import path				# Folder ze zmodyfikowanymi
+path.insert(1, './MGLToolsPckgs')	# plikami .py
 
+import os, glob
 from MolKit import Read
 from AutoDockTools.Docking import Docking
 from mglutil.math.rmsd import RMSDCalculator

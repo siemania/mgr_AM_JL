@@ -4,10 +4,11 @@
 #
 # $Header: /mnt/raid/services/cvs/python/packages/share1.5/AutoDockTools/Utilities24/prepare_ligand4.py,v 1.10.4.1 2015/08/26 22:45:31 sanner Exp $
 #
+from sys import path				# Folder ze zmodyfikowanymi
+path.insert(1, './MGLToolsPckgs')	# plikami .py
+
 import os 
-
 from MolKit import Read
-
 from AutoDockTools.MoleculePreparation import AD4LigandPreparation
 
 
