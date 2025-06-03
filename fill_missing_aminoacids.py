@@ -5,16 +5,17 @@ from modeller import environ, model
 from modeller.automodel import AutoModel, assess
 from modeller.scripts import complete_pdb
 from modeller.optimizers import molecular_dynamics, actions, conjugate_gradients
-from Docking import flip_HIS
 
 
 
+# Klasa dziedzicząca po AutoModel – umożliwia późniejszy wybór atomów do modelowania
 class MyModel(AutoModel):
     def select_atoms(self):
-        return Selection(self)
+        return Selection(self) # domyślnie wybiera wszystkie atomy
 
 class PDBModelOptimization:
     def __init__(self, project_root):
+        # Ścieżki do folderów wejściowych, wyjściowych i roboczych
         self.project_root = project_root
         self.input_path = os.path.join(project_root, 'pdb_files') # Folder z wejsciowymi plikami PDB
         self.output_path = os.path.join(project_root, 'fixed_pdb') # Folder na naprawione pliki PDB
@@ -25,7 +26,7 @@ class PDBModelOptimization:
         os.makedirs(self.work_path, exist_ok=True)
 
         # Inicjalizacja środowiska Modeller
-        log.level(output=1, notes=1, warnings=1, errors=1, memory=0)
+        log.level(output=0, notes=0, warnings=0, errors=1, memory=0)
         self.env = environ()
         self.env.io.atom_files_directory = ['.', self.input_path]
         self.env.libs.topology.read(file='$(LIB)/top_heav.lib')
@@ -33,6 +34,10 @@ class PDBModelOptimization:
         self.env.edat.dynamic_sphere = True
 
     def prepare_alignment(self, env, pdb_code, temple_code):
+        """
+        Tworzy alignment pomiędzy znaną strukturą (template) a sekwencją docelową (target).
+        Potrzebne do działania AutoModel.
+        """
         mdl = model(env, file=pdb_code)
         aln = alignment(env)
         aln.append_model(mdl, atom_files=pdb_code, align_codes=pdb_code)
@@ -40,29 +45,57 @@ class PDBModelOptimization:
         aln.write(file='alignment.ali')
         print("alignment.ali zostal zapisany")
 
+    def add_hydrogens(self, mdl):
+        """
+        Dodaje brakujące atomy wodoru do modelu.
+        """
+        try:
+            mdl.add_hydrogen()
+            print("Dodano wodory do modelu.")
+        except AttributeError:
+            print("Nie udało się wywołać mdl.add_hydrogen().")
+
     def swap_atom_coords(self, atom1, atom2):
-        """Zamienia wspolrzedne dwoch podanych atomow."""
+        """
+        Zamienia wspolrzedne (x, y, z) dwoch podanych atomow.
+        """
         atom1.x, atom2.x = atom2.x, atom1.x
         atom1.y, atom2.y = atom2.y, atom1.y
         atom1.z, atom2.z = atom2.z, atom1.z
 
     def flip_residues (self, residue):
-        """Flipuje reszty HIS, ASN i GLN przez zamianę współrzędnych wybranych atomów."""
-        atoms = residue.atom_dict
+        """
+        Flipuje reszty GLN, ASN i HIS przez zamianę współrzędnych wybranych atomów.
+        Pomaga ustawić poprawną orientację grup funkcyjnych.
+        Zachodzą zmiany miedzy atomami:
+            - ASN: OD1 <-> ND2
+            - GLN: OE1 <-> NE2
+            - HIS:  ND1 <-> NE2 (uproszczony sposob)
+         """
+        atom_dict = {a.name.strip(): a for a in residue.atoms}
+        name = residue.name.strip().upper()
 
-        if residue.name == 'ASN':
-            # Zamienia wspolrzedne OD1 i OD2
-            if 'OD1' in atoms and 'OD2' in atoms:
-                self.swap_atom_coords(self, atoms['OD1'], atoms['OD2'])
+        if name == 'ASN':
+
+            if 'OD1' in atom_dict and 'ND2' in atom_dict:
+                self.swap_atom_coords(atom_dict['OD1'], atom_dict['ND2'])
                 print(f"Wykonano flip ASN: {residue.num}")
 
-        elif residue.name == 'GLN':
-            # Zamienia wspolrzedne OE1 i OE2
-            if 'OE1' in atoms and 'OE2' in atoms:
-                self.swap_atom_coords(self, atoms['OE1'], atoms['OE2'])
+        elif name == 'GLN':
+
+            if 'OE1' in atom_dict and 'NE2' in atom_dict:
+                self.swap_atom_coords(atom_dict['OE1'], atom_dict['NE2'])
                 print(f"Wykonano flip GLN: {residue.num}")
+        elif name == 'HIS':
+
+            if 'ND1' in atom_dict and 'NE2' in atom_dict:
+                self.swap_atom_coords(atom_dict['ND1'], atom_dict['NE2'])
+                print(f"Wykonano flip HIS: {residue.num}")
 
     def optimize_heavy_atom(self, model, code):
+        """
+        Optymalizuje geometrię atomów ciężkich (bez wodorów) za pomocą gradientów sprzężonych.
+        """
         heavy_atoms = selection(*[atom for atom in model.atoms if not atom.name.strip().startswith('H')])
         model.restraints.make(heavy_atoms, restraint_type='stereo', spline_on_site=False)
 
@@ -73,7 +106,9 @@ class PDBModelOptimization:
 
 
     def optimize_full_structure(self, model, code):
-
+        """
+        Pełna optymalizacja struktury: gradienty sprzężone + dynamiczne optymalizacje molekularne.
+        """
         model.write(file=code + ".ini")
 
         all_atoms = Selection(model)
@@ -83,10 +118,15 @@ class PDBModelOptimization:
         md = molecular_dynamics(output='REPORT')
         trace_file = open(code + ".full_opt.log", "w")
 
+        # Gradienty sprzężone
         cg.optimize(all_atoms, max_iterations=30, actions=[actions.trace(5, trace_file)])
+
+        # Dynamika molekularna
         md.optimize(all_atoms, temperature=300, max_iterations=50,
                     actions=[actions.write_structure(10, code + ".dyn%04d.pdb"),
                              actions.trace(10, trace_file)])
+
+        # Ponowna optymalizacja
         cg.optimize(all_atoms, max_iterations=20, actions=[actions.trace(5, trace_file)])
 
         model.write(file=code + '_opt_full.pdb')
@@ -94,7 +134,14 @@ class PDBModelOptimization:
 
 
     def fill_missing_residues_and_atoms(self):
-
+        """
+        Główna funkcja przetwarzająca wszystkie pliki PDB:
+             - uzupełnia brakujące reszty,
+             - dodaje brakujące atomy,
+             - dodaje atomy wodoru,
+             - flipuje reszty HIS/ASN/GLN,
+             - przeprowadza optymalizację struktury.
+        """
         for filename in os.listdir(self.input_path):
             if not filename.endswith(".pdb"):
                 continue
@@ -134,14 +181,17 @@ class PDBModelOptimization:
 
 
                 code = pdb_name
+                # 1) Wczytanie uzupelnionej struktury
                 model = complete_pdb(self.env, code)
-                # Flipy aminokwasow
+
+                # 2) Dodanie wodorow
+                self.add_hydrogens(model)
+
+                # 3) Flipy odpowiednich reszt aminokwasowych
                 for res in model.residues:
-                    if residue.name in ['ASN', 'GLN']:
-                        self.flip_residues(res)
-                    elif residue.name == 'HIS':
-                        flip_HIS(self.input_path, self.work_path, res)
-                # Optymalizacje
+                    self.flip_residues(res)
+
+                # 4) Optymalizacje
                 self.optimize_heavy_atom(model, code)
                 self.optimize_full_structure(model, code)
             else:
