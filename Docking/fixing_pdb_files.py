@@ -1,4 +1,5 @@
 import os
+import subprocess
 from shutil import copyfile
 from modeller import *
 from modeller import environ, model
@@ -45,15 +46,24 @@ class PDBModelOptimization:
         aln.write(file='alignment.ali')
         print("alignment.ali zostal zapisany")
 
-    def add_hydrogens(self, mdl):
+    def add_hydrogens(self, pdb_path):
         """
         Dodaje brakujące atomy wodoru do modelu.
         """
+        output_path = pdb_path.replace(".pdb", "_withH.pdb")
+        data_dir = os.path.join(self.project_root, "data")
+
+        # Ustawienie zmiennej środowiskowej
+        env = os.environ.copy()
+        env["BABEL_DATADIR"] = data_dir
+
         try:
-            mdl.add_hydrogen()
-            print("Dodano wodory do modelu.")
-        except AttributeError:
-            print("Nie udało się wywołać mdl.add_hydrogen().")
+            subprocess.run(["obabel", pdb_path, "-O", output_path, "-h"], check=True, env=env)
+            print(f"Dodano wodory za pomocą Open Babel: {output_path}")
+            return output_path
+        except subprocess.CalledProcessError as e:
+            print("Błąd Open Babel:", e)
+            return pdb_path
 
     def swap_atom_coords(self, atom1, atom2):
         """
@@ -180,12 +190,14 @@ class PDBModelOptimization:
                 print(f"Uzupełniony model zapisany do: {final_output_file}")
 
 
-                code = pdb_name
-                # 1) Wczytanie uzupelnionej struktury
-                model = complete_pdb(self.env, code)
+                # 1) Dodanie wodorow
+                pdb_path_with_H = self.add_hydrogens(final_output_file)
 
-                # 2) Dodanie wodorow
-                self.add_hydrogens(model)
+                code = os.path.splitext(os.path.basename(pdb_path_with_H))[0]
+                self.env.io.atom_files_directory.append(os.path.dirname(pdb_path_with_H))
+
+                # 2) Wczytanie uzupelnionej struktury
+                model = complete_pdb(self.env, code)
 
                 # 3) Flipy odpowiednich reszt aminokwasowych
                 for res in model.residues:
