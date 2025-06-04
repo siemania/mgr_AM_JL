@@ -1,12 +1,16 @@
 import os
-import subprocess
 from shutil import copyfile
+import numpy as np
 from modeller import *
 from modeller import environ, model
 from modeller.automodel import AutoModel, assess
 from modeller.scripts import complete_pdb
 from modeller.optimizers import molecular_dynamics, actions, conjugate_gradients
-import openbabel
+from openbabel import openbabel
+from openmm.app import PDBFile
+from openmm import unit
+from pdbfixer import PDBFixer
+
 
 
 # Klasa dziedzicząca po AutoModel – umożliwia późniejszy wybór atomów do modelowania
@@ -46,61 +50,95 @@ class PDBModelOptimization:
         aln.write(file='alignment.ali')
         print("alignment.ali zostal zapisany")
 
-    # def add_hydrogens(self, pdb_path):
-    #     """
-    #     Dodaje brakujące atomy wodoru do modelu.
-    #     """
-    #     output_path = pdb_path.replace(".pdb", "_withH.pdb")
-    #     data_dir = os.path.join(self.project_root, "data")
-    #
-    #     # Ustawienie zmiennej środowiskowej
-    #     env = os.environ.copy()
-    #     env["BABEL_DATADIR"] = data_dir
-    #
-    #     try:
-    #         subprocess.run(["obabel", pdb_path, "-O", output_path, "-h"], check=True, env=env)
-    #         print(f"Dodano wodory za pomocą Open Babel: {output_path}")
-    #         return output_path
-    #     except subprocess.CalledProcessError as e:
-    #         print("Błąd Open Babel:", e)
-    #         return pdb_path
 
     def add_hydrogens(self, pdb_path):
-        """
-        Dodaje brakujące atomy wodoru do modelu wykorzystując Python obabel-wheel 3.1.1.21.
-        """
-
         output_path = pdb_path.replace(".pdb", "_withH.pdb")
 
         try:
-            # Utworzenie obiektu konwersji
-            obConversion = openbabel.OBConversion()
-            obConversion.SetInAndOutFormats("pdb", "pdb")
+            fixer = PDBFixer(filename=pdb_path)
+            fixer.findMissingResidues()
+            fixer.findMissingAtoms()
+            fixer.addMissingAtoms()
+            fixer.addMissingHydrogens(pH=7.0)
 
-            # Utworzenie obiektu molekuły mol
-            mol = openbabel.OBMol()
+            with open(output_path, 'w') as f:
+                PDBFile.writeFile(fixer.topology, fixer.positions, f)
 
-            # Wczytanie pliku PDB
-            success = obConversion.ReadFile(mol, pdb_path)
-            if not success:
-                print(f"Błąd przy wczytywaniu pliku: {pdb_path}")
-                return pdb_path
-
-            # Dodanie atomów wodoru
-            mol.AddHydrogens()
-
-            # Zapisanie pliku z dodanymi wodorami
-            success = obConversion.WriteFile(mol, output_path)
-            if success:
-                print(f"Dodano wodory za pomocą OpenBabel Python: {output_path}")
-                return output_path
-            else:
-                print(f"Błąd przy zapisywaniu pliku: {output_path}")
-                return pdb_path
+            print(f"Dodano wodory za pomocą PDBFixer: {output_path}")
+            return output_path
 
         except Exception as e:
-            print(f"Błąd OpenBabel Python: {e}")
+            print(f"Błąd przy dodawaniu wodorów przez PDBFixer: {e}")
             return pdb_path
+
+    def rotate_atoms(self, positions, center, axis, angle_rad):
+        """Obraca pozycje wokół zadanej osi i punktu."""
+        # Zamień center i axis na ndarray
+        axis = np.array(axis)
+        center = np.array(center)
+
+        # Normalizacja osi
+        axis = axis / np.linalg.norm(axis)
+
+        rotated = []
+
+        for pos in positions:
+            rel = pos - center
+            rot = (
+                    np.cos(angle_rad) * rel +
+                    np.sin(angle_rad) * np.cross(axis, rel) +
+                    (1 - np.cos(angle_rad)) * np.dot(axis, rel) * axis
+            )
+            rotated.append(rot + center)
+
+        return [unit.Quantity(r, unit.nanometer) for r in rotated]
+
+    def flip_HIS(self, input_file):
+        try:
+            fixer = PDBFixer(filename=input_file)
+            structure = fixer.topology
+            positions = fixer.positions
+
+            changed = False
+            for residue in structure.residues():
+                if residue.name not in ('HIS', 'HID', 'HIE', 'HIP'):
+                    continue
+
+                atom_dict = {atom.name: atom for atom in residue.atoms()}
+                required_atoms = ['CG', 'CD2', 'ND1', 'CE1', 'NE2']
+
+                if not all(name in atom_dict for name in required_atoms):
+                    continue  # pomiń niekompletne reszty
+
+                cg_idx = list(structure.atoms()).index(atom_dict['CG'])
+                cd2_idx = list(structure.atoms()).index(atom_dict['CD2'])
+
+                axis = positions[cd2_idx].value_in_unit(unit.nanometer) - positions[cg_idx].value_in_unit(
+                    unit.nanometer)
+                center = positions[cg_idx].value_in_unit(unit.nanometer)
+
+                ring_atom_indices = [list(structure.atoms()).index(atom_dict[name]) for name in
+                                     ['ND1', 'CD2', 'CE1', 'NE2']]
+                ring_positions = [positions[i].value_in_unit(unit.nanometer) for i in ring_atom_indices]
+
+
+                new_positions = self.rotate_atoms(ring_positions, center, axis, np.pi)
+
+                for i, idx in enumerate(ring_atom_indices):
+                    positions[idx] = new_positions[i]
+
+                changed = True
+
+            if changed:
+                output_file = input_file.replace(".pdb", "_rotatedHIS.pdb")
+                with open(output_file, 'w') as f:
+                    PDBFile.writeFile(structure, positions, f)
+                return output_file
+            else:
+                return input_file #brak zmian, zwraca orginał
+        except Exception as e:
+            print(f"Błąd przy obracaniu HIS: {e}")
+            return input_file
 
     def swap_atom_coords(self, atom1, atom2):
         """
@@ -110,7 +148,7 @@ class PDBModelOptimization:
         atom1.y, atom2.y = atom2.y, atom1.y
         atom1.z, atom2.z = atom2.z, atom1.z
 
-    def flip_residues (self, residue):
+    def flip_residues (self, residue, pdb_path=None):
         """
         Flipuje reszty GLN, ASN i HIS przez zamianę współrzędnych wybranych atomów.
         Pomaga ustawić poprawną orientację grup funkcyjnych.
@@ -133,11 +171,11 @@ class PDBModelOptimization:
             if 'OE1' in atom_dict and 'NE2' in atom_dict:
                 self.swap_atom_coords(atom_dict['OE1'], atom_dict['NE2'])
                 print(f"Wykonano flip GLN: {residue.num}")
-        elif name == 'HIS':
-
-            if 'ND1' in atom_dict and 'NE2' in atom_dict:
-                self.swap_atom_coords(atom_dict['ND1'], atom_dict['NE2'])
-                print(f"Wykonano flip HIS: {residue.num}")
+        elif name == 'HIS' and pdb_path:
+            print(f"Obracanie HIS w {residue.num} przez PDBFixer")
+            rotated_path = self.flip_HIS(pdb_path)
+            if rotated_path:
+                print(f"Obrócono pierścień histydyny: {residue.num}")
 
     def optimize_heavy_atom(self, model, code):
         """
@@ -238,7 +276,7 @@ class PDBModelOptimization:
 
                 # 3) Flipy odpowiednich reszt aminokwasowych
                 for res in model.residues:
-                    self.flip_residues(res)
+                    self.flip_residues(res, pdb_path_with_H)
 
                 # 4) Optymalizacje
                 self.optimize_heavy_atom(model, code)
