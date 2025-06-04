@@ -23,6 +23,7 @@ Projekt **mgr_AM_JL** to zestaw skryptów mających na celu automatyzację przyg
 - **Python 3.12.7** (lub wyższa)
 - **MGLTools 1.5.7** – do przygotowania receptorów i ligandów
 - **AutoDock4/AutoGrid4** oraz **AutoDock-GPU** (opcjonalnie)
+- **MODELLER 10.6** 
 - Biblioteki Python, takie jak:
   - `tqdm`
   - `openbabel-wheel`
@@ -51,6 +52,32 @@ Projekt **mgr_AM_JL** to zestaw skryptów mających na celu automatyzację przyg
    ```bash
    pip install -r requirements.txt
    ```
+5. **Zainstaluj Modeller:**
+   1) Zarejestruj się na stronie, w celu uzyskania klucza licencyjnego
+    [Modeller Registration](https://salilab.org/modeller/registration.html)
+   2) Pobierz odpowiednią wersje Modellera
+   [Download Modeller](https://salilab.org/modeller/download_installation.html)
+   3) Uruchom instalator `.exe` (tu będzie potrzebny klucz licencyjny)
+   4) Utwórz plik `license.py` oraz dodaj go do folderu modlib. Przykład co powinien zawierać taki plik:
+    ```bash  
+   license = 'MODELIRANJE'
+    ```
+   5) Skonfiguruj zmienne środowiskowe (jeżeli konieczne)
+   
+   Przykład:
+   * Windows (cmd):
+    ```bash
+        setx PYTHONPATH "C:\Program Files\Modeller10.6\modlib"
+        setx PATH "%PATH%;C:\Program Files\Modeller10.6\bin"
+    ```
+   * Linux:
+    ```bash
+        export PYTHONPATH="/opt/modeller10.6/modlib"
+        export PATH="$PATH:/opt/modeller10.6/bin"
+    ```
+   
+
+
 <!--   ALBO ZMODYFIKOWAĆ ALBO ZMIENIĆ, BO NIE WIADOMO CZY BĘDZIE POTRZEBNE
 ## Konfiguracja
 
@@ -75,6 +102,7 @@ mgr_AM_JL/
 ├── binding_energy_reader.py     # Przelicza wartości eksperymentalne na kcal/mol z bazy BioLip.txt
 └── Docking/                     # Folder główny projektu
     ├── dock.py                  # Główny skrypt wywołujący automatyzację dokowania
+    ├── fixing_pdb_files.py      # Skrypt do ulepszenia plików PDB
     ├── pdb_files/               # Pliki PDB receptorów (wejściowe)
     ├── ligands/                 # Pliki ligandów (wejściowe)
     ├── pdbqt_files/             # Wynikowe pliki PDBQT (nie commitowane)
@@ -98,6 +126,28 @@ Projekt automatycznie wykonuje następujące kroki:
   Do poprawienia konformacji receptora (m.in. dodania wodoru i minimalizacji energii) wykorzystywane są wcześniej wspominane moduły. W ramach dalszego rozwoju chcemy dodać automatyczną optymalizację konformacyjną wybranych reszt (HIS, GLU, ASP) oraz innych aspektów.
 
 Wszystkie etapy są wywoływane automatycznie, a postęp monitorowany jest przy użyciu `tqdm`. Po zakończeniu, wyniki (przygotowane pliki receptorów, ligandów oraz kompleksów) są zapisywane w odpowiednich folderach, które nie są wersjonowane.
+## Sposób działania - fixing_pdb_files.py
+
+Ten skrypt automatyzuje proces uzupełniania i optymalizacji struktur białek zapisanych w plikach PDB. Korzysta z biblioteki Modeller oraz narzędzia Open Babel do dodawania atomów wodoru i przeprowadzania optymalizacji geometrii cząsteczek.
+
+**Główne kroki działania:**
+1. Przygotowanie środowiska i struktur
+2. Uzupełnienia brakujących fragmentów w strukturze
+3. Dodanie atomów wodoru
+4. Poprawa orientacji niektórych reszt aminokwasowych
+5. Optymalizacja geometrii
+
+**Kluczowe klasy i funckje**
++ `MyModel` - klasa rozszerzająca `AutoModel` z Modellera, pozwalająca na póżniejszy wybór atomów do modelowania
++ `PDBModelOptimization` - klasa zarządzająca całym procesem
+  + `prepare_alignment` - tworzy dopasowanie sekwencji i struktury
+  + `add_hygrodens` - dodaje atomy wodoru za pomocą OpenBabel
+  + `flip_residues` - koryguje orientacje reszt ASN, GLN i HIS
+  + `optimize_heavy_atom` - optymalizuje geometrię atomów ciężkich
+  + `optimize_full_structure` - pełna optymalizacja struktury (gradienty + dynamika molekularna)
+  + `fill_missing_residues_and_atoms` - główna metoda przetwarzająca wszystkie pliki PDB z folderu wejściowego
+
+
 
 ## Przykładowe użycie
 
