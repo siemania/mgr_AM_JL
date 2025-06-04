@@ -26,7 +26,7 @@ Projekt **mgr_AM_JL** to zestaw skryptów mających na celu automatyzację przyg
 - **MODELLER 10.6** 
 - Biblioteki Python, takie jak:
   - `tqdm`
-  - `openbabel-wheel`
+  - `openbabel-wheel 3.1.1.21`
   - `python-dotenv`
   - Standardowe biblioteki: `os`, `glob`, `time`, `datetime`, `subprocess`, `sys`
 
@@ -126,6 +126,7 @@ Projekt automatycznie wykonuje następujące kroki:
   Do poprawienia konformacji receptora (m.in. dodania wodoru i minimalizacji energii) wykorzystywane są wcześniej wspominane moduły. W ramach dalszego rozwoju chcemy dodać automatyczną optymalizację konformacyjną wybranych reszt (HIS, GLU, ASP) oraz innych aspektów.
 
 Wszystkie etapy są wywoływane automatycznie, a postęp monitorowany jest przy użyciu `tqdm`. Po zakończeniu, wyniki (przygotowane pliki receptorów, ligandów oraz kompleksów) są zapisywane w odpowiednich folderach, które nie są wersjonowane.
+
 ## Sposób działania - fixing_pdb_files.py
 
 Ten skrypt automatyzuje proces uzupełniania i optymalizacji struktur białek zapisanych w plikach PDB. Korzysta z biblioteki Modeller oraz narzędzia Open Babel do dodawania atomów wodoru i przeprowadzania optymalizacji geometrii cząsteczek.
@@ -154,7 +155,7 @@ Ten skrypt automatyzuje proces uzupełniania i optymalizacji struktur białek za
 1. **Skonfiguruj środowisko** (utwórz `.env`, zainstaluj zależności).
 2. **Uruchom główny skrypt:**
    ```bash
-   python dock.py
+   python dock.py [opt. arguments]
    ```
 3. **Monitoruj postęp:**  
    Pasek postępu pojawi się w terminalu, a komunikaty zostaną wyświetlone na bieżąco.
@@ -170,9 +171,7 @@ Ten skrypt automatyzuje proces uzupełniania i optymalizacji struktur białek za
 
 W kolejnych etapach projektu planujemy:
 - Rozwój modułów optymalizacyjnych, takich jak:
-  - Minimalizacja konformacji receptorów za pomocą OpenBabel, RDKit, GROMACS.
-  - Automatyczne ustawianie wiązań (constraints) na ciężkie atomy, aby ich pozycje były modyfikowane łagodniej.
-  - Opcjonalne dokowanie z wodą lub bez wody.
+- Opcjonalne dokowanie z wodą lub bez wody.
 - Dodanie interfejsu graficznego lub narzędzi do analizy wyników.
 
 ## Współpraca i GitHub
@@ -186,4 +185,4 @@ Za program odpowiedzialni są:
 [inż. Anna Muńko](https://github.com/siemania)
 
 Projekt jest hostowany na GitHubie i współpracujemy przy użyciu PyCharm:
-- **.gitignore:** Wszystkie pliki wynikowe, lokalne konfiguracje oraz foldery generowane automatycznie (takie jak `pdbqt_files/`, `output_files/`, `grid_dock_files/`, `ligands/`) są ignorowane przez Git.
+- **.gitignore:** Wszystkie pliki wynikowe, lokalne konfiguracje oraz foldery generowane automatycznie (takie jak `pdbqt_files/`, `output_files/`, `grid_dock_files/`, `ligands/`, `work_folder/`, `fixed_pdb`) są ignorowane przez Git.

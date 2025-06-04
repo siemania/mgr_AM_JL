@@ -6,7 +6,7 @@ from modeller import environ, model
 from modeller.automodel import AutoModel, assess
 from modeller.scripts import complete_pdb
 from modeller.optimizers import molecular_dynamics, actions, conjugate_gradients
-
+import openbabel
 
 
 # Klasa dziedzicząca po AutoModel – umożliwia późniejszy wybór atomów do modelowania
@@ -46,23 +46,60 @@ class PDBModelOptimization:
         aln.write(file='alignment.ali')
         print("alignment.ali zostal zapisany")
 
+    # def add_hydrogens(self, pdb_path):
+    #     """
+    #     Dodaje brakujące atomy wodoru do modelu.
+    #     """
+    #     output_path = pdb_path.replace(".pdb", "_withH.pdb")
+    #     data_dir = os.path.join(self.project_root, "data")
+    #
+    #     # Ustawienie zmiennej środowiskowej
+    #     env = os.environ.copy()
+    #     env["BABEL_DATADIR"] = data_dir
+    #
+    #     try:
+    #         subprocess.run(["obabel", pdb_path, "-O", output_path, "-h"], check=True, env=env)
+    #         print(f"Dodano wodory za pomocą Open Babel: {output_path}")
+    #         return output_path
+    #     except subprocess.CalledProcessError as e:
+    #         print("Błąd Open Babel:", e)
+    #         return pdb_path
+
     def add_hydrogens(self, pdb_path):
         """
-        Dodaje brakujące atomy wodoru do modelu.
+        Dodaje brakujące atomy wodoru do modelu wykorzystując Python obabel-wheel 3.1.1.21.
         """
-        output_path = pdb_path.replace(".pdb", "_withH.pdb")
-        data_dir = os.path.join(self.project_root, "data")
 
-        # Ustawienie zmiennej środowiskowej
-        env = os.environ.copy()
-        env["BABEL_DATADIR"] = data_dir
+        output_path = pdb_path.replace(".pdb", "_withH.pdb")
 
         try:
-            subprocess.run(["obabel", pdb_path, "-O", output_path, "-h"], check=True, env=env)
-            print(f"Dodano wodory za pomocą Open Babel: {output_path}")
-            return output_path
-        except subprocess.CalledProcessError as e:
-            print("Błąd Open Babel:", e)
+            # Utworzenie obiektu konwersji
+            obConversion = openbabel.OBConversion()
+            obConversion.SetInAndOutFormats("pdb", "pdb")
+
+            # Utworzenie obiektu molekuły mol
+            mol = openbabel.OBMol()
+
+            # Wczytanie pliku PDB
+            success = obConversion.ReadFile(mol, pdb_path)
+            if not success:
+                print(f"Błąd przy wczytywaniu pliku: {pdb_path}")
+                return pdb_path
+
+            # Dodanie atomów wodoru
+            mol.AddHydrogens()
+
+            # Zapisanie pliku z dodanymi wodorami
+            success = obConversion.WriteFile(mol, output_path)
+            if success:
+                print(f"Dodano wodory za pomocą OpenBabel Python: {output_path}")
+                return output_path
+            else:
+                print(f"Błąd przy zapisywaniu pliku: {output_path}")
+                return pdb_path
+
+        except Exception as e:
+            print(f"Błąd OpenBabel Python: {e}")
             return pdb_path
 
     def swap_atom_coords(self, atom1, atom2):
