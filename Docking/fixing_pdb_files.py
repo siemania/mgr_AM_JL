@@ -1,4 +1,5 @@
 import os
+import subprocess
 from shutil import copyfile
 import numpy as np
 from modeller import *
@@ -52,47 +53,43 @@ class PDBModelOptimization:
 
     def add_hydrogens(self, pdb_path):
         """
-        Dodaje brakujące atomy wodoru do modelu wykorzystując Python obabel-wheel 3.1.1.21.
+        Dodaje wodory do pliku PDB, próbując najpierw przez subprocess (obabel CLI),
+        a potem przez Open Babel Python API. Nadpisuje plik wejściowy.
         """
-
         try:
-            # Utworzenie obiektu konwersji
+            subprocess.run(["obabel", pdb_path, "-O", pdb_path, "-h"], check=True)
+            print(f"Dodano wodory za pomocą Open Babel CLI: {pdb_path}")
+            return
+        except subprocess.CalledProcessError as e:
+            print("Błąd Open Babel CLI:", e)
+        except Exception as e:
+            print("Nieoczekiwany błąd podczas uruchamiania obabel:", e)
+
+        # Fallback – OpenBabel Python API
+        try:
             obConversion = ob.OBConversion()
             obConversion.SetInAndOutFormats("pdb", "pdb")
 
-            # Utworzenie obiektu molekuły mol
             mol = ob.OBMol()
-
-            # Wczytanie pliku PDB
-            success = obConversion.ReadFile(mol, pdb_path)
-            if not success:
+            if not obConversion.ReadFile(mol, pdb_path):
                 print(f"Błąd przy wczytywaniu pliku: {pdb_path}")
-                return pdb_path
+                return
 
-            builder = ob.OBBuilder()
-            if not builder.Build(mol):
-                print("Błąd: Nie udało się zbudować wodorów z OBBuilder")
-                return pdb_path
-
-            # Dodanie atomów wodoru
             mol.AddHydrogens()
 
-            # Zapisanie pliku z dodanymi wodorami
-            success = obConversion.WriteFile(mol, pdb_path)
-            if success:
-                print(f"Dodano wodory za pomocą OpenBabel Python: {pdb_path}")
+            if obConversion.WriteFile(mol, pdb_path):
+                print(f"Dodano wodory za pomocą OpenBabel Python API: {pdb_path}")
             else:
-                print(f"Błąd przy zapisywaniu pliku: {pdb_path}")
-
-
+                print(f"Błąd przy zapisie pliku: {pdb_path}")
         except Exception as e:
-            print(f"Błąd OpenBabel Python: {e}")
+            print(f"Błąd OpenBabel Python API: {e}")
+
 
 
 
     def rotate_atoms(self, positions, center, axis, angle_rad):
         """Obraca pozycje wokół zadanej osi i punktu."""
-        # Zamień center i axis na ndarray
+
         axis = np.array(axis)
         center = np.array(center)
 
