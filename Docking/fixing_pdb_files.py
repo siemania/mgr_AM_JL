@@ -6,7 +6,7 @@ from modeller import environ, model
 from modeller.automodel import AutoModel, assess
 from modeller.scripts import complete_pdb
 from modeller.optimizers import molecular_dynamics, actions, conjugate_gradients
-from openbabel import openbabel
+from openbabel import openbabel as ob
 from openmm.app import PDBFile
 from openmm import unit
 from pdbfixer import PDBFixer
@@ -50,26 +50,45 @@ class PDBModelOptimization:
         aln.write(file='alignment.ali')
         print("alignment.ali zostal zapisany")
 
-
     def add_hydrogens(self, pdb_path):
-        output_path = pdb_path.replace(".pdb", "_withH.pdb")
+        """
+        Dodaje brakujące atomy wodoru do modelu wykorzystując Python obabel-wheel 3.1.1.21.
+        """
 
         try:
-            fixer = PDBFixer(filename=pdb_path)
-            fixer.findMissingResidues()
-            fixer.findMissingAtoms()
-            fixer.addMissingAtoms()
-            fixer.addMissingHydrogens(pH=7.0)
+            # Utworzenie obiektu konwersji
+            obConversion = ob.OBConversion()
+            obConversion.SetInAndOutFormats("pdb", "pdb")
 
-            with open(output_path, 'w') as f:
-                PDBFile.writeFile(fixer.topology, fixer.positions, f)
+            # Utworzenie obiektu molekuły mol
+            mol = ob.OBMol()
 
-            print(f"Dodano wodory za pomocą PDBFixer: {output_path}")
-            return output_path
+            # Wczytanie pliku PDB
+            success = obConversion.ReadFile(mol, pdb_path)
+            if not success:
+                print(f"Błąd przy wczytywaniu pliku: {pdb_path}")
+                return pdb_path
+
+            builder = ob.OBBuilder()
+            if not builder.Build(mol):
+                print("Błąd: Nie udało się zbudować wodorów z OBBuilder")
+                return pdb_path
+
+            # Dodanie atomów wodoru
+            mol.AddHydrogens()
+
+            # Zapisanie pliku z dodanymi wodorami
+            success = obConversion.WriteFile(mol, pdb_path)
+            if success:
+                print(f"Dodano wodory za pomocą OpenBabel Python: {pdb_path}")
+            else:
+                print(f"Błąd przy zapisywaniu pliku: {pdb_path}")
+
 
         except Exception as e:
-            print(f"Błąd przy dodawaniu wodorów przez PDBFixer: {e}")
-            return pdb_path
+            print(f"Błąd OpenBabel Python: {e}")
+
+
 
     def rotate_atoms(self, positions, center, axis, angle_rad):
         """Obraca pozycje wokół zadanej osi i punktu."""
@@ -130,10 +149,10 @@ class PDBModelOptimization:
                 changed = True
 
             if changed:
-                output_file = input_file.replace(".pdb", "_rotatedHIS.pdb")
-                with open(output_file, 'w') as f:
+                with open(input_file, 'w') as f:
                     PDBFile.writeFile(structure, positions, f)
-                return output_file
+
+                return input_file
             else:
                 return input_file #brak zmian, zwraca orginał
         except Exception as e:
@@ -186,8 +205,9 @@ class PDBModelOptimization:
 
         cg = conjugate_gradients(output='REPORT')
         cg.optimize(heavy_atoms, max_iterations=30)
-        model.write(file=code + '_optHeavy.pdb')
-        print(f"Zoptymalizowano atomy ciężkie: {code}_optHeavy.pdb")
+        final_path = os.path.join(self.output_path, code + ".pdb")
+        model.write(file=final_path)
+        print(f"Zoptymalizowano atomy ciężkie i zapisano: {final_path}")
 
 
     def optimize_full_structure(self, model, code):
@@ -214,8 +234,9 @@ class PDBModelOptimization:
         # Ponowna optymalizacja
         cg.optimize(all_atoms, max_iterations=20, actions=[actions.trace(5, trace_file)])
 
-        model.write(file=code + '_opt_full.pdb')
-        print(f"Zoptymalizowano całą strukturę: {code}_opt_full.pdb")
+        final_path = os.path.join(self.output_path, code + ".pdb")
+        model.write(file=final_path)
+        print(f"Zoptymalizowano pełną strukturę i zapisano: {final_path}")
 
 
     def fill_missing_residues_and_atoms(self):
@@ -266,17 +287,17 @@ class PDBModelOptimization:
 
 
                 # 1) Dodanie wodorow
-                pdb_path_with_H = self.add_hydrogens(final_output_file)
+                self.add_hydrogens(final_output_file)
 
-                code = os.path.splitext(os.path.basename(pdb_path_with_H))[0]
-                self.env.io.atom_files_directory.append(os.path.dirname(pdb_path_with_H))
+                code = os.path.splitext(os.path.basename(final_output_file))[0]
+                self.env.io.atom_files_directory.append(os.path.dirname(final_output_file))
 
                 # 2) Wczytanie uzupelnionej struktury
                 model = complete_pdb(self.env, code)
 
                 # 3) Flipy odpowiednich reszt aminokwasowych
                 for res in model.residues:
-                    self.flip_residues(res, pdb_path_with_H)
+                    self.flip_residues(res, final_output_file)
 
                 # 4) Optymalizacje
                 self.optimize_heavy_atom(model, code)
