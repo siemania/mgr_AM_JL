@@ -122,8 +122,8 @@ Projekt automatycznie wykonuje następujące kroki:
   Tworzony jest plik GPF, który jest zapisywany, a następnie wykorzystywany przez AutoGrid/AutoDock.
 - **Dokowanie:**  
   Uruchamiane są odpowiednie polecenia AutoDock lub AutoDock-GPU.
-- **Minimalizacja receptora:**  
-  Do poprawienia konformacji receptora (m.in. dodania wodoru i minimalizacji energii) wykorzystywane są wcześniej wspominane moduły. W ramach dalszego rozwoju chcemy dodać automatyczną optymalizację konformacyjną wybranych reszt (HIS, GLU, ASP) oraz innych aspektów.
+- **Minimalizacja receptora:**
+  Do poprawienia konformacji receptora (m.in. dodania wodoru i minimalizacji energii) wykorzystywane są wcześniej wspominane moduły. W ramach dalszego rozwoju chcemy dodać automatyczną optymalizację konformacyjną wybranych reszt (His, Gln, Asn) oraz innych aspektów.
 
 Wszystkie etapy są wywoływane automatycznie, a postęp monitorowany jest przy użyciu `tqdm`. Po zakończeniu, wyniki (przygotowane pliki receptorów, ligandów oraz kompleksów) są zapisywane w odpowiednich folderach, które nie są wersjonowane.
 
@@ -142,6 +142,7 @@ Ten skrypt automatyzuje proces uzupełniania i optymalizacji struktur białek za
 + `MyModel` - klasa rozszerzająca `AutoModel` z Modellera, pozwalająca na póżniejszy wybór atomów do modelowania
 + `PDBModelOptimization` - klasa zarządzająca całym procesem
   + `prepare_alignment` - tworzy dopasowanie sekwencji i struktury
+  + `cleanup_working_files` - usuwa na bieżąco pliki folderu roboczego oprócz alignment.
   + `add_hygrodens` - dodaje atomy wodoru za pomocą OpenBabel
   + `flip_residues` - koryguje orientacje reszt ASN, GLN i HIS
   + `optimize_heavy_atom` - optymalizuje geometrię atomów ciężkich
@@ -164,7 +165,8 @@ Ten skrypt automatyzuje proces uzupełniania i optymalizacji struktur białek za
 | Argument | | Description | Default value |
 | ------ | -- | ------------------- | -- |
 | --help | -h | Wyświetlenie pomocy | No |
-| --file | -f | Pliki kompleksów w formacie .pdb | pdb_files/ |
+| --file | -f | Pliki kompleksów w formacie .pdb | each pdb_file in pdb_files/ |
+| --directory | -d | Wybór katalogu z plikami .pdb | pdb_files/ |
 | --select_command | -s | Wybór komend do wykonania:<br> receptor, ligand, grid, autogrid, dock, autodock, complex | All |
 
 ## Plany rozwoju
