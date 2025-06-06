@@ -32,7 +32,7 @@ def process_docking(pdb_file, commands=None):
         file_name = os.path.splitext(os.path.basename(pdb_file))[0]
     
         # Ścieżki do plików - absolute path nie zawsze działa, bo tworzy w parametrach pełne ścieżki
-        receptor_pdb = os.path.join("pdb_files", f"{file_name}.pdb")
+        receptor_pdb = pdb_file
         ligand_pdb = os.path.join("ligands", f"{file_name}_ligand.pdb")
         receptor_pdbqt = os.path.join("pdbqt_files", f"{file_name}_receptor.pdbqt")
         ligand_pdbqt = os.path.join("pdbqt_files", f"{file_name}_ligand.pdbqt")
@@ -64,95 +64,105 @@ def process_docking(pdb_file, commands=None):
         if not commands or 'receptor' in commands:
             # Przygotowanie receptorów
             run_command([
-                            python,
-                            "prepare_receptor4.py",
-                            "-r", receptor_pdb,
-                            "-o", receptor_pdbqt,
-                            "-A", "checkhydrogens",
-                            "-e", "True",
-                            "-U", "nphs_lps_waters_nonstdres"
-                        ])
+                python,
+                "prepare_receptor4.py",
+                "-r", receptor_pdb,
+                "-o", receptor_pdbqt,
+                "-A", "checkhydrogens",           # Sprawdza wodory i je dodaje gdy brakuje
+                "-e", "True",                     # Usuwa jakieś pozostałości nieproteinowe
+                "-U", "nphs_lps_waters_nonstdres" # Usuwa pary elektronowe, lps, wodę i nadzwyczajne aminokwasy
+            ])
             modify_pdbqt_overwrite(receptor_pdbqt, quiet=True)
             print(f"Receptor {file_name} gotowy", flush=True)
 
         if not commands or 'ligand' in commands:
             # Przygotowanie ligandów
             run_command([
-                            python,
-                            "prepare_ligand4.py",
-                            "-l", ligand_pdb,
-                            "-o", ligand_pdbqt
-                        ])
+                python,
+                "prepare_ligand4.py",
+                "-l", ligand_pdb,
+                "-o", ligand_pdbqt
+            ])
             print(f"Ligand {file_name} gotowy", flush=True)
 
         if not commands or 'grid' in commands:
             # Przygotowanie parametrów do grida
             run_command([
-                            python,
-                            "prepare_gpf4.py",
-                            "-l", ligand_pdbqt,
-                            "-r", receptor_pdbqt,
-                            "-y",
-                            "-o", gpf
-                        ])
+                python,
+                "prepare_gpf4.py",
+                "-l", ligand_pdbqt,
+                "-r", receptor_pdbqt,
+                "-y", # Centruje na ligandzie
+                "-o", gpf
+            ])
             modify_gdpf_overwrite(f"grid_dock_files/{file_name}_grid.gpf", quiet=True)  # Poprawki lokalizacyjne w pliku
             print(f"Parametry do grida {file_name} gotowe", flush=True)
 
         if not commands or 'autogrid' in commands:
             # Przygotowanie map energetycznych
             run_command([
-                            autogrid,
-                            "-p", gpf,
-                            "-l", glg
-                        ])
+                autogrid,
+                "-p", gpf,
+                "-l", glg
+            ])
             modify_fld_overwrite(fld, quiet=True)
             print(f"Mapy energetyczne {file_name} gotowe", flush=True)
 
         if not commands or 'dock' in commands:
             # Przygotowanie parametrów do dokowania
             run_command([
-                            python,
-                            "prepare_dpf42.py",
-                            "-l", ligand_pdbqt,
-                            "-r", receptor_pdbqt,
-                            "-o", dpf
-                        ])
+                python,
+                "prepare_dpf42.py",
+                "-l", ligand_pdbqt,
+                "-r", receptor_pdbqt,
+                "-o", dpf
+            ])
             modify_gdpf_overwrite(f"grid_dock_files/{file_name}_dock.dpf", quiet=True) # Poprawki lokalizacyjne w pliku
             print(f"Parametry do dokowania {file_name} gotowe", flush=True)
 
-        if autodock_gpu_path and (not commands or 'autodock' in commands):
-                # Wykryto program autodock-gpu
-                print(f"Rozpoczynanie procesu Autodock-GPU dla {file_name} ...", flush=True)
+        ad4_done = False # Upewnia się że autodock nie zostanie ponownie uruchomiony
+        if not commands or 'autodock' in commands:
+            print(f"Rozpoczynanie procesu Autodock-GPU dla {file_name} ...", flush=True)
+            try:
                 run_command([
-                                autodock_gpu_path,
-                                "--lfile", ligand_pdbqt,
-                                "--ffile", fld,
-                                "--nrun", "10",
-                            ])
+                    autodock_gpu_path,
+                    "--lfile", ligand_pdbqt,
+                    "--ffile", fld,
+                    "--nrun", "50",
+                ])
                 move_dlg_xml_files("pdbqt_files", "grid_dock_files")
                 print(f"Dokowanie {file_name} zakonczono pomyslnie", flush=True)
+            except: # Może brzydko wygląda, ale przynajmniej w razie wypadku uruchomi autodock4
+                print(f"Błąd podczas wykonywania Autodock-GPU, uruchamiam autodock4 dla {file_name} ...", flush=True)
+                run_command([
+                    autodocklegacy,
+                    "-p", dpf,
+                    "-l", dlg
+                ])
+                print(f"Dokowanie {file_name} zakonczono pomyslnie", flush=True)
+                ad4_done = True # Przełącza na True i nie uruchomi kolejnego autodocka
 
         # DLA KOMPATYBILNOŚCI
-        if (not commands and autodock_gpu_path is None) or (commands is not None and 'autodocklegacy' in commands):
+        if (not commands or 'autodocklegacy' in commands) and ad4_done == False:
             # Brak programu autodock-gpu, wykonuje autodock4.exe/autodock4
             print(f"Rozpoczynanie procesu autodock4|.exe dla {file_name} ...", flush=True)
             run_command([
-                            autodocklegacy,
-                            "-p", dpf,
-                            "-l", dlg
-                        ])
+                autodocklegacy,
+                "-p", dpf,
+                "-l", dlg
+            ])
 
             print(f"Dokowanie {file_name} zakonczono pomyslnie", flush=True)
 
         if not commands or 'complex' in commands:
             run_command([
-                            python,
-                            "write_all_complexes.py",
-                            "-d", dlg,
-                            "-r", receptor_pdbqt,
-                            "-o", f"output_files/{file_name}_bestcomplex",
-                            "-b"
-                        ])
+                python,
+                "write_all_complexes.py",
+                "-d", dlg,
+                "-r", receptor_pdbqt,
+                "-o", f"output_files/{file_name}_bestcomplex",
+                "-b"
+            ])
             print(f"Utworzono najlepszy kompleks ligand-receptor {file_name}", flush=True)
     # =============================================================================
     #                      koniec - Właściwy program
@@ -168,8 +178,10 @@ if __name__ == '__main__':
     parser = argparse.ArgumentParser(description="Process docking files.")
     parser.add_argument("-f", "--file", help="Podaj ścieżki do plików PDB lub plik .txt z ID", type=str, nargs='*',
                         default=None)
+    parser.add_argument("-d", "--directory", help="Podaj folder w którym są pliki pdb", type=str, nargs='*',
+                        default=None)
     parser.add_argument("-s", "--select_command",
-                        help="Wybierz komendy do wykonania: receptor, ligand, grid, autogrid, dock, autodock, autodocklegacy, complex.",
+                        help="Wybierz argumenty do wykonania",
                         type=str, nargs="+", choices=['receptor', 'ligand', 'grid', 'autogrid',
                                                       'dock', 'autodock', 'autodocklegacy','complex'])
     args = parser.parse_args()
@@ -182,10 +194,12 @@ if __name__ == '__main__':
             pdb_directory = [os.path.join('pdb_files', f'{id}.pdb') for id in ids] # Utworzy ścieżki do plików PDB na podstawie ID
         else:
             pdb_directory = args.file # Jeśli nie podano pliku .txt, użyje bezpośrednio podanych ścieżek
+    elif args.directory:
+        pdb_directory = glob(args.directory[0] + "/*.pdb")
     else:
         pdb_directory = glob("pdb_files/*.pdb")
-    
-    # Ustawienie liczby równoległych procesów
+
+            # Ustawienie liczby równoległych procesów
     max_workers = 4
     
     # Tworzenie katalogów, jeśli nie istnieją

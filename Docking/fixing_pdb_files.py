@@ -19,6 +19,7 @@ class MyModel(AutoModel):
     def select_atoms(self):
         return Selection(self) # domyślnie wybiera wszystkie atomy
 
+
 class PDBModelOptimization:
     def __init__(self, project_root):
         # Ścieżki do folderów wejściowych, wyjściowych i roboczych
@@ -39,6 +40,21 @@ class PDBModelOptimization:
         self.env.libs.parameters.read(file='$(LIB)/par.lib')
         self.env.edat.dynamic_sphere = True
 
+
+    def cleanup_working_files(self, pdb_code):
+        """
+        Remove all files starting with given PDB code from working directory
+        """
+        for file in os.listdir(self.work_path):
+            if file.startswith(pdb_code):
+                file_path = os.path.join(self.work_path, file)
+                try:
+                    os.remove(file_path)
+                    print(f"Usunięto pliki robocze: {pdb_code}")
+                except Exception as e:
+                    print(f"Error przy usuwaniu {file}: {e}")
+
+
     def prepare_alignment(self, env, pdb_code, temple_code):
         """
         Tworzy alignment pomiędzy znaną strukturą (template) a sekwencją docelową (target).
@@ -51,6 +67,7 @@ class PDBModelOptimization:
         aln.write(file='alignment.ali')
         print("alignment.ali zostal zapisany")
 
+    """Nie dodaje mi wodorów kompletnie"""
     def add_hydrogens(self, pdb_path):
         """
         Dodaje wodory do pliku PDB, próbując najpierw przez subprocess (obabel CLI),
@@ -85,8 +102,6 @@ class PDBModelOptimization:
             print(f"Błąd OpenBabel Python API: {e}")
 
 
-
-
     def rotate_atoms(self, positions, center, axis, angle_rad):
         """Obraca pozycje wokół zadanej osi i punktu."""
 
@@ -108,6 +123,7 @@ class PDBModelOptimization:
             rotated.append(rot + center)
 
         return [unit.Quantity(r, unit.nanometer) for r in rotated]
+
 
     def flip_HIS(self, input_file):
         try:
@@ -156,6 +172,7 @@ class PDBModelOptimization:
             print(f"Błąd przy obracaniu HIS: {e}")
             return input_file
 
+
     def swap_atom_coords(self, atom1, atom2):
         """
         Zamienia wspolrzedne (x, y, z) dwoch podanych atomow.
@@ -164,6 +181,7 @@ class PDBModelOptimization:
         atom1.y, atom2.y = atom2.y, atom1.y
         atom1.z, atom2.z = atom2.z, atom1.z
 
+
     def flip_residues (self, residue, pdb_path=None):
         """
         Flipuje reszty GLN, ASN i HIS przez zamianę współrzędnych wybranych atomów.
@@ -171,7 +189,7 @@ class PDBModelOptimization:
         Zachodzą zmiany miedzy atomami:
             - ASN: OD1 <-> ND2
             - GLN: OE1 <-> NE2
-            - HIS:  ND1 <-> NE2 (uproszczony sposob)
+            - HIS: ND1 <-> NE2 (uproszczony sposob)
          """
         atom_dict = {a.name.strip(): a for a in residue.atoms}
         name = residue.name.strip().upper()
@@ -192,6 +210,7 @@ class PDBModelOptimization:
             rotated_path = self.flip_HIS(pdb_path)
             if rotated_path:
                 print(f"Obrócono pierścień histydyny: {residue.num}")
+
 
     def optimize_heavy_atom(self, model, code):
         """
@@ -299,6 +318,9 @@ class PDBModelOptimization:
                 # 4) Optymalizacje
                 self.optimize_heavy_atom(model, code)
                 self.optimize_full_structure(model, code)
+
+                # 5) Czyszczenie plików roboczych
+                self.cleanup_working_files(pdb_name)
             else:
                 print(f"Błąd: nie znaleziono modelu dla {pdb_name}!")
 
