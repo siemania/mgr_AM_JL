@@ -60,15 +60,15 @@ Projekt **mgr_AM_JL** to zestaw skryptów mających na celu automatyzację przyg
    3) Uruchom instalator `.exe` (tu będzie potrzebny klucz licencyjny)
    4) Utwórz plik `license.py` oraz dodaj go do folderu modlib. Przykład co powinien zawierać taki plik:
     ```bash  
-   license = 'MODELIRANJE'
+   license = 'XXXXXXXXXXXX'
     ```
    5) Skonfiguruj zmienne środowiskowe (jeżeli konieczne)
    
    Przykład:
    * Windows (cmd):
     ```bash
-        setx PYTHONPATH "C:\Program Files\Modeller10.6\modlib"
-        setx PATH "%PATH%;C:\Program Files\Modeller10.6\bin"
+        set PYTHONPATH "C:\Program Files\Modeller10.6\modlib"
+        set PATH "%PATH%;C:\Program Files\Modeller10.6\bin"
     ```
    * Linux:
     ```bash
