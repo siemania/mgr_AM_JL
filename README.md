@@ -138,7 +138,7 @@ Ten skrypt automatyzuje proces uzupełniania i optymalizacji struktur białek za
 4. Poprawa orientacji niektórych reszt aminokwasowych
 5. Optymalizacja geometrii
 
-**Kluczowe klasy i funckje**
+**Kluczowe klasy i funkcje**
 + `MyModel` - klasa rozszerzająca `AutoModel` z Modellera, pozwalająca na póżniejszy wybór atomów do modelowania
 + `PDBModelOptimization` - klasa zarządzająca całym procesem
   + `prepare_alignment` - tworzy dopasowanie sekwencji i struktury
