@@ -130,8 +130,21 @@ Projekt **mgr_AM_JL** to zestaw skryptów mających na celu automatyzację przyg
      python binding_energy_reader.py -c baza_ids.csv -b BioLiP.txt -o pdb_energy/ligands_energy.txt
      ```
 
-> **Uwaga:** Upewnij się, że wszystkie ścieżki do katalogów i plików są poprawnie ustawione oraz że wszystkie wymagane zależności zostały wcześniej zainstalowane.
+6. **(Opcjonalnie) Zbieranie wartości Energii i RMSD:**
+   - W folderze statistics znajdują się użyteczne narzędzia do wykorzystania z użyciem wiersza poleceń
+   ```bash
+    python extract_docking_info.py -f example.dlg
+    python extract_docking_info.py -f 1abc.dlg 2def.dlg 3ghi.dlg
+    python extract_docking_info.py -d docking_results/
+    python extract_docking_info.py -d docking_results/ -o wyniki_dokowania.txt
+   ```
+   | Argument | | Description | Default value |
+   | ------ | -- | ------------------- | -- |
+   | --help | -h | Wyświetlenie pomocy | No |
+   | --file | -f | Pliki wynikowe .dlg | Test files |
+   | --directory | -d | Wybór katalogu z plikami .dlg | Test folder |
 
+> **Uwaga:** Upewnij się, że wszystkie ścieżki do katalogów i plików są poprawnie ustawione oraz że wszystkie wymagane zależności zostały wcześniej zainstalowane.
 
 ## Struktura projektu
 
