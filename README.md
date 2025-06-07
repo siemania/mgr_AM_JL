@@ -28,6 +28,9 @@ Projekt **mgr_AM_JL** to zestaw skryptów mających na celu automatyzację przyg
   - `tqdm`
   - `openbabel-wheel 3.1.1.21`
   - `python-dotenv`
+  - `pdbfixer`
+  - `numpy`
+  - `openmm`
   - Standardowe biblioteki: `os`, `glob`, `time`, `datetime`, `subprocess`, `sys`
 
 ## Instalacja
@@ -75,7 +78,7 @@ Projekt **mgr_AM_JL** to zestaw skryptów mających na celu automatyzację przyg
         export PYTHONPATH="/opt/modeller10.6/modlib"
         export PATH="$PATH:/opt/modeller10.6/bin"
     ```
-6. **Dla posiadaczy Linuxa:**
+6. **(Opcjonalnie) dla posiadaczy Linuxa:**
    1) **Zainstaluj MGLTools:**
    2) Przejdź do katalogu projektu, np. `docking`:
       ```bash
