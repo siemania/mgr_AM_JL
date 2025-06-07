@@ -2,7 +2,7 @@
 
 Projekt **mgr_AM_JL** to zestaw skryptów mających na celu automatyzację przygotowania receptorów i ligandów do dokowania. Początkowo projekt automatycznie wykonuje serię poleceń związanych z przygotowaniem receptorów i ligandów przy użyciu MGLTools oraz AutoDock/AutoDock GPU, a w dalszej perspektywie planowane jest rozwinięcie narzędzi do:
 
-- Optymalizacji konformacji wybranych reszt (np. HIS, GLU, ASP)
+- Optymalizacji konformacji wybranych reszt (np. HIS, GLN, ASN)
 - Dokowania z wodą i bez wody
 - Optymalizacji układu wodorów (obrót grup metylowych itp.)
 - Dodatkowych algorytmów optymalizacyjnych wykorzystujących pola siłowe z programów jak np. OpenMM, OpenBabel, GROMACS
@@ -11,10 +11,10 @@ Projekt **mgr_AM_JL** to zestaw skryptów mających na celu automatyzację przyg
 
 - [Wymagania](#wymagania)
 - [Instalacja](#instalacja)
-- [Konfiguracja](#konfiguracja)
+- [Uruchomienie programu](#uruchomienie-programu)
 - [Struktura projektu](#struktura-projektu)
 - [Sposób działania](#sposób-działania)
-- [Przykładowe użycie](#przykładowe-użycie)
+- [Przykładowe użycie](#argumenty-do-wiersza-poleceń)
 - [Plany rozwoju](#plany-rozwoju)
 - [Współpraca i GitHub](#współpraca-i-github)
 
@@ -28,6 +28,9 @@ Projekt **mgr_AM_JL** to zestaw skryptów mających na celu automatyzację przyg
   - `tqdm`
   - `openbabel-wheel 3.1.1.21`
   - `python-dotenv`
+  - `pdbfixer`
+  - `numpy`
+  - `openmm`
   - Standardowe biblioteki: `os`, `glob`, `time`, `datetime`, `subprocess`, `sys`
 
 ## Instalacja
@@ -75,22 +78,61 @@ Projekt **mgr_AM_JL** to zestaw skryptów mających na celu automatyzację przyg
         export PYTHONPATH="/opt/modeller10.6/modlib"
         export PATH="$PATH:/opt/modeller10.6/bin"
     ```
-   
+6. **Dla posiadaczy Linuxa:**
+   1) **Zainstaluj MGLTools:**
+   2) Przejdź do katalogu projektu, np. `docking`:
+      ```bash
+      cd ~/ścieżka/do/projektu/docking
+      ```
+   3) Pobierz instalator ze strony MGLTools:  
+      [MGLTools Download (Linux)](https://ccsb.scripps.edu/mgltools/downloads/)  
+      *(Wybierz odpowiednią wersję np. `mgltools_x86_64Linux2_1.5.7.tar.gz (Linux 64 tarball installer 108Mb)` lub inną)*
+   4) Rozpakuj archiwum:
+      ```bash
+      tar -xvzf mgltools_*.tar.gz
+      ```
+   5) Przejdź do folderu rozpakowanego instalatora i uruchom instalację:
+      ```bash
+      cd mgltools_*/   # np. cd mgltools_x86_64Linux2_1.5.7/
+      ./install.sh
+      ```
+   6) Po zakończeniu instalacji, zmień nazwę folderu:
+      ```bash
+      cd ..
+      mv mgltools_*/ MGLTools_Linux/
+      ```
+      
+## Uruchomienie programu
+
+### Pobieranie i przygotowanie plików `.pdb`
+
+1. **Przygotowanie listy PDB:**
+   - W pliku `.csv` (np. `baza_ids.csv`) w kolumnie o nazwie `ID` umieść kody PDB interesujących Cię kompleksów, każdy w osobnej linii.
+
+2. **Pobieranie struktur:**
+   - W katalogu głównym projektu uruchom skrypt `request_pdb_files.py`, który automatycznie pobierze wskazane struktury PDB.
+   - Po zakończeniu działania skryptu upewnij się, że w folderze `Docking/pdb_files/` znajdują się pobrane pliki `.pdb`.
+
+3. **Naprawa i standaryzacja plików:**
+   - Aby przygotować pliki do dalszej analizy (np. usunąć ligandy, uzupełnić atomy wodoru, wyczyścić błędy strukturalne), uruchom skrypt `fixing_pdb_files.py`.
+   - Skrypt utworzy nowy folder `Docking/fixed_pdb/` zawierający zminimalizowane i gotowe do dokowania struktury.
+
+4. **Właściwe dokowanie:**
+   - Uruchom skrypt `dock.py` z poziomu terminala.
+   - Skrypt przyjmuje jako wejście:
+     - pojedynczy plik `.pdb`,
+     - folder z wieloma plikami `.pdb`, lub
+     - plik `.txt` zawierający czteroliterowe kody PDB (każdy w osobnej linii), np. `list_of_ids.txt`.
+
+5. **(Opcjonalnie) Analiza danych BioLiP:**
+   - Po pobraniu pliku `BioLiP.txt` (np. z oficjalnej strony bazy), możesz skorzystać ze skryptu `binding_energy_reader.py` do automatycznej analizy energii wiązania:
+     ```bash
+     python binding_energy_reader.py -c baza_ids.csv -b BioLiP.txt -o pdb_energy/ligands_energy.txt
+     ```
+
+> **Uwaga:** Upewnij się, że wszystkie ścieżki do katalogów i plików są poprawnie ustawione oraz że wszystkie wymagane zależności zostały wcześniej zainstalowane.
 
 
-<!--   ALBO ZMODYFIKOWAĆ ALBO ZMIENIĆ, BO NIE WIADOMO CZY BĘDZIE POTRZEBNE
-## Konfiguracja
-
-- **Plik `.env`:**  
-  Utwórz lokalny plik `.env` (który nie jest commitowany) na podstawie szablonu `.env.example`. Plik ten powinien zawierać zmienne środowiskowe specyficzne dla Twojego systemu, np. ścieżki do interpretera Pythona, AutoGrid, AutoDock czy AutoDock-GPU.  
-  Przykład:
-  ```dotenv
-  PYTHON_PATH=MGLTools/python.exe
-  AUTOGRID_PATH=autogrid4.exe
-  AUTODOCK_PATH=autodock4.exe
-  AUTODOCK_GPU_PATH=./bin/autodock_gpu_128wi
-  ```
--->
 ## Struktura projektu
 
 ```
@@ -122,8 +164,8 @@ Projekt automatycznie wykonuje następujące kroki:
   Tworzony jest plik GPF, który jest zapisywany, a następnie wykorzystywany przez AutoGrid/AutoDock.
 - **Dokowanie:**  
   Uruchamiane są odpowiednie polecenia AutoDock lub AutoDock-GPU.
-- **Minimalizacja receptora:**  
-  Do poprawienia konformacji receptora (m.in. dodania wodoru i minimalizacji energii) wykorzystywane są wcześniej wspominane moduły. W ramach dalszego rozwoju chcemy dodać automatyczną optymalizację konformacyjną wybranych reszt (HIS, GLU, ASP) oraz innych aspektów.
+- **Minimalizacja receptora:**
+  Do poprawienia konformacji receptora (m.in. dodania wodoru i minimalizacji energii) wykorzystywane są wcześniej wspominane moduły. W ramach dalszego rozwoju chcemy dodać automatyczną optymalizację konformacyjną wybranych reszt (His, Gln, Asn) oraz innych aspektów.
 
 Wszystkie etapy są wywoływane automatycznie, a postęp monitorowany jest przy użyciu `tqdm`. Po zakończeniu, wyniki (przygotowane pliki receptorów, ligandów oraz kompleksów) są zapisywane w odpowiednich folderach, które nie są wersjonowane.
 
@@ -142,6 +184,7 @@ Ten skrypt automatyzuje proces uzupełniania i optymalizacji struktur białek za
 + `MyModel` - klasa rozszerzająca `AutoModel` z Modellera, pozwalająca na póżniejszy wybór atomów do modelowania
 + `PDBModelOptimization` - klasa zarządzająca całym procesem
   + `prepare_alignment` - tworzy dopasowanie sekwencji i struktury
+  + `cleanup_working_files` - usuwa na bieżąco pliki folderu roboczego oprócz alignment.
   + `add_hygrodens` - dodaje atomy wodoru za pomocą OpenBabel
   + `flip_residues` - koryguje orientacje reszt ASN, GLN i HIS
   + `optimize_heavy_atom` - optymalizuje geometrię atomów ciężkich
@@ -150,7 +193,7 @@ Ten skrypt automatyzuje proces uzupełniania i optymalizacji struktur białek za
 
 
 
-## Przykładowe użycie
+## Argumenty do wiersza poleceń
 
 1. **Skonfiguruj środowisko** (utwórz `.env`, zainstaluj zależności).
 2. **Uruchom główny skrypt:**
@@ -164,7 +207,8 @@ Ten skrypt automatyzuje proces uzupełniania i optymalizacji struktur białek za
 | Argument | | Description | Default value |
 | ------ | -- | ------------------- | -- |
 | --help | -h | Wyświetlenie pomocy | No |
-| --file | -f | Pliki kompleksów w formacie .pdb | pdb_files/ |
+| --file | -f | Pliki kompleksów w formacie .pdb | each pdb_file in pdb_files/ |
+| --directory | -d | Wybór katalogu z plikami .pdb | pdb_files/ |
 | --select_command | -s | Wybór komend do wykonania:<br> receptor, ligand, grid, autogrid, dock, autodock, complex | All |
 
 ## Plany rozwoju
