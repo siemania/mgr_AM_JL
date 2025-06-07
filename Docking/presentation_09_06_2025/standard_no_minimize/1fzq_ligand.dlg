@@ -1,0 +1,975 @@
+AutoDock-GPU version: v1.6-7-ga46ab564d2ac5f1a1523f65239b43505a1c29364
+
+**********************************************************
+**    AutoDock-GPU AUTODOCKTOOLS-COMPATIBLE DLG FILE    **
+**********************************************************
+
+
+    DOCKING PARAMETERS
+    ________________________
+
+
+Ligand file:                               pdbqt_files/1fzq_ligand.pdbqt
+Grid fld file:                             map_grid_files/1fzq_receptor.maps.fld
+
+Random seed:                               1749308170, 650
+Number of runs:                            10
+Number of energy evaluations:              2068966
+Number of generations:                     42000
+Size of population:                        150
+Rate of crossover:                         80.000000%
+Tournament selection probability limit:    60.000000%
+Rate of mutation:                          2.000000%
+Maximal allowed delta movement:            +/- 6.000000A
+Maximal allowed delta angle:               +/- 90.000000
+
+Rate of local search:                      100.000000%
+Maximal number of local search iterations: 300
+Rho lower bound:                           0.010000
+Spread of local search delta movement:     2.000000A
+Spread of local search delta angle:        74.999999
+Limit of consecutive successes/failures:   4
+
+Handle symmetry during clustering:         YES
+RMSD tolerance:                            2.000000A
+
+Program call in command line was:          /home/tajgero/AutoDock-GPU/bin/autodock_gpu_128wi --lfile pdbqt_files/1fzq_ligand.pdbqt --ffile map_grid_files/1fzq_receptor.maps.fld --nrun 10 
+
+
+    GRID PARAMETERS
+    ________________________
+
+
+Receptor name:                             pdbqt_files/1fzq_receptor
+Number of grid points (x, y, z):           41, 41, 41
+Grid center (x, y, z):                     15.589000, 5.593000, 16.125000A
+Grid size (x, y, z):                       15.000000, 15.000000, 15.000000A
+Grid spacing:                              0.375000A
+
+
+    LIGAND PARAMETERS
+    ________________________
+
+
+Ligand name:                               pdbqt_files/1fzq_ligand
+Number of atoms:                           28
+Number of rotatable bonds:                 6
+Number of atom types:                      6
+
+
+    DUMMY DATA (only for ADT-compatibility)
+    ________________________
+
+
+DPF> outlev 1
+DPF> ga_run 10
+DPF> fld map_grid_files/1fzq_receptor.maps.fld
+DPF> move pdbqt_files/1fzq_ligand.pdbqt
+
+
+    COUNTER STATES
+    ________________________
+
+
+Number of energy evaluations performed:    1358575
+Number of generations used:                135
+
+
+    INPUT LIGAND PDBQT FILE:
+    ________________________
+
+
+INPUT-LIGAND-PDBQT: REMARK  6 active torsions:
+INPUT-LIGAND-PDBQT: REMARK  status: ('A' for Active; 'I' for Inactive)
+INPUT-LIGAND-PDBQT: REMARK    1  A    between atoms: PB_1439  and  O3A_1443 
+INPUT-LIGAND-PDBQT: REMARK    2  A    between atoms: O3A_1443  and  PA_1444 
+INPUT-LIGAND-PDBQT: REMARK    3  A    between atoms: PA_1444  and  O5'_1447 
+INPUT-LIGAND-PDBQT: REMARK    4  A    between atoms: O5'_1447  and  C5'_1448 
+INPUT-LIGAND-PDBQT: REMARK    5  A    between atoms: C5'_1448  and  C4'_1449 
+INPUT-LIGAND-PDBQT: REMARK    6  A    between atoms: C1'_1455  and  N9_1456 
+INPUT-LIGAND-PDBQT: ROOT
+INPUT-LIGAND-PDBQT: HETATM    1  C4' GDP A 301      17.427   4.542  17.543  1.00 14.02     0.181 C 
+INPUT-LIGAND-PDBQT: HETATM    2  O4' GDP A 301      16.051   4.305  17.333  1.00 15.63    -0.331 OA
+INPUT-LIGAND-PDBQT: HETATM    3  C3' GDP A 301      18.177   4.096  16.260  1.00 17.15     0.216 C 
+INPUT-LIGAND-PDBQT: HETATM    4  O3' GDP A 301      18.611   2.751  16.588  1.00 18.27    -0.218 OA
+INPUT-LIGAND-PDBQT: HETATM    5  C2' GDP A 301      17.073   4.122  15.211  1.00 16.22     0.234 C 
+INPUT-LIGAND-PDBQT: HETATM    6  O2' GDP A 301      17.233   3.281  14.055  1.00 17.82    -0.216 OA
+INPUT-LIGAND-PDBQT: HETATM    7  C1' GDP A 301      15.838   3.748  16.031  1.00 14.56     0.241 C 
+INPUT-LIGAND-PDBQT: ENDROOT
+INPUT-LIGAND-PDBQT: BRANCH   7   8
+INPUT-LIGAND-PDBQT: HETATM    8  N9  GDP A 301      14.616   4.372  15.496  1.00 13.93    -0.269 N 
+INPUT-LIGAND-PDBQT: HETATM    9  C4  GDP A 301      13.421   3.674  15.177  1.00 13.47     0.188 A 
+INPUT-LIGAND-PDBQT: HETATM   10  N3  GDP A 301      13.088   2.219  15.285  1.00 13.56    -0.038 NA
+INPUT-LIGAND-PDBQT: HETATM   11  C5  GDP A 301      12.498   4.542  14.720  1.00 11.79     0.176 A 
+INPUT-LIGAND-PDBQT: HETATM   12  C2  GDP A 301      11.842   1.675  14.927  1.00 13.84     0.773 A 
+INPUT-LIGAND-PDBQT: HETATM   13  N2  GDP A 301      11.566   0.373  15.029  1.00 15.11     0.062 N 
+INPUT-LIGAND-PDBQT: HETATM   14  N1  GDP A 301      10.892   2.602  14.452  1.00 12.49    -0.016 NA
+INPUT-LIGAND-PDBQT: HETATM   15  C6  GDP A 301      11.154   3.944  14.336  1.00 12.56     0.316 A 
+INPUT-LIGAND-PDBQT: HETATM   16  O6  GDP A 301      10.244   4.655  13.911  1.00 12.47    -0.263 OA
+INPUT-LIGAND-PDBQT: HETATM   17  N7  GDP A 301      13.085   5.860  14.723  1.00 11.36    -0.217 NA
+INPUT-LIGAND-PDBQT: HETATM   18  C8  GDP A 301      14.332   5.701  15.190  1.00 13.79     0.182 A 
+INPUT-LIGAND-PDBQT: ENDBRANCH   7   8
+INPUT-LIGAND-PDBQT: BRANCH   1  19
+INPUT-LIGAND-PDBQT: HETATM   19  C5' GDP A 301      17.656   6.058  17.900  1.00 15.36     0.187 C 
+INPUT-LIGAND-PDBQT: BRANCH  19  20
+INPUT-LIGAND-PDBQT: HETATM   20  O5' GDP A 301      17.291   6.888  16.803  1.00 13.69    -0.268 OA
+INPUT-LIGAND-PDBQT: BRANCH  20  21
+INPUT-LIGAND-PDBQT: HETATM   21  PA  GDP A 301      17.925   8.234  16.589  1.00 12.97     0.419 P 
+INPUT-LIGAND-PDBQT: HETATM   22  O1A GDP A 301      17.368   8.893  15.336  1.00 12.51    -0.624 OA
+INPUT-LIGAND-PDBQT: HETATM   23  O2A GDP A 301      19.441   8.178  16.370  1.00 14.68    -0.624 OA
+INPUT-LIGAND-PDBQT: BRANCH  21  24
+INPUT-LIGAND-PDBQT: HETATM   24  O3A GDP A 301      17.619   8.999  17.850  1.00 11.72    -0.173 OA
+INPUT-LIGAND-PDBQT: BRANCH  24  25
+INPUT-LIGAND-PDBQT: HETATM   25  PB  GDP A 301      17.921  10.474  18.376  1.00 12.15     0.431 P 
+INPUT-LIGAND-PDBQT: HETATM   26  O3B GDP A 301      16.665  10.984  19.075  1.00 10.36    -0.616 OA
+INPUT-LIGAND-PDBQT: HETATM   27  O2B GDP A 301      18.818  10.135  19.581  1.00 13.63    -0.616 OA
+INPUT-LIGAND-PDBQT: HETATM   28  O1B GDP A 301      18.642  11.295  17.351  1.00 12.63    -0.616 OA
+INPUT-LIGAND-PDBQT: ENDBRANCH  24  25
+INPUT-LIGAND-PDBQT: ENDBRANCH  21  24
+INPUT-LIGAND-PDBQT: ENDBRANCH  20  21
+INPUT-LIGAND-PDBQT: ENDBRANCH  19  20
+INPUT-LIGAND-PDBQT: ENDBRANCH   1  19
+INPUT-LIGAND-PDBQT: TORSDOF 6
+
+
+    FINAL DOCKED STATE:
+    ________________________
+
+
+Run:   1 / 10
+Time taken for this run:   3.266s
+
+DOCKED: MODEL        1
+DOCKED: USER    Run = 1
+DOCKED: USER
+DOCKED: USER    Estimated Free Energy of Binding    = -10.38 kcal/mol  [=(1)+(2)+(3)-(4)]
+DOCKED: USER
+DOCKED: USER    (1) Final Intermolecular Energy     = -12.17 kcal/mol
+DOCKED: USER        vdW + Hbond + desolv Energy     =  -7.40 kcal/mol
+DOCKED: USER        Electrostatic Energy            =  -4.77 kcal/mol
+DOCKED: USER        Moving Ligand-Fixed Receptor    = -12.17 kcal/mol
+DOCKED: USER        Moving Ligand-Moving Receptor   =  +0.00 kcal/mol
+DOCKED: USER    (2) Final Total Internal Energy     =  +0.53 kcal/mol
+DOCKED: USER    (3) Torsional Free Energy           =  +1.79 kcal/mol
+DOCKED: USER    (4) Unbound System's Energy         =  +0.53 kcal/mol
+DOCKED: USER
+DOCKED: USER
+DOCKED: REMARK  6 active torsions:
+DOCKED: REMARK  status: ('A' for Active; 'I' for Inactive)
+DOCKED: REMARK    1  A    between atoms: PB_1439  and  O3A_1443 
+DOCKED: REMARK    2  A    between atoms: O3A_1443  and  PA_1444 
+DOCKED: REMARK    3  A    between atoms: PA_1444  and  O5'_1447 
+DOCKED: REMARK    4  A    between atoms: O5'_1447  and  C5'_1448 
+DOCKED: REMARK    5  A    between atoms: C5'_1448  and  C4'_1449 
+DOCKED: REMARK    6  A    between atoms: C1'_1455  and  N9_1456 
+DOCKED: USER                              x       y       z     vdW  Elec       q    Type
+DOCKED: USER                           _______ _______ _______ _____ _____    ______ ____
+DOCKED: ROOT
+DOCKED: HETATM    1  C4' GDP A 301      17.446   4.925  17.570 -0.07 +0.12    +0.181 C  
+DOCKED: HETATM    2  O4' GDP A 301      16.078   4.643  17.361 -0.10 -0.29    -0.331 OA 
+DOCKED: HETATM    3  C3' GDP A 301      18.208   4.513  16.283 +0.03 +0.09    +0.216 C  
+DOCKED: HETATM    4  O3' GDP A 301      18.688   3.181  16.601 +0.01 -0.07    -0.218 OA 
+DOCKED: HETATM    5  C2' GDP A 301      17.102   4.509  15.236 +0.00 +0.12    +0.234 C  
+DOCKED: HETATM    6  O2' GDP A 301      17.288   3.681  14.074 -0.06 -0.08    -0.216 OA 
+DOCKED: HETATM    7  C1' GDP A 301      15.882   4.088  16.056 -0.02 +0.14    +0.241 C  
+DOCKED: ENDROOT
+DOCKED: BRANCH   7   8
+DOCKED: HETATM    8  N9  GDP A 301      14.638   4.674  15.527 -0.07 -0.18    -0.269 N  
+DOCKED: HETATM    9  C4  GDP A 301      13.494   3.930  15.133 -0.09 +0.08    +0.188 A  
+DOCKED: HETATM   10  N3  GDP A 301      13.244   2.455  15.143 -0.23 -0.01    -0.038 NA 
+DOCKED: HETATM   11  C5  GDP A 301      12.533   4.771  14.706 -0.23 +0.09    +0.176 A  
+DOCKED: HETATM   12  C2  GDP A 301      12.041   1.864  14.718 +0.21 -0.25    +0.773 A  
+DOCKED: HETATM   13  N2  GDP A 301      11.839   0.545  14.733 -0.30 -0.04    +0.062 N  
+DOCKED: HETATM   14  N1  GDP A 301      11.050   2.763  14.275 -0.45 +0.01    -0.016 NA 
+DOCKED: HETATM   15  C6  GDP A 301      11.235   4.123  14.249 -0.20 +0.05    +0.316 A  
+DOCKED: HETATM   16  O6  GDP A 301      10.296   4.806  13.844 -1.07 -0.11    -0.263 OA 
+DOCKED: HETATM   17  N7  GDP A 301      13.041   6.118  14.805 -0.60 -0.20    -0.217 NA 
+DOCKED: HETATM   18  C8  GDP A 301      14.284   6.001  15.296 -0.12 +0.15    +0.182 A  
+DOCKED: ENDBRANCH   7   8
+DOCKED: BRANCH   1  19
+DOCKED: HETATM   19  C5' GDP A 301      17.624   6.445  17.937 -0.11 +0.14    +0.187 C  
+DOCKED: BRANCH  19  20
+DOCKED: HETATM   20  O5' GDP A 301      17.241   7.270  16.842 -0.16 -0.22    -0.268 OA 
+DOCKED: BRANCH  20  21
+DOCKED: HETATM   21  PA  GDP A 301      17.776   8.665  16.681 -0.10 +0.45    +0.419 P  
+DOCKED: HETATM   22  O1A GDP A 301      17.130   9.350  15.486 -0.52 -1.02    -0.624 OA 
+DOCKED: HETATM   23  O2A GDP A 301      19.283   8.724  16.409 +0.07 -0.55    -0.624 OA 
+DOCKED: BRANCH  21  24
+DOCKED: HETATM   24  O3A GDP A 301      17.467   9.340  17.992 -0.65 -0.24    -0.173 OA 
+DOCKED: BRANCH  24  25
+DOCKED: HETATM   25  PB  GDP A 301      17.872  10.725  18.671 -0.21 +0.67    +0.431 P  
+DOCKED: HETATM   26  O3B GDP A 301      18.175  11.718  17.554 -0.66 -1.14    -0.616 OA 
+DOCKED: HETATM   27  O2B GDP A 301      16.479  11.202  19.125 -1.25 -1.76    -0.616 OA 
+DOCKED: HETATM   28  O1B GDP A 301      18.804  10.529  19.827 -0.47 -0.73    -0.616 OA 
+DOCKED: ENDBRANCH  24  25
+DOCKED: ENDBRANCH  21  24
+DOCKED: ENDBRANCH  20  21
+DOCKED: ENDBRANCH  19  20
+DOCKED: ENDBRANCH   1  19
+DOCKED: TORSDOF 6
+DOCKED: TER
+DOCKED: ENDMDL
+________________________________________________________________________________
+
+
+    FINAL DOCKED STATE:
+    ________________________
+
+
+Run:   2 / 10
+Time taken for this run:   3.266s
+
+DOCKED: MODEL        2
+DOCKED: USER    Run = 2
+DOCKED: USER
+DOCKED: USER    Estimated Free Energy of Binding    =  -6.20 kcal/mol  [=(1)+(2)+(3)-(4)]
+DOCKED: USER
+DOCKED: USER    (1) Final Intermolecular Energy     =  -7.99 kcal/mol
+DOCKED: USER        vdW + Hbond + desolv Energy     =  -4.88 kcal/mol
+DOCKED: USER        Electrostatic Energy            =  -3.11 kcal/mol
+DOCKED: USER        Moving Ligand-Fixed Receptor    =  -7.99 kcal/mol
+DOCKED: USER        Moving Ligand-Moving Receptor   =  +0.00 kcal/mol
+DOCKED: USER    (2) Final Total Internal Energy     =  -1.22 kcal/mol
+DOCKED: USER    (3) Torsional Free Energy           =  +1.79 kcal/mol
+DOCKED: USER    (4) Unbound System's Energy         =  -1.22 kcal/mol
+DOCKED: USER
+DOCKED: USER
+DOCKED: REMARK  6 active torsions:
+DOCKED: REMARK  status: ('A' for Active; 'I' for Inactive)
+DOCKED: REMARK    1  A    between atoms: PB_1439  and  O3A_1443 
+DOCKED: REMARK    2  A    between atoms: O3A_1443  and  PA_1444 
+DOCKED: REMARK    3  A    between atoms: PA_1444  and  O5'_1447 
+DOCKED: REMARK    4  A    between atoms: O5'_1447  and  C5'_1448 
+DOCKED: REMARK    5  A    between atoms: C5'_1448  and  C4'_1449 
+DOCKED: REMARK    6  A    between atoms: C1'_1455  and  N9_1456 
+DOCKED: USER                              x       y       z     vdW  Elec       q    Type
+DOCKED: USER                           _______ _______ _______ _____ _____    ______ ____
+DOCKED: ROOT
+DOCKED: HETATM    1  C4' GDP A 301      20.875   8.188  14.865 -0.05 +0.14    +0.181 C  
+DOCKED: HETATM    2  O4' GDP A 301      21.313   6.961  15.409 +0.02 -0.17    -0.331 OA 
+DOCKED: HETATM    3  C3' GDP A 301      19.870   7.862  13.729 -0.12 +0.15    +0.216 C  
+DOCKED: HETATM    4  O3' GDP A 301      20.698   7.913  12.539 -0.29 -0.23    -0.218 OA 
+DOCKED: HETATM    5  C2' GDP A 301      19.428   6.448  14.082 -0.01 +0.09    +0.234 C  
+DOCKED: HETATM    6  O2' GDP A 301      18.935   5.619  13.014 -0.07 -0.06    -0.216 OA 
+DOCKED: HETATM    7  C1' GDP A 301      20.684   5.867  14.732 +0.03 +0.10    +0.241 C  
+DOCKED: ENDROOT
+DOCKED: BRANCH   7   8
+DOCKED: HETATM    8  N9  GDP A 301      20.355   4.864  15.758 +0.04 -0.09    -0.269 N  
+DOCKED: HETATM    9  C4  GDP A 301      19.090   4.733  16.390 +0.05 +0.08    +0.188 A  
+DOCKED: HETATM   10  N3  GDP A 301      17.828   5.516  16.208 -0.06 -0.02    -0.038 NA 
+DOCKED: HETATM   11  C5  GDP A 301      19.127   3.714  17.270 +0.03 +0.07    +0.176 A  
+DOCKED: HETATM   12  C2  GDP A 301      16.641   5.259  16.916 +0.21 +0.54    +0.773 A  
+DOCKED: HETATM   13  N2  GDP A 301      15.526   5.971  16.739 -0.26 +0.05    +0.062 N  
+DOCKED: HETATM   14  N1  GDP A 301      16.703   4.188  17.830 -0.15 -0.01    -0.016 NA 
+DOCKED: HETATM   15  C6  GDP A 301      17.838   3.443  18.030 +0.05 +0.19    +0.316 A  
+DOCKED: HETATM   16  O6  GDP A 301      17.769   2.532  18.853 -0.48 -0.17    -0.263 OA 
+DOCKED: HETATM   17  N7  GDP A 301      20.452   3.144  17.238 +0.02 -0.06    -0.217 NA 
+DOCKED: HETATM   18  C8  GDP A 301      21.133   3.859  16.330 +0.03 +0.05    +0.182 A  
+DOCKED: ENDBRANCH   7   8
+DOCKED: BRANCH   1  19
+DOCKED: HETATM   19  C5' GDP A 301      20.256   9.082  16.004 +0.09 +0.17    +0.187 C  
+DOCKED: BRANCH  19  20
+DOCKED: HETATM   20  O5' GDP A 301      19.293   8.343  16.747 -0.06 -0.21    -0.268 OA 
+DOCKED: BRANCH  20  21
+DOCKED: HETATM   21  PA  GDP A 301      17.851   8.763  16.804 -0.12 +0.46    +0.419 P  
+DOCKED: HETATM   22  O1A GDP A 301      17.081   7.896  17.789 +0.01 -0.65    -0.624 OA 
+DOCKED: HETATM   23  O2A GDP A 301      17.108   8.611  15.472 -0.52 -0.70    -0.624 OA 
+DOCKED: BRANCH  21  24
+DOCKED: HETATM   24  O3A GDP A 301      17.897  10.216  17.200 -0.99 -0.29    -0.173 OA 
+DOCKED: BRANCH  24  25
+DOCKED: HETATM   25  PB  GDP A 301      17.884  11.008  18.584 -0.18 +0.69    +0.431 P  
+DOCKED: HETATM   26  O3B GDP A 301      19.024  10.467  19.440 -0.48 -0.62    -0.616 OA 
+DOCKED: HETATM   27  O2B GDP A 301      18.473  12.351  18.113 -0.34 -0.86    -0.616 OA 
+DOCKED: HETATM   28  O1B GDP A 301      16.495  11.163  19.125 -1.26 -1.73    -0.616 OA 
+DOCKED: ENDBRANCH  24  25
+DOCKED: ENDBRANCH  21  24
+DOCKED: ENDBRANCH  20  21
+DOCKED: ENDBRANCH  19  20
+DOCKED: ENDBRANCH   1  19
+DOCKED: TORSDOF 6
+DOCKED: TER
+DOCKED: ENDMDL
+________________________________________________________________________________
+
+
+    FINAL DOCKED STATE:
+    ________________________
+
+
+Run:   3 / 10
+Time taken for this run:   3.266s
+
+DOCKED: MODEL        3
+DOCKED: USER    Run = 3
+DOCKED: USER
+DOCKED: USER    Estimated Free Energy of Binding    = -10.20 kcal/mol  [=(1)+(2)+(3)-(4)]
+DOCKED: USER
+DOCKED: USER    (1) Final Intermolecular Energy     = -11.99 kcal/mol
+DOCKED: USER        vdW + Hbond + desolv Energy     =  -7.42 kcal/mol
+DOCKED: USER        Electrostatic Energy            =  -4.57 kcal/mol
+DOCKED: USER        Moving Ligand-Fixed Receptor    = -11.99 kcal/mol
+DOCKED: USER        Moving Ligand-Moving Receptor   =  +0.00 kcal/mol
+DOCKED: USER    (2) Final Total Internal Energy     =  +0.50 kcal/mol
+DOCKED: USER    (3) Torsional Free Energy           =  +1.79 kcal/mol
+DOCKED: USER    (4) Unbound System's Energy         =  +0.50 kcal/mol
+DOCKED: USER
+DOCKED: USER
+DOCKED: REMARK  6 active torsions:
+DOCKED: REMARK  status: ('A' for Active; 'I' for Inactive)
+DOCKED: REMARK    1  A    between atoms: PB_1439  and  O3A_1443 
+DOCKED: REMARK    2  A    between atoms: O3A_1443  and  PA_1444 
+DOCKED: REMARK    3  A    between atoms: PA_1444  and  O5'_1447 
+DOCKED: REMARK    4  A    between atoms: O5'_1447  and  C5'_1448 
+DOCKED: REMARK    5  A    between atoms: C5'_1448  and  C4'_1449 
+DOCKED: REMARK    6  A    between atoms: C1'_1455  and  N9_1456 
+DOCKED: USER                              x       y       z     vdW  Elec       q    Type
+DOCKED: USER                           _______ _______ _______ _____ _____    ______ ____
+DOCKED: ROOT
+DOCKED: HETATM    1  C4' GDP A 301      17.027   5.363  17.768 -0.11 +0.13    +0.181 C  
+DOCKED: HETATM    2  O4' GDP A 301      15.672   5.069  17.500 -0.13 -0.34    -0.331 OA 
+DOCKED: HETATM    3  C3' GDP A 301      17.870   4.769  16.610 +0.01 +0.11    +0.216 C  
+DOCKED: HETATM    4  O3' GDP A 301      18.299   3.490  17.143 -0.02 -0.09    -0.218 OA 
+DOCKED: HETATM    5  C2' GDP A 301      16.841   4.630  15.495 -0.00 +0.13    +0.234 C  
+DOCKED: HETATM    6  O2' GDP A 301      17.093   3.647  14.475 -0.05 -0.08    -0.216 OA 
+DOCKED: HETATM    7  C1' GDP A 301      15.558   4.339  16.273 -0.04 +0.17    +0.241 C  
+DOCKED: ENDROOT
+DOCKED: BRANCH   7   8
+DOCKED: HETATM    8  N9  GDP A 301      14.367   4.858  15.579 -0.09 -0.18    -0.269 N  
+DOCKED: HETATM    9  C4  GDP A 301      13.214   4.092  15.262 -0.09 +0.09    +0.188 A  
+DOCKED: HETATM   10  N3  GDP A 301      12.904   2.651  15.522 -0.25 -0.01    -0.038 NA 
+DOCKED: HETATM   11  C5  GDP A 301      12.311   4.871  14.636 -0.25 +0.09    +0.176 A  
+DOCKED: HETATM   12  C2  GDP A 301      11.700   2.031  15.144 +0.23 -0.25    +0.773 A  
+DOCKED: HETATM   13  N2  GDP A 301      11.444   0.744  15.384 -0.34 -0.04    +0.062 N  
+DOCKED: HETATM   14  N1  GDP A 301      10.770   2.866  14.492 -0.38 +0.01    -0.016 NA 
+DOCKED: HETATM   15  C6  GDP A 301      11.012   4.192  14.232 -0.20 +0.04    +0.316 A  
+DOCKED: HETATM   16  O6  GDP A 301      10.123   4.819  13.659 -0.92 -0.11    -0.263 OA 
+DOCKED: HETATM   17  N7  GDP A 301      12.869   6.196  14.521 -0.70 -0.21    -0.217 NA 
+DOCKED: HETATM   18  C8  GDP A 301      14.080   6.131  15.093 -0.12 +0.15    +0.182 A  
+DOCKED: ENDBRANCH   7   8
+DOCKED: BRANCH   1  19
+DOCKED: HETATM   19  C5' GDP A 301      17.209   6.918  17.933 -0.13 +0.16    +0.187 C  
+DOCKED: BRANCH  19  20
+DOCKED: HETATM   20  O5' GDP A 301      18.190   7.404  17.024 -0.09 -0.20    -0.268 OA 
+DOCKED: BRANCH  20  21
+DOCKED: HETATM   21  PA  GDP A 301      18.186   8.829  16.548 -0.12 +0.45    +0.419 P  
+DOCKED: HETATM   22  O1A GDP A 301      17.461   8.945  15.216 -0.47 -0.82    -0.624 OA 
+DOCKED: HETATM   23  O2A GDP A 301      19.585   9.402  16.293 +0.10 -0.65    -0.624 OA 
+DOCKED: BRANCH  21  24
+DOCKED: HETATM   24  O3A GDP A 301      17.516   9.595  17.659 -0.61 -0.25    -0.173 OA 
+DOCKED: BRANCH  24  25
+DOCKED: HETATM   25  PB  GDP A 301      17.912  10.845  18.567 -0.21 +0.67    +0.431 P  
+DOCKED: HETATM   26  O3B GDP A 301      18.192  12.023  17.639 -0.72 -1.08    -0.616 OA 
+DOCKED: HETATM   27  O2B GDP A 301      16.520  11.216  19.110 -1.24 -1.75    -0.616 OA 
+DOCKED: HETATM   28  O1B GDP A 301      18.860  10.461  19.662 -0.48 -0.70    -0.616 OA 
+DOCKED: ENDBRANCH  24  25
+DOCKED: ENDBRANCH  21  24
+DOCKED: ENDBRANCH  20  21
+DOCKED: ENDBRANCH  19  20
+DOCKED: ENDBRANCH   1  19
+DOCKED: TORSDOF 6
+DOCKED: TER
+DOCKED: ENDMDL
+________________________________________________________________________________
+
+
+    FINAL DOCKED STATE:
+    ________________________
+
+
+Run:   4 / 10
+Time taken for this run:   3.266s
+
+DOCKED: MODEL        4
+DOCKED: USER    Run = 4
+DOCKED: USER
+DOCKED: USER    Estimated Free Energy of Binding    =  -7.26 kcal/mol  [=(1)+(2)+(3)-(4)]
+DOCKED: USER
+DOCKED: USER    (1) Final Intermolecular Energy     =  -9.05 kcal/mol
+DOCKED: USER        vdW + Hbond + desolv Energy     =  -5.25 kcal/mol
+DOCKED: USER        Electrostatic Energy            =  -3.79 kcal/mol
+DOCKED: USER        Moving Ligand-Fixed Receptor    =  -9.05 kcal/mol
+DOCKED: USER        Moving Ligand-Moving Receptor   =  +0.00 kcal/mol
+DOCKED: USER    (2) Final Total Internal Energy     =  -0.79 kcal/mol
+DOCKED: USER    (3) Torsional Free Energy           =  +1.79 kcal/mol
+DOCKED: USER    (4) Unbound System's Energy         =  -0.79 kcal/mol
+DOCKED: USER
+DOCKED: USER
+DOCKED: REMARK  6 active torsions:
+DOCKED: REMARK  status: ('A' for Active; 'I' for Inactive)
+DOCKED: REMARK    1  A    between atoms: PB_1439  and  O3A_1443 
+DOCKED: REMARK    2  A    between atoms: O3A_1443  and  PA_1444 
+DOCKED: REMARK    3  A    between atoms: PA_1444  and  O5'_1447 
+DOCKED: REMARK    4  A    between atoms: O5'_1447  and  C5'_1448 
+DOCKED: REMARK    5  A    between atoms: C5'_1448  and  C4'_1449 
+DOCKED: REMARK    6  A    between atoms: C1'_1455  and  N9_1456 
+DOCKED: USER                              x       y       z     vdW  Elec       q    Type
+DOCKED: USER                           _______ _______ _______ _____ _____    ______ ____
+DOCKED: ROOT
+DOCKED: HETATM    1  C4' GDP A 301      21.277   7.317  15.029 +0.00 +0.11    +0.181 C  
+DOCKED: HETATM    2  O4' GDP A 301      20.934   6.163  14.291 +0.01 -0.15    -0.331 OA 
+DOCKED: HETATM    3  C3' GDP A 301      21.239   8.522  14.052 -0.01 +0.21    +0.216 C  
+DOCKED: HETATM    4  O3' GDP A 301      22.628   8.663  13.655 -0.09 -0.24    -0.218 OA 
+DOCKED: HETATM    5  C2' GDP A 301      20.353   8.002  12.927 -0.12 +0.22    +0.234 C  
+DOCKED: HETATM    6  O2' GDP A 301      20.513   8.594  11.626 -0.79 -0.39    -0.216 OA 
+DOCKED: HETATM    7  C1' GDP A 301      20.675   6.508  12.926 -0.03 +0.14    +0.241 C  
+DOCKED: ENDROOT
+DOCKED: BRANCH   7   8
+DOCKED: HETATM    8  N9  GDP A 301      19.521   5.700  12.495 -0.04 -0.10    -0.269 N  
+DOCKED: HETATM    9  C4  GDP A 301      18.603   5.063  13.372 +0.01 +0.06    +0.188 A  
+DOCKED: HETATM   10  N3  GDP A 301      18.550   5.034  14.867 -0.04 -0.01    -0.038 NA 
+DOCKED: HETATM   11  C5  GDP A 301      17.666   4.415  12.654 -0.05 +0.06    +0.176 A  
+DOCKED: HETATM   12  C2  GDP A 301      17.562   4.352  15.599 +0.19 +0.34    +0.773 A  
+DOCKED: HETATM   13  N2  GDP A 301      17.534   4.336  16.934 -0.06 +0.03    +0.062 N  
+DOCKED: HETATM   14  N1  GDP A 301      16.592   3.681  14.827 -0.09 -0.01    -0.016 NA 
+DOCKED: HETATM   15  C6  GDP A 301      16.602   3.681  13.455 -0.03 +0.11    +0.316 A  
+DOCKED: HETATM   16  O6  GDP A 301      15.701   3.062  12.890 -0.13 -0.07    -0.263 OA 
+DOCKED: HETATM   17  N7  GDP A 301      17.960   4.612  11.255 -0.08 -0.05    -0.217 NA 
+DOCKED: HETATM   18  C8  GDP A 301      19.062   5.376  11.220 -0.05 +0.06    +0.182 A  
+DOCKED: ENDBRANCH   7   8
+DOCKED: BRANCH   1  19
+DOCKED: HETATM   19  C5' GDP A 301      20.297   7.477  16.250 +0.02 +0.11    +0.187 C  
+DOCKED: BRANCH  19  20
+DOCKED: HETATM   20  O5' GDP A 301      19.449   8.605  16.063 -0.11 -0.23    -0.268 OA 
+DOCKED: BRANCH  20  21
+DOCKED: HETATM   21  PA  GDP A 301      17.983   8.551  16.390 -0.12 +0.42    +0.419 P  
+DOCKED: HETATM   22  O1A GDP A 301      17.475   7.119  16.324 +0.07 -0.45    -0.624 OA 
+DOCKED: HETATM   23  O2A GDP A 301      17.100   9.333  15.411 -0.53 -1.03    -0.624 OA 
+DOCKED: BRANCH  21  24
+DOCKED: HETATM   24  O3A GDP A 301      17.882   9.156  17.765 -0.39 -0.21    -0.173 OA 
+DOCKED: BRANCH  24  25
+DOCKED: HETATM   25  PB  GDP A 301      17.972  10.634  18.357 -0.20 +0.65    +0.431 P  
+DOCKED: HETATM   26  O3B GDP A 301      16.684  10.905  19.128 -1.52 -1.51    -0.616 OA 
+DOCKED: HETATM   27  O2B GDP A 301      18.964  10.387  19.508 -0.50 -0.65    -0.616 OA 
+DOCKED: HETATM   28  O1B GDP A 301      18.508  11.606  17.351 -0.62 -1.21    -0.616 OA 
+DOCKED: ENDBRANCH  24  25
+DOCKED: ENDBRANCH  21  24
+DOCKED: ENDBRANCH  20  21
+DOCKED: ENDBRANCH  19  20
+DOCKED: ENDBRANCH   1  19
+DOCKED: TORSDOF 6
+DOCKED: TER
+DOCKED: ENDMDL
+________________________________________________________________________________
+
+
+    FINAL DOCKED STATE:
+    ________________________
+
+
+Run:   5 / 10
+Time taken for this run:   3.266s
+
+DOCKED: MODEL        5
+DOCKED: USER    Run = 5
+DOCKED: USER
+DOCKED: USER    Estimated Free Energy of Binding    =  -6.54 kcal/mol  [=(1)+(2)+(3)-(4)]
+DOCKED: USER
+DOCKED: USER    (1) Final Intermolecular Energy     =  -8.33 kcal/mol
+DOCKED: USER        vdW + Hbond + desolv Energy     =  -5.03 kcal/mol
+DOCKED: USER        Electrostatic Energy            =  -3.30 kcal/mol
+DOCKED: USER        Moving Ligand-Fixed Receptor    =  -8.33 kcal/mol
+DOCKED: USER        Moving Ligand-Moving Receptor   =  +0.00 kcal/mol
+DOCKED: USER    (2) Final Total Internal Energy     =  -1.13 kcal/mol
+DOCKED: USER    (3) Torsional Free Energy           =  +1.79 kcal/mol
+DOCKED: USER    (4) Unbound System's Energy         =  -1.13 kcal/mol
+DOCKED: USER
+DOCKED: USER
+DOCKED: REMARK  6 active torsions:
+DOCKED: REMARK  status: ('A' for Active; 'I' for Inactive)
+DOCKED: REMARK    1  A    between atoms: PB_1439  and  O3A_1443 
+DOCKED: REMARK    2  A    between atoms: O3A_1443  and  PA_1444 
+DOCKED: REMARK    3  A    between atoms: PA_1444  and  O5'_1447 
+DOCKED: REMARK    4  A    between atoms: O5'_1447  and  C5'_1448 
+DOCKED: REMARK    5  A    between atoms: C5'_1448  and  C4'_1449 
+DOCKED: REMARK    6  A    between atoms: C1'_1455  and  N9_1456 
+DOCKED: USER                              x       y       z     vdW  Elec       q    Type
+DOCKED: USER                           _______ _______ _______ _____ _____    ______ ____
+DOCKED: ROOT
+DOCKED: HETATM    1  C4' GDP A 301      17.894   5.218  17.584 -0.04 +0.11    +0.181 C  
+DOCKED: HETATM    2  O4' GDP A 301      17.487   5.220  16.232 -0.01 -0.18    -0.331 OA 
+DOCKED: HETATM    3  C3' GDP A 301      19.075   4.219  17.712 +0.02 +0.10    +0.216 C  
+DOCKED: HETATM    4  O3' GDP A 301      18.425   3.003  18.163 -0.14 -0.11    -0.218 OA 
+DOCKED: HETATM    5  C2' GDP A 301      19.579   4.124  16.279 +0.04 +0.08    +0.234 C  
+DOCKED: HETATM    6  O2' GDP A 301      20.287   2.930  15.900 +0.01 -0.05    -0.216 OA 
+DOCKED: HETATM    7  C1' GDP A 301      18.296   4.316  15.470 +0.03 +0.09    +0.241 C  
+DOCKED: ENDROOT
+DOCKED: BRANCH   7   8
+DOCKED: HETATM    8  N9  GDP A 301      18.557   4.967  14.175 -0.01 -0.10    -0.269 N  
+DOCKED: HETATM    9  C4  GDP A 301      19.448   6.056  13.979 +0.00 +0.07    +0.188 A  
+DOCKED: HETATM   10  N3  GDP A 301      20.308   6.794  14.955 -0.04 -0.02    -0.038 NA 
+DOCKED: HETATM   11  C5  GDP A 301      19.458   6.403  12.677 -0.03 +0.07    +0.176 A  
+DOCKED: HETATM   12  C2  GDP A 301      21.150   7.863  14.601 +0.15 +0.57    +0.773 A  
+DOCKED: HETATM   13  N2  GDP A 301      21.908   8.511  15.488 -0.08 +0.05    +0.062 N  
+DOCKED: HETATM   14  N1  GDP A 301      21.144   8.209  13.234 -0.18 -0.02    -0.016 NA 
+DOCKED: HETATM   15  C6  GDP A 301      20.371   7.560  12.304 -0.08 +0.29    +0.316 A  
+DOCKED: HETATM   16  O6  GDP A 301      20.454   7.950  11.140 -0.69 -0.41    -0.263 OA 
+DOCKED: HETATM   17  N7  GDP A 301      18.546   5.533  11.976 -0.06 -0.06    -0.217 NA 
+DOCKED: HETATM   18  C8  GDP A 301      18.045   4.707  12.906 +0.00 +0.06    +0.182 A  
+DOCKED: ENDBRANCH   7   8
+DOCKED: BRANCH   1  19
+DOCKED: HETATM   19  C5' GDP A 301      18.268   6.681  18.028 -0.07 +0.14    +0.187 C  
+DOCKED: BRANCH  19  20
+DOCKED: HETATM   20  O5' GDP A 301      17.456   7.630  17.345 -0.18 -0.24    -0.268 OA 
+DOCKED: BRANCH  20  21
+DOCKED: HETATM   21  PA  GDP A 301      18.058   8.787  16.596 -0.12 +0.45    +0.419 P  
+DOCKED: HETATM   22  O1A GDP A 301      17.733   8.689  15.113 -0.36 -0.66    -0.624 OA 
+DOCKED: HETATM   23  O2A GDP A 301      19.588   8.842  16.666 +0.09 -0.54    -0.624 OA 
+DOCKED: BRANCH  21  24
+DOCKED: HETATM   24  O3A GDP A 301      17.472  10.008  17.255 -0.94 -0.29    -0.173 OA 
+DOCKED: BRANCH  24  25
+DOCKED: HETATM   25  PB  GDP A 301      17.916  10.969  18.448 -0.20 +0.68    +0.431 P  
+DOCKED: HETATM   26  O3B GDP A 301      18.205  12.344  17.853 -0.48 -0.99    -0.616 OA 
+DOCKED: HETATM   27  O2B GDP A 301      16.544  11.209  19.105 -1.24 -1.73    -0.616 OA 
+DOCKED: HETATM   28  O1B GDP A 301      18.876  10.295  19.380 -0.44 -0.68    -0.616 OA 
+DOCKED: ENDBRANCH  24  25
+DOCKED: ENDBRANCH  21  24
+DOCKED: ENDBRANCH  20  21
+DOCKED: ENDBRANCH  19  20
+DOCKED: ENDBRANCH   1  19
+DOCKED: TORSDOF 6
+DOCKED: TER
+DOCKED: ENDMDL
+________________________________________________________________________________
+
+
+    FINAL DOCKED STATE:
+    ________________________
+
+
+Run:   6 / 10
+Time taken for this run:   3.266s
+
+DOCKED: MODEL        6
+DOCKED: USER    Run = 6
+DOCKED: USER
+DOCKED: USER    Estimated Free Energy of Binding    =  -6.91 kcal/mol  [=(1)+(2)+(3)-(4)]
+DOCKED: USER
+DOCKED: USER    (1) Final Intermolecular Energy     =  -8.70 kcal/mol
+DOCKED: USER        vdW + Hbond + desolv Energy     =  -5.45 kcal/mol
+DOCKED: USER        Electrostatic Energy            =  -3.26 kcal/mol
+DOCKED: USER        Moving Ligand-Fixed Receptor    =  -8.70 kcal/mol
+DOCKED: USER        Moving Ligand-Moving Receptor   =  +0.00 kcal/mol
+DOCKED: USER    (2) Final Total Internal Energy     =  -0.81 kcal/mol
+DOCKED: USER    (3) Torsional Free Energy           =  +1.79 kcal/mol
+DOCKED: USER    (4) Unbound System's Energy         =  -0.81 kcal/mol
+DOCKED: USER
+DOCKED: USER
+DOCKED: REMARK  6 active torsions:
+DOCKED: REMARK  status: ('A' for Active; 'I' for Inactive)
+DOCKED: REMARK    1  A    between atoms: PB_1439  and  O3A_1443 
+DOCKED: REMARK    2  A    between atoms: O3A_1443  and  PA_1444 
+DOCKED: REMARK    3  A    between atoms: PA_1444  and  O5'_1447 
+DOCKED: REMARK    4  A    between atoms: O5'_1447  and  C5'_1448 
+DOCKED: REMARK    5  A    between atoms: C5'_1448  and  C4'_1449 
+DOCKED: REMARK    6  A    between atoms: C1'_1455  and  N9_1456 
+DOCKED: USER                              x       y       z     vdW  Elec       q    Type
+DOCKED: USER                           _______ _______ _______ _____ _____    ______ ____
+DOCKED: ROOT
+DOCKED: HETATM    1  C4' GDP A 301      21.183   7.421  15.303 +0.01 +0.11    +0.181 C  
+DOCKED: HETATM    2  O4' GDP A 301      20.970   6.216  14.599 +0.02 -0.15    -0.331 OA 
+DOCKED: HETATM    3  C3' GDP A 301      21.185   8.573  14.263 -0.01 +0.21    +0.216 C  
+DOCKED: HETATM    4  O3' GDP A 301      22.598   8.767  13.996 -0.09 -0.24    -0.218 OA 
+DOCKED: HETATM    5  C2' GDP A 301      20.441   7.953  13.088 -0.11 +0.21    +0.234 C  
+DOCKED: HETATM    6  O2' GDP A 301      20.701   8.487  11.778 -0.76 -0.38    -0.216 OA 
+DOCKED: HETATM    7  C1' GDP A 301      20.832   6.479  13.198 -0.02 +0.14    +0.241 C  
+DOCKED: ENDROOT
+DOCKED: BRANCH   7   8
+DOCKED: HETATM    8  N9  GDP A 301      19.766   5.591  12.702 -0.02 -0.10    -0.269 N  
+DOCKED: HETATM    9  C4  GDP A 301      18.594   5.246  13.426 +0.04 +0.06    +0.188 A  
+DOCKED: HETATM   10  N3  GDP A 301      18.142   5.654  14.793 -0.04 -0.02    -0.038 NA 
+DOCKED: HETATM   11  C5  GDP A 301      17.828   4.426  12.682 -0.05 +0.05    +0.176 A  
+DOCKED: HETATM   12  C2  GDP A 301      16.938   5.224  15.378 +0.28 +0.48    +0.773 A  
+DOCKED: HETATM   13  N2  GDP A 301      16.554   5.598  16.600 -0.17 +0.04    +0.062 N  
+DOCKED: HETATM   14  N1  GDP A 301      16.152   4.367  14.581 -0.39 -0.01    -0.016 NA 
+DOCKED: HETATM   15  C6  GDP A 301      16.528   3.967  13.323 -0.02 +0.13    +0.316 A  
+DOCKED: HETATM   16  O6  GDP A 301      15.757   3.218  12.723 -0.13 -0.07    -0.263 OA 
+DOCKED: HETATM   17  N7  GDP A 301      18.501   4.204  11.425 -0.04 -0.05    -0.217 NA 
+DOCKED: HETATM   18  C8  GDP A 301      19.636   4.914  11.491 -0.02 +0.06    +0.182 A  
+DOCKED: ENDBRANCH   7   8
+DOCKED: BRANCH   1  19
+DOCKED: HETATM   19  C5' GDP A 301      20.080   7.590  16.413 +0.02 +0.11    +0.187 C  
+DOCKED: BRANCH  19  20
+DOCKED: HETATM   20  O5' GDP A 301      19.283   8.740  16.152 -0.13 -0.24    -0.268 OA 
+DOCKED: BRANCH  20  21
+DOCKED: HETATM   21  PA  GDP A 301      17.837   8.804  16.556 -0.13 +0.47    +0.419 P  
+DOCKED: HETATM   22  O1A GDP A 301      17.515   7.710  17.563 +0.04 -0.57    -0.624 OA 
+DOCKED: HETATM   23  O2A GDP A 301      16.859   8.580  15.397 -0.43 -0.72    -0.624 OA 
+DOCKED: BRANCH  21  24
+DOCKED: HETATM   24  O3A GDP A 301      17.662  10.194  17.110 -0.96 -0.30    -0.173 OA 
+DOCKED: BRANCH  24  25
+DOCKED: HETATM   25  PB  GDP A 301      18.099  10.937  18.451 -0.21 +0.64    +0.431 P  
+DOCKED: HETATM   26  O3B GDP A 301      18.450  12.377  18.092 -0.35 -0.87    -0.616 OA 
+DOCKED: HETATM   27  O2B GDP A 301      16.716  11.118  19.104 -1.35 -1.61    -0.616 OA 
+DOCKED: HETATM   28  O1B GDP A 301      19.009  10.089  19.287 -0.41 -0.64    -0.616 OA 
+DOCKED: ENDBRANCH  24  25
+DOCKED: ENDBRANCH  21  24
+DOCKED: ENDBRANCH  20  21
+DOCKED: ENDBRANCH  19  20
+DOCKED: ENDBRANCH   1  19
+DOCKED: TORSDOF 6
+DOCKED: TER
+DOCKED: ENDMDL
+________________________________________________________________________________
+
+
+    FINAL DOCKED STATE:
+    ________________________
+
+
+Run:   7 / 10
+Time taken for this run:   3.266s
+
+DOCKED: MODEL        7
+DOCKED: USER    Run = 7
+DOCKED: USER
+DOCKED: USER    Estimated Free Energy of Binding    =  -6.66 kcal/mol  [=(1)+(2)+(3)-(4)]
+DOCKED: USER
+DOCKED: USER    (1) Final Intermolecular Energy     =  -8.45 kcal/mol
+DOCKED: USER        vdW + Hbond + desolv Energy     =  -4.90 kcal/mol
+DOCKED: USER        Electrostatic Energy            =  -3.56 kcal/mol
+DOCKED: USER        Moving Ligand-Fixed Receptor    =  -8.45 kcal/mol
+DOCKED: USER        Moving Ligand-Moving Receptor   =  +0.00 kcal/mol
+DOCKED: USER    (2) Final Total Internal Energy     =  -0.56 kcal/mol
+DOCKED: USER    (3) Torsional Free Energy           =  +1.79 kcal/mol
+DOCKED: USER    (4) Unbound System's Energy         =  -0.56 kcal/mol
+DOCKED: USER
+DOCKED: USER
+DOCKED: REMARK  6 active torsions:
+DOCKED: REMARK  status: ('A' for Active; 'I' for Inactive)
+DOCKED: REMARK    1  A    between atoms: PB_1439  and  O3A_1443 
+DOCKED: REMARK    2  A    between atoms: O3A_1443  and  PA_1444 
+DOCKED: REMARK    3  A    between atoms: PA_1444  and  O5'_1447 
+DOCKED: REMARK    4  A    between atoms: O5'_1447  and  C5'_1448 
+DOCKED: REMARK    5  A    between atoms: C5'_1448  and  C4'_1449 
+DOCKED: REMARK    6  A    between atoms: C1'_1455  and  N9_1456 
+DOCKED: USER                              x       y       z     vdW  Elec       q    Type
+DOCKED: USER                           _______ _______ _______ _____ _____    ______ ____
+DOCKED: ROOT
+DOCKED: HETATM    1  C4' GDP A 301      20.891   6.247  16.186 +0.05 +0.08    +0.181 C  
+DOCKED: HETATM    2  O4' GDP A 301      20.491   5.563  17.354 +0.02 -0.14    -0.331 OA 
+DOCKED: HETATM    3  C3' GDP A 301      21.424   5.188  15.185 +0.04 +0.07    +0.216 C  
+DOCKED: HETATM    4  O3' GDP A 301      22.858   5.227  15.403 +0.01 -0.07    -0.218 OA 
+DOCKED: HETATM    5  C2' GDP A 301      20.783   3.905  15.697 +0.03 +0.06    +0.234 C  
+DOCKED: HETATM    6  O2' GDP A 301      21.437   2.662  15.383 +0.01 -0.04    -0.216 OA 
+DOCKED: HETATM    7  C1' GDP A 301      20.712   4.156  17.204 +0.03 +0.07    +0.241 C  
+DOCKED: ENDROOT
+DOCKED: BRANCH   7   8
+DOCKED: HETATM    8  N9  GDP A 301      19.560   3.476  17.819 +0.00 -0.10    -0.269 N  
+DOCKED: HETATM    9  C4  GDP A 301      18.228   3.530  17.328 +0.02 +0.08    +0.188 A  
+DOCKED: HETATM   10  N3  GDP A 301      17.660   4.239  16.138 -0.03 -0.02    -0.038 NA 
+DOCKED: HETATM   11  C5  GDP A 301      17.424   2.793  18.118 -0.01 +0.10    +0.176 A  
+DOCKED: HETATM   12  C2  GDP A 301      16.302   4.192  15.778 +0.22 +0.42    +0.773 A  
+DOCKED: HETATM   13  N2  GDP A 301      15.814   4.834  14.714 -0.12 +0.04    +0.062 N  
+DOCKED: HETATM   14  N1  GDP A 301      15.479   3.415  16.619 -0.12 -0.01    -0.016 NA 
+DOCKED: HETATM   15  C6  GDP A 301      15.957   2.749  17.719 +0.04 +0.26    +0.316 A  
+DOCKED: HETATM   16  O6  GDP A 301      15.143   2.100  18.375 -0.60 -0.31    -0.263 OA 
+DOCKED: HETATM   17  N7  GDP A 301      18.230   2.230  19.174 -0.52 -0.12    -0.217 NA 
+DOCKED: HETATM   18  C8  GDP A 301      19.478   2.664  18.948 +0.03 +0.07    +0.182 A  
+DOCKED: ENDBRANCH   7   8
+DOCKED: BRANCH   1  19
+DOCKED: HETATM   19  C5' GDP A 301      19.683   7.083  15.620 -0.00 +0.10    +0.187 C  
+DOCKED: BRANCH  19  20
+DOCKED: HETATM   20  O5' GDP A 301      19.123   7.902  16.641 -0.05 -0.19    -0.268 OA 
+DOCKED: BRANCH  20  21
+DOCKED: HETATM   21  PA  GDP A 301      17.648   8.184  16.703 -0.06 +0.40    +0.419 P  
+DOCKED: HETATM   22  O1A GDP A 301      16.856   6.885  16.692 +0.06 -0.49    -0.624 OA 
+DOCKED: HETATM   23  O2A GDP A 301      17.119   8.985  15.509 -0.59 -0.86    -0.624 OA 
+DOCKED: BRANCH  21  24
+DOCKED: HETATM   24  O3A GDP A 301      17.470   8.979  17.970 -0.54 -0.22    -0.173 OA 
+DOCKED: BRANCH  24  25
+DOCKED: HETATM   25  PB  GDP A 301      18.011  10.379  18.509 -0.19 +0.62    +0.431 P  
+DOCKED: HETATM   26  O3B GDP A 301      18.194  11.299  17.307 -0.66 -1.22    -0.616 OA 
+DOCKED: HETATM   27  O2B GDP A 301      16.711  10.936  19.118 -1.51 -1.52    -0.616 OA 
+DOCKED: HETATM   28  O1B GDP A 301      19.084  10.203  19.539 -0.46 -0.64    -0.616 OA 
+DOCKED: ENDBRANCH  24  25
+DOCKED: ENDBRANCH  21  24
+DOCKED: ENDBRANCH  20  21
+DOCKED: ENDBRANCH  19  20
+DOCKED: ENDBRANCH   1  19
+DOCKED: TORSDOF 6
+DOCKED: TER
+DOCKED: ENDMDL
+________________________________________________________________________________
+
+
+    FINAL DOCKED STATE:
+    ________________________
+
+
+Run:   8 / 10
+Time taken for this run:   3.266s
+
+DOCKED: MODEL        8
+DOCKED: USER    Run = 8
+DOCKED: USER
+DOCKED: USER    Estimated Free Energy of Binding    =  -6.41 kcal/mol  [=(1)+(2)+(3)-(4)]
+DOCKED: USER
+DOCKED: USER    (1) Final Intermolecular Energy     =  -8.20 kcal/mol
+DOCKED: USER        vdW + Hbond + desolv Energy     =  -5.13 kcal/mol
+DOCKED: USER        Electrostatic Energy            =  -3.07 kcal/mol
+DOCKED: USER        Moving Ligand-Fixed Receptor    =  -8.20 kcal/mol
+DOCKED: USER        Moving Ligand-Moving Receptor   =  +0.00 kcal/mol
+DOCKED: USER    (2) Final Total Internal Energy     =  -0.70 kcal/mol
+DOCKED: USER    (3) Torsional Free Energy           =  +1.79 kcal/mol
+DOCKED: USER    (4) Unbound System's Energy         =  -0.70 kcal/mol
+DOCKED: USER
+DOCKED: USER
+DOCKED: REMARK  6 active torsions:
+DOCKED: REMARK  status: ('A' for Active; 'I' for Inactive)
+DOCKED: REMARK    1  A    between atoms: PB_1439  and  O3A_1443 
+DOCKED: REMARK    2  A    between atoms: O3A_1443  and  PA_1444 
+DOCKED: REMARK    3  A    between atoms: PA_1444  and  O5'_1447 
+DOCKED: REMARK    4  A    between atoms: O5'_1447  and  C5'_1448 
+DOCKED: REMARK    5  A    between atoms: C5'_1448  and  C4'_1449 
+DOCKED: REMARK    6  A    between atoms: C1'_1455  and  N9_1456 
+DOCKED: USER                              x       y       z     vdW  Elec       q    Type
+DOCKED: USER                           _______ _______ _______ _____ _____    ______ ____
+DOCKED: ROOT
+DOCKED: HETATM    1  C4' GDP A 301      17.235   5.721  17.014 -0.09 +0.12    +0.181 C  
+DOCKED: HETATM    2  O4' GDP A 301      18.038   5.931  15.872 -0.01 -0.17    -0.331 OA 
+DOCKED: HETATM    3  C3' GDP A 301      18.020   4.785  17.970 +0.07 +0.13    +0.216 C  
+DOCKED: HETATM    4  O3' GDP A 301      17.484   3.474  17.656 -0.07 -0.12    -0.218 OA 
+DOCKED: HETATM    5  C2' GDP A 301      19.456   4.966  17.496 +0.03 +0.11    +0.234 C  
+DOCKED: HETATM    6  O2' GDP A 301      20.383   3.897  17.758 -0.00 -0.07    -0.216 OA 
+DOCKED: HETATM    7  C1' GDP A 301      19.274   5.219  15.999 +0.05 +0.10    +0.241 C  
+DOCKED: ENDROOT
+DOCKED: BRANCH   7   8
+DOCKED: HETATM    8  N9  GDP A 301      20.327   6.095  15.460 +0.04 -0.12    -0.269 N  
+DOCKED: HETATM    9  C4  GDP A 301      20.303   6.697  14.174 -0.00 +0.10    +0.188 A  
+DOCKED: HETATM   10  N3  GDP A 301      19.280   6.619  13.085 -0.09 -0.01    -0.038 NA 
+DOCKED: HETATM   11  C5  GDP A 301      21.412   7.442  14.001 -0.02 +0.13    +0.176 A  
+DOCKED: HETATM   12  C2  GDP A 301      19.400   7.284  11.852 +0.11 +0.47    +0.773 A  
+DOCKED: HETATM   13  N2  GDP A 301      18.476   7.200  10.892 -0.23 +0.03    +0.062 N  
+DOCKED: HETATM   14  N1  GDP A 301      20.568   8.057  11.694 -0.75 -0.02    -0.016 NA 
+DOCKED: HETATM   15  C6  GDP A 301      21.532   8.157  12.665 -0.02 +0.40    +0.316 A  
+DOCKED: HETATM   16  O6  GDP A 301      22.507   8.865  12.413 -0.24 -0.46    -0.263 OA 
+DOCKED: HETATM   17  N7  GDP A 301      22.211   7.336  15.198 +0.02 -0.13    -0.217 NA 
+DOCKED: HETATM   18  C8  GDP A 301      21.525   6.532  16.023 +0.06 +0.08    +0.182 A  
+DOCKED: ENDBRANCH   7   8
+DOCKED: BRANCH   1  19
+DOCKED: HETATM   19  C5' GDP A 301      16.866   7.106  17.665 -0.10 +0.16    +0.187 C  
+DOCKED: BRANCH  19  20
+DOCKED: HETATM   20  O5' GDP A 301      17.978   7.993  17.609 -0.16 -0.24    -0.268 OA 
+DOCKED: BRANCH  20  21
+DOCKED: HETATM   21  PA  GDP A 301      18.129   8.997  16.501 -0.12 +0.48    +0.419 P  
+DOCKED: HETATM   22  O1A GDP A 301      17.129   8.719  15.389 -0.55 -0.75    -0.624 OA 
+DOCKED: HETATM   23  O2A GDP A 301      19.501   8.968  15.820 +0.06 -0.60    -0.624 OA 
+DOCKED: BRANCH  21  24
+DOCKED: HETATM   24  O3A GDP A 301      17.918  10.331  17.170 -1.00 -0.30    -0.173 OA 
+DOCKED: BRANCH  24  25
+DOCKED: HETATM   25  PB  GDP A 301      17.856  10.837  18.681 -0.22 +0.68    +0.431 P  
+DOCKED: HETATM   26  O3B GDP A 301      18.999  10.172  19.441 -0.45 -0.66    -0.616 OA 
+DOCKED: HETATM   27  O2B GDP A 301      18.410  12.262  18.494 -0.10 -0.82    -0.616 OA 
+DOCKED: HETATM   28  O1B GDP A 301      16.455  10.844  19.210 -1.36 -1.58    -0.616 OA 
+DOCKED: ENDBRANCH  24  25
+DOCKED: ENDBRANCH  21  24
+DOCKED: ENDBRANCH  20  21
+DOCKED: ENDBRANCH  19  20
+DOCKED: ENDBRANCH   1  19
+DOCKED: TORSDOF 6
+DOCKED: TER
+DOCKED: ENDMDL
+________________________________________________________________________________
+
+
+    FINAL DOCKED STATE:
+    ________________________
+
+
+Run:   9 / 10
+Time taken for this run:   3.266s
+
+DOCKED: MODEL        9
+DOCKED: USER    Run = 9
+DOCKED: USER
+DOCKED: USER    Estimated Free Energy of Binding    =  -9.85 kcal/mol  [=(1)+(2)+(3)-(4)]
+DOCKED: USER
+DOCKED: USER    (1) Final Intermolecular Energy     = -11.64 kcal/mol
+DOCKED: USER        vdW + Hbond + desolv Energy     =  -7.15 kcal/mol
+DOCKED: USER        Electrostatic Energy            =  -4.49 kcal/mol
+DOCKED: USER        Moving Ligand-Fixed Receptor    = -11.64 kcal/mol
+DOCKED: USER        Moving Ligand-Moving Receptor   =  +0.00 kcal/mol
+DOCKED: USER    (2) Final Total Internal Energy     =  +0.64 kcal/mol
+DOCKED: USER    (3) Torsional Free Energy           =  +1.79 kcal/mol
+DOCKED: USER    (4) Unbound System's Energy         =  +0.64 kcal/mol
+DOCKED: USER
+DOCKED: USER
+DOCKED: REMARK  6 active torsions:
+DOCKED: REMARK  status: ('A' for Active; 'I' for Inactive)
+DOCKED: REMARK    1  A    between atoms: PB_1439  and  O3A_1443 
+DOCKED: REMARK    2  A    between atoms: O3A_1443  and  PA_1444 
+DOCKED: REMARK    3  A    between atoms: PA_1444  and  O5'_1447 
+DOCKED: REMARK    4  A    between atoms: O5'_1447  and  C5'_1448 
+DOCKED: REMARK    5  A    between atoms: C5'_1448  and  C4'_1449 
+DOCKED: REMARK    6  A    between atoms: C1'_1455  and  N9_1456 
+DOCKED: USER                              x       y       z     vdW  Elec       q    Type
+DOCKED: USER                           _______ _______ _______ _____ _____    ______ ____
+DOCKED: ROOT
+DOCKED: HETATM    1  C4' GDP A 301      17.505   5.123  17.131 -0.05 +0.11    +0.181 C  
+DOCKED: HETATM    2  O4' GDP A 301      16.109   5.330  17.165 -0.13 -0.27    -0.331 OA 
+DOCKED: HETATM    3  C3' GDP A 301      17.753   3.736  16.480 +0.03 +0.09    +0.216 C  
+DOCKED: HETATM    4  O3' GDP A 301      17.900   2.860  17.626 -0.04 -0.10    -0.218 OA 
+DOCKED: HETATM    5  C2' GDP A 301      16.458   3.498  15.715 +0.00 +0.10    +0.234 C  
+DOCKED: HETATM    6  O2' GDP A 301      16.089   2.136  15.437 -0.02 -0.06    -0.216 OA 
+DOCKED: HETATM    7  C1' GDP A 301      15.427   4.208  16.594 -0.02 +0.19    +0.241 C  
+DOCKED: ENDROOT
+DOCKED: BRANCH   7   8
+DOCKED: HETATM    8  N9  GDP A 301      14.309   4.746  15.802 -0.08 -0.19    -0.269 N  
+DOCKED: HETATM    9  C4  GDP A 301      13.172   4.002  15.392 -0.08 +0.09    +0.188 A  
+DOCKED: HETATM   10  N3  GDP A 301      12.812   2.568  15.630 -0.25 -0.01    -0.038 NA 
+DOCKED: HETATM   11  C5  GDP A 301      12.339   4.795  14.691 -0.24 +0.09    +0.176 A  
+DOCKED: HETATM   12  C2  GDP A 301      11.632   1.971  15.154 +0.23 -0.28    +0.773 A  
+DOCKED: HETATM   13  N2  GDP A 301      11.331   0.689  15.376 -0.33 -0.05    +0.062 N  
+DOCKED: HETATM   14  N1  GDP A 301      10.776   2.821  14.425 -0.35 +0.01    -0.016 NA 
+DOCKED: HETATM   15  C6  GDP A 301      11.065   4.140  14.182 -0.19 +0.04    +0.316 A  
+DOCKED: HETATM   16  O6  GDP A 301      10.239   4.782  13.535 -0.98 -0.12    -0.263 OA 
+DOCKED: HETATM   17  N7  GDP A 301      12.931   6.109  14.619 -0.69 -0.20    -0.217 NA 
+DOCKED: HETATM   18  C8  GDP A 301      14.089   6.023  15.290 -0.13 +0.15    +0.182 A  
+DOCKED: ENDBRANCH   7   8
+DOCKED: BRANCH   1  19
+DOCKED: HETATM   19  C5' GDP A 301      18.199   6.305  16.357 -0.02 +0.11    +0.187 C  
+DOCKED: BRANCH  19  20
+DOCKED: HETATM   20  O5' GDP A 301      18.087   7.516  17.095 -0.11 -0.21    -0.268 OA 
+DOCKED: BRANCH  20  21
+DOCKED: HETATM   21  PA  GDP A 301      18.150   8.858  16.421 -0.12 +0.46    +0.419 P  
+DOCKED: HETATM   22  O1A GDP A 301      17.491   8.798  15.051 -0.34 -0.74    -0.624 OA 
+DOCKED: HETATM   23  O2A GDP A 301      19.576   9.354  16.157 +0.09 -0.65    -0.624 OA 
+DOCKED: BRANCH  21  24
+DOCKED: HETATM   24  O3A GDP A 301      17.453   9.792  17.376 -0.77 -0.27    -0.173 OA 
+DOCKED: BRANCH  24  25
+DOCKED: HETATM   25  PB  GDP A 301      17.930  10.891  18.428 -0.21 +0.67    +0.431 P  
+DOCKED: HETATM   26  O3B GDP A 301      18.206  12.180  17.661 -0.67 -1.05    -0.616 OA 
+DOCKED: HETATM   27  O2B GDP A 301      16.576  11.218  19.085 -1.23 -1.72    -0.616 OA 
+DOCKED: HETATM   28  O1B GDP A 301      18.912  10.333  19.412 -0.45 -0.67    -0.616 OA 
+DOCKED: ENDBRANCH  24  25
+DOCKED: ENDBRANCH  21  24
+DOCKED: ENDBRANCH  20  21
+DOCKED: ENDBRANCH  19  20
+DOCKED: ENDBRANCH   1  19
+DOCKED: TORSDOF 6
+DOCKED: TER
+DOCKED: ENDMDL
+________________________________________________________________________________
+
+
+    FINAL DOCKED STATE:
+    ________________________
+
+
+Run:   10 / 10
+Time taken for this run:   3.266s
+
+DOCKED: MODEL        10
+DOCKED: USER    Run = 10
+DOCKED: USER
+DOCKED: USER    Estimated Free Energy of Binding    =  -8.27 kcal/mol  [=(1)+(2)+(3)-(4)]
+DOCKED: USER
+DOCKED: USER    (1) Final Intermolecular Energy     = -10.05 kcal/mol
+DOCKED: USER        vdW + Hbond + desolv Energy     =  -6.50 kcal/mol
+DOCKED: USER        Electrostatic Energy            =  -3.56 kcal/mol
+DOCKED: USER        Moving Ligand-Fixed Receptor    = -10.05 kcal/mol
+DOCKED: USER        Moving Ligand-Moving Receptor   =  +0.00 kcal/mol
+DOCKED: USER    (2) Final Total Internal Energy     =  +0.74 kcal/mol
+DOCKED: USER    (3) Torsional Free Energy           =  +1.79 kcal/mol
+DOCKED: USER    (4) Unbound System's Energy         =  +0.74 kcal/mol
+DOCKED: USER
+DOCKED: USER
+DOCKED: REMARK  6 active torsions:
+DOCKED: REMARK  status: ('A' for Active; 'I' for Inactive)
+DOCKED: REMARK    1  A    between atoms: PB_1439  and  O3A_1443 
+DOCKED: REMARK    2  A    between atoms: O3A_1443  and  PA_1444 
+DOCKED: REMARK    3  A    between atoms: PA_1444  and  O5'_1447 
+DOCKED: REMARK    4  A    between atoms: O5'_1447  and  C5'_1448 
+DOCKED: REMARK    5  A    between atoms: C5'_1448  and  C4'_1449 
+DOCKED: REMARK    6  A    between atoms: C1'_1455  and  N9_1456 
+DOCKED: USER                              x       y       z     vdW  Elec       q    Type
+DOCKED: USER                           _______ _______ _______ _____ _____    ______ ____
+DOCKED: ROOT
+DOCKED: HETATM    1  C4' GDP A 301      15.312   5.966  15.389 -0.04 +0.16    +0.181 C  
+DOCKED: HETATM    2  O4' GDP A 301      15.611   4.879  14.539 -0.65 -0.25    -0.331 OA 
+DOCKED: HETATM    3  C3' GDP A 301      13.779   5.962  15.627 -0.16 +0.18    +0.216 C  
+DOCKED: HETATM    4  O3' GDP A 301      13.296   6.916  14.647 -0.80 -0.23    -0.218 OA 
+DOCKED: HETATM    5  C2' GDP A 301      13.400   4.526  15.292 -0.13 +0.13    +0.234 C  
+DOCKED: HETATM    6  O2' GDP A 301      12.046   4.274  14.876 -0.36 -0.08    -0.216 OA 
+DOCKED: HETATM    7  C1' GDP A 301      14.414   4.169  14.204 -0.13 +0.11    +0.241 C  
+DOCKED: ENDROOT
+DOCKED: BRANCH   7   8
+DOCKED: HETATM    8  N9  GDP A 301      14.751   2.735  14.219 -0.07 -0.07    -0.269 N  
+DOCKED: HETATM    9  C4  GDP A 301      15.762   2.131  13.425 -0.06 +0.03    +0.188 A  
+DOCKED: HETATM   10  N3  GDP A 301      16.700   2.731  12.425 -0.12 -0.01    -0.038 NA 
+DOCKED: HETATM   11  C5  GDP A 301      15.815   0.811  13.687 -0.06 +0.02    +0.176 A  
+DOCKED: HETATM   12  C2  GDP A 301      17.660   1.991  11.713 +0.04 +0.11    +0.773 A  
+DOCKED: HETATM   13  N2  GDP A 301      18.486   2.546  10.823 -0.05 +0.01    +0.062 N  
+DOCKED: HETATM   14  N1  GDP A 301      17.697   0.612  12.005 -0.06 -0.00    -0.016 NA 
+DOCKED: HETATM   15  C6  GDP A 301      16.856   0.019  12.913 -0.04 +0.02    +0.316 A  
+DOCKED: HETATM   16  O6  GDP A 301      16.985  -1.192  13.084 -0.02 -0.01    -0.263 OA 
+DOCKED: HETATM   17  N7  GDP A 301      14.810   0.513  14.679 -0.06 -0.01    -0.217 NA 
+DOCKED: HETATM   18  C8  GDP A 301      14.215   1.682  14.956 -0.07 +0.02    +0.182 A  
+DOCKED: ENDBRANCH   7   8
+DOCKED: BRANCH   1  19
+DOCKED: HETATM   19  C5' GDP A 301      16.147   5.844  16.719 -0.13 +0.14    +0.187 C  
+DOCKED: BRANCH  19  20
+DOCKED: HETATM   20  O5' GDP A 301      16.337   7.127  17.305 -0.10 -0.24    -0.268 OA 
+DOCKED: BRANCH  20  21
+DOCKED: HETATM   21  PA  GDP A 301      17.704   7.623  17.686 -0.04 +0.37    +0.419 P  
+DOCKED: HETATM   22  O1A GDP A 301      18.501   7.996  16.444 +0.08 -0.50    -0.624 OA 
+DOCKED: HETATM   23  O2A GDP A 301      18.562   6.582  18.413 -0.10 -0.51    -0.624 OA 
+DOCKED: BRANCH  21  24
+DOCKED: HETATM   24  O3A GDP A 301      17.440   8.794  18.596 -0.54 -0.23    -0.173 OA 
+DOCKED: BRANCH  24  25
+DOCKED: HETATM   25  PB  GDP A 301      17.953  10.302  18.673 -0.17 +0.62    +0.431 P  
+DOCKED: HETATM   26  O3B GDP A 301      18.086  10.820  17.245 -0.69 -1.15    -0.616 OA 
+DOCKED: HETATM   27  O2B GDP A 301      16.650  10.991  19.122 -1.43 -1.57    -0.616 OA 
+DOCKED: HETATM   28  O1B GDP A 301      19.052  10.467  19.678 -0.52 -0.63    -0.616 OA 
+DOCKED: ENDBRANCH  24  25
+DOCKED: ENDBRANCH  21  24
+DOCKED: ENDBRANCH  20  21
+DOCKED: ENDBRANCH  19  20
+DOCKED: ENDBRANCH   1  19
+DOCKED: TORSDOF 6
+DOCKED: TER
+DOCKED: ENDMDL
+________________________________________________________________________________
+
+
+    CLUSTERING HISTOGRAM
+    ____________________
+
+
+________________________________________________________________________________
+     |           |     |           |     |
+Clus | Lowest    | Run | Mean      | Num | Histogram
+-ter | Binding   |     | Binding   | in  |
+Rank | Energy    |     | Energy    | Clus|    5    10   15   20   25   30   35
+_____|___________|_____|___________|_____|____:____|____:____|____:____|____:___
+   1 |    -10.38 |   1 |    -10.14 |   3 |###
+   2 |     -8.27 |  10 |     -8.27 |   1 |#
+   3 |     -7.26 |   4 |     -7.08 |   2 |##
+   4 |     -6.66 |   7 |     -6.66 |   1 |#
+   5 |     -6.54 |   5 |     -6.48 |   2 |##
+   6 |     -6.20 |   2 |     -6.20 |   1 |#
+_____|___________|_____|___________|_____|______________________________________
+
+
+    RMSD TABLE
+    __________
+
+
+_______________________________________________________________________
+     |      |      |           |         |                 |
+Rank | Sub- | Run  | Binding   | Cluster | Reference       | Grep
+     | Rank |      | Energy    | RMSD    | RMSD            | Pattern
+_____|______|______|___________|_________|_________________|___________
+   1      1      1      -10.38      0.00      0.39           RANKING
+   1      2      3      -10.20      0.50      0.66           RANKING
+   1      3      9       -9.85      0.82      0.83           RANKING
+   2      1     10       -8.27      0.00      3.21           RANKING
+   3      1      4       -7.26      0.00      3.83           RANKING
+   3      2      6       -6.91      0.68      3.78           RANKING
+   4      1      7       -6.66      0.00      3.41           RANKING
+   5      1      5       -6.54      0.00      4.15           RANKING
+   5      2      8       -6.41      1.49      4.55           RANKING
+   6      1      2       -6.20      0.00      3.88           RANKING
+
+Run time 33.165 sec
+Idle time 1.755 sec

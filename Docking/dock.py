@@ -128,7 +128,7 @@ def process_docking(pdb_file, commands=None):
                     autodock_gpu_path,
                     "--lfile", ligand_pdbqt,
                     "--ffile", fld,
-                    "--nrun", "50",
+                    "--nrun", "10",
                 ])
                 move_dlg_xml_files("pdbqt_files", "grid_dock_files")
                 print(f"Dokowanie {file_name} zakonczono pomyslnie", flush=True)
@@ -156,12 +156,12 @@ def process_docking(pdb_file, commands=None):
 
         if not commands or 'complex' in commands:
             run_command([
-                python,
-                "write_all_complexes.py",
-                "-d", dlg,
-                "-r", receptor_pdbqt,
-                "-o", f"output_files/{file_name}_bestcomplex",
-                "-b"
+              python,
+               "write_all_complexes.py",
+               "-d", dlg,
+               "-r", receptor_pdbqt,
+               "-o", f"output_files/{file_name}_bestcomplex",
+               "-b"
             ])
             print(f"Utworzono najlepszy kompleks ligand-receptor {file_name}", flush=True)
     # =============================================================================

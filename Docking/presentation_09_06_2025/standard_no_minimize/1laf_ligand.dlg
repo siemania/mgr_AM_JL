@@ -1,0 +1,762 @@
+AutoDock-GPU version: v1.6-7-ga46ab564d2ac5f1a1523f65239b43505a1c29364
+
+**********************************************************
+**    AutoDock-GPU AUTODOCKTOOLS-COMPATIBLE DLG FILE    **
+**********************************************************
+
+
+    DOCKING PARAMETERS
+    ________________________
+
+
+Ligand file:                               pdbqt_files/1laf_ligand.pdbqt
+Grid fld file:                             map_grid_files/1laf_receptor.maps.fld
+
+Random seed:                               1749308378, 1084
+Number of runs:                            10
+Number of energy evaluations:              2068966
+Number of generations:                     42000
+Size of population:                        150
+Rate of crossover:                         80.000000%
+Tournament selection probability limit:    60.000000%
+Rate of mutation:                          2.000000%
+Maximal allowed delta movement:            +/- 6.000000A
+Maximal allowed delta angle:               +/- 90.000000
+
+Rate of local search:                      100.000000%
+Maximal number of local search iterations: 300
+Rho lower bound:                           0.010000
+Spread of local search delta movement:     2.000000A
+Spread of local search delta angle:        74.999999
+Limit of consecutive successes/failures:   4
+
+Handle symmetry during clustering:         YES
+RMSD tolerance:                            2.000000A
+
+Program call in command line was:          /home/tajgero/AutoDock-GPU/bin/autodock_gpu_128wi --lfile pdbqt_files/1laf_ligand.pdbqt --ffile map_grid_files/1laf_receptor.maps.fld --nrun 10 
+
+
+    GRID PARAMETERS
+    ________________________
+
+
+Receptor name:                             pdbqt_files/1laf_receptor
+Number of grid points (x, y, z):           41, 41, 41
+Grid center (x, y, z):                     21.283000, 58.461000, 47.733000A
+Grid size (x, y, z):                       15.000000, 15.000000, 15.000000A
+Grid spacing:                              0.375000A
+
+
+    LIGAND PARAMETERS
+    ________________________
+
+
+Ligand name:                               pdbqt_files/1laf_ligand
+Number of atoms:                           12
+Number of rotatable bonds:                 5
+Number of atom types:                      4
+
+
+    DUMMY DATA (only for ADT-compatibility)
+    ________________________
+
+
+DPF> outlev 1
+DPF> ga_run 10
+DPF> fld map_grid_files/1laf_receptor.maps.fld
+DPF> move pdbqt_files/1laf_ligand.pdbqt
+
+
+    COUNTER STATES
+    ________________________
+
+
+Number of energy evaluations performed:    2071695
+Number of generations used:                328
+
+
+    INPUT LIGAND PDBQT FILE:
+    ________________________
+
+
+INPUT-LIGAND-PDBQT: REMARK  5 active torsions:
+INPUT-LIGAND-PDBQT: REMARK  status: ('A' for Active; 'I' for Inactive)
+INPUT-LIGAND-PDBQT: REMARK    1  A    between atoms: CA_1809  and  C_1810 
+INPUT-LIGAND-PDBQT: REMARK    2  A    between atoms: CA_1809  and  CB_1812 
+INPUT-LIGAND-PDBQT: REMARK    3  A    between atoms: CB_1812  and  CG_1813 
+INPUT-LIGAND-PDBQT: REMARK    4  A    between atoms: CG_1813  and  CD_1814 
+INPUT-LIGAND-PDBQT: REMARK    5  A    between atoms: CD_1814  and  NE_1815 
+INPUT-LIGAND-PDBQT: ROOT
+INPUT-LIGAND-PDBQT: HETATM    1  CB  ARG E 240      20.384  57.161  47.390  1.00  5.75     0.053 C 
+INPUT-LIGAND-PDBQT: ENDROOT
+INPUT-LIGAND-PDBQT: BRANCH   1   2
+INPUT-LIGAND-PDBQT: HETATM    2  CA  ARG E 240      18.900  57.429  47.138  1.00  8.97     0.387 C 
+INPUT-LIGAND-PDBQT: HETATM    3  N   ARG E 240      18.756  58.155  45.918  1.00  7.42     0.628 N 
+INPUT-LIGAND-PDBQT: BRANCH   2   4
+INPUT-LIGAND-PDBQT: HETATM    4  C   ARG E 240      18.275  58.326  48.222  1.00  9.68     0.224 C 
+INPUT-LIGAND-PDBQT: HETATM    5  O   ARG E 240      18.121  57.877  49.348  1.00 12.13    -0.646 OA
+INPUT-LIGAND-PDBQT: HETATM    6  OXT ARG E 240      17.917  59.477  47.920  1.00 12.01    -0.646 OA
+INPUT-LIGAND-PDBQT: ENDBRANCH   2   4
+INPUT-LIGAND-PDBQT: ENDBRANCH   1   2
+INPUT-LIGAND-PDBQT: BRANCH   1   7
+INPUT-LIGAND-PDBQT: HETATM    7  CG  ARG E 240      21.294  58.356  47.141  1.00 10.14     0.030 C 
+INPUT-LIGAND-PDBQT: BRANCH   7   8
+INPUT-LIGAND-PDBQT: HETATM    8  CD  ARG E 240      22.615  58.092  47.782  1.00  7.08     0.145 C 
+INPUT-LIGAND-PDBQT: BRANCH   8   9
+INPUT-LIGAND-PDBQT: HETATM    9  NE  ARG E 240      23.538  59.158  47.468  1.00  9.95    -0.083 NA
+INPUT-LIGAND-PDBQT: HETATM   10  CZ  ARG E 240      24.777  59.157  47.972  1.00  8.40     0.782 C 
+INPUT-LIGAND-PDBQT: HETATM   11  NH1 ARG E 240      25.158  58.225  48.803  1.00  8.50     0.063 N 
+INPUT-LIGAND-PDBQT: HETATM   12  NH2 ARG E 240      25.662  60.113  47.693  1.00  8.05     0.063 N 
+INPUT-LIGAND-PDBQT: ENDBRANCH   8   9
+INPUT-LIGAND-PDBQT: ENDBRANCH   7   8
+INPUT-LIGAND-PDBQT: ENDBRANCH   1   7
+INPUT-LIGAND-PDBQT: TORSDOF 5
+
+
+    FINAL DOCKED STATE:
+    ________________________
+
+
+Run:   1 / 10
+Time taken for this run:   7.328s
+
+DOCKED: MODEL        1
+DOCKED: USER    Run = 1
+DOCKED: USER
+DOCKED: USER    Estimated Free Energy of Binding    =  +0.03 kcal/mol  [=(1)+(2)+(3)-(4)]
+DOCKED: USER
+DOCKED: USER    (1) Final Intermolecular Energy     =  -1.46 kcal/mol
+DOCKED: USER        vdW + Hbond + desolv Energy     =  -1.30 kcal/mol
+DOCKED: USER        Electrostatic Energy            =  -0.16 kcal/mol
+DOCKED: USER        Moving Ligand-Fixed Receptor    =  -1.46 kcal/mol
+DOCKED: USER        Moving Ligand-Moving Receptor   =  +0.00 kcal/mol
+DOCKED: USER    (2) Final Total Internal Energy     =  -0.11 kcal/mol
+DOCKED: USER    (3) Torsional Free Energy           =  +1.49 kcal/mol
+DOCKED: USER    (4) Unbound System's Energy         =  -0.11 kcal/mol
+DOCKED: USER
+DOCKED: USER
+DOCKED: REMARK  5 active torsions:
+DOCKED: REMARK  status: ('A' for Active; 'I' for Inactive)
+DOCKED: REMARK    1  A    between atoms: CA_1809  and  C_1810 
+DOCKED: REMARK    2  A    between atoms: CA_1809  and  CB_1812 
+DOCKED: REMARK    3  A    between atoms: CB_1812  and  CG_1813 
+DOCKED: REMARK    4  A    between atoms: CG_1813  and  CD_1814 
+DOCKED: REMARK    5  A    between atoms: CD_1814  and  NE_1815 
+DOCKED: USER                              x       y       z     vdW  Elec       q    Type
+DOCKED: USER                           _______ _______ _______ _____ _____    ______ ____
+DOCKED: ROOT
+DOCKED: HETATM    1  CB  ARG E 240      18.681  60.569  53.860 -0.36 -0.01    +0.053 C  
+DOCKED: ENDROOT
+DOCKED: BRANCH   1   2
+DOCKED: HETATM    2  CA  ARG E 240      20.142  61.021  53.885 -0.01 -0.20    +0.387 C  
+DOCKED: HETATM    3  N   ARG E 240      20.524  61.297  55.232 +0.26 -0.36    +0.628 N  
+DOCKED: BRANCH   2   4
+DOCKED: HETATM    4  C   ARG E 240      20.359  62.340  53.121 -0.39 -0.06    +0.224 C  
+DOCKED: HETATM    5  O   ARG E 240      21.465  62.587  52.665 +0.07 +0.25    -0.646 OA 
+DOCKED: HETATM    6  OXT ARG E 240      19.411  63.135  53.010 +0.32 +0.04    -0.646 OA 
+DOCKED: ENDBRANCH   2   4
+DOCKED: ENDBRANCH   1   2
+DOCKED: BRANCH   1   7
+DOCKED: HETATM    7  CG  ARG E 240      17.846  61.063  55.033 -0.16 -0.00    +0.030 C  
+DOCKED: BRANCH   7   8
+DOCKED: HETATM    8  CD  ARG E 240      16.432  60.636  54.827 -0.12 +0.04    +0.145 C  
+DOCKED: BRANCH   8   9
+DOCKED: HETATM    9  NE  ARG E 240      16.385  59.231  54.494 -0.65 -0.01    -0.083 NA 
+DOCKED: HETATM   10  CZ  ARG E 240      15.221  58.571  54.484 +0.24 +0.16    +0.782 C  
+DOCKED: HETATM   11  NH1 ARG E 240      14.113  59.169  54.832 -0.21 +0.03    +0.063 N  
+DOCKED: HETATM   12  NH2 ARG E 240      15.134  57.280  54.167 -0.28 -0.01    +0.063 N  
+DOCKED: ENDBRANCH   8   9
+DOCKED: ENDBRANCH   7   8
+DOCKED: ENDBRANCH   1   7
+DOCKED: TORSDOF 5
+DOCKED: TER
+DOCKED: ENDMDL
+________________________________________________________________________________
+
+
+    FINAL DOCKED STATE:
+    ________________________
+
+
+Run:   2 / 10
+Time taken for this run:   7.328s
+
+DOCKED: MODEL        2
+DOCKED: USER    Run = 2
+DOCKED: USER
+DOCKED: USER    Estimated Free Energy of Binding    =  -1.06 kcal/mol  [=(1)+(2)+(3)-(4)]
+DOCKED: USER
+DOCKED: USER    (1) Final Intermolecular Energy     =  -2.55 kcal/mol
+DOCKED: USER        vdW + Hbond + desolv Energy     =  -2.11 kcal/mol
+DOCKED: USER        Electrostatic Energy            =  -0.44 kcal/mol
+DOCKED: USER        Moving Ligand-Fixed Receptor    =  -2.55 kcal/mol
+DOCKED: USER        Moving Ligand-Moving Receptor   =  +0.00 kcal/mol
+DOCKED: USER    (2) Final Total Internal Energy     =  +0.01 kcal/mol
+DOCKED: USER    (3) Torsional Free Energy           =  +1.49 kcal/mol
+DOCKED: USER    (4) Unbound System's Energy         =  +0.01 kcal/mol
+DOCKED: USER
+DOCKED: USER
+DOCKED: REMARK  5 active torsions:
+DOCKED: REMARK  status: ('A' for Active; 'I' for Inactive)
+DOCKED: REMARK    1  A    between atoms: CA_1809  and  C_1810 
+DOCKED: REMARK    2  A    between atoms: CA_1809  and  CB_1812 
+DOCKED: REMARK    3  A    between atoms: CB_1812  and  CG_1813 
+DOCKED: REMARK    4  A    between atoms: CG_1813  and  CD_1814 
+DOCKED: REMARK    5  A    between atoms: CD_1814  and  NE_1815 
+DOCKED: USER                              x       y       z     vdW  Elec       q    Type
+DOCKED: USER                           _______ _______ _______ _____ _____    ______ ____
+DOCKED: ROOT
+DOCKED: HETATM    1  CB  ARG E 240      17.741  60.953  54.319 -0.05 +0.00    +0.053 C  
+DOCKED: ENDROOT
+DOCKED: BRANCH   1   2
+DOCKED: HETATM    2  CA  ARG E 240      19.196  60.668  53.949 -0.12 -0.14    +0.387 C  
+DOCKED: HETATM    3  N   ARG E 240      19.755  59.767  54.905 +0.10 -0.36    +0.628 N  
+DOCKED: BRANCH   2   4
+DOCKED: HETATM    4  C   ARG E 240      20.075  61.930  54.017 -0.42 -0.07    +0.224 C  
+DOCKED: HETATM    5  O   ARG E 240      20.272  62.459  55.101 -0.63 -0.04    -0.646 OA 
+DOCKED: HETATM    6  OXT ARG E 240      20.543  62.397  52.964 -0.09 +0.20    -0.646 OA 
+DOCKED: ENDBRANCH   2   4
+DOCKED: ENDBRANCH   1   2
+DOCKED: BRANCH   1   7
+DOCKED: HETATM    7  CG  ARG E 240      17.101  59.908  55.223 -0.20 -0.00    +0.030 C  
+DOCKED: BRANCH   7   8
+DOCKED: HETATM    8  CD  ARG E 240      15.770  59.540  54.660 -0.11 +0.05    +0.145 C  
+DOCKED: BRANCH   8   9
+DOCKED: HETATM    9  NE  ARG E 240      15.454  58.170  54.993 -0.21 +0.00    -0.083 NA 
+DOCKED: HETATM   10  CZ  ARG E 240      14.968  57.338  54.066 +0.23 -0.06    +0.782 C  
+DOCKED: HETATM   11  NH1 ARG E 240      14.713  57.762  52.857 -0.35 +0.01    +0.063 N  
+DOCKED: HETATM   12  NH2 ARG E 240      14.680  56.064  54.330 -0.27 -0.02    +0.063 N  
+DOCKED: ENDBRANCH   8   9
+DOCKED: ENDBRANCH   7   8
+DOCKED: ENDBRANCH   1   7
+DOCKED: TORSDOF 5
+DOCKED: TER
+DOCKED: ENDMDL
+________________________________________________________________________________
+
+
+    FINAL DOCKED STATE:
+    ________________________
+
+
+Run:   3 / 10
+Time taken for this run:   7.328s
+
+DOCKED: MODEL        3
+DOCKED: USER    Run = 3
+DOCKED: USER
+DOCKED: USER    Estimated Free Energy of Binding    =  +0.30 kcal/mol  [=(1)+(2)+(3)-(4)]
+DOCKED: USER
+DOCKED: USER    (1) Final Intermolecular Energy     =  -1.19 kcal/mol
+DOCKED: USER        vdW + Hbond + desolv Energy     =  -0.78 kcal/mol
+DOCKED: USER        Electrostatic Energy            =  -0.40 kcal/mol
+DOCKED: USER        Moving Ligand-Fixed Receptor    =  -1.19 kcal/mol
+DOCKED: USER        Moving Ligand-Moving Receptor   =  +0.00 kcal/mol
+DOCKED: USER    (2) Final Total Internal Energy     =  -0.07 kcal/mol
+DOCKED: USER    (3) Torsional Free Energy           =  +1.49 kcal/mol
+DOCKED: USER    (4) Unbound System's Energy         =  -0.07 kcal/mol
+DOCKED: USER
+DOCKED: USER
+DOCKED: REMARK  5 active torsions:
+DOCKED: REMARK  status: ('A' for Active; 'I' for Inactive)
+DOCKED: REMARK    1  A    between atoms: CA_1809  and  C_1810 
+DOCKED: REMARK    2  A    between atoms: CA_1809  and  CB_1812 
+DOCKED: REMARK    3  A    between atoms: CB_1812  and  CG_1813 
+DOCKED: REMARK    4  A    between atoms: CG_1813  and  CD_1814 
+DOCKED: REMARK    5  A    between atoms: CD_1814  and  NE_1815 
+DOCKED: USER                              x       y       z     vdW  Elec       q    Type
+DOCKED: USER                           _______ _______ _______ _____ _____    ______ ____
+DOCKED: ROOT
+DOCKED: HETATM    1  CB  ARG E 240      14.777  58.758  55.226 -0.18 +0.01    +0.053 C  
+DOCKED: ENDROOT
+DOCKED: BRANCH   1   2
+DOCKED: HETATM    2  CA  ARG E 240      14.156  57.565  54.499 -0.01 +0.10    +0.387 C  
+DOCKED: HETATM    3  N   ARG E 240      14.970  56.412  54.710 +0.11 -0.16    +0.628 N  
+DOCKED: BRANCH   2   4
+DOCKED: HETATM    4  C   ARG E 240      14.121  57.764  52.972 -0.19 +0.03    +0.224 C  
+DOCKED: HETATM    5  O   ARG E 240      14.397  56.823  52.244 +0.22 +0.08    -0.646 OA 
+DOCKED: HETATM    6  OXT ARG E 240      13.838  58.885  52.516 +0.11 -0.19    -0.646 OA 
+DOCKED: ENDBRANCH   2   4
+DOCKED: ENDBRANCH   1   2
+DOCKED: BRANCH   1   7
+DOCKED: HETATM    7  CG  ARG E 240      15.738  59.584  54.381 +0.03 +0.02    +0.030 C  
+DOCKED: BRANCH   7   8
+DOCKED: HETATM    8  CD  ARG E 240      17.058  59.638  55.075 +0.12 -0.02    +0.145 C  
+DOCKED: BRANCH   8   9
+DOCKED: HETATM    9  NE  ARG E 240      17.680  60.923  54.854 -0.26 +0.00    -0.083 NA 
+DOCKED: HETATM   10  CZ  ARG E 240      18.971  61.006  54.517 +0.18 -0.21    +0.782 C  
+DOCKED: HETATM   11  NH1 ARG E 240      19.710  59.932  54.439 -0.44 -0.04    +0.063 N  
+DOCKED: HETATM   12  NH2 ARG E 240      19.576  62.171  54.289 -0.46 -0.01    +0.063 N  
+DOCKED: ENDBRANCH   8   9
+DOCKED: ENDBRANCH   7   8
+DOCKED: ENDBRANCH   1   7
+DOCKED: TORSDOF 5
+DOCKED: TER
+DOCKED: ENDMDL
+________________________________________________________________________________
+
+
+    FINAL DOCKED STATE:
+    ________________________
+
+
+Run:   4 / 10
+Time taken for this run:   7.328s
+
+DOCKED: MODEL        4
+DOCKED: USER    Run = 4
+DOCKED: USER
+DOCKED: USER    Estimated Free Energy of Binding    =  +0.18 kcal/mol  [=(1)+(2)+(3)-(4)]
+DOCKED: USER
+DOCKED: USER    (1) Final Intermolecular Energy     =  -1.31 kcal/mol
+DOCKED: USER        vdW + Hbond + desolv Energy     =  -1.18 kcal/mol
+DOCKED: USER        Electrostatic Energy            =  -0.13 kcal/mol
+DOCKED: USER        Moving Ligand-Fixed Receptor    =  -1.31 kcal/mol
+DOCKED: USER        Moving Ligand-Moving Receptor   =  +0.00 kcal/mol
+DOCKED: USER    (2) Final Total Internal Energy     =  -0.02 kcal/mol
+DOCKED: USER    (3) Torsional Free Energy           =  +1.49 kcal/mol
+DOCKED: USER    (4) Unbound System's Energy         =  -0.02 kcal/mol
+DOCKED: USER
+DOCKED: USER
+DOCKED: REMARK  5 active torsions:
+DOCKED: REMARK  status: ('A' for Active; 'I' for Inactive)
+DOCKED: REMARK    1  A    between atoms: CA_1809  and  C_1810 
+DOCKED: REMARK    2  A    between atoms: CA_1809  and  CB_1812 
+DOCKED: REMARK    3  A    between atoms: CB_1812  and  CG_1813 
+DOCKED: REMARK    4  A    between atoms: CG_1813  and  CD_1814 
+DOCKED: REMARK    5  A    between atoms: CD_1814  and  NE_1815 
+DOCKED: USER                              x       y       z     vdW  Elec       q    Type
+DOCKED: USER                           _______ _______ _______ _____ _____    ______ ____
+DOCKED: ROOT
+DOCKED: HETATM    1  CB  ARG E 240      14.933  59.128  53.950 -0.04 +0.03    +0.053 C  
+DOCKED: ENDROOT
+DOCKED: BRANCH   1   2
+DOCKED: HETATM    2  CA  ARG E 240      14.331  57.736  54.144 -0.04 +0.07    +0.387 C  
+DOCKED: HETATM    3  N   ARG E 240      15.276  56.907  54.819 +0.12 -0.15    +0.628 N  
+DOCKED: BRANCH   2   4
+DOCKED: HETATM    4  C   ARG E 240      14.050  57.028  52.806 -0.16 -0.01    +0.224 C  
+DOCKED: HETATM    5  O   ARG E 240      14.104  55.808  52.757 +0.35 +0.18    -0.646 OA 
+DOCKED: HETATM    6  OXT ARG E 240      13.801  57.714  51.801 +0.09 -0.01    -0.646 OA 
+DOCKED: ENDBRANCH   2   4
+DOCKED: ENDBRANCH   1   2
+DOCKED: BRANCH   1   7
+DOCKED: HETATM    7  CG  ARG E 240      15.416  59.793  55.232 -0.22 +0.01    +0.030 C  
+DOCKED: BRANCH   7   8
+DOCKED: HETATM    8  CD  ARG E 240      16.908  59.803  55.231 -0.11 -0.02    +0.145 C  
+DOCKED: BRANCH   8   9
+DOCKED: HETATM    9  NE  ARG E 240      17.395  60.667  54.181 -0.45 -0.02    -0.083 NA 
+DOCKED: HETATM   10  CZ  ARG E 240      18.704  60.749  53.919 +0.24 -0.17    +0.782 C  
+DOCKED: HETATM   11  NH1 ARG E 240      19.572  60.095  54.644 -0.48 -0.03    +0.063 N  
+DOCKED: HETATM   12  NH2 ARG E 240      19.191  61.522  52.949 -0.47 -0.01    +0.063 N  
+DOCKED: ENDBRANCH   8   9
+DOCKED: ENDBRANCH   7   8
+DOCKED: ENDBRANCH   1   7
+DOCKED: TORSDOF 5
+DOCKED: TER
+DOCKED: ENDMDL
+________________________________________________________________________________
+
+
+    FINAL DOCKED STATE:
+    ________________________
+
+
+Run:   5 / 10
+Time taken for this run:   7.328s
+
+DOCKED: MODEL        5
+DOCKED: USER    Run = 5
+DOCKED: USER
+DOCKED: USER    Estimated Free Energy of Binding    =  -0.90 kcal/mol  [=(1)+(2)+(3)-(4)]
+DOCKED: USER
+DOCKED: USER    (1) Final Intermolecular Energy     =  -2.39 kcal/mol
+DOCKED: USER        vdW + Hbond + desolv Energy     =  -2.22 kcal/mol
+DOCKED: USER        Electrostatic Energy            =  -0.16 kcal/mol
+DOCKED: USER        Moving Ligand-Fixed Receptor    =  -2.39 kcal/mol
+DOCKED: USER        Moving Ligand-Moving Receptor   =  +0.00 kcal/mol
+DOCKED: USER    (2) Final Total Internal Energy     =  -0.01 kcal/mol
+DOCKED: USER    (3) Torsional Free Energy           =  +1.49 kcal/mol
+DOCKED: USER    (4) Unbound System's Energy         =  -0.01 kcal/mol
+DOCKED: USER
+DOCKED: USER
+DOCKED: REMARK  5 active torsions:
+DOCKED: REMARK  status: ('A' for Active; 'I' for Inactive)
+DOCKED: REMARK    1  A    between atoms: CA_1809  and  C_1810 
+DOCKED: REMARK    2  A    between atoms: CA_1809  and  CB_1812 
+DOCKED: REMARK    3  A    between atoms: CB_1812  and  CG_1813 
+DOCKED: REMARK    4  A    between atoms: CG_1813  and  CD_1814 
+DOCKED: REMARK    5  A    between atoms: CD_1814  and  NE_1815 
+DOCKED: USER                              x       y       z     vdW  Elec       q    Type
+DOCKED: USER                           _______ _______ _______ _____ _____    ______ ____
+DOCKED: ROOT
+DOCKED: HETATM    1  CB  ARG E 240      17.747  60.885  54.241 -0.11 +0.00    +0.053 C  
+DOCKED: ENDROOT
+DOCKED: BRANCH   1   2
+DOCKED: HETATM    2  CA  ARG E 240      19.208  60.503  54.005 -0.05 -0.15    +0.387 C  
+DOCKED: HETATM    3  N   ARG E 240      19.661  59.691  55.088 +0.13 -0.35    +0.628 N  
+DOCKED: BRANCH   2   4
+DOCKED: HETATM    4  C   ARG E 240      20.140  61.729  53.998 -0.41 -0.09    +0.224 C  
+DOCKED: HETATM    5  O   ARG E 240      20.316  62.347  55.037 -0.66 +0.03    -0.646 OA 
+DOCKED: HETATM    6  OXT ARG E 240      20.671  62.077  52.929 -0.04 +0.26    -0.646 OA 
+DOCKED: ENDBRANCH   2   4
+DOCKED: ENDBRANCH   1   2
+DOCKED: BRANCH   1   7
+DOCKED: HETATM    7  CG  ARG E 240      17.011  59.992  55.230 -0.23 -0.00    +0.030 C  
+DOCKED: BRANCH   7   8
+DOCKED: HETATM    8  CD  ARG E 240      15.562  59.979  54.876 -0.14 +0.05    +0.145 C  
+DOCKED: BRANCH   8   9
+DOCKED: HETATM    9  NE  ARG E 240      15.333  59.077  53.771 -0.42 -0.06    -0.083 NA 
+DOCKED: HETATM   10  CZ  ARG E 240      14.617  57.960  53.940 +0.22 +0.13    +0.782 C  
+DOCKED: HETATM   11  NH1 ARG E 240      14.160  57.633  55.119 -0.16 +0.02    +0.063 N  
+DOCKED: HETATM   12  NH2 ARG E 240      14.370  57.112  52.943 -0.35 -0.00    +0.063 N  
+DOCKED: ENDBRANCH   8   9
+DOCKED: ENDBRANCH   7   8
+DOCKED: ENDBRANCH   1   7
+DOCKED: TORSDOF 5
+DOCKED: TER
+DOCKED: ENDMDL
+________________________________________________________________________________
+
+
+    FINAL DOCKED STATE:
+    ________________________
+
+
+Run:   6 / 10
+Time taken for this run:   7.328s
+
+DOCKED: MODEL        6
+DOCKED: USER    Run = 6
+DOCKED: USER
+DOCKED: USER    Estimated Free Energy of Binding    =  -0.28 kcal/mol  [=(1)+(2)+(3)-(4)]
+DOCKED: USER
+DOCKED: USER    (1) Final Intermolecular Energy     =  -1.78 kcal/mol
+DOCKED: USER        vdW + Hbond + desolv Energy     =  -1.92 kcal/mol
+DOCKED: USER        Electrostatic Energy            =  +0.14 kcal/mol
+DOCKED: USER        Moving Ligand-Fixed Receptor    =  -1.78 kcal/mol
+DOCKED: USER        Moving Ligand-Moving Receptor   =  +0.00 kcal/mol
+DOCKED: USER    (2) Final Total Internal Energy     =  -0.03 kcal/mol
+DOCKED: USER    (3) Torsional Free Energy           =  +1.49 kcal/mol
+DOCKED: USER    (4) Unbound System's Energy         =  -0.03 kcal/mol
+DOCKED: USER
+DOCKED: USER
+DOCKED: REMARK  5 active torsions:
+DOCKED: REMARK  status: ('A' for Active; 'I' for Inactive)
+DOCKED: REMARK    1  A    between atoms: CA_1809  and  C_1810 
+DOCKED: REMARK    2  A    between atoms: CA_1809  and  CB_1812 
+DOCKED: REMARK    3  A    between atoms: CB_1812  and  CG_1813 
+DOCKED: REMARK    4  A    between atoms: CG_1813  and  CD_1814 
+DOCKED: REMARK    5  A    between atoms: CD_1814  and  NE_1815 
+DOCKED: USER                              x       y       z     vdW  Elec       q    Type
+DOCKED: USER                           _______ _______ _______ _____ _____    ______ ____
+DOCKED: ROOT
+DOCKED: HETATM    1  CB  ARG E 240      18.755  61.292  53.557 -0.36 -0.01    +0.053 C  
+DOCKED: ENDROOT
+DOCKED: BRANCH   1   2
+DOCKED: HETATM    2  CA  ARG E 240      20.201  61.728  53.796 -0.19 -0.16    +0.387 C  
+DOCKED: HETATM    3  N   ARG E 240      20.357  62.101  55.165 +0.05 -0.12    +0.628 N  
+DOCKED: BRANCH   2   4
+DOCKED: HETATM    4  C   ARG E 240      20.576  62.982  52.987 -0.37 -0.04    +0.224 C  
+DOCKED: HETATM    5  O   ARG E 240      20.157  64.071  53.352 +0.19 -0.03    -0.646 OA 
+DOCKED: HETATM    6  OXT ARG E 240      21.273  62.856  51.966 +0.10 +0.17    -0.646 OA 
+DOCKED: ENDBRANCH   2   4
+DOCKED: ENDBRANCH   1   2
+DOCKED: BRANCH   1   7
+DOCKED: HETATM    7  CG  ARG E 240      18.202  60.331  54.601 -0.29 -0.01    +0.030 C  
+DOCKED: BRANCH   7   8
+DOCKED: HETATM    8  CD  ARG E 240      16.721  60.497  54.666 -0.12 +0.04    +0.145 C  
+DOCKED: BRANCH   8   9
+DOCKED: HETATM    9  NE  ARG E 240      16.073  59.217  54.491 -0.71 -0.02    -0.083 NA 
+DOCKED: HETATM   10  CZ  ARG E 240      14.757  59.087  54.692 +0.21 +0.27    +0.782 C  
+DOCKED: HETATM   11  NH1 ARG E 240      14.043  60.098  55.106 -0.23 +0.02    +0.063 N  
+DOCKED: HETATM   12  NH2 ARG E 240      14.121  57.929  54.524 -0.20 +0.02    +0.063 N  
+DOCKED: ENDBRANCH   8   9
+DOCKED: ENDBRANCH   7   8
+DOCKED: ENDBRANCH   1   7
+DOCKED: TORSDOF 5
+DOCKED: TER
+DOCKED: ENDMDL
+________________________________________________________________________________
+
+
+    FINAL DOCKED STATE:
+    ________________________
+
+
+Run:   7 / 10
+Time taken for this run:   7.328s
+
+DOCKED: MODEL        7
+DOCKED: USER    Run = 7
+DOCKED: USER
+DOCKED: USER    Estimated Free Energy of Binding    =  -0.27 kcal/mol  [=(1)+(2)+(3)-(4)]
+DOCKED: USER
+DOCKED: USER    (1) Final Intermolecular Energy     =  -1.77 kcal/mol
+DOCKED: USER        vdW + Hbond + desolv Energy     =  -1.41 kcal/mol
+DOCKED: USER        Electrostatic Energy            =  -0.36 kcal/mol
+DOCKED: USER        Moving Ligand-Fixed Receptor    =  -1.77 kcal/mol
+DOCKED: USER        Moving Ligand-Moving Receptor   =  +0.00 kcal/mol
+DOCKED: USER    (2) Final Total Internal Energy     =  -0.10 kcal/mol
+DOCKED: USER    (3) Torsional Free Energy           =  +1.49 kcal/mol
+DOCKED: USER    (4) Unbound System's Energy         =  -0.10 kcal/mol
+DOCKED: USER
+DOCKED: USER
+DOCKED: REMARK  5 active torsions:
+DOCKED: REMARK  status: ('A' for Active; 'I' for Inactive)
+DOCKED: REMARK    1  A    between atoms: CA_1809  and  C_1810 
+DOCKED: REMARK    2  A    between atoms: CA_1809  and  CB_1812 
+DOCKED: REMARK    3  A    between atoms: CB_1812  and  CG_1813 
+DOCKED: REMARK    4  A    between atoms: CG_1813  and  CD_1814 
+DOCKED: REMARK    5  A    between atoms: CD_1814  and  NE_1815 
+DOCKED: USER                              x       y       z     vdW  Elec       q    Type
+DOCKED: USER                           _______ _______ _______ _____ _____    ______ ____
+DOCKED: ROOT
+DOCKED: HETATM    1  CB  ARG E 240      14.821  58.960  54.888 -0.21 +0.02    +0.053 C  
+DOCKED: ENDROOT
+DOCKED: BRANCH   1   2
+DOCKED: HETATM    2  CA  ARG E 240      14.418  57.516  54.584 -0.02 +0.06    +0.387 C  
+DOCKED: HETATM    3  N   ARG E 240      15.553  56.668  54.753 +0.12 -0.24    +0.628 N  
+DOCKED: BRANCH   2   4
+DOCKED: HETATM    4  C   ARG E 240      13.983  57.327  53.119 -0.18 +0.01    +0.224 C  
+DOCKED: HETATM    5  O   ARG E 240      13.817  56.194  52.691 +0.12 +0.08    -0.646 OA 
+DOCKED: HETATM    6  OXT ARG E 240      13.835  58.329  52.399 +0.07 -0.11    -0.646 OA 
+DOCKED: ENDBRANCH   2   4
+DOCKED: ENDBRANCH   1   2
+DOCKED: BRANCH   1   7
+DOCKED: HETATM    7  CG  ARG E 240      16.293  59.148  55.225 -0.13 -0.00    +0.030 C  
+DOCKED: BRANCH   7   8
+DOCKED: HETATM    8  CD  ARG E 240      16.676  60.558  54.922 -0.16 +0.02    +0.145 C  
+DOCKED: BRANCH   8   9
+DOCKED: HETATM    9  NE  ARG E 240      18.085  60.753  55.175 -0.31 +0.02    -0.083 NA 
+DOCKED: HETATM   10  CZ  ARG E 240      18.914  61.095  54.182 +0.21 -0.18    +0.782 C  
+DOCKED: HETATM   11  NH1 ARG E 240      18.478  61.203  52.957 -0.38 -0.00    +0.063 N  
+DOCKED: HETATM   12  NH2 ARG E 240      20.216  61.299  54.379 -0.53 -0.03    +0.063 N  
+DOCKED: ENDBRANCH   8   9
+DOCKED: ENDBRANCH   7   8
+DOCKED: ENDBRANCH   1   7
+DOCKED: TORSDOF 5
+DOCKED: TER
+DOCKED: ENDMDL
+________________________________________________________________________________
+
+
+    FINAL DOCKED STATE:
+    ________________________
+
+
+Run:   8 / 10
+Time taken for this run:   7.328s
+
+DOCKED: MODEL        8
+DOCKED: USER    Run = 8
+DOCKED: USER
+DOCKED: USER    Estimated Free Energy of Binding    =  +0.27 kcal/mol  [=(1)+(2)+(3)-(4)]
+DOCKED: USER
+DOCKED: USER    (1) Final Intermolecular Energy     =  -1.22 kcal/mol
+DOCKED: USER        vdW + Hbond + desolv Energy     =  -0.95 kcal/mol
+DOCKED: USER        Electrostatic Energy            =  -0.27 kcal/mol
+DOCKED: USER        Moving Ligand-Fixed Receptor    =  -1.22 kcal/mol
+DOCKED: USER        Moving Ligand-Moving Receptor   =  +0.00 kcal/mol
+DOCKED: USER    (2) Final Total Internal Energy     =  -0.03 kcal/mol
+DOCKED: USER    (3) Torsional Free Energy           =  +1.49 kcal/mol
+DOCKED: USER    (4) Unbound System's Energy         =  -0.03 kcal/mol
+DOCKED: USER
+DOCKED: USER
+DOCKED: REMARK  5 active torsions:
+DOCKED: REMARK  status: ('A' for Active; 'I' for Inactive)
+DOCKED: REMARK    1  A    between atoms: CA_1809  and  C_1810 
+DOCKED: REMARK    2  A    between atoms: CA_1809  and  CB_1812 
+DOCKED: REMARK    3  A    between atoms: CB_1812  and  CG_1813 
+DOCKED: REMARK    4  A    between atoms: CG_1813  and  CD_1814 
+DOCKED: REMARK    5  A    between atoms: CD_1814  and  NE_1815 
+DOCKED: USER                              x       y       z     vdW  Elec       q    Type
+DOCKED: USER                           _______ _______ _______ _____ _____    ______ ____
+DOCKED: ROOT
+DOCKED: HETATM    1  CB  ARG E 240      18.507  60.538  55.231 -0.39 -0.02    +0.053 C  
+DOCKED: ENDROOT
+DOCKED: BRANCH   1   2
+DOCKED: HETATM    2  CA  ARG E 240      19.689  61.039  54.401 -0.25 -0.16    +0.387 C  
+DOCKED: HETATM    3  N   ARG E 240      20.541  61.830  55.229 +0.11 -0.25    +0.628 N  
+DOCKED: BRANCH   2   4
+DOCKED: HETATM    4  C   ARG E 240      19.248  61.974  53.260 -0.09 -0.04    +0.224 C  
+DOCKED: HETATM    5  O   ARG E 240      18.429  61.573  52.447 +0.30 -0.02    -0.646 OA 
+DOCKED: HETATM    6  OXT ARG E 240      19.756  63.106  53.177 +0.06 +0.05    -0.646 OA 
+DOCKED: ENDBRANCH   2   4
+DOCKED: ENDBRANCH   1   2
+DOCKED: BRANCH   1   7
+DOCKED: HETATM    7  CG  ARG E 240      17.251  60.238  54.426 -0.07 +0.00    +0.030 C  
+DOCKED: BRANCH   7   8
+DOCKED: HETATM    8  CD  ARG E 240      16.377  59.330  55.224 -0.09 -0.01    +0.145 C  
+DOCKED: BRANCH   8   9
+DOCKED: HETATM    9  NE  ARG E 240      15.939  58.221  54.408 -0.29 +0.01    -0.083 NA 
+DOCKED: HETATM   10  CZ  ARG E 240      14.658  57.836  54.411 +0.22 +0.11    +0.782 C  
+DOCKED: HETATM   11  NH1 ARG E 240      13.790  58.416  55.195 -0.16 +0.04    +0.063 N  
+DOCKED: HETATM   12  NH2 ARG E 240      14.214  56.830  53.661 -0.29 -0.00    +0.063 N  
+DOCKED: ENDBRANCH   8   9
+DOCKED: ENDBRANCH   7   8
+DOCKED: ENDBRANCH   1   7
+DOCKED: TORSDOF 5
+DOCKED: TER
+DOCKED: ENDMDL
+________________________________________________________________________________
+
+
+    FINAL DOCKED STATE:
+    ________________________
+
+
+Run:   9 / 10
+Time taken for this run:   7.328s
+
+DOCKED: MODEL        9
+DOCKED: USER    Run = 9
+DOCKED: USER
+DOCKED: USER    Estimated Free Energy of Binding    =  -1.36 kcal/mol  [=(1)+(2)+(3)-(4)]
+DOCKED: USER
+DOCKED: USER    (1) Final Intermolecular Energy     =  -2.86 kcal/mol
+DOCKED: USER        vdW + Hbond + desolv Energy     =  -2.22 kcal/mol
+DOCKED: USER        Electrostatic Energy            =  -0.64 kcal/mol
+DOCKED: USER        Moving Ligand-Fixed Receptor    =  -2.86 kcal/mol
+DOCKED: USER        Moving Ligand-Moving Receptor   =  +0.00 kcal/mol
+DOCKED: USER    (2) Final Total Internal Energy     =  -0.02 kcal/mol
+DOCKED: USER    (3) Torsional Free Energy           =  +1.49 kcal/mol
+DOCKED: USER    (4) Unbound System's Energy         =  -0.02 kcal/mol
+DOCKED: USER
+DOCKED: USER
+DOCKED: REMARK  5 active torsions:
+DOCKED: REMARK  status: ('A' for Active; 'I' for Inactive)
+DOCKED: REMARK    1  A    between atoms: CA_1809  and  C_1810 
+DOCKED: REMARK    2  A    between atoms: CA_1809  and  CB_1812 
+DOCKED: REMARK    3  A    between atoms: CB_1812  and  CG_1813 
+DOCKED: REMARK    4  A    between atoms: CG_1813  and  CD_1814 
+DOCKED: REMARK    5  A    between atoms: CD_1814  and  NE_1815 
+DOCKED: USER                              x       y       z     vdW  Elec       q    Type
+DOCKED: USER                           _______ _______ _______ _____ _____    ______ ____
+DOCKED: ROOT
+DOCKED: HETATM    1  CB  ARG E 240      17.919  60.701  53.866 -0.18 +0.00    +0.053 C  
+DOCKED: ENDROOT
+DOCKED: BRANCH   1   2
+DOCKED: HETATM    2  CA  ARG E 240      19.448  60.713  53.850 -0.07 -0.15    +0.387 C  
+DOCKED: HETATM    3  N   ARG E 240      19.934  59.921  54.933 +0.08 -0.36    +0.628 N  
+DOCKED: BRANCH   2   4
+DOCKED: HETATM    4  C   ARG E 240      20.024  62.121  54.086 -0.42 -0.06    +0.224 C  
+DOCKED: HETATM    5  O   ARG E 240      20.013  62.586  55.216 -0.55 -0.12    -0.646 OA 
+DOCKED: HETATM    6  OXT ARG E 240      20.463  62.764  53.116 -0.13 +0.14    -0.646 OA 
+DOCKED: ENDBRANCH   2   4
+DOCKED: ENDBRANCH   1   2
+DOCKED: BRANCH   1   7
+DOCKED: HETATM    7  CG  ARG E 240      17.304  60.202  55.166 -0.26 -0.00    +0.030 C  
+DOCKED: BRANCH   7   8
+DOCKED: HETATM    8  CD  ARG E 240      15.947  59.654  54.873 -0.15 +0.03    +0.145 C  
+DOCKED: BRANCH   8   9
+DOCKED: HETATM    9  NE  ARG E 240      15.895  58.253  55.220 -0.18 +0.01    -0.083 NA 
+DOCKED: HETATM   10  CZ  ARG E 240      15.278  57.375  54.422 +0.25 -0.11    +0.782 C  
+DOCKED: HETATM   11  NH1 ARG E 240      14.661  57.775  53.343 -0.33 +0.01    +0.063 N  
+DOCKED: HETATM   12  NH2 ARG E 240      15.222  56.073  54.699 -0.28 -0.03    +0.063 N  
+DOCKED: ENDBRANCH   8   9
+DOCKED: ENDBRANCH   7   8
+DOCKED: ENDBRANCH   1   7
+DOCKED: TORSDOF 5
+DOCKED: TER
+DOCKED: ENDMDL
+________________________________________________________________________________
+
+
+    FINAL DOCKED STATE:
+    ________________________
+
+
+Run:   10 / 10
+Time taken for this run:   7.328s
+
+DOCKED: MODEL        10
+DOCKED: USER    Run = 10
+DOCKED: USER
+DOCKED: USER    Estimated Free Energy of Binding    =  +1.32 kcal/mol  [=(1)+(2)+(3)-(4)]
+DOCKED: USER
+DOCKED: USER    (1) Final Intermolecular Energy     =  -0.17 kcal/mol
+DOCKED: USER        vdW + Hbond + desolv Energy     =  -0.13 kcal/mol
+DOCKED: USER        Electrostatic Energy            =  -0.04 kcal/mol
+DOCKED: USER        Moving Ligand-Fixed Receptor    =  -0.17 kcal/mol
+DOCKED: USER        Moving Ligand-Moving Receptor   =  +0.00 kcal/mol
+DOCKED: USER    (2) Final Total Internal Energy     =  -0.05 kcal/mol
+DOCKED: USER    (3) Torsional Free Energy           =  +1.49 kcal/mol
+DOCKED: USER    (4) Unbound System's Energy         =  -0.05 kcal/mol
+DOCKED: USER
+DOCKED: USER
+DOCKED: REMARK  5 active torsions:
+DOCKED: REMARK  status: ('A' for Active; 'I' for Inactive)
+DOCKED: REMARK    1  A    between atoms: CA_1809  and  C_1810 
+DOCKED: REMARK    2  A    between atoms: CA_1809  and  CB_1812 
+DOCKED: REMARK    3  A    between atoms: CB_1812  and  CG_1813 
+DOCKED: REMARK    4  A    between atoms: CG_1813  and  CD_1814 
+DOCKED: REMARK    5  A    between atoms: CD_1814  and  NE_1815 
+DOCKED: USER                              x       y       z     vdW  Elec       q    Type
+DOCKED: USER                           _______ _______ _______ _____ _____    ______ ____
+DOCKED: ROOT
+DOCKED: HETATM    1  CB  ARG E 240      18.854  61.764  53.952 +0.31 -0.01    +0.053 C  
+DOCKED: ENDROOT
+DOCKED: BRANCH   1   2
+DOCKED: HETATM    2  CA  ARG E 240      20.372  61.921  53.862 -0.10 -0.16    +0.387 C  
+DOCKED: HETATM    3  N   ARG E 240      20.890  62.213  55.159 +0.53 -0.20    +0.628 N  
+DOCKED: BRANCH   2   4
+DOCKED: HETATM    4  C   ARG E 240      20.787  63.112  52.980 -0.17 -0.04    +0.224 C  
+DOCKED: HETATM    5  O   ARG E 240      20.526  64.246  53.353 +0.12 -0.03    -0.646 OA 
+DOCKED: HETATM    6  OXT ARG E 240      21.353  62.892  51.896 +0.14 +0.17    -0.646 OA 
+DOCKED: ENDBRANCH   2   4
+DOCKED: ENDBRANCH   1   2
+DOCKED: BRANCH   1   7
+DOCKED: HETATM    7  CG  ARG E 240      18.353  60.338  53.773 -0.09 -0.01    +0.030 C  
+DOCKED: BRANCH   7   8
+DOCKED: HETATM    8  CD  ARG E 240      17.504  59.979  54.946 -0.02 -0.03    +0.145 C  
+DOCKED: BRANCH   8   9
+DOCKED: HETATM    9  NE  ARG E 240      16.237  60.669  54.868 -0.63 -0.02    -0.083 NA 
+DOCKED: HETATM   10  CZ  ARG E 240      15.088  60.003  55.026 +0.22 +0.26    +0.782 C  
+DOCKED: HETATM   11  NH1 ARG E 240      15.085  58.708  55.195 -0.18 +0.01    +0.063 N  
+DOCKED: HETATM   12  NH2 ARG E 240      13.901  60.606  54.978 -0.27 +0.02    +0.063 N  
+DOCKED: ENDBRANCH   8   9
+DOCKED: ENDBRANCH   7   8
+DOCKED: ENDBRANCH   1   7
+DOCKED: TORSDOF 5
+DOCKED: TER
+DOCKED: ENDMDL
+________________________________________________________________________________
+
+
+    CLUSTERING HISTOGRAM
+    ____________________
+
+
+________________________________________________________________________________
+     |           |     |           |     |
+Clus | Lowest    | Run | Mean      | Num | Histogram
+-ter | Binding   |     | Binding   | in  |
+Rank | Energy    |     | Energy    | Clus|    5    10   15   20   25   30   35
+_____|___________|_____|___________|_____|____:____|____:____|____:____|____:___
+   1 |     -1.36 |   9 |     -0.28 |   7 |#######
+   2 |     -0.27 |   7 |     +0.07 |   3 |###
+_____|___________|_____|___________|_____|______________________________________
+
+
+    RMSD TABLE
+    __________
+
+
+_______________________________________________________________________
+     |      |      |           |         |                 |
+Rank | Sub- | Run  | Binding   | Cluster | Reference       | Grep
+     | Rank |      | Energy    | RMSD    | RMSD            | Pattern
+_____|______|______|___________|_________|_________________|___________
+   1      1      9       -1.36      0.00      7.84           RANKING
+   1      2      2       -1.06      0.42      7.79           RANKING
+   1      3      5       -0.90      0.91      7.82           RANKING
+   1      4      6       -0.28      1.52      7.99           RANKING
+   1      5      1       +0.03      1.22      7.76           RANKING
+   1      6      8       +0.27      1.36      7.81           RANKING
+   1      7     10       +1.32      1.79      8.08           RANKING
+   2      1      7       -0.27      0.00      7.49           RANKING
+   2      2      4       +0.18      0.85      7.37           RANKING
+   2      3      3       +0.30      0.81      7.54           RANKING
+
+Run time 73.783 sec
+Idle time 1.828 sec

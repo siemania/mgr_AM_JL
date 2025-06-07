@@ -1,0 +1,739 @@
+AutoDock-GPU version: v1.6-7-ga46ab564d2ac5f1a1523f65239b43505a1c29364
+
+**********************************************************
+**    AutoDock-GPU AUTODOCKTOOLS-COMPATIBLE DLG FILE    **
+**********************************************************
+
+
+    DOCKING PARAMETERS
+    ________________________
+
+
+Ligand file:                               pdbqt_files/1moq_ligand.pdbqt
+Grid fld file:                             map_grid_files/1moq_receptor.maps.fld
+
+Random seed:                               1749308653, 1287
+Number of runs:                            10
+Number of energy evaluations:              2068966
+Number of generations:                     42000
+Size of population:                        150
+Rate of crossover:                         80.000000%
+Tournament selection probability limit:    60.000000%
+Rate of mutation:                          2.000000%
+Maximal allowed delta movement:            +/- 6.000000A
+Maximal allowed delta angle:               +/- 90.000000
+
+Rate of local search:                      100.000000%
+Maximal number of local search iterations: 300
+Rho lower bound:                           0.010000
+Spread of local search delta movement:     2.000000A
+Spread of local search delta angle:        74.999999
+Limit of consecutive successes/failures:   4
+
+Handle symmetry during clustering:         YES
+RMSD tolerance:                            2.000000A
+
+Program call in command line was:          /home/tajgero/AutoDock-GPU/bin/autodock_gpu_128wi --lfile pdbqt_files/1moq_ligand.pdbqt --ffile map_grid_files/1moq_receptor.maps.fld --nrun 10 
+
+
+    GRID PARAMETERS
+    ________________________
+
+
+Receptor name:                             pdbqt_files/1moq_receptor
+Number of grid points (x, y, z):           41, 41, 41
+Grid center (x, y, z):                     29.846000, 17.804000, -3.011000A
+Grid size (x, y, z):                       15.000000, 15.000000, 15.000000A
+Grid spacing:                              0.375000A
+
+
+    LIGAND PARAMETERS
+    ________________________
+
+
+Ligand name:                               pdbqt_files/1moq_ligand
+Number of atoms:                           16
+Number of rotatable bonds:                 3
+Number of atom types:                      4
+
+
+    DUMMY DATA (only for ADT-compatibility)
+    ________________________
+
+
+DPF> outlev 1
+DPF> ga_run 10
+DPF> fld map_grid_files/1moq_receptor.maps.fld
+DPF> move pdbqt_files/1moq_ligand.pdbqt
+
+
+    COUNTER STATES
+    ________________________
+
+
+Number of energy evaluations performed:    693835
+Number of generations used:                40
+
+
+    INPUT LIGAND PDBQT FILE:
+    ________________________
+
+
+INPUT-LIGAND-PDBQT: REMARK  3 active torsions:
+INPUT-LIGAND-PDBQT: REMARK  status: ('A' for Active; 'I' for Inactive)
+INPUT-LIGAND-PDBQT: REMARK    1  A    between atoms: C5_2831  and  C6_2832 
+INPUT-LIGAND-PDBQT: REMARK    2  A    between atoms: C6_2832  and  O6_2838 
+INPUT-LIGAND-PDBQT: REMARK    3  A    between atoms: O6_2838  and  P_2839 
+INPUT-LIGAND-PDBQT: ROOT
+INPUT-LIGAND-PDBQT: HETATM    1  C1  GLP A 609      28.601  16.111  -4.414  1.00 12.35     0.309 C 
+INPUT-LIGAND-PDBQT: HETATM    2  C2  GLP A 609      28.891  15.432  -3.091  1.00 15.32     0.393 C 
+INPUT-LIGAND-PDBQT: HETATM    3  C3  GLP A 609      28.469  16.331  -1.941  1.00 13.65     0.227 C 
+INPUT-LIGAND-PDBQT: HETATM    4  C4  GLP A 609      29.146  17.683  -2.019  1.00 13.12     0.214 C 
+INPUT-LIGAND-PDBQT: HETATM    5  C5  GLP A 609      28.852  18.308  -3.399  1.00 13.89     0.181 C 
+INPUT-LIGAND-PDBQT: HETATM    6  O1  GLP A 609      27.210  16.267  -4.555  1.00 12.44    -0.188 OA
+INPUT-LIGAND-PDBQT: HETATM    7  N2  GLP A 609      28.212  14.167  -3.035  1.00 12.62     0.624 N 
+INPUT-LIGAND-PDBQT: HETATM    8  O3  GLP A 609      28.873  15.709  -0.704  1.00 13.88    -0.218 OA
+INPUT-LIGAND-PDBQT: HETATM    9  O4  GLP A 609      28.690  18.599  -1.045  1.00 13.85    -0.218 OA
+INPUT-LIGAND-PDBQT: HETATM   10  O5  GLP A 609      29.146  17.392  -4.435  1.00 13.81    -0.325 OA
+INPUT-LIGAND-PDBQT: ENDROOT
+INPUT-LIGAND-PDBQT: BRANCH   5  11
+INPUT-LIGAND-PDBQT: HETATM   11  C6  GLP A 609      29.779  19.521  -3.592  1.00 12.54     0.188 C 
+INPUT-LIGAND-PDBQT: BRANCH  11  12
+INPUT-LIGAND-PDBQT: HETATM   12  O6  GLP A 609      31.138  19.041  -3.744  1.00 12.80    -0.261 OA
+INPUT-LIGAND-PDBQT: BRANCH  12  13
+INPUT-LIGAND-PDBQT: HETATM   13  P   GLP A 609      32.401  19.889  -3.182  1.00 13.79     0.423 P 
+INPUT-LIGAND-PDBQT: HETATM   14  O1P GLP A 609      32.431  21.182  -3.906  1.00 13.92    -0.617 OA
+INPUT-LIGAND-PDBQT: HETATM   15  O2P GLP A 609      33.552  19.003  -3.386  1.00 12.24    -0.617 OA
+INPUT-LIGAND-PDBQT: HETATM   16  O3P GLP A 609      32.152  20.228  -1.726  1.00 17.52    -0.617 OA
+INPUT-LIGAND-PDBQT: ENDBRANCH  12  13
+INPUT-LIGAND-PDBQT: ENDBRANCH  11  12
+INPUT-LIGAND-PDBQT: ENDBRANCH   5  11
+INPUT-LIGAND-PDBQT: TORSDOF 3
+
+
+    FINAL DOCKED STATE:
+    ________________________
+
+
+Run:   1 / 10
+Time taken for this run:   1.387s
+
+DOCKED: MODEL        1
+DOCKED: USER    Run = 1
+DOCKED: USER
+DOCKED: USER    Estimated Free Energy of Binding    =  -4.48 kcal/mol  [=(1)+(2)+(3)-(4)]
+DOCKED: USER
+DOCKED: USER    (1) Final Intermolecular Energy     =  -5.37 kcal/mol
+DOCKED: USER        vdW + Hbond + desolv Energy     =  -4.16 kcal/mol
+DOCKED: USER        Electrostatic Energy            =  -1.21 kcal/mol
+DOCKED: USER        Moving Ligand-Fixed Receptor    =  -5.37 kcal/mol
+DOCKED: USER        Moving Ligand-Moving Receptor   =  +0.00 kcal/mol
+DOCKED: USER    (2) Final Total Internal Energy     =  -1.23 kcal/mol
+DOCKED: USER    (3) Torsional Free Energy           =  +0.89 kcal/mol
+DOCKED: USER    (4) Unbound System's Energy         =  -1.23 kcal/mol
+DOCKED: USER
+DOCKED: USER
+DOCKED: REMARK  3 active torsions:
+DOCKED: REMARK  status: ('A' for Active; 'I' for Inactive)
+DOCKED: REMARK    1  A    between atoms: C5_2831  and  C6_2832 
+DOCKED: REMARK    2  A    between atoms: C6_2832  and  O6_2838 
+DOCKED: REMARK    3  A    between atoms: O6_2838  and  P_2839 
+DOCKED: USER                              x       y       z     vdW  Elec       q    Type
+DOCKED: USER                           _______ _______ _______ _____ _____    ______ ____
+DOCKED: ROOT
+DOCKED: HETATM    1  C1  GLP A 609      28.428  17.960  -2.453 -0.02 +0.09    +0.309 C  
+DOCKED: HETATM    2  C2  GLP A 609      28.650  16.648  -3.177 +0.06 -0.01    +0.393 C  
+DOCKED: HETATM    3  C3  GLP A 609      29.165  15.598  -2.207 -0.14 -0.04    +0.227 C  
+DOCKED: HETATM    4  C4  GLP A 609      30.430  16.058  -1.515 -0.18 +0.04    +0.214 C  
+DOCKED: HETATM    5  C5  GLP A 609      30.159  17.415  -0.832 -0.13 +0.07    +0.181 C  
+DOCKED: HETATM    6  O1  GLP A 609      27.402  17.794  -1.505 -0.82 -0.12    -0.188 OA 
+DOCKED: HETATM    7  N2  GLP A 609      27.425  16.222  -3.797 +0.18 -0.06    +0.624 N  
+DOCKED: HETATM    8  O3  GLP A 609      29.481  14.404  -2.952 -0.32 +0.15    -0.218 OA 
+DOCKED: HETATM    9  O4  GLP A 609      30.878  15.172  -0.510 -1.15 -0.17    -0.218 OA 
+DOCKED: HETATM   10  O5  GLP A 609      29.568  18.323  -1.741 -0.10 -0.12    -0.325 OA 
+DOCKED: ENDROOT
+DOCKED: BRANCH   5  11
+DOCKED: HETATM   11  C6  GLP A 609      31.506  18.021  -0.399 +0.02 +0.10    +0.188 C  
+DOCKED: BRANCH  11  12
+DOCKED: HETATM   12  O6  GLP A 609      31.988  18.876  -1.465 -0.44 -0.17    -0.261 OA 
+DOCKED: BRANCH  12  13
+DOCKED: HETATM   13  P   GLP A 609      32.699  18.260  -2.786 -0.08 +0.26    +0.423 P  
+DOCKED: HETATM   14  O1P GLP A 609      33.596  19.302  -3.340 -0.58 -0.46    -0.617 OA 
+DOCKED: HETATM   15  O2P GLP A 609      31.580  17.845  -3.640 +0.13 -0.14    -0.617 OA 
+DOCKED: HETATM   16  O3P GLP A 609      33.595  17.112  -2.368 -0.59 -0.63    -0.617 OA 
+DOCKED: ENDBRANCH  12  13
+DOCKED: ENDBRANCH  11  12
+DOCKED: ENDBRANCH   5  11
+DOCKED: TORSDOF 3
+DOCKED: TER
+DOCKED: ENDMDL
+________________________________________________________________________________
+
+
+    FINAL DOCKED STATE:
+    ________________________
+
+
+Run:   2 / 10
+Time taken for this run:   1.387s
+
+DOCKED: MODEL        2
+DOCKED: USER    Run = 2
+DOCKED: USER
+DOCKED: USER    Estimated Free Energy of Binding    =  -4.49 kcal/mol  [=(1)+(2)+(3)-(4)]
+DOCKED: USER
+DOCKED: USER    (1) Final Intermolecular Energy     =  -5.38 kcal/mol
+DOCKED: USER        vdW + Hbond + desolv Energy     =  -4.17 kcal/mol
+DOCKED: USER        Electrostatic Energy            =  -1.22 kcal/mol
+DOCKED: USER        Moving Ligand-Fixed Receptor    =  -5.38 kcal/mol
+DOCKED: USER        Moving Ligand-Moving Receptor   =  +0.00 kcal/mol
+DOCKED: USER    (2) Final Total Internal Energy     =  -1.20 kcal/mol
+DOCKED: USER    (3) Torsional Free Energy           =  +0.89 kcal/mol
+DOCKED: USER    (4) Unbound System's Energy         =  -1.20 kcal/mol
+DOCKED: USER
+DOCKED: USER
+DOCKED: REMARK  3 active torsions:
+DOCKED: REMARK  status: ('A' for Active; 'I' for Inactive)
+DOCKED: REMARK    1  A    between atoms: C5_2831  and  C6_2832 
+DOCKED: REMARK    2  A    between atoms: C6_2832  and  O6_2838 
+DOCKED: REMARK    3  A    between atoms: O6_2838  and  P_2839 
+DOCKED: USER                              x       y       z     vdW  Elec       q    Type
+DOCKED: USER                           _______ _______ _______ _____ _____    ______ ____
+DOCKED: ROOT
+DOCKED: HETATM    1  C1  GLP A 609      28.192  17.833  -2.350 -0.02 +0.10    +0.309 C  
+DOCKED: HETATM    2  C2  GLP A 609      28.490  16.565  -3.124 +0.06 -0.02    +0.393 C  
+DOCKED: HETATM    3  C3  GLP A 609      29.115  15.528  -2.205 -0.15 -0.05    +0.227 C  
+DOCKED: HETATM    4  C4  GLP A 609      30.363  16.064  -1.536 -0.17 +0.04    +0.214 C  
+DOCKED: HETATM    5  C5  GLP A 609      30.010  17.373  -0.800 -0.14 +0.07    +0.181 C  
+DOCKED: HETATM    6  O1  GLP A 609      27.212  17.558  -1.378 -0.81 -0.10    -0.188 OA 
+DOCKED: HETATM    7  N2  GLP A 609      27.283  16.066  -3.722 +0.18 -0.08    +0.624 N  
+DOCKED: HETATM    8  O3  GLP A 609      29.498  14.387  -3.000 -0.32 +0.15    -0.218 OA 
+DOCKED: HETATM    9  O4  GLP A 609      30.909  15.184  -0.576 -1.15 -0.16    -0.218 OA 
+DOCKED: HETATM   10  O5  GLP A 609      29.323  18.260  -1.660 -0.14 -0.12    -0.325 OA 
+DOCKED: ENDROOT
+DOCKED: BRANCH   5  11
+DOCKED: HETATM   11  C6  GLP A 609      31.320  18.068  -0.387 -0.04 +0.10    +0.188 C  
+DOCKED: BRANCH  11  12
+DOCKED: HETATM   12  O6  GLP A 609      31.765  18.900  -1.487 -0.34 -0.16    -0.261 OA 
+DOCKED: BRANCH  12  13
+DOCKED: HETATM   13  P   GLP A 609      32.578  18.276  -2.743 -0.08 +0.25    +0.423 P  
+DOCKED: HETATM   14  O1P GLP A 609      33.570  19.287  -3.182 -0.58 -0.52    -0.617 OA 
+DOCKED: HETATM   15  O2P GLP A 609      31.535  17.926  -3.713 +0.13 -0.15    -0.617 OA 
+DOCKED: HETATM   16  O3P GLP A 609      33.378  17.083  -2.262 -0.58 -0.57    -0.617 OA 
+DOCKED: ENDBRANCH  12  13
+DOCKED: ENDBRANCH  11  12
+DOCKED: ENDBRANCH   5  11
+DOCKED: TORSDOF 3
+DOCKED: TER
+DOCKED: ENDMDL
+________________________________________________________________________________
+
+
+    FINAL DOCKED STATE:
+    ________________________
+
+
+Run:   3 / 10
+Time taken for this run:   1.387s
+
+DOCKED: MODEL        3
+DOCKED: USER    Run = 3
+DOCKED: USER
+DOCKED: USER    Estimated Free Energy of Binding    =  -4.47 kcal/mol  [=(1)+(2)+(3)-(4)]
+DOCKED: USER
+DOCKED: USER    (1) Final Intermolecular Energy     =  -5.36 kcal/mol
+DOCKED: USER        vdW + Hbond + desolv Energy     =  -3.18 kcal/mol
+DOCKED: USER        Electrostatic Energy            =  -2.18 kcal/mol
+DOCKED: USER        Moving Ligand-Fixed Receptor    =  -5.36 kcal/mol
+DOCKED: USER        Moving Ligand-Moving Receptor   =  +0.00 kcal/mol
+DOCKED: USER    (2) Final Total Internal Energy     =  -1.19 kcal/mol
+DOCKED: USER    (3) Torsional Free Energy           =  +0.89 kcal/mol
+DOCKED: USER    (4) Unbound System's Energy         =  -1.19 kcal/mol
+DOCKED: USER
+DOCKED: USER
+DOCKED: REMARK  3 active torsions:
+DOCKED: REMARK  status: ('A' for Active; 'I' for Inactive)
+DOCKED: REMARK    1  A    between atoms: C5_2831  and  C6_2832 
+DOCKED: REMARK    2  A    between atoms: C6_2832  and  O6_2838 
+DOCKED: REMARK    3  A    between atoms: O6_2838  and  P_2839 
+DOCKED: USER                              x       y       z     vdW  Elec       q    Type
+DOCKED: USER                           _______ _______ _______ _____ _____    ______ ____
+DOCKED: ROOT
+DOCKED: HETATM    1  C1  GLP A 609      28.230  14.953  -3.220 -0.08 -0.14    +0.309 C  
+DOCKED: HETATM    2  C2  GLP A 609      27.999  14.722  -1.741 +0.03 -0.20    +0.393 C  
+DOCKED: HETATM    3  C3  GLP A 609      27.701  16.041  -1.048 -0.19 -0.03    +0.227 C  
+DOCKED: HETATM    4  C4  GLP A 609      28.808  17.048  -1.276 -0.12 +0.06    +0.214 C  
+DOCKED: HETATM    5  C5  GLP A 609      29.027  17.212  -2.795 -0.06 +0.02    +0.181 C  
+DOCKED: HETATM    6  O1  GLP A 609      27.037  15.418  -3.804 -0.16 +0.04    -0.188 OA 
+DOCKED: HETATM    7  N2  GLP A 609      26.925  13.786  -1.557 +0.19 -0.56    +0.624 N  
+DOCKED: HETATM    8  O3  GLP A 609      27.612  15.801   0.371 -1.00 -0.02    -0.218 OA 
+DOCKED: HETATM    9  O4  GLP A 609      28.519  18.331  -0.759 -0.59 -0.17    -0.218 OA 
+DOCKED: HETATM   10  O5  GLP A 609      29.180  15.952  -3.416 -0.11 +0.08    -0.325 OA 
+DOCKED: ENDROOT
+DOCKED: BRANCH   5  11
+DOCKED: HETATM   11  C6  GLP A 609      30.338  17.988  -3.017 -0.04 +0.04    +0.188 C  
+DOCKED: BRANCH  11  12
+DOCKED: HETATM   12  O6  GLP A 609      31.440  17.047  -2.981 -0.11 -0.01    -0.261 OA 
+DOCKED: BRANCH  12  13
+DOCKED: HETATM   13  P   GLP A 609      32.105  16.580  -1.577 -0.09 +0.21    +0.423 P  
+DOCKED: HETATM   14  O1P GLP A 609      31.837  17.642  -0.579 +0.17 -0.36    -0.617 OA 
+DOCKED: HETATM   15  O2P GLP A 609      33.514  16.339  -1.907 -0.47 -0.71    -0.617 OA 
+DOCKED: HETATM   16  O3P GLP A 609      31.382  15.344  -1.082 -0.54 -0.46    -0.617 OA 
+DOCKED: ENDBRANCH  12  13
+DOCKED: ENDBRANCH  11  12
+DOCKED: ENDBRANCH   5  11
+DOCKED: TORSDOF 3
+DOCKED: TER
+DOCKED: ENDMDL
+________________________________________________________________________________
+
+
+    FINAL DOCKED STATE:
+    ________________________
+
+
+Run:   4 / 10
+Time taken for this run:   1.387s
+
+DOCKED: MODEL        4
+DOCKED: USER    Run = 4
+DOCKED: USER
+DOCKED: USER    Estimated Free Energy of Binding    =  -4.54 kcal/mol  [=(1)+(2)+(3)-(4)]
+DOCKED: USER
+DOCKED: USER    (1) Final Intermolecular Energy     =  -5.43 kcal/mol
+DOCKED: USER        vdW + Hbond + desolv Energy     =  -3.19 kcal/mol
+DOCKED: USER        Electrostatic Energy            =  -2.25 kcal/mol
+DOCKED: USER        Moving Ligand-Fixed Receptor    =  -5.43 kcal/mol
+DOCKED: USER        Moving Ligand-Moving Receptor   =  +0.00 kcal/mol
+DOCKED: USER    (2) Final Total Internal Energy     =  -1.07 kcal/mol
+DOCKED: USER    (3) Torsional Free Energy           =  +0.89 kcal/mol
+DOCKED: USER    (4) Unbound System's Energy         =  -1.07 kcal/mol
+DOCKED: USER
+DOCKED: USER
+DOCKED: REMARK  3 active torsions:
+DOCKED: REMARK  status: ('A' for Active; 'I' for Inactive)
+DOCKED: REMARK    1  A    between atoms: C5_2831  and  C6_2832 
+DOCKED: REMARK    2  A    between atoms: C6_2832  and  O6_2838 
+DOCKED: REMARK    3  A    between atoms: O6_2838  and  P_2839 
+DOCKED: USER                              x       y       z     vdW  Elec       q    Type
+DOCKED: USER                           _______ _______ _______ _____ _____    ______ ____
+DOCKED: ROOT
+DOCKED: HETATM    1  C1  GLP A 609      28.061  14.871  -3.258 -0.08 -0.14    +0.309 C  
+DOCKED: HETATM    2  C2  GLP A 609      27.908  14.569  -1.781 +0.06 -0.22    +0.393 C  
+DOCKED: HETATM    3  C3  GLP A 609      27.612  15.848  -1.016 -0.19 -0.05    +0.227 C  
+DOCKED: HETATM    4  C4  GLP A 609      28.683  16.892  -1.250 -0.13 +0.05    +0.214 C  
+DOCKED: HETATM    5  C5  GLP A 609      28.825  17.129  -2.768 -0.06 +0.02    +0.181 C  
+DOCKED: HETATM    6  O1  GLP A 609      26.831  15.331  -3.763 -0.16 +0.05    -0.188 OA 
+DOCKED: HETATM    7  N2  GLP A 609      26.866  13.598  -1.590 +0.16 -0.54    +0.624 N  
+DOCKED: HETATM    8  O3  GLP A 609      27.597  15.543   0.394 -0.98 -0.02    -0.218 OA 
+DOCKED: HETATM    9  O4  GLP A 609      28.389  18.143  -0.662 -0.62 -0.17    -0.218 OA 
+DOCKED: HETATM   10  O5  GLP A 609      28.977  15.901  -3.453 -0.11 +0.08    -0.325 OA 
+DOCKED: ENDROOT
+DOCKED: BRANCH   5  11
+DOCKED: HETATM   11  C6  GLP A 609      30.105  17.947  -3.016 -0.03 +0.04    +0.188 C  
+DOCKED: BRANCH  11  12
+DOCKED: HETATM   12  O6  GLP A 609      31.238  17.044  -2.995 -0.11 -0.00    -0.261 OA 
+DOCKED: BRANCH  12  13
+DOCKED: HETATM   13  P   GLP A 609      32.063  16.756  -1.629 -0.08 +0.20    +0.423 P  
+DOCKED: HETATM   14  O1P GLP A 609      31.601  15.456  -1.090 -0.45 -0.50    -0.617 OA 
+DOCKED: HETATM   15  O2P GLP A 609      31.804  17.935  -0.794 +0.12 -0.35    -0.617 OA 
+DOCKED: HETATM   16  O3P GLP A 609      33.528  16.572  -1.973 -0.51 -0.70    -0.617 OA 
+DOCKED: ENDBRANCH  12  13
+DOCKED: ENDBRANCH  11  12
+DOCKED: ENDBRANCH   5  11
+DOCKED: TORSDOF 3
+DOCKED: TER
+DOCKED: ENDMDL
+________________________________________________________________________________
+
+
+    FINAL DOCKED STATE:
+    ________________________
+
+
+Run:   5 / 10
+Time taken for this run:   1.387s
+
+DOCKED: MODEL        5
+DOCKED: USER    Run = 5
+DOCKED: USER
+DOCKED: USER    Estimated Free Energy of Binding    =  -4.97 kcal/mol  [=(1)+(2)+(3)-(4)]
+DOCKED: USER
+DOCKED: USER    (1) Final Intermolecular Energy     =  -5.87 kcal/mol
+DOCKED: USER        vdW + Hbond + desolv Energy     =  -4.16 kcal/mol
+DOCKED: USER        Electrostatic Energy            =  -1.71 kcal/mol
+DOCKED: USER        Moving Ligand-Fixed Receptor    =  -5.87 kcal/mol
+DOCKED: USER        Moving Ligand-Moving Receptor   =  +0.00 kcal/mol
+DOCKED: USER    (2) Final Total Internal Energy     =  -0.59 kcal/mol
+DOCKED: USER    (3) Torsional Free Energy           =  +0.89 kcal/mol
+DOCKED: USER    (4) Unbound System's Energy         =  -0.59 kcal/mol
+DOCKED: USER
+DOCKED: USER
+DOCKED: REMARK  3 active torsions:
+DOCKED: REMARK  status: ('A' for Active; 'I' for Inactive)
+DOCKED: REMARK    1  A    between atoms: C5_2831  and  C6_2832 
+DOCKED: REMARK    2  A    between atoms: C6_2832  and  O6_2838 
+DOCKED: REMARK    3  A    between atoms: O6_2838  and  P_2839 
+DOCKED: USER                              x       y       z     vdW  Elec       q    Type
+DOCKED: USER                           _______ _______ _______ _____ _____    ______ ____
+DOCKED: ROOT
+DOCKED: HETATM    1  C1  GLP A 609      27.957  16.659  -2.138 -0.02 +0.01    +0.309 C  
+DOCKED: HETATM    2  C2  GLP A 609      28.615  15.504  -1.411 -0.05 -0.06    +0.393 C  
+DOCKED: HETATM    3  C3  GLP A 609      29.940  15.950  -0.817 -0.15 +0.07    +0.227 C  
+DOCKED: HETATM    4  C4  GLP A 609      30.858  16.520  -1.878 -0.12 +0.04    +0.214 C  
+DOCKED: HETATM    5  C5  GLP A 609      30.123  17.661  -2.612 -0.04 +0.03    +0.181 C  
+DOCKED: HETATM    6  O1  GLP A 609      27.628  17.660  -1.207 -0.83 -0.11    -0.188 OA 
+DOCKED: HETATM    7  N2  GLP A 609      27.733  15.005  -0.393 +0.13 -0.21    +0.624 N  
+DOCKED: HETATM    8  O3  GLP A 609      30.594  14.799  -0.244 -1.30 -0.15    -0.218 OA 
+DOCKED: HETATM    9  O4  GLP A 609      32.052  17.066  -1.356 -0.27 -0.12    -0.218 OA 
+DOCKED: HETATM   10  O5  GLP A 609      28.845  17.236  -3.042 -0.02 -0.03    -0.325 OA 
+DOCKED: ENDROOT
+DOCKED: BRANCH   5  11
+DOCKED: HETATM   11  C6  GLP A 609      30.926  18.026  -3.872 -0.09 +0.04    +0.188 C  
+DOCKED: BRANCH  11  12
+DOCKED: HETATM   12  O6  GLP A 609      31.132  19.461  -3.886 -0.23 -0.13    -0.261 OA 
+DOCKED: BRANCH  12  13
+DOCKED: HETATM   13  P   GLP A 609      32.322  20.151  -3.028 -0.07 +0.28    +0.423 P  
+DOCKED: HETATM   14  O1P GLP A 609      31.951  20.066  -1.596 -0.45 -0.53    -0.617 OA 
+DOCKED: HETATM   15  O2P GLP A 609      32.438  21.501  -3.590 -0.05 -0.33    -0.617 OA 
+DOCKED: HETATM   16  O3P GLP A 609      33.581  19.323  -3.186 -0.58 -0.52    -0.617 OA 
+DOCKED: ENDBRANCH  12  13
+DOCKED: ENDBRANCH  11  12
+DOCKED: ENDBRANCH   5  11
+DOCKED: TORSDOF 3
+DOCKED: TER
+DOCKED: ENDMDL
+________________________________________________________________________________
+
+
+    FINAL DOCKED STATE:
+    ________________________
+
+
+Run:   6 / 10
+Time taken for this run:   1.387s
+
+DOCKED: MODEL        6
+DOCKED: USER    Run = 6
+DOCKED: USER
+DOCKED: USER    Estimated Free Energy of Binding    =  -4.51 kcal/mol  [=(1)+(2)+(3)-(4)]
+DOCKED: USER
+DOCKED: USER    (1) Final Intermolecular Energy     =  -5.40 kcal/mol
+DOCKED: USER        vdW + Hbond + desolv Energy     =  -3.18 kcal/mol
+DOCKED: USER        Electrostatic Energy            =  -2.23 kcal/mol
+DOCKED: USER        Moving Ligand-Fixed Receptor    =  -5.40 kcal/mol
+DOCKED: USER        Moving Ligand-Moving Receptor   =  +0.00 kcal/mol
+DOCKED: USER    (2) Final Total Internal Energy     =  -1.16 kcal/mol
+DOCKED: USER    (3) Torsional Free Energy           =  +0.89 kcal/mol
+DOCKED: USER    (4) Unbound System's Energy         =  -1.16 kcal/mol
+DOCKED: USER
+DOCKED: USER
+DOCKED: REMARK  3 active torsions:
+DOCKED: REMARK  status: ('A' for Active; 'I' for Inactive)
+DOCKED: REMARK    1  A    between atoms: C5_2831  and  C6_2832 
+DOCKED: REMARK    2  A    between atoms: C6_2832  and  O6_2838 
+DOCKED: REMARK    3  A    between atoms: O6_2838  and  P_2839 
+DOCKED: USER                              x       y       z     vdW  Elec       q    Type
+DOCKED: USER                           _______ _______ _______ _____ _____    ______ ____
+DOCKED: ROOT
+DOCKED: HETATM    1  C1  GLP A 609      28.150  14.860  -3.180 -0.09 -0.15    +0.309 C  
+DOCKED: HETATM    2  C2  GLP A 609      27.958  14.588  -1.702 +0.09 -0.22    +0.393 C  
+DOCKED: HETATM    3  C3  GLP A 609      27.646  15.883  -0.970 -0.19 -0.04    +0.227 C  
+DOCKED: HETATM    4  C4  GLP A 609      28.725  16.921  -1.198 -0.14 +0.05    +0.214 C  
+DOCKED: HETATM    5  C5  GLP A 609      28.905  17.126  -2.717 -0.06 +0.02    +0.181 C  
+DOCKED: HETATM    6  O1  GLP A 609      26.934  15.311  -3.725 -0.17 +0.05    -0.188 OA 
+DOCKED: HETATM    7  N2  GLP A 609      26.909  13.623  -1.517 +0.18 -0.56    +0.624 N  
+DOCKED: HETATM    8  O3  GLP A 609      27.594  15.607   0.444 -0.99 -0.02    -0.218 OA 
+DOCKED: HETATM    9  O4  GLP A 609      28.418  18.183  -0.644 -0.61 -0.17    -0.218 OA 
+DOCKED: HETATM   10  O5  GLP A 609      29.072  15.884  -3.372 -0.12 +0.09    -0.325 OA 
+DOCKED: ENDROOT
+DOCKED: BRANCH   5  11
+DOCKED: HETATM   11  C6  GLP A 609      30.193  17.936  -2.949 -0.03 +0.04    +0.188 C  
+DOCKED: BRANCH  11  12
+DOCKED: HETATM   12  O6  GLP A 609      31.320  17.026  -2.923 -0.10 -0.01    -0.261 OA 
+DOCKED: BRANCH  12  13
+DOCKED: HETATM   13  P   GLP A 609      32.040  16.612  -1.530 -0.09 +0.21    +0.423 P  
+DOCKED: HETATM   14  O1P GLP A 609      31.724  17.662  -0.533 +0.17 -0.35    -0.617 OA 
+DOCKED: HETATM   15  O2P GLP A 609      33.454  16.457  -1.885 -0.49 -0.68    -0.617 OA 
+DOCKED: HETATM   16  O3P GLP A 609      31.405  15.337  -1.013 -0.54 -0.50    -0.617 OA 
+DOCKED: ENDBRANCH  12  13
+DOCKED: ENDBRANCH  11  12
+DOCKED: ENDBRANCH   5  11
+DOCKED: TORSDOF 3
+DOCKED: TER
+DOCKED: ENDMDL
+________________________________________________________________________________
+
+
+    FINAL DOCKED STATE:
+    ________________________
+
+
+Run:   7 / 10
+Time taken for this run:   1.387s
+
+DOCKED: MODEL        7
+DOCKED: USER    Run = 7
+DOCKED: USER
+DOCKED: USER    Estimated Free Energy of Binding    =  -4.51 kcal/mol  [=(1)+(2)+(3)-(4)]
+DOCKED: USER
+DOCKED: USER    (1) Final Intermolecular Energy     =  -5.40 kcal/mol
+DOCKED: USER        vdW + Hbond + desolv Energy     =  -3.20 kcal/mol
+DOCKED: USER        Electrostatic Energy            =  -2.21 kcal/mol
+DOCKED: USER        Moving Ligand-Fixed Receptor    =  -5.40 kcal/mol
+DOCKED: USER        Moving Ligand-Moving Receptor   =  +0.00 kcal/mol
+DOCKED: USER    (2) Final Total Internal Energy     =  -1.16 kcal/mol
+DOCKED: USER    (3) Torsional Free Energy           =  +0.89 kcal/mol
+DOCKED: USER    (4) Unbound System's Energy         =  -1.16 kcal/mol
+DOCKED: USER
+DOCKED: USER
+DOCKED: REMARK  3 active torsions:
+DOCKED: REMARK  status: ('A' for Active; 'I' for Inactive)
+DOCKED: REMARK    1  A    between atoms: C5_2831  and  C6_2832 
+DOCKED: REMARK    2  A    between atoms: C6_2832  and  O6_2838 
+DOCKED: REMARK    3  A    between atoms: O6_2838  and  P_2839 
+DOCKED: USER                              x       y       z     vdW  Elec       q    Type
+DOCKED: USER                           _______ _______ _______ _____ _____    ______ ____
+DOCKED: ROOT
+DOCKED: HETATM    1  C1  GLP A 609      28.130  14.851  -3.185 -0.09 -0.15    +0.309 C  
+DOCKED: HETATM    2  C2  GLP A 609      27.948  14.579  -1.705 +0.09 -0.22    +0.393 C  
+DOCKED: HETATM    3  C3  GLP A 609      27.637  15.873  -0.973 -0.19 -0.04    +0.227 C  
+DOCKED: HETATM    4  C4  GLP A 609      28.712  16.914  -1.207 -0.14 +0.05    +0.214 C  
+DOCKED: HETATM    5  C5  GLP A 609      28.883  17.119  -2.727 -0.06 +0.02    +0.181 C  
+DOCKED: HETATM    6  O1  GLP A 609      26.910  15.298  -3.723 -0.17 +0.05    -0.188 OA 
+DOCKED: HETATM    7  N2  GLP A 609      26.903  13.612  -1.514 +0.18 -0.56    +0.624 N  
+DOCKED: HETATM    8  O3  GLP A 609      27.595  15.598   0.442 -0.99 -0.02    -0.218 OA 
+DOCKED: HETATM    9  O4  GLP A 609      28.405  18.176  -0.652 -0.61 -0.17    -0.218 OA 
+DOCKED: HETATM   10  O5  GLP A 609      29.049  15.877  -3.383 -0.12 +0.09    -0.325 OA 
+DOCKED: ENDROOT
+DOCKED: BRANCH   5  11
+DOCKED: HETATM   11  C6  GLP A 609      30.167  17.932  -2.967 -0.03 +0.04    +0.188 C  
+DOCKED: BRANCH  11  12
+DOCKED: HETATM   12  O6  GLP A 609      31.297  17.026  -2.940 -0.10 -0.00    -0.261 OA 
+DOCKED: BRANCH  12  13
+DOCKED: HETATM   13  P   GLP A 609      32.021  16.621  -1.546 -0.09 +0.21    +0.423 P  
+DOCKED: HETATM   14  O1P GLP A 609      31.697  17.670  -0.551 +0.16 -0.34    -0.617 OA 
+DOCKED: HETATM   15  O2P GLP A 609      33.437  16.478  -1.902 -0.50 -0.67    -0.617 OA 
+DOCKED: HETATM   16  O3P GLP A 609      31.398  15.341  -1.026 -0.54 -0.49    -0.617 OA 
+DOCKED: ENDBRANCH  12  13
+DOCKED: ENDBRANCH  11  12
+DOCKED: ENDBRANCH   5  11
+DOCKED: TORSDOF 3
+DOCKED: TER
+DOCKED: ENDMDL
+________________________________________________________________________________
+
+
+    FINAL DOCKED STATE:
+    ________________________
+
+
+Run:   8 / 10
+Time taken for this run:   1.387s
+
+DOCKED: MODEL        8
+DOCKED: USER    Run = 8
+DOCKED: USER
+DOCKED: USER    Estimated Free Energy of Binding    =  -5.27 kcal/mol  [=(1)+(2)+(3)-(4)]
+DOCKED: USER
+DOCKED: USER    (1) Final Intermolecular Energy     =  -6.16 kcal/mol
+DOCKED: USER        vdW + Hbond + desolv Energy     =  -4.08 kcal/mol
+DOCKED: USER        Electrostatic Energy            =  -2.08 kcal/mol
+DOCKED: USER        Moving Ligand-Fixed Receptor    =  -6.16 kcal/mol
+DOCKED: USER        Moving Ligand-Moving Receptor   =  +0.00 kcal/mol
+DOCKED: USER    (2) Final Total Internal Energy     =  -0.53 kcal/mol
+DOCKED: USER    (3) Torsional Free Energy           =  +0.89 kcal/mol
+DOCKED: USER    (4) Unbound System's Energy         =  -0.53 kcal/mol
+DOCKED: USER
+DOCKED: USER
+DOCKED: REMARK  3 active torsions:
+DOCKED: REMARK  status: ('A' for Active; 'I' for Inactive)
+DOCKED: REMARK    1  A    between atoms: C5_2831  and  C6_2832 
+DOCKED: REMARK    2  A    between atoms: C6_2832  and  O6_2838 
+DOCKED: REMARK    3  A    between atoms: O6_2838  and  P_2839 
+DOCKED: USER                              x       y       z     vdW  Elec       q    Type
+DOCKED: USER                           _______ _______ _______ _____ _____    ______ ____
+DOCKED: ROOT
+DOCKED: HETATM    1  C1  GLP A 609      27.498  16.703  -0.763 -0.12 +0.04    +0.309 C  
+DOCKED: HETATM    2  C2  GLP A 609      27.771  15.718  -1.881 -0.01 -0.09    +0.393 C  
+DOCKED: HETATM    3  C3  GLP A 609      29.223  15.272  -1.839 -0.13 -0.05    +0.227 C  
+DOCKED: HETATM    4  C4  GLP A 609      30.166  16.455  -1.912 -0.11 +0.02    +0.214 C  
+DOCKED: HETATM    5  C5  GLP A 609      29.816  17.442  -0.779 -0.15 +0.07    +0.181 C  
+DOCKED: HETATM    6  O1  GLP A 609      27.651  16.049   0.474 -0.99 -0.04    -0.188 OA 
+DOCKED: HETATM    7  N2  GLP A 609      26.882  14.595  -1.767 +0.21 -0.50    +0.624 N  
+DOCKED: HETATM    8  O3  GLP A 609      29.477  14.437  -2.986 -0.33 +0.15    -0.218 OA 
+DOCKED: HETATM    9  O4  GLP A 609      31.525  16.103  -1.748 -0.33 -0.06    -0.218 OA 
+DOCKED: HETATM   10  O5  GLP A 609      28.433  17.734  -0.782 -0.58 -0.18    -0.325 OA 
+DOCKED: ENDROOT
+DOCKED: BRANCH   5  11
+DOCKED: HETATM   11  C6  GLP A 609      30.558  18.765  -1.039 -0.18 +0.08    +0.188 C  
+DOCKED: BRANCH  11  12
+DOCKED: HETATM   12  O6  GLP A 609      30.884  18.840  -2.449 -0.09 -0.10    -0.261 OA 
+DOCKED: BRANCH  12  13
+DOCKED: HETATM   13  P   GLP A 609      31.968  19.907  -3.010 -0.08 +0.25    +0.423 P  
+DOCKED: HETATM   14  O1P GLP A 609      32.365  20.779  -1.879 -0.27 -0.80    -0.617 OA 
+DOCKED: HETATM   15  O2P GLP A 609      31.285  20.564  -4.129 -0.35 -0.48    -0.617 OA 
+DOCKED: HETATM   16  O3P GLP A 609      33.220  19.159  -3.423 -0.58 -0.38    -0.617 OA 
+DOCKED: ENDBRANCH  12  13
+DOCKED: ENDBRANCH  11  12
+DOCKED: ENDBRANCH   5  11
+DOCKED: TORSDOF 3
+DOCKED: TER
+DOCKED: ENDMDL
+________________________________________________________________________________
+
+
+    FINAL DOCKED STATE:
+    ________________________
+
+
+Run:   9 / 10
+Time taken for this run:   1.387s
+
+DOCKED: MODEL        9
+DOCKED: USER    Run = 9
+DOCKED: USER
+DOCKED: USER    Estimated Free Energy of Binding    =  -5.25 kcal/mol  [=(1)+(2)+(3)-(4)]
+DOCKED: USER
+DOCKED: USER    (1) Final Intermolecular Energy     =  -6.15 kcal/mol
+DOCKED: USER        vdW + Hbond + desolv Energy     =  -4.00 kcal/mol
+DOCKED: USER        Electrostatic Energy            =  -2.15 kcal/mol
+DOCKED: USER        Moving Ligand-Fixed Receptor    =  -6.15 kcal/mol
+DOCKED: USER        Moving Ligand-Moving Receptor   =  +0.00 kcal/mol
+DOCKED: USER    (2) Final Total Internal Energy     =  -0.53 kcal/mol
+DOCKED: USER    (3) Torsional Free Energy           =  +0.89 kcal/mol
+DOCKED: USER    (4) Unbound System's Energy         =  -0.53 kcal/mol
+DOCKED: USER
+DOCKED: USER
+DOCKED: REMARK  3 active torsions:
+DOCKED: REMARK  status: ('A' for Active; 'I' for Inactive)
+DOCKED: REMARK    1  A    between atoms: C5_2831  and  C6_2832 
+DOCKED: REMARK    2  A    between atoms: C6_2832  and  O6_2838 
+DOCKED: REMARK    3  A    between atoms: O6_2838  and  P_2839 
+DOCKED: USER                              x       y       z     vdW  Elec       q    Type
+DOCKED: USER                           _______ _______ _______ _____ _____    ______ ____
+DOCKED: ROOT
+DOCKED: HETATM    1  C1  GLP A 609      27.566  16.662  -0.752 -0.13 +0.04    +0.309 C  
+DOCKED: HETATM    2  C2  GLP A 609      27.832  15.688  -1.881 -0.01 -0.09    +0.393 C  
+DOCKED: HETATM    3  C3  GLP A 609      29.282  15.236  -1.849 -0.13 -0.06    +0.227 C  
+DOCKED: HETATM    4  C4  GLP A 609      30.230  16.415  -1.912 -0.12 +0.02    +0.214 C  
+DOCKED: HETATM    5  C5  GLP A 609      29.887  17.391  -0.767 -0.15 +0.07    +0.181 C  
+DOCKED: HETATM    6  O1  GLP A 609      27.720  15.993   0.477 -1.00 -0.05    -0.188 OA 
+DOCKED: HETATM    7  N2  GLP A 609      26.938  14.567  -1.777 +0.19 -0.49    +0.624 N  
+DOCKED: HETATM    8  O3  GLP A 609      29.529  14.412  -3.007 -0.32 +0.15    -0.218 OA 
+DOCKED: HETATM    9  O4  GLP A 609      31.588  16.056  -1.757 -0.34 -0.07    -0.218 OA 
+DOCKED: HETATM   10  O5  GLP A 609      28.505  17.689  -0.762 -0.52 -0.18    -0.325 OA 
+DOCKED: ENDROOT
+DOCKED: BRANCH   5  11
+DOCKED: HETATM   11  C6  GLP A 609      30.634  18.714  -1.014 -0.17 +0.08    +0.188 C  
+DOCKED: BRANCH  11  12
+DOCKED: HETATM   12  O6  GLP A 609      30.939  18.812  -2.428 -0.09 -0.10    -0.261 OA 
+DOCKED: BRANCH  12  13
+DOCKED: HETATM   13  P   GLP A 609      32.101  19.803  -2.974 -0.08 +0.26    +0.423 P  
+DOCKED: HETATM   14  O1P GLP A 609      31.532  20.582  -4.100 -0.27 -0.50    -0.617 OA 
+DOCKED: HETATM   15  O2P GLP A 609      33.216  18.908  -3.301 -0.58 -0.41    -0.617 OA 
+DOCKED: HETATM   16  O3P GLP A 609      32.433  20.809  -1.891 -0.27 -0.83    -0.617 OA 
+DOCKED: ENDBRANCH  12  13
+DOCKED: ENDBRANCH  11  12
+DOCKED: ENDBRANCH   5  11
+DOCKED: TORSDOF 3
+DOCKED: TER
+DOCKED: ENDMDL
+________________________________________________________________________________
+
+
+    FINAL DOCKED STATE:
+    ________________________
+
+
+Run:   10 / 10
+Time taken for this run:   1.387s
+
+DOCKED: MODEL        10
+DOCKED: USER    Run = 10
+DOCKED: USER
+DOCKED: USER    Estimated Free Energy of Binding    =  -4.50 kcal/mol  [=(1)+(2)+(3)-(4)]
+DOCKED: USER
+DOCKED: USER    (1) Final Intermolecular Energy     =  -5.40 kcal/mol
+DOCKED: USER        vdW + Hbond + desolv Energy     =  -3.18 kcal/mol
+DOCKED: USER        Electrostatic Energy            =  -2.22 kcal/mol
+DOCKED: USER        Moving Ligand-Fixed Receptor    =  -5.40 kcal/mol
+DOCKED: USER        Moving Ligand-Moving Receptor   =  +0.00 kcal/mol
+DOCKED: USER    (2) Final Total Internal Energy     =  -1.16 kcal/mol
+DOCKED: USER    (3) Torsional Free Energy           =  +0.89 kcal/mol
+DOCKED: USER    (4) Unbound System's Energy         =  -1.16 kcal/mol
+DOCKED: USER
+DOCKED: USER
+DOCKED: REMARK  3 active torsions:
+DOCKED: REMARK  status: ('A' for Active; 'I' for Inactive)
+DOCKED: REMARK    1  A    between atoms: C5_2831  and  C6_2832 
+DOCKED: REMARK    2  A    between atoms: C6_2832  and  O6_2838 
+DOCKED: REMARK    3  A    between atoms: O6_2838  and  P_2839 
+DOCKED: USER                              x       y       z     vdW  Elec       q    Type
+DOCKED: USER                           _______ _______ _______ _____ _____    ______ ____
+DOCKED: ROOT
+DOCKED: HETATM    1  C1  GLP A 609      28.161  14.865  -3.192 -0.08 -0.15    +0.309 C  
+DOCKED: HETATM    2  C2  GLP A 609      27.964  14.597  -1.714 +0.08 -0.22    +0.393 C  
+DOCKED: HETATM    3  C3  GLP A 609      27.653  15.895  -0.987 -0.19 -0.04    +0.227 C  
+DOCKED: HETATM    4  C4  GLP A 609      28.736  16.929  -1.214 -0.13 +0.05    +0.214 C  
+DOCKED: HETATM    5  C5  GLP A 609      28.921  17.130  -2.733 -0.06 +0.02    +0.181 C  
+DOCKED: HETATM    6  O1  GLP A 609      26.948  15.318  -3.742 -0.17 +0.05    -0.188 OA 
+DOCKED: HETATM    7  N2  GLP A 609      26.912  13.636  -1.530 +0.17 -0.56    +0.624 N  
+DOCKED: HETATM    8  O3  GLP A 609      27.597  15.623   0.428 -0.99 -0.02    -0.218 OA 
+DOCKED: HETATM    9  O4  GLP A 609      28.431  18.194  -0.664 -0.61 -0.17    -0.218 OA 
+DOCKED: HETATM   10  O5  GLP A 609      29.087  15.886  -3.385 -0.12 +0.09    -0.325 OA 
+DOCKED: ENDROOT
+DOCKED: BRANCH   5  11
+DOCKED: HETATM   11  C6  GLP A 609      30.212  17.936  -2.964 -0.03 +0.04    +0.188 C  
+DOCKED: BRANCH  11  12
+DOCKED: HETATM   12  O6  GLP A 609      31.336  17.022  -2.935 -0.10 -0.00    -0.261 OA 
+DOCKED: BRANCH  12  13
+DOCKED: HETATM   13  P   GLP A 609      32.048  16.602  -1.540 -0.09 +0.21    +0.423 P  
+DOCKED: HETATM   14  O1P GLP A 609      31.739  17.655  -0.544 +0.17 -0.35    -0.617 OA 
+DOCKED: HETATM   15  O2P GLP A 609      33.462  16.435  -1.891 -0.48 -0.69    -0.617 OA 
+DOCKED: HETATM   16  O3P GLP A 609      31.401  15.332  -1.025 -0.54 -0.49    -0.617 OA 
+DOCKED: ENDBRANCH  12  13
+DOCKED: ENDBRANCH  11  12
+DOCKED: ENDBRANCH   5  11
+DOCKED: TORSDOF 3
+DOCKED: TER
+DOCKED: ENDMDL
+________________________________________________________________________________
+
+
+    CLUSTERING HISTOGRAM
+    ____________________
+
+
+________________________________________________________________________________
+     |           |     |           |     |
+Clus | Lowest    | Run | Mean      | Num | Histogram
+-ter | Binding   |     | Binding   | in  |
+Rank | Energy    |     | Energy    | Clus|    5    10   15   20   25   30   35
+_____|___________|_____|___________|_____|____:____|____:____|____:____|____:___
+   1 |     -5.27 |   8 |     -4.70 |  10 |##########
+_____|___________|_____|___________|_____|______________________________________
+
+
+    RMSD TABLE
+    __________
+
+
+_______________________________________________________________________
+     |      |      |           |         |                 |
+Rank | Sub- | Run  | Binding   | Cluster | Reference       | Grep
+     | Rank |      | Energy    | RMSD    | RMSD            | Pattern
+_____|______|______|___________|_________|_________________|___________
+   1      1      8       -5.27      0.00      1.60           RANKING
+   1      2      9       -5.25      0.12      1.60           RANKING
+   1      3      5       -4.97      1.43      1.60           RANKING
+   1      4      4       -4.54      1.76      1.95           RANKING
+   1      5      6       -4.51      1.73      2.01           RANKING
+   1      6      7       -4.51      1.74      2.01           RANKING
+   1      7     10       -4.50      1.73      2.01           RANKING
+   1      8      2       -4.49      1.46      1.76           RANKING
+   1      9      1       -4.48      1.56      1.77           RANKING
+   1     10      3       -4.47      1.73      1.98           RANKING
+
+Run time 14.425 sec
+Idle time 1.968 sec

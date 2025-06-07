@@ -1,0 +1,816 @@
+AutoDock-GPU version: v1.6-7-ga46ab564d2ac5f1a1523f65239b43505a1c29364
+
+**********************************************************
+**    AutoDock-GPU AUTODOCKTOOLS-COMPATIBLE DLG FILE    **
+**********************************************************
+
+
+    DOCKING PARAMETERS
+    ________________________
+
+
+Ligand file:                               pdbqt_files/1gym_ligand.pdbqt
+Grid fld file:                             map_grid_files/1gym_receptor.maps.fld
+
+Random seed:                               1749308190, 700
+Number of runs:                            10
+Number of energy evaluations:              2068966
+Number of generations:                     42000
+Size of population:                        150
+Rate of crossover:                         80.000000%
+Tournament selection probability limit:    60.000000%
+Rate of mutation:                          2.000000%
+Maximal allowed delta movement:            +/- 6.000000A
+Maximal allowed delta angle:               +/- 90.000000
+
+Rate of local search:                      100.000000%
+Maximal number of local search iterations: 300
+Rho lower bound:                           0.010000
+Spread of local search delta movement:     2.000000A
+Spread of local search delta angle:        74.999999
+Limit of consecutive successes/failures:   4
+
+Handle symmetry during clustering:         YES
+RMSD tolerance:                            2.000000A
+
+Program call in command line was:          /home/tajgero/AutoDock-GPU/bin/autodock_gpu_128wi --lfile pdbqt_files/1gym_ligand.pdbqt --ffile map_grid_files/1gym_receptor.maps.fld --nrun 10 
+
+
+    GRID PARAMETERS
+    ________________________
+
+
+Receptor name:                             pdbqt_files/1gym_receptor
+Number of grid points (x, y, z):           41, 41, 41
+Grid center (x, y, z):                     22.095000, 25.178000, 101.515000A
+Grid size (x, y, z):                       15.000000, 15.000000, 15.000000A
+Grid spacing:                              0.375000A
+
+
+    LIGAND PARAMETERS
+    ________________________
+
+
+Ligand name:                               pdbqt_files/1gym_ligand
+Number of atoms:                           23
+Number of rotatable bonds:                 3
+Number of atom types:                      3
+
+
+    DUMMY DATA (only for ADT-compatibility)
+    ________________________
+
+
+DPF> outlev 1
+DPF> ga_run 10
+DPF> fld map_grid_files/1gym_receptor.maps.fld
+DPF> move pdbqt_files/1gym_ligand.pdbqt
+
+
+    COUNTER STATES
+    ________________________
+
+
+Number of energy evaluations performed:    271507
+Number of generations used:                25
+
+
+    INPUT LIGAND PDBQT FILE:
+    ________________________
+
+
+INPUT-LIGAND-PDBQT: REMARK  3 active torsions:
+INPUT-LIGAND-PDBQT: REMARK  status: ('A' for Active; 'I' for Inactive)
+INPUT-LIGAND-PDBQT: REMARK    1  A    between atoms: C6A_2429  and  O1_2442 
+INPUT-LIGAND-PDBQT: REMARK    2  A    between atoms: C1_2430  and  O1_2442 
+INPUT-LIGAND-PDBQT: REMARK    3  A    between atoms: C5_2434  and  C6_2435 
+INPUT-LIGAND-PDBQT: ROOT
+INPUT-LIGAND-PDBQT: HETATM    1  O1  MYG A 702      21.814  24.984 101.668  1.00 26.79    -0.326 OA
+INPUT-LIGAND-PDBQT: ENDROOT
+INPUT-LIGAND-PDBQT: BRANCH   1   2
+INPUT-LIGAND-PDBQT: HETATM    2  C1  MYG A 702      22.020  24.330 100.423  1.00 35.63     0.277 C 
+INPUT-LIGAND-PDBQT: HETATM    3  C2  MYG A 702      21.008  23.153 100.316  1.00 39.38     0.390 C 
+INPUT-LIGAND-PDBQT: HETATM    4  C3  MYG A 702      21.495  21.946 101.179  1.00 41.87     0.227 C 
+INPUT-LIGAND-PDBQT: HETATM    5  N2  MYG A 702      19.665  23.620 100.757  1.00 45.09     0.624 N 
+INPUT-LIGAND-PDBQT: HETATM    6  O3  MYG A 702      20.604  20.821 101.078  1.00 48.27    -0.218 OA
+INPUT-LIGAND-PDBQT: HETATM    7  C4  MYG A 702      22.882  21.539 100.684  1.00 41.82     0.214 C 
+INPUT-LIGAND-PDBQT: HETATM    8  O4  MYG A 702      23.321  20.357 101.341  1.00 42.44    -0.218 OA
+INPUT-LIGAND-PDBQT: HETATM    9  C5  MYG A 702      23.847  22.700 100.973  1.00 41.67     0.184 C 
+INPUT-LIGAND-PDBQT: HETATM   10  O5  MYG A 702      23.396  23.870 100.247  1.00 40.41    -0.326 OA
+INPUT-LIGAND-PDBQT: BRANCH   9  11
+INPUT-LIGAND-PDBQT: HETATM   11  C6  MYG A 702      25.297  22.402 100.469  1.00 44.94     0.214 C 
+INPUT-LIGAND-PDBQT: HETATM   12  O6  MYG A 702      26.115  21.671 101.547  1.00 45.41    -0.218 OA
+INPUT-LIGAND-PDBQT: ENDBRANCH   9  11
+INPUT-LIGAND-PDBQT: ENDBRANCH   1   2
+INPUT-LIGAND-PDBQT: BRANCH   1  13
+INPUT-LIGAND-PDBQT: HETATM   13  C6A MYG A 702      21.541  26.384 101.572  1.00 21.82     0.184 C 
+INPUT-LIGAND-PDBQT: HETATM   14  C1A MYG A 702      20.429  26.715 102.595  1.00 19.59     0.215 C 
+INPUT-LIGAND-PDBQT: HETATM   15  C2A MYG A 702      20.166  28.255 102.773  1.00 19.99     0.218 C 
+INPUT-LIGAND-PDBQT: HETATM   16  O1A MYG A 702      19.248  26.081 102.203  1.00 17.47    -0.218 OA
+INPUT-LIGAND-PDBQT: HETATM   17  O2  MYG A 702      19.562  28.788 101.615  1.00 20.10    -0.218 OA
+INPUT-LIGAND-PDBQT: HETATM   18  C3A MYG A 702      21.511  28.983 103.062  1.00 17.37     0.218 C 
+INPUT-LIGAND-PDBQT: HETATM   19  O3A MYG A 702      21.305  30.400 103.231  1.00 21.31    -0.218 OA
+INPUT-LIGAND-PDBQT: HETATM   20  C4A MYG A 702      22.516  28.677 101.933  1.00 16.54     0.218 C 
+INPUT-LIGAND-PDBQT: HETATM   21  O4A MYG A 702      23.733  29.369 102.183  1.00 15.38    -0.218 OA
+INPUT-LIGAND-PDBQT: HETATM   22  C5A MYG A 702      22.818  27.166 101.944  1.00 17.13     0.215 C 
+INPUT-LIGAND-PDBQT: HETATM   23  O5A MYG A 702      23.880  26.875 101.044  1.00 15.19    -0.218 OA
+INPUT-LIGAND-PDBQT: ENDBRANCH   1  13
+INPUT-LIGAND-PDBQT: TORSDOF 3
+
+
+    FINAL DOCKED STATE:
+    ________________________
+
+
+Run:   1 / 10
+Time taken for this run:   0.666s
+
+DOCKED: MODEL        1
+DOCKED: USER    Run = 1
+DOCKED: USER
+DOCKED: USER    Estimated Free Energy of Binding    =  -4.38 kcal/mol  [=(1)+(2)+(3)-(4)]
+DOCKED: USER
+DOCKED: USER    (1) Final Intermolecular Energy     =  -5.27 kcal/mol
+DOCKED: USER        vdW + Hbond + desolv Energy     =  -4.12 kcal/mol
+DOCKED: USER        Electrostatic Energy            =  -1.15 kcal/mol
+DOCKED: USER        Moving Ligand-Fixed Receptor    =  -5.27 kcal/mol
+DOCKED: USER        Moving Ligand-Moving Receptor   =  +0.00 kcal/mol
+DOCKED: USER    (2) Final Total Internal Energy     =  -0.37 kcal/mol
+DOCKED: USER    (3) Torsional Free Energy           =  +0.89 kcal/mol
+DOCKED: USER    (4) Unbound System's Energy         =  -0.37 kcal/mol
+DOCKED: USER
+DOCKED: USER
+DOCKED: REMARK  3 active torsions:
+DOCKED: REMARK  status: ('A' for Active; 'I' for Inactive)
+DOCKED: REMARK    1  A    between atoms: C6A_2429  and  O1_2442 
+DOCKED: REMARK    2  A    between atoms: C1_2430  and  O1_2442 
+DOCKED: REMARK    3  A    between atoms: C5_2434  and  C6_2435 
+DOCKED: USER                              x       y       z     vdW  Elec       q    Type
+DOCKED: USER                           _______ _______ _______ _____ _____    ______ ____
+DOCKED: ROOT
+DOCKED: HETATM    1  O1  MYG A 702      23.736  26.751 101.329 -0.34 -0.29    -0.326 OA 
+DOCKED: ENDROOT
+DOCKED: BRANCH   1   2
+DOCKED: HETATM    2  C1  MYG A 702      23.736  25.524 102.046 -0.06 +0.01    +0.277 C  
+DOCKED: HETATM    3  C2  MYG A 702      24.879  25.574 103.100 -0.04 -0.22    +0.390 C  
+DOCKED: HETATM    4  C3  MYG A 702      26.257  25.320 102.410 -0.23 -0.06    +0.227 C  
+DOCKED: HETATM    5  N2  MYG A 702      24.858  26.896 103.785 +0.24 -0.49    +0.624 N  
+DOCKED: HETATM    6  O3  MYG A 702      27.339  25.322 103.358 -0.35 +0.15    -0.218 OA 
+DOCKED: HETATM    7  C4  MYG A 702      26.195  23.962 101.715 -0.11 -0.05    +0.214 C  
+DOCKED: HETATM    8  O4  MYG A 702      27.467  23.613 101.183 -0.12 +0.03    -0.218 OA 
+DOCKED: HETATM    9  C5  MYG A 702      25.153  24.054 100.589 -0.03 +0.07    +0.184 C  
+DOCKED: HETATM   10  O5  MYG A 702      23.863  24.359 101.174 -0.05 -0.07    -0.326 OA 
+DOCKED: BRANCH   9  11
+DOCKED: HETATM   11  C6  MYG A 702      24.981  22.697  99.830 +0.00 +0.08    +0.214 C  
+DOCKED: HETATM   12  O6  MYG A 702      24.154  22.884  98.547 -0.60 -0.27    -0.218 OA 
+DOCKED: ENDBRANCH   9  11
+DOCKED: ENDBRANCH   1   2
+DOCKED: BRANCH   1  13
+DOCKED: HETATM   13  C6A MYG A 702      22.478  27.428 101.298 -0.09 +0.17    +0.184 C  
+DOCKED: HETATM   14  C1A MYG A 702      21.396  26.426 101.764 -0.03 +0.11    +0.215 C  
+DOCKED: HETATM   15  C2A MYG A 702      19.984  27.077 101.999 -0.01 +0.15    +0.218 C  
+DOCKED: HETATM   16  O1A MYG A 702      21.288  25.403 100.820 -0.07 -0.13    -0.218 OA 
+DOCKED: HETATM   17  O2  MYG A 702      19.409  27.462 100.770 -0.65 -0.30    -0.218 OA 
+DOCKED: HETATM   18  C3A MYG A 702      20.129  28.313 102.935 -0.06 +0.14    +0.218 C  
+DOCKED: HETATM   19  O3A MYG A 702      18.850  28.934 103.171 -0.45 -0.24    -0.218 OA 
+DOCKED: HETATM   20  C4A MYG A 702      21.148  29.300 102.330 +0.00 +0.20    +0.218 C  
+DOCKED: HETATM   21  O4A MYG A 702      21.255  30.442 103.171 -0.33 -0.04    -0.218 OA 
+DOCKED: HETATM   22  C5A MYG A 702      22.526  28.614 102.285 -0.12 +0.08    +0.215 C  
+DOCKED: HETATM   23  O5A MYG A 702      23.526  29.553 101.911 -0.62 -0.18    -0.218 OA 
+DOCKED: ENDBRANCH   1  13
+DOCKED: TORSDOF 3
+DOCKED: TER
+DOCKED: ENDMDL
+________________________________________________________________________________
+
+
+    FINAL DOCKED STATE:
+    ________________________
+
+
+Run:   2 / 10
+Time taken for this run:   0.666s
+
+DOCKED: MODEL        2
+DOCKED: USER    Run = 2
+DOCKED: USER
+DOCKED: USER    Estimated Free Energy of Binding    =  -4.40 kcal/mol  [=(1)+(2)+(3)-(4)]
+DOCKED: USER
+DOCKED: USER    (1) Final Intermolecular Energy     =  -5.30 kcal/mol
+DOCKED: USER        vdW + Hbond + desolv Energy     =  -4.30 kcal/mol
+DOCKED: USER        Electrostatic Energy            =  -0.99 kcal/mol
+DOCKED: USER        Moving Ligand-Fixed Receptor    =  -5.30 kcal/mol
+DOCKED: USER        Moving Ligand-Moving Receptor   =  +0.00 kcal/mol
+DOCKED: USER    (2) Final Total Internal Energy     =  -0.66 kcal/mol
+DOCKED: USER    (3) Torsional Free Energy           =  +0.89 kcal/mol
+DOCKED: USER    (4) Unbound System's Energy         =  -0.66 kcal/mol
+DOCKED: USER
+DOCKED: USER
+DOCKED: REMARK  3 active torsions:
+DOCKED: REMARK  status: ('A' for Active; 'I' for Inactive)
+DOCKED: REMARK    1  A    between atoms: C6A_2429  and  O1_2442 
+DOCKED: REMARK    2  A    between atoms: C1_2430  and  O1_2442 
+DOCKED: REMARK    3  A    between atoms: C5_2434  and  C6_2435 
+DOCKED: USER                              x       y       z     vdW  Elec       q    Type
+DOCKED: USER                           _______ _______ _______ _____ _____    ______ ____
+DOCKED: ROOT
+DOCKED: HETATM    1  O1  MYG A 702      23.657  24.944 101.921 -0.09 +0.03    -0.326 OA 
+DOCKED: ENDROOT
+DOCKED: BRANCH   1   2
+DOCKED: HETATM    2  C1  MYG A 702      24.325  24.279 100.857 -0.00 +0.10    +0.277 C  
+DOCKED: HETATM    3  C2  MYG A 702      24.603  22.812 101.297 +0.01 -0.08    +0.390 C  
+DOCKED: HETATM    4  C3  MYG A 702      25.825  22.765 102.267 +0.03 -0.15    +0.227 C  
+DOCKED: HETATM    5  N2  MYG A 702      23.383  22.255 101.943 +0.02 -0.31    +0.624 N  
+DOCKED: HETATM    6  O3  MYG A 702      26.139  21.420 102.668 -0.11 +0.13    -0.218 OA 
+DOCKED: HETATM    7  C4  MYG A 702      27.027  23.371 101.544 -0.11 -0.05    +0.214 C  
+DOCKED: HETATM    8  O4  MYG A 702      28.205  23.231 102.328 -0.25 +0.10    -0.218 OA 
+DOCKED: HETATM    9  C5  MYG A 702      26.728  24.857 101.291 -0.16 +0.01    +0.184 C  
+DOCKED: HETATM   10  O5  MYG A 702      25.553  24.957 100.449 -0.05 -0.21    -0.326 OA 
+DOCKED: BRANCH   9  11
+DOCKED: HETATM   11  C6  MYG A 702      27.885  25.570 100.518 -0.14 +0.04    +0.214 C  
+DOCKED: HETATM   12  O6  MYG A 702      27.334  26.664  99.588 -0.82 -0.31    -0.218 OA 
+DOCKED: ENDBRANCH   9  11
+DOCKED: ENDBRANCH   1   2
+DOCKED: BRANCH   1  13
+DOCKED: HETATM   13  C6A MYG A 702      22.749  25.970 101.511 -0.08 +0.09    +0.184 C  
+DOCKED: HETATM   14  C1A MYG A 702      21.328  25.536 101.941 -0.03 +0.06    +0.215 C  
+DOCKED: HETATM   15  C2A MYG A 702      20.239  26.656 101.762 -0.00 +0.14    +0.218 C  
+DOCKED: HETATM   16  O1A MYG A 702      20.959  24.403 101.213 -0.05 -0.06    -0.218 OA 
+DOCKED: HETATM   17  O2  MYG A 702      19.991  26.886 100.392 -0.52 -0.30    -0.218 OA 
+DOCKED: HETATM   18  C3A MYG A 702      20.722  27.967 102.448 -0.05 +0.14    +0.218 C  
+DOCKED: HETATM   19  O3A MYG A 702      19.744  29.016 102.302 -1.00 -0.34    -0.218 OA 
+DOCKED: HETATM   20  C4A MYG A 702      22.095  28.373 101.876 -0.09 +0.17    +0.218 C  
+DOCKED: HETATM   21  O4A MYG A 702      22.519  29.588 102.482 -0.31 -0.04    -0.218 OA 
+DOCKED: HETATM   22  C5A MYG A 702      23.118  27.280 102.238 -0.10 +0.07    +0.215 C  
+DOCKED: HETATM   23  O5A MYG A 702      24.430  27.707 101.892 -0.38 -0.21    -0.218 OA 
+DOCKED: ENDBRANCH   1  13
+DOCKED: TORSDOF 3
+DOCKED: TER
+DOCKED: ENDMDL
+________________________________________________________________________________
+
+
+    FINAL DOCKED STATE:
+    ________________________
+
+
+Run:   3 / 10
+Time taken for this run:   0.666s
+
+DOCKED: MODEL        3
+DOCKED: USER    Run = 3
+DOCKED: USER
+DOCKED: USER    Estimated Free Energy of Binding    =  -4.43 kcal/mol  [=(1)+(2)+(3)-(4)]
+DOCKED: USER
+DOCKED: USER    (1) Final Intermolecular Energy     =  -5.33 kcal/mol
+DOCKED: USER        vdW + Hbond + desolv Energy     =  -4.22 kcal/mol
+DOCKED: USER        Electrostatic Energy            =  -1.11 kcal/mol
+DOCKED: USER        Moving Ligand-Fixed Receptor    =  -5.33 kcal/mol
+DOCKED: USER        Moving Ligand-Moving Receptor   =  +0.00 kcal/mol
+DOCKED: USER    (2) Final Total Internal Energy     =  -0.67 kcal/mol
+DOCKED: USER    (3) Torsional Free Energy           =  +0.89 kcal/mol
+DOCKED: USER    (4) Unbound System's Energy         =  -0.67 kcal/mol
+DOCKED: USER
+DOCKED: USER
+DOCKED: REMARK  3 active torsions:
+DOCKED: REMARK  status: ('A' for Active; 'I' for Inactive)
+DOCKED: REMARK    1  A    between atoms: C6A_2429  and  O1_2442 
+DOCKED: REMARK    2  A    between atoms: C1_2430  and  O1_2442 
+DOCKED: REMARK    3  A    between atoms: C5_2434  and  C6_2435 
+DOCKED: USER                              x       y       z     vdW  Elec       q    Type
+DOCKED: USER                           _______ _______ _______ _____ _____    ______ ____
+DOCKED: ROOT
+DOCKED: HETATM    1  O1  MYG A 702      23.416  24.372 101.949 -0.10 +0.09    -0.326 OA 
+DOCKED: ENDROOT
+DOCKED: BRANCH   1   2
+DOCKED: HETATM    2  C1  MYG A 702      24.010  23.622 100.897 -0.01 +0.05    +0.277 C  
+DOCKED: HETATM    3  C2  MYG A 702      24.489  22.261 101.478 -0.00 -0.12    +0.390 C  
+DOCKED: HETATM    4  C3  MYG A 702      25.821  22.453 102.269 +0.03 -0.14    +0.227 C  
+DOCKED: HETATM    5  N2  MYG A 702      23.423  21.699 102.352 +0.02 -0.42    +0.624 N  
+DOCKED: HETATM    6  O3  MYG A 702      26.319  21.209 102.792 -0.08 +0.12    -0.218 OA 
+DOCKED: HETATM    7  C4  MYG A 702      26.856  23.051 101.316 -0.07 -0.04    +0.214 C  
+DOCKED: HETATM    8  O4  MYG A 702      28.130  23.122 101.942 -0.20 +0.08    -0.218 OA 
+DOCKED: HETATM    9  C5  MYG A 702      26.376  24.456 100.919 -0.10 +0.03    +0.184 C  
+DOCKED: HETATM   10  O5  MYG A 702      25.102  24.337 100.240 -0.04 -0.21    -0.326 OA 
+DOCKED: BRANCH   9  11
+DOCKED: HETATM   11  C6  MYG A 702      27.349  25.148  99.909 -0.11 +0.10    +0.214 C  
+DOCKED: HETATM   12  O6  MYG A 702      27.344  26.675 100.098 -0.83 -0.28    -0.218 OA 
+DOCKED: ENDBRANCH   9  11
+DOCKED: ENDBRANCH   1   2
+DOCKED: BRANCH   1  13
+DOCKED: HETATM   13  C6A MYG A 702      22.621  25.480 101.521 -0.07 +0.07    +0.184 C  
+DOCKED: HETATM   14  C1A MYG A 702      21.252  25.377 102.232 -0.02 +0.03    +0.215 C  
+DOCKED: HETATM   15  C2A MYG A 702      20.338  26.642 102.040 -0.02 +0.12    +0.218 C  
+DOCKED: HETATM   16  O1A MYG A 702      20.583  24.242 101.767 -0.10 -0.04    -0.218 OA 
+DOCKED: HETATM   17  O2  MYG A 702      19.885  26.724 100.707 -0.55 -0.23    -0.218 OA 
+DOCKED: HETATM   18  C3A MYG A 702      21.137  27.923 102.417 -0.06 +0.12    +0.218 C  
+DOCKED: HETATM   19  O3A MYG A 702      20.326  29.104 102.252 -0.91 -0.30    -0.218 OA 
+DOCKED: HETATM   20  C4A MYG A 702      22.430  27.990 101.579 -0.08 +0.19    +0.218 C  
+DOCKED: HETATM   21  O4A MYG A 702      23.142  29.178 101.902 -0.66 -0.17    -0.218 OA 
+DOCKED: HETATM   22  C5A MYG A 702      23.317  26.787 101.954 -0.09 +0.09    +0.215 C  
+DOCKED: HETATM   23  O5A MYG A 702      24.595  26.916 101.343 -0.16 -0.24    -0.218 OA 
+DOCKED: ENDBRANCH   1  13
+DOCKED: TORSDOF 3
+DOCKED: TER
+DOCKED: ENDMDL
+________________________________________________________________________________
+
+
+    FINAL DOCKED STATE:
+    ________________________
+
+
+Run:   4 / 10
+Time taken for this run:   0.666s
+
+DOCKED: MODEL        4
+DOCKED: USER    Run = 4
+DOCKED: USER
+DOCKED: USER    Estimated Free Energy of Binding    =  -4.45 kcal/mol  [=(1)+(2)+(3)-(4)]
+DOCKED: USER
+DOCKED: USER    (1) Final Intermolecular Energy     =  -5.35 kcal/mol
+DOCKED: USER        vdW + Hbond + desolv Energy     =  -4.10 kcal/mol
+DOCKED: USER        Electrostatic Energy            =  -1.24 kcal/mol
+DOCKED: USER        Moving Ligand-Fixed Receptor    =  -5.35 kcal/mol
+DOCKED: USER        Moving Ligand-Moving Receptor   =  +0.00 kcal/mol
+DOCKED: USER    (2) Final Total Internal Energy     =  -0.66 kcal/mol
+DOCKED: USER    (3) Torsional Free Energy           =  +0.89 kcal/mol
+DOCKED: USER    (4) Unbound System's Energy         =  -0.66 kcal/mol
+DOCKED: USER
+DOCKED: USER
+DOCKED: REMARK  3 active torsions:
+DOCKED: REMARK  status: ('A' for Active; 'I' for Inactive)
+DOCKED: REMARK    1  A    between atoms: C6A_2429  and  O1_2442 
+DOCKED: REMARK    2  A    between atoms: C1_2430  and  O1_2442 
+DOCKED: REMARK    3  A    between atoms: C5_2434  and  C6_2435 
+DOCKED: USER                              x       y       z     vdW  Elec       q    Type
+DOCKED: USER                           _______ _______ _______ _____ _____    ______ ____
+DOCKED: ROOT
+DOCKED: HETATM    1  O1  MYG A 702      23.238  24.471 101.939 -0.10 +0.07    -0.326 OA 
+DOCKED: ENDROOT
+DOCKED: BRANCH   1   2
+DOCKED: HETATM    2  C1  MYG A 702      23.797  23.675 100.902 -0.01 +0.06    +0.277 C  
+DOCKED: HETATM    3  C2  MYG A 702      24.316  22.349 101.531 -0.00 -0.13    +0.390 C  
+DOCKED: HETATM    4  C3  MYG A 702      25.678  22.596 102.254 +0.06 -0.15    +0.227 C  
+DOCKED: HETATM    5  N2  MYG A 702      23.295  21.822 102.477 +0.04 -0.48    +0.624 N  
+DOCKED: HETATM    6  O3  MYG A 702      26.212  21.385 102.818 -0.04 +0.14    -0.218 OA 
+DOCKED: HETATM    7  C4  MYG A 702      26.664  23.154 101.229 -0.06 -0.03    +0.214 C  
+DOCKED: HETATM    8  O4  MYG A 702      27.963  23.270 101.796 -0.19 +0.07    -0.218 OA 
+DOCKED: HETATM    9  C5  MYG A 702      26.152  24.532 100.782 -0.08 +0.05    +0.184 C  
+DOCKED: HETATM   10  O5  MYG A 702      24.852  24.366 100.164 -0.04 -0.25    -0.326 OA 
+DOCKED: BRANCH   9  11
+DOCKED: HETATM   11  C6  MYG A 702      27.073  25.182  99.698 -0.06 +0.13    +0.214 C  
+DOCKED: HETATM   12  O6  MYG A 702      27.352  26.658 100.025 -0.84 -0.28    -0.218 OA 
+DOCKED: ENDBRANCH   9  11
+DOCKED: ENDBRANCH   1   2
+DOCKED: BRANCH   1  13
+DOCKED: HETATM   13  C6A MYG A 702      22.411  25.547 101.489 -0.07 +0.07    +0.184 C  
+DOCKED: HETATM   14  C1A MYG A 702      21.074  25.464 102.262 -0.03 +0.04    +0.215 C  
+DOCKED: HETATM   15  C2A MYG A 702      20.136  26.707 102.046 -0.02 +0.12    +0.218 C  
+DOCKED: HETATM   16  O1A MYG A 702      20.402  24.299 101.885 -0.10 -0.04    -0.218 OA 
+DOCKED: HETATM   17  O2  MYG A 702      19.626  26.715 100.730 -0.57 -0.22    -0.218 OA 
+DOCKED: HETATM   18  C3A MYG A 702      20.932  28.015 102.322 -0.06 +0.15    +0.218 C  
+DOCKED: HETATM   19  O3A MYG A 702      20.099  29.177 102.132 -1.01 -0.37    -0.218 OA 
+DOCKED: HETATM   20  C4A MYG A 702      22.187  28.054 101.427 -0.06 +0.22    +0.218 C  
+DOCKED: HETATM   21  O4A MYG A 702      22.896  29.265 101.658 -0.60 -0.23    -0.218 OA 
+DOCKED: HETATM   22  C5A MYG A 702      23.107  26.882 101.824 -0.08 +0.11    +0.215 C  
+DOCKED: HETATM   23  O5A MYG A 702      24.356  26.994 101.154 -0.20 -0.29    -0.218 OA 
+DOCKED: ENDBRANCH   1  13
+DOCKED: TORSDOF 3
+DOCKED: TER
+DOCKED: ENDMDL
+________________________________________________________________________________
+
+
+    FINAL DOCKED STATE:
+    ________________________
+
+
+Run:   5 / 10
+Time taken for this run:   0.666s
+
+DOCKED: MODEL        5
+DOCKED: USER    Run = 5
+DOCKED: USER
+DOCKED: USER    Estimated Free Energy of Binding    =  -4.23 kcal/mol  [=(1)+(2)+(3)-(4)]
+DOCKED: USER
+DOCKED: USER    (1) Final Intermolecular Energy     =  -5.13 kcal/mol
+DOCKED: USER        vdW + Hbond + desolv Energy     =  -4.26 kcal/mol
+DOCKED: USER        Electrostatic Energy            =  -0.87 kcal/mol
+DOCKED: USER        Moving Ligand-Fixed Receptor    =  -5.13 kcal/mol
+DOCKED: USER        Moving Ligand-Moving Receptor   =  +0.00 kcal/mol
+DOCKED: USER    (2) Final Total Internal Energy     =  -0.69 kcal/mol
+DOCKED: USER    (3) Torsional Free Energy           =  +0.89 kcal/mol
+DOCKED: USER    (4) Unbound System's Energy         =  -0.69 kcal/mol
+DOCKED: USER
+DOCKED: USER
+DOCKED: REMARK  3 active torsions:
+DOCKED: REMARK  status: ('A' for Active; 'I' for Inactive)
+DOCKED: REMARK    1  A    between atoms: C6A_2429  and  O1_2442 
+DOCKED: REMARK    2  A    between atoms: C1_2430  and  O1_2442 
+DOCKED: REMARK    3  A    between atoms: C5_2434  and  C6_2435 
+DOCKED: USER                              x       y       z     vdW  Elec       q    Type
+DOCKED: USER                           _______ _______ _______ _____ _____    ______ ____
+DOCKED: ROOT
+DOCKED: HETATM    1  O1  MYG A 702      23.318  24.700 101.803 -0.09 +0.02    -0.326 OA 
+DOCKED: ENDROOT
+DOCKED: BRANCH   1   2
+DOCKED: HETATM    2  C1  MYG A 702      24.194  24.225 100.790 +0.00 +0.11    +0.277 C  
+DOCKED: HETATM    3  C2  MYG A 702      24.595  22.762 101.138 +0.01 -0.05    +0.390 C  
+DOCKED: HETATM    4  C3  MYG A 702      25.679  22.755 102.262 +0.07 -0.16    +0.227 C  
+DOCKED: HETATM    5  N2  MYG A 702      23.382  22.009 101.559 +0.03 -0.18    +0.624 N  
+DOCKED: HETATM    6  O3  MYG A 702      26.105  21.420 102.588 -0.12 +0.12    -0.218 OA 
+DOCKED: HETATM    7  C4  MYG A 702      26.879  23.562 101.768 -0.12 -0.06    +0.214 C  
+DOCKED: HETATM    8  O4  MYG A 702      27.955  23.478 102.693 -0.28 +0.12    -0.218 OA 
+DOCKED: HETATM    9  C5  MYG A 702      26.430  25.023 101.602 -0.19 +0.00    +0.184 C  
+DOCKED: HETATM   10  O5  MYG A 702      25.370  25.074 100.616 -0.06 -0.20    -0.326 OA 
+DOCKED: BRANCH   9  11
+DOCKED: HETATM   11  C6  MYG A 702      27.579  25.936 101.061 -0.10 +0.04    +0.214 C  
+DOCKED: HETATM   12  O6  MYG A 702      27.229  26.496  99.672 -0.75 -0.29    -0.218 OA 
+DOCKED: ENDBRANCH   9  11
+DOCKED: ENDBRANCH   1   2
+DOCKED: BRANCH   1  13
+DOCKED: HETATM   13  C6A MYG A 702      22.476  25.786 101.406 -0.07 +0.09    +0.184 C  
+DOCKED: HETATM   14  C1A MYG A 702      21.061  25.510 101.967 -0.03 +0.06    +0.215 C  
+DOCKED: HETATM   15  C2A MYG A 702      20.067  26.717 101.808 -0.00 +0.14    +0.218 C  
+DOCKED: HETATM   16  O1A MYG A 702      20.534  24.383 101.333 -0.05 -0.06    -0.218 OA 
+DOCKED: HETATM   17  O2  MYG A 702      19.731  26.902 100.451 -0.58 -0.28    -0.218 OA 
+DOCKED: HETATM   18  C3A MYG A 702      20.720  28.008 102.382 -0.05 +0.15    +0.218 C  
+DOCKED: HETATM   19  O3A MYG A 702      19.832  29.137 102.251 -1.04 -0.37    -0.218 OA 
+DOCKED: HETATM   20  C4A MYG A 702      22.073  28.255 101.684 -0.07 +0.19    +0.218 C  
+DOCKED: HETATM   21  O4A MYG A 702      22.652  29.453 102.187 -0.37 -0.10    -0.218 OA 
+DOCKED: HETATM   22  C5A MYG A 702      23.020  27.089 102.028 -0.09 +0.09    +0.215 C  
+DOCKED: HETATM   23  O5A MYG A 702      24.333  27.373 101.561 -0.30 -0.27    -0.218 OA 
+DOCKED: ENDBRANCH   1  13
+DOCKED: TORSDOF 3
+DOCKED: TER
+DOCKED: ENDMDL
+________________________________________________________________________________
+
+
+    FINAL DOCKED STATE:
+    ________________________
+
+
+Run:   6 / 10
+Time taken for this run:   0.666s
+
+DOCKED: MODEL        6
+DOCKED: USER    Run = 6
+DOCKED: USER
+DOCKED: USER    Estimated Free Energy of Binding    =  -4.47 kcal/mol  [=(1)+(2)+(3)-(4)]
+DOCKED: USER
+DOCKED: USER    (1) Final Intermolecular Energy     =  -5.37 kcal/mol
+DOCKED: USER        vdW + Hbond + desolv Energy     =  -4.17 kcal/mol
+DOCKED: USER        Electrostatic Energy            =  -1.20 kcal/mol
+DOCKED: USER        Moving Ligand-Fixed Receptor    =  -5.37 kcal/mol
+DOCKED: USER        Moving Ligand-Moving Receptor   =  +0.00 kcal/mol
+DOCKED: USER    (2) Final Total Internal Energy     =  -0.66 kcal/mol
+DOCKED: USER    (3) Torsional Free Energy           =  +0.89 kcal/mol
+DOCKED: USER    (4) Unbound System's Energy         =  -0.66 kcal/mol
+DOCKED: USER
+DOCKED: USER
+DOCKED: REMARK  3 active torsions:
+DOCKED: REMARK  status: ('A' for Active; 'I' for Inactive)
+DOCKED: REMARK    1  A    between atoms: C6A_2429  and  O1_2442 
+DOCKED: REMARK    2  A    between atoms: C1_2430  and  O1_2442 
+DOCKED: REMARK    3  A    between atoms: C5_2434  and  C6_2435 
+DOCKED: USER                              x       y       z     vdW  Elec       q    Type
+DOCKED: USER                           _______ _______ _______ _____ _____    ______ ____
+DOCKED: ROOT
+DOCKED: HETATM    1  O1  MYG A 702      23.331  24.366 101.988 -0.11 +0.09    -0.326 OA 
+DOCKED: ENDROOT
+DOCKED: BRANCH   1   2
+DOCKED: HETATM    2  C1  MYG A 702      23.896  23.583 100.946 -0.01 +0.04    +0.277 C  
+DOCKED: HETATM    3  C2  MYG A 702      24.472  22.279 101.571 -0.00 -0.14    +0.390 C  
+DOCKED: HETATM    4  C3  MYG A 702      25.838  22.575 102.267 +0.02 -0.15    +0.227 C  
+DOCKED: HETATM    5  N2  MYG A 702      23.487  21.723 102.539 +0.06 -0.52    +0.624 N  
+DOCKED: HETATM    6  O3  MYG A 702      26.423  21.386 102.827 -0.05 +0.13    -0.218 OA 
+DOCKED: HETATM    7  C4  MYG A 702      26.786  23.161 101.221 -0.07 -0.03    +0.214 C  
+DOCKED: HETATM    8  O4  MYG A 702      28.090  23.324 101.763 -0.19 +0.07    -0.218 OA 
+DOCKED: HETATM    9  C5  MYG A 702      26.219  24.519 100.776 -0.08 +0.05    +0.184 C  
+DOCKED: HETATM   10  O5  MYG A 702      24.913  24.305 100.184 -0.04 -0.23    -0.326 OA 
+DOCKED: BRANCH   9  11
+DOCKED: HETATM   11  C6  MYG A 702      27.097  25.192  99.672 -0.06 +0.13    +0.214 C  
+DOCKED: HETATM   12  O6  MYG A 702      27.362  26.670 100.005 -0.84 -0.28    -0.218 OA 
+DOCKED: ENDBRANCH   9  11
+DOCKED: ENDBRANCH   1   2
+DOCKED: BRANCH   1  13
+DOCKED: HETATM   13  C6A MYG A 702      22.555  25.482 101.546 -0.07 +0.06    +0.184 C  
+DOCKED: HETATM   14  C1A MYG A 702      21.180  25.405 102.250 -0.02 +0.03    +0.215 C  
+DOCKED: HETATM   15  C2A MYG A 702      20.286  26.682 102.043 -0.02 +0.12    +0.218 C  
+DOCKED: HETATM   16  O1A MYG A 702      20.498  24.276 101.790 -0.10 -0.04    -0.218 OA 
+DOCKED: HETATM   17  O2  MYG A 702      19.843  26.760 100.706 -0.56 -0.23    -0.218 OA 
+DOCKED: HETATM   18  C3A MYG A 702      21.102  27.954 102.414 -0.06 +0.13    +0.218 C  
+DOCKED: HETATM   19  O3A MYG A 702      20.309  29.145 102.235 -0.92 -0.31    -0.218 OA 
+DOCKED: HETATM   20  C4A MYG A 702      22.400  27.995 101.584 -0.08 +0.19    +0.218 C  
+DOCKED: HETATM   21  O4A MYG A 702      23.128  29.175 101.902 -0.66 -0.17    -0.218 OA 
+DOCKED: HETATM   22  C5A MYG A 702      23.268  26.782 101.973 -0.09 +0.09    +0.215 C  
+DOCKED: HETATM   23  O5A MYG A 702      24.551  26.888 101.370 -0.21 -0.23    -0.218 OA 
+DOCKED: ENDBRANCH   1  13
+DOCKED: TORSDOF 3
+DOCKED: TER
+DOCKED: ENDMDL
+________________________________________________________________________________
+
+
+    FINAL DOCKED STATE:
+    ________________________
+
+
+Run:   7 / 10
+Time taken for this run:   0.666s
+
+DOCKED: MODEL        7
+DOCKED: USER    Run = 7
+DOCKED: USER
+DOCKED: USER    Estimated Free Energy of Binding    =  -4.46 kcal/mol  [=(1)+(2)+(3)-(4)]
+DOCKED: USER
+DOCKED: USER    (1) Final Intermolecular Energy     =  -5.36 kcal/mol
+DOCKED: USER        vdW + Hbond + desolv Energy     =  -4.14 kcal/mol
+DOCKED: USER        Electrostatic Energy            =  -1.21 kcal/mol
+DOCKED: USER        Moving Ligand-Fixed Receptor    =  -5.36 kcal/mol
+DOCKED: USER        Moving Ligand-Moving Receptor   =  +0.00 kcal/mol
+DOCKED: USER    (2) Final Total Internal Energy     =  -0.67 kcal/mol
+DOCKED: USER    (3) Torsional Free Energy           =  +0.89 kcal/mol
+DOCKED: USER    (4) Unbound System's Energy         =  -0.67 kcal/mol
+DOCKED: USER
+DOCKED: USER
+DOCKED: REMARK  3 active torsions:
+DOCKED: REMARK  status: ('A' for Active; 'I' for Inactive)
+DOCKED: REMARK    1  A    between atoms: C6A_2429  and  O1_2442 
+DOCKED: REMARK    2  A    between atoms: C1_2430  and  O1_2442 
+DOCKED: REMARK    3  A    between atoms: C5_2434  and  C6_2435 
+DOCKED: USER                              x       y       z     vdW  Elec       q    Type
+DOCKED: USER                           _______ _______ _______ _____ _____    ______ ____
+DOCKED: ROOT
+DOCKED: HETATM    1  O1  MYG A 702      23.315  24.477 101.978 -0.10 +0.08    -0.326 OA 
+DOCKED: ENDROOT
+DOCKED: BRANCH   1   2
+DOCKED: HETATM    2  C1  MYG A 702      23.857  23.684 100.931 -0.01 +0.05    +0.277 C  
+DOCKED: HETATM    3  C2  MYG A 702      24.377  22.352 101.544 -0.00 -0.14    +0.390 C  
+DOCKED: HETATM    4  C3  MYG A 702      25.749  22.587 102.253 +0.04 -0.15    +0.227 C  
+DOCKED: HETATM    5  N2  MYG A 702      23.364  21.825 102.499 +0.05 -0.50    +0.624 N  
+DOCKED: HETATM    6  O3  MYG A 702      26.283  21.369 102.803 -0.06 +0.13    -0.218 OA 
+DOCKED: HETATM    7  C4  MYG A 702      26.726  23.146 101.220 -0.06 -0.03    +0.214 C  
+DOCKED: HETATM    8  O4  MYG A 702      28.032  23.252 101.772 -0.18 +0.07    -0.218 OA 
+DOCKED: HETATM    9  C5  MYG A 702      26.216  24.530 100.787 -0.08 +0.05    +0.184 C  
+DOCKED: HETATM   10  O5  MYG A 702      24.907  24.375 100.184 -0.04 -0.24    -0.326 OA 
+DOCKED: BRANCH   9  11
+DOCKED: HETATM   11  C6  MYG A 702      27.128  25.181  99.696 -0.06 +0.13    +0.214 C  
+DOCKED: HETATM   12  O6  MYG A 702      27.356  26.674  99.990 -0.84 -0.29    -0.218 OA 
+DOCKED: ENDBRANCH   9  11
+DOCKED: ENDBRANCH   1   2
+DOCKED: BRANCH   1  13
+DOCKED: HETATM   13  C6A MYG A 702      22.526  25.587 101.544 -0.07 +0.07    +0.184 C  
+DOCKED: HETATM   14  C1A MYG A 702      21.156  25.494 102.256 -0.03 +0.04    +0.215 C  
+DOCKED: HETATM   15  C2A MYG A 702      20.248  26.762 102.057 -0.02 +0.12    +0.218 C  
+DOCKED: HETATM   16  O1A MYG A 702      20.482  24.360 101.797 -0.10 -0.04    -0.218 OA 
+DOCKED: HETATM   17  O2  MYG A 702      19.795  26.839 100.723 -0.58 -0.24    -0.218 OA 
+DOCKED: HETATM   18  C3A MYG A 702      21.053  28.042 102.426 -0.06 +0.13    +0.218 C  
+DOCKED: HETATM   19  O3A MYG A 702      20.248  29.226 102.255 -0.98 -0.33    -0.218 OA 
+DOCKED: HETATM   20  C4A MYG A 702      22.346  28.098 101.588 -0.08 +0.20    +0.218 C  
+DOCKED: HETATM   21  O4A MYG A 702      23.064  29.284 101.904 -0.60 -0.17    -0.218 OA 
+DOCKED: HETATM   22  C5A MYG A 702      23.228  26.893 101.969 -0.09 +0.09    +0.215 C  
+DOCKED: HETATM   23  O5A MYG A 702      24.507  27.013 101.358 -0.19 -0.25    -0.218 OA 
+DOCKED: ENDBRANCH   1  13
+DOCKED: TORSDOF 3
+DOCKED: TER
+DOCKED: ENDMDL
+________________________________________________________________________________
+
+
+    FINAL DOCKED STATE:
+    ________________________
+
+
+Run:   8 / 10
+Time taken for this run:   0.666s
+
+DOCKED: MODEL        8
+DOCKED: USER    Run = 8
+DOCKED: USER
+DOCKED: USER    Estimated Free Energy of Binding    =  -4.45 kcal/mol  [=(1)+(2)+(3)-(4)]
+DOCKED: USER
+DOCKED: USER    (1) Final Intermolecular Energy     =  -5.35 kcal/mol
+DOCKED: USER        vdW + Hbond + desolv Energy     =  -4.19 kcal/mol
+DOCKED: USER        Electrostatic Energy            =  -1.16 kcal/mol
+DOCKED: USER        Moving Ligand-Fixed Receptor    =  -5.35 kcal/mol
+DOCKED: USER        Moving Ligand-Moving Receptor   =  +0.00 kcal/mol
+DOCKED: USER    (2) Final Total Internal Energy     =  -0.67 kcal/mol
+DOCKED: USER    (3) Torsional Free Energy           =  +0.89 kcal/mol
+DOCKED: USER    (4) Unbound System's Energy         =  -0.67 kcal/mol
+DOCKED: USER
+DOCKED: USER
+DOCKED: REMARK  3 active torsions:
+DOCKED: REMARK  status: ('A' for Active; 'I' for Inactive)
+DOCKED: REMARK    1  A    between atoms: C6A_2429  and  O1_2442 
+DOCKED: REMARK    2  A    between atoms: C1_2430  and  O1_2442 
+DOCKED: REMARK    3  A    between atoms: C5_2434  and  C6_2435 
+DOCKED: USER                              x       y       z     vdW  Elec       q    Type
+DOCKED: USER                           _______ _______ _______ _____ _____    ______ ____
+DOCKED: ROOT
+DOCKED: HETATM    1  O1  MYG A 702      23.390  24.408 101.962 -0.10 +0.08    -0.326 OA 
+DOCKED: ENDROOT
+DOCKED: BRANCH   1   2
+DOCKED: HETATM    2  C1  MYG A 702      23.958  23.636 100.912 -0.01 +0.05    +0.277 C  
+DOCKED: HETATM    3  C2  MYG A 702      24.459  22.291 101.512 -0.00 -0.13    +0.390 C  
+DOCKED: HETATM    4  C3  MYG A 702      25.812  22.507 102.261 +0.03 -0.15    +0.227 C  
+DOCKED: HETATM    5  N2  MYG A 702      23.420  21.746 102.428 +0.04 -0.46    +0.624 N  
+DOCKED: HETATM    6  O3  MYG A 702      26.329  21.277 102.799 -0.07 +0.13    -0.218 OA 
+DOCKED: HETATM    7  C4  MYG A 702      26.817  23.086 101.266 -0.07 -0.03    +0.214 C  
+DOCKED: HETATM    8  O4  MYG A 702      28.108  23.177 101.855 -0.19 +0.07    -0.218 OA 
+DOCKED: HETATM    9  C5  MYG A 702      26.321  24.480 100.849 -0.09 +0.04    +0.184 C  
+DOCKED: HETATM   10  O5  MYG A 702      25.029  24.340 100.209 -0.04 -0.22    -0.326 OA 
+DOCKED: BRANCH   9  11
+DOCKED: HETATM   11  C6  MYG A 702      27.263  25.151  99.797 -0.09 +0.11    +0.214 C  
+DOCKED: HETATM   12  O6  MYG A 702      27.365  26.667 100.038 -0.84 -0.28    -0.218 OA 
+DOCKED: ENDBRANCH   9  11
+DOCKED: ENDBRANCH   1   2
+DOCKED: BRANCH   1  13
+DOCKED: HETATM   13  C6A MYG A 702      22.595  25.515 101.530 -0.07 +0.07    +0.184 C  
+DOCKED: HETATM   14  C1A MYG A 702      21.226  25.414 102.243 -0.02 +0.03    +0.215 C  
+DOCKED: HETATM   15  C2A MYG A 702      20.312  26.678 102.047 -0.02 +0.12    +0.218 C  
+DOCKED: HETATM   16  O1A MYG A 702      20.557  24.277 101.784 -0.10 -0.04    -0.218 OA 
+DOCKED: HETATM   17  O2  MYG A 702      19.857  26.754 100.714 -0.56 -0.23    -0.218 OA 
+DOCKED: HETATM   18  C3A MYG A 702      21.111  27.962 102.417 -0.06 +0.13    +0.218 C  
+DOCKED: HETATM   19  O3A MYG A 702      20.300  29.141 102.248 -0.93 -0.31    -0.218 OA 
+DOCKED: HETATM   20  C4A MYG A 702      22.403  28.025 101.577 -0.08 +0.19    +0.218 C  
+DOCKED: HETATM   21  O4A MYG A 702      23.115  29.214 101.894 -0.65 -0.17    -0.218 OA 
+DOCKED: HETATM   22  C5A MYG A 702      23.291  26.824 101.956 -0.09 +0.09    +0.215 C  
+DOCKED: HETATM   23  O5A MYG A 702      24.568  26.951 101.344 -0.16 -0.24    -0.218 OA 
+DOCKED: ENDBRANCH   1  13
+DOCKED: TORSDOF 3
+DOCKED: TER
+DOCKED: ENDMDL
+________________________________________________________________________________
+
+
+    FINAL DOCKED STATE:
+    ________________________
+
+
+Run:   9 / 10
+Time taken for this run:   0.666s
+
+DOCKED: MODEL        9
+DOCKED: USER    Run = 9
+DOCKED: USER
+DOCKED: USER    Estimated Free Energy of Binding    =  -4.32 kcal/mol  [=(1)+(2)+(3)-(4)]
+DOCKED: USER
+DOCKED: USER    (1) Final Intermolecular Energy     =  -5.21 kcal/mol
+DOCKED: USER        vdW + Hbond + desolv Energy     =  -4.22 kcal/mol
+DOCKED: USER        Electrostatic Energy            =  -0.99 kcal/mol
+DOCKED: USER        Moving Ligand-Fixed Receptor    =  -5.21 kcal/mol
+DOCKED: USER        Moving Ligand-Moving Receptor   =  +0.00 kcal/mol
+DOCKED: USER    (2) Final Total Internal Energy     =  -0.68 kcal/mol
+DOCKED: USER    (3) Torsional Free Energy           =  +0.89 kcal/mol
+DOCKED: USER    (4) Unbound System's Energy         =  -0.68 kcal/mol
+DOCKED: USER
+DOCKED: USER
+DOCKED: REMARK  3 active torsions:
+DOCKED: REMARK  status: ('A' for Active; 'I' for Inactive)
+DOCKED: REMARK    1  A    between atoms: C6A_2429  and  O1_2442 
+DOCKED: REMARK    2  A    between atoms: C1_2430  and  O1_2442 
+DOCKED: REMARK    3  A    between atoms: C5_2434  and  C6_2435 
+DOCKED: USER                              x       y       z     vdW  Elec       q    Type
+DOCKED: USER                           _______ _______ _______ _____ _____    ______ ____
+DOCKED: ROOT
+DOCKED: HETATM    1  O1  MYG A 702      23.611  24.417 101.859 -0.10 +0.07    -0.326 OA 
+DOCKED: ENDROOT
+DOCKED: BRANCH   1   2
+DOCKED: HETATM    2  C1  MYG A 702      24.290  23.732 100.815 -0.01 +0.07    +0.277 C  
+DOCKED: HETATM    3  C2  MYG A 702      24.665  22.311 101.326 +0.00 -0.10    +0.390 C  
+DOCKED: HETATM    4  C3  MYG A 702      25.912  22.390 102.263 +0.00 -0.14    +0.227 C  
+DOCKED: HETATM    5  N2  MYG A 702      23.497  21.722 102.037 +0.01 -0.32    +0.624 N  
+DOCKED: HETATM    6  O3  MYG A 702      26.315  21.090 102.729 -0.11 +0.11    -0.218 OA 
+DOCKED: HETATM    7  C4  MYG A 702      27.058  23.022 101.474 -0.09 -0.04    +0.214 C  
+DOCKED: HETATM    8  O4  MYG A 702      28.261  22.995 102.230 -0.23 +0.08    -0.218 OA 
+DOCKED: HETATM    9  C5  MYG A 702      26.664  24.472 101.148 -0.13 +0.01    +0.184 C  
+DOCKED: HETATM   10  O5  MYG A 702      25.465  24.456 100.335 -0.04 -0.18    -0.326 OA 
+DOCKED: BRANCH   9  11
+DOCKED: HETATM   11  C6  MYG A 702      27.758  25.205 100.304 -0.14 +0.05    +0.214 C  
+DOCKED: HETATM   12  O6  MYG A 702      27.324  26.643  99.972 -0.82 -0.29    -0.218 OA 
+DOCKED: ENDBRANCH   9  11
+DOCKED: ENDBRANCH   1   2
+DOCKED: BRANCH   1  13
+DOCKED: HETATM   13  C6A MYG A 702      22.793  25.507 101.428 -0.07 +0.07    +0.184 C  
+DOCKED: HETATM   14  C1A MYG A 702      21.378  25.291 102.016 -0.03 +0.04    +0.215 C  
+DOCKED: HETATM   15  C2A MYG A 702      20.413  26.517 101.819 -0.01 +0.12    +0.218 C  
+DOCKED: HETATM   16  O1A MYG A 702      20.814  24.154 101.435 -0.07 -0.05    -0.218 OA 
+DOCKED: HETATM   17  O2  MYG A 702      20.065  26.656 100.459 -0.50 -0.25    -0.218 OA 
+DOCKED: HETATM   18  C3A MYG A 702      21.107  27.813 102.332 -0.06 +0.13    +0.218 C  
+DOCKED: HETATM   19  O3A MYG A 702      20.247  28.959 102.166 -0.93 -0.31    -0.218 OA 
+DOCKED: HETATM   20  C4A MYG A 702      22.457  27.996 101.610 -0.09 +0.19    +0.218 C  
+DOCKED: HETATM   21  O4A MYG A 702      23.073  29.197 102.057 -0.55 -0.13    -0.218 OA 
+DOCKED: HETATM   22  C5A MYG A 702      23.377  26.820 101.990 -0.09 +0.09    +0.215 C  
+DOCKED: HETATM   23  O5A MYG A 702      24.691  27.050 101.496 -0.19 -0.23    -0.218 OA 
+DOCKED: ENDBRANCH   1  13
+DOCKED: TORSDOF 3
+DOCKED: TER
+DOCKED: ENDMDL
+________________________________________________________________________________
+
+
+    FINAL DOCKED STATE:
+    ________________________
+
+
+Run:   10 / 10
+Time taken for this run:   0.666s
+
+DOCKED: MODEL        10
+DOCKED: USER    Run = 10
+DOCKED: USER
+DOCKED: USER    Estimated Free Energy of Binding    =  -3.83 kcal/mol  [=(1)+(2)+(3)-(4)]
+DOCKED: USER
+DOCKED: USER    (1) Final Intermolecular Energy     =  -4.72 kcal/mol
+DOCKED: USER        vdW + Hbond + desolv Energy     =  -3.52 kcal/mol
+DOCKED: USER        Electrostatic Energy            =  -1.21 kcal/mol
+DOCKED: USER        Moving Ligand-Fixed Receptor    =  -4.72 kcal/mol
+DOCKED: USER        Moving Ligand-Moving Receptor   =  +0.00 kcal/mol
+DOCKED: USER    (2) Final Total Internal Energy     =  -0.66 kcal/mol
+DOCKED: USER    (3) Torsional Free Energy           =  +0.89 kcal/mol
+DOCKED: USER    (4) Unbound System's Energy         =  -0.66 kcal/mol
+DOCKED: USER
+DOCKED: USER
+DOCKED: REMARK  3 active torsions:
+DOCKED: REMARK  status: ('A' for Active; 'I' for Inactive)
+DOCKED: REMARK    1  A    between atoms: C6A_2429  and  O1_2442 
+DOCKED: REMARK    2  A    between atoms: C1_2430  and  O1_2442 
+DOCKED: REMARK    3  A    between atoms: C5_2434  and  C6_2435 
+DOCKED: USER                              x       y       z     vdW  Elec       q    Type
+DOCKED: USER                           _______ _______ _______ _____ _____    ______ ____
+DOCKED: ROOT
+DOCKED: HETATM    1  O1  MYG A 702      23.071  24.146 101.762 -0.09 +0.05    -0.326 OA 
+DOCKED: ENDROOT
+DOCKED: BRANCH   1   2
+DOCKED: HETATM    2  C1  MYG A 702      23.111  23.042 100.867 -0.01 +0.04    +0.277 C  
+DOCKED: HETATM    3  C2  MYG A 702      23.558  21.783 101.665 -0.02 -0.13    +0.390 C  
+DOCKED: HETATM    4  C3  MYG A 702      25.102  21.816 101.898 -0.05 -0.11    +0.227 C  
+DOCKED: HETATM    5  N2  MYG A 702      22.821  21.734 102.957 +0.23 -0.53    +0.624 N  
+DOCKED: HETATM    6  O3  MYG A 702      25.562  20.649 102.602 -0.12 +0.11    -0.218 OA 
+DOCKED: HETATM    7  C4  MYG A 702      25.786  21.888 100.534 -0.00 -0.00    +0.214 C  
+DOCKED: HETATM    8  O4  MYG A 702      27.197  21.782 100.675 -0.02 +0.01    -0.218 OA 
+DOCKED: HETATM    9  C5  MYG A 702      25.413  23.232  99.888 -0.01 +0.08    +0.184 C  
+DOCKED: HETATM   10  O5  MYG A 702      23.975  23.280  99.714 -0.30 -0.26    -0.326 OA 
+DOCKED: BRANCH   9  11
+DOCKED: HETATM   11  C6  MYG A 702      26.034  23.394  98.462 +0.07 +0.16    +0.214 C  
+DOCKED: HETATM   12  O6  MYG A 702      25.050  22.925  97.377 -0.37 -0.22    -0.218 OA 
+DOCKED: ENDBRANCH   9  11
+DOCKED: ENDBRANCH   1   2
+DOCKED: BRANCH   1  13
+DOCKED: HETATM   13  C6A MYG A 702      22.317  25.268 101.297 -0.06 +0.08    +0.184 C  
+DOCKED: HETATM   14  C1A MYG A 702      20.957  25.255 102.033 -0.03 +0.05    +0.215 C  
+DOCKED: HETATM   15  C2A MYG A 702      20.094  26.548 101.800 -0.00 +0.13    +0.218 C  
+DOCKED: HETATM   16  O1A MYG A 702      20.233  24.130 101.630 -0.07 -0.05    -0.218 OA 
+DOCKED: HETATM   17  O2  MYG A 702      19.621  26.591 100.471 -0.55 -0.22    -0.218 OA 
+DOCKED: HETATM   18  C3A MYG A 702      20.953  27.809 102.107 -0.04 +0.16    +0.218 C  
+DOCKED: HETATM   19  O3A MYG A 702      20.190  29.016 101.902 -0.97 -0.38    -0.218 OA 
+DOCKED: HETATM   20  C4A MYG A 702      22.232  27.784 101.246 -0.06 +0.23    +0.218 C  
+DOCKED: HETATM   21  O4A MYG A 702      22.999  28.953 101.505 -0.72 -0.27    -0.218 OA 
+DOCKED: HETATM   22  C5A MYG A 702      23.075  26.562 101.660 -0.08 +0.12    +0.215 C  
+DOCKED: HETATM   23  O5A MYG A 702      24.346  26.609 101.025 -0.26 -0.24    -0.218 OA 
+DOCKED: ENDBRANCH   1  13
+DOCKED: TORSDOF 3
+DOCKED: TER
+DOCKED: ENDMDL
+________________________________________________________________________________
+
+
+    CLUSTERING HISTOGRAM
+    ____________________
+
+
+________________________________________________________________________________
+     |           |     |           |     |
+Clus | Lowest    | Run | Mean      | Num | Histogram
+-ter | Binding   |     | Binding   | in  |
+Rank | Energy    |     | Energy    | Clus|    5    10   15   20   25   30   35
+_____|___________|_____|___________|_____|____:____|____:____|____:____|____:___
+   1 |     -4.47 |   6 |     -4.34 |  10 |##########
+_____|___________|_____|___________|_____|______________________________________
+
+
+    RMSD TABLE
+    __________
+
+
+_______________________________________________________________________
+     |      |      |           |         |                 |
+Rank | Sub- | Run  | Binding   | Cluster | Reference       | Grep
+     | Rank |      | Energy    | RMSD    | RMSD            | Pattern
+_____|______|______|___________|_________|_________________|___________
+   1      1      6       -4.47      0.00      1.95           RANKING
+   1      2      7       -4.46      0.10      1.91           RANKING
+   1      3      8       -4.45      0.09      1.94           RANKING
+   1      4      4       -4.45      0.19      1.89           RANKING
+   1      5      3       -4.43      0.15      1.95           RANKING
+   1      6      2       -4.40      0.67      2.09           RANKING
+   1      7      1       -4.38      1.83      2.27           RANKING
+   1      8      9       -4.32      0.40      2.03           RANKING
+   1      9      5       -4.23      0.68      2.08           RANKING
+   1     10     10       -3.83      1.23      1.69           RANKING
+
+Run time 7.053 sec
+Idle time 1.480 sec

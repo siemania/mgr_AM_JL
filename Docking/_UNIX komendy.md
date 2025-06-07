@@ -20,3 +20,6 @@ for file in *.pdbq; do mv "$file" "${file%.pdbq}.pdb"; done
 
 # Kopiowanie plików na podstawie pliku tekstowego
 while read -r id _; do cp "pdb_files/${id}.pdb" presentation_pdb/; done < presentation_pdb.txt
+
+# Wycięcie 4 pierwszych liter plików *.pdb
+ls *.pdb | cut -c1-4 | sort |

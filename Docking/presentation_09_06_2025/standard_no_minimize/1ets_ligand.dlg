@@ -1,0 +1,1296 @@
+AutoDock-GPU version: v1.6-7-ga46ab564d2ac5f1a1523f65239b43505a1c29364
+
+**********************************************************
+**    AutoDock-GPU AUTODOCKTOOLS-COMPATIBLE DLG FILE    **
+**********************************************************
+
+
+    DOCKING PARAMETERS
+    ________________________
+
+
+Ligand file:                               pdbqt_files/1ets_ligand.pdbqt
+Grid fld file:                             map_grid_files/1ets_receptor.maps.fld
+
+Random seed:                               1749308055, 459
+Number of runs:                            10
+Number of energy evaluations:              4195460
+Number of generations:                     42000
+Size of population:                        150
+Rate of crossover:                         80.000000%
+Tournament selection probability limit:    60.000000%
+Rate of mutation:                          2.000000%
+Maximal allowed delta movement:            +/- 6.000000A
+Maximal allowed delta angle:               +/- 90.000000
+
+Rate of local search:                      100.000000%
+Maximal number of local search iterations: 300
+Rho lower bound:                           0.010000
+Spread of local search delta movement:     2.000000A
+Spread of local search delta angle:        74.999999
+Limit of consecutive successes/failures:   4
+
+Handle symmetry during clustering:         YES
+RMSD tolerance:                            2.000000A
+
+Program call in command line was:          /home/tajgero/AutoDock-GPU/bin/autodock_gpu_128wi --lfile pdbqt_files/1ets_ligand.pdbqt --ffile map_grid_files/1ets_receptor.maps.fld --nrun 10 
+
+
+    GRID PARAMETERS
+    ________________________
+
+
+Receptor name:                             pdbqt_files/1ets_receptor
+Number of grid points (x, y, z):           41, 41, 41
+Grid center (x, y, z):                     -38.138000, -29.330000, 44.211000A
+Grid size (x, y, z):                       15.000000, 15.000000, 15.000000A
+Grid spacing:                              0.375000A
+
+
+    LIGAND PARAMETERS
+    ________________________
+
+
+Ligand name:                               pdbqt_files/1ets_ligand
+Number of atoms:                           43
+Number of rotatable bonds:                 10
+Number of atom types:                      6
+
+
+    DUMMY DATA (only for ADT-compatibility)
+    ________________________
+
+
+DPF> outlev 1
+DPF> ga_run 10
+DPF> fld map_grid_files/1ets_receptor.maps.fld
+DPF> move pdbqt_files/1ets_ligand.pdbqt
+
+
+    COUNTER STATES
+    ________________________
+
+
+Number of energy evaluations performed:    522456
+Number of generations used:                80
+
+
+    INPUT LIGAND PDBQT FILE:
+    ________________________
+
+
+INPUT-LIGAND-PDBQT: REMARK  10 active torsions:
+INPUT-LIGAND-PDBQT: REMARK  status: ('A' for Active; 'I' for Inactive)
+INPUT-LIGAND-PDBQT: REMARK    1  A    between atoms: S_2940  and  N_2953 
+INPUT-LIGAND-PDBQT: REMARK    2  A    between atoms: S_2940  and  C2_2944 
+INPUT-LIGAND-PDBQT: REMARK    3  A    between atoms: N_2953  and  CA_2954 
+INPUT-LIGAND-PDBQT: REMARK    4  A    between atoms: CA_2954  and  C_2955 
+INPUT-LIGAND-PDBQT: REMARK       I    between atoms: C_2955  and  N1_2957 
+INPUT-LIGAND-PDBQT: REMARK    5  A    between atoms: N1_2957  and  CA1_2958 
+INPUT-LIGAND-PDBQT: REMARK    6  A    between atoms: CA1_2958  and  CB1_2961 
+INPUT-LIGAND-PDBQT: REMARK    7  A    between atoms: CA1_2958  and  CB_2959 
+INPUT-LIGAND-PDBQT: REMARK       I    between atoms: CB_2959  and  N11_2971 
+INPUT-LIGAND-PDBQT: REMARK    8  A    between atoms: CB1_2961  and  CG_2962 
+INPUT-LIGAND-PDBQT: REMARK    9  A    between atoms: CZ_2967  and  CF_2968 
+INPUT-LIGAND-PDBQT: REMARK   10  A    between atoms: CF_2968  and  NG1_2969 
+INPUT-LIGAND-PDBQT: ROOT
+INPUT-LIGAND-PDBQT: HETATM    1  CA1 MID H   1     -36.808 -28.755  41.995  1.00 44.45     0.164 C 
+INPUT-LIGAND-PDBQT: ENDROOT
+INPUT-LIGAND-PDBQT: BRANCH   1   2
+INPUT-LIGAND-PDBQT: HETATM    2  CB1 MID H   1     -37.195 -29.268  40.625  1.00  5.89     0.058 C 
+INPUT-LIGAND-PDBQT: BRANCH   2   3
+INPUT-LIGAND-PDBQT: HETATM    3  CG  MID H   1     -38.581 -29.884  40.633  1.00 25.29    -0.020 A 
+INPUT-LIGAND-PDBQT: HETATM    4  CD1 MID H   1     -38.751 -31.250  40.723  1.00 31.79    -0.004 A 
+INPUT-LIGAND-PDBQT: HETATM    5  CE1 MID H   1     -40.010 -31.804  40.782  1.00 23.87     0.003 A 
+INPUT-LIGAND-PDBQT: HETATM    6  CZ  MID H   1     -41.124 -30.981  40.711  1.00 31.39     0.031 A 
+INPUT-LIGAND-PDBQT: HETATM    7  CE2 MID H   1     -40.935 -29.618  40.602  1.00 31.26     0.003 A 
+INPUT-LIGAND-PDBQT: HETATM    8  CD2 MID H   1     -39.677 -29.066  40.542  1.00  2.00    -0.004 A 
+INPUT-LIGAND-PDBQT: BRANCH   6   9
+INPUT-LIGAND-PDBQT: HETATM    9  CF  MID H   1     -42.413 -31.495  40.726  1.00  8.10     0.104 C 
+INPUT-LIGAND-PDBQT: HETATM   10  NG2 MID H   1     -43.447 -30.710  40.443  1.00 32.91    -0.385 N 
+INPUT-LIGAND-PDBQT: HETATM   11 2HG2 MID H   1     -43.268 -29.732  40.314  0.00 20.00     0.157 HD
+INPUT-LIGAND-PDBQT: HETATM   12 1HG2 MID H   1     -44.391 -31.026  40.451  0.00 20.00     0.157 HD
+INPUT-LIGAND-PDBQT: BRANCH   9  13
+INPUT-LIGAND-PDBQT: HETATM   13  NG1 MID H   1     -42.609 -32.760  41.114  1.00 31.58    -0.385 N 
+INPUT-LIGAND-PDBQT: HETATM   14 2HG1 MID H   1     -41.800 -33.310  41.375  0.00 20.00     0.157 HD
+INPUT-LIGAND-PDBQT: HETATM   15  HG1 MID H   1     -43.508 -33.172  41.148  0.00 20.00     0.157 HD
+INPUT-LIGAND-PDBQT: ENDBRANCH   9  13
+INPUT-LIGAND-PDBQT: ENDBRANCH   6   9
+INPUT-LIGAND-PDBQT: ENDBRANCH   2   3
+INPUT-LIGAND-PDBQT: ENDBRANCH   1   2
+INPUT-LIGAND-PDBQT: BRANCH   1  16
+INPUT-LIGAND-PDBQT: HETATM   16  CB  MID H   1     -35.508 -27.952  41.995  1.00 18.27     0.254 C 
+INPUT-LIGAND-PDBQT: HETATM   17  O1  MID H   1     -34.675 -28.083  41.103  1.00 17.61    -0.270 OA
+INPUT-LIGAND-PDBQT: HETATM   18  N11 MID H   1     -35.311 -27.094  42.998  1.00 16.85    -0.319 N 
+INPUT-LIGAND-PDBQT: HETATM   19  C61 MID H   1     -36.337 -26.791  43.992  1.00  2.00     0.104 C 
+INPUT-LIGAND-PDBQT: HETATM   20  C21 MID H   1     -34.069 -26.388  43.211  1.00  9.22     0.104 C 
+INPUT-LIGAND-PDBQT: HETATM   21  C51 MID H   1     -35.820 -27.039  45.391  1.00 25.73     0.024 C 
+INPUT-LIGAND-PDBQT: HETATM   22  C41 MID H   1     -34.575 -26.279  45.731  1.00 20.19     0.004 C 
+INPUT-LIGAND-PDBQT: HETATM   23  C31 MID H   1     -33.630 -26.728  44.642  1.00  4.43     0.024 C 
+INPUT-LIGAND-PDBQT: ENDBRANCH   1  16
+INPUT-LIGAND-PDBQT: BRANCH   1  24
+INPUT-LIGAND-PDBQT: HETATM   24  N1  MID H   1     -36.578 -29.856  42.892  1.00 17.66    -0.337 N 
+INPUT-LIGAND-PDBQT: HETATM   25  C   MID H   1     -37.331 -30.043  43.949  1.00 16.24     0.254 C 
+INPUT-LIGAND-PDBQT: HETATM   26  O   MID H   1     -38.321 -29.377  44.297  1.00 17.02    -0.270 OA
+INPUT-LIGAND-PDBQT: HETATM   27  H2  MID H   1     -35.812 -30.443  42.702  0.00 20.00     0.164 HD
+INPUT-LIGAND-PDBQT: BRANCH  25  28
+INPUT-LIGAND-PDBQT: HETATM   28  CA  MID H   1     -36.804 -31.246  44.700  1.00  7.73     0.196 C 
+INPUT-LIGAND-PDBQT: BRANCH  28  29
+INPUT-LIGAND-PDBQT: HETATM   29  N   MID H   1     -37.743 -31.542  45.741  1.00 37.67    -0.290 N 
+INPUT-LIGAND-PDBQT: HETATM   30  H   MID H   1     -38.663 -31.310  45.503  0.00 20.00     0.174 HD
+INPUT-LIGAND-PDBQT: BRANCH  29  31
+INPUT-LIGAND-PDBQT: HETATM   31  S   MID H   1     -37.352 -31.271  47.264  1.00 33.87     0.261 S 
+INPUT-LIGAND-PDBQT: HETATM   32  O2S MID H   1     -38.575 -31.744  48.049  1.00 95.95    -0.200 OA
+INPUT-LIGAND-PDBQT: HETATM   33  O1S MID H   1     -36.143 -32.106  47.639  1.00 40.67    -0.200 OA
+INPUT-LIGAND-PDBQT: BRANCH  31  34
+INPUT-LIGAND-PDBQT: HETATM   34  C2  MID H   1     -37.127 -29.595  47.786  1.00 65.80     0.103 A 
+INPUT-LIGAND-PDBQT: HETATM   35  C1  MID H   1     -38.189 -28.744  48.085  1.00 21.55     0.013 A 
+INPUT-LIGAND-PDBQT: HETATM   36  C9  MID H   1     -37.907 -27.496  48.597  1.00 47.92     0.001 A 
+INPUT-LIGAND-PDBQT: HETATM   37  C10 MID H   1     -36.589 -27.135  48.870  1.00 41.02     0.000 A 
+INPUT-LIGAND-PDBQT: HETATM   38  C8  MID H   1     -38.918 -26.639  48.905  1.00  8.99     0.000 C 
+INPUT-LIGAND-PDBQT: HETATM   39  C4  MID H   1     -35.541 -27.982  48.580  1.00 32.31     0.001 A 
+INPUT-LIGAND-PDBQT: HETATM   40  C5  MID H   1     -36.255 -25.907  49.402  1.00 30.01     0.000 C 
+INPUT-LIGAND-PDBQT: HETATM   41  C3  MID H   1     -35.814 -29.189  47.970  1.00 20.27     0.013 A 
+INPUT-LIGAND-PDBQT: HETATM   42  C6  MID H   1     -37.269 -25.002  49.586  1.00 46.07     0.000 C 
+INPUT-LIGAND-PDBQT: HETATM   43  C7  MID H   1     -38.575 -25.370  49.323  1.00 91.44     0.000 C 
+INPUT-LIGAND-PDBQT: ENDBRANCH  31  34
+INPUT-LIGAND-PDBQT: ENDBRANCH  29  31
+INPUT-LIGAND-PDBQT: ENDBRANCH  28  29
+INPUT-LIGAND-PDBQT: ENDBRANCH  25  28
+INPUT-LIGAND-PDBQT: ENDBRANCH   1  24
+INPUT-LIGAND-PDBQT: TORSDOF 10
+
+
+    FINAL DOCKED STATE:
+    ________________________
+
+
+Run:   1 / 10
+Time taken for this run:   2.231s
+
+DOCKED: MODEL        1
+DOCKED: USER    Run = 1
+DOCKED: USER
+DOCKED: USER    Estimated Free Energy of Binding    =  -8.30 kcal/mol  [=(1)+(2)+(3)-(4)]
+DOCKED: USER
+DOCKED: USER    (1) Final Intermolecular Energy     = -11.29 kcal/mol
+DOCKED: USER        vdW + Hbond + desolv Energy     = -10.94 kcal/mol
+DOCKED: USER        Electrostatic Energy            =  -0.34 kcal/mol
+DOCKED: USER        Moving Ligand-Fixed Receptor    = -11.29 kcal/mol
+DOCKED: USER        Moving Ligand-Moving Receptor   =  +0.00 kcal/mol
+DOCKED: USER    (2) Final Total Internal Energy     =  -3.64 kcal/mol
+DOCKED: USER    (3) Torsional Free Energy           =  +2.98 kcal/mol
+DOCKED: USER    (4) Unbound System's Energy         =  -3.64 kcal/mol
+DOCKED: USER
+DOCKED: USER
+DOCKED: REMARK  10 active torsions:
+DOCKED: REMARK  status: ('A' for Active; 'I' for Inactive)
+DOCKED: REMARK    1  A    between atoms: S_2940  and  N_2953 
+DOCKED: REMARK    2  A    between atoms: S_2940  and  C2_2944 
+DOCKED: REMARK    3  A    between atoms: N_2953  and  CA_2954 
+DOCKED: REMARK    4  A    between atoms: CA_2954  and  C_2955 
+DOCKED: REMARK       I    between atoms: C_2955  and  N1_2957 
+DOCKED: REMARK    5  A    between atoms: N1_2957  and  CA1_2958 
+DOCKED: REMARK    6  A    between atoms: CA1_2958  and  CB1_2961 
+DOCKED: REMARK    7  A    between atoms: CA1_2958  and  CB_2959 
+DOCKED: REMARK       I    between atoms: CB_2959  and  N11_2971 
+DOCKED: REMARK    8  A    between atoms: CB1_2961  and  CG_2962 
+DOCKED: REMARK    9  A    between atoms: CZ_2967  and  CF_2968 
+DOCKED: REMARK   10  A    between atoms: CF_2968  and  NG1_2969 
+DOCKED: USER                              x       y       z     vdW  Elec       q    Type
+DOCKED: USER                           _______ _______ _______ _____ _____    ______ ____
+DOCKED: ROOT
+DOCKED: HETATM    1  CA1 MID H   1     -36.415 -29.746  41.847 -0.12 -0.69    +0.164 C  
+DOCKED: ENDROOT
+DOCKED: BRANCH   1   2
+DOCKED: HETATM    2  CB1 MID H   1     -36.955 -30.256  40.528 -0.26 -0.27    +0.058 C  
+DOCKED: BRANCH   2   3
+DOCKED: HETATM    3  CG  MID H   1     -38.417 -30.645  40.639 -0.30 +0.10    -0.020 A  
+DOCKED: HETATM    4  CD1 MID H   1     -38.840 -31.919  40.324 -0.35 +0.02    -0.004 A  
+DOCKED: HETATM    5  CE1 MID H   1     -40.158 -32.285  40.474 -0.43 -0.02    +0.003 A  
+DOCKED: HETATM    6  CZ  MID H   1     -41.083 -31.348  40.912 -0.39 -0.16    +0.031 A  
+DOCKED: HETATM    7  CE2 MID H   1     -40.645 -30.072  41.205 -0.30 -0.01    +0.003 A  
+DOCKED: HETATM    8  CD2 MID H   1     -39.328 -29.708  41.053 -0.33 +0.02    -0.004 A  
+DOCKED: BRANCH   6   9
+DOCKED: HETATM    9  CF  MID H   1     -42.429 -31.657  41.041 -0.43 -0.57    +0.104 C  
+DOCKED: HETATM   10  NG2 MID H   1     -42.811 -32.919  41.204 -0.10 +2.35    -0.385 N  
+DOCKED: HETATM   11 2HG2 MID H   1     -42.108 -33.631  41.137 -0.44 -1.01    +0.157 HD 
+DOCKED: HETATM   12 1HG2 MID H   1     -43.764 -33.195  41.290 -0.32 -1.05    +0.157 HD 
+DOCKED: BRANCH   9  13
+DOCKED: HETATM   13  NG1 MID H   1     -43.340 -30.686  40.910 -0.14 +2.10    -0.385 N  
+DOCKED: HETATM   14 2HG1 MID H   1     -43.301 -29.905  41.554 -0.11 -0.87    +0.157 HD 
+DOCKED: HETATM   15  HG1 MID H   1     -44.045 -30.708  40.216 -0.09 -0.91    +0.157 HD 
+DOCKED: ENDBRANCH   9  13
+DOCKED: ENDBRANCH   6   9
+DOCKED: ENDBRANCH   2   3
+DOCKED: ENDBRANCH   1   2
+DOCKED: BRANCH   1  16
+DOCKED: HETATM   16  CB  MID H   1     -35.224 -28.801  41.687 -0.10 -0.96    +0.254 C  
+DOCKED: HETATM   17  O1  MID H   1     -34.252 -29.107  41.004 -0.11 +0.99    -0.270 OA 
+DOCKED: HETATM   18  N11 MID H   1     -35.281 -27.624  42.313 -0.08 +1.17    -0.319 N  
+DOCKED: HETATM   19  C61 MID H   1     -36.477 -27.154  43.006 -0.29 -0.40    +0.104 C  
+DOCKED: HETATM   20  C21 MID H   1     -34.170 -26.703  42.380 -0.18 -0.34    +0.104 C  
+DOCKED: HETATM   21  C51 MID H   1     -36.164 -26.806  44.444 -0.33 -0.09    +0.024 C  
+DOCKED: HETATM   22  C41 MID H   1     -35.076 -25.789  44.608 -0.45 -0.01    +0.004 C  
+DOCKED: HETATM   23  C31 MID H   1     -33.929 -26.440  43.873 -0.45 -0.08    +0.024 C  
+DOCKED: ENDBRANCH   1  16
+DOCKED: BRANCH   1  24
+DOCKED: HETATM   24  N1  MID H   1     -35.930 -30.842  42.644 -0.02 +1.45    -0.337 N  
+DOCKED: HETATM   25  C   MID H   1     -35.212 -30.635  43.721 -0.07 -0.94    +0.254 C  
+DOCKED: HETATM   26  O   MID H   1     -34.895 -29.541  44.218 -0.08 +0.92    -0.270 OA 
+DOCKED: HETATM   27  H2  MID H   1     -36.128 -31.752  42.330 -0.49 -0.88    +0.164 HD 
+DOCKED: BRANCH  25  28
+DOCKED: HETATM   28  CA  MID H   1     -34.826 -31.980  44.298 -0.09 -0.71    +0.196 C  
+DOCKED: BRANCH  28  29
+DOCKED: HETATM   29  N   MID H   1     -35.789 -32.934  43.833 -0.04 +1.24    -0.290 N  
+DOCKED: HETATM   30  H   MID H   1     -35.701 -33.132  42.879 -0.43 -0.96    +0.174 HD 
+DOCKED: BRANCH  29  31
+DOCKED: HETATM   31  S   MID H   1     -37.289 -32.877  44.374 -0.19 -1.17    +0.261 S  
+DOCKED: HETATM   32  O2S MID H   1     -38.088 -32.335  43.189 -0.27 +1.04    -0.200 OA 
+DOCKED: HETATM   33  O1S MID H   1     -37.762 -34.275  44.721 -0.51 +0.90    -0.200 OA 
+DOCKED: BRANCH  31  34
+DOCKED: HETATM   34  C2  MID H   1     -37.662 -31.757  45.693 +0.01 -0.42    +0.103 A  
+DOCKED: HETATM   35  C1  MID H   1     -37.695 -30.374  45.528 -0.21 -0.05    +0.013 A  
+DOCKED: HETATM   36  C9  MID H   1     -38.113 -29.596  46.586 -0.29 -0.00    +0.001 A  
+DOCKED: HETATM   37  C10 MID H   1     -38.555 -30.197  47.763 -0.30 -0.00    +0.000 A  
+DOCKED: HETATM   38  C8  MID H   1     -38.162 -28.242  46.461 -0.30 -0.00    +0.000 C  
+DOCKED: HETATM   39  C4  MID H   1     -38.528 -31.566  47.920 -0.24 -0.00    +0.001 A  
+DOCKED: HETATM   40  C5  MID H   1     -39.002 -29.465  48.843 -0.34 -0.00    +0.000 C  
+DOCKED: HETATM   41  C3  MID H   1     -38.011 -32.340  46.902 -0.19 -0.05    +0.013 A  
+DOCKED: HETATM   42  C6  MID H   1     -38.925 -28.098  48.755 -0.38 -0.00    +0.000 C  
+DOCKED: HETATM   43  C7  MID H   1     -38.495 -27.508  47.581 -0.40 -0.00    +0.000 C  
+DOCKED: ENDBRANCH  31  34
+DOCKED: ENDBRANCH  29  31
+DOCKED: ENDBRANCH  28  29
+DOCKED: ENDBRANCH  25  28
+DOCKED: ENDBRANCH   1  24
+DOCKED: TORSDOF 10
+DOCKED: TER
+DOCKED: ENDMDL
+________________________________________________________________________________
+
+
+    FINAL DOCKED STATE:
+    ________________________
+
+
+Run:   2 / 10
+Time taken for this run:   2.231s
+
+DOCKED: MODEL        2
+DOCKED: USER    Run = 2
+DOCKED: USER
+DOCKED: USER    Estimated Free Energy of Binding    =  -6.49 kcal/mol  [=(1)+(2)+(3)-(4)]
+DOCKED: USER
+DOCKED: USER    (1) Final Intermolecular Energy     =  -9.48 kcal/mol
+DOCKED: USER        vdW + Hbond + desolv Energy     =  -9.56 kcal/mol
+DOCKED: USER        Electrostatic Energy            =  +0.09 kcal/mol
+DOCKED: USER        Moving Ligand-Fixed Receptor    =  -9.48 kcal/mol
+DOCKED: USER        Moving Ligand-Moving Receptor   =  +0.00 kcal/mol
+DOCKED: USER    (2) Final Total Internal Energy     =  -4.40 kcal/mol
+DOCKED: USER    (3) Torsional Free Energy           =  +2.98 kcal/mol
+DOCKED: USER    (4) Unbound System's Energy         =  -4.40 kcal/mol
+DOCKED: USER
+DOCKED: USER
+DOCKED: REMARK  10 active torsions:
+DOCKED: REMARK  status: ('A' for Active; 'I' for Inactive)
+DOCKED: REMARK    1  A    between atoms: S_2940  and  N_2953 
+DOCKED: REMARK    2  A    between atoms: S_2940  and  C2_2944 
+DOCKED: REMARK    3  A    between atoms: N_2953  and  CA_2954 
+DOCKED: REMARK    4  A    between atoms: CA_2954  and  C_2955 
+DOCKED: REMARK       I    between atoms: C_2955  and  N1_2957 
+DOCKED: REMARK    5  A    between atoms: N1_2957  and  CA1_2958 
+DOCKED: REMARK    6  A    between atoms: CA1_2958  and  CB1_2961 
+DOCKED: REMARK    7  A    between atoms: CA1_2958  and  CB_2959 
+DOCKED: REMARK       I    between atoms: CB_2959  and  N11_2971 
+DOCKED: REMARK    8  A    between atoms: CB1_2961  and  CG_2962 
+DOCKED: REMARK    9  A    between atoms: CZ_2967  and  CF_2968 
+DOCKED: REMARK   10  A    between atoms: CF_2968  and  NG1_2969 
+DOCKED: USER                              x       y       z     vdW  Elec       q    Type
+DOCKED: USER                           _______ _______ _______ _____ _____    ______ ____
+DOCKED: ROOT
+DOCKED: HETATM    1  CA1 MID H   1     -37.697 -29.326  43.620 -0.20 -0.67    +0.164 C  
+DOCKED: ENDROOT
+DOCKED: BRANCH   1   2
+DOCKED: HETATM    2  CB1 MID H   1     -37.683 -29.997  44.976 -0.24 -0.23    +0.058 C  
+DOCKED: BRANCH   2   3
+DOCKED: HETATM    3  CG  MID H   1     -38.001 -29.015  46.087 -0.28 +0.07    -0.020 A  
+DOCKED: HETATM    4  CD1 MID H   1     -37.722 -27.671  45.948 -0.20 +0.01    -0.004 A  
+DOCKED: HETATM    5  CE1 MID H   1     -38.058 -26.773  46.936 -0.27 -0.01    +0.003 A  
+DOCKED: HETATM    6  CZ  MID H   1     -38.650 -27.230  48.104 -0.35 -0.11    +0.031 A  
+DOCKED: HETATM    7  CE2 MID H   1     -38.904 -28.580  48.233 -0.31 -0.01    +0.003 A  
+DOCKED: HETATM    8  CD2 MID H   1     -38.567 -29.476  47.247 -0.33 +0.01    -0.004 A  
+DOCKED: BRANCH   6   9
+DOCKED: HETATM    9  CF  MID H   1     -38.970 -26.369  49.144 -0.46 -0.36    +0.104 C  
+DOCKED: HETATM   10  NG2 MID H   1     -38.812 -26.759  50.405 -0.13 +1.30    -0.385 N  
+DOCKED: HETATM   11 2HG2 MID H   1     -38.547 -27.712  50.568 +0.08 -0.51    +0.157 HD 
+DOCKED: HETATM   12 1HG2 MID H   1     -39.037 -26.185  51.186 +0.01 -0.55    +0.157 HD 
+DOCKED: BRANCH   9  13
+DOCKED: HETATM   13  NG1 MID H   1     -39.521 -25.183  48.867 -0.27 +1.42    -0.385 N  
+DOCKED: HETATM   14 2HG1 MID H   1     -38.923 -24.366  48.871 +0.10 -0.60    +0.157 HD 
+DOCKED: HETATM   15  HG1 MID H   1     -40.485 -25.078  48.665 +0.08 -0.61    +0.157 HD 
+DOCKED: ENDBRANCH   9  13
+DOCKED: ENDBRANCH   6   9
+DOCKED: ENDBRANCH   2   3
+DOCKED: ENDBRANCH   1   2
+DOCKED: BRANCH   1  16
+DOCKED: HETATM   16  CB  MID H   1     -37.507 -30.302  42.460 -0.12 -1.13    +0.254 C  
+DOCKED: HETATM   17  O1  MID H   1     -36.534 -31.047  42.403 -0.07 +1.26    -0.270 OA 
+DOCKED: HETATM   18  N11 MID H   1     -38.444 -30.322  41.509 -0.10 +1.49    -0.319 N  
+DOCKED: HETATM   19  C61 MID H   1     -39.691 -29.570  41.612 -0.17 -0.48    +0.104 C  
+DOCKED: HETATM   20  C21 MID H   1     -38.319 -31.075  40.283 -0.31 -0.52    +0.104 C  
+DOCKED: HETATM   21  C51 MID H   1     -39.875 -28.666  40.414 -0.43 -0.12    +0.024 C  
+DOCKED: HETATM   22  C41 MID H   1     -39.844 -29.376  39.096 -0.50 -0.02    +0.004 C  
+DOCKED: HETATM   23  C31 MID H   1     -38.499 -30.062  39.144 -0.39 -0.12    +0.024 C  
+DOCKED: ENDBRANCH   1  16
+DOCKED: BRANCH   1  24
+DOCKED: HETATM   24  N1  MID H   1     -36.608 -28.391  43.516 -0.04 +1.28    -0.337 N  
+DOCKED: HETATM   25  C   MID H   1     -36.577 -27.484  42.570 -0.17 -1.00    +0.254 C  
+DOCKED: HETATM   26  O   MID H   1     -37.439 -27.270  41.701 -0.40 +1.18    -0.270 OA 
+DOCKED: HETATM   27  H2  MID H   1     -35.871 -28.481  44.161 +0.09 -0.58    +0.164 HD 
+DOCKED: BRANCH  25  28
+DOCKED: HETATM   28  CA  MID H   1     -35.291 -26.698  42.709 -0.09 -0.71    +0.196 C  
+DOCKED: BRANCH  28  29
+DOCKED: HETATM   29  N   MID H   1     -35.241 -26.201  44.052 -0.17 +1.00    -0.290 N  
+DOCKED: HETATM   30  H   MID H   1     -35.327 -25.228  44.102 +0.12 -0.61    +0.174 HD 
+DOCKED: BRANCH  29  31
+DOCKED: HETATM   31  S   MID H   1     -34.223 -26.843  45.099 -0.37 -0.84    +0.261 S  
+DOCKED: HETATM   32  O2S MID H   1     -34.369 -28.348  44.881 -0.09 +0.64    -0.200 OA 
+DOCKED: HETATM   33  O1S MID H   1     -32.808 -26.408  44.771 -0.38 +0.61    -0.200 OA 
+DOCKED: BRANCH  31  34
+DOCKED: HETATM   34  C2  MID H   1     -34.548 -26.625  46.825 -0.29 -0.33    +0.103 A  
+DOCKED: HETATM   35  C1  MID H   1     -35.153 -25.482  47.345 -0.34 -0.04    +0.013 A  
+DOCKED: HETATM   36  C9  MID H   1     -35.470 -25.459  48.686 -0.36 -0.00    +0.001 A  
+DOCKED: HETATM   37  C10 MID H   1     -35.250 -26.587  49.475 -0.23 -0.00    +0.000 A  
+DOCKED: HETATM   38  C8  MID H   1     -36.065 -24.363  49.229 -0.51 -0.00    +0.000 C  
+DOCKED: HETATM   39  C4  MID H   1     -34.658 -27.718  48.956 -0.20 -0.00    +0.001 A  
+DOCKED: HETATM   40  C5  MID H   1     -35.569 -26.623  50.816 -0.24 -0.00    +0.000 C  
+DOCKED: HETATM   41  C3  MID H   1     -34.244 -27.705  47.640 -0.29 -0.04    +0.013 A  
+DOCKED: HETATM   42  C6  MID H   1     -36.047 -25.469  51.383 -0.33 -0.00    +0.000 C  
+DOCKED: HETATM   43  C7  MID H   1     -36.273 -24.358  50.593 -0.42 -0.00    +0.000 C  
+DOCKED: ENDBRANCH  31  34
+DOCKED: ENDBRANCH  29  31
+DOCKED: ENDBRANCH  28  29
+DOCKED: ENDBRANCH  25  28
+DOCKED: ENDBRANCH   1  24
+DOCKED: TORSDOF 10
+DOCKED: TER
+DOCKED: ENDMDL
+________________________________________________________________________________
+
+
+    FINAL DOCKED STATE:
+    ________________________
+
+
+Run:   3 / 10
+Time taken for this run:   2.231s
+
+DOCKED: MODEL        3
+DOCKED: USER    Run = 3
+DOCKED: USER
+DOCKED: USER    Estimated Free Energy of Binding    =  -8.22 kcal/mol  [=(1)+(2)+(3)-(4)]
+DOCKED: USER
+DOCKED: USER    (1) Final Intermolecular Energy     = -11.21 kcal/mol
+DOCKED: USER        vdW + Hbond + desolv Energy     = -10.86 kcal/mol
+DOCKED: USER        Electrostatic Energy            =  -0.35 kcal/mol
+DOCKED: USER        Moving Ligand-Fixed Receptor    = -11.21 kcal/mol
+DOCKED: USER        Moving Ligand-Moving Receptor   =  +0.00 kcal/mol
+DOCKED: USER    (2) Final Total Internal Energy     =  -4.36 kcal/mol
+DOCKED: USER    (3) Torsional Free Energy           =  +2.98 kcal/mol
+DOCKED: USER    (4) Unbound System's Energy         =  -4.36 kcal/mol
+DOCKED: USER
+DOCKED: USER
+DOCKED: REMARK  10 active torsions:
+DOCKED: REMARK  status: ('A' for Active; 'I' for Inactive)
+DOCKED: REMARK    1  A    between atoms: S_2940  and  N_2953 
+DOCKED: REMARK    2  A    between atoms: S_2940  and  C2_2944 
+DOCKED: REMARK    3  A    between atoms: N_2953  and  CA_2954 
+DOCKED: REMARK    4  A    between atoms: CA_2954  and  C_2955 
+DOCKED: REMARK       I    between atoms: C_2955  and  N1_2957 
+DOCKED: REMARK    5  A    between atoms: N1_2957  and  CA1_2958 
+DOCKED: REMARK    6  A    between atoms: CA1_2958  and  CB1_2961 
+DOCKED: REMARK    7  A    between atoms: CA1_2958  and  CB_2959 
+DOCKED: REMARK       I    between atoms: CB_2959  and  N11_2971 
+DOCKED: REMARK    8  A    between atoms: CB1_2961  and  CG_2962 
+DOCKED: REMARK    9  A    between atoms: CZ_2967  and  CF_2968 
+DOCKED: REMARK   10  A    between atoms: CF_2968  and  NG1_2969 
+DOCKED: USER                              x       y       z     vdW  Elec       q    Type
+DOCKED: USER                           _______ _______ _______ _____ _____    ______ ____
+DOCKED: ROOT
+DOCKED: HETATM    1  CA1 MID H   1     -36.902 -29.320  41.790 -0.15 -0.69    +0.164 C  
+DOCKED: ENDROOT
+DOCKED: BRANCH   1   2
+DOCKED: HETATM    2  CB1 MID H   1     -37.548 -29.510  40.435 -0.30 -0.26    +0.058 C  
+DOCKED: BRANCH   2   3
+DOCKED: HETATM    3  CG  MID H   1     -38.947 -30.080  40.561 -0.32 +0.10    -0.020 A  
+DOCKED: HETATM    4  CD1 MID H   1     -39.161 -31.442  40.579 -0.39 +0.02    -0.004 A  
+DOCKED: HETATM    5  CE1 MID H   1     -40.427 -31.958  40.745 -0.42 -0.02    +0.003 A  
+DOCKED: HETATM    6  CZ  MID H   1     -41.508 -31.096  40.858 -0.39 -0.16    +0.031 A  
+DOCKED: HETATM    7  CE2 MID H   1     -41.277 -29.736  40.819 -0.32 -0.01    +0.003 A  
+DOCKED: HETATM    8  CD2 MID H   1     -40.013 -29.222  40.652 -0.36 +0.02    -0.004 A  
+DOCKED: BRANCH   6   9
+DOCKED: HETATM    9  CF  MID H   1     -42.806 -31.568  40.987 -0.42 -0.58    +0.104 C  
+DOCKED: HETATM   10  NG2 MID H   1     -43.029 -32.863  41.185 -0.12 +2.36    -0.385 N  
+DOCKED: HETATM   11 2HG2 MID H   1     -42.242 -33.483  41.144 -0.43 -0.99    +0.157 HD 
+DOCKED: HETATM   12 1HG2 MID H   1     -43.940 -33.254  41.272 -0.35 -1.10    +0.157 HD 
+DOCKED: BRANCH   9  13
+DOCKED: HETATM   13  NG1 MID H   1     -43.830 -30.723  40.820 -0.13 +2.14    -0.385 N  
+DOCKED: HETATM   14 2HG1 MID H   1     -44.514 -30.936  40.105 -0.42 -0.98    +0.157 HD 
+DOCKED: HETATM   15  HG1 MID H   1     -43.935 -29.902  41.363 -0.04 -0.85    +0.157 HD 
+DOCKED: ENDBRANCH   9  13
+DOCKED: ENDBRANCH   6   9
+DOCKED: ENDBRANCH   2   3
+DOCKED: ENDBRANCH   1   2
+DOCKED: BRANCH   1  16
+DOCKED: HETATM   16  CB  MID H   1     -35.487 -28.748  41.711 -0.10 -0.97    +0.254 C  
+DOCKED: HETATM   17  O1  MID H   1     -34.576 -29.367  41.169 -0.11 +1.02    -0.270 OA 
+DOCKED: HETATM   18  N11 MID H   1     -35.276 -27.544  42.246 -0.08 +1.17    -0.319 N  
+DOCKED: HETATM   19  C61 MID H   1     -36.357 -26.706  42.759 -0.26 -0.41    +0.104 C  
+DOCKED: HETATM   20  C21 MID H   1     -33.966 -26.950  42.383 -0.26 -0.34    +0.104 C  
+DOCKED: HETATM   21  C51 MID H   1     -36.099 -26.318  44.198 -0.35 -0.09    +0.024 C  
+DOCKED: HETATM   22  C41 MID H   1     -34.794 -25.618  44.422 -0.49 -0.01    +0.004 C  
+DOCKED: HETATM   23  C31 MID H   1     -33.806 -26.620  43.873 -0.42 -0.08    +0.024 C  
+DOCKED: ENDBRANCH   1  16
+DOCKED: BRANCH   1  24
+DOCKED: HETATM   24  N1  MID H   1     -36.765 -30.587  42.458 -0.02 +1.49    -0.337 N  
+DOCKED: HETATM   25  C   MID H   1     -37.558 -30.924  43.447 -0.11 -1.14    +0.254 C  
+DOCKED: HETATM   26  O   MID H   1     -38.514 -30.274  43.903 -0.57 +1.24    -0.270 OA 
+DOCKED: HETATM   27  H2  MID H   1     -36.032 -31.175  42.169 -0.28 -0.79    +0.164 HD 
+DOCKED: BRANCH  25  28
+DOCKED: HETATM   28  CA  MID H   1     -37.127 -32.282  43.957 -0.14 -0.89    +0.196 C  
+DOCKED: BRANCH  28  29
+DOCKED: HETATM   29  N   MID H   1     -36.452 -32.074  45.203 -0.05 +1.10    -0.290 N  
+DOCKED: HETATM   30  H   MID H   1     -37.048 -32.140  45.976 +0.05 -0.65    +0.174 HD 
+DOCKED: BRANCH  29  31
+DOCKED: HETATM   31  S   MID H   1     -35.322 -30.954  45.316 -0.10 -0.89    +0.261 S  
+DOCKED: HETATM   32  O2S MID H   1     -34.265 -31.585  46.222 -0.10 +0.62    -0.200 OA 
+DOCKED: HETATM   33  O1S MID H   1     -34.731 -30.681  43.946 -0.12 +0.71    -0.200 OA 
+DOCKED: BRANCH  31  34
+DOCKED: HETATM   34  C2  MID H   1     -35.728 -29.432  46.124 -0.10 -0.34    +0.103 A  
+DOCKED: HETATM   35  C1  MID H   1     -37.032 -29.077  46.461 -0.17 -0.04    +0.013 A  
+DOCKED: HETATM   36  C9  MID H   1     -37.231 -27.926  47.194 -0.22 -0.00    +0.001 A  
+DOCKED: HETATM   37  C10 MID H   1     -36.138 -27.185  47.640 -0.22 -0.00    +0.000 A  
+DOCKED: HETATM   38  C8  MID H   1     -38.490 -27.549  47.546 -0.39 -0.00    +0.000 C  
+DOCKED: HETATM   39  C4  MID H   1     -34.849 -27.544  47.311 -0.28 -0.00    +0.001 A  
+DOCKED: HETATM   40  C5  MID H   1     -36.282 -26.039  48.394 -0.34 -0.00    +0.000 C  
+DOCKED: HETATM   41  C3  MID H   1     -34.654 -28.635  46.489 -0.20 -0.04    +0.013 A  
+DOCKED: HETATM   42  C6  MID H   1     -37.558 -25.596  48.632 -0.37 -0.00    +0.000 C  
+DOCKED: HETATM   43  C7  MID H   1     -38.637 -26.341  48.196 -0.49 -0.00    +0.000 C  
+DOCKED: ENDBRANCH  31  34
+DOCKED: ENDBRANCH  29  31
+DOCKED: ENDBRANCH  28  29
+DOCKED: ENDBRANCH  25  28
+DOCKED: ENDBRANCH   1  24
+DOCKED: TORSDOF 10
+DOCKED: TER
+DOCKED: ENDMDL
+________________________________________________________________________________
+
+
+    FINAL DOCKED STATE:
+    ________________________
+
+
+Run:   4 / 10
+Time taken for this run:   2.231s
+
+DOCKED: MODEL        4
+DOCKED: USER    Run = 4
+DOCKED: USER
+DOCKED: USER    Estimated Free Energy of Binding    =  -8.87 kcal/mol  [=(1)+(2)+(3)-(4)]
+DOCKED: USER
+DOCKED: USER    (1) Final Intermolecular Energy     = -11.86 kcal/mol
+DOCKED: USER        vdW + Hbond + desolv Energy     = -11.77 kcal/mol
+DOCKED: USER        Electrostatic Energy            =  -0.09 kcal/mol
+DOCKED: USER        Moving Ligand-Fixed Receptor    = -11.86 kcal/mol
+DOCKED: USER        Moving Ligand-Moving Receptor   =  +0.00 kcal/mol
+DOCKED: USER    (2) Final Total Internal Energy     =  -3.54 kcal/mol
+DOCKED: USER    (3) Torsional Free Energy           =  +2.98 kcal/mol
+DOCKED: USER    (4) Unbound System's Energy         =  -3.54 kcal/mol
+DOCKED: USER
+DOCKED: USER
+DOCKED: REMARK  10 active torsions:
+DOCKED: REMARK  status: ('A' for Active; 'I' for Inactive)
+DOCKED: REMARK    1  A    between atoms: S_2940  and  N_2953 
+DOCKED: REMARK    2  A    between atoms: S_2940  and  C2_2944 
+DOCKED: REMARK    3  A    between atoms: N_2953  and  CA_2954 
+DOCKED: REMARK    4  A    between atoms: CA_2954  and  C_2955 
+DOCKED: REMARK       I    between atoms: C_2955  and  N1_2957 
+DOCKED: REMARK    5  A    between atoms: N1_2957  and  CA1_2958 
+DOCKED: REMARK    6  A    between atoms: CA1_2958  and  CB1_2961 
+DOCKED: REMARK    7  A    between atoms: CA1_2958  and  CB_2959 
+DOCKED: REMARK       I    between atoms: CB_2959  and  N11_2971 
+DOCKED: REMARK    8  A    between atoms: CB1_2961  and  CG_2962 
+DOCKED: REMARK    9  A    between atoms: CZ_2967  and  CF_2968 
+DOCKED: REMARK   10  A    between atoms: CF_2968  and  NG1_2969 
+DOCKED: USER                              x       y       z     vdW  Elec       q    Type
+DOCKED: USER                           _______ _______ _______ _____ _____    ______ ____
+DOCKED: ROOT
+DOCKED: HETATM    1  CA1 MID H   1     -37.181 -28.520  42.006 -0.20 -0.68    +0.164 C  
+DOCKED: ENDROOT
+DOCKED: BRANCH   1   2
+DOCKED: HETATM    2  CB1 MID H   1     -37.538 -29.250  40.729 -0.27 -0.26    +0.058 C  
+DOCKED: BRANCH   2   3
+DOCKED: HETATM    3  CG  MID H   1     -38.927 -29.855  40.804 -0.31 +0.09    -0.020 A  
+DOCKED: HETATM    4  CD1 MID H   1     -39.144 -31.062  41.436 -0.34 +0.02    -0.004 A  
+DOCKED: HETATM    5  CE1 MID H   1     -40.412 -31.584  41.548 -0.36 -0.02    +0.003 A  
+DOCKED: HETATM    6  CZ  MID H   1     -41.484 -30.907  40.985 -0.37 -0.16    +0.031 A  
+DOCKED: HETATM    7  CE2 MID H   1     -41.246 -29.709  40.340 -0.39 -0.01    +0.003 A  
+DOCKED: HETATM    8  CD2 MID H   1     -39.978 -29.190  40.228 -0.38 +0.02    -0.004 A  
+DOCKED: BRANCH   6   9
+DOCKED: HETATM    9  CF  MID H   1     -42.775 -31.412  41.037 -0.42 -0.57    +0.104 C  
+DOCKED: HETATM   10  NG2 MID H   1     -42.975 -32.716  41.200 -0.15 +2.33    -0.385 N  
+DOCKED: HETATM   11 2HG2 MID H   1     -42.171 -33.315  41.189 -0.42 -0.98    +0.157 HD 
+DOCKED: HETATM   12 1HG2 MID H   1     -43.879 -33.130  41.232 -0.34 -1.07    +0.157 HD 
+DOCKED: BRANCH   9  13
+DOCKED: HETATM   13  NG1 MID H   1     -43.809 -30.589  40.832 -0.13 +2.12    -0.385 N  
+DOCKED: HETATM   14 2HG1 MID H   1     -44.480 -30.834  40.114 -0.40 -0.96    +0.157 HD 
+DOCKED: HETATM   15  HG1 MID H   1     -43.935 -29.755  41.350 -0.07 -0.86    +0.157 HD 
+DOCKED: ENDBRANCH   9  13
+DOCKED: ENDBRANCH   6   9
+DOCKED: ENDBRANCH   2   3
+DOCKED: ENDBRANCH   1   2
+DOCKED: BRANCH   1  16
+DOCKED: HETATM   16  CB  MID H   1     -35.754 -27.973  42.010 -0.12 -0.97    +0.254 C  
+DOCKED: HETATM   17  O1  MID H   1     -34.893 -28.425  41.262 -0.13 +1.00    -0.270 OA 
+DOCKED: HETATM   18  N11 MID H   1     -35.477 -26.976  42.854 -0.10 +1.16    -0.319 N  
+DOCKED: HETATM   19  C61 MID H   1     -36.502 -26.304  43.647 -0.31 -0.40    +0.104 C  
+DOCKED: HETATM   20  C21 MID H   1     -34.143 -26.469  43.078 -0.33 -0.34    +0.104 C  
+DOCKED: HETATM   21  C51 MID H   1     -36.158 -26.349  45.119 -0.27 -0.08    +0.024 C  
+DOCKED: HETATM   22  C41 MID H   1     -34.821 -25.764  45.457 -0.47 -0.01    +0.004 C  
+DOCKED: HETATM   23  C31 MID H   1     -33.896 -26.583  44.588 -0.45 -0.08    +0.024 C  
+DOCKED: ENDBRANCH   1  16
+DOCKED: BRANCH   1  24
+DOCKED: HETATM   24  N1  MID H   1     -37.250 -29.417  43.128 -0.05 +1.37    -0.337 N  
+DOCKED: HETATM   25  C   MID H   1     -36.382 -30.388  43.280 -0.07 -1.03    +0.254 C  
+DOCKED: HETATM   26  O   MID H   1     -35.404 -30.644  42.558 -0.11 +1.11    -0.270 OA 
+DOCKED: HETATM   27  H2  MID H   1     -37.995 -29.296  43.759 +0.08 -0.68    +0.164 HD 
+DOCKED: BRANCH  25  28
+DOCKED: HETATM   28  CA  MID H   1     -36.756 -31.168  44.521 -0.11 -0.78    +0.196 C  
+DOCKED: BRANCH  28  29
+DOCKED: HETATM   29  N   MID H   1     -36.596 -30.288  45.641 -0.03 +1.03    -0.290 N  
+DOCKED: HETATM   30  H   MID H   1     -35.826 -30.516  46.198 +0.06 -0.58    +0.174 HD 
+DOCKED: BRANCH  29  31
+DOCKED: HETATM   31  S   MID H   1     -37.880 -29.779  46.440 -0.26 -0.95    +0.261 S  
+DOCKED: HETATM   32  O2S MID H   1     -38.844 -29.331  45.343 -0.80 +0.83    -0.200 OA 
+DOCKED: HETATM   33  O1S MID H   1     -38.486 -30.928  47.222 -0.27 +0.74    -0.200 OA 
+DOCKED: BRANCH  31  34
+DOCKED: HETATM   34  C2  MID H   1     -37.712 -28.353  47.475 -0.19 -0.35    +0.103 A  
+DOCKED: HETATM   35  C1  MID H   1     -36.476 -27.826  47.846 -0.16 -0.04    +0.013 A  
+DOCKED: HETATM   36  C9  MID H   1     -36.452 -26.645  48.555 -0.23 -0.00    +0.001 A  
+DOCKED: HETATM   37  C10 MID H   1     -37.640 -25.969  48.825 -0.35 -0.00    +0.000 A  
+DOCKED: HETATM   38  C8  MID H   1     -35.265 -26.097  48.931 -0.35 -0.00    +0.000 C  
+DOCKED: HETATM   39  C4  MID H   1     -38.860 -26.489  48.450 -0.44 -0.00    +0.001 A  
+DOCKED: HETATM   40  C5  MID H   1     -37.669 -24.773  49.512 -0.45 -0.00    +0.000 C  
+DOCKED: HETATM   41  C3  MID H   1     -38.893 -27.723  47.834 -0.31 -0.05    +0.013 A  
+DOCKED: HETATM   42  C6  MID H   1     -36.480 -24.297  50.001 -0.54 -0.00    +0.000 C  
+DOCKED: HETATM   43  C7  MID H   1     -35.304 -24.967  49.720 -0.45 -0.00    +0.000 C  
+DOCKED: ENDBRANCH  31  34
+DOCKED: ENDBRANCH  29  31
+DOCKED: ENDBRANCH  28  29
+DOCKED: ENDBRANCH  25  28
+DOCKED: ENDBRANCH   1  24
+DOCKED: TORSDOF 10
+DOCKED: TER
+DOCKED: ENDMDL
+________________________________________________________________________________
+
+
+    FINAL DOCKED STATE:
+    ________________________
+
+
+Run:   5 / 10
+Time taken for this run:   2.231s
+
+DOCKED: MODEL        5
+DOCKED: USER    Run = 5
+DOCKED: USER
+DOCKED: USER    Estimated Free Energy of Binding    =  -6.10 kcal/mol  [=(1)+(2)+(3)-(4)]
+DOCKED: USER
+DOCKED: USER    (1) Final Intermolecular Energy     =  -9.08 kcal/mol
+DOCKED: USER        vdW + Hbond + desolv Energy     =  -9.03 kcal/mol
+DOCKED: USER        Electrostatic Energy            =  -0.05 kcal/mol
+DOCKED: USER        Moving Ligand-Fixed Receptor    =  -9.08 kcal/mol
+DOCKED: USER        Moving Ligand-Moving Receptor   =  +0.00 kcal/mol
+DOCKED: USER    (2) Final Total Internal Energy     =  -3.69 kcal/mol
+DOCKED: USER    (3) Torsional Free Energy           =  +2.98 kcal/mol
+DOCKED: USER    (4) Unbound System's Energy         =  -3.69 kcal/mol
+DOCKED: USER
+DOCKED: USER
+DOCKED: REMARK  10 active torsions:
+DOCKED: REMARK  status: ('A' for Active; 'I' for Inactive)
+DOCKED: REMARK    1  A    between atoms: S_2940  and  N_2953 
+DOCKED: REMARK    2  A    between atoms: S_2940  and  C2_2944 
+DOCKED: REMARK    3  A    between atoms: N_2953  and  CA_2954 
+DOCKED: REMARK    4  A    between atoms: CA_2954  and  C_2955 
+DOCKED: REMARK       I    between atoms: C_2955  and  N1_2957 
+DOCKED: REMARK    5  A    between atoms: N1_2957  and  CA1_2958 
+DOCKED: REMARK    6  A    between atoms: CA1_2958  and  CB1_2961 
+DOCKED: REMARK    7  A    between atoms: CA1_2958  and  CB_2959 
+DOCKED: REMARK       I    between atoms: CB_2959  and  N11_2971 
+DOCKED: REMARK    8  A    between atoms: CB1_2961  and  CG_2962 
+DOCKED: REMARK    9  A    between atoms: CZ_2967  and  CF_2968 
+DOCKED: REMARK   10  A    between atoms: CF_2968  and  NG1_2969 
+DOCKED: USER                              x       y       z     vdW  Elec       q    Type
+DOCKED: USER                           _______ _______ _______ _____ _____    ______ ____
+DOCKED: ROOT
+DOCKED: HETATM    1  CA1 MID H   1     -37.811 -30.287  42.694 -0.19 -0.73    +0.164 C  
+DOCKED: ENDROOT
+DOCKED: BRANCH   1   2
+DOCKED: HETATM    2  CB1 MID H   1     -37.104 -30.730  43.955 -0.19 -0.24    +0.058 C  
+DOCKED: BRANCH   2   3
+DOCKED: HETATM    3  CG  MID H   1     -37.580 -29.948  45.164 -0.22 +0.08    -0.020 A  
+DOCKED: HETATM    4  CD1 MID H   1     -38.119 -30.591  46.259 -0.22 +0.02    -0.004 A  
+DOCKED: HETATM    5  CE1 MID H   1     -38.504 -29.885  47.376 -0.32 -0.01    +0.003 A  
+DOCKED: HETATM    6  CZ  MID H   1     -38.383 -28.503  47.388 -0.29 -0.11    +0.031 A  
+DOCKED: HETATM    7  CE2 MID H   1     -37.859 -27.875  46.276 -0.22 -0.01    +0.003 A  
+DOCKED: HETATM    8  CD2 MID H   1     -37.477 -28.582  45.160 -0.25 +0.01    -0.004 A  
+DOCKED: BRANCH   6   9
+DOCKED: HETATM    9  CF  MID H   1     -38.794 -27.744  48.474 -0.33 -0.36    +0.104 C  
+DOCKED: HETATM   10  NG2 MID H   1     -38.904 -28.302  49.674 -0.07 +1.27    -0.385 N  
+DOCKED: HETATM   11 2HG2 MID H   1     -38.772 -29.294  49.741 +0.07 -0.51    +0.157 HD 
+DOCKED: HETATM   12 1HG2 MID H   1     -39.205 -27.805  50.483 +0.08 -0.51    +0.157 HD 
+DOCKED: BRANCH   9  13
+DOCKED: HETATM   13  NG1 MID H   1     -39.162 -26.472  48.282 -0.20 +1.38    -0.385 N  
+DOCKED: HETATM   14 2HG1 MID H   1     -39.505 -26.207  47.367 +0.09 -0.59    +0.157 HD 
+DOCKED: HETATM   15  HG1 MID H   1     -39.106 -25.789  48.996 +0.10 -0.56    +0.157 HD 
+DOCKED: ENDBRANCH   9  13
+DOCKED: ENDBRANCH   6   9
+DOCKED: ENDBRANCH   2   3
+DOCKED: ENDBRANCH   1   2
+DOCKED: BRANCH   1  16
+DOCKED: HETATM   16  CB  MID H   1     -38.896 -31.261  42.234 -0.14 -1.28    +0.254 C  
+DOCKED: HETATM   17  O1  MID H   1     -38.861 -32.448  42.542 -0.24 +1.50    -0.270 OA 
+DOCKED: HETATM   18  N11 MID H   1     -39.890 -30.773  41.490 -0.14 +1.57    -0.319 N  
+DOCKED: HETATM   19  C61 MID H   1     -40.057 -29.345  41.231 -0.20 -0.49    +0.104 C  
+DOCKED: HETATM   20  C21 MID H   1     -40.893 -31.599  40.859 -0.41 -0.55    +0.104 C  
+DOCKED: HETATM   21  C51 MID H   1     -40.110 -29.071  39.745 -0.46 -0.12    +0.024 C  
+DOCKED: HETATM   22  C41 MID H   1     -41.181 -29.825  39.018 -0.43 -0.02    +0.004 C  
+DOCKED: HETATM   23  C31 MID H   1     -40.843 -31.256  39.364 -0.13 -0.13    +0.024 C  
+DOCKED: ENDBRANCH   1  16
+DOCKED: BRANCH   1  24
+DOCKED: HETATM   24  N1  MID H   1     -36.879 -30.209  41.601 -0.03 +1.51    -0.337 N  
+DOCKED: HETATM   25  C   MID H   1     -36.819 -29.150  40.830 -0.13 -1.09    +0.254 C  
+DOCKED: HETATM   26  O   MID H   1     -37.476 -28.100  40.938 -0.23 +1.16    -0.270 OA 
+DOCKED: HETATM   27  H2  MID H   1     -36.312 -30.995  41.432 -0.26 -0.82    +0.164 HD 
+DOCKED: BRANCH  25  28
+DOCKED: HETATM   28  CA  MID H   1     -35.779 -29.400  39.760 -0.21 -0.84    +0.196 C  
+DOCKED: BRANCH  28  29
+DOCKED: HETATM   29  N   MID H   1     -34.922 -30.445  40.237 -0.05 +1.23    -0.290 N  
+DOCKED: HETATM   30  H   MID H   1     -35.357 -31.321  40.248 -0.24 -0.87    +0.174 HD 
+DOCKED: BRANCH  29  31
+DOCKED: HETATM   31  S   MID H   1     -33.935 -30.166  41.459 -0.16 -0.97    +0.261 S  
+DOCKED: HETATM   32  O2S MID H   1     -34.439 -31.097  42.561 -0.16 +0.78    -0.200 OA 
+DOCKED: HETATM   33  O1S MID H   1     -32.519 -30.546  41.071 -0.15 +0.69    -0.200 OA 
+DOCKED: BRANCH  31  34
+DOCKED: HETATM   34  C2  MID H   1     -33.958 -28.562  42.206 +0.06 -0.35    +0.103 A  
+DOCKED: HETATM   35  C1  MID H   1     -34.551 -28.309  43.441 -0.05 -0.04    +0.013 A  
+DOCKED: HETATM   36  C9  MID H   1     -34.411 -27.053  43.992 -0.32 -0.00    +0.001 A  
+DOCKED: HETATM   37  C10 MID H   1     -33.633 -26.091  43.349 -0.44 -0.00    +0.000 A  
+DOCKED: HETATM   38  C8  MID H   1     -34.972 -26.769  45.198 -0.38 -0.00    +0.000 C  
+DOCKED: HETATM   39  C4  MID H   1     -33.042 -26.348  42.131 -0.33 -0.00    +0.001 A  
+DOCKED: HETATM   40  C5  MID H   1     -33.445 -24.827  43.868 -0.48 -0.00    +0.000 C  
+DOCKED: HETATM   41  C3  MID H   1     -33.268 -27.568  41.528 -0.18 -0.04    +0.013 A  
+DOCKED: HETATM   42  C6  MID H   1     -34.121 -24.510  45.018 -0.51 -0.00    +0.000 C  
+DOCKED: HETATM   43  C7  MID H   1     -34.883 -25.471  45.655 -0.47 -0.00    +0.000 C  
+DOCKED: ENDBRANCH  31  34
+DOCKED: ENDBRANCH  29  31
+DOCKED: ENDBRANCH  28  29
+DOCKED: ENDBRANCH  25  28
+DOCKED: ENDBRANCH   1  24
+DOCKED: TORSDOF 10
+DOCKED: TER
+DOCKED: ENDMDL
+________________________________________________________________________________
+
+
+    FINAL DOCKED STATE:
+    ________________________
+
+
+Run:   6 / 10
+Time taken for this run:   2.231s
+
+DOCKED: MODEL        6
+DOCKED: USER    Run = 6
+DOCKED: USER
+DOCKED: USER    Estimated Free Energy of Binding    =  -6.89 kcal/mol  [=(1)+(2)+(3)-(4)]
+DOCKED: USER
+DOCKED: USER    (1) Final Intermolecular Energy     =  -9.87 kcal/mol
+DOCKED: USER        vdW + Hbond + desolv Energy     = -10.12 kcal/mol
+DOCKED: USER        Electrostatic Energy            =  +0.25 kcal/mol
+DOCKED: USER        Moving Ligand-Fixed Receptor    =  -9.87 kcal/mol
+DOCKED: USER        Moving Ligand-Moving Receptor   =  +0.00 kcal/mol
+DOCKED: USER    (2) Final Total Internal Energy     =  -3.01 kcal/mol
+DOCKED: USER    (3) Torsional Free Energy           =  +2.98 kcal/mol
+DOCKED: USER    (4) Unbound System's Energy         =  -3.01 kcal/mol
+DOCKED: USER
+DOCKED: USER
+DOCKED: REMARK  10 active torsions:
+DOCKED: REMARK  status: ('A' for Active; 'I' for Inactive)
+DOCKED: REMARK    1  A    between atoms: S_2940  and  N_2953 
+DOCKED: REMARK    2  A    between atoms: S_2940  and  C2_2944 
+DOCKED: REMARK    3  A    between atoms: N_2953  and  CA_2954 
+DOCKED: REMARK    4  A    between atoms: CA_2954  and  C_2955 
+DOCKED: REMARK       I    between atoms: C_2955  and  N1_2957 
+DOCKED: REMARK    5  A    between atoms: N1_2957  and  CA1_2958 
+DOCKED: REMARK    6  A    between atoms: CA1_2958  and  CB1_2961 
+DOCKED: REMARK    7  A    between atoms: CA1_2958  and  CB_2959 
+DOCKED: REMARK       I    between atoms: CB_2959  and  N11_2971 
+DOCKED: REMARK    8  A    between atoms: CB1_2961  and  CG_2962 
+DOCKED: REMARK    9  A    between atoms: CZ_2967  and  CF_2968 
+DOCKED: REMARK   10  A    between atoms: CF_2968  and  NG1_2969 
+DOCKED: USER                              x       y       z     vdW  Elec       q    Type
+DOCKED: USER                           _______ _______ _______ _____ _____    ______ ____
+DOCKED: ROOT
+DOCKED: HETATM    1  CA1 MID H   1     -36.998 -30.808  41.594 +0.04 -0.79    +0.164 C  
+DOCKED: ENDROOT
+DOCKED: BRANCH   1   2
+DOCKED: HETATM    2  CB1 MID H   1     -36.812 -29.563  40.755 -0.25 -0.25    +0.058 C  
+DOCKED: BRANCH   2   3
+DOCKED: HETATM    3  CG  MID H   1     -36.011 -28.509  41.494 -0.19 +0.08    -0.020 A  
+DOCKED: HETATM    4  CD1 MID H   1     -36.629 -27.606  42.334 -0.28 +0.02    -0.004 A  
+DOCKED: HETATM    5  CE1 MID H   1     -35.895 -26.683  43.044 -0.27 -0.01    +0.003 A  
+DOCKED: HETATM    6  CZ  MID H   1     -34.518 -26.633  42.884 -0.23 -0.10    +0.031 A  
+DOCKED: HETATM    7  CE2 MID H   1     -33.919 -27.532  42.025 -0.24 -0.01    +0.003 A  
+DOCKED: HETATM    8  CD2 MID H   1     -34.653 -28.453  41.315 -0.20 +0.01    -0.004 A  
+DOCKED: BRANCH   6   9
+DOCKED: HETATM    9  CF  MID H   1     -33.740 -25.694  43.547 -0.45 -0.33    +0.104 C  
+DOCKED: HETATM   10  NG2 MID H   1     -34.131 -25.214  44.722 -0.20 +1.25    -0.385 N  
+DOCKED: HETATM   11 2HG2 MID H   1     -35.038 -25.482  45.056 +0.11 -0.53    +0.157 HD 
+DOCKED: HETATM   12 1HG2 MID H   1     -33.616 -24.532  45.232 +0.11 -0.50    +0.157 HD 
+DOCKED: BRANCH   9  13
+DOCKED: HETATM   13  NG1 MID H   1     -32.643 -25.215  42.950 -0.21 +0.99    -0.385 N  
+DOCKED: HETATM   14 2HG1 MID H   1     -31.759 -25.673  43.137 +0.09 -0.37    +0.157 HD 
+DOCKED: HETATM   15  HG1 MID H   1     -32.666 -24.433  42.344 -0.31 -0.38    +0.157 HD 
+DOCKED: ENDBRANCH   9  13
+DOCKED: ENDBRANCH   6   9
+DOCKED: ENDBRANCH   2   3
+DOCKED: ENDBRANCH   1   2
+DOCKED: BRANCH   1  16
+DOCKED: HETATM   16  CB  MID H   1     -38.404 -31.398  41.498 -0.15 -1.29    +0.254 C  
+DOCKED: HETATM   17  O1  MID H   1     -38.589 -32.611  41.467 -0.25 +1.52    -0.270 OA 
+DOCKED: HETATM   18  N11 MID H   1     -39.430 -30.546  41.454 -0.13 +1.54    -0.319 N  
+DOCKED: HETATM   19  C61 MID H   1     -39.272 -29.107  41.644 -0.16 -0.48    +0.104 C  
+DOCKED: HETATM   20  C21 MID H   1     -40.794 -30.952  41.207 -0.36 -0.53    +0.104 C  
+DOCKED: HETATM   21  C51 MID H   1     -39.848 -28.343  40.473 -0.39 -0.12    +0.024 C  
+DOCKED: HETATM   22  C41 MID H   1     -41.289 -28.640  40.194 -0.36 -0.02    +0.004 C  
+DOCKED: HETATM   23  C31 MID H   1     -41.265 -30.137  39.995 -0.46 -0.12    +0.024 C  
+DOCKED: ENDBRANCH   1  16
+DOCKED: BRANCH   1  24
+DOCKED: HETATM   24  N1  MID H   1     -36.806 -30.503  42.987 -0.03 +1.43    -0.337 N  
+DOCKED: HETATM   25  C   MID H   1     -35.731 -30.893  43.628 -0.07 -1.00    +0.254 C  
+DOCKED: HETATM   26  O   MID H   1     -34.754 -31.505  43.162 -0.12 +1.07    -0.270 OA 
+DOCKED: HETATM   27  H2  MID H   1     -37.527 -30.021  43.449 +0.08 -0.69    +0.164 HD 
+DOCKED: BRANCH  25  28
+DOCKED: HETATM   28  CA  MID H   1     -35.855 -30.457  45.072 -0.08 -0.69    +0.196 C  
+DOCKED: BRANCH  28  29
+DOCKED: HETATM   29  N   MID H   1     -37.218 -30.662  45.462 -0.07 +1.11    -0.290 N  
+DOCKED: HETATM   30  H   MID H   1     -37.650 -31.392  44.974 -0.07 -0.75    +0.174 HD 
+DOCKED: BRANCH  29  31
+DOCKED: HETATM   31  S   MID H   1     -38.156 -29.406  45.762 -0.28 -1.00    +0.261 S  
+DOCKED: HETATM   32  O2S MID H   1     -38.501 -28.863  44.376 -0.72 +0.82    -0.200 OA 
+DOCKED: HETATM   33  O1S MID H   1     -39.418 -29.866  46.465 -0.49 +0.80    -0.200 OA 
+DOCKED: BRANCH  31  34
+DOCKED: HETATM   34  C2  MID H   1     -37.453 -28.019  46.606 -0.20 -0.36    +0.103 A  
+DOCKED: HETATM   35  C1  MID H   1     -38.138 -27.297  47.582 -0.32 -0.04    +0.013 A  
+DOCKED: HETATM   36  C9  MID H   1     -37.462 -26.309  48.265 -0.30 -0.00    +0.001 A  
+DOCKED: HETATM   37  C10 MID H   1     -36.106 -26.096  48.023 -0.28 -0.00    +0.000 A  
+DOCKED: HETATM   38  C8  MID H   1     -38.096 -25.587  49.227 -0.49 -0.00    +0.000 C  
+DOCKED: HETATM   39  C4  MID H   1     -35.429 -26.817  47.062 -0.29 -0.00    +0.001 A  
+DOCKED: HETATM   40  C5  MID H   1     -35.378 -25.135  48.693 -0.44 -0.00    +0.000 C  
+DOCKED: HETATM   41  C3  MID H   1     -36.130 -27.733  46.305 -0.20 -0.04    +0.013 A  
+DOCKED: HETATM   42  C6  MID H   1     -36.057 -24.325  49.567 -0.53 -0.00    +0.000 C  
+DOCKED: HETATM   43  C7  MID H   1     -37.400 -24.548  49.810 -0.47 -0.00    +0.000 C  
+DOCKED: ENDBRANCH  31  34
+DOCKED: ENDBRANCH  29  31
+DOCKED: ENDBRANCH  28  29
+DOCKED: ENDBRANCH  25  28
+DOCKED: ENDBRANCH   1  24
+DOCKED: TORSDOF 10
+DOCKED: TER
+DOCKED: ENDMDL
+________________________________________________________________________________
+
+
+    FINAL DOCKED STATE:
+    ________________________
+
+
+Run:   7 / 10
+Time taken for this run:   2.231s
+
+DOCKED: MODEL        7
+DOCKED: USER    Run = 7
+DOCKED: USER
+DOCKED: USER    Estimated Free Energy of Binding    =  -8.82 kcal/mol  [=(1)+(2)+(3)-(4)]
+DOCKED: USER
+DOCKED: USER    (1) Final Intermolecular Energy     = -11.81 kcal/mol
+DOCKED: USER        vdW + Hbond + desolv Energy     = -11.47 kcal/mol
+DOCKED: USER        Electrostatic Energy            =  -0.33 kcal/mol
+DOCKED: USER        Moving Ligand-Fixed Receptor    = -11.81 kcal/mol
+DOCKED: USER        Moving Ligand-Moving Receptor   =  +0.00 kcal/mol
+DOCKED: USER    (2) Final Total Internal Energy     =  -3.51 kcal/mol
+DOCKED: USER    (3) Torsional Free Energy           =  +2.98 kcal/mol
+DOCKED: USER    (4) Unbound System's Energy         =  -3.51 kcal/mol
+DOCKED: USER
+DOCKED: USER
+DOCKED: REMARK  10 active torsions:
+DOCKED: REMARK  status: ('A' for Active; 'I' for Inactive)
+DOCKED: REMARK    1  A    between atoms: S_2940  and  N_2953 
+DOCKED: REMARK    2  A    between atoms: S_2940  and  C2_2944 
+DOCKED: REMARK    3  A    between atoms: N_2953  and  CA_2954 
+DOCKED: REMARK    4  A    between atoms: CA_2954  and  C_2955 
+DOCKED: REMARK       I    between atoms: C_2955  and  N1_2957 
+DOCKED: REMARK    5  A    between atoms: N1_2957  and  CA1_2958 
+DOCKED: REMARK    6  A    between atoms: CA1_2958  and  CB1_2961 
+DOCKED: REMARK    7  A    between atoms: CA1_2958  and  CB_2959 
+DOCKED: REMARK       I    between atoms: CB_2959  and  N11_2971 
+DOCKED: REMARK    8  A    between atoms: CB1_2961  and  CG_2962 
+DOCKED: REMARK    9  A    between atoms: CZ_2967  and  CF_2968 
+DOCKED: REMARK   10  A    between atoms: CF_2968  and  NG1_2969 
+DOCKED: USER                              x       y       z     vdW  Elec       q    Type
+DOCKED: USER                           _______ _______ _______ _____ _____    ______ ____
+DOCKED: ROOT
+DOCKED: HETATM    1  CA1 MID H   1     -37.164 -28.529  42.204 -0.20 -0.67    +0.164 C  
+DOCKED: ENDROOT
+DOCKED: BRANCH   1   2
+DOCKED: HETATM    2  CB1 MID H   1     -37.582 -29.004  40.829 -0.27 -0.26    +0.058 C  
+DOCKED: BRANCH   2   3
+DOCKED: HETATM    3  CG  MID H   1     -38.915 -29.725  40.871 -0.30 +0.09    -0.020 A  
+DOCKED: HETATM    4  CD1 MID H   1     -39.001 -31.036  41.292 -0.34 +0.02    -0.004 A  
+DOCKED: HETATM    5  CE1 MID H   1     -40.218 -31.674  41.379 -0.37 -0.02    +0.003 A  
+DOCKED: HETATM    6  CZ  MID H   1     -41.371 -31.002  41.002 -0.37 -0.16    +0.031 A  
+DOCKED: HETATM    7  CE2 MID H   1     -41.265 -29.696  40.565 -0.36 -0.01    +0.003 A  
+DOCKED: HETATM    8  CD2 MID H   1     -40.048 -29.061  40.478 -0.37 +0.02    -0.004 A  
+DOCKED: BRANCH   6   9
+DOCKED: HETATM    9  CF  MID H   1     -42.616 -31.614  41.033 -0.43 -0.58    +0.104 C  
+DOCKED: HETATM   10  NG2 MID H   1     -42.709 -32.939  40.981 -0.11 +2.37    -0.385 N  
+DOCKED: HETATM   11 2HG2 MID H   1     -41.866 -33.459  40.826 -0.47 -0.98    +0.157 HD 
+DOCKED: HETATM   12 1HG2 MID H   1     -43.577 -33.426  40.988 -0.27 -1.10    +0.157 HD 
+DOCKED: BRANCH   9  13
+DOCKED: HETATM   13  NG1 MID H   1     -43.719 -30.857  41.026 -0.14 +2.13    -0.385 N  
+DOCKED: HETATM   14 2HG1 MID H   1     -44.503 -31.161  40.463 -0.41 -0.98    +0.157 HD 
+DOCKED: HETATM   15  HG1 MID H   1     -43.789 -30.016  41.544 -0.10 -0.86    +0.157 HD 
+DOCKED: ENDBRANCH   9  13
+DOCKED: ENDBRANCH   6   9
+DOCKED: ENDBRANCH   2   3
+DOCKED: ENDBRANCH   1   2
+DOCKED: BRANCH   1  16
+DOCKED: HETATM   16  CB  MID H   1     -35.914 -27.651  42.187 -0.13 -0.98    +0.254 C  
+DOCKED: HETATM   17  O1  MID H   1     -35.105 -27.709  41.265 -0.16 +1.02    -0.270 OA 
+DOCKED: HETATM   18  N11 MID H   1     -35.733 -26.811  43.208 -0.12 +1.17    -0.319 N  
+DOCKED: HETATM   19  C61 MID H   1     -36.741 -26.597  44.242 -0.26 -0.39    +0.104 C  
+DOCKED: HETATM   20  C21 MID H   1     -34.527 -26.040  43.402 -0.31 -0.35    +0.104 C  
+DOCKED: HETATM   21  C51 MID H   1     -36.164 -26.853  45.616 -0.29 -0.08    +0.024 C  
+DOCKED: HETATM   22  C41 MID H   1     -34.954 -26.031  45.939 -0.43 -0.01    +0.004 C  
+DOCKED: HETATM   23  C31 MID H   1     -34.022 -26.394  44.808 -0.48 -0.08    +0.024 C  
+DOCKED: ENDBRANCH   1  16
+DOCKED: BRANCH   1  24
+DOCKED: HETATM   24  N1  MID H   1     -36.833 -29.652  43.039 -0.02 +1.36    -0.337 N  
+DOCKED: HETATM   25  C   MID H   1     -37.501 -29.906  44.138 -0.13 -1.03    +0.254 C  
+DOCKED: HETATM   26  O   MID H   1     -38.486 -29.290  44.580 -0.82 +1.12    -0.270 OA 
+DOCKED: HETATM   27  H2  MID H   1     -36.062 -30.203  42.773 +0.07 -0.67    +0.164 HD 
+DOCKED: BRANCH  25  28
+DOCKED: HETATM   28  CA  MID H   1     -36.880 -31.114  44.803 -0.11 -0.77    +0.196 C  
+DOCKED: BRANCH  28  29
+DOCKED: HETATM   29  N   MID H   1     -37.755 -31.511  45.866 -0.08 +1.17    -0.290 N  
+DOCKED: HETATM   30  H   MID H   1     -38.701 -31.387  45.649 -0.16 -0.84    +0.174 HD 
+DOCKED: BRANCH  29  31
+DOCKED: HETATM   31  S   MID H   1     -37.363 -31.191  47.379 -0.15 -0.89    +0.261 S  
+DOCKED: HETATM   32  O2S MID H   1     -38.535 -31.744  48.189 -0.23 +0.70    -0.200 OA 
+DOCKED: HETATM   33  O1S MID H   1     -36.089 -31.926  47.745 -0.04 +0.62    -0.200 OA 
+DOCKED: BRANCH  31  34
+DOCKED: HETATM   34  C2  MID H   1     -37.258 -29.495  47.876 -0.10 -0.34    +0.103 A  
+DOCKED: HETATM   35  C1  MID H   1     -38.374 -28.670  48.001 -0.28 -0.04    +0.013 A  
+DOCKED: HETATM   36  C9  MID H   1     -38.200 -27.401  48.509 -0.31 -0.00    +0.001 A  
+DOCKED: HETATM   37  C10 MID H   1     -36.942 -26.992  48.949 -0.21 -0.00    +0.000 A  
+DOCKED: HETATM   38  C8  MID H   1     -39.266 -26.569  48.650 -0.53 -0.00    +0.000 C  
+DOCKED: HETATM   39  C4  MID H   1     -35.841 -27.813  48.830 -0.15 -0.00    +0.001 A  
+DOCKED: HETATM   40  C5  MID H   1     -36.718 -25.741  49.484 -0.38 -0.00    +0.000 C  
+DOCKED: HETATM   41  C3  MID H   1     -35.995 -29.044  48.225 -0.10 -0.04    +0.013 A  
+DOCKED: HETATM   42  C6  MID H   1     -37.772 -24.864  49.500 -0.47 -0.00    +0.000 C  
+DOCKED: HETATM   43  C7  MID H   1     -39.019 -25.279  49.073 -0.57 -0.00    +0.000 C  
+DOCKED: ENDBRANCH  31  34
+DOCKED: ENDBRANCH  29  31
+DOCKED: ENDBRANCH  28  29
+DOCKED: ENDBRANCH  25  28
+DOCKED: ENDBRANCH   1  24
+DOCKED: TORSDOF 10
+DOCKED: TER
+DOCKED: ENDMDL
+________________________________________________________________________________
+
+
+    FINAL DOCKED STATE:
+    ________________________
+
+
+Run:   8 / 10
+Time taken for this run:   2.231s
+
+DOCKED: MODEL        8
+DOCKED: USER    Run = 8
+DOCKED: USER
+DOCKED: USER    Estimated Free Energy of Binding    =  -6.23 kcal/mol  [=(1)+(2)+(3)-(4)]
+DOCKED: USER
+DOCKED: USER    (1) Final Intermolecular Energy     =  -9.21 kcal/mol
+DOCKED: USER        vdW + Hbond + desolv Energy     =  -9.22 kcal/mol
+DOCKED: USER        Electrostatic Energy            =  +0.01 kcal/mol
+DOCKED: USER        Moving Ligand-Fixed Receptor    =  -9.21 kcal/mol
+DOCKED: USER        Moving Ligand-Moving Receptor   =  +0.00 kcal/mol
+DOCKED: USER    (2) Final Total Internal Energy     =  -3.90 kcal/mol
+DOCKED: USER    (3) Torsional Free Energy           =  +2.98 kcal/mol
+DOCKED: USER    (4) Unbound System's Energy         =  -3.90 kcal/mol
+DOCKED: USER
+DOCKED: USER
+DOCKED: REMARK  10 active torsions:
+DOCKED: REMARK  status: ('A' for Active; 'I' for Inactive)
+DOCKED: REMARK    1  A    between atoms: S_2940  and  N_2953 
+DOCKED: REMARK    2  A    between atoms: S_2940  and  C2_2944 
+DOCKED: REMARK    3  A    between atoms: N_2953  and  CA_2954 
+DOCKED: REMARK    4  A    between atoms: CA_2954  and  C_2955 
+DOCKED: REMARK       I    between atoms: C_2955  and  N1_2957 
+DOCKED: REMARK    5  A    between atoms: N1_2957  and  CA1_2958 
+DOCKED: REMARK    6  A    between atoms: CA1_2958  and  CB1_2961 
+DOCKED: REMARK    7  A    between atoms: CA1_2958  and  CB_2959 
+DOCKED: REMARK       I    between atoms: CB_2959  and  N11_2971 
+DOCKED: REMARK    8  A    between atoms: CB1_2961  and  CG_2962 
+DOCKED: REMARK    9  A    between atoms: CZ_2967  and  CF_2968 
+DOCKED: REMARK   10  A    between atoms: CF_2968  and  NG1_2969 
+DOCKED: USER                              x       y       z     vdW  Elec       q    Type
+DOCKED: USER                           _______ _______ _______ _____ _____    ______ ____
+DOCKED: ROOT
+DOCKED: HETATM    1  CA1 MID H   1     -36.138 -30.454  45.541 -0.09 -0.57    +0.164 C  
+DOCKED: ENDROOT
+DOCKED: BRANCH   1   2
+DOCKED: HETATM    2  CB1 MID H   1     -36.902 -31.467  44.718 -0.17 -0.23    +0.058 C  
+DOCKED: BRANCH   2   3
+DOCKED: HETATM    3  CG  MID H   1     -37.037 -31.022  43.274 -0.16 +0.09    -0.020 A  
+DOCKED: HETATM    4  CD1 MID H   1     -38.273 -30.950  42.666 -0.23 +0.02    -0.004 A  
+DOCKED: HETATM    5  CE1 MID H   1     -38.399 -30.496  41.372 -0.28 -0.01    +0.003 A  
+DOCKED: HETATM    6  CZ  MID H   1     -37.265 -30.144  40.656 -0.24 -0.14    +0.031 A  
+DOCKED: HETATM    7  CE2 MID H   1     -36.034 -30.241  41.274 -0.15 -0.01    +0.003 A  
+DOCKED: HETATM    8  CD2 MID H   1     -35.909 -30.695  42.566 -0.10 +0.02    -0.004 A  
+DOCKED: BRANCH   6   9
+DOCKED: HETATM    9  CF  MID H   1     -37.337 -29.720  39.337 -0.27 -0.50    +0.104 C  
+DOCKED: HETATM   10  NG2 MID H   1     -36.262 -29.216  38.739 -0.05 +1.80    -0.385 N  
+DOCKED: HETATM   11 2HG2 MID H   1     -35.443 -29.072  39.298 +0.07 -0.66    +0.157 HD 
+DOCKED: HETATM   12 1HG2 MID H   1     -36.264 -28.888  37.799 -0.21 -0.80    +0.157 HD 
+DOCKED: BRANCH   9  13
+DOCKED: HETATM   13  NG1 MID H   1     -38.516 -29.741  38.706 -0.14 +2.01    -0.385 N  
+DOCKED: HETATM   14 2HG1 MID H   1     -38.819 -28.899  38.233 -0.41 -0.90    +0.157 HD 
+DOCKED: HETATM   15  HG1 MID H   1     -39.097 -30.542  38.691 +0.11 -0.82    +0.157 HD 
+DOCKED: ENDBRANCH   9  13
+DOCKED: ENDBRANCH   6   9
+DOCKED: ENDBRANCH   2   3
+DOCKED: ENDBRANCH   1   2
+DOCKED: BRANCH   1  16
+DOCKED: HETATM   16  CB  MID H   1     -36.701 -30.272  46.950 -0.05 -0.85    +0.254 C  
+DOCKED: HETATM   17  O1  MID H   1     -37.907 -30.327  47.169 -0.15 +0.95    -0.270 OA 
+DOCKED: HETATM   18  N11 MID H   1     -35.832 -30.056  47.940 +0.00 +0.98    -0.319 N  
+DOCKED: HETATM   19  C61 MID H   1     -34.386 -30.137  47.755 -0.13 -0.30    +0.104 C  
+DOCKED: HETATM   20  C21 MID H   1     -36.227 -29.713  49.287 -0.06 -0.31    +0.104 C  
+DOCKED: HETATM   21  C51 MID H   1     -33.715 -28.854  48.193 -0.27 -0.07    +0.024 C  
+DOCKED: HETATM   22  C41 MID H   1     -34.002 -28.463  49.609 -0.19 -0.01    +0.004 C  
+DOCKED: HETATM   23  C31 MID H   1     -35.511 -28.396  49.614 -0.12 -0.07    +0.024 C  
+DOCKED: ENDBRANCH   1  16
+DOCKED: BRANCH   1  24
+DOCKED: HETATM   24  N1  MID H   1     -36.214 -29.155  44.928 -0.02 +1.19    -0.337 N  
+DOCKED: HETATM   25  C   MID H   1     -37.365 -28.557  44.737 -0.15 -0.95    +0.254 C  
+DOCKED: HETATM   26  O   MID H   1     -38.491 -28.965  45.072 -0.77 +1.08    -0.270 OA 
+DOCKED: HETATM   27  H2  MID H   1     -35.372 -28.747  44.624 +0.08 -0.56    +0.164 HD 
+DOCKED: BRANCH  25  28
+DOCKED: HETATM   28  CA  MID H   1     -37.107 -27.242  44.036 -0.22 -0.75    +0.196 C  
+DOCKED: BRANCH  28  29
+DOCKED: HETATM   29  N   MID H   1     -35.686 -27.056  43.991 -0.11 +1.03    -0.290 N  
+DOCKED: HETATM   30  H   MID H   1     -35.217 -27.800  43.562 +0.10 -0.61    +0.174 HD 
+DOCKED: BRANCH  29  31
+DOCKED: HETATM   31  S   MID H   1     -34.930 -26.412  45.239 -0.36 -0.86    +0.261 S  
+DOCKED: HETATM   32  O2S MID H   1     -33.965 -27.507  45.692 -0.31 +0.63    -0.200 OA 
+DOCKED: HETATM   33  O1S MID H   1     -34.150 -25.190  44.791 -0.44 +0.65    -0.200 OA 
+DOCKED: BRANCH  31  34
+DOCKED: HETATM   34  C2  MID H   1     -35.872 -26.040  46.691 -0.19 -0.34    +0.103 A  
+DOCKED: HETATM   35  C1  MID H   1     -37.132 -26.583  46.937 -0.24 -0.04    +0.013 A  
+DOCKED: HETATM   36  C9  MID H   1     -37.732 -26.326  48.150 -0.33 -0.00    +0.001 A  
+DOCKED: HETATM   37  C10 MID H   1     -37.052 -25.597  49.125 -0.35 -0.00    +0.000 A  
+DOCKED: HETATM   38  C8  MID H   1     -38.960 -26.842  48.429 -0.48 -0.00    +0.000 C  
+DOCKED: HETATM   39  C4  MID H   1     -35.803 -25.068  48.881 -0.40 -0.00    +0.001 A  
+DOCKED: HETATM   40  C5  MID H   1     -37.600 -25.330  50.363 -0.41 -0.00    +0.000 C  
+DOCKED: HETATM   41  C3  MID H   1     -35.246 -25.235  47.630 -0.32 -0.04    +0.013 A  
+DOCKED: HETATM   42  C6  MID H   1     -38.889 -25.743  50.585 -0.42 -0.00    +0.000 C  
+DOCKED: HETATM   43  C7  MID H   1     -39.553 -26.473  49.618 -0.56 -0.00    +0.000 C  
+DOCKED: ENDBRANCH  31  34
+DOCKED: ENDBRANCH  29  31
+DOCKED: ENDBRANCH  28  29
+DOCKED: ENDBRANCH  25  28
+DOCKED: ENDBRANCH   1  24
+DOCKED: TORSDOF 10
+DOCKED: TER
+DOCKED: ENDMDL
+________________________________________________________________________________
+
+
+    FINAL DOCKED STATE:
+    ________________________
+
+
+Run:   9 / 10
+Time taken for this run:   2.231s
+
+DOCKED: MODEL        9
+DOCKED: USER    Run = 9
+DOCKED: USER
+DOCKED: USER    Estimated Free Energy of Binding    =  -7.95 kcal/mol  [=(1)+(2)+(3)-(4)]
+DOCKED: USER
+DOCKED: USER    (1) Final Intermolecular Energy     = -10.93 kcal/mol
+DOCKED: USER        vdW + Hbond + desolv Energy     = -10.71 kcal/mol
+DOCKED: USER        Electrostatic Energy            =  -0.22 kcal/mol
+DOCKED: USER        Moving Ligand-Fixed Receptor    = -10.93 kcal/mol
+DOCKED: USER        Moving Ligand-Moving Receptor   =  +0.00 kcal/mol
+DOCKED: USER    (2) Final Total Internal Energy     =  -3.88 kcal/mol
+DOCKED: USER    (3) Torsional Free Energy           =  +2.98 kcal/mol
+DOCKED: USER    (4) Unbound System's Energy         =  -3.88 kcal/mol
+DOCKED: USER
+DOCKED: USER
+DOCKED: REMARK  10 active torsions:
+DOCKED: REMARK  status: ('A' for Active; 'I' for Inactive)
+DOCKED: REMARK    1  A    between atoms: S_2940  and  N_2953 
+DOCKED: REMARK    2  A    between atoms: S_2940  and  C2_2944 
+DOCKED: REMARK    3  A    between atoms: N_2953  and  CA_2954 
+DOCKED: REMARK    4  A    between atoms: CA_2954  and  C_2955 
+DOCKED: REMARK       I    between atoms: C_2955  and  N1_2957 
+DOCKED: REMARK    5  A    between atoms: N1_2957  and  CA1_2958 
+DOCKED: REMARK    6  A    between atoms: CA1_2958  and  CB1_2961 
+DOCKED: REMARK    7  A    between atoms: CA1_2958  and  CB_2959 
+DOCKED: REMARK       I    between atoms: CB_2959  and  N11_2971 
+DOCKED: REMARK    8  A    between atoms: CB1_2961  and  CG_2962 
+DOCKED: REMARK    9  A    between atoms: CZ_2967  and  CF_2968 
+DOCKED: REMARK   10  A    between atoms: CF_2968  and  NG1_2969 
+DOCKED: USER                              x       y       z     vdW  Elec       q    Type
+DOCKED: USER                           _______ _______ _______ _____ _____    ______ ____
+DOCKED: ROOT
+DOCKED: HETATM    1  CA1 MID H   1     -36.833 -29.381  40.479 -0.20 -0.72    +0.164 C  
+DOCKED: ENDROOT
+DOCKED: BRANCH   1   2
+DOCKED: HETATM    2  CB1 MID H   1     -37.600 -29.932  39.296 -0.30 -0.28    +0.058 C  
+DOCKED: BRANCH   2   3
+DOCKED: HETATM    3  CG  MID H   1     -38.974 -30.427  39.706 -0.36 +0.10    -0.020 A  
+DOCKED: HETATM    4  CD1 MID H   1     -39.168 -31.731  40.110 -0.40 +0.02    -0.004 A  
+DOCKED: HETATM    5  CE1 MID H   1     -40.405 -32.165  40.531 -0.41 -0.02    +0.003 A  
+DOCKED: HETATM    6  CZ  MID H   1     -41.480 -31.289  40.512 -0.40 -0.16    +0.031 A  
+DOCKED: HETATM    7  CE2 MID H   1     -41.271 -29.993  40.087 -0.40 -0.01    +0.003 A  
+DOCKED: HETATM    8  CD2 MID H   1     -40.036 -29.561  39.665 -0.40 +0.02    -0.004 A  
+DOCKED: BRANCH   6   9
+DOCKED: HETATM    9  CF  MID H   1     -42.755 -31.690  40.888 -0.42 -0.59    +0.104 C  
+DOCKED: HETATM   10  NG2 MID H   1     -42.986 -32.957  41.213 -0.12 +2.37    -0.385 N  
+DOCKED: HETATM   11 2HG2 MID H   1     -42.240 -33.614  41.086 -0.43 -1.00    +0.157 HD 
+DOCKED: HETATM   12 1HG2 MID H   1     -43.883 -33.298  41.478 -0.34 -1.05    +0.157 HD 
+DOCKED: BRANCH   9  13
+DOCKED: HETATM   13  NG1 MID H   1     -43.760 -30.810  40.834 -0.14 +2.14    -0.385 N  
+DOCKED: HETATM   14 2HG1 MID H   1     -43.748 -30.031  41.480 -0.08 -0.86    +0.157 HD 
+DOCKED: HETATM   15  HG1 MID H   1     -44.510 -30.898  40.194 -0.38 -0.97    +0.157 HD 
+DOCKED: ENDBRANCH   9  13
+DOCKED: ENDBRANCH   6   9
+DOCKED: ENDBRANCH   2   3
+DOCKED: ENDBRANCH   1   2
+DOCKED: BRANCH   1  16
+DOCKED: HETATM   16  CB  MID H   1     -35.387 -29.871  40.544 -0.12 -1.06    +0.254 C  
+DOCKED: HETATM   17  O1  MID H   1     -35.050 -30.769  41.311 -0.13 +1.18    -0.270 OA 
+DOCKED: HETATM   18  N11 MID H   1     -34.501 -29.294  39.731 -0.09 +1.25    -0.319 N  
+DOCKED: HETATM   19  C61 MID H   1     -34.883 -28.337  38.697 -0.27 -0.43    +0.104 C  
+DOCKED: HETATM   20  C21 MID H   1     -33.080 -29.545  39.794 -0.15 -0.37    +0.104 C  
+DOCKED: HETATM   21  C51 MID H   1     -34.123 -27.040  38.857 -0.32 -0.09    +0.024 C  
+DOCKED: HETATM   22  C41 MID H   1     -32.633 -27.194  38.849 -0.31 -0.01    +0.004 C  
+DOCKED: HETATM   23  C31 MID H   1     -32.416 -28.173  39.978 -0.23 -0.08    +0.024 C  
+DOCKED: ENDBRANCH   1  16
+DOCKED: BRANCH   1  24
+DOCKED: HETATM   24  N1  MID H   1     -37.440 -29.811  41.710 -0.04 +1.48    -0.337 N  
+DOCKED: HETATM   25  C   MID H   1     -37.890 -28.947  42.587 -0.15 -1.07    +0.254 C  
+DOCKED: HETATM   26  O   MID H   1     -37.907 -27.708  42.485 -0.24 +1.17    -0.270 OA 
+DOCKED: HETATM   27  H2  MID H   1     -37.472 -30.779  41.885 +0.06 -0.78    +0.164 HD 
+DOCKED: BRANCH  25  28
+DOCKED: HETATM   28  CA  MID H   1     -38.420 -29.713  43.779 +0.06 -0.86    +0.196 C  
+DOCKED: BRANCH  28  29
+DOCKED: HETATM   29  N   MID H   1     -37.616 -30.891  43.919 -0.09 +1.27    -0.290 N  
+DOCKED: HETATM   30  H   MID H   1     -38.140 -31.688  44.135 -0.45 -0.87    +0.174 HD 
+DOCKED: BRANCH  29  31
+DOCKED: HETATM   31  S   MID H   1     -36.197 -30.802  44.643 -0.12 -0.98    +0.261 S  
+DOCKED: HETATM   32  O2S MID H   1     -36.508 -31.110  46.107 -0.08 +0.70    -0.200 OA 
+DOCKED: HETATM   33  O1S MID H   1     -35.267 -31.859  44.079 -0.11 +0.77    -0.200 OA 
+DOCKED: BRANCH  31  34
+DOCKED: HETATM   34  C2  MID H   1     -35.381 -29.232  44.698 -0.09 -0.35    +0.103 A  
+DOCKED: HETATM   35  C1  MID H   1     -34.791 -28.644  43.581 -0.10 -0.04    +0.013 A  
+DOCKED: HETATM   36  C9  MID H   1     -34.286 -27.367  43.701 -0.24 -0.00    +0.001 A  
+DOCKED: HETATM   37  C10 MID H   1     -34.433 -26.667  44.897 -0.38 -0.00    +0.000 A  
+DOCKED: HETATM   38  C8  MID H   1     -33.706 -26.758  42.631 -0.38 -0.00    +0.000 C  
+DOCKED: HETATM   39  C4  MID H   1     -35.024 -27.250  45.998 -0.30 -0.00    +0.001 A  
+DOCKED: HETATM   40  C5  MID H   1     -33.965 -25.380  45.062 -0.53 -0.00    +0.000 C  
+DOCKED: HETATM   41  C3  MID H   1     -35.435 -28.564  45.912 -0.17 -0.04    +0.013 A  
+DOCKED: HETATM   42  C6  MID H   1     -33.266 -24.825  44.020 -0.48 -0.00    +0.000 C  
+DOCKED: HETATM   43  C7  MID H   1     -33.133 -25.520  42.833 -0.48 -0.00    +0.000 C  
+DOCKED: ENDBRANCH  31  34
+DOCKED: ENDBRANCH  29  31
+DOCKED: ENDBRANCH  28  29
+DOCKED: ENDBRANCH  25  28
+DOCKED: ENDBRANCH   1  24
+DOCKED: TORSDOF 10
+DOCKED: TER
+DOCKED: ENDMDL
+________________________________________________________________________________
+
+
+    FINAL DOCKED STATE:
+    ________________________
+
+
+Run:   10 / 10
+Time taken for this run:   2.231s
+
+DOCKED: MODEL        10
+DOCKED: USER    Run = 10
+DOCKED: USER
+DOCKED: USER    Estimated Free Energy of Binding    =  -7.11 kcal/mol  [=(1)+(2)+(3)-(4)]
+DOCKED: USER
+DOCKED: USER    (1) Final Intermolecular Energy     = -10.09 kcal/mol
+DOCKED: USER        vdW + Hbond + desolv Energy     =  -9.86 kcal/mol
+DOCKED: USER        Electrostatic Energy            =  -0.23 kcal/mol
+DOCKED: USER        Moving Ligand-Fixed Receptor    = -10.09 kcal/mol
+DOCKED: USER        Moving Ligand-Moving Receptor   =  +0.00 kcal/mol
+DOCKED: USER    (2) Final Total Internal Energy     =  -4.29 kcal/mol
+DOCKED: USER    (3) Torsional Free Energy           =  +2.98 kcal/mol
+DOCKED: USER    (4) Unbound System's Energy         =  -4.29 kcal/mol
+DOCKED: USER
+DOCKED: USER
+DOCKED: REMARK  10 active torsions:
+DOCKED: REMARK  status: ('A' for Active; 'I' for Inactive)
+DOCKED: REMARK    1  A    between atoms: S_2940  and  N_2953 
+DOCKED: REMARK    2  A    between atoms: S_2940  and  C2_2944 
+DOCKED: REMARK    3  A    between atoms: N_2953  and  CA_2954 
+DOCKED: REMARK    4  A    between atoms: CA_2954  and  C_2955 
+DOCKED: REMARK       I    between atoms: C_2955  and  N1_2957 
+DOCKED: REMARK    5  A    between atoms: N1_2957  and  CA1_2958 
+DOCKED: REMARK    6  A    between atoms: CA1_2958  and  CB1_2961 
+DOCKED: REMARK    7  A    between atoms: CA1_2958  and  CB_2959 
+DOCKED: REMARK       I    between atoms: CB_2959  and  N11_2971 
+DOCKED: REMARK    8  A    between atoms: CB1_2961  and  CG_2962 
+DOCKED: REMARK    9  A    between atoms: CZ_2967  and  CF_2968 
+DOCKED: REMARK   10  A    between atoms: CF_2968  and  NG1_2969 
+DOCKED: USER                              x       y       z     vdW  Elec       q    Type
+DOCKED: USER                           _______ _______ _______ _____ _____    ______ ____
+DOCKED: ROOT
+DOCKED: HETATM    1  CA1 MID H   1     -38.733 -29.466  41.621 -0.24 -0.74    +0.164 C  
+DOCKED: ENDROOT
+DOCKED: BRANCH   1   2
+DOCKED: HETATM    2  CB1 MID H   1     -37.605 -30.263  41.003 -0.27 -0.27    +0.058 C  
+DOCKED: BRANCH   2   3
+DOCKED: HETATM    3  CG  MID H   1     -36.299 -29.491  41.029 -0.20 +0.08    -0.020 A  
+DOCKED: HETATM    4  CD1 MID H   1     -35.998 -28.571  40.047 -0.14 +0.02    -0.004 A  
+DOCKED: HETATM    5  CE1 MID H   1     -34.836 -27.834  40.100 -0.22 -0.01    +0.003 A  
+DOCKED: HETATM    6  CZ  MID H   1     -33.937 -28.047  41.134 -0.20 -0.11    +0.031 A  
+DOCKED: HETATM    7  CE2 MID H   1     -34.246 -28.986  42.098 -0.11 -0.01    +0.003 A  
+DOCKED: HETATM    8  CD2 MID H   1     -35.406 -29.722  42.043 -0.15 +0.02    -0.004 A  
+DOCKED: BRANCH   6   9
+DOCKED: HETATM    9  CF  MID H   1     -32.735 -27.358  41.209 -0.17 -0.30    +0.104 C  
+DOCKED: HETATM   10  NG2 MID H   1     -32.485 -26.565  42.245 -0.03 +0.98    -0.385 N  
+DOCKED: HETATM   11 2HG2 MID H   1     -33.223 -26.416  42.907 +0.09 -0.47    +0.157 HD 
+DOCKED: HETATM   12 1HG2 MID H   1     -31.644 -26.040  42.341 +0.09 -0.28    +0.157 HD 
+DOCKED: BRANCH   9  13
+DOCKED: HETATM   13  NG1 MID H   1     -31.874 -27.431  40.188 -0.03 +0.98    -0.385 N  
+DOCKED: HETATM   14 2HG1 MID H   1     -31.032 -27.981  40.312 +0.07 -0.41    +0.157 HD 
+DOCKED: HETATM   15  HG1 MID H   1     -32.028 -26.967  39.328 +0.09 -0.42    +0.157 HD 
+DOCKED: ENDBRANCH   9  13
+DOCKED: ENDBRANCH   6   9
+DOCKED: ENDBRANCH   2   3
+DOCKED: ENDBRANCH   1   2
+DOCKED: BRANCH   1  16
+DOCKED: HETATM   16  CB  MID H   1     -39.824 -29.087  40.621 -0.21 -1.21    +0.254 C  
+DOCKED: HETATM   17  O1  MID H   1     -39.837 -27.988  40.074 -0.34 +1.34    -0.270 OA 
+DOCKED: HETATM   18  N11 MID H   1     -40.763 -29.997  40.355 -0.13 +1.56    -0.319 N  
+DOCKED: HETATM   19  C61 MID H   1     -40.702 -31.366  40.859 -0.40 -0.54    +0.104 C  
+DOCKED: HETATM   20  C21 MID H   1     -41.935 -29.724  39.556 -0.36 -0.52    +0.104 C  
+DOCKED: HETATM   21  C51 MID H   1     -41.959 -31.713  41.626 -0.43 -0.13    +0.024 C  
+DOCKED: HETATM   22  C41 MID H   1     -43.224 -31.540  40.844 -0.46 -0.02    +0.004 C  
+DOCKED: HETATM   23  C31 MID H   1     -43.140 -30.089  40.434 -0.53 -0.13    +0.024 C  
+DOCKED: ENDBRANCH   1  16
+DOCKED: BRANCH   1  24
+DOCKED: HETATM   24  N1  MID H   1     -38.236 -28.219  42.138 -0.10 +1.48    -0.337 N  
+DOCKED: HETATM   25  C   MID H   1     -37.760 -28.127  43.356 -0.14 -1.03    +0.254 C  
+DOCKED: HETATM   26  O   MID H   1     -37.627 -29.043  44.185 -0.29 +1.06    -0.270 OA 
+DOCKED: HETATM   27  H2  MID H   1     -38.300 -27.429  41.555 -0.34 -0.78    +0.164 HD 
+DOCKED: BRANCH  25  28
+DOCKED: HETATM   28  CA  MID H   1     -37.367 -26.687  43.604 -0.22 -0.79    +0.196 C  
+DOCKED: BRANCH  28  29
+DOCKED: HETATM   29  N   MID H   1     -35.959 -26.582  43.359 -0.16 +1.08    -0.290 N  
+DOCKED: HETATM   30  H   MID H   1     -35.618 -27.295  42.783 +0.11 -0.64    +0.174 HD 
+DOCKED: BRANCH  29  31
+DOCKED: HETATM   31  S   MID H   1     -34.979 -26.141  44.538 -0.37 -0.88    +0.261 S  
+DOCKED: HETATM   32  O2S MID H   1     -34.038 -27.333  44.702 -0.27 +0.64    -0.200 OA 
+DOCKED: HETATM   33  O1S MID H   1     -34.191 -24.915  44.117 -0.43 +0.65    -0.200 OA 
+DOCKED: BRANCH  31  34
+DOCKED: HETATM   34  C2  MID H   1     -35.663 -25.906  46.153 -0.19 -0.35    +0.103 A  
+DOCKED: HETATM   35  C1  MID H   1     -36.885 -26.449  46.547 -0.18 -0.04    +0.013 A  
+DOCKED: HETATM   36  C9  MID H   1     -37.273 -26.310  47.861 -0.28 -0.00    +0.001 A  
+DOCKED: HETATM   37  C10 MID H   1     -36.422 -25.699  48.780 -0.32 -0.00    +0.000 A  
+DOCKED: HETATM   38  C8  MID H   1     -38.458 -26.830  48.283 -0.43 -0.00    +0.000 C  
+DOCKED: HETATM   39  C4  MID H   1     -35.210 -25.169  48.389 -0.36 -0.00    +0.001 A  
+DOCKED: HETATM   40  C5  MID H   1     -36.754 -25.553  50.111 -0.41 -0.00    +0.000 C  
+DOCKED: HETATM   41  C3  MID H   1     -34.867 -25.215  47.054 -0.29 -0.04    +0.013 A  
+DOCKED: HETATM   42  C6  MID H   1     -38.004 -25.963  50.498 -0.41 -0.00    +0.000 C  
+DOCKED: HETATM   43  C7  MID H   1     -38.840 -26.577  49.584 -0.49 -0.00    +0.000 C  
+DOCKED: ENDBRANCH  31  34
+DOCKED: ENDBRANCH  29  31
+DOCKED: ENDBRANCH  28  29
+DOCKED: ENDBRANCH  25  28
+DOCKED: ENDBRANCH   1  24
+DOCKED: TORSDOF 10
+DOCKED: TER
+DOCKED: ENDMDL
+________________________________________________________________________________
+
+
+    CLUSTERING HISTOGRAM
+    ____________________
+
+
+________________________________________________________________________________
+     |           |     |           |     |
+Clus | Lowest    | Run | Mean      | Num | Histogram
+-ter | Binding   |     | Binding   | in  |
+Rank | Energy    |     | Energy    | Clus|    5    10   15   20   25   30   35
+_____|___________|_____|___________|_____|____:____|____:____|____:____|____:___
+   1 |     -8.87 |   4 |     -8.64 |   3 |###
+   2 |     -8.30 |   1 |     -8.30 |   1 |#
+   3 |     -7.95 |   9 |     -7.95 |   1 |#
+   4 |     -7.11 |  10 |     -7.11 |   1 |#
+   5 |     -6.89 |   6 |     -6.89 |   1 |#
+   6 |     -6.49 |   2 |     -6.49 |   1 |#
+   7 |     -6.23 |   8 |     -6.23 |   1 |#
+   8 |     -6.10 |   5 |     -6.10 |   1 |#
+_____|___________|_____|___________|_____|______________________________________
+
+
+    RMSD TABLE
+    __________
+
+
+_______________________________________________________________________
+     |      |      |           |         |                 |
+Rank | Sub- | Run  | Binding   | Cluster | Reference       | Grep
+     | Rank |      | Energy    | RMSD    | RMSD            | Pattern
+_____|______|______|___________|_________|_________________|___________
+   1      1      4       -8.87      0.00      1.15           RANKING
+   1      2      7       -8.82      1.12      0.47           RANKING
+   1      3      3       -8.22      1.53      1.32           RANKING
+   2      1      1       -8.30      0.00      1.86           RANKING
+   3      1      9       -7.95      0.00      2.37           RANKING
+   4      1     10       -7.11      0.00      3.28           RANKING
+   5      1      6       -6.89      0.00      3.18           RANKING
+   6      1      2       -6.49      0.00      3.52           RANKING
+   7      1      8       -6.23      0.00      2.97           RANKING
+   8      1      5       -6.10      0.00      3.68           RANKING
+
+Run time 22.811 sec
+Idle time 1.751 sec

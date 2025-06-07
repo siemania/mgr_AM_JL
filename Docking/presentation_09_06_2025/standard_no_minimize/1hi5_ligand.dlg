@@ -1,0 +1,963 @@
+AutoDock-GPU version: v1.6-7-ga46ab564d2ac5f1a1523f65239b43505a1c29364
+
+**********************************************************
+**    AutoDock-GPU AUTODOCKTOOLS-COMPATIBLE DLG FILE    **
+**********************************************************
+
+
+    DOCKING PARAMETERS
+    ________________________
+
+
+Ligand file:                               pdbqt_files/1hi5_ligand.pdbqt
+Grid fld file:                             map_grid_files/1hi5_receptor.maps.fld
+
+Random seed:                               1749308273, 809
+Number of runs:                            10
+Number of energy evaluations:              2068966
+Number of generations:                     42000
+Size of population:                        150
+Rate of crossover:                         80.000000%
+Tournament selection probability limit:    60.000000%
+Rate of mutation:                          2.000000%
+Maximal allowed delta movement:            +/- 6.000000A
+Maximal allowed delta angle:               +/- 90.000000
+
+Rate of local search:                      100.000000%
+Maximal number of local search iterations: 300
+Rho lower bound:                           0.010000
+Spread of local search delta movement:     2.000000A
+Spread of local search delta angle:        74.999999
+Limit of consecutive successes/failures:   4
+
+Handle symmetry during clustering:         YES
+RMSD tolerance:                            2.000000A
+
+Program call in command line was:          /home/tajgero/AutoDock-GPU/bin/autodock_gpu_128wi --lfile pdbqt_files/1hi5_ligand.pdbqt --ffile map_grid_files/1hi5_receptor.maps.fld --nrun 10 
+
+
+    GRID PARAMETERS
+    ________________________
+
+
+Receptor name:                             pdbqt_files/1hi5_receptor
+Number of grid points (x, y, z):           41, 41, 41
+Grid center (x, y, z):                     12.944000, 13.624000, 4.613000A
+Grid size (x, y, z):                       15.000000, 15.000000, 15.000000A
+Grid spacing:                              0.375000A
+
+
+    LIGAND PARAMETERS
+    ________________________
+
+
+Ligand name:                               pdbqt_files/1hi5_ligand
+Number of atoms:                           27
+Number of rotatable bonds:                 6
+Number of atom types:                      6
+
+
+    DUMMY DATA (only for ADT-compatibility)
+    ________________________
+
+
+DPF> outlev 1
+DPF> ga_run 10
+DPF> fld map_grid_files/1hi5_receptor.maps.fld
+DPF> move pdbqt_files/1hi5_ligand.pdbqt
+
+
+    COUNTER STATES
+    ________________________
+
+
+Number of energy evaluations performed:    1166991
+Number of generations used:                75
+
+
+    INPUT LIGAND PDBQT FILE:
+    ________________________
+
+
+INPUT-LIGAND-PDBQT: REMARK  6 active torsions:
+INPUT-LIGAND-PDBQT: REMARK  status: ('A' for Active; 'I' for Inactive)
+INPUT-LIGAND-PDBQT: REMARK    1  A    between atoms: PB_1091  and  O3A_1098 
+INPUT-LIGAND-PDBQT: REMARK    2  A    between atoms: PA_1095  and  O5'_1099 
+INPUT-LIGAND-PDBQT: REMARK    3  A    between atoms: PA_1095  and  O3A_1098 
+INPUT-LIGAND-PDBQT: REMARK    4  A    between atoms: O5'_1099  and  C5'_1100 
+INPUT-LIGAND-PDBQT: REMARK    5  A    between atoms: C5'_1100  and  C4'_1101 
+INPUT-LIGAND-PDBQT: REMARK    6  A    between atoms: C1'_1107  and  N9_1108 
+INPUT-LIGAND-PDBQT: ROOT
+INPUT-LIGAND-PDBQT: HETATM    1  C4' ADP A 999      10.865  15.142   5.406  1.00 27.30     0.181 C 
+INPUT-LIGAND-PDBQT: HETATM    2  O4' ADP A 999      11.671  15.011   4.200  1.00 26.02    -0.331 OA
+INPUT-LIGAND-PDBQT: HETATM    3  C3' ADP A 999       9.783  14.065   5.321  1.00 26.46     0.216 C 
+INPUT-LIGAND-PDBQT: HETATM    4  O3' ADP A 999       8.577  14.577   4.748  1.00 26.22    -0.218 OA
+INPUT-LIGAND-PDBQT: HETATM    5  C2' ADP A 999      10.410  13.024   4.401  1.00 27.19     0.234 C 
+INPUT-LIGAND-PDBQT: HETATM    6  O2' ADP A 999       9.431  12.258   3.722  1.00 25.68    -0.216 OA
+INPUT-LIGAND-PDBQT: HETATM    7  C1' ADP A 999      11.222  13.901   3.440  1.00 27.53     0.241 C 
+INPUT-LIGAND-PDBQT: ENDROOT
+INPUT-LIGAND-PDBQT: BRANCH   1   8
+INPUT-LIGAND-PDBQT: HETATM    8  C5' ADP A 999      11.770  15.078   6.622  1.00 28.08     0.187 C 
+INPUT-LIGAND-PDBQT: BRANCH   8   9
+INPUT-LIGAND-PDBQT: HETATM    9  O5' ADP A 999      12.456  13.806   6.675  1.00 29.69    -0.268 OA
+INPUT-LIGAND-PDBQT: BRANCH   9  10
+INPUT-LIGAND-PDBQT: HETATM   10  PA  ADP A 999      14.064  13.720   6.935  1.00 29.76     0.419 P 
+INPUT-LIGAND-PDBQT: HETATM   11  O2A ADP A 999      14.724  14.252   5.676  1.00 30.23    -0.624 OA
+INPUT-LIGAND-PDBQT: HETATM   12  O1A ADP A 999      14.370  12.249   7.172  1.00 30.90    -0.624 OA
+INPUT-LIGAND-PDBQT: BRANCH  10  13
+INPUT-LIGAND-PDBQT: HETATM   13  O3A ADP A 999      14.366  14.604   8.145  1.00 31.31    -0.173 OA
+INPUT-LIGAND-PDBQT: BRANCH  13  14
+INPUT-LIGAND-PDBQT: HETATM   14  PB  ADP A 999      14.596  14.374   9.630  1.00 24.85     0.431 P 
+INPUT-LIGAND-PDBQT: HETATM   15  O3B ADP A 999      13.444  13.543  10.163  1.00 31.86    -0.616 OA
+INPUT-LIGAND-PDBQT: HETATM   16  O2B ADP A 999      15.918  13.671   9.860  1.00 26.60    -0.616 OA
+INPUT-LIGAND-PDBQT: HETATM   17  O1B ADP A 999      14.616  15.712  10.348  1.00 29.12    -0.616 OA
+INPUT-LIGAND-PDBQT: ENDBRANCH  13  14
+INPUT-LIGAND-PDBQT: ENDBRANCH  10  13
+INPUT-LIGAND-PDBQT: ENDBRANCH   9  10
+INPUT-LIGAND-PDBQT: ENDBRANCH   8   9
+INPUT-LIGAND-PDBQT: ENDBRANCH   1   8
+INPUT-LIGAND-PDBQT: BRANCH   7  18
+INPUT-LIGAND-PDBQT: HETATM   18  N9  ADP A 999      12.405  13.235   2.877  1.00 29.18    -0.270 N 
+INPUT-LIGAND-PDBQT: HETATM   19  C4  ADP A 999      12.896  13.348   1.593  1.00 29.95     0.170 A 
+INPUT-LIGAND-PDBQT: HETATM   20  N3  ADP A 999      12.397  14.092   0.578  1.00 30.02    -0.205 NA
+INPUT-LIGAND-PDBQT: HETATM   21  C5  ADP A 999      14.028  12.531   1.549  1.00 30.31     0.155 A 
+INPUT-LIGAND-PDBQT: HETATM   22  C2  ADP A 999      13.146  13.957  -0.536  1.00 30.97     0.202 A 
+INPUT-LIGAND-PDBQT: HETATM   23  N1  ADP A 999      14.258  13.209  -0.725  1.00 32.01    -0.202 NA
+INPUT-LIGAND-PDBQT: HETATM   24  C6  ADP A 999      14.733  12.472   0.319  1.00 31.55     0.206 A 
+INPUT-LIGAND-PDBQT: HETATM   25  N6  ADP A 999      15.832  11.735   0.137  1.00 32.26    -0.125 N 
+INPUT-LIGAND-PDBQT: HETATM   26  N7  ADP A 999      14.239  11.916   2.774  1.00 31.17    -0.219 NA
+INPUT-LIGAND-PDBQT: HETATM   27  C8  ADP A 999      13.257  12.364   3.527  1.00 30.78     0.182 A 
+INPUT-LIGAND-PDBQT: ENDBRANCH   7  18
+INPUT-LIGAND-PDBQT: TORSDOF 6
+
+
+    FINAL DOCKED STATE:
+    ________________________
+
+
+Run:   1 / 10
+Time taken for this run:   2.382s
+
+DOCKED: MODEL        1
+DOCKED: USER    Run = 1
+DOCKED: USER
+DOCKED: USER    Estimated Free Energy of Binding    =  -9.59 kcal/mol  [=(1)+(2)+(3)-(4)]
+DOCKED: USER
+DOCKED: USER    (1) Final Intermolecular Energy     = -11.38 kcal/mol
+DOCKED: USER        vdW + Hbond + desolv Energy     =  -4.65 kcal/mol
+DOCKED: USER        Electrostatic Energy            =  -6.73 kcal/mol
+DOCKED: USER        Moving Ligand-Fixed Receptor    = -11.38 kcal/mol
+DOCKED: USER        Moving Ligand-Moving Receptor   =  +0.00 kcal/mol
+DOCKED: USER    (2) Final Total Internal Energy     =  +0.23 kcal/mol
+DOCKED: USER    (3) Torsional Free Energy           =  +1.79 kcal/mol
+DOCKED: USER    (4) Unbound System's Energy         =  +0.23 kcal/mol
+DOCKED: USER
+DOCKED: USER
+DOCKED: REMARK  6 active torsions:
+DOCKED: REMARK  status: ('A' for Active; 'I' for Inactive)
+DOCKED: REMARK    1  A    between atoms: PB_1091  and  O3A_1098 
+DOCKED: REMARK    2  A    between atoms: PA_1095  and  O5'_1099 
+DOCKED: REMARK    3  A    between atoms: PA_1095  and  O3A_1098 
+DOCKED: REMARK    4  A    between atoms: O5'_1099  and  C5'_1100 
+DOCKED: REMARK    5  A    between atoms: C5'_1100  and  C4'_1101 
+DOCKED: REMARK    6  A    between atoms: C1'_1107  and  N9_1108 
+DOCKED: USER                              x       y       z     vdW  Elec       q    Type
+DOCKED: USER                           _______ _______ _______ _____ _____    ______ ____
+DOCKED: ROOT
+DOCKED: HETATM    1  C4' ADP A 999      10.229  14.953   5.915 +0.03 +0.23    +0.181 C  
+DOCKED: HETATM    2  O4' ADP A 999      10.984  14.828   4.676 +0.02 -0.36    -0.331 OA 
+DOCKED: HETATM    3  C3' ADP A 999       9.318  13.727   5.990 -0.02 +0.37    +0.216 C  
+DOCKED: HETATM    4  O3' ADP A 999       8.021  14.003   5.453 -0.39 -0.40    -0.218 OA 
+DOCKED: HETATM    5  C2' ADP A 999      10.047  12.707   5.124 +0.12 +0.35    +0.234 C  
+DOCKED: HETATM    6  O2' ADP A 999       9.161  11.747   4.576 -0.85 -0.38    -0.216 OA 
+DOCKED: HETATM    7  C1' ADP A 999      10.669  13.598   4.043 -0.04 +0.27    +0.241 C  
+DOCKED: ENDROOT
+DOCKED: BRANCH   1   8
+DOCKED: HETATM    8  C5' ADP A 999      11.193  15.134   7.072 +0.06 +0.26    +0.187 C  
+DOCKED: BRANCH   8   9
+DOCKED: HETATM    9  O5' ADP A 999      11.451  13.867   7.719 -0.00 -0.52    -0.268 OA 
+DOCKED: BRANCH   9  10
+DOCKED: HETATM   10  PA  ADP A 999      12.271  13.785   9.126 +0.14 +0.95    +0.419 P  
+DOCKED: HETATM   11  O2A ADP A 999      12.687  15.207   9.456 +0.14 -1.12    -0.624 OA 
+DOCKED: HETATM   12  O1A ADP A 999      13.465  12.879   8.860 -0.28 -2.02    -0.624 OA 
+DOCKED: BRANCH  10  13
+DOCKED: HETATM   13  O3A ADP A 999      11.307  13.224  10.171 -0.54 -0.41    -0.173 OA 
+DOCKED: BRANCH  13  14
+DOCKED: HETATM   14  PB  ADP A 999       9.852  13.458  10.545 -0.08 +1.08    +0.431 P  
+DOCKED: HETATM   15  O3B ADP A 999       9.614  14.955  10.601 -0.30 -1.55    -0.616 OA 
+DOCKED: HETATM   16  O2B ADP A 999       8.932  12.805   9.534 -0.69 -1.78    -0.616 OA 
+DOCKED: HETATM   17  O1B ADP A 999       9.584  12.861  11.915 -0.82 -1.57    -0.616 OA 
+DOCKED: ENDBRANCH  13  14
+DOCKED: ENDBRANCH  10  13
+DOCKED: ENDBRANCH   9  10
+DOCKED: ENDBRANCH   8   9
+DOCKED: ENDBRANCH   1   8
+DOCKED: BRANCH   7  18
+DOCKED: HETATM   18  N9  ADP A 999      11.909  13.061   3.464 -0.05 -0.28    -0.270 N  
+DOCKED: HETATM   19  C4  ADP A 999      12.920  12.396   4.126 +0.04 +0.19    +0.170 A  
+DOCKED: HETATM   20  N3  ADP A 999      12.990  12.097   5.444 -0.07 -0.33    -0.205 NA 
+DOCKED: HETATM   21  C5  ADP A 999      13.870  12.088   3.150 -0.07 +0.19    +0.155 A  
+DOCKED: HETATM   22  C2  ADP A 999      14.130  11.434   5.731 -0.13 +0.40    +0.202 A  
+DOCKED: HETATM   23  N1  ADP A 999      15.132  11.070   4.897 -0.42 -0.36    -0.202 NA 
+DOCKED: HETATM   24  C6  ADP A 999      15.029  11.388   3.576 -0.12 +0.29    +0.206 A  
+DOCKED: HETATM   25  N6  ADP A 999      16.014  11.027   2.750 -0.22 -0.18    -0.125 N  
+DOCKED: HETATM   26  N7  ADP A 999      13.468  12.553   1.907 -0.09 -0.24    -0.219 NA 
+DOCKED: HETATM   27  C8  ADP A 999      12.303  13.119   2.142 -0.02 +0.18    +0.182 A  
+DOCKED: ENDBRANCH   7  18
+DOCKED: TORSDOF 6
+DOCKED: TER
+DOCKED: ENDMDL
+________________________________________________________________________________
+
+
+    FINAL DOCKED STATE:
+    ________________________
+
+
+Run:   2 / 10
+Time taken for this run:   2.382s
+
+DOCKED: MODEL        2
+DOCKED: USER    Run = 2
+DOCKED: USER
+DOCKED: USER    Estimated Free Energy of Binding    =  -9.52 kcal/mol  [=(1)+(2)+(3)-(4)]
+DOCKED: USER
+DOCKED: USER    (1) Final Intermolecular Energy     = -11.31 kcal/mol
+DOCKED: USER        vdW + Hbond + desolv Energy     =  -4.55 kcal/mol
+DOCKED: USER        Electrostatic Energy            =  -6.77 kcal/mol
+DOCKED: USER        Moving Ligand-Fixed Receptor    = -11.31 kcal/mol
+DOCKED: USER        Moving Ligand-Moving Receptor   =  +0.00 kcal/mol
+DOCKED: USER    (2) Final Total Internal Energy     =  +0.52 kcal/mol
+DOCKED: USER    (3) Torsional Free Energy           =  +1.79 kcal/mol
+DOCKED: USER    (4) Unbound System's Energy         =  +0.52 kcal/mol
+DOCKED: USER
+DOCKED: USER
+DOCKED: REMARK  6 active torsions:
+DOCKED: REMARK  status: ('A' for Active; 'I' for Inactive)
+DOCKED: REMARK    1  A    between atoms: PB_1091  and  O3A_1098 
+DOCKED: REMARK    2  A    between atoms: PA_1095  and  O5'_1099 
+DOCKED: REMARK    3  A    between atoms: PA_1095  and  O3A_1098 
+DOCKED: REMARK    4  A    between atoms: O5'_1099  and  C5'_1100 
+DOCKED: REMARK    5  A    between atoms: C5'_1100  and  C4'_1101 
+DOCKED: REMARK    6  A    between atoms: C1'_1107  and  N9_1108 
+DOCKED: USER                              x       y       z     vdW  Elec       q    Type
+DOCKED: USER                           _______ _______ _______ _____ _____    ______ ____
+DOCKED: ROOT
+DOCKED: HETATM    1  C4' ADP A 999      10.646  14.350   6.110 +0.02 +0.26    +0.181 C  
+DOCKED: HETATM    2  O4' ADP A 999      11.018  14.694   4.745 +0.01 -0.36    -0.331 OA 
+DOCKED: HETATM    3  C3' ADP A 999       9.588  13.252   6.005 +0.08 +0.39    +0.216 C  
+DOCKED: HETATM    4  O3' ADP A 999       8.265  13.793   6.035 -0.47 -0.47    -0.218 OA 
+DOCKED: HETATM    5  C2' ADP A 999       9.877  12.629   4.644 -0.08 +0.33    +0.234 C  
+DOCKED: HETATM    6  O2' ADP A 999       8.727  12.023   4.083 -0.82 -0.38    -0.216 OA 
+DOCKED: HETATM    7  C1' ADP A 999      10.341  13.845   3.833 -0.03 +0.26    +0.241 C  
+DOCKED: ENDROOT
+DOCKED: BRANCH   1   8
+DOCKED: HETATM    8  C5' ADP A 999      11.895  13.995   6.895 +0.06 +0.32    +0.187 C  
+DOCKED: BRANCH   8   9
+DOCKED: HETATM    9  O5' ADP A 999      11.847  14.584   8.215 -0.00 -0.47    -0.268 OA 
+DOCKED: BRANCH   9  10
+DOCKED: HETATM   10  PA  ADP A 999      12.506  13.832   9.504 +0.10 +0.97    +0.419 P  
+DOCKED: HETATM   11  O2A ADP A 999      13.115  14.924  10.363 +0.02 -1.32    -0.624 OA 
+DOCKED: HETATM   12  O1A ADP A 999      13.554  12.884   8.942 -0.33 -2.00    -0.624 OA 
+DOCKED: BRANCH  10  13
+DOCKED: HETATM   13  O3A ADP A 999      11.367  13.115  10.229 -0.59 -0.42    -0.173 OA 
+DOCKED: BRANCH  13  14
+DOCKED: HETATM   14  PB  ADP A 999       9.926  13.444  10.584 -0.10 +1.07    +0.431 P  
+DOCKED: HETATM   15  O3B ADP A 999       9.777  14.953  10.602 -0.27 -1.48    -0.616 OA 
+DOCKED: HETATM   16  O2B ADP A 999       8.977  12.821   9.581 -0.67 -1.77    -0.616 OA 
+DOCKED: HETATM   17  O1B ADP A 999       9.613  12.898  11.966 -0.81 -1.58    -0.616 OA 
+DOCKED: ENDBRANCH  13  14
+DOCKED: ENDBRANCH  10  13
+DOCKED: ENDBRANCH   9  10
+DOCKED: ENDBRANCH   8   9
+DOCKED: ENDBRANCH   1   8
+DOCKED: BRANCH   7  18
+DOCKED: HETATM   18  N9  ADP A 999      11.275  13.519   2.746 -0.04 -0.26    -0.270 N  
+DOCKED: HETATM   19  C4  ADP A 999      12.461  12.821   2.844 -0.03 +0.18    +0.170 A  
+DOCKED: HETATM   20  N3  ADP A 999      13.020  12.290   3.957 -0.08 -0.23    -0.205 NA 
+DOCKED: HETATM   21  C5  ADP A 999      12.976  12.771   1.547 -0.04 +0.16    +0.155 A  
+DOCKED: HETATM   22  C2  ADP A 999      14.185  11.674   3.667 -0.08 +0.27    +0.202 A  
+DOCKED: HETATM   23  N1  ADP A 999      14.802  11.546   2.470 -0.14 -0.29    -0.202 NA 
+DOCKED: HETATM   24  C6  ADP A 999      14.210  12.093   1.370 -0.04 +0.26    +0.206 A  
+DOCKED: HETATM   25  N6  ADP A 999      14.815  11.966   0.185 -0.14 -0.14    -0.125 N  
+DOCKED: HETATM   26  N7  ADP A 999      12.137  13.425   0.658 -0.06 -0.19    -0.219 NA 
+DOCKED: HETATM   27  C8  ADP A 999      11.144  13.848   1.411 -0.02 +0.16    +0.182 A  
+DOCKED: ENDBRANCH   7  18
+DOCKED: TORSDOF 6
+DOCKED: TER
+DOCKED: ENDMDL
+________________________________________________________________________________
+
+
+    FINAL DOCKED STATE:
+    ________________________
+
+
+Run:   3 / 10
+Time taken for this run:   2.382s
+
+DOCKED: MODEL        3
+DOCKED: USER    Run = 3
+DOCKED: USER
+DOCKED: USER    Estimated Free Energy of Binding    =  -9.60 kcal/mol  [=(1)+(2)+(3)-(4)]
+DOCKED: USER
+DOCKED: USER    (1) Final Intermolecular Energy     = -11.39 kcal/mol
+DOCKED: USER        vdW + Hbond + desolv Energy     =  -4.64 kcal/mol
+DOCKED: USER        Electrostatic Energy            =  -6.75 kcal/mol
+DOCKED: USER        Moving Ligand-Fixed Receptor    = -11.39 kcal/mol
+DOCKED: USER        Moving Ligand-Moving Receptor   =  +0.00 kcal/mol
+DOCKED: USER    (2) Final Total Internal Energy     =  +0.23 kcal/mol
+DOCKED: USER    (3) Torsional Free Energy           =  +1.79 kcal/mol
+DOCKED: USER    (4) Unbound System's Energy         =  +0.23 kcal/mol
+DOCKED: USER
+DOCKED: USER
+DOCKED: REMARK  6 active torsions:
+DOCKED: REMARK  status: ('A' for Active; 'I' for Inactive)
+DOCKED: REMARK    1  A    between atoms: PB_1091  and  O3A_1098 
+DOCKED: REMARK    2  A    between atoms: PA_1095  and  O5'_1099 
+DOCKED: REMARK    3  A    between atoms: PA_1095  and  O3A_1098 
+DOCKED: REMARK    4  A    between atoms: O5'_1099  and  C5'_1100 
+DOCKED: REMARK    5  A    between atoms: C5'_1100  and  C4'_1101 
+DOCKED: REMARK    6  A    between atoms: C1'_1107  and  N9_1108 
+DOCKED: USER                              x       y       z     vdW  Elec       q    Type
+DOCKED: USER                           _______ _______ _______ _____ _____    ______ ____
+DOCKED: ROOT
+DOCKED: HETATM    1  C4' ADP A 999      10.234  14.952   5.960 +0.03 +0.24    +0.181 C  
+DOCKED: HETATM    2  O4' ADP A 999      10.980  14.842   4.714 +0.02 -0.36    -0.331 OA 
+DOCKED: HETATM    3  C3' ADP A 999       9.331  13.720   6.034 -0.02 +0.38    +0.216 C  
+DOCKED: HETATM    4  O3' ADP A 999       8.029  13.992   5.510 -0.41 -0.41    -0.218 OA 
+DOCKED: HETATM    5  C2' ADP A 999      10.060  12.711   5.154 +0.14 +0.35    +0.234 C  
+DOCKED: HETATM    6  O2' ADP A 999       9.175  11.750   4.606 -0.85 -0.38    -0.216 OA 
+DOCKED: HETATM    7  C1' ADP A 999      10.667  13.615   4.074 -0.04 +0.27    +0.241 C  
+DOCKED: ENDROOT
+DOCKED: BRANCH   1   8
+DOCKED: HETATM    8  C5' ADP A 999      11.207  15.131   7.110 +0.06 +0.26    +0.187 C  
+DOCKED: BRANCH   8   9
+DOCKED: HETATM    9  O5' ADP A 999      11.441  13.869   7.776 -0.00 -0.53    -0.268 OA 
+DOCKED: BRANCH   9  10
+DOCKED: HETATM   10  PA  ADP A 999      12.274  13.789   9.175 +0.13 +0.95    +0.419 P  
+DOCKED: HETATM   11  O2A ADP A 999      12.704  15.210   9.492 +0.13 -1.13    -0.624 OA 
+DOCKED: HETATM   12  O1A ADP A 999      13.458  12.873   8.904 -0.27 -2.03    -0.624 OA 
+DOCKED: BRANCH  10  13
+DOCKED: HETATM   13  O3A ADP A 999      11.315  13.242  10.233 -0.57 -0.41    -0.173 OA 
+DOCKED: BRANCH  13  14
+DOCKED: HETATM   14  PB  ADP A 999       9.849  13.443  10.579 -0.07 +1.09    +0.431 P  
+DOCKED: HETATM   15  O3B ADP A 999       9.571  14.934  10.612 -0.32 -1.58    -0.616 OA 
+DOCKED: HETATM   16  O2B ADP A 999       8.964  12.753   9.562 -0.66 -1.78    -0.616 OA 
+DOCKED: HETATM   17  O1B ADP A 999       9.573  12.857  11.953 -0.81 -1.57    -0.616 OA 
+DOCKED: ENDBRANCH  13  14
+DOCKED: ENDBRANCH  10  13
+DOCKED: ENDBRANCH   9  10
+DOCKED: ENDBRANCH   8   9
+DOCKED: ENDBRANCH   1   8
+DOCKED: BRANCH   7  18
+DOCKED: HETATM   18  N9  ADP A 999      11.905  13.090   3.481 -0.05 -0.28    -0.270 N  
+DOCKED: HETATM   19  C4  ADP A 999      12.922  12.418   4.128 +0.03 +0.19    +0.170 A  
+DOCKED: HETATM   20  N3  ADP A 999      13.000  12.100   5.441 -0.07 -0.33    -0.205 NA 
+DOCKED: HETATM   21  C5  ADP A 999      13.868  12.127   3.142 -0.07 +0.19    +0.155 A  
+DOCKED: HETATM   22  C2  ADP A 999      14.143  11.436   5.712 -0.13 +0.40    +0.202 A  
+DOCKED: HETATM   23  N1  ADP A 999      15.142  11.087   4.868 -0.40 -0.35    -0.202 NA 
+DOCKED: HETATM   24  C6  ADP A 999      15.030  11.424   3.552 -0.11 +0.29    +0.206 A  
+DOCKED: HETATM   25  N6  ADP A 999      16.012  11.078   2.715 -0.22 -0.18    -0.125 N  
+DOCKED: HETATM   26  N7  ADP A 999      13.457  12.610   1.908 -0.08 -0.24    -0.219 NA 
+DOCKED: HETATM   27  C8  ADP A 999      12.292  13.168   2.158 -0.03 +0.18    +0.182 A  
+DOCKED: ENDBRANCH   7  18
+DOCKED: TORSDOF 6
+DOCKED: TER
+DOCKED: ENDMDL
+________________________________________________________________________________
+
+
+    FINAL DOCKED STATE:
+    ________________________
+
+
+Run:   4 / 10
+Time taken for this run:   2.382s
+
+DOCKED: MODEL        4
+DOCKED: USER    Run = 4
+DOCKED: USER
+DOCKED: USER    Estimated Free Energy of Binding    =  -9.53 kcal/mol  [=(1)+(2)+(3)-(4)]
+DOCKED: USER
+DOCKED: USER    (1) Final Intermolecular Energy     = -11.32 kcal/mol
+DOCKED: USER        vdW + Hbond + desolv Energy     =  -4.63 kcal/mol
+DOCKED: USER        Electrostatic Energy            =  -6.69 kcal/mol
+DOCKED: USER        Moving Ligand-Fixed Receptor    = -11.32 kcal/mol
+DOCKED: USER        Moving Ligand-Moving Receptor   =  +0.00 kcal/mol
+DOCKED: USER    (2) Final Total Internal Energy     =  +0.17 kcal/mol
+DOCKED: USER    (3) Torsional Free Energy           =  +1.79 kcal/mol
+DOCKED: USER    (4) Unbound System's Energy         =  +0.17 kcal/mol
+DOCKED: USER
+DOCKED: USER
+DOCKED: REMARK  6 active torsions:
+DOCKED: REMARK  status: ('A' for Active; 'I' for Inactive)
+DOCKED: REMARK    1  A    between atoms: PB_1091  and  O3A_1098 
+DOCKED: REMARK    2  A    between atoms: PA_1095  and  O5'_1099 
+DOCKED: REMARK    3  A    between atoms: PA_1095  and  O3A_1098 
+DOCKED: REMARK    4  A    between atoms: O5'_1099  and  C5'_1100 
+DOCKED: REMARK    5  A    between atoms: C5'_1100  and  C4'_1101 
+DOCKED: REMARK    6  A    between atoms: C1'_1107  and  N9_1108 
+DOCKED: USER                              x       y       z     vdW  Elec       q    Type
+DOCKED: USER                           _______ _______ _______ _____ _____    ______ ____
+DOCKED: ROOT
+DOCKED: HETATM    1  C4' ADP A 999      10.166  14.964   5.960 +0.03 +0.24    +0.181 C  
+DOCKED: HETATM    2  O4' ADP A 999      10.945  14.867   4.733 +0.02 -0.36    -0.331 OA 
+DOCKED: HETATM    3  C3' ADP A 999       9.285  13.715   6.012 -0.03 +0.38    +0.216 C  
+DOCKED: HETATM    4  O3' ADP A 999       7.992  13.962   5.454 -0.41 -0.41    -0.218 OA 
+DOCKED: HETATM    5  C2' ADP A 999      10.055  12.720   5.152 +0.13 +0.35    +0.234 C  
+DOCKED: HETATM    6  O2' ADP A 999       9.204  11.741   4.582 -0.84 -0.37    -0.216 OA 
+DOCKED: HETATM    7  C1' ADP A 999      10.673  13.635   4.087 -0.04 +0.27    +0.241 C  
+DOCKED: ENDROOT
+DOCKED: BRANCH   1   8
+DOCKED: HETATM    8  C5' ADP A 999      11.105  15.162   7.135 +0.06 +0.26    +0.187 C  
+DOCKED: BRANCH   8   9
+DOCKED: HETATM    9  O5' ADP A 999      11.494  13.886   7.692 -0.01 -0.52    -0.268 OA 
+DOCKED: BRANCH   9  10
+DOCKED: HETATM   10  PA  ADP A 999      12.311  13.788   9.100 +0.14 +0.95    +0.419 P  
+DOCKED: HETATM   11  O2A ADP A 999      12.735  15.205   9.441 +0.13 -1.12    -0.624 OA 
+DOCKED: HETATM   12  O1A ADP A 999      13.498  12.877   8.832 -0.29 -2.02    -0.624 OA 
+DOCKED: BRANCH  10  13
+DOCKED: HETATM   13  O3A ADP A 999      11.339  13.227  10.139 -0.54 -0.41    -0.173 OA 
+DOCKED: BRANCH  13  14
+DOCKED: HETATM   14  PB  ADP A 999       9.891  13.485  10.524 -0.09 +1.07    +0.431 P  
+DOCKED: HETATM   15  O3B ADP A 999       9.650  12.870  11.890 -0.82 -1.57    -0.616 OA 
+DOCKED: HETATM   16  O2B ADP A 999       9.604  14.972  10.546 -0.28 -1.53    -0.616 OA 
+DOCKED: HETATM   17  O1B ADP A 999       8.976  12.818   9.512 -0.69 -1.76    -0.616 OA 
+DOCKED: ENDBRANCH  13  14
+DOCKED: ENDBRANCH  10  13
+DOCKED: ENDBRANCH   9  10
+DOCKED: ENDBRANCH   8   9
+DOCKED: ENDBRANCH   1   8
+DOCKED: BRANCH   7  18
+DOCKED: HETATM   18  N9  ADP A 999      11.936  13.133   3.527 -0.04 -0.28    -0.270 N  
+DOCKED: HETATM   19  C4  ADP A 999      12.940  12.466   4.196 +0.00 +0.19    +0.170 A  
+DOCKED: HETATM   20  N3  ADP A 999      12.981  12.130   5.507 -0.07 -0.34    -0.205 NA 
+DOCKED: HETATM   21  C5  ADP A 999      13.920  12.200   3.237 -0.06 +0.18    +0.155 A  
+DOCKED: HETATM   22  C2  ADP A 999      14.124  11.478   5.805 -0.11 +0.41    +0.202 A  
+DOCKED: HETATM   23  N1  ADP A 999      15.153  11.152   4.989 -0.40 -0.36    -0.202 NA 
+DOCKED: HETATM   24  C6  ADP A 999      15.078  11.506   3.674 -0.10 +0.29    +0.206 A  
+DOCKED: HETATM   25  N6  ADP A 999      16.090  11.183   2.864 -0.22 -0.18    -0.125 N  
+DOCKED: HETATM   26  N7  ADP A 999      13.542  12.693   1.997 -0.07 -0.24    -0.219 NA 
+DOCKED: HETATM   27  C8  ADP A 999      12.363  13.234   2.217 -0.03 +0.18    +0.182 A  
+DOCKED: ENDBRANCH   7  18
+DOCKED: TORSDOF 6
+DOCKED: TER
+DOCKED: ENDMDL
+________________________________________________________________________________
+
+
+    FINAL DOCKED STATE:
+    ________________________
+
+
+Run:   5 / 10
+Time taken for this run:   2.382s
+
+DOCKED: MODEL        5
+DOCKED: USER    Run = 5
+DOCKED: USER
+DOCKED: USER    Estimated Free Energy of Binding    =  -9.53 kcal/mol  [=(1)+(2)+(3)-(4)]
+DOCKED: USER
+DOCKED: USER    (1) Final Intermolecular Energy     = -11.32 kcal/mol
+DOCKED: USER        vdW + Hbond + desolv Energy     =  -4.61 kcal/mol
+DOCKED: USER        Electrostatic Energy            =  -6.70 kcal/mol
+DOCKED: USER        Moving Ligand-Fixed Receptor    = -11.32 kcal/mol
+DOCKED: USER        Moving Ligand-Moving Receptor   =  +0.00 kcal/mol
+DOCKED: USER    (2) Final Total Internal Energy     =  +0.17 kcal/mol
+DOCKED: USER    (3) Torsional Free Energy           =  +1.79 kcal/mol
+DOCKED: USER    (4) Unbound System's Energy         =  +0.17 kcal/mol
+DOCKED: USER
+DOCKED: USER
+DOCKED: REMARK  6 active torsions:
+DOCKED: REMARK  status: ('A' for Active; 'I' for Inactive)
+DOCKED: REMARK    1  A    between atoms: PB_1091  and  O3A_1098 
+DOCKED: REMARK    2  A    between atoms: PA_1095  and  O5'_1099 
+DOCKED: REMARK    3  A    between atoms: PA_1095  and  O3A_1098 
+DOCKED: REMARK    4  A    between atoms: O5'_1099  and  C5'_1100 
+DOCKED: REMARK    5  A    between atoms: C5'_1100  and  C4'_1101 
+DOCKED: REMARK    6  A    between atoms: C1'_1107  and  N9_1108 
+DOCKED: USER                              x       y       z     vdW  Elec       q    Type
+DOCKED: USER                           _______ _______ _______ _____ _____    ______ ____
+DOCKED: ROOT
+DOCKED: HETATM    1  C4' ADP A 999      10.167  14.976   5.953 +0.03 +0.23    +0.181 C  
+DOCKED: HETATM    2  O4' ADP A 999      10.956  14.851   4.735 +0.02 -0.36    -0.331 OA 
+DOCKED: HETATM    3  C3' ADP A 999       9.269  13.740   6.013 -0.03 +0.38    +0.216 C  
+DOCKED: HETATM    4  O3' ADP A 999       7.984  13.996   5.440 -0.39 -0.40    -0.218 OA 
+DOCKED: HETATM    5  C2' ADP A 999      10.033  12.722   5.174 +0.14 +0.36    +0.234 C  
+DOCKED: HETATM    6  O2' ADP A 999       9.173  11.748   4.610 -0.85 -0.38    -0.216 OA 
+DOCKED: HETATM    7  C1' ADP A 999      10.673  13.614   4.103 -0.04 +0.27    +0.241 C  
+DOCKED: ENDROOT
+DOCKED: BRANCH   1   8
+DOCKED: HETATM    8  C5' ADP A 999      11.098  15.177   7.134 +0.06 +0.26    +0.187 C  
+DOCKED: BRANCH   8   9
+DOCKED: HETATM    9  O5' ADP A 999      11.419  13.907   7.746 -0.01 -0.52    -0.268 OA 
+DOCKED: BRANCH   9  10
+DOCKED: HETATM   10  PA  ADP A 999      12.297  13.825   9.119 +0.13 +0.94    +0.419 P  
+DOCKED: HETATM   11  O2A ADP A 999      12.774  15.238   9.399 +0.13 -1.11    -0.624 OA 
+DOCKED: HETATM   12  O1A ADP A 999      13.446  12.873   8.823 -0.26 -2.03    -0.624 OA 
+DOCKED: BRANCH  10  13
+DOCKED: HETATM   13  O3A ADP A 999      11.359  13.321  10.215 -0.56 -0.41    -0.173 OA 
+DOCKED: BRANCH  13  14
+DOCKED: HETATM   14  PB  ADP A 999       9.888  13.498  10.555 -0.08 +1.08    +0.431 P  
+DOCKED: HETATM   15  O3B ADP A 999       9.592  14.984  10.614 -0.30 -1.56    -0.616 OA 
+DOCKED: HETATM   16  O2B ADP A 999       9.018  12.817   9.518 -0.68 -1.74    -0.616 OA 
+DOCKED: HETATM   17  O1B ADP A 999       9.609  12.882  11.915 -0.83 -1.58    -0.616 OA 
+DOCKED: ENDBRANCH  13  14
+DOCKED: ENDBRANCH  10  13
+DOCKED: ENDBRANCH   9  10
+DOCKED: ENDBRANCH   8   9
+DOCKED: ENDBRANCH   1   8
+DOCKED: BRANCH   7  18
+DOCKED: HETATM   18  N9  ADP A 999      11.934  13.087   3.562 -0.05 -0.28    -0.270 N  
+DOCKED: HETATM   19  C4  ADP A 999      12.930  12.429   4.253 +0.03 +0.19    +0.170 A  
+DOCKED: HETATM   20  N3  ADP A 999      12.962  12.127   5.572 -0.06 -0.34    -0.205 NA 
+DOCKED: HETATM   21  C5  ADP A 999      13.911  12.130   3.305 -0.07 +0.19    +0.155 A  
+DOCKED: HETATM   22  C2  ADP A 999      14.097  11.472   5.892 -0.09 +0.42    +0.202 A  
+DOCKED: HETATM   23  N1  ADP A 999      15.127  11.117   5.089 -0.43 -0.37    -0.202 NA 
+DOCKED: HETATM   24  C6  ADP A 999      15.061  11.437   3.765 -0.11 +0.29    +0.206 A  
+DOCKED: HETATM   25  N6  ADP A 999      16.074  11.086   2.969 -0.23 -0.18    -0.125 N  
+DOCKED: HETATM   26  N7  ADP A 999      13.543  12.595   2.051 -0.08 -0.24    -0.219 NA 
+DOCKED: HETATM   27  C8  ADP A 999      12.367  13.151   2.252 -0.03 +0.18    +0.182 A  
+DOCKED: ENDBRANCH   7  18
+DOCKED: TORSDOF 6
+DOCKED: TER
+DOCKED: ENDMDL
+________________________________________________________________________________
+
+
+    FINAL DOCKED STATE:
+    ________________________
+
+
+Run:   6 / 10
+Time taken for this run:   2.382s
+
+DOCKED: MODEL        6
+DOCKED: USER    Run = 6
+DOCKED: USER
+DOCKED: USER    Estimated Free Energy of Binding    = -10.22 kcal/mol  [=(1)+(2)+(3)-(4)]
+DOCKED: USER
+DOCKED: USER    (1) Final Intermolecular Energy     = -12.01 kcal/mol
+DOCKED: USER        vdW + Hbond + desolv Energy     =  -5.34 kcal/mol
+DOCKED: USER        Electrostatic Energy            =  -6.67 kcal/mol
+DOCKED: USER        Moving Ligand-Fixed Receptor    = -12.01 kcal/mol
+DOCKED: USER        Moving Ligand-Moving Receptor   =  +0.00 kcal/mol
+DOCKED: USER    (2) Final Total Internal Energy     =  +0.99 kcal/mol
+DOCKED: USER    (3) Torsional Free Energy           =  +1.79 kcal/mol
+DOCKED: USER    (4) Unbound System's Energy         =  +0.99 kcal/mol
+DOCKED: USER
+DOCKED: USER
+DOCKED: REMARK  6 active torsions:
+DOCKED: REMARK  status: ('A' for Active; 'I' for Inactive)
+DOCKED: REMARK    1  A    between atoms: PB_1091  and  O3A_1098 
+DOCKED: REMARK    2  A    between atoms: PA_1095  and  O5'_1099 
+DOCKED: REMARK    3  A    between atoms: PA_1095  and  O3A_1098 
+DOCKED: REMARK    4  A    between atoms: O5'_1099  and  C5'_1100 
+DOCKED: REMARK    5  A    between atoms: C5'_1100  and  C4'_1101 
+DOCKED: REMARK    6  A    between atoms: C1'_1107  and  N9_1108 
+DOCKED: USER                              x       y       z     vdW  Elec       q    Type
+DOCKED: USER                           _______ _______ _______ _____ _____    ______ ____
+DOCKED: ROOT
+DOCKED: HETATM    1  C4' ADP A 999      13.544  13.539   9.463 -0.05 +0.47    +0.181 C  
+DOCKED: HETATM    2  O4' ADP A 999      14.145  12.979   8.260 -0.70 -0.94    -0.331 OA 
+DOCKED: HETATM    3  C3' ADP A 999      14.409  14.736   9.860 -0.10 +0.50    +0.216 C  
+DOCKED: HETATM    4  O3' ADP A 999      15.405  14.368  10.818 -1.01 -0.60    -0.218 OA 
+DOCKED: HETATM    5  C2' ADP A 999      15.060  15.138   8.542 -0.10 +0.38    +0.234 C  
+DOCKED: HETATM    6  O2' ADP A 999      16.296  15.802   8.742 -0.32 -0.31    -0.216 OA 
+DOCKED: HETATM    7  C1' ADP A 999      15.242  13.780   7.853 -0.09 +0.44    +0.241 C  
+DOCKED: ENDROOT
+DOCKED: BRANCH   1   8
+DOCKED: HETATM    8  C5' ADP A 999      12.081  13.838   9.199 +0.01 +0.42    +0.187 C  
+DOCKED: BRANCH   8   9
+DOCKED: HETATM    9  O5' ADP A 999      11.237  12.942   9.958 -0.39 -0.66    -0.268 OA 
+DOCKED: BRANCH   9  10
+DOCKED: HETATM   10  PA  ADP A 999       9.711  13.353  10.364 -0.08 +1.07    +0.419 P  
+DOCKED: HETATM   11  O2A ADP A 999       9.565  13.027  11.839 -0.85 -1.66    -0.624 OA 
+DOCKED: HETATM   12  O1A ADP A 999       8.803  12.501   9.490 -0.67 -1.88    -0.624 OA 
+DOCKED: BRANCH  10  13
+DOCKED: HETATM   13  O3A ADP A 999       9.571  14.853  10.102 -0.37 -0.41    -0.173 OA 
+DOCKED: BRANCH  13  14
+DOCKED: HETATM   14  PB  ADP A 999       8.422  15.803   9.808 +0.15 +1.00    +0.431 P  
+DOCKED: HETATM   15  O3B ADP A 999       8.768  16.589   8.557 +0.09 -0.91    -0.616 OA 
+DOCKED: HETATM   16  O2B ADP A 999       7.131  15.033   9.620 -0.27 -1.99    -0.616 OA 
+DOCKED: HETATM   17  O1B ADP A 999       8.258  16.767  10.969 +0.06 -1.40    -0.616 OA 
+DOCKED: ENDBRANCH  13  14
+DOCKED: ENDBRANCH  10  13
+DOCKED: ENDBRANCH   9  10
+DOCKED: ENDBRANCH   8   9
+DOCKED: ENDBRANCH   1   8
+DOCKED: BRANCH   7  18
+DOCKED: HETATM   18  N9  ADP A 999      15.228  13.848   6.385 -0.05 -0.33    -0.270 N  
+DOCKED: HETATM   19  C4  ADP A 999      15.231  12.790   5.500 -0.06 +0.24    +0.170 A  
+DOCKED: HETATM   20  N3  ADP A 999      15.247  11.468   5.789 -0.25 -0.40    -0.205 NA 
+DOCKED: HETATM   21  C5  ADP A 999      15.210  13.364   4.227 +0.01 +0.16    +0.155 A  
+DOCKED: HETATM   22  C2  ADP A 999      15.240  10.725   4.663 -0.05 +0.37    +0.202 A  
+DOCKED: HETATM   23  N1  ADP A 999      15.221  11.138   3.375 -0.20 -0.30    -0.202 NA 
+DOCKED: HETATM   24  C6  ADP A 999      15.204  12.477   3.119 +0.01 +0.24    +0.206 A  
+DOCKED: HETATM   25  N6  ADP A 999      15.182  12.888   1.849 -0.05 -0.13    -0.125 N  
+DOCKED: HETATM   26  N7  ADP A 999      15.201  14.748   4.311 -0.01 -0.18    -0.219 NA 
+DOCKED: HETATM   27  C8  ADP A 999      15.210  14.987   5.605 +0.01 +0.15    +0.182 A  
+DOCKED: ENDBRANCH   7  18
+DOCKED: TORSDOF 6
+DOCKED: TER
+DOCKED: ENDMDL
+________________________________________________________________________________
+
+
+    FINAL DOCKED STATE:
+    ________________________
+
+
+Run:   7 / 10
+Time taken for this run:   2.382s
+
+DOCKED: MODEL        7
+DOCKED: USER    Run = 7
+DOCKED: USER
+DOCKED: USER    Estimated Free Energy of Binding    =  -9.20 kcal/mol  [=(1)+(2)+(3)-(4)]
+DOCKED: USER
+DOCKED: USER    (1) Final Intermolecular Energy     = -10.99 kcal/mol
+DOCKED: USER        vdW + Hbond + desolv Energy     =  -3.91 kcal/mol
+DOCKED: USER        Electrostatic Energy            =  -7.08 kcal/mol
+DOCKED: USER        Moving Ligand-Fixed Receptor    = -10.99 kcal/mol
+DOCKED: USER        Moving Ligand-Moving Receptor   =  +0.00 kcal/mol
+DOCKED: USER    (2) Final Total Internal Energy     =  +0.52 kcal/mol
+DOCKED: USER    (3) Torsional Free Energy           =  +1.79 kcal/mol
+DOCKED: USER    (4) Unbound System's Energy         =  +0.52 kcal/mol
+DOCKED: USER
+DOCKED: USER
+DOCKED: REMARK  6 active torsions:
+DOCKED: REMARK  status: ('A' for Active; 'I' for Inactive)
+DOCKED: REMARK    1  A    between atoms: PB_1091  and  O3A_1098 
+DOCKED: REMARK    2  A    between atoms: PA_1095  and  O5'_1099 
+DOCKED: REMARK    3  A    between atoms: PA_1095  and  O3A_1098 
+DOCKED: REMARK    4  A    between atoms: O5'_1099  and  C5'_1100 
+DOCKED: REMARK    5  A    between atoms: C5'_1100  and  C4'_1101 
+DOCKED: REMARK    6  A    between atoms: C1'_1107  and  N9_1108 
+DOCKED: USER                              x       y       z     vdW  Elec       q    Type
+DOCKED: USER                           _______ _______ _______ _____ _____    ______ ____
+DOCKED: ROOT
+DOCKED: HETATM    1  C4' ADP A 999      14.406  16.605   8.597 -0.04 +0.25    +0.181 C  
+DOCKED: HETATM    2  O4' ADP A 999      15.033  15.401   8.068 -0.09 -0.44    -0.331 OA 
+DOCKED: HETATM    3  C3' ADP A 999      14.260  17.568   7.419 +0.02 +0.21    +0.216 C  
+DOCKED: HETATM    4  O3' ADP A 999      15.367  18.470   7.338 -0.09 -0.16    -0.218 OA 
+DOCKED: HETATM    5  C2' ADP A 999      14.245  16.634   6.214 +0.03 +0.20    +0.234 C  
+DOCKED: HETATM    6  O2' ADP A 999      14.698  17.279   5.037 -0.07 -0.15    -0.216 OA 
+DOCKED: HETATM    7  C1' ADP A 999      15.201  15.523   6.665 +0.05 +0.20    +0.241 C  
+DOCKED: ENDROOT
+DOCKED: BRANCH   1   8
+DOCKED: HETATM    8  C5' ADP A 999      13.120  16.228   9.308 +0.03 +0.30    +0.187 C  
+DOCKED: BRANCH   8   9
+DOCKED: HETATM    9  O5' ADP A 999      12.648  14.940   8.849 +0.00 -0.47    -0.268 OA 
+DOCKED: BRANCH   9  10
+DOCKED: HETATM   10  PA  ADP A 999      12.647  13.638   9.832 +0.23 +1.04    +0.419 P  
+DOCKED: HETATM   11  O2A ADP A 999      13.111  14.133  11.189 -0.29 -1.49    -0.624 OA 
+DOCKED: HETATM   12  O1A ADP A 999      13.622  12.648   9.213 -0.25 -2.16    -0.624 OA 
+DOCKED: BRANCH  10  13
+DOCKED: HETATM   13  O3A ADP A 999      11.209  13.121   9.883 -0.39 -0.42    -0.173 OA 
+DOCKED: BRANCH  13  14
+DOCKED: HETATM   14  PB  ADP A 999       9.909  13.583  10.520 -0.08 +1.07    +0.431 P  
+DOCKED: HETATM   15  O3B ADP A 999       9.941  13.203  11.988 -0.97 -1.60    -0.616 OA 
+DOCKED: HETATM   16  O2B ADP A 999       9.739  15.080  10.355 -0.14 -1.41    -0.616 OA 
+DOCKED: HETATM   17  O1B ADP A 999       8.743  12.877   9.850 -0.71 -1.94    -0.616 OA 
+DOCKED: ENDBRANCH  13  14
+DOCKED: ENDBRANCH  10  13
+DOCKED: ENDBRANCH   9  10
+DOCKED: ENDBRANCH   8   9
+DOCKED: ENDBRANCH   1   8
+DOCKED: BRANCH   7  18
+DOCKED: HETATM   18  N9  ADP A 999      14.920  14.211   6.065 -0.01 -0.30    -0.270 N  
+DOCKED: HETATM   19  C4  ADP A 999      15.699  13.523   5.159 -0.04 +0.18    +0.170 A  
+DOCKED: HETATM   20  N3  ADP A 999      16.885  13.904   4.628 -0.16 -0.15    -0.205 NA 
+DOCKED: HETATM   21  C5  ADP A 999      15.012  12.336   4.895 -0.08 +0.22    +0.155 A  
+DOCKED: HETATM   22  C2  ADP A 999      17.359  12.970   3.778 -0.16 +0.21    +0.202 A  
+DOCKED: HETATM   23  N1  ADP A 999      16.808  11.784   3.428 -0.17 -0.26    -0.202 NA 
+DOCKED: HETATM   24  C6  ADP A 999      15.613  11.432   3.981 -0.12 +0.30    +0.206 A  
+DOCKED: HETATM   25  N6  ADP A 999      15.068  10.261   3.641 -0.28 -0.22    -0.125 N  
+DOCKED: HETATM   26  N7  ADP A 999      13.827  12.284   5.614 -0.12 -0.37    -0.219 NA 
+DOCKED: HETATM   27  C8  ADP A 999      13.817  13.412   6.292 +0.01 +0.30    +0.182 A  
+DOCKED: ENDBRANCH   7  18
+DOCKED: TORSDOF 6
+DOCKED: TER
+DOCKED: ENDMDL
+________________________________________________________________________________
+
+
+    FINAL DOCKED STATE:
+    ________________________
+
+
+Run:   8 / 10
+Time taken for this run:   2.382s
+
+DOCKED: MODEL        8
+DOCKED: USER    Run = 8
+DOCKED: USER
+DOCKED: USER    Estimated Free Energy of Binding    =  -8.99 kcal/mol  [=(1)+(2)+(3)-(4)]
+DOCKED: USER
+DOCKED: USER    (1) Final Intermolecular Energy     = -10.78 kcal/mol
+DOCKED: USER        vdW + Hbond + desolv Energy     =  -3.63 kcal/mol
+DOCKED: USER        Electrostatic Energy            =  -7.15 kcal/mol
+DOCKED: USER        Moving Ligand-Fixed Receptor    = -10.78 kcal/mol
+DOCKED: USER        Moving Ligand-Moving Receptor   =  +0.00 kcal/mol
+DOCKED: USER    (2) Final Total Internal Energy     =  +0.34 kcal/mol
+DOCKED: USER    (3) Torsional Free Energy           =  +1.79 kcal/mol
+DOCKED: USER    (4) Unbound System's Energy         =  +0.34 kcal/mol
+DOCKED: USER
+DOCKED: USER
+DOCKED: REMARK  6 active torsions:
+DOCKED: REMARK  status: ('A' for Active; 'I' for Inactive)
+DOCKED: REMARK    1  A    between atoms: PB_1091  and  O3A_1098 
+DOCKED: REMARK    2  A    between atoms: PA_1095  and  O5'_1099 
+DOCKED: REMARK    3  A    between atoms: PA_1095  and  O3A_1098 
+DOCKED: REMARK    4  A    between atoms: O5'_1099  and  C5'_1100 
+DOCKED: REMARK    5  A    between atoms: C5'_1100  and  C4'_1101 
+DOCKED: REMARK    6  A    between atoms: C1'_1107  and  N9_1108 
+DOCKED: USER                              x       y       z     vdW  Elec       q    Type
+DOCKED: USER                           _______ _______ _______ _____ _____    ______ ____
+DOCKED: ROOT
+DOCKED: HETATM    1  C4' ADP A 999      14.192  15.549   7.066 +0.01 +0.21    +0.181 C  
+DOCKED: HETATM    2  O4' ADP A 999      13.735  14.397   6.302 +0.01 -0.43    -0.331 OA 
+DOCKED: HETATM    3  C3' ADP A 999      14.281  16.714   6.080 +0.02 +0.18    +0.216 C  
+DOCKED: HETATM    4  O3' ADP A 999      15.600  16.848   5.544 -0.18 -0.13    -0.218 OA 
+DOCKED: HETATM    5  C2' ADP A 999      13.300  16.309   4.986 +0.04 +0.20    +0.234 C  
+DOCKED: HETATM    6  O2' ADP A 999      13.626  16.894   3.738 -0.01 -0.17    -0.216 OA 
+DOCKED: HETATM    7  C1' ADP A 999      13.462  14.784   4.965 +0.05 +0.25    +0.241 C  
+DOCKED: ENDROOT
+DOCKED: BRANCH   1   8
+DOCKED: HETATM    8  C5' ADP A 999      13.274  15.757   8.256 +0.05 +0.27    +0.187 C  
+DOCKED: BRANCH   8   9
+DOCKED: HETATM    9  O5' ADP A 999      12.446  14.590   8.465 -0.02 -0.48    -0.268 OA 
+DOCKED: BRANCH   9  10
+DOCKED: HETATM   10  PA  ADP A 999      12.707  13.579   9.718 +0.27 +1.06    +0.419 P  
+DOCKED: HETATM   11  O2A ADP A 999      13.288  14.430  10.833 -0.22 -1.44    -0.624 OA 
+DOCKED: HETATM   12  O1A ADP A 999      13.691  12.534   9.214 -0.30 -2.24    -0.624 OA 
+DOCKED: BRANCH  10  13
+DOCKED: HETATM   13  O3A ADP A 999      11.349  12.993  10.107 -0.54 -0.43    -0.173 OA 
+DOCKED: BRANCH  13  14
+DOCKED: HETATM   14  PB  ADP A 999      10.025  13.552  10.602 -0.10 +1.05    +0.431 P  
+DOCKED: HETATM   15  O3B ADP A 999       9.910  13.250  12.084 -0.97 -1.62    -0.616 OA 
+DOCKED: HETATM   16  O2B ADP A 999       9.951  15.044  10.349 -0.08 -1.35    -0.616 OA 
+DOCKED: HETATM   17  O1B ADP A 999       8.886  12.869   9.866 -0.68 -1.87    -0.616 OA 
+DOCKED: ENDBRANCH  13  14
+DOCKED: ENDBRANCH  10  13
+DOCKED: ENDBRANCH   9  10
+DOCKED: ENDBRANCH   8   9
+DOCKED: ENDBRANCH   1   8
+DOCKED: BRANCH   7  18
+DOCKED: HETATM   18  N9  ADP A 999      12.261  14.060   4.525 +0.02 -0.30    -0.270 N  
+DOCKED: HETATM   19  C4  ADP A 999      11.082  13.896   5.221 +0.01 +0.22    +0.170 A  
+DOCKED: HETATM   20  N3  ADP A 999      10.777  14.362   6.455 +0.01 -0.31    -0.205 NA 
+DOCKED: HETATM   21  C5  ADP A 999      10.253  13.143   4.386 -0.07 +0.19    +0.155 A  
+DOCKED: HETATM   22  C2  ADP A 999       9.525  14.007   6.811 +0.03 +0.37    +0.202 A  
+DOCKED: HETATM   23  N1  ADP A 999       8.616  13.287   6.114 -0.50 -0.45    -0.202 NA 
+DOCKED: HETATM   24  C6  ADP A 999       8.957  12.833   4.874 -0.10 +0.35    +0.206 A  
+DOCKED: HETATM   25  N6  ADP A 999       8.062  12.125   4.181 -0.30 -0.24    -0.125 N  
+DOCKED: HETATM   26  N7  ADP A 999      10.899  12.838   3.197 -0.10 -0.23    -0.219 NA 
+DOCKED: HETATM   27  C8  ADP A 999      12.081  13.403   3.324 -0.01 +0.18    +0.182 A  
+DOCKED: ENDBRANCH   7  18
+DOCKED: TORSDOF 6
+DOCKED: TER
+DOCKED: ENDMDL
+________________________________________________________________________________
+
+
+    FINAL DOCKED STATE:
+    ________________________
+
+
+Run:   9 / 10
+Time taken for this run:   2.382s
+
+DOCKED: MODEL        9
+DOCKED: USER    Run = 9
+DOCKED: USER
+DOCKED: USER    Estimated Free Energy of Binding    =  -9.17 kcal/mol  [=(1)+(2)+(3)-(4)]
+DOCKED: USER
+DOCKED: USER    (1) Final Intermolecular Energy     = -10.96 kcal/mol
+DOCKED: USER        vdW + Hbond + desolv Energy     =  -4.22 kcal/mol
+DOCKED: USER        Electrostatic Energy            =  -6.74 kcal/mol
+DOCKED: USER        Moving Ligand-Fixed Receptor    = -10.96 kcal/mol
+DOCKED: USER        Moving Ligand-Moving Receptor   =  +0.00 kcal/mol
+DOCKED: USER    (2) Final Total Internal Energy     =  +0.53 kcal/mol
+DOCKED: USER    (3) Torsional Free Energy           =  +1.79 kcal/mol
+DOCKED: USER    (4) Unbound System's Energy         =  +0.53 kcal/mol
+DOCKED: USER
+DOCKED: USER
+DOCKED: REMARK  6 active torsions:
+DOCKED: REMARK  status: ('A' for Active; 'I' for Inactive)
+DOCKED: REMARK    1  A    between atoms: PB_1091  and  O3A_1098 
+DOCKED: REMARK    2  A    between atoms: PA_1095  and  O5'_1099 
+DOCKED: REMARK    3  A    between atoms: PA_1095  and  O3A_1098 
+DOCKED: REMARK    4  A    between atoms: O5'_1099  and  C5'_1100 
+DOCKED: REMARK    5  A    between atoms: C5'_1100  and  C4'_1101 
+DOCKED: REMARK    6  A    between atoms: C1'_1107  and  N9_1108 
+DOCKED: USER                              x       y       z     vdW  Elec       q    Type
+DOCKED: USER                           _______ _______ _______ _____ _____    ______ ____
+DOCKED: ROOT
+DOCKED: HETATM    1  C4' ADP A 999      13.976  13.308   9.249 -0.05 +0.51    +0.181 C  
+DOCKED: HETATM    2  O4' ADP A 999      14.266  12.992   7.857 -0.65 -0.86    -0.331 OA 
+DOCKED: HETATM    3  C3' ADP A 999      14.651  14.649   9.537 -0.13 +0.48    +0.216 C  
+DOCKED: HETATM    4  O3' ADP A 999      15.954  14.470  10.099 -0.92 -0.60    -0.218 OA 
+DOCKED: HETATM    5  C2' ADP A 999      14.750  15.285   8.155 -0.05 +0.34    +0.234 C  
+DOCKED: HETATM    6  O2' ADP A 999      15.817  16.213   8.073 -0.21 -0.22    -0.216 OA 
+DOCKED: HETATM    7  C1' ADP A 999      14.984  14.061   7.261 -0.06 +0.36    +0.241 C  
+DOCKED: ENDROOT
+DOCKED: BRANCH   1   8
+DOCKED: HETATM    8  C5' ADP A 999      12.476  13.261   9.470 +0.16 +0.50    +0.187 C  
+DOCKED: BRANCH   8   9
+DOCKED: HETATM    9  O5' ADP A 999      12.154  13.630  10.831 -0.69 -0.68    -0.268 OA 
+DOCKED: BRANCH   9  10
+DOCKED: HETATM   10  PA  ADP A 999      10.743  14.360  11.201 -0.06 +0.92    +0.419 P  
+DOCKED: HETATM   11  O2A ADP A 999      11.109  15.653  11.906 +0.06 -1.17    -0.624 OA 
+DOCKED: HETATM   12  O1A ADP A 999       9.999  13.394  12.111 -0.95 -1.64    -0.624 OA 
+DOCKED: BRANCH  10  13
+DOCKED: HETATM   13  O3A ADP A 999      10.021  14.625   9.880 -0.18 -0.37    -0.173 OA 
+DOCKED: BRANCH  13  14
+DOCKED: HETATM   14  PB  ADP A 999       8.846  14.006   9.139 +0.10 +1.12    +0.431 P  
+DOCKED: HETATM   15  O3B ADP A 999       7.572  14.396   9.864 -0.24 -2.31    -0.616 OA 
+DOCKED: HETATM   16  O2B ADP A 999       8.814  14.484   7.701 +0.08 -1.24    -0.616 OA 
+DOCKED: HETATM   17  O1B ADP A 999       8.983  12.494   9.155 -0.60 -1.71    -0.616 OA 
+DOCKED: ENDBRANCH  13  14
+DOCKED: ENDBRANCH  10  13
+DOCKED: ENDBRANCH   9  10
+DOCKED: ENDBRANCH   8   9
+DOCKED: ENDBRANCH   1   8
+DOCKED: BRANCH   7  18
+DOCKED: HETATM   18  N9  ADP A 999      14.490  14.221   5.886 +0.01 -0.32    -0.270 N  
+DOCKED: HETATM   19  C4  ADP A 999      13.204  14.016   5.431 +0.04 +0.21    +0.170 A  
+DOCKED: HETATM   20  N3  ADP A 999      12.124  13.625   6.147 -0.01 -0.33    -0.205 NA 
+DOCKED: HETATM   21  C5  ADP A 999      13.239  14.300   4.063 +0.05 +0.15    +0.155 A  
+DOCKED: HETATM   22  C2  ADP A 999      11.029  13.534   5.364 +0.04 +0.28    +0.202 A  
+DOCKED: HETATM   23  N1  ADP A 999      10.913  13.775   4.037 -0.04 -0.22    -0.202 NA 
+DOCKED: HETATM   24  C6  ADP A 999      12.021  14.168   3.347 +0.03 +0.20    +0.206 A  
+DOCKED: HETATM   25  N6  ADP A 999      11.910  14.409   2.038 -0.02 -0.11    -0.125 N  
+DOCKED: HETATM   26  N7  ADP A 999      14.517  14.668   3.670 +0.04 -0.19    -0.219 NA 
+DOCKED: HETATM   27  C8  ADP A 999      15.220  14.609   4.780 +0.01 +0.15    +0.182 A  
+DOCKED: ENDBRANCH   7  18
+DOCKED: TORSDOF 6
+DOCKED: TER
+DOCKED: ENDMDL
+________________________________________________________________________________
+
+
+    FINAL DOCKED STATE:
+    ________________________
+
+
+Run:   10 / 10
+Time taken for this run:   2.382s
+
+DOCKED: MODEL        10
+DOCKED: USER    Run = 10
+DOCKED: USER
+DOCKED: USER    Estimated Free Energy of Binding    =  -9.61 kcal/mol  [=(1)+(2)+(3)-(4)]
+DOCKED: USER
+DOCKED: USER    (1) Final Intermolecular Energy     = -11.40 kcal/mol
+DOCKED: USER        vdW + Hbond + desolv Energy     =  -4.65 kcal/mol
+DOCKED: USER        Electrostatic Energy            =  -6.75 kcal/mol
+DOCKED: USER        Moving Ligand-Fixed Receptor    = -11.40 kcal/mol
+DOCKED: USER        Moving Ligand-Moving Receptor   =  +0.00 kcal/mol
+DOCKED: USER    (2) Final Total Internal Energy     =  +0.23 kcal/mol
+DOCKED: USER    (3) Torsional Free Energy           =  +1.79 kcal/mol
+DOCKED: USER    (4) Unbound System's Energy         =  +0.23 kcal/mol
+DOCKED: USER
+DOCKED: USER
+DOCKED: REMARK  6 active torsions:
+DOCKED: REMARK  status: ('A' for Active; 'I' for Inactive)
+DOCKED: REMARK    1  A    between atoms: PB_1091  and  O3A_1098 
+DOCKED: REMARK    2  A    between atoms: PA_1095  and  O5'_1099 
+DOCKED: REMARK    3  A    between atoms: PA_1095  and  O3A_1098 
+DOCKED: REMARK    4  A    between atoms: O5'_1099  and  C5'_1100 
+DOCKED: REMARK    5  A    between atoms: C5'_1100  and  C4'_1101 
+DOCKED: REMARK    6  A    between atoms: C1'_1107  and  N9_1108 
+DOCKED: USER                              x       y       z     vdW  Elec       q    Type
+DOCKED: USER                           _______ _______ _______ _____ _____    ______ ____
+DOCKED: ROOT
+DOCKED: HETATM    1  C4' ADP A 999      10.274  14.937   5.934 +0.03 +0.23    +0.181 C  
+DOCKED: HETATM    2  O4' ADP A 999      11.016  14.806   4.688 +0.02 -0.36    -0.331 OA 
+DOCKED: HETATM    3  C3' ADP A 999       9.360  13.714   6.022 -0.02 +0.37    +0.216 C  
+DOCKED: HETATM    4  O3' ADP A 999       8.059  13.992   5.497 -0.40 -0.40    -0.218 OA 
+DOCKED: HETATM    5  C2' ADP A 999      10.078  12.689   5.152 +0.16 +0.35    +0.234 C  
+DOCKED: HETATM    6  O2' ADP A 999       9.184  11.730   4.615 -0.84 -0.38    -0.216 OA 
+DOCKED: HETATM    7  C1' ADP A 999      10.692  13.576   4.062 -0.04 +0.27    +0.241 C  
+DOCKED: ENDROOT
+DOCKED: BRANCH   1   8
+DOCKED: HETATM    8  C5' ADP A 999      11.250  15.119   7.081 +0.06 +0.26    +0.187 C  
+DOCKED: BRANCH   8   9
+DOCKED: HETATM    9  O5' ADP A 999      11.447  13.868   7.780 -0.00 -0.53    -0.268 OA 
+DOCKED: BRANCH   9  10
+DOCKED: HETATM   10  PA  ADP A 999      12.309  13.796   9.163 +0.13 +0.95    +0.419 P  
+DOCKED: HETATM   11  O2A ADP A 999      12.745  15.219   9.463 +0.13 -1.12    -0.624 OA 
+DOCKED: HETATM   12  O1A ADP A 999      13.488  12.879   8.873 -0.29 -2.02    -0.624 OA 
+DOCKED: BRANCH  10  13
+DOCKED: HETATM   13  O3A ADP A 999      11.372  13.255  10.243 -0.61 -0.41    -0.173 OA 
+DOCKED: BRANCH  13  14
+DOCKED: HETATM   14  PB  ADP A 999       9.919  13.474  10.631 -0.09 +1.07    +0.431 P  
+DOCKED: HETATM   15  O3B ADP A 999       9.702  12.871  12.006 -0.78 -1.57    -0.616 OA 
+DOCKED: HETATM   16  O2B ADP A 999       9.586  14.952  10.633 -0.31 -1.57    -0.616 OA 
+DOCKED: HETATM   17  O1B ADP A 999       9.021  12.766   9.632 -0.64 -1.77    -0.616 OA 
+DOCKED: ENDBRANCH  13  14
+DOCKED: ENDBRANCH  10  13
+DOCKED: ENDBRANCH   9  10
+DOCKED: ENDBRANCH   8   9
+DOCKED: ENDBRANCH   1   8
+DOCKED: BRANCH   7  18
+DOCKED: HETATM   18  N9  ADP A 999      11.925  13.034   3.473 -0.05 -0.28    -0.270 N  
+DOCKED: HETATM   19  C4  ADP A 999      12.949  12.383   4.129 +0.03 +0.19    +0.170 A  
+DOCKED: HETATM   20  N3  ADP A 999      13.041  12.106   5.451 -0.08 -0.33    -0.205 NA 
+DOCKED: HETATM   21  C5  ADP A 999      13.884  12.063   3.143 -0.08 +0.19    +0.155 A  
+DOCKED: HETATM   22  C2  ADP A 999      14.187  11.452   5.730 -0.13 +0.40    +0.202 A  
+DOCKED: HETATM   23  N1  ADP A 999      15.177  11.077   4.887 -0.42 -0.35    -0.202 NA 
+DOCKED: HETATM   24  C6  ADP A 999      15.052  11.373   3.562 -0.12 +0.29    +0.206 A  
+DOCKED: HETATM   25  N6  ADP A 999      16.026  11.003   2.726 -0.21 -0.18    -0.125 N  
+DOCKED: HETATM   26  N7  ADP A 999      13.461  12.506   1.899 -0.09 -0.25    -0.219 NA 
+DOCKED: HETATM   27  C8  ADP A 999      12.297  13.071   2.144 -0.02 +0.18    +0.182 A  
+DOCKED: ENDBRANCH   7  18
+DOCKED: TORSDOF 6
+DOCKED: TER
+DOCKED: ENDMDL
+________________________________________________________________________________
+
+
+    CLUSTERING HISTOGRAM
+    ____________________
+
+
+________________________________________________________________________________
+     |           |     |           |     |
+Clus | Lowest    | Run | Mean      | Num | Histogram
+-ter | Binding   |     | Binding   | in  |
+Rank | Energy    |     | Energy    | Clus|    5    10   15   20   25   30   35
+_____|___________|_____|___________|_____|____:____|____:____|____:____|____:___
+   1 |    -10.22 |   6 |    -10.22 |   1 |#
+   2 |     -9.61 |  10 |     -9.56 |   6 |######
+   3 |     -9.20 |   7 |     -9.20 |   1 |#
+   4 |     -9.17 |   9 |     -9.17 |   1 |#
+   5 |     -8.99 |   8 |     -8.99 |   1 |#
+_____|___________|_____|___________|_____|______________________________________
+
+
+    RMSD TABLE
+    __________
+
+
+_______________________________________________________________________
+     |      |      |           |         |                 |
+Rank | Sub- | Run  | Binding   | Cluster | Reference       | Grep
+     | Rank |      | Energy    | RMSD    | RMSD            | Pattern
+_____|______|______|___________|_________|_________________|___________
+   1      1      6      -10.22      0.00      3.74           RANKING
+   2      1     10       -9.61      0.00      2.28           RANKING
+   2      2      3       -9.60      0.06      2.30           RANKING
+   2      3      1       -9.59      0.07      2.30           RANKING
+   2      4      5       -9.53      0.13      2.32           RANKING
+   2      5      4       -9.53      0.12      2.30           RANKING
+   2      6      2       -9.52      1.11      2.08           RANKING
+   3      1      7       -9.20      0.00      3.27           RANKING
+   4      1      9       -9.17      0.00      3.42           RANKING
+   5      1      8       -8.99      0.00      3.46           RANKING
+
+Run time 24.259 sec
+Idle time 1.375 sec

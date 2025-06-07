@@ -4,6 +4,7 @@ import pandas as pd
 
 def download_pdb_files(csv_file, folder_pdb, folder_ent):
     """Pobiera pliki PDB na podstawie ID z pliku CSV."""
+	
     # Wczytanie pliku CSV
     df = pd.read_csv(csv_file)
     
@@ -13,7 +14,7 @@ def download_pdb_files(csv_file, folder_pdb, folder_ent):
     
     # Tworzenie folderow na pliki
     os.makedirs(folder_pdb, exist_ok=True)
-    os.makedirs(folder_ent, exist_ok=True)
+    # os.makedirs(folder_ent, exist_ok=True)
 
     base_url = "https://files.rcsb.org/download/{}.pdb"
     missing_files = []
@@ -23,9 +24,9 @@ def download_pdb_files(csv_file, folder_pdb, folder_ent):
 
 
         pdb_path = os.path.join(folder_pdb, f"{pdb_id_clean}.pdb")
-        ent_path = os.path.join(folder_ent, f"{pdb_id_clean}.entOrg")
+        # ent_path = os.path.join(folder_ent, f"{pdb_id_clean}.entOrg")
 
-        #Pobieranie plikow pdb
+        # Pobieranie plikow pdb
         try:
             response = requests.get(base_url.format(pdb_id_clean), timeout=10)
             if response.status_code == 200: # Działa
@@ -33,10 +34,10 @@ def download_pdb_files(csv_file, folder_pdb, folder_ent):
                     f.write(response.content)
                 print(f"Pobrano: {pdb_id_clean}.pdb")
 
-                #Skopiowanie pliku z rozszerzeniem .ent
-                with open (ent_path, "wb") as f:
-                    f.write(response.content)
-                print(f"Zapisano jako: pdb{pdb_id_clean}.entOrg")
+               # Skopiowanie pliku z rozszerzeniem .ent
+               # with open (ent_path, "wb") as f:
+               #    f.write(response.content)
+               # print(f"Zapisano jako: pdb{pdb_id_clean}.entOrg")
             else:
                 print(f"Nie udało się pobrać: {pdb_id_clean}")
                 missing_files.append(pdb_id_clean)

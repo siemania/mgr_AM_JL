@@ -1,0 +1,992 @@
+AutoDock-GPU version: v1.6-7-ga46ab564d2ac5f1a1523f65239b43505a1c29364
+
+**********************************************************
+**    AutoDock-GPU AUTODOCKTOOLS-COMPATIBLE DLG FILE    **
+**********************************************************
+
+
+    DOCKING PARAMETERS
+    ________________________
+
+
+Ligand file:                               pdbqt_files/1ie9_ligand.pdbqt
+Grid fld file:                             map_grid_files/1ie9_receptor.maps.fld
+
+Random seed:                               1749308310, 864
+Number of runs:                            10
+Number of energy evaluations:              2068966
+Number of generations:                     42000
+Size of population:                        150
+Rate of crossover:                         80.000000%
+Tournament selection probability limit:    60.000000%
+Rate of mutation:                          2.000000%
+Maximal allowed delta movement:            +/- 6.000000A
+Maximal allowed delta angle:               +/- 90.000000
+
+Rate of local search:                      100.000000%
+Maximal number of local search iterations: 300
+Rho lower bound:                           0.010000
+Spread of local search delta movement:     2.000000A
+Spread of local search delta angle:        74.999999
+Limit of consecutive successes/failures:   4
+
+Handle symmetry during clustering:         YES
+RMSD tolerance:                            2.000000A
+
+Program call in command line was:          /home/tajgero/AutoDock-GPU/bin/autodock_gpu_128wi --lfile pdbqt_files/1ie9_ligand.pdbqt --ffile map_grid_files/1ie9_receptor.maps.fld --nrun 10 
+
+
+    GRID PARAMETERS
+    ________________________
+
+
+Receptor name:                             pdbqt_files/1ie9_receptor
+Number of grid points (x, y, z):           41, 41, 41
+Grid center (x, y, z):                     11.512000, 22.380000, 34.236000A
+Grid size (x, y, z):                       15.000000, 15.000000, 15.000000A
+Grid spacing:                              0.375000A
+
+
+    LIGAND PARAMETERS
+    ________________________
+
+
+Ligand name:                               pdbqt_files/1ie9_ligand
+Number of atoms:                           30
+Number of rotatable bonds:                 6
+Number of atom types:                      2
+
+
+    DUMMY DATA (only for ADT-compatibility)
+    ________________________
+
+
+DPF> outlev 1
+DPF> ga_run 10
+DPF> fld map_grid_files/1ie9_receptor.maps.fld
+DPF> move pdbqt_files/1ie9_ligand.pdbqt
+
+
+    COUNTER STATES
+    ________________________
+
+
+Number of energy evaluations performed:    564726
+Number of generations used:                50
+
+
+    INPUT LIGAND PDBQT FILE:
+    ________________________
+
+
+INPUT-LIGAND-PDBQT: REMARK  6 active torsions:
+INPUT-LIGAND-PDBQT: REMARK  status: ('A' for Active; 'I' for Inactive)
+INPUT-LIGAND-PDBQT: REMARK    1  A    between atoms: C6_2030  and  C7_2031 
+INPUT-LIGAND-PDBQT: REMARK    2  A    between atoms: C17_2041  and  C20_2044 
+INPUT-LIGAND-PDBQT: REMARK    3  A    between atoms: C20_2044  and  C22_2046 
+INPUT-LIGAND-PDBQT: REMARK    4  A    between atoms: C22_2046  and  C23_2047 
+INPUT-LIGAND-PDBQT: REMARK    5  A    between atoms: C23_2047  and  C24_2048 
+INPUT-LIGAND-PDBQT: REMARK    6  A    between atoms: C24_2048  and  C25_2049 
+INPUT-LIGAND-PDBQT: ROOT
+INPUT-LIGAND-PDBQT: HETATM    1  C7  VDX A 500      14.099  21.638  34.165  1.00  9.93    -0.009 C 
+INPUT-LIGAND-PDBQT: HETATM    2  C8  VDX A 500      13.842  22.860  33.681  1.00 11.39    -0.044 C 
+INPUT-LIGAND-PDBQT: HETATM    3  C9  VDX A 500      14.192  23.306  32.270  1.00 11.52     0.022 C 
+INPUT-LIGAND-PDBQT: HETATM    4  C11 VDX A 500      12.874  23.678  31.558  1.00 11.31     0.004 C 
+INPUT-LIGAND-PDBQT: HETATM    5  C12 VDX A 500      12.028  24.667  32.405  1.00 11.49     0.001 C 
+INPUT-LIGAND-PDBQT: HETATM    6  C13 VDX A 500      11.740  24.192  33.856  1.00 11.85     0.003 C 
+INPUT-LIGAND-PDBQT: HETATM    7  C14 VDX A 500      13.163  23.919  34.480  1.00 11.40     0.018 C 
+INPUT-LIGAND-PDBQT: HETATM    8  C15 VDX A 500      12.945  23.750  35.973  1.00 11.93     0.004 C 
+INPUT-LIGAND-PDBQT: HETATM    9  C16 VDX A 500      11.772  24.736  36.194  1.00 11.85     0.000 C 
+INPUT-LIGAND-PDBQT: HETATM   10  C17 VDX A 500      11.250  25.282  34.834  1.00 13.05     0.000 C 
+INPUT-LIGAND-PDBQT: HETATM   11  C18 VDX A 500      10.841  22.917  33.890  1.00 12.46     0.000 C 
+INPUT-LIGAND-PDBQT: ENDROOT
+INPUT-LIGAND-PDBQT: BRANCH   1  12
+INPUT-LIGAND-PDBQT: HETATM   12  C6  VDX A 500      14.702  20.472  33.495  1.00 10.13    -0.005 C 
+INPUT-LIGAND-PDBQT: HETATM   13  C5  VDX A 500      14.554  19.161  33.787  1.00  9.33    -0.021 C 
+INPUT-LIGAND-PDBQT: HETATM   14  C4  VDX A 500      15.364  18.164  33.005  1.00  9.38     0.059 C 
+INPUT-LIGAND-PDBQT: HETATM   15  C10 VDX A 500      13.612  18.575  34.762  1.00 10.74     0.004 C 
+INPUT-LIGAND-PDBQT: HETATM   16  C3  VDX A 500      15.977  17.002  33.797  1.00  8.83     0.159 C 
+INPUT-LIGAND-PDBQT: HETATM   17  O2  VDX A 500      16.980  17.510  34.653  1.00  9.22    -0.223 OA
+INPUT-LIGAND-PDBQT: HETATM   18  C2  VDX A 500      14.885  16.326  34.678  1.00  8.95     0.071 C 
+INPUT-LIGAND-PDBQT: HETATM   19  C1  VDX A 500      14.190  17.407  35.534  1.00  9.73     0.177 C 
+INPUT-LIGAND-PDBQT: HETATM   20  O1  VDX A 500      13.227  16.863  36.406  1.00 11.22    -0.218 OA
+INPUT-LIGAND-PDBQT: HETATM   21  C19 VDX A 500      12.296  18.962  34.840  1.00 13.87    -0.002 C 
+INPUT-LIGAND-PDBQT: ENDBRANCH   1  12
+INPUT-LIGAND-PDBQT: BRANCH  10  22
+INPUT-LIGAND-PDBQT: HETATM   22  C20 VDX A 500       9.723  25.538  34.911  1.00 16.30     0.000 C 
+INPUT-LIGAND-PDBQT: HETATM   23  C21 VDX A 500       9.428  26.518  36.102  1.00 17.76     0.000 C 
+INPUT-LIGAND-PDBQT: BRANCH  22  24
+INPUT-LIGAND-PDBQT: HETATM   24  C22 VDX A 500       9.060  25.897  33.616  1.00 18.87     0.000 C 
+INPUT-LIGAND-PDBQT: BRANCH  24  25
+INPUT-LIGAND-PDBQT: HETATM   25  C23 VDX A 500       7.492  26.095  33.805  1.00 17.23     0.003 C 
+INPUT-LIGAND-PDBQT: BRANCH  25  26
+INPUT-LIGAND-PDBQT: HETATM   26  C24 VDX A 500       6.573  24.962  34.205  1.00 16.41     0.030 C 
+INPUT-LIGAND-PDBQT: BRANCH  26  27
+INPUT-LIGAND-PDBQT: HETATM   27  C25 VDX A 500       5.044  25.215  34.062  1.00 14.88     0.127 C 
+INPUT-LIGAND-PDBQT: HETATM   28  C27 VDX A 500       4.248  24.053  34.666  1.00 16.36     0.033 C 
+INPUT-LIGAND-PDBQT: HETATM   29  C26 VDX A 500       4.647  25.418  32.628  1.00 15.49     0.033 C 
+INPUT-LIGAND-PDBQT: HETATM   30  O3  VDX A 500       4.603  26.309  34.834  1.00 14.33    -0.226 OA
+INPUT-LIGAND-PDBQT: ENDBRANCH  26  27
+INPUT-LIGAND-PDBQT: ENDBRANCH  25  26
+INPUT-LIGAND-PDBQT: ENDBRANCH  24  25
+INPUT-LIGAND-PDBQT: ENDBRANCH  22  24
+INPUT-LIGAND-PDBQT: ENDBRANCH  10  22
+INPUT-LIGAND-PDBQT: TORSDOF 6
+
+
+    FINAL DOCKED STATE:
+    ________________________
+
+
+Run:   1 / 10
+Time taken for this run:   1.390s
+
+DOCKED: MODEL        1
+DOCKED: USER    Run = 1
+DOCKED: USER
+DOCKED: USER    Estimated Free Energy of Binding    = -11.87 kcal/mol  [=(1)+(2)+(3)-(4)]
+DOCKED: USER
+DOCKED: USER    (1) Final Intermolecular Energy     = -13.66 kcal/mol
+DOCKED: USER        vdW + Hbond + desolv Energy     = -13.18 kcal/mol
+DOCKED: USER        Electrostatic Energy            =  -0.48 kcal/mol
+DOCKED: USER        Moving Ligand-Fixed Receptor    = -13.66 kcal/mol
+DOCKED: USER        Moving Ligand-Moving Receptor   =  +0.00 kcal/mol
+DOCKED: USER    (2) Final Total Internal Energy     =  -1.40 kcal/mol
+DOCKED: USER    (3) Torsional Free Energy           =  +1.79 kcal/mol
+DOCKED: USER    (4) Unbound System's Energy         =  -1.40 kcal/mol
+DOCKED: USER
+DOCKED: USER
+DOCKED: REMARK  6 active torsions:
+DOCKED: REMARK  status: ('A' for Active; 'I' for Inactive)
+DOCKED: REMARK    1  A    between atoms: C6_2030  and  C7_2031 
+DOCKED: REMARK    2  A    between atoms: C17_2041  and  C20_2044 
+DOCKED: REMARK    3  A    between atoms: C20_2044  and  C22_2046 
+DOCKED: REMARK    4  A    between atoms: C22_2046  and  C23_2047 
+DOCKED: REMARK    5  A    between atoms: C23_2047  and  C24_2048 
+DOCKED: REMARK    6  A    between atoms: C24_2048  and  C25_2049 
+DOCKED: USER                              x       y       z     vdW  Elec       q    Type
+DOCKED: USER                           _______ _______ _______ _____ _____    ______ ____
+DOCKED: ROOT
+DOCKED: HETATM    1  C7  VDX A 500      14.255  21.574  34.037 -0.41 -0.00    -0.009 C  
+DOCKED: HETATM    2  C8  VDX A 500      13.945  22.669  33.330 -0.42 -0.01    -0.044 C  
+DOCKED: HETATM    3  C9  VDX A 500      14.247  22.837  31.849 -0.51 +0.01    +0.022 C  
+DOCKED: HETATM    4  C11 VDX A 500      12.901  23.022  31.116 -0.47 +0.00    +0.004 C  
+DOCKED: HETATM    5  C12 VDX A 500      12.041  24.134  31.777 -0.41 +0.00    +0.001 C  
+DOCKED: HETATM    6  C13 VDX A 500      11.803  23.947  33.301 -0.31 +0.00    +0.003 C  
+DOCKED: HETATM    7  C14 VDX A 500      13.248  23.844  33.924 -0.40 +0.01    +0.018 C  
+DOCKED: HETATM    8  C15 VDX A 500      13.071  23.967  35.427 -0.43 +0.00    +0.004 C  
+DOCKED: HETATM    9  C16 VDX A 500      11.869  24.942  35.484 -0.34 +0.00    +0.000 C  
+DOCKED: HETATM   10  C17 VDX A 500      11.298  25.193  34.059 -0.29 +0.00    +0.000 C  
+DOCKED: HETATM   11  C18 VDX A 500      10.950  22.678  33.611 -0.33 +0.00    +0.000 C  
+DOCKED: ENDROOT
+DOCKED: BRANCH   1  12
+DOCKED: HETATM   12  C6  VDX A 500      14.883  20.317  33.592 -0.45 -0.00    -0.005 C  
+DOCKED: HETATM   13  C5  VDX A 500      14.672  19.062  34.046 -0.40 -0.01    -0.021 C  
+DOCKED: HETATM   14  C4  VDX A 500      15.521  17.954  33.486 -0.47 +0.03    +0.059 C  
+DOCKED: HETATM   15  C10 VDX A 500      13.630  18.632  35.000 -0.41 +0.00    +0.004 C  
+DOCKED: HETATM   16  C3  VDX A 500      16.027  16.904  34.484 -0.39 +0.10    +0.159 C  
+DOCKED: HETATM   17  O2  VDX A 500      16.963  17.510  35.352 -0.83 -0.24    -0.223 OA 
+DOCKED: HETATM   18  C2  VDX A 500      14.841  16.374  35.344 -0.43 +0.06    +0.071 C  
+DOCKED: HETATM   19  C1  VDX A 500      14.103  17.574  35.975 -0.32 +0.15    +0.177 C  
+DOCKED: HETATM   20  O1  VDX A 500      13.051  17.172  36.820 -0.91 -0.29    -0.218 OA 
+DOCKED: HETATM   21  C19 VDX A 500      12.324  19.047  34.902 -0.43 -0.00    -0.002 C  
+DOCKED: ENDBRANCH   1  12
+DOCKED: BRANCH  10  22
+DOCKED: HETATM   22  C20 VDX A 500       9.765  25.415  34.129 -0.26 +0.00    +0.000 C  
+DOCKED: HETATM   23  C21 VDX A 500       9.465  26.615  35.096 -0.34 +0.00    +0.000 C  
+DOCKED: BRANCH  22  24
+DOCKED: HETATM   24  C22 VDX A 500       9.058  25.472  32.809 -0.31 +0.00    +0.000 C  
+DOCKED: BRANCH  24  25
+DOCKED: HETATM   25  C23 VDX A 500       7.620  24.797  32.894 -0.32 +0.00    +0.003 C  
+DOCKED: BRANCH  25  26
+DOCKED: HETATM   26  C24 VDX A 500       6.890  24.603  34.204 -0.30 +0.03    +0.030 C  
+DOCKED: BRANCH  26  27
+DOCKED: HETATM   27  C25 VDX A 500       5.334  24.588  34.146 -0.28 +0.14    +0.127 C  
+DOCKED: HETATM   28  C27 VDX A 500       4.769  23.558  35.130 -0.44 +0.03    +0.033 C  
+DOCKED: HETATM   29  C26 VDX A 500       4.834  24.301  32.759 -0.41 +0.02    +0.033 C  
+DOCKED: HETATM   30  O3  VDX A 500       4.764  25.790  34.614 -1.14 -0.49    -0.226 OA 
+DOCKED: ENDBRANCH  26  27
+DOCKED: ENDBRANCH  25  26
+DOCKED: ENDBRANCH  24  25
+DOCKED: ENDBRANCH  22  24
+DOCKED: ENDBRANCH  10  22
+DOCKED: TORSDOF 6
+DOCKED: TER
+DOCKED: ENDMDL
+________________________________________________________________________________
+
+
+    FINAL DOCKED STATE:
+    ________________________
+
+
+Run:   2 / 10
+Time taken for this run:   1.390s
+
+DOCKED: MODEL        2
+DOCKED: USER    Run = 2
+DOCKED: USER
+DOCKED: USER    Estimated Free Energy of Binding    = -11.77 kcal/mol  [=(1)+(2)+(3)-(4)]
+DOCKED: USER
+DOCKED: USER    (1) Final Intermolecular Energy     = -13.56 kcal/mol
+DOCKED: USER        vdW + Hbond + desolv Energy     = -13.06 kcal/mol
+DOCKED: USER        Electrostatic Energy            =  -0.50 kcal/mol
+DOCKED: USER        Moving Ligand-Fixed Receptor    = -13.56 kcal/mol
+DOCKED: USER        Moving Ligand-Moving Receptor   =  +0.00 kcal/mol
+DOCKED: USER    (2) Final Total Internal Energy     =  -1.50 kcal/mol
+DOCKED: USER    (3) Torsional Free Energy           =  +1.79 kcal/mol
+DOCKED: USER    (4) Unbound System's Energy         =  -1.50 kcal/mol
+DOCKED: USER
+DOCKED: USER
+DOCKED: REMARK  6 active torsions:
+DOCKED: REMARK  status: ('A' for Active; 'I' for Inactive)
+DOCKED: REMARK    1  A    between atoms: C6_2030  and  C7_2031 
+DOCKED: REMARK    2  A    between atoms: C17_2041  and  C20_2044 
+DOCKED: REMARK    3  A    between atoms: C20_2044  and  C22_2046 
+DOCKED: REMARK    4  A    between atoms: C22_2046  and  C23_2047 
+DOCKED: REMARK    5  A    between atoms: C23_2047  and  C24_2048 
+DOCKED: REMARK    6  A    between atoms: C24_2048  and  C25_2049 
+DOCKED: USER                              x       y       z     vdW  Elec       q    Type
+DOCKED: USER                           _______ _______ _______ _____ _____    ______ ____
+DOCKED: ROOT
+DOCKED: HETATM    1  C7  VDX A 500      14.301  21.621  34.063 -0.41 -0.00    -0.009 C  
+DOCKED: HETATM    2  C8  VDX A 500      13.896  22.683  33.354 -0.42 -0.01    -0.044 C  
+DOCKED: HETATM    3  C9  VDX A 500      14.096  22.830  31.854 -0.51 +0.01    +0.022 C  
+DOCKED: HETATM    4  C11 VDX A 500      12.699  22.935  31.206 -0.45 +0.00    +0.004 C  
+DOCKED: HETATM    5  C12 VDX A 500      11.830  24.022  31.896 -0.39 +0.00    +0.001 C  
+DOCKED: HETATM    6  C13 VDX A 500      11.698  23.860  33.436 -0.30 +0.00    +0.003 C  
+DOCKED: HETATM    7  C14 VDX A 500      13.183  23.839  33.967 -0.39 +0.01    +0.018 C  
+DOCKED: HETATM    8  C15 VDX A 500      13.095  23.990  35.476 -0.43 +0.00    +0.004 C  
+DOCKED: HETATM    9  C16 VDX A 500      11.855  24.910  35.589 -0.35 +0.00    +0.000 C  
+DOCKED: HETATM   10  C17 VDX A 500      11.183  25.100  34.198 -0.28 +0.00    +0.000 C  
+DOCKED: HETATM   11  C18 VDX A 500      10.927  22.561  33.827 -0.33 +0.00    +0.000 C  
+DOCKED: ENDROOT
+DOCKED: BRANCH   1  12
+DOCKED: HETATM   12  C6  VDX A 500      14.959  20.384  33.605 -0.45 -0.00    -0.005 C  
+DOCKED: HETATM   13  C5  VDX A 500      14.742  19.114  34.011 -0.41 -0.01    -0.021 C  
+DOCKED: HETATM   14  C4  VDX A 500      15.623  18.030  33.453 -0.47 +0.04    +0.059 C  
+DOCKED: HETATM   15  C10 VDX A 500      13.666  18.645  34.909 -0.41 +0.00    +0.004 C  
+DOCKED: HETATM   16  C3  VDX A 500      16.098  16.954  34.437 -0.38 +0.10    +0.159 C  
+DOCKED: HETATM   17  O2  VDX A 500      16.993  17.541  35.360 -0.84 -0.25    -0.223 OA 
+DOCKED: HETATM   18  C2  VDX A 500      14.885  16.388  35.232 -0.44 +0.05    +0.071 C  
+DOCKED: HETATM   19  C1  VDX A 500      14.110  17.561  35.869 -0.32 +0.15    +0.177 C  
+DOCKED: HETATM   20  O1  VDX A 500      13.028  17.124  36.658 -0.91 -0.29    -0.218 OA 
+DOCKED: HETATM   21  C19 VDX A 500      12.361  19.052  34.770 -0.42 -0.00    -0.002 C  
+DOCKED: ENDBRANCH   1  12
+DOCKED: BRANCH  10  22
+DOCKED: HETATM   22  C20 VDX A 500       9.649  25.252  34.362 -0.26 +0.00    +0.000 C  
+DOCKED: HETATM   23  C21 VDX A 500       9.357  26.305  35.489 -0.34 +0.00    +0.000 C  
+DOCKED: BRANCH  22  24
+DOCKED: HETATM   24  C22 VDX A 500       8.879  25.453  33.092 -0.29 +0.00    +0.000 C  
+DOCKED: BRANCH  24  25
+DOCKED: HETATM   25  C23 VDX A 500       7.670  24.424  32.980 -0.32 +0.00    +0.003 C  
+DOCKED: BRANCH  25  26
+DOCKED: HETATM   26  C24 VDX A 500       6.229  24.873  32.881 -0.34 +0.02    +0.030 C  
+DOCKED: BRANCH  26  27
+DOCKED: HETATM   27  C25 VDX A 500       5.346  24.682  34.148 -0.28 +0.14    +0.127 C  
+DOCKED: HETATM   28  C27 VDX A 500       6.204  24.249  35.342 -0.36 +0.04    +0.033 C  
+DOCKED: HETATM   29  C26 VDX A 500       4.250  23.681  33.915 -0.44 +0.02    +0.033 C  
+DOCKED: HETATM   30  O3  VDX A 500       4.790  25.893  34.607 -1.13 -0.52    -0.226 OA 
+DOCKED: ENDBRANCH  26  27
+DOCKED: ENDBRANCH  25  26
+DOCKED: ENDBRANCH  24  25
+DOCKED: ENDBRANCH  22  24
+DOCKED: ENDBRANCH  10  22
+DOCKED: TORSDOF 6
+DOCKED: TER
+DOCKED: ENDMDL
+________________________________________________________________________________
+
+
+    FINAL DOCKED STATE:
+    ________________________
+
+
+Run:   3 / 10
+Time taken for this run:   1.390s
+
+DOCKED: MODEL        3
+DOCKED: USER    Run = 3
+DOCKED: USER
+DOCKED: USER    Estimated Free Energy of Binding    = -11.91 kcal/mol  [=(1)+(2)+(3)-(4)]
+DOCKED: USER
+DOCKED: USER    (1) Final Intermolecular Energy     = -13.70 kcal/mol
+DOCKED: USER        vdW + Hbond + desolv Energy     = -13.21 kcal/mol
+DOCKED: USER        Electrostatic Energy            =  -0.49 kcal/mol
+DOCKED: USER        Moving Ligand-Fixed Receptor    = -13.70 kcal/mol
+DOCKED: USER        Moving Ligand-Moving Receptor   =  +0.00 kcal/mol
+DOCKED: USER    (2) Final Total Internal Energy     =  -1.35 kcal/mol
+DOCKED: USER    (3) Torsional Free Energy           =  +1.79 kcal/mol
+DOCKED: USER    (4) Unbound System's Energy         =  -1.35 kcal/mol
+DOCKED: USER
+DOCKED: USER
+DOCKED: REMARK  6 active torsions:
+DOCKED: REMARK  status: ('A' for Active; 'I' for Inactive)
+DOCKED: REMARK    1  A    between atoms: C6_2030  and  C7_2031 
+DOCKED: REMARK    2  A    between atoms: C17_2041  and  C20_2044 
+DOCKED: REMARK    3  A    between atoms: C20_2044  and  C22_2046 
+DOCKED: REMARK    4  A    between atoms: C22_2046  and  C23_2047 
+DOCKED: REMARK    5  A    between atoms: C23_2047  and  C24_2048 
+DOCKED: REMARK    6  A    between atoms: C24_2048  and  C25_2049 
+DOCKED: USER                              x       y       z     vdW  Elec       q    Type
+DOCKED: USER                           _______ _______ _______ _____ _____    ______ ____
+DOCKED: ROOT
+DOCKED: HETATM    1  C7  VDX A 500      14.240  21.551  33.999 -0.42 -0.00    -0.009 C  
+DOCKED: HETATM    2  C8  VDX A 500      13.958  22.655  33.294 -0.42 -0.01    -0.044 C  
+DOCKED: HETATM    3  C9  VDX A 500      14.320  22.843  31.829 -0.50 +0.01    +0.022 C  
+DOCKED: HETATM    4  C11 VDX A 500      13.005  23.038  31.046 -0.48 +0.00    +0.004 C  
+DOCKED: HETATM    5  C12 VDX A 500      12.118  24.140  31.685 -0.41 +0.00    +0.001 C  
+DOCKED: HETATM    6  C13 VDX A 500      11.818  23.933  33.195 -0.32 +0.00    +0.003 C  
+DOCKED: HETATM    7  C14 VDX A 500      13.237  23.822  33.876 -0.40 +0.01    +0.018 C  
+DOCKED: HETATM    8  C15 VDX A 500      12.998  23.925  35.372 -0.42 +0.00    +0.004 C  
+DOCKED: HETATM    9  C16 VDX A 500      11.795  24.900  35.393 -0.33 +0.00    +0.000 C  
+DOCKED: HETATM   10  C17 VDX A 500      11.282  25.169  33.949 -0.29 +0.00    +0.000 C  
+DOCKED: HETATM   11  C18 VDX A 500      10.954  22.660  33.454 -0.34 +0.00    +0.000 C  
+DOCKED: ENDROOT
+DOCKED: BRANCH   1  12
+DOCKED: HETATM   12  C6  VDX A 500      14.886  20.300  33.563 -0.45 -0.00    -0.005 C  
+DOCKED: HETATM   13  C5  VDX A 500      14.678  19.043  34.011 -0.41 -0.01    -0.021 C  
+DOCKED: HETATM   14  C4  VDX A 500      15.545  17.942  33.466 -0.47 +0.03    +0.059 C  
+DOCKED: HETATM   15  C10 VDX A 500      13.623  18.602  34.947 -0.41 +0.00    +0.004 C  
+DOCKED: HETATM   16  C3  VDX A 500      16.043  16.895  34.470 -0.39 +0.10    +0.159 C  
+DOCKED: HETATM   17  O2  VDX A 500      16.958  17.508  35.355 -0.83 -0.24    -0.223 OA 
+DOCKED: HETATM   18  C2  VDX A 500      14.847  16.354  35.308 -0.43 +0.05    +0.071 C  
+DOCKED: HETATM   19  C1  VDX A 500      14.088  17.547  35.928 -0.32 +0.15    +0.177 C  
+DOCKED: HETATM   20  O1  VDX A 500      13.024  17.134  36.754 -0.93 -0.29    -0.218 OA 
+DOCKED: HETATM   21  C19 VDX A 500      12.315  19.006  34.826 -0.42 -0.00    -0.002 C  
+DOCKED: ENDBRANCH   1  12
+DOCKED: BRANCH  10  22
+DOCKED: HETATM   22  C20 VDX A 500       9.747  25.389  33.960 -0.26 +0.00    +0.000 C  
+DOCKED: HETATM   23  C21 VDX A 500       9.421  26.682  34.790 -0.33 +0.00    +0.000 C  
+DOCKED: BRANCH  22  24
+DOCKED: HETATM   24  C22 VDX A 500       9.072  25.307  32.625 -0.32 +0.00    +0.000 C  
+DOCKED: BRANCH  24  25
+DOCKED: HETATM   25  C23 VDX A 500       7.500  25.115  32.783 -0.33 +0.00    +0.003 C  
+DOCKED: BRANCH  25  26
+DOCKED: HETATM   26  C24 VDX A 500       6.866  24.638  34.071 -0.30 +0.03    +0.030 C  
+DOCKED: BRANCH  26  27
+DOCKED: HETATM   27  C25 VDX A 500       5.311  24.602  34.117 -0.28 +0.14    +0.127 C  
+DOCKED: HETATM   28  C27 VDX A 500       4.826  23.569  35.140 -0.44 +0.03    +0.033 C  
+DOCKED: HETATM   29  C26 VDX A 500       4.723  24.303  32.768 -0.41 +0.02    +0.033 C  
+DOCKED: HETATM   30  O3  VDX A 500       4.758  25.798  34.619 -1.14 -0.50    -0.226 OA 
+DOCKED: ENDBRANCH  26  27
+DOCKED: ENDBRANCH  25  26
+DOCKED: ENDBRANCH  24  25
+DOCKED: ENDBRANCH  22  24
+DOCKED: ENDBRANCH  10  22
+DOCKED: TORSDOF 6
+DOCKED: TER
+DOCKED: ENDMDL
+________________________________________________________________________________
+
+
+    FINAL DOCKED STATE:
+    ________________________
+
+
+Run:   4 / 10
+Time taken for this run:   1.390s
+
+DOCKED: MODEL        4
+DOCKED: USER    Run = 4
+DOCKED: USER
+DOCKED: USER    Estimated Free Energy of Binding    = -11.81 kcal/mol  [=(1)+(2)+(3)-(4)]
+DOCKED: USER
+DOCKED: USER    (1) Final Intermolecular Energy     = -13.60 kcal/mol
+DOCKED: USER        vdW + Hbond + desolv Energy     = -13.10 kcal/mol
+DOCKED: USER        Electrostatic Energy            =  -0.50 kcal/mol
+DOCKED: USER        Moving Ligand-Fixed Receptor    = -13.60 kcal/mol
+DOCKED: USER        Moving Ligand-Moving Receptor   =  +0.00 kcal/mol
+DOCKED: USER    (2) Final Total Internal Energy     =  -1.47 kcal/mol
+DOCKED: USER    (3) Torsional Free Energy           =  +1.79 kcal/mol
+DOCKED: USER    (4) Unbound System's Energy         =  -1.47 kcal/mol
+DOCKED: USER
+DOCKED: USER
+DOCKED: REMARK  6 active torsions:
+DOCKED: REMARK  status: ('A' for Active; 'I' for Inactive)
+DOCKED: REMARK    1  A    between atoms: C6_2030  and  C7_2031 
+DOCKED: REMARK    2  A    between atoms: C17_2041  and  C20_2044 
+DOCKED: REMARK    3  A    between atoms: C20_2044  and  C22_2046 
+DOCKED: REMARK    4  A    between atoms: C22_2046  and  C23_2047 
+DOCKED: REMARK    5  A    between atoms: C23_2047  and  C24_2048 
+DOCKED: REMARK    6  A    between atoms: C24_2048  and  C25_2049 
+DOCKED: USER                              x       y       z     vdW  Elec       q    Type
+DOCKED: USER                           _______ _______ _______ _____ _____    ______ ____
+DOCKED: ROOT
+DOCKED: HETATM    1  C7  VDX A 500      14.199  21.542  33.998 -0.42 -0.00    -0.009 C  
+DOCKED: HETATM    2  C8  VDX A 500      13.942  22.654  33.298 -0.42 -0.01    -0.044 C  
+DOCKED: HETATM    3  C9  VDX A 500      14.328  22.849  31.840 -0.50 +0.01    +0.022 C  
+DOCKED: HETATM    4  C11 VDX A 500      13.028  23.066  31.038 -0.48 +0.00    +0.004 C  
+DOCKED: HETATM    5  C12 VDX A 500      12.145  24.174  31.672 -0.42 +0.00    +0.001 C  
+DOCKED: HETATM    6  C13 VDX A 500      11.819  23.959  33.176 -0.32 +0.00    +0.003 C  
+DOCKED: HETATM    7  C14 VDX A 500      13.226  23.826  33.877 -0.39 +0.01    +0.018 C  
+DOCKED: HETATM    8  C15 VDX A 500      12.965  23.921  35.370 -0.41 +0.00    +0.004 C  
+DOCKED: HETATM    9  C16 VDX A 500      11.774  24.910  35.379 -0.33 +0.00    +0.000 C  
+DOCKED: HETATM   10  C17 VDX A 500      11.287  25.197  33.930 -0.29 +0.00    +0.000 C  
+DOCKED: HETATM   11  C18 VDX A 500      10.935  22.695  33.411 -0.34 +0.00    +0.000 C  
+DOCKED: ENDROOT
+DOCKED: BRANCH   1  12
+DOCKED: HETATM   12  C6  VDX A 500      14.836  20.287  33.563 -0.45 -0.00    -0.005 C  
+DOCKED: HETATM   13  C5  VDX A 500      14.636  19.034  34.028 -0.40 -0.01    -0.021 C  
+DOCKED: HETATM   14  C4  VDX A 500      15.493  17.927  33.477 -0.47 +0.03    +0.059 C  
+DOCKED: HETATM   15  C10 VDX A 500      13.598  18.603  34.986 -0.41 +0.00    +0.004 C  
+DOCKED: HETATM   16  C3  VDX A 500      16.008  16.889  34.482 -0.39 +0.10    +0.159 C  
+DOCKED: HETATM   17  O2  VDX A 500      16.940  17.510  35.344 -0.83 -0.24    -0.223 OA 
+DOCKED: HETATM   18  C2  VDX A 500      14.827  16.357  35.347 -0.43 +0.06    +0.071 C  
+DOCKED: HETATM   19  C1  VDX A 500      14.080  17.557  35.970 -0.32 +0.15    +0.177 C  
+DOCKED: HETATM   20  O1  VDX A 500      13.031  17.153  36.819 -0.93 -0.30    -0.218 OA 
+DOCKED: HETATM   21  C19 VDX A 500      12.288  19.007  34.885 -0.43 -0.00    -0.002 C  
+DOCKED: ENDBRANCH   1  12
+DOCKED: BRANCH  10  22
+DOCKED: HETATM   22  C20 VDX A 500       9.755  25.436  33.919 -0.26 +0.00    +0.000 C  
+DOCKED: HETATM   23  C21 VDX A 500       9.411  26.598  34.917 -0.33 +0.00    +0.000 C  
+DOCKED: BRANCH  22  24
+DOCKED: HETATM   24  C22 VDX A 500       9.128  25.558  32.563 -0.33 +0.00    +0.000 C  
+DOCKED: BRANCH  24  25
+DOCKED: HETATM   25  C23 VDX A 500       7.740  24.783  32.496 -0.33 +0.00    +0.003 C  
+DOCKED: BRANCH  25  26
+DOCKED: HETATM   26  C24 VDX A 500       6.418  25.457  32.792 -0.32 +0.03    +0.030 C  
+DOCKED: BRANCH  26  27
+DOCKED: HETATM   27  C25 VDX A 500       5.599  24.899  33.991 -0.26 +0.15    +0.127 C  
+DOCKED: HETATM   28  C27 VDX A 500       6.533  24.461  35.124 -0.33 +0.04    +0.033 C  
+DOCKED: HETATM   29  C26 VDX A 500       4.722  23.752  33.578 -0.42 +0.02    +0.033 C  
+DOCKED: HETATM   30  O3  VDX A 500       4.816  25.889  34.618 -1.12 -0.52    -0.226 OA 
+DOCKED: ENDBRANCH  26  27
+DOCKED: ENDBRANCH  25  26
+DOCKED: ENDBRANCH  24  25
+DOCKED: ENDBRANCH  22  24
+DOCKED: ENDBRANCH  10  22
+DOCKED: TORSDOF 6
+DOCKED: TER
+DOCKED: ENDMDL
+________________________________________________________________________________
+
+
+    FINAL DOCKED STATE:
+    ________________________
+
+
+Run:   5 / 10
+Time taken for this run:   1.390s
+
+DOCKED: MODEL        5
+DOCKED: USER    Run = 5
+DOCKED: USER
+DOCKED: USER    Estimated Free Energy of Binding    = -11.88 kcal/mol  [=(1)+(2)+(3)-(4)]
+DOCKED: USER
+DOCKED: USER    (1) Final Intermolecular Energy     = -13.67 kcal/mol
+DOCKED: USER        vdW + Hbond + desolv Energy     = -13.18 kcal/mol
+DOCKED: USER        Electrostatic Energy            =  -0.48 kcal/mol
+DOCKED: USER        Moving Ligand-Fixed Receptor    = -13.67 kcal/mol
+DOCKED: USER        Moving Ligand-Moving Receptor   =  +0.00 kcal/mol
+DOCKED: USER    (2) Final Total Internal Energy     =  -1.39 kcal/mol
+DOCKED: USER    (3) Torsional Free Energy           =  +1.79 kcal/mol
+DOCKED: USER    (4) Unbound System's Energy         =  -1.39 kcal/mol
+DOCKED: USER
+DOCKED: USER
+DOCKED: REMARK  6 active torsions:
+DOCKED: REMARK  status: ('A' for Active; 'I' for Inactive)
+DOCKED: REMARK    1  A    between atoms: C6_2030  and  C7_2031 
+DOCKED: REMARK    2  A    between atoms: C17_2041  and  C20_2044 
+DOCKED: REMARK    3  A    between atoms: C20_2044  and  C22_2046 
+DOCKED: REMARK    4  A    between atoms: C22_2046  and  C23_2047 
+DOCKED: REMARK    5  A    between atoms: C23_2047  and  C24_2048 
+DOCKED: REMARK    6  A    between atoms: C24_2048  and  C25_2049 
+DOCKED: USER                              x       y       z     vdW  Elec       q    Type
+DOCKED: USER                           _______ _______ _______ _____ _____    ______ ____
+DOCKED: ROOT
+DOCKED: HETATM    1  C7  VDX A 500      14.226  21.590  34.131 -0.40 -0.00    -0.009 C  
+DOCKED: HETATM    2  C8  VDX A 500      13.921  22.702  33.450 -0.42 -0.01    -0.044 C  
+DOCKED: HETATM    3  C9  VDX A 500      14.233  22.907  31.975 -0.50 +0.01    +0.022 C  
+DOCKED: HETATM    4  C11 VDX A 500      12.892  23.112  31.239 -0.48 +0.00    +0.004 C  
+DOCKED: HETATM    5  C12 VDX A 500      12.028  24.207  31.922 -0.40 +0.00    +0.001 C  
+DOCKED: HETATM    6  C13 VDX A 500      11.780  23.983  33.439 -0.31 +0.00    +0.003 C  
+DOCKED: HETATM    7  C14 VDX A 500      13.222  23.863  34.069 -0.39 +0.01    +0.018 C  
+DOCKED: HETATM    8  C15 VDX A 500      13.034  23.949  35.573 -0.43 +0.00    +0.004 C  
+DOCKED: HETATM    9  C16 VDX A 500      11.834  24.924  35.647 -0.35 +0.00    +0.000 C  
+DOCKED: HETATM   10  C17 VDX A 500      11.272  25.211  34.225 -0.29 +0.00    +0.000 C  
+DOCKED: HETATM   11  C18 VDX A 500      10.924  22.707  33.712 -0.33 +0.00    +0.000 C  
+DOCKED: ENDROOT
+DOCKED: BRANCH   1  12
+DOCKED: HETATM   12  C6  VDX A 500      14.855  20.344  33.659 -0.44 -0.00    -0.005 C  
+DOCKED: HETATM   13  C5  VDX A 500      14.649  19.079  34.088 -0.40 -0.01    -0.021 C  
+DOCKED: HETATM   14  C4  VDX A 500      15.498  17.984  33.504 -0.47 +0.03    +0.059 C  
+DOCKED: HETATM   15  C10 VDX A 500      13.610  18.628  35.037 -0.42 +0.00    +0.004 C  
+DOCKED: HETATM   16  C3  VDX A 500      16.010  16.916  34.479 -0.39 +0.10    +0.159 C  
+DOCKED: HETATM   17  O2  VDX A 500      16.947  17.507  35.356 -0.83 -0.24    -0.223 OA 
+DOCKED: HETATM   18  C2  VDX A 500      14.828  16.366  35.331 -0.43 +0.06    +0.071 C  
+DOCKED: HETATM   19  C1  VDX A 500      14.089  17.551  35.989 -0.32 +0.15    +0.177 C  
+DOCKED: HETATM   20  O1  VDX A 500      13.040  17.129  36.829 -0.94 -0.30    -0.218 OA 
+DOCKED: HETATM   21  C19 VDX A 500      12.303  19.041  34.951 -0.43 -0.00    -0.002 C  
+DOCKED: ENDBRANCH   1  12
+DOCKED: BRANCH  10  22
+DOCKED: HETATM   22  C20 VDX A 500       9.739  25.432  34.290 -0.26 +0.00    +0.000 C  
+DOCKED: HETATM   23  C21 VDX A 500       9.436  26.640  35.247 -0.35 +0.00    +0.000 C  
+DOCKED: BRANCH  22  24
+DOCKED: HETATM   24  C22 VDX A 500       9.034  25.478  32.969 -0.30 +0.00    +0.000 C  
+DOCKED: BRANCH  24  25
+DOCKED: HETATM   25  C23 VDX A 500       7.574  24.851  33.071 -0.31 +0.00    +0.003 C  
+DOCKED: BRANCH  25  26
+DOCKED: HETATM   26  C24 VDX A 500       6.890  24.597  34.396 -0.30 +0.03    +0.030 C  
+DOCKED: BRANCH  26  27
+DOCKED: HETATM   27  C25 VDX A 500       5.334  24.563  34.388 -0.29 +0.15    +0.127 C  
+DOCKED: HETATM   28  C27 VDX A 500       4.807  23.765  35.585 -0.46 +0.04    +0.033 C  
+DOCKED: HETATM   29  C26 VDX A 500       4.798  23.984  33.110 -0.42 +0.02    +0.033 C  
+DOCKED: HETATM   30  O3  VDX A 500       4.766  25.835  34.606 -1.14 -0.50    -0.226 OA 
+DOCKED: ENDBRANCH  26  27
+DOCKED: ENDBRANCH  25  26
+DOCKED: ENDBRANCH  24  25
+DOCKED: ENDBRANCH  22  24
+DOCKED: ENDBRANCH  10  22
+DOCKED: TORSDOF 6
+DOCKED: TER
+DOCKED: ENDMDL
+________________________________________________________________________________
+
+
+    FINAL DOCKED STATE:
+    ________________________
+
+
+Run:   6 / 10
+Time taken for this run:   1.390s
+
+DOCKED: MODEL        6
+DOCKED: USER    Run = 6
+DOCKED: USER
+DOCKED: USER    Estimated Free Energy of Binding    = -11.81 kcal/mol  [=(1)+(2)+(3)-(4)]
+DOCKED: USER
+DOCKED: USER    (1) Final Intermolecular Energy     = -13.60 kcal/mol
+DOCKED: USER        vdW + Hbond + desolv Energy     = -13.14 kcal/mol
+DOCKED: USER        Electrostatic Energy            =  -0.46 kcal/mol
+DOCKED: USER        Moving Ligand-Fixed Receptor    = -13.60 kcal/mol
+DOCKED: USER        Moving Ligand-Moving Receptor   =  +0.00 kcal/mol
+DOCKED: USER    (2) Final Total Internal Energy     =  -1.47 kcal/mol
+DOCKED: USER    (3) Torsional Free Energy           =  +1.79 kcal/mol
+DOCKED: USER    (4) Unbound System's Energy         =  -1.47 kcal/mol
+DOCKED: USER
+DOCKED: USER
+DOCKED: REMARK  6 active torsions:
+DOCKED: REMARK  status: ('A' for Active; 'I' for Inactive)
+DOCKED: REMARK    1  A    between atoms: C6_2030  and  C7_2031 
+DOCKED: REMARK    2  A    between atoms: C17_2041  and  C20_2044 
+DOCKED: REMARK    3  A    between atoms: C20_2044  and  C22_2046 
+DOCKED: REMARK    4  A    between atoms: C22_2046  and  C23_2047 
+DOCKED: REMARK    5  A    between atoms: C23_2047  and  C24_2048 
+DOCKED: REMARK    6  A    between atoms: C24_2048  and  C25_2049 
+DOCKED: USER                              x       y       z     vdW  Elec       q    Type
+DOCKED: USER                           _______ _______ _______ _____ _____    ______ ____
+DOCKED: ROOT
+DOCKED: HETATM    1  C7  VDX A 500      14.273  21.526  33.906 -0.42 -0.00    -0.009 C  
+DOCKED: HETATM    2  C8  VDX A 500      14.022  22.618  33.172 -0.43 -0.01    -0.044 C  
+DOCKED: HETATM    3  C9  VDX A 500      14.405  22.765  31.708 -0.51 +0.01    +0.022 C  
+DOCKED: HETATM    4  C11 VDX A 500      13.104  22.966  30.903 -0.46 +0.00    +0.004 C  
+DOCKED: HETATM    5  C12 VDX A 500      12.230  24.099  31.505 -0.43 +0.00    +0.001 C  
+DOCKED: HETATM    6  C13 VDX A 500      11.908  23.933  33.015 -0.33 +0.00    +0.003 C  
+DOCKED: HETATM    7  C14 VDX A 500      13.315  23.812  33.717 -0.40 +0.01    +0.018 C  
+DOCKED: HETATM    8  C15 VDX A 500      13.060  23.955  35.206 -0.41 +0.00    +0.004 C  
+DOCKED: HETATM    9  C16 VDX A 500      11.875  24.951  35.189 -0.33 +0.00    +0.000 C  
+DOCKED: HETATM   10  C17 VDX A 500      11.386  25.197  33.733 -0.30 +0.00    +0.000 C  
+DOCKED: HETATM   11  C18 VDX A 500      11.016  22.683  33.292 -0.35 +0.00    +0.000 C  
+DOCKED: ENDROOT
+DOCKED: BRANCH   1  12
+DOCKED: HETATM   12  C6  VDX A 500      14.901  20.253  33.508 -0.46 -0.00    -0.005 C  
+DOCKED: HETATM   13  C5  VDX A 500      14.690  19.016  34.009 -0.41 -0.01    -0.021 C  
+DOCKED: HETATM   14  C4  VDX A 500      15.538  17.887  33.491 -0.47 +0.03    +0.059 C  
+DOCKED: HETATM   15  C10 VDX A 500      13.648  18.622  34.979 -0.41 +0.00    +0.004 C  
+DOCKED: HETATM   16  C3  VDX A 500      16.045  16.875  34.526 -0.38 +0.10    +0.159 C  
+DOCKED: HETATM   17  O2  VDX A 500      16.981  17.513  35.371 -0.84 -0.25    -0.223 OA 
+DOCKED: HETATM   18  C2  VDX A 500      14.859  16.378  35.406 -0.43 +0.06    +0.071 C  
+DOCKED: HETATM   19  C1  VDX A 500      14.121  17.601  35.992 -0.32 +0.15    +0.177 C  
+DOCKED: HETATM   20  O1  VDX A 500      13.069  17.230  36.852 -0.89 -0.29    -0.218 OA 
+DOCKED: HETATM   21  C19 VDX A 500      12.342  19.033  34.865 -0.43 -0.00    -0.002 C  
+DOCKED: ENDBRANCH   1  12
+DOCKED: BRANCH  10  22
+DOCKED: HETATM   22  C20 VDX A 500       9.856  25.446  33.718 -0.27 +0.00    +0.000 C  
+DOCKED: HETATM   23  C21 VDX A 500       9.520  26.628  34.695 -0.33 +0.00    +0.000 C  
+DOCKED: BRANCH  22  24
+DOCKED: HETATM   24  C22 VDX A 500       9.229  25.548  32.361 -0.34 +0.00    +0.000 C  
+DOCKED: BRANCH  24  25
+DOCKED: HETATM   25  C23 VDX A 500       7.762  24.931  32.353 -0.34 +0.00    +0.003 C  
+DOCKED: BRANCH  25  26
+DOCKED: HETATM   26  C24 VDX A 500       6.567  25.670  32.915 -0.30 +0.03    +0.030 C  
+DOCKED: BRANCH  26  27
+DOCKED: HETATM   27  C25 VDX A 500       5.741  24.938  34.012 -0.26 +0.15    +0.127 C  
+DOCKED: HETATM   28  C27 VDX A 500       6.636  24.565  35.199 -0.33 +0.04    +0.033 C  
+DOCKED: HETATM   29  C26 VDX A 500       5.068  23.709  33.471 -0.41 +0.02    +0.033 C  
+DOCKED: HETATM   30  O3  VDX A 500       4.782  25.776  34.616 -1.14 -0.49    -0.226 OA 
+DOCKED: ENDBRANCH  26  27
+DOCKED: ENDBRANCH  25  26
+DOCKED: ENDBRANCH  24  25
+DOCKED: ENDBRANCH  22  24
+DOCKED: ENDBRANCH  10  22
+DOCKED: TORSDOF 6
+DOCKED: TER
+DOCKED: ENDMDL
+________________________________________________________________________________
+
+
+    FINAL DOCKED STATE:
+    ________________________
+
+
+Run:   7 / 10
+Time taken for this run:   1.390s
+
+DOCKED: MODEL        7
+DOCKED: USER    Run = 7
+DOCKED: USER
+DOCKED: USER    Estimated Free Energy of Binding    = -11.79 kcal/mol  [=(1)+(2)+(3)-(4)]
+DOCKED: USER
+DOCKED: USER    (1) Final Intermolecular Energy     = -13.58 kcal/mol
+DOCKED: USER        vdW + Hbond + desolv Energy     = -13.08 kcal/mol
+DOCKED: USER        Electrostatic Energy            =  -0.50 kcal/mol
+DOCKED: USER        Moving Ligand-Fixed Receptor    = -13.58 kcal/mol
+DOCKED: USER        Moving Ligand-Moving Receptor   =  +0.00 kcal/mol
+DOCKED: USER    (2) Final Total Internal Energy     =  -1.49 kcal/mol
+DOCKED: USER    (3) Torsional Free Energy           =  +1.79 kcal/mol
+DOCKED: USER    (4) Unbound System's Energy         =  -1.49 kcal/mol
+DOCKED: USER
+DOCKED: USER
+DOCKED: REMARK  6 active torsions:
+DOCKED: REMARK  status: ('A' for Active; 'I' for Inactive)
+DOCKED: REMARK    1  A    between atoms: C6_2030  and  C7_2031 
+DOCKED: REMARK    2  A    between atoms: C17_2041  and  C20_2044 
+DOCKED: REMARK    3  A    between atoms: C20_2044  and  C22_2046 
+DOCKED: REMARK    4  A    between atoms: C22_2046  and  C23_2047 
+DOCKED: REMARK    5  A    between atoms: C23_2047  and  C24_2048 
+DOCKED: REMARK    6  A    between atoms: C24_2048  and  C25_2049 
+DOCKED: USER                              x       y       z     vdW  Elec       q    Type
+DOCKED: USER                           _______ _______ _______ _____ _____    ______ ____
+DOCKED: ROOT
+DOCKED: HETATM    1  C7  VDX A 500      14.308  21.560  33.931 -0.42 -0.00    -0.009 C  
+DOCKED: HETATM    2  C8  VDX A 500      14.025  22.645  33.199 -0.43 -0.01    -0.044 C  
+DOCKED: HETATM    3  C9  VDX A 500      14.345  22.779  31.718 -0.51 +0.01    +0.022 C  
+DOCKED: HETATM    4  C11 VDX A 500      13.010  22.974  30.968 -0.47 +0.00    +0.004 C  
+DOCKED: HETATM    5  C12 VDX A 500      12.164  24.113  31.598 -0.42 +0.00    +0.001 C  
+DOCKED: HETATM    6  C13 VDX A 500      11.907  23.961  33.122 -0.32 +0.00    +0.003 C  
+DOCKED: HETATM    7  C14 VDX A 500      13.344  23.845  33.763 -0.40 +0.01    +0.018 C  
+DOCKED: HETATM    8  C15 VDX A 500      13.153  24.001  35.261 -0.42 +0.00    +0.004 C  
+DOCKED: HETATM    9  C16 VDX A 500      11.969  24.998  35.286 -0.34 +0.00    +0.000 C  
+DOCKED: HETATM   10  C17 VDX A 500      11.417  25.231  33.851 -0.30 +0.00    +0.000 C  
+DOCKED: HETATM   11  C18 VDX A 500      11.027  22.713  33.449 -0.34 +0.00    +0.000 C  
+DOCKED: ENDROOT
+DOCKED: BRANCH   1  12
+DOCKED: HETATM   12  C6  VDX A 500      14.917  20.283  33.517 -0.46 -0.00    -0.005 C  
+DOCKED: HETATM   13  C5  VDX A 500      14.695  19.044  34.008 -0.41 -0.01    -0.021 C  
+DOCKED: HETATM   14  C4  VDX A 500      15.526  17.910  33.474 -0.47 +0.03    +0.059 C  
+DOCKED: HETATM   15  C10 VDX A 500      13.655  18.654  34.981 -0.41 +0.00    +0.004 C  
+DOCKED: HETATM   16  C3  VDX A 500      16.027  16.882  34.497 -0.39 +0.10    +0.159 C  
+DOCKED: HETATM   17  O2  VDX A 500      16.976  17.502  35.341 -0.83 -0.24    -0.223 OA 
+DOCKED: HETATM   18  C2  VDX A 500      14.841  16.392  35.380 -0.43 +0.06    +0.071 C  
+DOCKED: HETATM   19  C1  VDX A 500      14.122  17.618  35.983 -0.32 +0.15    +0.177 C  
+DOCKED: HETATM   20  O1  VDX A 500      13.071  17.253  36.846 -0.88 -0.28    -0.218 OA 
+DOCKED: HETATM   21  C19 VDX A 500      12.353  19.082  34.880 -0.43 -0.00    -0.002 C  
+DOCKED: ENDBRANCH   1  12
+DOCKED: BRANCH  10  22
+DOCKED: HETATM   22  C20 VDX A 500       9.888  25.481  33.900 -0.26 +0.00    +0.000 C  
+DOCKED: HETATM   23  C21 VDX A 500       9.584  26.587  34.973 -0.33 +0.00    +0.000 C  
+DOCKED: BRANCH  22  24
+DOCKED: HETATM   24  C22 VDX A 500       9.221  25.685  32.574 -0.34 +0.00    +0.000 C  
+DOCKED: BRANCH  24  25
+DOCKED: HETATM   25  C23 VDX A 500       7.856  24.871  32.481 -0.33 +0.00    +0.003 C  
+DOCKED: BRANCH  25  26
+DOCKED: HETATM   26  C24 VDX A 500       6.514  25.500  32.784 -0.31 +0.03    +0.030 C  
+DOCKED: BRANCH  26  27
+DOCKED: HETATM   27  C25 VDX A 500       5.729  24.927  34.000 -0.26 +0.15    +0.127 C  
+DOCKED: HETATM   28  C27 VDX A 500       6.692  24.539  35.127 -0.32 +0.04    +0.033 C  
+DOCKED: HETATM   29  C26 VDX A 500       4.892  23.742  33.610 -0.41 +0.02    +0.033 C  
+DOCKED: HETATM   30  O3  VDX A 500       4.916  25.895  34.624 -1.10 -0.53    -0.226 OA 
+DOCKED: ENDBRANCH  26  27
+DOCKED: ENDBRANCH  25  26
+DOCKED: ENDBRANCH  24  25
+DOCKED: ENDBRANCH  22  24
+DOCKED: ENDBRANCH  10  22
+DOCKED: TORSDOF 6
+DOCKED: TER
+DOCKED: ENDMDL
+________________________________________________________________________________
+
+
+    FINAL DOCKED STATE:
+    ________________________
+
+
+Run:   8 / 10
+Time taken for this run:   1.390s
+
+DOCKED: MODEL        8
+DOCKED: USER    Run = 8
+DOCKED: USER
+DOCKED: USER    Estimated Free Energy of Binding    = -11.90 kcal/mol  [=(1)+(2)+(3)-(4)]
+DOCKED: USER
+DOCKED: USER    (1) Final Intermolecular Energy     = -13.69 kcal/mol
+DOCKED: USER        vdW + Hbond + desolv Energy     = -13.20 kcal/mol
+DOCKED: USER        Electrostatic Energy            =  -0.49 kcal/mol
+DOCKED: USER        Moving Ligand-Fixed Receptor    = -13.69 kcal/mol
+DOCKED: USER        Moving Ligand-Moving Receptor   =  +0.00 kcal/mol
+DOCKED: USER    (2) Final Total Internal Energy     =  -1.36 kcal/mol
+DOCKED: USER    (3) Torsional Free Energy           =  +1.79 kcal/mol
+DOCKED: USER    (4) Unbound System's Energy         =  -1.36 kcal/mol
+DOCKED: USER
+DOCKED: USER
+DOCKED: REMARK  6 active torsions:
+DOCKED: REMARK  status: ('A' for Active; 'I' for Inactive)
+DOCKED: REMARK    1  A    between atoms: C6_2030  and  C7_2031 
+DOCKED: REMARK    2  A    between atoms: C17_2041  and  C20_2044 
+DOCKED: REMARK    3  A    between atoms: C20_2044  and  C22_2046 
+DOCKED: REMARK    4  A    between atoms: C22_2046  and  C23_2047 
+DOCKED: REMARK    5  A    between atoms: C23_2047  and  C24_2048 
+DOCKED: REMARK    6  A    between atoms: C24_2048  and  C25_2049 
+DOCKED: USER                              x       y       z     vdW  Elec       q    Type
+DOCKED: USER                           _______ _______ _______ _____ _____    ______ ____
+DOCKED: ROOT
+DOCKED: HETATM    1  C7  VDX A 500      14.240  21.554  34.027 -0.41 -0.00    -0.009 C  
+DOCKED: HETATM    2  C8  VDX A 500      13.967  22.661  33.326 -0.42 -0.01    -0.044 C  
+DOCKED: HETATM    3  C9  VDX A 500      14.328  22.851  31.861 -0.50 +0.01    +0.022 C  
+DOCKED: HETATM    4  C11 VDX A 500      13.013  23.058  31.080 -0.48 +0.00    +0.004 C  
+DOCKED: HETATM    5  C12 VDX A 500      12.136  24.167  31.724 -0.41 +0.00    +0.001 C  
+DOCKED: HETATM    6  C13 VDX A 500      11.837  23.958  33.234 -0.32 +0.00    +0.003 C  
+DOCKED: HETATM    7  C14 VDX A 500      13.256  23.833  33.912 -0.40 +0.01    +0.018 C  
+DOCKED: HETATM    8  C15 VDX A 500      13.021  23.934  35.408 -0.42 +0.00    +0.004 C  
+DOCKED: HETATM    9  C16 VDX A 500      11.826  24.919  35.434 -0.34 +0.00    +0.000 C  
+DOCKED: HETATM   10  C17 VDX A 500      11.313  25.197  33.992 -0.29 +0.00    +0.000 C  
+DOCKED: HETATM   11  C18 VDX A 500      10.963  22.691  33.491 -0.34 +0.00    +0.000 C  
+DOCKED: ENDROOT
+DOCKED: BRANCH   1  12
+DOCKED: HETATM   12  C6  VDX A 500      14.875  20.299  33.587 -0.45 -0.00    -0.005 C  
+DOCKED: HETATM   13  C5  VDX A 500      14.671  19.044  34.045 -0.40 -0.01    -0.021 C  
+DOCKED: HETATM   14  C4  VDX A 500      15.526  17.938  33.491 -0.47 +0.03    +0.059 C  
+DOCKED: HETATM   15  C10 VDX A 500      13.630  18.612  35.001 -0.41 +0.00    +0.004 C  
+DOCKED: HETATM   16  C3  VDX A 500      16.037  16.894  34.492 -0.39 +0.10    +0.159 C  
+DOCKED: HETATM   17  O2  VDX A 500      16.969  17.509  35.358 -0.84 -0.24    -0.223 OA 
+DOCKED: HETATM   18  C2  VDX A 500      14.854  16.361  35.353 -0.43 +0.06    +0.071 C  
+DOCKED: HETATM   19  C1  VDX A 500      14.108  17.560  35.980 -0.32 +0.15    +0.177 C  
+DOCKED: HETATM   20  O1  VDX A 500      13.058  17.155  36.826 -0.92 -0.30    -0.218 OA 
+DOCKED: HETATM   21  C19 VDX A 500      12.322  19.019  34.900 -0.43 -0.00    -0.002 C  
+DOCKED: ENDBRANCH   1  12
+DOCKED: BRANCH  10  22
+DOCKED: HETATM   22  C20 VDX A 500       9.780  25.430  34.005 -0.26 +0.00    +0.000 C  
+DOCKED: HETATM   23  C21 VDX A 500       9.465  26.707  34.862 -0.34 +0.00    +0.000 C  
+DOCKED: BRANCH  22  24
+DOCKED: HETATM   24  C22 VDX A 500       9.106  25.381  32.668 -0.32 +0.00    +0.000 C  
+DOCKED: BRANCH  24  25
+DOCKED: HETATM   25  C23 VDX A 500       7.529  25.224  32.822 -0.32 +0.00    +0.003 C  
+DOCKED: BRANCH  25  26
+DOCKED: HETATM   26  C24 VDX A 500       6.889  24.629  34.056 -0.30 +0.03    +0.030 C  
+DOCKED: BRANCH  26  27
+DOCKED: HETATM   27  C25 VDX A 500       5.333  24.601  34.096 -0.28 +0.14    +0.127 C  
+DOCKED: HETATM   28  C27 VDX A 500       4.840  23.548  35.093 -0.44 +0.03    +0.033 C  
+DOCKED: HETATM   29  C26 VDX A 500       4.749  24.335  32.738 -0.41 +0.02    +0.033 C  
+DOCKED: HETATM   30  O3  VDX A 500       4.785  25.788  34.622 -1.14 -0.49    -0.226 OA 
+DOCKED: ENDBRANCH  26  27
+DOCKED: ENDBRANCH  25  26
+DOCKED: ENDBRANCH  24  25
+DOCKED: ENDBRANCH  22  24
+DOCKED: ENDBRANCH  10  22
+DOCKED: TORSDOF 6
+DOCKED: TER
+DOCKED: ENDMDL
+________________________________________________________________________________
+
+
+    FINAL DOCKED STATE:
+    ________________________
+
+
+Run:   9 / 10
+Time taken for this run:   1.390s
+
+DOCKED: MODEL        9
+DOCKED: USER    Run = 9
+DOCKED: USER
+DOCKED: USER    Estimated Free Energy of Binding    = -11.89 kcal/mol  [=(1)+(2)+(3)-(4)]
+DOCKED: USER
+DOCKED: USER    (1) Final Intermolecular Energy     = -13.68 kcal/mol
+DOCKED: USER        vdW + Hbond + desolv Energy     = -13.19 kcal/mol
+DOCKED: USER        Electrostatic Energy            =  -0.48 kcal/mol
+DOCKED: USER        Moving Ligand-Fixed Receptor    = -13.68 kcal/mol
+DOCKED: USER        Moving Ligand-Moving Receptor   =  +0.00 kcal/mol
+DOCKED: USER    (2) Final Total Internal Energy     =  -1.36 kcal/mol
+DOCKED: USER    (3) Torsional Free Energy           =  +1.79 kcal/mol
+DOCKED: USER    (4) Unbound System's Energy         =  -1.36 kcal/mol
+DOCKED: USER
+DOCKED: USER
+DOCKED: REMARK  6 active torsions:
+DOCKED: REMARK  status: ('A' for Active; 'I' for Inactive)
+DOCKED: REMARK    1  A    between atoms: C6_2030  and  C7_2031 
+DOCKED: REMARK    2  A    between atoms: C17_2041  and  C20_2044 
+DOCKED: REMARK    3  A    between atoms: C20_2044  and  C22_2046 
+DOCKED: REMARK    4  A    between atoms: C22_2046  and  C23_2047 
+DOCKED: REMARK    5  A    between atoms: C23_2047  and  C24_2048 
+DOCKED: REMARK    6  A    between atoms: C24_2048  and  C25_2049 
+DOCKED: USER                              x       y       z     vdW  Elec       q    Type
+DOCKED: USER                           _______ _______ _______ _____ _____    ______ ____
+DOCKED: ROOT
+DOCKED: HETATM    1  C7  VDX A 500      14.299  21.586  34.053 -0.41 -0.00    -0.009 C  
+DOCKED: HETATM    2  C8  VDX A 500      13.987  22.679  33.344 -0.42 -0.01    -0.044 C  
+DOCKED: HETATM    3  C9  VDX A 500      14.274  22.839  31.859 -0.50 +0.01    +0.022 C  
+DOCKED: HETATM    4  C11 VDX A 500      12.921  23.027  31.140 -0.47 +0.00    +0.004 C  
+DOCKED: HETATM    5  C12 VDX A 500      12.074  24.146  31.804 -0.41 +0.00    +0.001 C  
+DOCKED: HETATM    6  C13 VDX A 500      11.851  23.968  33.331 -0.31 +0.00    +0.003 C  
+DOCKED: HETATM    7  C14 VDX A 500      13.303  23.861  33.940 -0.40 +0.01    +0.018 C  
+DOCKED: HETATM    8  C15 VDX A 500      13.142  23.992  35.444 -0.43 +0.00    +0.004 C  
+DOCKED: HETATM    9  C16 VDX A 500      11.946  24.974  35.509 -0.35 +0.00    +0.000 C  
+DOCKED: HETATM   10  C17 VDX A 500      11.361  25.221  34.089 -0.29 +0.00    +0.000 C  
+DOCKED: HETATM   11  C18 VDX A 500      10.995  22.704  33.657 -0.33 +0.00    +0.000 C  
+DOCKED: ENDROOT
+DOCKED: BRANCH   1  12
+DOCKED: HETATM   12  C6  VDX A 500      14.916  20.324  33.608 -0.45 -0.00    -0.005 C  
+DOCKED: HETATM   13  C5  VDX A 500      14.699  19.071  34.066 -0.40 -0.01    -0.021 C  
+DOCKED: HETATM   14  C4  VDX A 500      15.536  17.956  33.504 -0.47 +0.03    +0.059 C  
+DOCKED: HETATM   15  C10 VDX A 500      13.659  18.651  35.027 -0.41 +0.00    +0.004 C  
+DOCKED: HETATM   16  C3  VDX A 500      16.041  16.904  34.501 -0.39 +0.10    +0.159 C  
+DOCKED: HETATM   17  O2  VDX A 500      16.986  17.506  35.362 -0.84 -0.25    -0.223 OA 
+DOCKED: HETATM   18  C2  VDX A 500      14.856  16.385  35.369 -0.43 +0.06    +0.071 C  
+DOCKED: HETATM   19  C1  VDX A 500      14.130  17.592  36.002 -0.32 +0.15    +0.177 C  
+DOCKED: HETATM   20  O1  VDX A 500      13.079  17.199  36.853 -0.90 -0.29    -0.218 OA 
+DOCKED: HETATM   21  C19 VDX A 500      12.355  19.074  34.934 -0.43 -0.00    -0.002 C  
+DOCKED: ENDBRANCH   1  12
+DOCKED: BRANCH  10  22
+DOCKED: HETATM   22  C20 VDX A 500       9.830  25.450  34.174 -0.26 +0.00    +0.000 C  
+DOCKED: HETATM   23  C21 VDX A 500       9.552  26.728  35.043 -0.34 +0.00    +0.000 C  
+DOCKED: BRANCH  22  24
+DOCKED: HETATM   24  C22 VDX A 500       9.094  25.398  32.870 -0.31 +0.00    +0.000 C  
+DOCKED: BRANCH  24  25
+DOCKED: HETATM   25  C23 VDX A 500       7.522  25.284  33.097 -0.31 +0.00    +0.003 C  
+DOCKED: BRANCH  25  26
+DOCKED: HETATM   26  C24 VDX A 500       6.925  24.664  34.341 -0.30 +0.03    +0.030 C  
+DOCKED: BRANCH  26  27
+DOCKED: HETATM   27  C25 VDX A 500       5.372  24.579  34.406 -0.29 +0.15    +0.127 C  
+DOCKED: HETATM   28  C27 VDX A 500       4.929  23.779  35.636 -0.45 +0.04    +0.033 C  
+DOCKED: HETATM   29  C26 VDX A 500       4.798  23.966  33.161 -0.42 +0.02    +0.033 C  
+DOCKED: HETATM   30  O3  VDX A 500       4.772  25.833  34.637 -1.13 -0.51    -0.226 OA 
+DOCKED: ENDBRANCH  26  27
+DOCKED: ENDBRANCH  25  26
+DOCKED: ENDBRANCH  24  25
+DOCKED: ENDBRANCH  22  24
+DOCKED: ENDBRANCH  10  22
+DOCKED: TORSDOF 6
+DOCKED: TER
+DOCKED: ENDMDL
+________________________________________________________________________________
+
+
+    FINAL DOCKED STATE:
+    ________________________
+
+
+Run:   10 / 10
+Time taken for this run:   1.390s
+
+DOCKED: MODEL        10
+DOCKED: USER    Run = 10
+DOCKED: USER
+DOCKED: USER    Estimated Free Energy of Binding    = -11.80 kcal/mol  [=(1)+(2)+(3)-(4)]
+DOCKED: USER
+DOCKED: USER    (1) Final Intermolecular Energy     = -13.59 kcal/mol
+DOCKED: USER        vdW + Hbond + desolv Energy     = -13.11 kcal/mol
+DOCKED: USER        Electrostatic Energy            =  -0.48 kcal/mol
+DOCKED: USER        Moving Ligand-Fixed Receptor    = -13.59 kcal/mol
+DOCKED: USER        Moving Ligand-Moving Receptor   =  +0.00 kcal/mol
+DOCKED: USER    (2) Final Total Internal Energy     =  -1.48 kcal/mol
+DOCKED: USER    (3) Torsional Free Energy           =  +1.79 kcal/mol
+DOCKED: USER    (4) Unbound System's Energy         =  -1.48 kcal/mol
+DOCKED: USER
+DOCKED: USER
+DOCKED: REMARK  6 active torsions:
+DOCKED: REMARK  status: ('A' for Active; 'I' for Inactive)
+DOCKED: REMARK    1  A    between atoms: C6_2030  and  C7_2031 
+DOCKED: REMARK    2  A    between atoms: C17_2041  and  C20_2044 
+DOCKED: REMARK    3  A    between atoms: C20_2044  and  C22_2046 
+DOCKED: REMARK    4  A    between atoms: C22_2046  and  C23_2047 
+DOCKED: REMARK    5  A    between atoms: C23_2047  and  C24_2048 
+DOCKED: REMARK    6  A    between atoms: C24_2048  and  C25_2049 
+DOCKED: USER                              x       y       z     vdW  Elec       q    Type
+DOCKED: USER                           _______ _______ _______ _____ _____    ______ ____
+DOCKED: ROOT
+DOCKED: HETATM    1  C7  VDX A 500      14.254  21.552  33.971 -0.42 -0.00    -0.009 C  
+DOCKED: HETATM    2  C8  VDX A 500      14.037  22.669  33.264 -0.43 -0.01    -0.044 C  
+DOCKED: HETATM    3  C9  VDX A 500      14.463  22.854  31.816 -0.50 +0.01    +0.022 C  
+DOCKED: HETATM    4  C11 VDX A 500      13.187  23.097  30.982 -0.47 +0.00    +0.004 C  
+DOCKED: HETATM    5  C12 VDX A 500      12.312  24.224  31.594 -0.43 +0.00    +0.001 C  
+DOCKED: HETATM    6  C13 VDX A 500      11.946  24.017  33.090 -0.33 +0.00    +0.003 C  
+DOCKED: HETATM    7  C14 VDX A 500      13.332  23.856  33.825 -0.40 +0.01    +0.018 C  
+DOCKED: HETATM    8  C15 VDX A 500      13.038  23.957  35.311 -0.42 +0.00    +0.004 C  
+DOCKED: HETATM    9  C16 VDX A 500      11.867  24.970  35.292 -0.33 +0.00    +0.000 C  
+DOCKED: HETATM   10  C17 VDX A 500      11.421  25.266  33.831 -0.30 +0.00    +0.000 C  
+DOCKED: HETATM   11  C18 VDX A 500      11.030  22.772  33.304 -0.35 +0.00    +0.000 C  
+DOCKED: ENDROOT
+DOCKED: BRANCH   1  12
+DOCKED: HETATM   12  C6  VDX A 500      14.876  20.283  33.551 -0.45 -0.00    -0.005 C  
+DOCKED: HETATM   13  C5  VDX A 500      14.662  19.039  34.034 -0.40 -0.01    -0.021 C  
+DOCKED: HETATM   14  C4  VDX A 500      15.505  17.915  33.496 -0.47 +0.03    +0.059 C  
+DOCKED: HETATM   15  C10 VDX A 500      13.622  18.634  35.001 -0.41 +0.00    +0.004 C  
+DOCKED: HETATM   16  C3  VDX A 500      16.011  16.886  34.514 -0.39 +0.10    +0.159 C  
+DOCKED: HETATM   17  O2  VDX A 500      16.952  17.508  35.365 -0.83 -0.24    -0.223 OA 
+DOCKED: HETATM   18  C2  VDX A 500      14.826  16.379  35.390 -0.43 +0.06    +0.071 C  
+DOCKED: HETATM   19  C1  VDX A 500      14.095  17.596  35.997 -0.32 +0.15    +0.177 C  
+DOCKED: HETATM   20  O1  VDX A 500      13.044  17.216  36.855 -0.91 -0.29    -0.218 OA 
+DOCKED: HETATM   21  C19 VDX A 500      12.317  19.051  34.898 -0.43 -0.00    -0.002 C  
+DOCKED: ENDBRANCH   1  12
+DOCKED: BRANCH  10  22
+DOCKED: HETATM   22  C20 VDX A 500       9.895  25.537  33.782 -0.27 +0.00    +0.000 C  
+DOCKED: HETATM   23  C21 VDX A 500       9.559  26.742  34.731 -0.34 +0.00    +0.000 C  
+DOCKED: BRANCH  22  24
+DOCKED: HETATM   24  C22 VDX A 500       9.296  25.623  32.412 -0.34 +0.00    +0.000 C  
+DOCKED: BRANCH  24  25
+DOCKED: HETATM   25  C23 VDX A 500       7.862  24.933  32.364 -0.34 +0.00    +0.003 C  
+DOCKED: BRANCH  25  26
+DOCKED: HETATM   26  C24 VDX A 500       6.606  25.639  32.827 -0.31 +0.03    +0.030 C  
+DOCKED: BRANCH  26  27
+DOCKED: HETATM   27  C25 VDX A 500       5.812  24.969  33.986 -0.26 +0.15    +0.127 C  
+DOCKED: HETATM   28  C27 VDX A 500       6.751  24.604  35.140 -0.33 +0.04    +0.033 C  
+DOCKED: HETATM   29  C26 VDX A 500       5.074  23.747  33.519 -0.40 +0.02    +0.033 C  
+DOCKED: HETATM   30  O3  VDX A 500       4.911  25.857  34.607 -1.11 -0.51    -0.226 OA 
+DOCKED: ENDBRANCH  26  27
+DOCKED: ENDBRANCH  25  26
+DOCKED: ENDBRANCH  24  25
+DOCKED: ENDBRANCH  22  24
+DOCKED: ENDBRANCH  10  22
+DOCKED: TORSDOF 6
+DOCKED: TER
+DOCKED: ENDMDL
+________________________________________________________________________________
+
+
+    CLUSTERING HISTOGRAM
+    ____________________
+
+
+________________________________________________________________________________
+     |           |     |           |     |
+Clus | Lowest    | Run | Mean      | Num | Histogram
+-ter | Binding   |     | Binding   | in  |
+Rank | Energy    |     | Energy    | Clus|    5    10   15   20   25   30   35
+_____|___________|_____|___________|_____|____:____|____:____|____:____|____:___
+   1 |    -11.91 |   3 |    -11.84 |  10 |##########
+_____|___________|_____|___________|_____|______________________________________
+
+
+    RMSD TABLE
+    __________
+
+
+_______________________________________________________________________
+     |      |      |           |         |                 |
+Rank | Sub- | Run  | Binding   | Cluster | Reference       | Grep
+     | Rank |      | Energy    | RMSD    | RMSD            | Pattern
+_____|______|______|___________|_________|_________________|___________
+   1      1      3      -11.91      0.00      0.73           RANKING
+   1      2      8      -11.90      0.05      0.72           RANKING
+   1      3      9      -11.89      0.21      0.72           RANKING
+   1      4      5      -11.88      0.25      0.68           RANKING
+   1      5      1      -11.87      0.13      0.70           RANKING
+   1      6      4      -11.81      0.37      0.81           RANKING
+   1      7      6      -11.81      0.40      0.88           RANKING
+   1      8     10      -11.80      0.39      0.86           RANKING
+   1      9      7      -11.79      0.39      0.85           RANKING
+   1     10      2      -11.77      0.52      0.72           RANKING
+
+Run time 14.246 sec
+Idle time 1.527 sec

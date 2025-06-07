@@ -1,0 +1,893 @@
+AutoDock-GPU version: v1.6-7-ga46ab564d2ac5f1a1523f65239b43505a1c29364
+
+**********************************************************
+**    AutoDock-GPU AUTODOCKTOOLS-COMPATIBLE DLG FILE    **
+**********************************************************
+
+
+    DOCKING PARAMETERS
+    ________________________
+
+
+Ligand file:                               pdbqt_files/1hk5_ligand.pdbqt
+Grid fld file:                             map_grid_files/1hk5_receptor.maps.fld
+
+Random seed:                               1749308299, 840
+Number of runs:                            10
+Number of energy evaluations:              2068966
+Number of generations:                     42000
+Size of population:                        150
+Rate of crossover:                         80.000000%
+Tournament selection probability limit:    60.000000%
+Rate of mutation:                          2.000000%
+Maximal allowed delta movement:            +/- 6.000000A
+Maximal allowed delta angle:               +/- 90.000000
+
+Rate of local search:                      100.000000%
+Maximal number of local search iterations: 300
+Rho lower bound:                           0.010000
+Spread of local search delta movement:     2.000000A
+Spread of local search delta angle:        74.999999
+Limit of consecutive successes/failures:   4
+
+Handle symmetry during clustering:         YES
+RMSD tolerance:                            2.000000A
+
+Program call in command line was:          /home/tajgero/AutoDock-GPU/bin/autodock_gpu_128wi --lfile pdbqt_files/1hk5_ligand.pdbqt --ffile map_grid_files/1hk5_receptor.maps.fld --nrun 10 
+
+
+    GRID PARAMETERS
+    ________________________
+
+
+Receptor name:                             pdbqt_files/1hk5_receptor
+Number of grid points (x, y, z):           41, 41, 41
+Grid center (x, y, z):                     21.018000, 11.521000, 26.485000A
+Grid size (x, y, z):                       15.000000, 15.000000, 15.000000A
+Grid spacing:                              0.375000A
+
+
+    LIGAND PARAMETERS
+    ________________________
+
+
+Ligand name:                               pdbqt_files/1hk5_ligand
+Number of atoms:                           24
+Number of rotatable bonds:                 5
+Number of atom types:                      5
+
+
+    DUMMY DATA (only for ADT-compatibility)
+    ________________________
+
+
+DPF> outlev 1
+DPF> ga_run 10
+DPF> fld map_grid_files/1hk5_receptor.maps.fld
+DPF> move pdbqt_files/1hk5_ligand.pdbqt
+
+
+    COUNTER STATES
+    ________________________
+
+
+Number of energy evaluations performed:    289505
+Number of generations used:                35
+
+
+    INPUT LIGAND PDBQT FILE:
+    ________________________
+
+
+INPUT-LIGAND-PDBQT: REMARK  5 active torsions:
+INPUT-LIGAND-PDBQT: REMARK  status: ('A' for Active; 'I' for Inactive)
+INPUT-LIGAND-PDBQT: REMARK    1  A    between atoms: C1_4574  and  C7_4580 
+INPUT-LIGAND-PDBQT: REMARK    2  A    between atoms: C4_4577  and  O4_4590 
+INPUT-LIGAND-PDBQT: REMARK    3  A    between atoms: C7_4580  and  CA_4581 
+INPUT-LIGAND-PDBQT: REMARK    4  A    between atoms: CA_4581  and  C_4582 
+INPUT-LIGAND-PDBQT: REMARK    5  A    between atoms: C1'_4583  and  O4_4590 
+INPUT-LIGAND-PDBQT: ROOT
+INPUT-LIGAND-PDBQT: HETATM    1  C1  T44 A1008      20.133  10.609  28.666  0.28 38.23    -0.018 A 
+INPUT-LIGAND-PDBQT: HETATM    2  C2  T44 A1008      21.327  10.184  28.059  0.28 39.01     0.004 A 
+INPUT-LIGAND-PDBQT: HETATM    3  C3  T44 A1008      21.556  10.325  26.670  0.28 38.07     0.053 A 
+INPUT-LIGAND-PDBQT: HETATM    4  C4  T44 A1008      20.557  10.913  25.839  0.28 36.32     0.111 A 
+INPUT-LIGAND-PDBQT: HETATM    5  C5  T44 A1008      19.385  11.327  26.433  0.28 35.68     0.053 A 
+INPUT-LIGAND-PDBQT: HETATM    6  C6  T44 A1008      19.136  11.194  27.827  0.28 36.74     0.004 A 
+INPUT-LIGAND-PDBQT: HETATM    7  I3  T44 A1008      23.347   9.679  25.846  0.28 42.78    -0.041 I 
+INPUT-LIGAND-PDBQT: HETATM    8  I5  T44 A1008      17.904  12.194  25.238  0.28 31.90    -0.041 I 
+INPUT-LIGAND-PDBQT: ENDROOT
+INPUT-LIGAND-PDBQT: BRANCH   4   9
+INPUT-LIGAND-PDBQT: HETATM    9  O4  T44 A1008      20.797  11.058  24.473  0.28 33.85    -0.306 OA
+INPUT-LIGAND-PDBQT: BRANCH   9  10
+INPUT-LIGAND-PDBQT: HETATM   10  C1' T44 A1008      21.448  12.210  23.949  0.28 30.13     0.101 A 
+INPUT-LIGAND-PDBQT: HETATM   11  C2' T44 A1008      21.611  12.234  22.560  0.28 28.90     0.033 A 
+INPUT-LIGAND-PDBQT: HETATM   12  C3' T44 A1008      22.253  13.349  21.979  0.28 27.66     0.058 A 
+INPUT-LIGAND-PDBQT: HETATM   13  C4' T44 A1008      22.757  14.491  22.733  0.28 27.67     0.142 A 
+INPUT-LIGAND-PDBQT: HETATM   14  I3' T44 A1008      22.501  13.393  19.913  0.28 25.29    -0.041 I 
+INPUT-LIGAND-PDBQT: HETATM   15  O4' T44 A1008      23.351  15.510  22.152  0.28 26.47    -0.189 OA
+INPUT-LIGAND-PDBQT: HETATM   16  C5' T44 A1008      22.547  14.377  24.124  0.28 28.43     0.058 A 
+INPUT-LIGAND-PDBQT: HETATM   17  C6' T44 A1008      21.912  13.288  24.757  0.28 29.64     0.033 A 
+INPUT-LIGAND-PDBQT: HETATM   18  I5' T44 A1008      23.215  15.928  25.331  0.28 31.23    -0.041 I 
+INPUT-LIGAND-PDBQT: ENDBRANCH   9  10
+INPUT-LIGAND-PDBQT: ENDBRANCH   4   9
+INPUT-LIGAND-PDBQT: BRANCH   1  19
+INPUT-LIGAND-PDBQT: HETATM   19  C7  T44 A1008      19.946  10.441  30.181  0.28 38.94     0.077 C 
+INPUT-LIGAND-PDBQT: BRANCH  19  20
+INPUT-LIGAND-PDBQT: HETATM   20  CA  T44 A1008      20.138   9.047  30.777  0.28 40.27     0.391 C 
+INPUT-LIGAND-PDBQT: HETATM   21  N   T44 A1008      19.212   8.091  30.063  0.28 41.67     0.628 N 
+INPUT-LIGAND-PDBQT: BRANCH  20  22
+INPUT-LIGAND-PDBQT: HETATM   22  C   T44 A1008      19.863   8.921  32.316  0.28 40.45     0.224 C 
+INPUT-LIGAND-PDBQT: HETATM   23  OXT T44 A1008      20.702   8.307  32.998  0.28 40.01    -0.646 OA
+INPUT-LIGAND-PDBQT: HETATM   24  O   T44 A1008      18.824   9.444  32.756  0.28 39.46    -0.646 OA
+INPUT-LIGAND-PDBQT: ENDBRANCH  20  22
+INPUT-LIGAND-PDBQT: ENDBRANCH  19  20
+INPUT-LIGAND-PDBQT: ENDBRANCH   1  19
+INPUT-LIGAND-PDBQT: TORSDOF 5
+
+
+    FINAL DOCKED STATE:
+    ________________________
+
+
+Run:   1 / 10
+Time taken for this run:   0.869s
+
+DOCKED: MODEL        1
+DOCKED: USER    Run = 1
+DOCKED: USER
+DOCKED: USER    Estimated Free Energy of Binding    =  -6.25 kcal/mol  [=(1)+(2)+(3)-(4)]
+DOCKED: USER
+DOCKED: USER    (1) Final Intermolecular Energy     =  -7.74 kcal/mol
+DOCKED: USER        vdW + Hbond + desolv Energy     =  -6.32 kcal/mol
+DOCKED: USER        Electrostatic Energy            =  -1.42 kcal/mol
+DOCKED: USER        Moving Ligand-Fixed Receptor    =  -7.74 kcal/mol
+DOCKED: USER        Moving Ligand-Moving Receptor   =  +0.00 kcal/mol
+DOCKED: USER    (2) Final Total Internal Energy     =  -1.04 kcal/mol
+DOCKED: USER    (3) Torsional Free Energy           =  +1.49 kcal/mol
+DOCKED: USER    (4) Unbound System's Energy         =  -1.04 kcal/mol
+DOCKED: USER
+DOCKED: USER
+DOCKED: REMARK  5 active torsions:
+DOCKED: REMARK  status: ('A' for Active; 'I' for Inactive)
+DOCKED: REMARK    1  A    between atoms: C1_4574  and  C7_4580 
+DOCKED: REMARK    2  A    between atoms: C4_4577  and  O4_4590 
+DOCKED: REMARK    3  A    between atoms: C7_4580  and  CA_4581 
+DOCKED: REMARK    4  A    between atoms: CA_4581  and  C_4582 
+DOCKED: REMARK    5  A    between atoms: C1'_4583  and  O4_4590 
+DOCKED: USER                              x       y       z     vdW  Elec       q    Type
+DOCKED: USER                           _______ _______ _______ _____ _____    ______ ____
+DOCKED: ROOT
+DOCKED: HETATM    1  C1  T44 A1008      20.443   9.232  27.514 -0.10 -0.01    -0.018 A  
+DOCKED: HETATM    2  C2  T44 A1008      21.522   8.833  26.707 -0.11 +0.00    +0.004 A  
+DOCKED: HETATM    3  C3  T44 A1008      21.671   9.284  25.374 -0.13 +0.02    +0.053 A  
+DOCKED: HETATM    4  C4  T44 A1008      20.707  10.171  24.810 -0.12 +0.04    +0.111 A  
+DOCKED: HETATM    5  C5  T44 A1008      19.648  10.560  25.599 -0.17 +0.02    +0.053 A  
+DOCKED: HETATM    6  C6  T44 A1008      19.480  10.118  26.941 -0.03 +0.00    +0.004 A  
+DOCKED: HETATM    7  I3  T44 A1008      23.294   8.656  24.245 -0.83 -0.02    -0.041 I  
+DOCKED: HETATM    8  I5  T44 A1008      18.221  11.862  24.797 -1.10 -0.02    -0.041 I  
+DOCKED: ENDROOT
+DOCKED: BRANCH   4   9
+DOCKED: HETATM    9  O4  T44 A1008      20.869  10.619  23.499 -0.12 -0.10    -0.306 OA 
+DOCKED: BRANCH   9  10
+DOCKED: HETATM   10  C1' T44 A1008      21.423  11.898  23.212 -0.20 +0.03    +0.101 A  
+DOCKED: HETATM   11  C2' T44 A1008      21.574  12.752  24.309 -0.20 +0.01    +0.033 A  
+DOCKED: HETATM   12  C3' T44 A1008      22.114  14.038  24.089 -0.21 +0.02    +0.058 A  
+DOCKED: HETATM   13  C4' T44 A1008      22.535  14.539  22.786 -0.14 +0.05    +0.142 A  
+DOCKED: HETATM   14  I3' T44 A1008      22.343  15.316  25.715 -0.71 -0.02    -0.041 I  
+DOCKED: HETATM   15  O4' T44 A1008      23.033  15.745  22.624 -0.24 -0.05    -0.189 OA 
+DOCKED: HETATM   16  C5' T44 A1008      22.345  13.608  21.742 -0.27 +0.02    +0.058 A  
+DOCKED: HETATM   17  C6' T44 A1008      21.811  12.312  21.905 -0.34 +0.01    +0.033 A  
+DOCKED: HETATM   18  I5' T44 A1008      22.896  14.181  19.825 -0.79 -0.02    -0.041 I  
+DOCKED: ENDBRANCH   9  10
+DOCKED: ENDBRANCH   4   9
+DOCKED: BRANCH   1  19
+DOCKED: HETATM   19  C7  T44 A1008      20.340   8.719  28.958 -0.10 +0.03    +0.077 C  
+DOCKED: BRANCH  19  20
+DOCKED: HETATM   20  CA  T44 A1008      20.871   7.318  29.261 -0.02 +0.13    +0.391 C  
+DOCKED: HETATM   21  N   T44 A1008      19.952   6.667  30.267 +0.09 -0.12    +0.628 N  
+DOCKED: BRANCH  20  22
+DOCKED: HETATM   22  C   T44 A1008      22.330   7.252  29.832 +0.07 +0.24    +0.224 C  
+DOCKED: HETATM   23  OXT T44 A1008      23.265   7.447  29.035 -0.11 -0.76    -0.646 OA 
+DOCKED: HETATM   24  O   T44 A1008      22.459   7.009  31.045 -0.45 -0.94    -0.646 OA 
+DOCKED: ENDBRANCH  20  22
+DOCKED: ENDBRANCH  19  20
+DOCKED: ENDBRANCH   1  19
+DOCKED: TORSDOF 5
+DOCKED: TER
+DOCKED: ENDMDL
+________________________________________________________________________________
+
+
+    FINAL DOCKED STATE:
+    ________________________
+
+
+Run:   2 / 10
+Time taken for this run:   0.869s
+
+DOCKED: MODEL        2
+DOCKED: USER    Run = 2
+DOCKED: USER
+DOCKED: USER    Estimated Free Energy of Binding    =  -6.11 kcal/mol  [=(1)+(2)+(3)-(4)]
+DOCKED: USER
+DOCKED: USER    (1) Final Intermolecular Energy     =  -7.61 kcal/mol
+DOCKED: USER        vdW + Hbond + desolv Energy     =  -6.82 kcal/mol
+DOCKED: USER        Electrostatic Energy            =  -0.79 kcal/mol
+DOCKED: USER        Moving Ligand-Fixed Receptor    =  -7.61 kcal/mol
+DOCKED: USER        Moving Ligand-Moving Receptor   =  +0.00 kcal/mol
+DOCKED: USER    (2) Final Total Internal Energy     =  -1.08 kcal/mol
+DOCKED: USER    (3) Torsional Free Energy           =  +1.49 kcal/mol
+DOCKED: USER    (4) Unbound System's Energy         =  -1.08 kcal/mol
+DOCKED: USER
+DOCKED: USER
+DOCKED: REMARK  5 active torsions:
+DOCKED: REMARK  status: ('A' for Active; 'I' for Inactive)
+DOCKED: REMARK    1  A    between atoms: C1_4574  and  C7_4580 
+DOCKED: REMARK    2  A    between atoms: C4_4577  and  O4_4590 
+DOCKED: REMARK    3  A    between atoms: C7_4580  and  CA_4581 
+DOCKED: REMARK    4  A    between atoms: CA_4581  and  C_4582 
+DOCKED: REMARK    5  A    between atoms: C1'_4583  and  O4_4590 
+DOCKED: USER                              x       y       z     vdW  Elec       q    Type
+DOCKED: USER                           _______ _______ _______ _____ _____    ______ ____
+DOCKED: ROOT
+DOCKED: HETATM    1  C1  T44 A1008      19.834  10.555  28.332 -0.12 -0.01    -0.018 A  
+DOCKED: HETATM    2  C2  T44 A1008      21.078  10.101  27.861 -0.13 +0.00    +0.004 A  
+DOCKED: HETATM    3  C3  T44 A1008      21.463  10.233  26.507 -0.09 +0.02    +0.053 A  
+DOCKED: HETATM    4  C4  T44 A1008      20.578  10.843  25.570 -0.08 +0.04    +0.111 A  
+DOCKED: HETATM    5  C5  T44 A1008      19.357  11.286  26.030 -0.20 +0.03    +0.053 A  
+DOCKED: HETATM    6  C6  T44 A1008      18.951  11.162  27.388 -0.12 +0.00    +0.004 A  
+DOCKED: HETATM    7  I3  T44 A1008      23.319   9.542  25.887 -0.77 -0.02    -0.041 I  
+DOCKED: HETATM    8  I5  T44 A1008      18.040  12.186  24.678 -1.11 -0.02    -0.041 I  
+DOCKED: ENDROOT
+DOCKED: BRANCH   4   9
+DOCKED: HETATM    9  O4  T44 A1008      20.972  10.979  24.239 -0.09 -0.10    -0.306 OA 
+DOCKED: BRANCH   9  10
+DOCKED: HETATM   10  C1' T44 A1008      21.535  12.191  23.749 -0.17 +0.04    +0.101 A  
+DOCKED: HETATM   11  C2' T44 A1008      21.702  12.263  22.362 -0.31 +0.01    +0.033 A  
+DOCKED: HETATM   12  C3' T44 A1008      22.260  13.439  21.814 -0.28 +0.02    +0.058 A  
+DOCKED: HETATM   13  C4' T44 A1008      22.671  14.596  22.601 -0.14 +0.05    +0.142 A  
+DOCKED: HETATM   14  I3' T44 A1008      22.514  13.555  19.752 -0.89 -0.01    -0.041 I  
+DOCKED: HETATM   15  O4' T44 A1008      23.188  15.672  22.050 -0.24 -0.05    -0.189 OA 
+DOCKED: HETATM   16  C5' T44 A1008      22.464  14.430  23.987 -0.23 +0.02    +0.058 A  
+DOCKED: HETATM   17  C6' T44 A1008      21.911  13.280  24.587 -0.21 +0.01    +0.033 A  
+DOCKED: HETATM   18  I5' T44 A1008      23.005  15.996  25.237 -0.90 -0.02    -0.041 I  
+DOCKED: ENDBRANCH   9  10
+DOCKED: ENDBRANCH   4   9
+DOCKED: BRANCH   1  19
+DOCKED: HETATM   19  C7  T44 A1008      19.476  10.395  29.817 -0.06 +0.07    +0.077 C  
+DOCKED: BRANCH  19  20
+DOCKED: HETATM   20  CA  T44 A1008      20.571   9.921  30.772 +0.04 +0.32    +0.391 C  
+DOCKED: HETATM   21  N   T44 A1008      20.086   8.674  31.473 +0.16 +0.35    +0.628 N  
+DOCKED: BRANCH  20  22
+DOCKED: HETATM   22  C   T44 A1008      21.007  10.950  31.872 -0.06 +0.20    +0.224 C  
+DOCKED: HETATM   23  OXT T44 A1008      20.243  11.905  32.096 -0.30 -0.82    -0.646 OA 
+DOCKED: HETATM   24  O   T44 A1008      22.089  10.745  32.450 -0.53 -0.92    -0.646 OA 
+DOCKED: ENDBRANCH  20  22
+DOCKED: ENDBRANCH  19  20
+DOCKED: ENDBRANCH   1  19
+DOCKED: TORSDOF 5
+DOCKED: TER
+DOCKED: ENDMDL
+________________________________________________________________________________
+
+
+    FINAL DOCKED STATE:
+    ________________________
+
+
+Run:   3 / 10
+Time taken for this run:   0.869s
+
+DOCKED: MODEL        3
+DOCKED: USER    Run = 3
+DOCKED: USER
+DOCKED: USER    Estimated Free Energy of Binding    =  -6.13 kcal/mol  [=(1)+(2)+(3)-(4)]
+DOCKED: USER
+DOCKED: USER    (1) Final Intermolecular Energy     =  -7.62 kcal/mol
+DOCKED: USER        vdW + Hbond + desolv Energy     =  -6.86 kcal/mol
+DOCKED: USER        Electrostatic Energy            =  -0.77 kcal/mol
+DOCKED: USER        Moving Ligand-Fixed Receptor    =  -7.62 kcal/mol
+DOCKED: USER        Moving Ligand-Moving Receptor   =  +0.00 kcal/mol
+DOCKED: USER    (2) Final Total Internal Energy     =  -1.07 kcal/mol
+DOCKED: USER    (3) Torsional Free Energy           =  +1.49 kcal/mol
+DOCKED: USER    (4) Unbound System's Energy         =  -1.07 kcal/mol
+DOCKED: USER
+DOCKED: USER
+DOCKED: REMARK  5 active torsions:
+DOCKED: REMARK  status: ('A' for Active; 'I' for Inactive)
+DOCKED: REMARK    1  A    between atoms: C1_4574  and  C7_4580 
+DOCKED: REMARK    2  A    between atoms: C4_4577  and  O4_4590 
+DOCKED: REMARK    3  A    between atoms: C7_4580  and  CA_4581 
+DOCKED: REMARK    4  A    between atoms: CA_4581  and  C_4582 
+DOCKED: REMARK    5  A    between atoms: C1'_4583  and  O4_4590 
+DOCKED: USER                              x       y       z     vdW  Elec       q    Type
+DOCKED: USER                           _______ _______ _______ _____ _____    ______ ____
+DOCKED: ROOT
+DOCKED: HETATM    1  C1  T44 A1008      19.855  10.492  28.347 -0.12 -0.01    -0.018 A  
+DOCKED: HETATM    2  C2  T44 A1008      21.067  10.004  27.829 -0.13 +0.00    +0.004 A  
+DOCKED: HETATM    3  C3  T44 A1008      21.419  10.159  26.468 -0.09 +0.02    +0.053 A  
+DOCKED: HETATM    4  C4  T44 A1008      20.531  10.826  25.573 -0.08 +0.04    +0.111 A  
+DOCKED: HETATM    5  C5  T44 A1008      19.342  11.301  26.079 -0.20 +0.03    +0.053 A  
+DOCKED: HETATM    6  C6  T44 A1008      18.969  11.156  27.444 -0.11 +0.00    +0.004 A  
+DOCKED: HETATM    7  I3  T44 A1008      23.230   9.417  25.777 -0.78 -0.02    -0.041 I  
+DOCKED: HETATM    8  I5  T44 A1008      18.022  12.285  24.789 -1.12 -0.02    -0.041 I  
+DOCKED: ENDROOT
+DOCKED: BRANCH   4   9
+DOCKED: HETATM    9  O4  T44 A1008      20.893  10.983  24.235 -0.10 -0.11    -0.306 OA 
+DOCKED: BRANCH   9  10
+DOCKED: HETATM   10  C1' T44 A1008      21.476  12.190  23.758 -0.17 +0.04    +0.101 A  
+DOCKED: HETATM   11  C2' T44 A1008      21.661  12.267  22.374 -0.31 +0.01    +0.033 A  
+DOCKED: HETATM   12  C3' T44 A1008      22.239  13.439  21.838 -0.28 +0.02    +0.058 A  
+DOCKED: HETATM   13  C4' T44 A1008      22.654  14.587  22.635 -0.14 +0.05    +0.142 A  
+DOCKED: HETATM   14  I3' T44 A1008      22.519  13.562  19.780 -0.90 -0.01    -0.041 I  
+DOCKED: HETATM   15  O4' T44 A1008      23.191  15.660  22.096 -0.24 -0.05    -0.189 OA 
+DOCKED: HETATM   16  C5' T44 A1008      22.428  14.417  24.018 -0.22 +0.02    +0.058 A  
+DOCKED: HETATM   17  C6' T44 A1008      21.855  13.271  24.606 -0.20 +0.01    +0.033 A  
+DOCKED: HETATM   18  I5' T44 A1008      22.973  15.971  25.283 -0.89 -0.02    -0.041 I  
+DOCKED: ENDBRANCH   9  10
+DOCKED: ENDBRANCH   4   9
+DOCKED: BRANCH   1  19
+DOCKED: HETATM   19  C7  T44 A1008      19.532  10.305  29.837 -0.08 +0.07    +0.077 C  
+DOCKED: BRANCH  19  20
+DOCKED: HETATM   20  CA  T44 A1008      20.669   9.890  30.770 +0.04 +0.32    +0.391 C  
+DOCKED: HETATM   21  N   T44 A1008      20.271   8.610  31.466 +0.15 +0.37    +0.628 N  
+DOCKED: BRANCH  20  22
+DOCKED: HETATM   22  C   T44 A1008      21.059  10.934  31.874 -0.05 +0.20    +0.224 C  
+DOCKED: HETATM   23  OXT T44 A1008      22.145  10.770  32.457 -0.54 -0.94    -0.646 OA 
+DOCKED: HETATM   24  O   T44 A1008      20.258  11.860  32.094 -0.28 -0.81    -0.646 OA 
+DOCKED: ENDBRANCH  20  22
+DOCKED: ENDBRANCH  19  20
+DOCKED: ENDBRANCH   1  19
+DOCKED: TORSDOF 5
+DOCKED: TER
+DOCKED: ENDMDL
+________________________________________________________________________________
+
+
+    FINAL DOCKED STATE:
+    ________________________
+
+
+Run:   4 / 10
+Time taken for this run:   0.869s
+
+DOCKED: MODEL        4
+DOCKED: USER    Run = 4
+DOCKED: USER
+DOCKED: USER    Estimated Free Energy of Binding    =  -6.27 kcal/mol  [=(1)+(2)+(3)-(4)]
+DOCKED: USER
+DOCKED: USER    (1) Final Intermolecular Energy     =  -7.77 kcal/mol
+DOCKED: USER        vdW + Hbond + desolv Energy     =  -6.35 kcal/mol
+DOCKED: USER        Electrostatic Energy            =  -1.41 kcal/mol
+DOCKED: USER        Moving Ligand-Fixed Receptor    =  -7.77 kcal/mol
+DOCKED: USER        Moving Ligand-Moving Receptor   =  +0.00 kcal/mol
+DOCKED: USER    (2) Final Total Internal Energy     =  -1.08 kcal/mol
+DOCKED: USER    (3) Torsional Free Energy           =  +1.49 kcal/mol
+DOCKED: USER    (4) Unbound System's Energy         =  -1.08 kcal/mol
+DOCKED: USER
+DOCKED: USER
+DOCKED: REMARK  5 active torsions:
+DOCKED: REMARK  status: ('A' for Active; 'I' for Inactive)
+DOCKED: REMARK    1  A    between atoms: C1_4574  and  C7_4580 
+DOCKED: REMARK    2  A    between atoms: C4_4577  and  O4_4590 
+DOCKED: REMARK    3  A    between atoms: C7_4580  and  CA_4581 
+DOCKED: REMARK    4  A    between atoms: CA_4581  and  C_4582 
+DOCKED: REMARK    5  A    between atoms: C1'_4583  and  O4_4590 
+DOCKED: USER                              x       y       z     vdW  Elec       q    Type
+DOCKED: USER                           _______ _______ _______ _____ _____    ______ ____
+DOCKED: ROOT
+DOCKED: HETATM    1  C1  T44 A1008      20.466   9.421  27.820 -0.10 -0.01    -0.018 A  
+DOCKED: HETATM    2  C2  T44 A1008      19.519  10.292  27.254 -0.08 +0.00    +0.004 A  
+DOCKED: HETATM    3  C3  T44 A1008      19.616  10.741  25.916 -0.17 +0.02    +0.053 A  
+DOCKED: HETATM    4  C4  T44 A1008      20.702  10.311  25.097 -0.10 +0.04    +0.111 A  
+DOCKED: HETATM    5  C5  T44 A1008      21.632   9.460  25.652 -0.11 +0.02    +0.053 A  
+DOCKED: HETATM    6  C6  T44 A1008      21.552   8.998  26.995 -0.11 +0.00    +0.004 A  
+DOCKED: HETATM    7  I3  T44 A1008      18.176  12.021  25.148 -1.08 -0.02    -0.041 I  
+DOCKED: HETATM    8  I5  T44 A1008      23.233   8.813  24.472 -0.83 -0.02    -0.041 I  
+DOCKED: ENDROOT
+DOCKED: BRANCH   4   9
+DOCKED: HETATM    9  O4  T44 A1008      20.782  10.750  23.775 -0.12 -0.10    -0.306 OA 
+DOCKED: BRANCH   9  10
+DOCKED: HETATM   10  C1' T44 A1008      21.356  12.009  23.442 -0.19 +0.03    +0.101 A  
+DOCKED: HETATM   11  C2' T44 A1008      21.592  12.225  22.080 -0.31 +0.01    +0.033 A  
+DOCKED: HETATM   12  C3' T44 A1008      22.164  13.454  21.685 -0.29 +0.02    +0.058 A  
+DOCKED: HETATM   13  C4' T44 A1008      22.524  14.525  22.607 -0.14 +0.05    +0.142 A  
+DOCKED: HETATM   14  I3' T44 A1008      22.519  13.784  19.661 -0.79 -0.01    -0.041 I  
+DOCKED: HETATM   15  O4' T44 A1008      23.056  15.655  22.197 -0.24 -0.05    -0.189 OA 
+DOCKED: HETATM   16  C5' T44 A1008      22.249  14.216  23.956 -0.21 +0.02    +0.058 A  
+DOCKED: HETATM   17  C6' T44 A1008      21.679  13.007  24.406 -0.20 +0.01    +0.033 A  
+DOCKED: HETATM   18  I5' T44 A1008      22.711  15.647  25.387 -0.86 -0.02    -0.041 I  
+DOCKED: ENDBRANCH   9  10
+DOCKED: ENDBRANCH   4   9
+DOCKED: BRANCH   1  19
+DOCKED: HETATM   19  C7  T44 A1008      20.302   8.958  29.275 -0.10 +0.04    +0.077 C  
+DOCKED: BRANCH  19  20
+DOCKED: HETATM   20  CA  T44 A1008      20.683   7.518  29.616 -0.01 +0.14    +0.391 C  
+DOCKED: HETATM   21  N   T44 A1008      19.655   6.967  30.576 +0.11 -0.10    +0.628 N  
+DOCKED: BRANCH  20  22
+DOCKED: HETATM   22  C   T44 A1008      22.098   7.324  30.266 +0.11 +0.25    +0.224 C  
+DOCKED: HETATM   23  OXT T44 A1008      22.172   7.396  31.505 -0.24 -0.96    -0.646 OA 
+DOCKED: HETATM   24  O   T44 A1008      23.054   7.110  29.500 -0.29 -0.79    -0.646 OA 
+DOCKED: ENDBRANCH  20  22
+DOCKED: ENDBRANCH  19  20
+DOCKED: ENDBRANCH   1  19
+DOCKED: TORSDOF 5
+DOCKED: TER
+DOCKED: ENDMDL
+________________________________________________________________________________
+
+
+    FINAL DOCKED STATE:
+    ________________________
+
+
+Run:   5 / 10
+Time taken for this run:   0.869s
+
+DOCKED: MODEL        5
+DOCKED: USER    Run = 5
+DOCKED: USER
+DOCKED: USER    Estimated Free Energy of Binding    =  -6.27 kcal/mol  [=(1)+(2)+(3)-(4)]
+DOCKED: USER
+DOCKED: USER    (1) Final Intermolecular Energy     =  -7.76 kcal/mol
+DOCKED: USER        vdW + Hbond + desolv Energy     =  -6.40 kcal/mol
+DOCKED: USER        Electrostatic Energy            =  -1.36 kcal/mol
+DOCKED: USER        Moving Ligand-Fixed Receptor    =  -7.76 kcal/mol
+DOCKED: USER        Moving Ligand-Moving Receptor   =  +0.00 kcal/mol
+DOCKED: USER    (2) Final Total Internal Energy     =  -1.05 kcal/mol
+DOCKED: USER    (3) Torsional Free Energy           =  +1.49 kcal/mol
+DOCKED: USER    (4) Unbound System's Energy         =  -1.05 kcal/mol
+DOCKED: USER
+DOCKED: USER
+DOCKED: REMARK  5 active torsions:
+DOCKED: REMARK  status: ('A' for Active; 'I' for Inactive)
+DOCKED: REMARK    1  A    between atoms: C1_4574  and  C7_4580 
+DOCKED: REMARK    2  A    between atoms: C4_4577  and  O4_4590 
+DOCKED: REMARK    3  A    between atoms: C7_4580  and  CA_4581 
+DOCKED: REMARK    4  A    between atoms: CA_4581  and  C_4582 
+DOCKED: REMARK    5  A    between atoms: C1'_4583  and  O4_4590 
+DOCKED: USER                              x       y       z     vdW  Elec       q    Type
+DOCKED: USER                           _______ _______ _______ _____ _____    ______ ____
+DOCKED: ROOT
+DOCKED: HETATM    1  C1  T44 A1008      20.436   9.335  27.873 -0.10 -0.01    -0.018 A  
+DOCKED: HETATM    2  C2  T44 A1008      19.530  10.234  27.285 -0.07 +0.00    +0.004 A  
+DOCKED: HETATM    3  C3  T44 A1008      19.665  10.667  25.945 -0.16 +0.02    +0.053 A  
+DOCKED: HETATM    4  C4  T44 A1008      20.746  10.190  25.146 -0.10 +0.04    +0.111 A  
+DOCKED: HETATM    5  C5  T44 A1008      21.636   9.311  25.724 -0.11 +0.02    +0.053 A  
+DOCKED: HETATM    6  C6  T44 A1008      21.518   8.864  27.069 -0.11 +0.00    +0.004 A  
+DOCKED: HETATM    7  I3  T44 A1008      18.285  11.992  25.142 -1.07 -0.02    -0.041 I  
+DOCKED: HETATM    8  I5  T44 A1008      23.230   8.594  24.575 -0.86 -0.02    -0.041 I  
+DOCKED: ENDROOT
+DOCKED: BRANCH   4   9
+DOCKED: HETATM    9  O4  T44 A1008      20.863  10.613  23.823 -0.12 -0.10    -0.306 OA 
+DOCKED: BRANCH   9  10
+DOCKED: HETATM   10  C1' T44 A1008      21.410  11.885  23.493 -0.18 +0.03    +0.101 A  
+DOCKED: HETATM   11  C2' T44 A1008      21.637  12.112  22.132 -0.29 +0.01    +0.033 A  
+DOCKED: HETATM   12  C3' T44 A1008      22.182  13.354  21.740 -0.30 +0.02    +0.058 A  
+DOCKED: HETATM   13  C4' T44 A1008      22.522  14.430  22.665 -0.15 +0.05    +0.142 A  
+DOCKED: HETATM   14  I3' T44 A1008      22.523  13.701  19.717 -0.84 -0.01    -0.041 I  
+DOCKED: HETATM   15  O4' T44 A1008      23.029  15.572  22.258 -0.24 -0.05    -0.189 OA 
+DOCKED: HETATM   16  C5' T44 A1008      22.258  14.109  24.014 -0.21 +0.02    +0.058 A  
+DOCKED: HETATM   17  C6' T44 A1008      21.715  12.886  24.461 -0.20 +0.01    +0.033 A  
+DOCKED: HETATM   18  I5' T44 A1008      22.694  15.543  25.450 -0.82 -0.02    -0.041 I  
+DOCKED: ENDBRANCH   9  10
+DOCKED: ENDBRANCH   4   9
+DOCKED: BRANCH   1  19
+DOCKED: HETATM   19  C7  T44 A1008      20.232   8.891  29.329 -0.09 +0.04    +0.077 C  
+DOCKED: BRANCH  19  20
+DOCKED: HETATM   20  CA  T44 A1008      20.629   7.465  29.707 -0.01 +0.13    +0.391 C  
+DOCKED: HETATM   21  N   T44 A1008      19.675   6.969  30.768 +0.12 -0.11    +0.628 N  
+DOCKED: BRANCH  20  22
+DOCKED: HETATM   22  C   T44 A1008      22.088   7.286  30.253 +0.09 +0.24    +0.224 C  
+DOCKED: HETATM   23  OXT T44 A1008      22.219   7.052  31.467 -0.35 -0.81    -0.646 OA 
+DOCKED: HETATM   24  O   T44 A1008      23.021   7.389  29.437 -0.24 -0.84    -0.646 OA 
+DOCKED: ENDBRANCH  20  22
+DOCKED: ENDBRANCH  19  20
+DOCKED: ENDBRANCH   1  19
+DOCKED: TORSDOF 5
+DOCKED: TER
+DOCKED: ENDMDL
+________________________________________________________________________________
+
+
+    FINAL DOCKED STATE:
+    ________________________
+
+
+Run:   6 / 10
+Time taken for this run:   0.869s
+
+DOCKED: MODEL        6
+DOCKED: USER    Run = 6
+DOCKED: USER
+DOCKED: USER    Estimated Free Energy of Binding    =  -6.27 kcal/mol  [=(1)+(2)+(3)-(4)]
+DOCKED: USER
+DOCKED: USER    (1) Final Intermolecular Energy     =  -7.76 kcal/mol
+DOCKED: USER        vdW + Hbond + desolv Energy     =  -6.30 kcal/mol
+DOCKED: USER        Electrostatic Energy            =  -1.46 kcal/mol
+DOCKED: USER        Moving Ligand-Fixed Receptor    =  -7.76 kcal/mol
+DOCKED: USER        Moving Ligand-Moving Receptor   =  +0.00 kcal/mol
+DOCKED: USER    (2) Final Total Internal Energy     =  -1.10 kcal/mol
+DOCKED: USER    (3) Torsional Free Energy           =  +1.49 kcal/mol
+DOCKED: USER    (4) Unbound System's Energy         =  -1.10 kcal/mol
+DOCKED: USER
+DOCKED: USER
+DOCKED: REMARK  5 active torsions:
+DOCKED: REMARK  status: ('A' for Active; 'I' for Inactive)
+DOCKED: REMARK    1  A    between atoms: C1_4574  and  C7_4580 
+DOCKED: REMARK    2  A    between atoms: C4_4577  and  O4_4590 
+DOCKED: REMARK    3  A    between atoms: C7_4580  and  CA_4581 
+DOCKED: REMARK    4  A    between atoms: CA_4581  and  C_4582 
+DOCKED: REMARK    5  A    between atoms: C1'_4583  and  O4_4590 
+DOCKED: USER                              x       y       z     vdW  Elec       q    Type
+DOCKED: USER                           _______ _______ _______ _____ _____    ______ ____
+DOCKED: ROOT
+DOCKED: HETATM    1  C1  T44 A1008      20.477   9.229  27.555 -0.10 -0.01    -0.018 A  
+DOCKED: HETATM    2  C2  T44 A1008      19.525  10.113  27.021 -0.06 +0.00    +0.004 A  
+DOCKED: HETATM    3  C3  T44 A1008      19.640  10.642  25.714 -0.17 +0.02    +0.053 A  
+DOCKED: HETATM    4  C4  T44 A1008      20.751  10.283  24.895 -0.11 +0.04    +0.111 A  
+DOCKED: HETATM    5  C5  T44 A1008      21.687   9.419  25.420 -0.13 +0.02    +0.053 A  
+DOCKED: HETATM    6  C6  T44 A1008      21.589   8.876  26.731 -0.11 +0.00    +0.004 A  
+DOCKED: HETATM    7  I3  T44 A1008      18.190  11.938  24.991 -1.10 -0.02    -0.041 I  
+DOCKED: HETATM    8  I5  T44 A1008      23.325   8.874  24.240 -0.79 -0.02    -0.041 I  
+DOCKED: ENDROOT
+DOCKED: BRANCH   4   9
+DOCKED: HETATM    9  O4  T44 A1008      20.850  10.801  23.604 -0.13 -0.10    -0.306 OA 
+DOCKED: BRANCH   9  10
+DOCKED: HETATM   10  C1' T44 A1008      21.432  12.076  23.356 -0.20 +0.03    +0.101 A  
+DOCKED: HETATM   11  C2' T44 A1008      21.773  12.337  22.025 -0.33 +0.01    +0.033 A  
+DOCKED: HETATM   12  C3' T44 A1008      22.357  13.584  21.714 -0.27 +0.02    +0.058 A  
+DOCKED: HETATM   13  C4' T44 A1008      22.626  14.631  22.693 -0.14 +0.05    +0.142 A  
+DOCKED: HETATM   14  I3' T44 A1008      22.870  13.980  19.736 -0.71 -0.02    -0.041 I  
+DOCKED: HETATM   15  O4' T44 A1008      23.174  15.780  22.361 -0.23 -0.05    -0.189 OA 
+DOCKED: HETATM   16  C5' T44 A1008      22.248  14.278  24.006 -0.22 +0.02    +0.058 A  
+DOCKED: HETATM   17  C6' T44 A1008      21.661  13.049  24.372 -0.20 +0.01    +0.033 A  
+DOCKED: HETATM   18  I5' T44 A1008      22.572  15.669  25.511 -0.83 -0.02    -0.041 I  
+DOCKED: ENDBRANCH   9  10
+DOCKED: ENDBRANCH   4   9
+DOCKED: BRANCH   1  19
+DOCKED: HETATM   19  C7  T44 A1008      20.292   8.676  28.976 -0.10 +0.03    +0.077 C  
+DOCKED: BRANCH  19  20
+DOCKED: HETATM   20  CA  T44 A1008      20.858   7.291  29.287 -0.02 +0.13    +0.391 C  
+DOCKED: HETATM   21  N   T44 A1008      19.974   6.635  30.320 +0.10 -0.14    +0.628 N  
+DOCKED: BRANCH  20  22
+DOCKED: HETATM   22  C   T44 A1008      22.330   7.263  29.829 +0.08 +0.24    +0.224 C  
+DOCKED: HETATM   23  OXT T44 A1008      23.243   7.485  29.014 -0.09 -0.75    -0.646 OA 
+DOCKED: HETATM   24  O   T44 A1008      22.489   7.022  31.038 -0.45 -0.97    -0.646 OA 
+DOCKED: ENDBRANCH  20  22
+DOCKED: ENDBRANCH  19  20
+DOCKED: ENDBRANCH   1  19
+DOCKED: TORSDOF 5
+DOCKED: TER
+DOCKED: ENDMDL
+________________________________________________________________________________
+
+
+    FINAL DOCKED STATE:
+    ________________________
+
+
+Run:   7 / 10
+Time taken for this run:   0.869s
+
+DOCKED: MODEL        7
+DOCKED: USER    Run = 7
+DOCKED: USER
+DOCKED: USER    Estimated Free Energy of Binding    =  -6.29 kcal/mol  [=(1)+(2)+(3)-(4)]
+DOCKED: USER
+DOCKED: USER    (1) Final Intermolecular Energy     =  -7.78 kcal/mol
+DOCKED: USER        vdW + Hbond + desolv Energy     =  -6.36 kcal/mol
+DOCKED: USER        Electrostatic Energy            =  -1.43 kcal/mol
+DOCKED: USER        Moving Ligand-Fixed Receptor    =  -7.78 kcal/mol
+DOCKED: USER        Moving Ligand-Moving Receptor   =  +0.00 kcal/mol
+DOCKED: USER    (2) Final Total Internal Energy     =  -1.08 kcal/mol
+DOCKED: USER    (3) Torsional Free Energy           =  +1.49 kcal/mol
+DOCKED: USER    (4) Unbound System's Energy         =  -1.08 kcal/mol
+DOCKED: USER
+DOCKED: USER
+DOCKED: REMARK  5 active torsions:
+DOCKED: REMARK  status: ('A' for Active; 'I' for Inactive)
+DOCKED: REMARK    1  A    between atoms: C1_4574  and  C7_4580 
+DOCKED: REMARK    2  A    between atoms: C4_4577  and  O4_4590 
+DOCKED: REMARK    3  A    between atoms: C7_4580  and  CA_4581 
+DOCKED: REMARK    4  A    between atoms: CA_4581  and  C_4582 
+DOCKED: REMARK    5  A    between atoms: C1'_4583  and  O4_4590 
+DOCKED: USER                              x       y       z     vdW  Elec       q    Type
+DOCKED: USER                           _______ _______ _______ _____ _____    ______ ____
+DOCKED: ROOT
+DOCKED: HETATM    1  C1  T44 A1008      20.471   9.251  27.701 -0.10 -0.01    -0.018 A  
+DOCKED: HETATM    2  C2  T44 A1008      19.522  10.136  27.163 -0.05 +0.00    +0.004 A  
+DOCKED: HETATM    3  C3  T44 A1008      19.610  10.619  25.836 -0.17 +0.02    +0.053 A  
+DOCKED: HETATM    4  C4  T44 A1008      20.689  10.208  24.999 -0.11 +0.04    +0.111 A  
+DOCKED: HETATM    5  C5  T44 A1008      21.622   9.342  25.526 -0.12 +0.02    +0.053 A  
+DOCKED: HETATM    6  C6  T44 A1008      21.551   8.847  26.857 -0.11 +0.00    +0.004 A  
+DOCKED: HETATM    7  I3  T44 A1008      18.166  11.920  25.110 -1.08 -0.02    -0.041 I  
+DOCKED: HETATM    8  I5  T44 A1008      23.213   8.723  24.320 -0.82 -0.02    -0.041 I  
+DOCKED: ENDROOT
+DOCKED: BRANCH   4   9
+DOCKED: HETATM    9  O4  T44 A1008      20.760  10.680  23.689 -0.13 -0.10    -0.306 OA 
+DOCKED: BRANCH   9  10
+DOCKED: HETATM   10  C1' T44 A1008      21.353  11.936  23.380 -0.20 +0.03    +0.101 A  
+DOCKED: HETATM   11  C2' T44 A1008      21.589  12.177  22.023 -0.30 +0.01    +0.033 A  
+DOCKED: HETATM   12  C3' T44 A1008      22.179  13.405  21.652 -0.30 +0.02    +0.058 A  
+DOCKED: HETATM   13  C4' T44 A1008      22.557  14.452  22.595 -0.14 +0.05    +0.142 A  
+DOCKED: HETATM   14  I3' T44 A1008      22.535  13.773  19.635 -0.76 -0.01    -0.041 I  
+DOCKED: HETATM   15  O4' T44 A1008      23.106  15.582  22.208 -0.24 -0.05    -0.189 OA 
+DOCKED: HETATM   16  C5' T44 A1008      22.281  14.118  23.938 -0.21 +0.02    +0.058 A  
+DOCKED: HETATM   17  C6' T44 A1008      21.694  12.909  24.364 -0.20 +0.01    +0.033 A  
+DOCKED: HETATM   18  I5' T44 A1008      22.769  15.511  25.398 -0.83 -0.02    -0.041 I  
+DOCKED: ENDBRANCH   9  10
+DOCKED: ENDBRANCH   4   9
+DOCKED: BRANCH   1  19
+DOCKED: HETATM   19  C7  T44 A1008      20.317   8.752  29.145 -0.10 +0.03    +0.077 C  
+DOCKED: BRANCH  19  20
+DOCKED: HETATM   20  CA  T44 A1008      20.769   7.327  29.464 -0.02 +0.13    +0.391 C  
+DOCKED: HETATM   21  N   T44 A1008      19.712   6.671  30.320 +0.15 -0.16    +0.628 N  
+DOCKED: BRANCH  20  22
+DOCKED: HETATM   22  C   T44 A1008      22.141   7.201  30.214 +0.07 +0.23    +0.224 C  
+DOCKED: HETATM   23  OXT T44 A1008      22.125   7.295  31.454 -0.28 -0.87    -0.646 OA 
+DOCKED: HETATM   24  O   T44 A1008      23.156   7.013  29.522 -0.32 -0.79    -0.646 OA 
+DOCKED: ENDBRANCH  20  22
+DOCKED: ENDBRANCH  19  20
+DOCKED: ENDBRANCH   1  19
+DOCKED: TORSDOF 5
+DOCKED: TER
+DOCKED: ENDMDL
+________________________________________________________________________________
+
+
+    FINAL DOCKED STATE:
+    ________________________
+
+
+Run:   8 / 10
+Time taken for this run:   0.869s
+
+DOCKED: MODEL        8
+DOCKED: USER    Run = 8
+DOCKED: USER
+DOCKED: USER    Estimated Free Energy of Binding    =  -6.27 kcal/mol  [=(1)+(2)+(3)-(4)]
+DOCKED: USER
+DOCKED: USER    (1) Final Intermolecular Energy     =  -7.76 kcal/mol
+DOCKED: USER        vdW + Hbond + desolv Energy     =  -6.37 kcal/mol
+DOCKED: USER        Electrostatic Energy            =  -1.39 kcal/mol
+DOCKED: USER        Moving Ligand-Fixed Receptor    =  -7.76 kcal/mol
+DOCKED: USER        Moving Ligand-Moving Receptor   =  +0.00 kcal/mol
+DOCKED: USER    (2) Final Total Internal Energy     =  -1.09 kcal/mol
+DOCKED: USER    (3) Torsional Free Energy           =  +1.49 kcal/mol
+DOCKED: USER    (4) Unbound System's Energy         =  -1.09 kcal/mol
+DOCKED: USER
+DOCKED: USER
+DOCKED: REMARK  5 active torsions:
+DOCKED: REMARK  status: ('A' for Active; 'I' for Inactive)
+DOCKED: REMARK    1  A    between atoms: C1_4574  and  C7_4580 
+DOCKED: REMARK    2  A    between atoms: C4_4577  and  O4_4590 
+DOCKED: REMARK    3  A    between atoms: C7_4580  and  CA_4581 
+DOCKED: REMARK    4  A    between atoms: CA_4581  and  C_4582 
+DOCKED: REMARK    5  A    between atoms: C1'_4583  and  O4_4590 
+DOCKED: USER                              x       y       z     vdW  Elec       q    Type
+DOCKED: USER                           _______ _______ _______ _____ _____    ______ ____
+DOCKED: ROOT
+DOCKED: HETATM    1  C1  T44 A1008      20.499   9.436  27.866 -0.10 -0.01    -0.018 A  
+DOCKED: HETATM    2  C2  T44 A1008      19.536  10.293  27.306 -0.08 +0.00    +0.004 A  
+DOCKED: HETATM    3  C3  T44 A1008      19.618  10.743  25.967 -0.17 +0.02    +0.053 A  
+DOCKED: HETATM    4  C4  T44 A1008      20.703  10.327  25.140 -0.10 +0.04    +0.111 A  
+DOCKED: HETATM    5  C5  T44 A1008      21.649   9.489  25.690 -0.11 +0.02    +0.053 A  
+DOCKED: HETATM    6  C6  T44 A1008      21.584   9.027  27.033 -0.11 +0.00    +0.004 A  
+DOCKED: HETATM    7  I3  T44 A1008      18.155  12.003  25.207 -1.07 -0.02    -0.041 I  
+DOCKED: HETATM    8  I5  T44 A1008      23.250   8.863  24.500 -0.83 -0.02    -0.041 I  
+DOCKED: ENDROOT
+DOCKED: BRANCH   4   9
+DOCKED: HETATM    9  O4  T44 A1008      20.768  10.766  23.818 -0.12 -0.10    -0.306 OA 
+DOCKED: BRANCH   9  10
+DOCKED: HETATM   10  C1' T44 A1008      21.349  12.020  23.477 -0.19 +0.04    +0.101 A  
+DOCKED: HETATM   11  C2' T44 A1008      21.586  12.227  22.115 -0.31 +0.01    +0.033 A  
+DOCKED: HETATM   12  C3' T44 A1008      22.164  13.450  21.712 -0.29 +0.02    +0.058 A  
+DOCKED: HETATM   13  C4' T44 A1008      22.528  14.526  22.627 -0.14 +0.05    +0.142 A  
+DOCKED: HETATM   14  I3' T44 A1008      22.521  13.767  19.686 -0.81 -0.01    -0.041 I  
+DOCKED: HETATM   15  O4' T44 A1008      23.067  15.651  22.210 -0.24 -0.05    -0.189 OA 
+DOCKED: HETATM   16  C5' T44 A1008      22.252  14.226  23.978 -0.21 +0.02    +0.058 A  
+DOCKED: HETATM   17  C6' T44 A1008      21.676  13.023  24.436 -0.20 +0.01    +0.033 A  
+DOCKED: HETATM   18  I5' T44 A1008      22.721  15.663  25.401 -0.86 -0.02    -0.041 I  
+DOCKED: ENDBRANCH   9  10
+DOCKED: ENDBRANCH   4   9
+DOCKED: BRANCH   1  19
+DOCKED: HETATM   19  C7  T44 A1008      20.351   8.972  29.322 -0.10 +0.04    +0.077 C  
+DOCKED: BRANCH  19  20
+DOCKED: HETATM   20  CA  T44 A1008      20.704   7.522  29.652 -0.01 +0.14    +0.391 C  
+DOCKED: HETATM   21  N   T44 A1008      19.649   6.974  30.583 +0.11 -0.10    +0.628 N  
+DOCKED: BRANCH  20  22
+DOCKED: HETATM   22  C   T44 A1008      22.102   7.299  30.327 +0.13 +0.25    +0.224 C  
+DOCKED: HETATM   23  OXT T44 A1008      22.154   7.363  31.568 -0.24 -0.92    -0.646 OA 
+DOCKED: HETATM   24  O   T44 A1008      23.069   7.072  29.578 -0.32 -0.81    -0.646 OA 
+DOCKED: ENDBRANCH  20  22
+DOCKED: ENDBRANCH  19  20
+DOCKED: ENDBRANCH   1  19
+DOCKED: TORSDOF 5
+DOCKED: TER
+DOCKED: ENDMDL
+________________________________________________________________________________
+
+
+    FINAL DOCKED STATE:
+    ________________________
+
+
+Run:   9 / 10
+Time taken for this run:   0.869s
+
+DOCKED: MODEL        9
+DOCKED: USER    Run = 9
+DOCKED: USER
+DOCKED: USER    Estimated Free Energy of Binding    =  -6.30 kcal/mol  [=(1)+(2)+(3)-(4)]
+DOCKED: USER
+DOCKED: USER    (1) Final Intermolecular Energy     =  -7.79 kcal/mol
+DOCKED: USER        vdW + Hbond + desolv Energy     =  -6.36 kcal/mol
+DOCKED: USER        Electrostatic Energy            =  -1.44 kcal/mol
+DOCKED: USER        Moving Ligand-Fixed Receptor    =  -7.79 kcal/mol
+DOCKED: USER        Moving Ligand-Moving Receptor   =  +0.00 kcal/mol
+DOCKED: USER    (2) Final Total Internal Energy     =  -1.08 kcal/mol
+DOCKED: USER    (3) Torsional Free Energy           =  +1.49 kcal/mol
+DOCKED: USER    (4) Unbound System's Energy         =  -1.08 kcal/mol
+DOCKED: USER
+DOCKED: USER
+DOCKED: REMARK  5 active torsions:
+DOCKED: REMARK  status: ('A' for Active; 'I' for Inactive)
+DOCKED: REMARK    1  A    between atoms: C1_4574  and  C7_4580 
+DOCKED: REMARK    2  A    between atoms: C4_4577  and  O4_4590 
+DOCKED: REMARK    3  A    between atoms: C7_4580  and  CA_4581 
+DOCKED: REMARK    4  A    between atoms: CA_4581  and  C_4582 
+DOCKED: REMARK    5  A    between atoms: C1'_4583  and  O4_4590 
+DOCKED: USER                              x       y       z     vdW  Elec       q    Type
+DOCKED: USER                           _______ _______ _______ _____ _____    ______ ____
+DOCKED: ROOT
+DOCKED: HETATM    1  C1  T44 A1008      20.465   9.236  27.597 -0.10 -0.01    -0.018 A  
+DOCKED: HETATM    2  C2  T44 A1008      21.512   8.811  26.762 -0.11 +0.00    +0.004 A  
+DOCKED: HETATM    3  C3  T44 A1008      21.643   9.265  25.429 -0.13 +0.02    +0.053 A  
+DOCKED: HETATM    4  C4  T44 A1008      20.692  10.183  24.892 -0.11 +0.04    +0.111 A  
+DOCKED: HETATM    5  C5  T44 A1008      19.663  10.598  25.709 -0.17 +0.02    +0.053 A  
+DOCKED: HETATM    6  C6  T44 A1008      19.515  10.152  27.052 -0.06 +0.00    +0.004 A  
+DOCKED: HETATM    7  I3  T44 A1008      23.220   8.598  24.258 -0.83 -0.02    -0.041 I  
+DOCKED: HETATM    8  I5  T44 A1008      18.256  11.944  24.949 -1.10 -0.02    -0.041 I  
+DOCKED: ENDROOT
+DOCKED: BRANCH   4   9
+DOCKED: HETATM    9  O4  T44 A1008      20.836  10.634  23.581 -0.12 -0.10    -0.306 OA 
+DOCKED: BRANCH   9  10
+DOCKED: HETATM   10  C1' T44 A1008      21.402  11.906  23.288 -0.20 +0.03    +0.101 A  
+DOCKED: HETATM   11  C2' T44 A1008      21.625  12.173  21.933 -0.30 +0.01    +0.033 A  
+DOCKED: HETATM   12  C3' T44 A1008      22.188  13.417  21.578 -0.30 +0.02    +0.058 A  
+DOCKED: HETATM   13  C4' T44 A1008      22.552  14.457  22.534 -0.14 +0.05    +0.142 A  
+DOCKED: HETATM   14  I3' T44 A1008      22.524  13.822  19.564 -0.68 -0.01    -0.041 I  
+DOCKED: HETATM   15  O4' T44 A1008      23.077  15.603  22.160 -0.24 -0.05    -0.189 OA 
+DOCKED: HETATM   16  C5' T44 A1008      22.291  14.097  23.874 -0.21 +0.02    +0.058 A  
+DOCKED: HETATM   17  C6' T44 A1008      21.730  12.870  24.285 -0.20 +0.01    +0.033 A  
+DOCKED: HETATM   18  I5' T44 A1008      22.761  15.477  25.352 -0.85 -0.02    -0.041 I  
+DOCKED: ENDBRANCH   9  10
+DOCKED: ENDBRANCH   4   9
+DOCKED: BRANCH   1  19
+DOCKED: HETATM   19  C7  T44 A1008      20.382   8.717  29.040 -0.10 +0.03    +0.077 C  
+DOCKED: BRANCH  19  20
+DOCKED: HETATM   20  CA  T44 A1008      20.901   7.309  29.327 -0.02 +0.13    +0.391 C  
+DOCKED: HETATM   21  N   T44 A1008      19.996   6.666  30.351 +0.10 -0.13    +0.628 N  
+DOCKED: BRANCH  20  22
+DOCKED: HETATM   22  C   T44 A1008      22.372   7.223  29.866 +0.09 +0.24    +0.224 C  
+DOCKED: HETATM   23  OXT T44 A1008      23.292   7.399  29.048 -0.12 -0.76    -0.646 OA 
+DOCKED: HETATM   24  O   T44 A1008      22.524   6.986  31.078 -0.45 -0.97    -0.646 OA 
+DOCKED: ENDBRANCH  20  22
+DOCKED: ENDBRANCH  19  20
+DOCKED: ENDBRANCH   1  19
+DOCKED: TORSDOF 5
+DOCKED: TER
+DOCKED: ENDMDL
+________________________________________________________________________________
+
+
+    FINAL DOCKED STATE:
+    ________________________
+
+
+Run:   10 / 10
+Time taken for this run:   0.869s
+
+DOCKED: MODEL        10
+DOCKED: USER    Run = 10
+DOCKED: USER
+DOCKED: USER    Estimated Free Energy of Binding    =  -6.17 kcal/mol  [=(1)+(2)+(3)-(4)]
+DOCKED: USER
+DOCKED: USER    (1) Final Intermolecular Energy     =  -7.67 kcal/mol
+DOCKED: USER        vdW + Hbond + desolv Energy     =  -6.86 kcal/mol
+DOCKED: USER        Electrostatic Energy            =  -0.80 kcal/mol
+DOCKED: USER        Moving Ligand-Fixed Receptor    =  -7.67 kcal/mol
+DOCKED: USER        Moving Ligand-Moving Receptor   =  +0.00 kcal/mol
+DOCKED: USER    (2) Final Total Internal Energy     =  -1.08 kcal/mol
+DOCKED: USER    (3) Torsional Free Energy           =  +1.49 kcal/mol
+DOCKED: USER    (4) Unbound System's Energy         =  -1.08 kcal/mol
+DOCKED: USER
+DOCKED: USER
+DOCKED: REMARK  5 active torsions:
+DOCKED: REMARK  status: ('A' for Active; 'I' for Inactive)
+DOCKED: REMARK    1  A    between atoms: C1_4574  and  C7_4580 
+DOCKED: REMARK    2  A    between atoms: C4_4577  and  O4_4590 
+DOCKED: REMARK    3  A    between atoms: C7_4580  and  CA_4581 
+DOCKED: REMARK    4  A    between atoms: CA_4581  and  C_4582 
+DOCKED: REMARK    5  A    between atoms: C1'_4583  and  O4_4590 
+DOCKED: USER                              x       y       z     vdW  Elec       q    Type
+DOCKED: USER                           _______ _______ _______ _____ _____    ______ ____
+DOCKED: ROOT
+DOCKED: HETATM    1  C1  T44 A1008      19.918  10.492  28.350 -0.13 -0.01    -0.018 A  
+DOCKED: HETATM    2  C2  T44 A1008      19.045  11.134  27.455 -0.13 +0.00    +0.004 A  
+DOCKED: HETATM    3  C3  T44 A1008      19.363  11.307  26.087 -0.20 +0.03    +0.053 A  
+DOCKED: HETATM    4  C4  T44 A1008      20.604  10.823  25.578 -0.08 +0.04    +0.111 A  
+DOCKED: HETATM    5  C5  T44 A1008      21.462  10.197  26.455 -0.09 +0.02    +0.053 A  
+DOCKED: HETATM    6  C6  T44 A1008      21.160  10.014  27.833 -0.13 +0.00    +0.004 A  
+DOCKED: HETATM    7  I3  T44 A1008      18.020  12.259  24.825 -1.12 -0.02    -0.041 I  
+DOCKED: HETATM    8  I5  T44 A1008      23.288   9.477  25.734 -0.79 -0.02    -0.041 I  
+DOCKED: ENDROOT
+DOCKED: BRANCH   4   9
+DOCKED: HETATM    9  O4  T44 A1008      20.903  10.988  24.226 -0.10 -0.10    -0.306 OA 
+DOCKED: BRANCH   9  10
+DOCKED: HETATM   10  C1' T44 A1008      21.488  12.188  23.733 -0.18 +0.04    +0.101 A  
+DOCKED: HETATM   11  C2' T44 A1008      21.666  12.250  22.347 -0.31 +0.01    +0.033 A  
+DOCKED: HETATM   12  C3' T44 A1008      22.245  13.414  21.796 -0.28 +0.02    +0.058 A  
+DOCKED: HETATM   13  C4' T44 A1008      22.670  14.569  22.579 -0.14 +0.05    +0.142 A  
+DOCKED: HETATM   14  I3' T44 A1008      22.514  13.515  19.734 -0.89 -0.01    -0.041 I  
+DOCKED: HETATM   15  O4' T44 A1008      23.207  15.634  22.025 -0.24 -0.05    -0.189 OA 
+DOCKED: HETATM   16  C5' T44 A1008      22.451  14.414  23.964 -0.22 +0.02    +0.058 A  
+DOCKED: HETATM   17  C6' T44 A1008      21.876  13.275  24.568 -0.21 +0.01    +0.033 A  
+DOCKED: HETATM   18  I5' T44 A1008      23.009  15.977  25.210 -0.90 -0.02    -0.041 I  
+DOCKED: ENDBRANCH   9  10
+DOCKED: ENDBRANCH   4   9
+DOCKED: BRANCH   1  19
+DOCKED: HETATM   19  C7  T44 A1008      19.513  10.324  29.821 -0.07 +0.07    +0.077 C  
+DOCKED: BRANCH  19  20
+DOCKED: HETATM   20  CA  T44 A1008      20.581   9.859  30.810 +0.04 +0.32    +0.391 C  
+DOCKED: HETATM   21  N   T44 A1008      20.050   8.657  31.556 +0.16 +0.34    +0.628 N  
+DOCKED: BRANCH  20  22
+DOCKED: HETATM   22  C   T44 A1008      21.034  10.920  31.872 -0.06 +0.21    +0.224 C  
+DOCKED: HETATM   23  OXT T44 A1008      22.128  10.736  32.434 -0.53 -0.94    -0.646 OA 
+DOCKED: HETATM   24  O   T44 A1008      20.271  11.880  32.083 -0.28 -0.81    -0.646 OA 
+DOCKED: ENDBRANCH  20  22
+DOCKED: ENDBRANCH  19  20
+DOCKED: ENDBRANCH   1  19
+DOCKED: TORSDOF 5
+DOCKED: TER
+DOCKED: ENDMDL
+________________________________________________________________________________
+
+
+    CLUSTERING HISTOGRAM
+    ____________________
+
+
+________________________________________________________________________________
+     |           |     |           |     |
+Clus | Lowest    | Run | Mean      | Num | Histogram
+-ter | Binding   |     | Binding   | in  |
+Rank | Energy    |     | Energy    | Clus|    5    10   15   20   25   30   35
+_____|___________|_____|___________|_____|____:____|____:____|____:____|____:___
+   1 |     -6.30 |   9 |     -6.23 |  10 |##########
+_____|___________|_____|___________|_____|______________________________________
+
+
+    RMSD TABLE
+    __________
+
+
+_______________________________________________________________________
+     |      |      |           |         |                 |
+Rank | Sub- | Run  | Binding   | Cluster | Reference       | Grep
+     | Rank |      | Energy    | RMSD    | RMSD            | Pattern
+_____|______|______|___________|_________|_________________|___________
+   1      1      9       -6.30      0.00      1.72           RANKING
+   1      2      7       -6.29      0.23      1.57           RANKING
+   1      3      4       -6.27      0.32      1.48           RANKING
+   1      4      8       -6.27      0.35      1.46           RANKING
+   1      5      5       -6.27      0.31      1.51           RANKING
+   1      6      6       -6.27      0.19      1.70           RANKING
+   1      7      1       -6.25      0.24      1.75           RANKING
+   1      8     10       -6.17      1.90      1.06           RANKING
+   1      9      3       -6.13      1.89      1.07           RANKING
+   1     10      2       -6.11      1.92      1.06           RANKING
+
+Run time 9.041 sec
+Idle time 1.387 sec

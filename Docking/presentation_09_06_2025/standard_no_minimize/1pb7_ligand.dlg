@@ -1,0 +1,552 @@
+AutoDock-GPU version: v1.6-7-ga46ab564d2ac5f1a1523f65239b43505a1c29364
+
+**********************************************************
+**    AutoDock-GPU AUTODOCKTOOLS-COMPATIBLE DLG FILE    **
+**********************************************************
+
+
+    DOCKING PARAMETERS
+    ________________________
+
+
+Ligand file:                               pdbqt_files/1pb7_ligand.pdbqt
+Grid fld file:                             map_grid_files/1pb7_receptor.maps.fld
+
+Random seed:                               1749308863, 1559
+Number of runs:                            10
+Number of energy evaluations:              2068966
+Number of generations:                     42000
+Size of population:                        150
+Rate of crossover:                         80.000000%
+Tournament selection probability limit:    60.000000%
+Rate of mutation:                          2.000000%
+Maximal allowed delta movement:            +/- 6.000000A
+Maximal allowed delta angle:               +/- 90.000000
+
+Rate of local search:                      100.000000%
+Maximal number of local search iterations: 300
+Rho lower bound:                           0.010000
+Spread of local search delta movement:     2.000000A
+Spread of local search delta angle:        74.999999
+Limit of consecutive successes/failures:   4
+
+Handle symmetry during clustering:         YES
+RMSD tolerance:                            2.000000A
+
+Program call in command line was:          /home/tajgero/AutoDock-GPU/bin/autodock_gpu_128wi --lfile pdbqt_files/1pb7_ligand.pdbqt --ffile map_grid_files/1pb7_receptor.maps.fld --nrun 10 
+
+
+    GRID PARAMETERS
+    ________________________
+
+
+Receptor name:                             pdbqt_files/1pb7_receptor
+Number of grid points (x, y, z):           41, 41, 41
+Grid center (x, y, z):                     22.518000, 40.418000, 39.792000A
+Grid size (x, y, z):                       15.000000, 15.000000, 15.000000A
+Grid spacing:                              0.375000A
+
+
+    LIGAND PARAMETERS
+    ________________________
+
+
+Ligand name:                               pdbqt_files/1pb7_ligand
+Number of atoms:                           5
+Number of rotatable bonds:                 1
+Number of atom types:                      3
+
+
+    DUMMY DATA (only for ADT-compatibility)
+    ________________________
+
+
+DPF> outlev 1
+DPF> ga_run 10
+DPF> fld map_grid_files/1pb7_receptor.maps.fld
+DPF> move pdbqt_files/1pb7_ligand.pdbqt
+
+
+    COUNTER STATES
+    ________________________
+
+
+Number of energy evaluations performed:    305917
+Number of generations used:                25
+
+
+    INPUT LIGAND PDBQT FILE:
+    ________________________
+
+
+INPUT-LIGAND-PDBQT: REMARK  1 active torsions:
+INPUT-LIGAND-PDBQT: REMARK  status: ('A' for Active; 'I' for Inactive)
+INPUT-LIGAND-PDBQT: REMARK    1  A    between atoms: CA_2154  and  C_2155 
+INPUT-LIGAND-PDBQT: ROOT
+INPUT-LIGAND-PDBQT: HETATM    1  C   GLY A 901      22.839  40.047  39.524  1.00  7.40     0.227 C 
+INPUT-LIGAND-PDBQT: HETATM    2  O   GLY A 901      23.602  41.077  39.302  1.00  7.85    -0.646 OA
+INPUT-LIGAND-PDBQT: HETATM    3  OXT GLY A 901      23.174  38.927  39.198  1.00  8.24    -0.646 OA
+INPUT-LIGAND-PDBQT: ENDROOT
+INPUT-LIGAND-PDBQT: BRANCH   1   4
+INPUT-LIGAND-PDBQT: HETATM    4  CA  GLY A 901      21.518  40.335  40.204  1.00  7.21     0.434 C 
+INPUT-LIGAND-PDBQT: HETATM    5  N   GLY A 901      21.456  41.702  40.732  1.00  8.62     0.631 N 
+INPUT-LIGAND-PDBQT: ENDBRANCH   1   4
+INPUT-LIGAND-PDBQT: TORSDOF 1
+
+
+    FINAL DOCKED STATE:
+    ________________________
+
+
+Run:   1 / 10
+Time taken for this run:   0.714s
+
+DOCKED: MODEL        1
+DOCKED: USER    Run = 1
+DOCKED: USER
+DOCKED: USER    Estimated Free Energy of Binding    =  -2.39 kcal/mol  [=(1)+(2)+(3)-(4)]
+DOCKED: USER
+DOCKED: USER    (1) Final Intermolecular Energy     =  -2.68 kcal/mol
+DOCKED: USER        vdW + Hbond + desolv Energy     =  -1.61 kcal/mol
+DOCKED: USER        Electrostatic Energy            =  -1.08 kcal/mol
+DOCKED: USER        Moving Ligand-Fixed Receptor    =  -2.68 kcal/mol
+DOCKED: USER        Moving Ligand-Moving Receptor   =  +0.00 kcal/mol
+DOCKED: USER    (2) Final Total Internal Energy     =  +0.00 kcal/mol
+DOCKED: USER    (3) Torsional Free Energy           =  +0.30 kcal/mol
+DOCKED: USER    (4) Unbound System's Energy         =  +0.00 kcal/mol
+DOCKED: USER
+DOCKED: USER
+DOCKED: REMARK  1 active torsions:
+DOCKED: REMARK  status: ('A' for Active; 'I' for Inactive)
+DOCKED: REMARK    1  A    between atoms: CA_2154  and  C_2155 
+DOCKED: USER                              x       y       z     vdW  Elec       q    Type
+DOCKED: USER                           _______ _______ _______ _____ _____    ______ ____
+DOCKED: ROOT
+DOCKED: HETATM    1  C   GLY A 901      16.138  37.616  35.950 -0.25 +0.13    +0.227 C  
+DOCKED: HETATM    2  O   GLY A 901      16.172  37.784  37.239 -0.87 -0.44    -0.646 OA 
+DOCKED: HETATM    3  OXT GLY A 901      15.123  37.801  35.312 -0.56 -0.48    -0.646 OA 
+DOCKED: ENDROOT
+DOCKED: BRANCH   1   4
+DOCKED: HETATM    4  CA  GLY A 901      17.434  37.174  35.305 -0.09 -0.01    +0.434 C  
+DOCKED: HETATM    5  N   GLY A 901      17.276  35.929  34.546 +0.16 -0.28    +0.631 N  
+DOCKED: ENDBRANCH   1   4
+DOCKED: TORSDOF 1
+DOCKED: TER
+DOCKED: ENDMDL
+________________________________________________________________________________
+
+
+    FINAL DOCKED STATE:
+    ________________________
+
+
+Run:   2 / 10
+Time taken for this run:   0.714s
+
+DOCKED: MODEL        2
+DOCKED: USER    Run = 2
+DOCKED: USER
+DOCKED: USER    Estimated Free Energy of Binding    =  -2.39 kcal/mol  [=(1)+(2)+(3)-(4)]
+DOCKED: USER
+DOCKED: USER    (1) Final Intermolecular Energy     =  -2.68 kcal/mol
+DOCKED: USER        vdW + Hbond + desolv Energy     =  -1.60 kcal/mol
+DOCKED: USER        Electrostatic Energy            =  -1.08 kcal/mol
+DOCKED: USER        Moving Ligand-Fixed Receptor    =  -2.68 kcal/mol
+DOCKED: USER        Moving Ligand-Moving Receptor   =  +0.00 kcal/mol
+DOCKED: USER    (2) Final Total Internal Energy     =  +0.00 kcal/mol
+DOCKED: USER    (3) Torsional Free Energy           =  +0.30 kcal/mol
+DOCKED: USER    (4) Unbound System's Energy         =  +0.00 kcal/mol
+DOCKED: USER
+DOCKED: USER
+DOCKED: REMARK  1 active torsions:
+DOCKED: REMARK  status: ('A' for Active; 'I' for Inactive)
+DOCKED: REMARK    1  A    between atoms: CA_2154  and  C_2155 
+DOCKED: USER                              x       y       z     vdW  Elec       q    Type
+DOCKED: USER                           _______ _______ _______ _____ _____    ______ ____
+DOCKED: ROOT
+DOCKED: HETATM    1  C   GLY A 901      16.157  37.656  36.031 -0.25 +0.13    +0.227 C  
+DOCKED: HETATM    2  O   GLY A 901      15.072  37.802  35.328 -0.56 -0.50    -0.646 OA 
+DOCKED: HETATM    3  OXT GLY A 901      16.160  37.818  37.234 -0.87 -0.45    -0.646 OA 
+DOCKED: ENDROOT
+DOCKED: BRANCH   1   4
+DOCKED: HETATM    4  CA  GLY A 901      17.402  37.280  35.258 -0.07 -0.00    +0.434 C  
+DOCKED: HETATM    5  N   GLY A 901      17.268  35.977  34.598 +0.15 -0.26    +0.631 N  
+DOCKED: ENDBRANCH   1   4
+DOCKED: TORSDOF 1
+DOCKED: TER
+DOCKED: ENDMDL
+________________________________________________________________________________
+
+
+    FINAL DOCKED STATE:
+    ________________________
+
+
+Run:   3 / 10
+Time taken for this run:   0.714s
+
+DOCKED: MODEL        3
+DOCKED: USER    Run = 3
+DOCKED: USER
+DOCKED: USER    Estimated Free Energy of Binding    =  -2.38 kcal/mol  [=(1)+(2)+(3)-(4)]
+DOCKED: USER
+DOCKED: USER    (1) Final Intermolecular Energy     =  -2.68 kcal/mol
+DOCKED: USER        vdW + Hbond + desolv Energy     =  -1.61 kcal/mol
+DOCKED: USER        Electrostatic Energy            =  -1.07 kcal/mol
+DOCKED: USER        Moving Ligand-Fixed Receptor    =  -2.68 kcal/mol
+DOCKED: USER        Moving Ligand-Moving Receptor   =  +0.00 kcal/mol
+DOCKED: USER    (2) Final Total Internal Energy     =  +0.00 kcal/mol
+DOCKED: USER    (3) Torsional Free Energy           =  +0.30 kcal/mol
+DOCKED: USER    (4) Unbound System's Energy         =  +0.00 kcal/mol
+DOCKED: USER
+DOCKED: USER
+DOCKED: REMARK  1 active torsions:
+DOCKED: REMARK  status: ('A' for Active; 'I' for Inactive)
+DOCKED: REMARK    1  A    between atoms: CA_2154  and  C_2155 
+DOCKED: USER                              x       y       z     vdW  Elec       q    Type
+DOCKED: USER                           _______ _______ _______ _____ _____    ______ ____
+DOCKED: ROOT
+DOCKED: HETATM    1  C   GLY A 901      16.148  37.587  36.011 -0.24 +0.13    +0.227 C  
+DOCKED: HETATM    2  O   GLY A 901      16.154  37.797  37.295 -0.87 -0.43    -0.646 OA 
+DOCKED: HETATM    3  OXT GLY A 901      15.157  37.788  35.340 -0.58 -0.49    -0.646 OA 
+DOCKED: ENDROOT
+DOCKED: BRANCH   1   4
+DOCKED: HETATM    4  CA  GLY A 901      17.443  37.078  35.417 -0.10 -0.00    +0.434 C  
+DOCKED: HETATM    5  N   GLY A 901      17.232  35.908  34.557 +0.17 -0.28    +0.631 N  
+DOCKED: ENDBRANCH   1   4
+DOCKED: TORSDOF 1
+DOCKED: TER
+DOCKED: ENDMDL
+________________________________________________________________________________
+
+
+    FINAL DOCKED STATE:
+    ________________________
+
+
+Run:   4 / 10
+Time taken for this run:   0.714s
+
+DOCKED: MODEL        4
+DOCKED: USER    Run = 4
+DOCKED: USER
+DOCKED: USER    Estimated Free Energy of Binding    =  -2.39 kcal/mol  [=(1)+(2)+(3)-(4)]
+DOCKED: USER
+DOCKED: USER    (1) Final Intermolecular Energy     =  -2.68 kcal/mol
+DOCKED: USER        vdW + Hbond + desolv Energy     =  -1.63 kcal/mol
+DOCKED: USER        Electrostatic Energy            =  -1.06 kcal/mol
+DOCKED: USER        Moving Ligand-Fixed Receptor    =  -2.68 kcal/mol
+DOCKED: USER        Moving Ligand-Moving Receptor   =  +0.00 kcal/mol
+DOCKED: USER    (2) Final Total Internal Energy     =  +0.00 kcal/mol
+DOCKED: USER    (3) Torsional Free Energy           =  +0.30 kcal/mol
+DOCKED: USER    (4) Unbound System's Energy         =  +0.00 kcal/mol
+DOCKED: USER
+DOCKED: USER
+DOCKED: REMARK  1 active torsions:
+DOCKED: REMARK  status: ('A' for Active; 'I' for Inactive)
+DOCKED: REMARK    1  A    between atoms: CA_2154  and  C_2155 
+DOCKED: USER                              x       y       z     vdW  Elec       q    Type
+DOCKED: USER                           _______ _______ _______ _____ _____    ______ ____
+DOCKED: ROOT
+DOCKED: HETATM    1  C   GLY A 901      16.169  37.591  36.007 -0.25 +0.13    +0.227 C  
+DOCKED: HETATM    2  O   GLY A 901      16.152  37.808  37.289 -0.87 -0.44    -0.646 OA 
+DOCKED: HETATM    3  OXT GLY A 901      15.192  37.794  35.316 -0.58 -0.47    -0.646 OA 
+DOCKED: ENDROOT
+DOCKED: BRANCH   1   4
+DOCKED: HETATM    4  CA  GLY A 901      17.472  37.070  35.439 -0.10 -0.00    +0.434 C  
+DOCKED: HETATM    5  N   GLY A 901      17.266  35.920  34.553 +0.16 -0.28    +0.631 N  
+DOCKED: ENDBRANCH   1   4
+DOCKED: TORSDOF 1
+DOCKED: TER
+DOCKED: ENDMDL
+________________________________________________________________________________
+
+
+    FINAL DOCKED STATE:
+    ________________________
+
+
+Run:   5 / 10
+Time taken for this run:   0.714s
+
+DOCKED: MODEL        5
+DOCKED: USER    Run = 5
+DOCKED: USER
+DOCKED: USER    Estimated Free Energy of Binding    =  -2.37 kcal/mol  [=(1)+(2)+(3)-(4)]
+DOCKED: USER
+DOCKED: USER    (1) Final Intermolecular Energy     =  -2.67 kcal/mol
+DOCKED: USER        vdW + Hbond + desolv Energy     =  -1.58 kcal/mol
+DOCKED: USER        Electrostatic Energy            =  -1.09 kcal/mol
+DOCKED: USER        Moving Ligand-Fixed Receptor    =  -2.67 kcal/mol
+DOCKED: USER        Moving Ligand-Moving Receptor   =  +0.00 kcal/mol
+DOCKED: USER    (2) Final Total Internal Energy     =  +0.00 kcal/mol
+DOCKED: USER    (3) Torsional Free Energy           =  +0.30 kcal/mol
+DOCKED: USER    (4) Unbound System's Energy         =  +0.00 kcal/mol
+DOCKED: USER
+DOCKED: USER
+DOCKED: REMARK  1 active torsions:
+DOCKED: REMARK  status: ('A' for Active; 'I' for Inactive)
+DOCKED: REMARK    1  A    between atoms: CA_2154  and  C_2155 
+DOCKED: USER                              x       y       z     vdW  Elec       q    Type
+DOCKED: USER                           _______ _______ _______ _____ _____    ______ ____
+DOCKED: ROOT
+DOCKED: HETATM    1  C   GLY A 901      16.164  37.605  36.013 -0.25 +0.13    +0.227 C  
+DOCKED: HETATM    2  O   GLY A 901      15.102  37.785  35.284 -0.54 -0.48    -0.646 OA 
+DOCKED: HETATM    3  OXT GLY A 901      16.151  37.794  37.212 -0.89 -0.45    -0.646 OA 
+DOCKED: ENDROOT
+DOCKED: BRANCH   1   4
+DOCKED: HETATM    4  CA  GLY A 901      17.406  37.154  35.276 -0.10 -0.01    +0.434 C  
+DOCKED: HETATM    5  N   GLY A 901      17.173  35.930  34.501 +0.20 -0.28    +0.631 N  
+DOCKED: ENDBRANCH   1   4
+DOCKED: TORSDOF 1
+DOCKED: TER
+DOCKED: ENDMDL
+________________________________________________________________________________
+
+
+    FINAL DOCKED STATE:
+    ________________________
+
+
+Run:   6 / 10
+Time taken for this run:   0.714s
+
+DOCKED: MODEL        6
+DOCKED: USER    Run = 6
+DOCKED: USER
+DOCKED: USER    Estimated Free Energy of Binding    =  -2.37 kcal/mol  [=(1)+(2)+(3)-(4)]
+DOCKED: USER
+DOCKED: USER    (1) Final Intermolecular Energy     =  -2.67 kcal/mol
+DOCKED: USER        vdW + Hbond + desolv Energy     =  -1.58 kcal/mol
+DOCKED: USER        Electrostatic Energy            =  -1.08 kcal/mol
+DOCKED: USER        Moving Ligand-Fixed Receptor    =  -2.67 kcal/mol
+DOCKED: USER        Moving Ligand-Moving Receptor   =  +0.00 kcal/mol
+DOCKED: USER    (2) Final Total Internal Energy     =  +0.00 kcal/mol
+DOCKED: USER    (3) Torsional Free Energy           =  +0.30 kcal/mol
+DOCKED: USER    (4) Unbound System's Energy         =  +0.00 kcal/mol
+DOCKED: USER
+DOCKED: USER
+DOCKED: REMARK  1 active torsions:
+DOCKED: REMARK  status: ('A' for Active; 'I' for Inactive)
+DOCKED: REMARK    1  A    between atoms: CA_2154  and  C_2155 
+DOCKED: USER                              x       y       z     vdW  Elec       q    Type
+DOCKED: USER                           _______ _______ _______ _____ _____    ______ ____
+DOCKED: ROOT
+DOCKED: HETATM    1  C   GLY A 901      16.165  37.653  36.041 -0.25 +0.13    +0.227 C  
+DOCKED: HETATM    2  O   GLY A 901      15.100  37.795  35.307 -0.56 -0.49    -0.646 OA 
+DOCKED: HETATM    3  OXT GLY A 901      16.153  37.896  37.230 -0.86 -0.46    -0.646 OA 
+DOCKED: ENDROOT
+DOCKED: BRANCH   1   4
+DOCKED: HETATM    4  CA  GLY A 901      17.407  37.174  35.322 -0.09 -0.00    +0.434 C  
+DOCKED: HETATM    5  N   GLY A 901      17.164  35.945  34.560 +0.17 -0.26    +0.631 N  
+DOCKED: ENDBRANCH   1   4
+DOCKED: TORSDOF 1
+DOCKED: TER
+DOCKED: ENDMDL
+________________________________________________________________________________
+
+
+    FINAL DOCKED STATE:
+    ________________________
+
+
+Run:   7 / 10
+Time taken for this run:   0.714s
+
+DOCKED: MODEL        7
+DOCKED: USER    Run = 7
+DOCKED: USER
+DOCKED: USER    Estimated Free Energy of Binding    =  -2.39 kcal/mol  [=(1)+(2)+(3)-(4)]
+DOCKED: USER
+DOCKED: USER    (1) Final Intermolecular Energy     =  -2.69 kcal/mol
+DOCKED: USER        vdW + Hbond + desolv Energy     =  -1.59 kcal/mol
+DOCKED: USER        Electrostatic Energy            =  -1.09 kcal/mol
+DOCKED: USER        Moving Ligand-Fixed Receptor    =  -2.69 kcal/mol
+DOCKED: USER        Moving Ligand-Moving Receptor   =  +0.00 kcal/mol
+DOCKED: USER    (2) Final Total Internal Energy     =  +0.00 kcal/mol
+DOCKED: USER    (3) Torsional Free Energy           =  +0.30 kcal/mol
+DOCKED: USER    (4) Unbound System's Energy         =  +0.00 kcal/mol
+DOCKED: USER
+DOCKED: USER
+DOCKED: REMARK  1 active torsions:
+DOCKED: REMARK  status: ('A' for Active; 'I' for Inactive)
+DOCKED: REMARK    1  A    between atoms: CA_2154  and  C_2155 
+DOCKED: USER                              x       y       z     vdW  Elec       q    Type
+DOCKED: USER                           _______ _______ _______ _____ _____    ______ ____
+DOCKED: ROOT
+DOCKED: HETATM    1  C   GLY A 901      16.147  37.669  36.013 -0.25 +0.13    +0.227 C  
+DOCKED: HETATM    2  O   GLY A 901      15.053  37.791  35.319 -0.55 -0.50    -0.646 OA 
+DOCKED: HETATM    3  OXT GLY A 901      16.158  37.838  37.214 -0.88 -0.45    -0.646 OA 
+DOCKED: ENDROOT
+DOCKED: BRANCH   1   4
+DOCKED: HETATM    4  CA  GLY A 901      17.392  37.312  35.230 -0.07 -0.01    +0.434 C  
+DOCKED: HETATM    5  N   GLY A 901      17.273  36.007  34.570 +0.15 -0.26    +0.631 N  
+DOCKED: ENDBRANCH   1   4
+DOCKED: TORSDOF 1
+DOCKED: TER
+DOCKED: ENDMDL
+________________________________________________________________________________
+
+
+    FINAL DOCKED STATE:
+    ________________________
+
+
+Run:   8 / 10
+Time taken for this run:   0.714s
+
+DOCKED: MODEL        8
+DOCKED: USER    Run = 8
+DOCKED: USER
+DOCKED: USER    Estimated Free Energy of Binding    =  -2.39 kcal/mol  [=(1)+(2)+(3)-(4)]
+DOCKED: USER
+DOCKED: USER    (1) Final Intermolecular Energy     =  -2.69 kcal/mol
+DOCKED: USER        vdW + Hbond + desolv Energy     =  -1.60 kcal/mol
+DOCKED: USER        Electrostatic Energy            =  -1.09 kcal/mol
+DOCKED: USER        Moving Ligand-Fixed Receptor    =  -2.69 kcal/mol
+DOCKED: USER        Moving Ligand-Moving Receptor   =  +0.00 kcal/mol
+DOCKED: USER    (2) Final Total Internal Energy     =  +0.00 kcal/mol
+DOCKED: USER    (3) Torsional Free Energy           =  +0.30 kcal/mol
+DOCKED: USER    (4) Unbound System's Energy         =  +0.00 kcal/mol
+DOCKED: USER
+DOCKED: USER
+DOCKED: REMARK  1 active torsions:
+DOCKED: REMARK  status: ('A' for Active; 'I' for Inactive)
+DOCKED: REMARK    1  A    between atoms: CA_2154  and  C_2155 
+DOCKED: USER                              x       y       z     vdW  Elec       q    Type
+DOCKED: USER                           _______ _______ _______ _____ _____    ______ ____
+DOCKED: ROOT
+DOCKED: HETATM    1  C   GLY A 901      16.155  37.623  36.010 -0.25 +0.13    +0.227 C  
+DOCKED: HETATM    2  O   GLY A 901      15.085  37.780  35.287 -0.54 -0.49    -0.646 OA 
+DOCKED: HETATM    3  OXT GLY A 901      16.145  37.818  37.208 -0.89 -0.46    -0.646 OA 
+DOCKED: ENDROOT
+DOCKED: BRANCH   1   4
+DOCKED: HETATM    4  CA  GLY A 901      17.401  37.192  35.267 -0.09 -0.01    +0.434 C  
+DOCKED: HETATM    5  N   GLY A 901      17.202  35.931  34.545 +0.17 -0.27    +0.631 N  
+DOCKED: ENDBRANCH   1   4
+DOCKED: TORSDOF 1
+DOCKED: TER
+DOCKED: ENDMDL
+________________________________________________________________________________
+
+
+    FINAL DOCKED STATE:
+    ________________________
+
+
+Run:   9 / 10
+Time taken for this run:   0.714s
+
+DOCKED: MODEL        9
+DOCKED: USER    Run = 9
+DOCKED: USER
+DOCKED: USER    Estimated Free Energy of Binding    =  -2.39 kcal/mol  [=(1)+(2)+(3)-(4)]
+DOCKED: USER
+DOCKED: USER    (1) Final Intermolecular Energy     =  -2.69 kcal/mol
+DOCKED: USER        vdW + Hbond + desolv Energy     =  -1.60 kcal/mol
+DOCKED: USER        Electrostatic Energy            =  -1.09 kcal/mol
+DOCKED: USER        Moving Ligand-Fixed Receptor    =  -2.69 kcal/mol
+DOCKED: USER        Moving Ligand-Moving Receptor   =  +0.00 kcal/mol
+DOCKED: USER    (2) Final Total Internal Energy     =  +0.00 kcal/mol
+DOCKED: USER    (3) Torsional Free Energy           =  +0.30 kcal/mol
+DOCKED: USER    (4) Unbound System's Energy         =  +0.00 kcal/mol
+DOCKED: USER
+DOCKED: USER
+DOCKED: REMARK  1 active torsions:
+DOCKED: REMARK  status: ('A' for Active; 'I' for Inactive)
+DOCKED: REMARK    1  A    between atoms: CA_2154  and  C_2155 
+DOCKED: USER                              x       y       z     vdW  Elec       q    Type
+DOCKED: USER                           _______ _______ _______ _____ _____    ______ ____
+DOCKED: ROOT
+DOCKED: HETATM    1  C   GLY A 901      16.151  37.619  36.008 -0.24 +0.13    +0.227 C  
+DOCKED: HETATM    2  O   GLY A 901      15.078  37.783  35.290 -0.54 -0.49    -0.646 OA 
+DOCKED: HETATM    3  OXT GLY A 901      16.146  37.801  37.208 -0.90 -0.45    -0.646 OA 
+DOCKED: ENDROOT
+DOCKED: BRANCH   1   4
+DOCKED: HETATM    4  CA  GLY A 901      17.394  37.197  35.254 -0.09 -0.01    +0.434 C  
+DOCKED: HETATM    5  N   GLY A 901      17.204  35.928  34.544 +0.17 -0.27    +0.631 N  
+DOCKED: ENDBRANCH   1   4
+DOCKED: TORSDOF 1
+DOCKED: TER
+DOCKED: ENDMDL
+________________________________________________________________________________
+
+
+    FINAL DOCKED STATE:
+    ________________________
+
+
+Run:   10 / 10
+Time taken for this run:   0.714s
+
+DOCKED: MODEL        10
+DOCKED: USER    Run = 10
+DOCKED: USER
+DOCKED: USER    Estimated Free Energy of Binding    =  -2.38 kcal/mol  [=(1)+(2)+(3)-(4)]
+DOCKED: USER
+DOCKED: USER    (1) Final Intermolecular Energy     =  -2.68 kcal/mol
+DOCKED: USER        vdW + Hbond + desolv Energy     =  -1.63 kcal/mol
+DOCKED: USER        Electrostatic Energy            =  -1.05 kcal/mol
+DOCKED: USER        Moving Ligand-Fixed Receptor    =  -2.68 kcal/mol
+DOCKED: USER        Moving Ligand-Moving Receptor   =  +0.00 kcal/mol
+DOCKED: USER    (2) Final Total Internal Energy     =  +0.00 kcal/mol
+DOCKED: USER    (3) Torsional Free Energy           =  +0.30 kcal/mol
+DOCKED: USER    (4) Unbound System's Energy         =  +0.00 kcal/mol
+DOCKED: USER
+DOCKED: USER
+DOCKED: REMARK  1 active torsions:
+DOCKED: REMARK  status: ('A' for Active; 'I' for Inactive)
+DOCKED: REMARK    1  A    between atoms: CA_2154  and  C_2155 
+DOCKED: USER                              x       y       z     vdW  Elec       q    Type
+DOCKED: USER                           _______ _______ _______ _____ _____    ______ ____
+DOCKED: ROOT
+DOCKED: HETATM    1  C   GLY A 901      16.169  37.597  35.998 -0.25 +0.13    +0.227 C  
+DOCKED: HETATM    2  O   GLY A 901      16.146  37.807  37.281 -0.87 -0.44    -0.646 OA 
+DOCKED: HETATM    3  OXT GLY A 901      15.203  37.825  35.299 -0.57 -0.46    -0.646 OA 
+DOCKED: ENDROOT
+DOCKED: BRANCH   1   4
+DOCKED: HETATM    4  CA  GLY A 901      17.466  37.052  35.439 -0.11 -0.00    +0.434 C  
+DOCKED: HETATM    5  N   GLY A 901      17.243  35.922  34.531 +0.17 -0.28    +0.631 N  
+DOCKED: ENDBRANCH   1   4
+DOCKED: TORSDOF 1
+DOCKED: TER
+DOCKED: ENDMDL
+________________________________________________________________________________
+
+
+    CLUSTERING HISTOGRAM
+    ____________________
+
+
+________________________________________________________________________________
+     |           |     |           |     |
+Clus | Lowest    | Run | Mean      | Num | Histogram
+-ter | Binding   |     | Binding   | in  |
+Rank | Energy    |     | Energy    | Clus|    5    10   15   20   25   30   35
+_____|___________|_____|___________|_____|____:____|____:____|____:____|____:___
+   1 |     -2.39 |   9 |     -2.38 |  10 |##########
+_____|___________|_____|___________|_____|______________________________________
+
+
+    RMSD TABLE
+    __________
+
+
+_______________________________________________________________________
+     |      |      |           |         |                 |
+Rank | Sub- | Run  | Binding   | Cluster | Reference       | Grep
+     | Rank |      | Energy    | RMSD    | RMSD            | Pattern
+_____|______|______|___________|_________|_________________|___________
+   1      1      9       -2.39      0.00      8.14           RANKING
+   1      2      8       -2.39      0.01      8.14           RANKING
+   1      3      7       -2.39      0.08      8.11           RANKING
+   1      4      4       -2.39      0.13      8.09           RANKING
+   1      5      1       -2.39      0.06      8.12           RANKING
+   1      6      2       -2.39      0.07      8.10           RANKING
+   1      7     10       -2.38      0.13      8.09           RANKING
+   1      8      3       -2.38      0.11      8.10           RANKING
+   1      9      5       -2.37      0.04      8.15           RANKING
+   1     10      6       -2.37      0.06      8.12           RANKING
+
+Run time 7.630 sec
+Idle time 1.633 sec

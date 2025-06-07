@@ -1,0 +1,2987 @@
+AutoDock-GPU version: v1.6-7-ga46ab564d2ac5f1a1523f65239b43505a1c29364
+
+**********************************************************
+**    AutoDock-GPU AUTODOCKTOOLS-COMPATIBLE DLG FILE    **
+**********************************************************
+
+
+    DOCKING PARAMETERS
+    ________________________
+
+
+Ligand file:                               pdbqt_files/1m5c_ligand.pdbqt
+Grid fld file:                             map_grid_files/1m5c_receptor.maps.fld
+
+Random seed:                               1749244608, 1185
+Number of runs:                            50
+Number of energy evaluations:              480000
+Number of generations:                     42000
+Size of population:                        150
+Rate of crossover:                         80.000000%
+Tournament selection probability limit:    60.000000%
+Rate of mutation:                          2.000000%
+Maximal allowed delta movement:            +/- 6.000000A
+Maximal allowed delta angle:               +/- 90.000000
+
+Rate of local search:                      100.000000%
+Maximal number of local search iterations: 300
+Rho lower bound:                           0.010000
+Spread of local search delta movement:     2.000000A
+Spread of local search delta angle:        74.999999
+Limit of consecutive successes/failures:   4
+
+Handle symmetry during clustering:         YES
+RMSD tolerance:                            2.000000A
+
+Program call in command line was:          /home/tajgero/AutoDock-GPU/bin/autodock_gpu_128wi --lfile pdbqt_files/1m5c_ligand.pdbqt --ffile map_grid_files/1m5c_receptor.maps.fld --nrun 50 
+
+
+    GRID PARAMETERS
+    ________________________
+
+
+Receptor name:                             pdbqt_files/1m5c_receptor
+Number of grid points (x, y, z):           41, 41, 41
+Grid center (x, y, z):                     42.325000, 15.763000, 15.670000A
+Grid size (x, y, z):                       15.000000, 15.000000, 15.000000A
+Grid spacing:                              0.375000A
+
+
+    LIGAND PARAMETERS
+    ________________________
+
+
+Ligand name:                               pdbqt_files/1m5c_ligand
+Number of atoms:                           13
+Number of rotatable bonds:                 3
+Number of atom types:                      6
+
+
+    DUMMY DATA (only for ADT-compatibility)
+    ________________________
+
+
+DPF> outlev 1
+DPF> ga_run 50
+DPF> fld map_grid_files/1m5c_receptor.maps.fld
+DPF> move pdbqt_files/1m5c_ligand.pdbqt
+
+
+    COUNTER STATES
+    ________________________
+
+
+Number of energy evaluations performed:    467718
+Number of generations used:                30
+
+
+    INPUT LIGAND PDBQT FILE:
+    ________________________
+
+
+INPUT-LIGAND-PDBQT: REMARK  3 active torsions:
+INPUT-LIGAND-PDBQT: REMARK  status: ('A' for Active; 'I' for Inactive)
+INPUT-LIGAND-PDBQT: REMARK    1  A    between atoms: C1_2056  and  C2_2058 
+INPUT-LIGAND-PDBQT: REMARK    2  A    between atoms: C2_2058  and  C3_2060 
+INPUT-LIGAND-PDBQT: REMARK    3  A    between atoms: C3_2060  and  C4_2061 
+INPUT-LIGAND-PDBQT: ROOT
+INPUT-LIGAND-PDBQT: HETATM    1  C4  BRH A 611      42.267  16.244  15.172  1.00 15.28     0.116 A 
+INPUT-LIGAND-PDBQT: HETATM    2  C5  BRH A 611      41.563  16.696  14.067  1.00 14.83     0.115 A 
+INPUT-LIGAND-PDBQT: HETATM    3 BR1  BRH A 611      39.786  17.120  13.940  1.00 19.34    -0.042 Br
+INPUT-LIGAND-PDBQT: HETATM    4  C6  BRH A 611      42.598  16.758  12.986  1.00 19.66     0.309 A 
+INPUT-LIGAND-PDBQT: HETATM    5  O3  BRH A 611      42.412  17.122  11.778  1.00 20.61    -0.263 OA
+INPUT-LIGAND-PDBQT: HETATM    6  N2  BRH A 611      43.799  16.351  13.519  1.00 17.78    -0.083 NA
+INPUT-LIGAND-PDBQT: HETATM    7  O4  BRH A 611      43.604  16.049  14.806  1.00 17.11    -0.212 OA
+INPUT-LIGAND-PDBQT: ENDROOT
+INPUT-LIGAND-PDBQT: BRANCH   1   8
+INPUT-LIGAND-PDBQT: HETATM    8  C3  BRH A 611      41.906  15.949  16.566  1.00 14.22     0.105 C 
+INPUT-LIGAND-PDBQT: BRANCH   8   9
+INPUT-LIGAND-PDBQT: HETATM    9  C2  BRH A 611      42.421  14.600  17.072  1.00 12.31     0.394 C 
+INPUT-LIGAND-PDBQT: HETATM   10  N1  BRH A 611      41.438  13.512  16.875  1.00 11.74     0.628 N 
+INPUT-LIGAND-PDBQT: BRANCH   9  11
+INPUT-LIGAND-PDBQT: HETATM   11  C1  BRH A 611      42.728  14.793  18.603  1.00 13.53     0.224 C 
+INPUT-LIGAND-PDBQT: HETATM   12  O1  BRH A 611      43.515  15.752  18.924  1.00 12.96    -0.646 OA
+INPUT-LIGAND-PDBQT: HETATM   13  O2  BRH A 611      42.187  13.978  19.404  1.00 13.19    -0.646 OA
+INPUT-LIGAND-PDBQT: ENDBRANCH   9  11
+INPUT-LIGAND-PDBQT: ENDBRANCH   8   9
+INPUT-LIGAND-PDBQT: ENDBRANCH   1   8
+INPUT-LIGAND-PDBQT: TORSDOF 3
+
+
+    FINAL DOCKED STATE:
+    ________________________
+
+
+Run:   1 / 50
+Time taken for this run:   0.742s
+
+DOCKED: MODEL        1
+DOCKED: USER    Run = 1
+DOCKED: USER
+DOCKED: USER    Estimated Free Energy of Binding    =  -5.95 kcal/mol  [=(1)+(2)+(3)-(4)]
+DOCKED: USER
+DOCKED: USER    (1) Final Intermolecular Energy     =  -6.85 kcal/mol
+DOCKED: USER        vdW + Hbond + desolv Energy     =  -4.46 kcal/mol
+DOCKED: USER        Electrostatic Energy            =  -2.39 kcal/mol
+DOCKED: USER        Moving Ligand-Fixed Receptor    =  -6.85 kcal/mol
+DOCKED: USER        Moving Ligand-Moving Receptor   =  +0.00 kcal/mol
+DOCKED: USER    (2) Final Total Internal Energy     =  -0.20 kcal/mol
+DOCKED: USER    (3) Torsional Free Energy           =  +0.89 kcal/mol
+DOCKED: USER    (4) Unbound System's Energy         =  -0.20 kcal/mol
+DOCKED: USER
+DOCKED: USER
+DOCKED: REMARK  3 active torsions:
+DOCKED: REMARK  status: ('A' for Active; 'I' for Inactive)
+DOCKED: REMARK    1  A    between atoms: C1_2056  and  C2_2058 
+DOCKED: REMARK    2  A    between atoms: C2_2058  and  C3_2060 
+DOCKED: REMARK    3  A    between atoms: C3_2060  and  C4_2061 
+DOCKED: USER                              x       y       z     vdW  Elec       q    Type
+DOCKED: USER                           _______ _______ _______ _____ _____    ______ ____
+DOCKED: ROOT
+DOCKED: HETATM    1  C4  BRH A 611      42.511  15.921  15.609 -0.25 -0.03    +0.116 A  
+DOCKED: HETATM    2  C5  BRH A 611      42.273  16.706  14.492 -0.24 -0.02    +0.115 A  
+DOCKED: HETATM    3 BR1  BRH A 611      40.677  17.067  13.669 -0.77 +0.01    -0.042 Br 
+DOCKED: HETATM    4  C6  BRH A 611      43.634  17.197  14.105 -0.06 +0.07    +0.309 A  
+DOCKED: HETATM    5  O3  BRH A 611      43.913  17.960  13.122 -0.31 -0.09    -0.263 OA 
+DOCKED: HETATM    6  N2  BRH A 611      44.545  16.681  14.996 -0.55 -0.05    -0.083 NA 
+DOCKED: HETATM    7  O4  BRH A 611      43.884  15.930  15.882 -0.67 -0.12    -0.212 OA 
+DOCKED: ENDROOT
+DOCKED: BRANCH   1   8
+DOCKED: HETATM    8  C3  BRH A 611      41.657  15.131  16.507 -0.03 -0.06    +0.105 C  
+DOCKED: BRANCH   8   9
+DOCKED: HETATM    9  C2  BRH A 611      42.351  13.912  17.117 -0.06 -0.18    +0.394 C  
+DOCKED: HETATM   10  N1  BRH A 611      41.464  12.729  17.175 +0.04 -0.58    +0.628 N  
+DOCKED: BRANCH   9  11
+DOCKED: HETATM   11  C1  BRH A 611      42.796  14.337  18.565 -0.34 +0.15    +0.224 C  
+DOCKED: HETATM   12  O1  BRH A 611      43.828  15.091  18.660 -0.60 -0.92    -0.646 OA 
+DOCKED: HETATM   13  O2  BRH A 611      42.112  13.892  19.530 -0.61 -0.58    -0.646 OA 
+DOCKED: ENDBRANCH   9  11
+DOCKED: ENDBRANCH   8   9
+DOCKED: ENDBRANCH   1   8
+DOCKED: TORSDOF 3
+DOCKED: TER
+DOCKED: ENDMDL
+________________________________________________________________________________
+
+
+    FINAL DOCKED STATE:
+    ________________________
+
+
+Run:   2 / 50
+Time taken for this run:   0.742s
+
+DOCKED: MODEL        2
+DOCKED: USER    Run = 2
+DOCKED: USER
+DOCKED: USER    Estimated Free Energy of Binding    =  -5.84 kcal/mol  [=(1)+(2)+(3)-(4)]
+DOCKED: USER
+DOCKED: USER    (1) Final Intermolecular Energy     =  -6.73 kcal/mol
+DOCKED: USER        vdW + Hbond + desolv Energy     =  -4.42 kcal/mol
+DOCKED: USER        Electrostatic Energy            =  -2.31 kcal/mol
+DOCKED: USER        Moving Ligand-Fixed Receptor    =  -6.73 kcal/mol
+DOCKED: USER        Moving Ligand-Moving Receptor   =  +0.00 kcal/mol
+DOCKED: USER    (2) Final Total Internal Energy     =  -0.22 kcal/mol
+DOCKED: USER    (3) Torsional Free Energy           =  +0.89 kcal/mol
+DOCKED: USER    (4) Unbound System's Energy         =  -0.22 kcal/mol
+DOCKED: USER
+DOCKED: USER
+DOCKED: REMARK  3 active torsions:
+DOCKED: REMARK  status: ('A' for Active; 'I' for Inactive)
+DOCKED: REMARK    1  A    between atoms: C1_2056  and  C2_2058 
+DOCKED: REMARK    2  A    between atoms: C2_2058  and  C3_2060 
+DOCKED: REMARK    3  A    between atoms: C3_2060  and  C4_2061 
+DOCKED: USER                              x       y       z     vdW  Elec       q    Type
+DOCKED: USER                           _______ _______ _______ _____ _____    ______ ____
+DOCKED: ROOT
+DOCKED: HETATM    1  C4  BRH A 611      42.490  15.951  15.690 -0.26 -0.02    +0.116 A  
+DOCKED: HETATM    2  C5  BRH A 611      42.294  16.954  14.754 -0.24 -0.01    +0.115 A  
+DOCKED: HETATM    3 BR1  BRH A 611      40.716  17.646  14.135 -0.64 +0.01    -0.042 Br 
+DOCKED: HETATM    4  C6  BRH A 611      43.684  17.346  14.356 -0.09 +0.08    +0.309 A  
+DOCKED: HETATM    5  O3  BRH A 611      44.005  18.242  13.507 -0.34 -0.08    -0.263 OA 
+DOCKED: HETATM    6  N2  BRH A 611      44.568  16.569  15.067 -0.57 -0.06    -0.083 NA 
+DOCKED: HETATM    7  O4  BRH A 611      43.865  15.748  15.853 -0.71 -0.10    -0.212 OA 
+DOCKED: ENDROOT
+DOCKED: BRANCH   1   8
+DOCKED: HETATM    8  C3  BRH A 611      41.591  15.112  16.496 +0.00 -0.07    +0.105 C  
+DOCKED: BRANCH   8   9
+DOCKED: HETATM    9  C2  BRH A 611      42.265  13.881  17.106 -0.05 -0.20    +0.394 C  
+DOCKED: HETATM   10  N1  BRH A 611      41.354  12.718  17.178 +0.03 -0.58    +0.628 N  
+DOCKED: BRANCH   9  11
+DOCKED: HETATM   11  C1  BRH A 611      42.732  14.305  18.547 -0.35 +0.14    +0.224 C  
+DOCKED: HETATM   12  O1  BRH A 611      43.790  15.022  18.631 -0.59 -0.89    -0.646 OA 
+DOCKED: HETATM   13  O2  BRH A 611      42.036  13.894  19.520 -0.61 -0.55    -0.646 OA 
+DOCKED: ENDBRANCH   9  11
+DOCKED: ENDBRANCH   8   9
+DOCKED: ENDBRANCH   1   8
+DOCKED: TORSDOF 3
+DOCKED: TER
+DOCKED: ENDMDL
+________________________________________________________________________________
+
+
+    FINAL DOCKED STATE:
+    ________________________
+
+
+Run:   3 / 50
+Time taken for this run:   0.742s
+
+DOCKED: MODEL        3
+DOCKED: USER    Run = 3
+DOCKED: USER
+DOCKED: USER    Estimated Free Energy of Binding    =  -5.92 kcal/mol  [=(1)+(2)+(3)-(4)]
+DOCKED: USER
+DOCKED: USER    (1) Final Intermolecular Energy     =  -6.81 kcal/mol
+DOCKED: USER        vdW + Hbond + desolv Energy     =  -4.41 kcal/mol
+DOCKED: USER        Electrostatic Energy            =  -2.41 kcal/mol
+DOCKED: USER        Moving Ligand-Fixed Receptor    =  -6.81 kcal/mol
+DOCKED: USER        Moving Ligand-Moving Receptor   =  +0.00 kcal/mol
+DOCKED: USER    (2) Final Total Internal Energy     =  -0.20 kcal/mol
+DOCKED: USER    (3) Torsional Free Energy           =  +0.89 kcal/mol
+DOCKED: USER    (4) Unbound System's Energy         =  -0.20 kcal/mol
+DOCKED: USER
+DOCKED: USER
+DOCKED: REMARK  3 active torsions:
+DOCKED: REMARK  status: ('A' for Active; 'I' for Inactive)
+DOCKED: REMARK    1  A    between atoms: C1_2056  and  C2_2058 
+DOCKED: REMARK    2  A    between atoms: C2_2058  and  C3_2060 
+DOCKED: REMARK    3  A    between atoms: C3_2060  and  C4_2061 
+DOCKED: USER                              x       y       z     vdW  Elec       q    Type
+DOCKED: USER                           _______ _______ _______ _____ _____    ______ ____
+DOCKED: ROOT
+DOCKED: HETATM    1  C4  BRH A 611      42.481  15.938  15.595 -0.25 -0.03    +0.116 A  
+DOCKED: HETATM    2  C5  BRH A 611      42.232  16.592  14.398 -0.23 -0.03    +0.115 A  
+DOCKED: HETATM    3 BR1  BRH A 611      40.645  16.769  13.502 -0.78 +0.02    -0.042 Br 
+DOCKED: HETATM    4  C6  BRH A 611      43.574  17.125  13.998 -0.05 +0.06    +0.309 A  
+DOCKED: HETATM    5  O3  BRH A 611      43.839  17.802  12.951 -0.32 -0.09    -0.263 OA 
+DOCKED: HETATM    6  N2  BRH A 611      44.485  16.758  14.961 -0.54 -0.05    -0.083 NA 
+DOCKED: HETATM    7  O4  BRH A 611      43.841  16.060  15.901 -0.67 -0.12    -0.212 OA 
+DOCKED: ENDROOT
+DOCKED: BRANCH   1   8
+DOCKED: HETATM    8  C3  BRH A 611      41.646  15.191  16.546 +0.01 -0.06    +0.105 C  
+DOCKED: BRANCH   8   9
+DOCKED: HETATM    9  C2  BRH A 611      42.325  13.951  17.131 -0.09 -0.17    +0.394 C  
+DOCKED: HETATM   10  N1  BRH A 611      41.423  12.778  17.164 +0.03 -0.58    +0.628 N  
+DOCKED: BRANCH   9  11
+DOCKED: HETATM   11  C1  BRH A 611      42.772  14.340  18.589 -0.34 +0.15    +0.224 C  
+DOCKED: HETATM   12  O1  BRH A 611      43.811  15.082  18.701 -0.59 -0.93    -0.646 OA 
+DOCKED: HETATM   13  O2  BRH A 611      42.082  13.881  19.543 -0.59 -0.58    -0.646 OA 
+DOCKED: ENDBRANCH   9  11
+DOCKED: ENDBRANCH   8   9
+DOCKED: ENDBRANCH   1   8
+DOCKED: TORSDOF 3
+DOCKED: TER
+DOCKED: ENDMDL
+________________________________________________________________________________
+
+
+    FINAL DOCKED STATE:
+    ________________________
+
+
+Run:   4 / 50
+Time taken for this run:   0.742s
+
+DOCKED: MODEL        4
+DOCKED: USER    Run = 4
+DOCKED: USER
+DOCKED: USER    Estimated Free Energy of Binding    =  -5.96 kcal/mol  [=(1)+(2)+(3)-(4)]
+DOCKED: USER
+DOCKED: USER    (1) Final Intermolecular Energy     =  -6.86 kcal/mol
+DOCKED: USER        vdW + Hbond + desolv Energy     =  -4.47 kcal/mol
+DOCKED: USER        Electrostatic Energy            =  -2.38 kcal/mol
+DOCKED: USER        Moving Ligand-Fixed Receptor    =  -6.86 kcal/mol
+DOCKED: USER        Moving Ligand-Moving Receptor   =  +0.00 kcal/mol
+DOCKED: USER    (2) Final Total Internal Energy     =  -0.20 kcal/mol
+DOCKED: USER    (3) Torsional Free Energy           =  +0.89 kcal/mol
+DOCKED: USER    (4) Unbound System's Energy         =  -0.20 kcal/mol
+DOCKED: USER
+DOCKED: USER
+DOCKED: REMARK  3 active torsions:
+DOCKED: REMARK  status: ('A' for Active; 'I' for Inactive)
+DOCKED: REMARK    1  A    between atoms: C1_2056  and  C2_2058 
+DOCKED: REMARK    2  A    between atoms: C2_2058  and  C3_2060 
+DOCKED: REMARK    3  A    between atoms: C3_2060  and  C4_2061 
+DOCKED: USER                              x       y       z     vdW  Elec       q    Type
+DOCKED: USER                           _______ _______ _______ _____ _____    ______ ____
+DOCKED: ROOT
+DOCKED: HETATM    1  C4  BRH A 611      42.475  15.904  15.628 -0.25 -0.03    +0.116 A  
+DOCKED: HETATM    2  C5  BRH A 611      42.243  16.678  14.501 -0.24 -0.02    +0.115 A  
+DOCKED: HETATM    3 BR1  BRH A 611      40.657  17.003  13.645 -0.77 +0.02    -0.042 Br 
+DOCKED: HETATM    4  C6  BRH A 611      43.602  17.192  14.136 -0.07 +0.07    +0.309 A  
+DOCKED: HETATM    5  O3  BRH A 611      43.885  17.954  13.154 -0.31 -0.09    -0.263 OA 
+DOCKED: HETATM    6  N2  BRH A 611      44.505  16.700  15.049 -0.55 -0.05    -0.083 NA 
+DOCKED: HETATM    7  O4  BRH A 611      43.842  15.942  15.927 -0.69 -0.12    -0.212 OA 
+DOCKED: ENDROOT
+DOCKED: BRANCH   1   8
+DOCKED: HETATM    8  C3  BRH A 611      41.618  15.104  16.515 -0.01 -0.06    +0.105 C  
+DOCKED: BRANCH   8   9
+DOCKED: HETATM    9  C2  BRH A 611      42.314  13.882  17.118 -0.06 -0.19    +0.394 C  
+DOCKED: HETATM   10  N1  BRH A 611      41.427  12.699  17.174 +0.05 -0.58    +0.628 N  
+DOCKED: BRANCH   9  11
+DOCKED: HETATM   11  C1  BRH A 611      42.763  14.302  18.566 -0.35 +0.15    +0.224 C  
+DOCKED: HETATM   12  O1  BRH A 611      43.823  15.015  18.665 -0.62 -0.91    -0.646 OA 
+DOCKED: HETATM   13  O2  BRH A 611      42.052  13.893  19.528 -0.61 -0.56    -0.646 OA 
+DOCKED: ENDBRANCH   9  11
+DOCKED: ENDBRANCH   8   9
+DOCKED: ENDBRANCH   1   8
+DOCKED: TORSDOF 3
+DOCKED: TER
+DOCKED: ENDMDL
+________________________________________________________________________________
+
+
+    FINAL DOCKED STATE:
+    ________________________
+
+
+Run:   5 / 50
+Time taken for this run:   0.742s
+
+DOCKED: MODEL        5
+DOCKED: USER    Run = 5
+DOCKED: USER
+DOCKED: USER    Estimated Free Energy of Binding    =  -5.94 kcal/mol  [=(1)+(2)+(3)-(4)]
+DOCKED: USER
+DOCKED: USER    (1) Final Intermolecular Energy     =  -6.84 kcal/mol
+DOCKED: USER        vdW + Hbond + desolv Energy     =  -4.42 kcal/mol
+DOCKED: USER        Electrostatic Energy            =  -2.42 kcal/mol
+DOCKED: USER        Moving Ligand-Fixed Receptor    =  -6.84 kcal/mol
+DOCKED: USER        Moving Ligand-Moving Receptor   =  +0.00 kcal/mol
+DOCKED: USER    (2) Final Total Internal Energy     =  -0.19 kcal/mol
+DOCKED: USER    (3) Torsional Free Energy           =  +0.89 kcal/mol
+DOCKED: USER    (4) Unbound System's Energy         =  -0.19 kcal/mol
+DOCKED: USER
+DOCKED: USER
+DOCKED: REMARK  3 active torsions:
+DOCKED: REMARK  status: ('A' for Active; 'I' for Inactive)
+DOCKED: REMARK    1  A    between atoms: C1_2056  and  C2_2058 
+DOCKED: REMARK    2  A    between atoms: C2_2058  and  C3_2060 
+DOCKED: REMARK    3  A    between atoms: C3_2060  and  C4_2061 
+DOCKED: USER                              x       y       z     vdW  Elec       q    Type
+DOCKED: USER                           _______ _______ _______ _____ _____    ______ ____
+DOCKED: ROOT
+DOCKED: HETATM    1  C4  BRH A 611      42.477  15.888  15.576 -0.24 -0.03    +0.116 A  
+DOCKED: HETATM    2  C5  BRH A 611      42.242  16.476  14.343 -0.23 -0.03    +0.115 A  
+DOCKED: HETATM    3 BR1  BRH A 611      40.681  16.541  13.387 -0.78 +0.02    -0.042 Br 
+DOCKED: HETATM    4  C6  BRH A 611      43.572  17.051  13.964 -0.03 +0.06    +0.309 A  
+DOCKED: HETATM    5  O3  BRH A 611      43.844  17.692  12.895 -0.32 -0.10    -0.263 OA 
+DOCKED: HETATM    6  N2  BRH A 611      44.464  16.768  14.972 -0.54 -0.05    -0.083 NA 
+DOCKED: HETATM    7  O4  BRH A 611      43.819  16.084  15.921 -0.68 -0.12    -0.212 OA 
+DOCKED: ENDROOT
+DOCKED: BRANCH   1   8
+DOCKED: HETATM    8  C3  BRH A 611      41.642  15.147  16.533 -0.01 -0.06    +0.105 C  
+DOCKED: BRANCH   8   9
+DOCKED: HETATM    9  C2  BRH A 611      42.319  13.906  17.120 -0.07 -0.18    +0.394 C  
+DOCKED: HETATM   10  N1  BRH A 611      41.410  12.741  17.174 +0.03 -0.58    +0.628 N  
+DOCKED: BRANCH   9  11
+DOCKED: HETATM   11  C1  BRH A 611      42.786  14.306  18.569 -0.35 +0.15    +0.224 C  
+DOCKED: HETATM   12  O1  BRH A 611      43.852  15.011  18.664 -0.61 -0.92    -0.646 OA 
+DOCKED: HETATM   13  O2  BRH A 611      42.084  13.888  19.534 -0.61 -0.57    -0.646 OA 
+DOCKED: ENDBRANCH   9  11
+DOCKED: ENDBRANCH   8   9
+DOCKED: ENDBRANCH   1   8
+DOCKED: TORSDOF 3
+DOCKED: TER
+DOCKED: ENDMDL
+________________________________________________________________________________
+
+
+    FINAL DOCKED STATE:
+    ________________________
+
+
+Run:   6 / 50
+Time taken for this run:   0.742s
+
+DOCKED: MODEL        6
+DOCKED: USER    Run = 6
+DOCKED: USER
+DOCKED: USER    Estimated Free Energy of Binding    =  -5.92 kcal/mol  [=(1)+(2)+(3)-(4)]
+DOCKED: USER
+DOCKED: USER    (1) Final Intermolecular Energy     =  -6.81 kcal/mol
+DOCKED: USER        vdW + Hbond + desolv Energy     =  -4.41 kcal/mol
+DOCKED: USER        Electrostatic Energy            =  -2.41 kcal/mol
+DOCKED: USER        Moving Ligand-Fixed Receptor    =  -6.81 kcal/mol
+DOCKED: USER        Moving Ligand-Moving Receptor   =  +0.00 kcal/mol
+DOCKED: USER    (2) Final Total Internal Energy     =  -0.19 kcal/mol
+DOCKED: USER    (3) Torsional Free Energy           =  +0.89 kcal/mol
+DOCKED: USER    (4) Unbound System's Energy         =  -0.19 kcal/mol
+DOCKED: USER
+DOCKED: USER
+DOCKED: REMARK  3 active torsions:
+DOCKED: REMARK  status: ('A' for Active; 'I' for Inactive)
+DOCKED: REMARK    1  A    between atoms: C1_2056  and  C2_2058 
+DOCKED: REMARK    2  A    between atoms: C2_2058  and  C3_2060 
+DOCKED: REMARK    3  A    between atoms: C3_2060  and  C4_2061 
+DOCKED: USER                              x       y       z     vdW  Elec       q    Type
+DOCKED: USER                           _______ _______ _______ _____ _____    ______ ____
+DOCKED: ROOT
+DOCKED: HETATM    1  C4  BRH A 611      42.468  15.927  15.582 -0.25 -0.03    +0.116 A  
+DOCKED: HETATM    2  C5  BRH A 611      42.214  16.509  14.350 -0.23 -0.03    +0.115 A  
+DOCKED: HETATM    3 BR1  BRH A 611      40.632  16.596  13.432 -0.77 +0.02    -0.042 Br 
+DOCKED: HETATM    4  C6  BRH A 611      43.545  17.057  13.934 -0.04 +0.06    +0.309 A  
+DOCKED: HETATM    5  O3  BRH A 611      43.802  17.685  12.854 -0.33 -0.10    -0.263 OA 
+DOCKED: HETATM    6  N2  BRH A 611      44.456  16.766  14.922 -0.55 -0.05    -0.083 NA 
+DOCKED: HETATM    7  O4  BRH A 611      43.822  16.101  15.892 -0.67 -0.12    -0.212 OA 
+DOCKED: ENDROOT
+DOCKED: BRANCH   1   8
+DOCKED: HETATM    8  C3  BRH A 611      41.645  15.207  16.564 +0.03 -0.06    +0.105 C  
+DOCKED: BRANCH   8   9
+DOCKED: HETATM    9  C2  BRH A 611      42.310  13.956  17.140 -0.09 -0.17    +0.394 C  
+DOCKED: HETATM   10  N1  BRH A 611      41.393  12.795  17.174 +0.02 -0.58    +0.628 N  
+DOCKED: BRANCH   9  11
+DOCKED: HETATM   11  C1  BRH A 611      42.773  14.334  18.595 -0.34 +0.15    +0.224 C  
+DOCKED: HETATM   12  O1  BRH A 611      43.825  15.058  18.703 -0.60 -0.93    -0.646 OA 
+DOCKED: HETATM   13  O2  BRH A 611      42.081  13.883  19.552 -0.59 -0.58    -0.646 OA 
+DOCKED: ENDBRANCH   9  11
+DOCKED: ENDBRANCH   8   9
+DOCKED: ENDBRANCH   1   8
+DOCKED: TORSDOF 3
+DOCKED: TER
+DOCKED: ENDMDL
+________________________________________________________________________________
+
+
+    FINAL DOCKED STATE:
+    ________________________
+
+
+Run:   7 / 50
+Time taken for this run:   0.742s
+
+DOCKED: MODEL        7
+DOCKED: USER    Run = 7
+DOCKED: USER
+DOCKED: USER    Estimated Free Energy of Binding    =  -5.88 kcal/mol  [=(1)+(2)+(3)-(4)]
+DOCKED: USER
+DOCKED: USER    (1) Final Intermolecular Energy     =  -6.77 kcal/mol
+DOCKED: USER        vdW + Hbond + desolv Energy     =  -4.40 kcal/mol
+DOCKED: USER        Electrostatic Energy            =  -2.38 kcal/mol
+DOCKED: USER        Moving Ligand-Fixed Receptor    =  -6.77 kcal/mol
+DOCKED: USER        Moving Ligand-Moving Receptor   =  +0.00 kcal/mol
+DOCKED: USER    (2) Final Total Internal Energy     =  -0.21 kcal/mol
+DOCKED: USER    (3) Torsional Free Energy           =  +0.89 kcal/mol
+DOCKED: USER    (4) Unbound System's Energy         =  -0.21 kcal/mol
+DOCKED: USER
+DOCKED: USER
+DOCKED: REMARK  3 active torsions:
+DOCKED: REMARK  status: ('A' for Active; 'I' for Inactive)
+DOCKED: REMARK    1  A    between atoms: C1_2056  and  C2_2058 
+DOCKED: REMARK    2  A    between atoms: C2_2058  and  C3_2060 
+DOCKED: REMARK    3  A    between atoms: C3_2060  and  C4_2061 
+DOCKED: USER                              x       y       z     vdW  Elec       q    Type
+DOCKED: USER                           _______ _______ _______ _____ _____    ______ ____
+DOCKED: ROOT
+DOCKED: HETATM    1  C4  BRH A 611      42.516  15.942  15.572 -0.25 -0.03    +0.116 A  
+DOCKED: HETATM    2  C5  BRH A 611      42.291  16.864  14.562 -0.24 -0.01    +0.115 A  
+DOCKED: HETATM    3 BR1  BRH A 611      40.694  17.433  13.871 -0.72 +0.01    -0.042 Br 
+DOCKED: HETATM    4  C6  BRH A 611      43.668  17.295  14.159 -0.07 +0.08    +0.309 A  
+DOCKED: HETATM    5  O3  BRH A 611      43.963  18.142  13.253 -0.33 -0.08    -0.263 OA 
+DOCKED: HETATM    6  N2  BRH A 611      44.575  16.615  14.939 -0.57 -0.05    -0.083 NA 
+DOCKED: HETATM    7  O4  BRH A 611      43.897  15.818  15.770 -0.69 -0.10    -0.212 OA 
+DOCKED: ENDROOT
+DOCKED: BRANCH   1   8
+DOCKED: HETATM    8  C3  BRH A 611      41.643  15.119  16.421 -0.06 -0.07    +0.105 C  
+DOCKED: BRANCH   8   9
+DOCKED: HETATM    9  C2  BRH A 611      42.342  13.915  17.054 -0.03 -0.20    +0.394 C  
+DOCKED: HETATM   10  N1  BRH A 611      41.452  12.738  17.160 +0.04 -0.59    +0.628 N  
+DOCKED: BRANCH   9  11
+DOCKED: HETATM   11  C1  BRH A 611      42.812  14.379  18.482 -0.34 +0.15    +0.224 C  
+DOCKED: HETATM   12  O1  BRH A 611      43.790  15.205  18.535 -0.53 -0.89    -0.646 OA 
+DOCKED: HETATM   13  O2  BRH A 611      42.198  13.892  19.475 -0.62 -0.59    -0.646 OA 
+DOCKED: ENDBRANCH   9  11
+DOCKED: ENDBRANCH   8   9
+DOCKED: ENDBRANCH   1   8
+DOCKED: TORSDOF 3
+DOCKED: TER
+DOCKED: ENDMDL
+________________________________________________________________________________
+
+
+    FINAL DOCKED STATE:
+    ________________________
+
+
+Run:   8 / 50
+Time taken for this run:   0.742s
+
+DOCKED: MODEL        8
+DOCKED: USER    Run = 8
+DOCKED: USER
+DOCKED: USER    Estimated Free Energy of Binding    =  -5.89 kcal/mol  [=(1)+(2)+(3)-(4)]
+DOCKED: USER
+DOCKED: USER    (1) Final Intermolecular Energy     =  -6.78 kcal/mol
+DOCKED: USER        vdW + Hbond + desolv Energy     =  -4.34 kcal/mol
+DOCKED: USER        Electrostatic Energy            =  -2.44 kcal/mol
+DOCKED: USER        Moving Ligand-Fixed Receptor    =  -6.78 kcal/mol
+DOCKED: USER        Moving Ligand-Moving Receptor   =  +0.00 kcal/mol
+DOCKED: USER    (2) Final Total Internal Energy     =  -0.19 kcal/mol
+DOCKED: USER    (3) Torsional Free Energy           =  +0.89 kcal/mol
+DOCKED: USER    (4) Unbound System's Energy         =  -0.19 kcal/mol
+DOCKED: USER
+DOCKED: USER
+DOCKED: REMARK  3 active torsions:
+DOCKED: REMARK  status: ('A' for Active; 'I' for Inactive)
+DOCKED: REMARK    1  A    between atoms: C1_2056  and  C2_2058 
+DOCKED: REMARK    2  A    between atoms: C2_2058  and  C3_2060 
+DOCKED: REMARK    3  A    between atoms: C3_2060  and  C4_2061 
+DOCKED: USER                              x       y       z     vdW  Elec       q    Type
+DOCKED: USER                           _______ _______ _______ _____ _____    ______ ____
+DOCKED: ROOT
+DOCKED: HETATM    1  C4  BRH A 611      42.549  16.008  15.517 -0.25 -0.02    +0.116 A  
+DOCKED: HETATM    2  C5  BRH A 611      42.318  16.657  14.315 -0.23 -0.02    +0.115 A  
+DOCKED: HETATM    3 BR1  BRH A 611      40.747  16.823  13.389 -0.80 +0.01    -0.042 Br 
+DOCKED: HETATM    4  C6  BRH A 611      43.663  17.199  13.939 -0.02 +0.07    +0.309 A  
+DOCKED: HETATM    5  O3  BRH A 611      43.943  17.876  12.895 -0.31 -0.10    -0.263 OA 
+DOCKED: HETATM    6  N2  BRH A 611      44.559  16.840  14.919 -0.53 -0.05    -0.083 NA 
+DOCKED: HETATM    7  O4  BRH A 611      43.903  16.139  15.848 -0.62 -0.13    -0.212 OA 
+DOCKED: ENDROOT
+DOCKED: BRANCH   1   8
+DOCKED: HETATM    8  C3  BRH A 611      41.702  15.256  16.454 -0.08 -0.06    +0.105 C  
+DOCKED: BRANCH   8   9
+DOCKED: HETATM    9  C2  BRH A 611      42.375  14.017  17.048 -0.05 -0.18    +0.394 C  
+DOCKED: HETATM   10  N1  BRH A 611      41.449  12.869  17.155 +0.04 -0.58    +0.628 N  
+DOCKED: BRANCH   9  11
+DOCKED: HETATM   11  C1  BRH A 611      42.894  14.440  18.472 -0.33 +0.15    +0.224 C  
+DOCKED: HETATM   12  O1  BRH A 611      42.329  13.894  19.485 -0.63 -0.63    -0.646 OA 
+DOCKED: HETATM   13  O2  BRH A 611      43.821  15.299  18.514 -0.50 -0.91    -0.646 OA 
+DOCKED: ENDBRANCH   9  11
+DOCKED: ENDBRANCH   8   9
+DOCKED: ENDBRANCH   1   8
+DOCKED: TORSDOF 3
+DOCKED: TER
+DOCKED: ENDMDL
+________________________________________________________________________________
+
+
+    FINAL DOCKED STATE:
+    ________________________
+
+
+Run:   9 / 50
+Time taken for this run:   0.742s
+
+DOCKED: MODEL        9
+DOCKED: USER    Run = 9
+DOCKED: USER
+DOCKED: USER    Estimated Free Energy of Binding    =  -5.95 kcal/mol  [=(1)+(2)+(3)-(4)]
+DOCKED: USER
+DOCKED: USER    (1) Final Intermolecular Energy     =  -6.85 kcal/mol
+DOCKED: USER        vdW + Hbond + desolv Energy     =  -4.46 kcal/mol
+DOCKED: USER        Electrostatic Energy            =  -2.39 kcal/mol
+DOCKED: USER        Moving Ligand-Fixed Receptor    =  -6.85 kcal/mol
+DOCKED: USER        Moving Ligand-Moving Receptor   =  +0.00 kcal/mol
+DOCKED: USER    (2) Final Total Internal Energy     =  -0.20 kcal/mol
+DOCKED: USER    (3) Torsional Free Energy           =  +0.89 kcal/mol
+DOCKED: USER    (4) Unbound System's Energy         =  -0.20 kcal/mol
+DOCKED: USER
+DOCKED: USER
+DOCKED: REMARK  3 active torsions:
+DOCKED: REMARK  status: ('A' for Active; 'I' for Inactive)
+DOCKED: REMARK    1  A    between atoms: C1_2056  and  C2_2058 
+DOCKED: REMARK    2  A    between atoms: C2_2058  and  C3_2060 
+DOCKED: REMARK    3  A    between atoms: C3_2060  and  C4_2061 
+DOCKED: USER                              x       y       z     vdW  Elec       q    Type
+DOCKED: USER                           _______ _______ _______ _____ _____    ______ ____
+DOCKED: ROOT
+DOCKED: HETATM    1  C4  BRH A 611      42.517  15.911  15.623 -0.25 -0.03    +0.116 A  
+DOCKED: HETATM    2  C5  BRH A 611      42.287  16.679  14.492 -0.24 -0.02    +0.115 A  
+DOCKED: HETATM    3 BR1  BRH A 611      40.700  17.013  13.642 -0.77 +0.01    -0.042 Br 
+DOCKED: HETATM    4  C6  BRH A 611      43.649  17.177  14.117 -0.06 +0.07    +0.309 A  
+DOCKED: HETATM    5  O3  BRH A 611      43.936  17.929  13.127 -0.31 -0.09    -0.263 OA 
+DOCKED: HETATM    6  N2  BRH A 611      44.552  16.682  15.028 -0.55 -0.05    -0.083 NA 
+DOCKED: HETATM    7  O4  BRH A 611      43.885  15.937  15.915 -0.67 -0.12    -0.212 OA 
+DOCKED: ENDROOT
+DOCKED: BRANCH   1   8
+DOCKED: HETATM    8  C3  BRH A 611      41.657  15.126  16.520 -0.03 -0.06    +0.105 C  
+DOCKED: BRANCH   8   9
+DOCKED: HETATM    9  C2  BRH A 611      42.338  13.893  17.117 -0.06 -0.18    +0.394 C  
+DOCKED: HETATM   10  N1  BRH A 611      41.436  12.722  17.172 +0.04 -0.58    +0.628 N  
+DOCKED: BRANCH   9  11
+DOCKED: HETATM   11  C1  BRH A 611      42.796  14.302  18.566 -0.35 +0.15    +0.224 C  
+DOCKED: HETATM   12  O1  BRH A 611      42.080  13.886  19.543 -0.60 -0.57    -0.646 OA 
+DOCKED: HETATM   13  O2  BRH A 611      43.830  15.024  18.658 -0.61 -0.91    -0.646 OA 
+DOCKED: ENDBRANCH   9  11
+DOCKED: ENDBRANCH   8   9
+DOCKED: ENDBRANCH   1   8
+DOCKED: TORSDOF 3
+DOCKED: TER
+DOCKED: ENDMDL
+________________________________________________________________________________
+
+
+    FINAL DOCKED STATE:
+    ________________________
+
+
+Run:   10 / 50
+Time taken for this run:   0.742s
+
+DOCKED: MODEL        10
+DOCKED: USER    Run = 10
+DOCKED: USER
+DOCKED: USER    Estimated Free Energy of Binding    =  -5.95 kcal/mol  [=(1)+(2)+(3)-(4)]
+DOCKED: USER
+DOCKED: USER    (1) Final Intermolecular Energy     =  -6.85 kcal/mol
+DOCKED: USER        vdW + Hbond + desolv Energy     =  -4.45 kcal/mol
+DOCKED: USER        Electrostatic Energy            =  -2.40 kcal/mol
+DOCKED: USER        Moving Ligand-Fixed Receptor    =  -6.85 kcal/mol
+DOCKED: USER        Moving Ligand-Moving Receptor   =  +0.00 kcal/mol
+DOCKED: USER    (2) Final Total Internal Energy     =  -0.20 kcal/mol
+DOCKED: USER    (3) Torsional Free Energy           =  +0.89 kcal/mol
+DOCKED: USER    (4) Unbound System's Energy         =  -0.20 kcal/mol
+DOCKED: USER
+DOCKED: USER
+DOCKED: REMARK  3 active torsions:
+DOCKED: REMARK  status: ('A' for Active; 'I' for Inactive)
+DOCKED: REMARK    1  A    between atoms: C1_2056  and  C2_2058 
+DOCKED: REMARK    2  A    between atoms: C2_2058  and  C3_2060 
+DOCKED: REMARK    3  A    between atoms: C3_2060  and  C4_2061 
+DOCKED: USER                              x       y       z     vdW  Elec       q    Type
+DOCKED: USER                           _______ _______ _______ _____ _____    ______ ____
+DOCKED: ROOT
+DOCKED: HETATM    1  C4  BRH A 611      42.496  15.904  15.595 -0.25 -0.03    +0.116 A  
+DOCKED: HETATM    2  C5  BRH A 611      42.249  16.613  14.430 -0.23 -0.02    +0.115 A  
+DOCKED: HETATM    3 BR1  BRH A 611      40.656  16.867  13.564 -0.78 +0.02    -0.042 Br 
+DOCKED: HETATM    4  C6  BRH A 611      43.598  17.131  14.035 -0.05 +0.07    +0.309 A  
+DOCKED: HETATM    5  O3  BRH A 611      43.866  17.846  13.014 -0.31 -0.09    -0.263 OA 
+DOCKED: HETATM    6  N2  BRH A 611      44.512  16.702  14.969 -0.55 -0.05    -0.083 NA 
+DOCKED: HETATM    7  O4  BRH A 611      43.863  15.980  15.888 -0.67 -0.12    -0.212 OA 
+DOCKED: ENDROOT
+DOCKED: BRANCH   1   8
+DOCKED: HETATM    8  C3  BRH A 611      41.655  15.136  16.525 -0.02 -0.06    +0.105 C  
+DOCKED: BRANCH   8   9
+DOCKED: HETATM    9  C2  BRH A 611      42.343  13.904  17.116 -0.06 -0.18    +0.394 C  
+DOCKED: HETATM   10  N1  BRH A 611      41.449  12.726  17.159 +0.05 -0.59    +0.628 N  
+DOCKED: BRANCH   9  11
+DOCKED: HETATM   11  C1  BRH A 611      42.793  14.307  18.569 -0.35 +0.15    +0.224 C  
+DOCKED: HETATM   12  O1  BRH A 611      42.070  13.888  19.541 -0.61 -0.57    -0.646 OA 
+DOCKED: HETATM   13  O2  BRH A 611      43.827  15.027  18.671 -0.62 -0.92    -0.646 OA 
+DOCKED: ENDBRANCH   9  11
+DOCKED: ENDBRANCH   8   9
+DOCKED: ENDBRANCH   1   8
+DOCKED: TORSDOF 3
+DOCKED: TER
+DOCKED: ENDMDL
+________________________________________________________________________________
+
+
+    FINAL DOCKED STATE:
+    ________________________
+
+
+Run:   11 / 50
+Time taken for this run:   0.742s
+
+DOCKED: MODEL        11
+DOCKED: USER    Run = 11
+DOCKED: USER
+DOCKED: USER    Estimated Free Energy of Binding    =  -5.94 kcal/mol  [=(1)+(2)+(3)-(4)]
+DOCKED: USER
+DOCKED: USER    (1) Final Intermolecular Energy     =  -6.83 kcal/mol
+DOCKED: USER        vdW + Hbond + desolv Energy     =  -4.41 kcal/mol
+DOCKED: USER        Electrostatic Energy            =  -2.42 kcal/mol
+DOCKED: USER        Moving Ligand-Fixed Receptor    =  -6.83 kcal/mol
+DOCKED: USER        Moving Ligand-Moving Receptor   =  +0.00 kcal/mol
+DOCKED: USER    (2) Final Total Internal Energy     =  -0.20 kcal/mol
+DOCKED: USER    (3) Torsional Free Energy           =  +0.89 kcal/mol
+DOCKED: USER    (4) Unbound System's Energy         =  -0.20 kcal/mol
+DOCKED: USER
+DOCKED: USER
+DOCKED: REMARK  3 active torsions:
+DOCKED: REMARK  status: ('A' for Active; 'I' for Inactive)
+DOCKED: REMARK    1  A    between atoms: C1_2056  and  C2_2058 
+DOCKED: REMARK    2  A    between atoms: C2_2058  and  C3_2060 
+DOCKED: REMARK    3  A    between atoms: C3_2060  and  C4_2061 
+DOCKED: USER                              x       y       z     vdW  Elec       q    Type
+DOCKED: USER                           _______ _______ _______ _____ _____    ______ ____
+DOCKED: ROOT
+DOCKED: HETATM    1  C4  BRH A 611      42.477  15.891  15.570 -0.24 -0.03    +0.116 A  
+DOCKED: HETATM    2  C5  BRH A 611      42.222  16.524  14.364 -0.23 -0.03    +0.115 A  
+DOCKED: HETATM    3 BR1  BRH A 611      40.636  16.662  13.459 -0.78 +0.02    -0.042 Br 
+DOCKED: HETATM    4  C6  BRH A 611      43.555  17.076  13.962 -0.04 +0.06    +0.309 A  
+DOCKED: HETATM    5  O3  BRH A 611      43.813  17.744  12.907 -0.32 -0.09    -0.263 OA 
+DOCKED: HETATM    6  N2  BRH A 611      44.469  16.737  14.933 -0.55 -0.05    -0.083 NA 
+DOCKED: HETATM    7  O4  BRH A 611      43.833  16.040  15.880 -0.68 -0.12    -0.212 OA 
+DOCKED: ENDROOT
+DOCKED: BRANCH   1   8
+DOCKED: HETATM    8  C3  BRH A 611      41.651  15.140  16.527 -0.02 -0.06    +0.105 C  
+DOCKED: BRANCH   8   9
+DOCKED: HETATM    9  C2  BRH A 611      42.339  13.905  17.111 -0.06 -0.18    +0.394 C  
+DOCKED: HETATM   10  N1  BRH A 611      41.444  12.728  17.152 +0.05 -0.60    +0.628 N  
+DOCKED: BRANCH   9  11
+DOCKED: HETATM   11  C1  BRH A 611      42.795  14.301  18.563 -0.35 +0.15    +0.224 C  
+DOCKED: HETATM   12  O1  BRH A 611      43.871  14.989  18.670 -0.60 -0.93    -0.646 OA 
+DOCKED: HETATM   13  O2  BRH A 611      42.074  13.899  19.521 -0.61 -0.56    -0.646 OA 
+DOCKED: ENDBRANCH   9  11
+DOCKED: ENDBRANCH   8   9
+DOCKED: ENDBRANCH   1   8
+DOCKED: TORSDOF 3
+DOCKED: TER
+DOCKED: ENDMDL
+________________________________________________________________________________
+
+
+    FINAL DOCKED STATE:
+    ________________________
+
+
+Run:   12 / 50
+Time taken for this run:   0.742s
+
+DOCKED: MODEL        12
+DOCKED: USER    Run = 12
+DOCKED: USER
+DOCKED: USER    Estimated Free Energy of Binding    =  -5.91 kcal/mol  [=(1)+(2)+(3)-(4)]
+DOCKED: USER
+DOCKED: USER    (1) Final Intermolecular Energy     =  -6.81 kcal/mol
+DOCKED: USER        vdW + Hbond + desolv Energy     =  -4.38 kcal/mol
+DOCKED: USER        Electrostatic Energy            =  -2.43 kcal/mol
+DOCKED: USER        Moving Ligand-Fixed Receptor    =  -6.81 kcal/mol
+DOCKED: USER        Moving Ligand-Moving Receptor   =  +0.00 kcal/mol
+DOCKED: USER    (2) Final Total Internal Energy     =  -0.19 kcal/mol
+DOCKED: USER    (3) Torsional Free Energy           =  +0.89 kcal/mol
+DOCKED: USER    (4) Unbound System's Energy         =  -0.19 kcal/mol
+DOCKED: USER
+DOCKED: USER
+DOCKED: REMARK  3 active torsions:
+DOCKED: REMARK  status: ('A' for Active; 'I' for Inactive)
+DOCKED: REMARK    1  A    between atoms: C1_2056  and  C2_2058 
+DOCKED: REMARK    2  A    between atoms: C2_2058  and  C3_2060 
+DOCKED: REMARK    3  A    between atoms: C3_2060  and  C4_2061 
+DOCKED: USER                              x       y       z     vdW  Elec       q    Type
+DOCKED: USER                           _______ _______ _______ _____ _____    ______ ____
+DOCKED: ROOT
+DOCKED: HETATM    1  C4  BRH A 611      42.548  15.987  15.541 -0.25 -0.02    +0.116 A  
+DOCKED: HETATM    2  C5  BRH A 611      42.311  16.664  14.355 -0.23 -0.02    +0.115 A  
+DOCKED: HETATM    3 BR1  BRH A 611      40.731  16.864  13.451 -0.80 +0.02    -0.042 Br 
+DOCKED: HETATM    4  C6  BRH A 611      43.657  17.200  13.975 -0.03 +0.07    +0.309 A  
+DOCKED: HETATM    5  O3  BRH A 611      43.933  17.895  12.942 -0.31 -0.10    -0.263 OA 
+DOCKED: HETATM    6  N2  BRH A 611      44.560  16.811  14.937 -0.54 -0.05    -0.083 NA 
+DOCKED: HETATM    7  O4  BRH A 611      43.907  16.098  15.859 -0.63 -0.13    -0.212 OA 
+DOCKED: ENDROOT
+DOCKED: BRANCH   1   8
+DOCKED: HETATM    8  C3  BRH A 611      41.704  15.225  16.472 -0.07 -0.06    +0.105 C  
+DOCKED: BRANCH   8   9
+DOCKED: HETATM    9  C2  BRH A 611      42.392  14.001  17.079 -0.06 -0.17    +0.394 C  
+DOCKED: HETATM   10  N1  BRH A 611      41.486  12.836  17.178 +0.03 -0.57    +0.628 N  
+DOCKED: BRANCH   9  11
+DOCKED: HETATM   11  C1  BRH A 611      42.884  14.437  18.509 -0.33 +0.16    +0.224 C  
+DOCKED: HETATM   12  O1  BRH A 611      43.825  15.305  18.562 -0.52 -0.93    -0.646 OA 
+DOCKED: HETATM   13  O2  BRH A 611      42.323  13.889  19.501 -0.62 -0.63    -0.646 OA 
+DOCKED: ENDBRANCH   9  11
+DOCKED: ENDBRANCH   8   9
+DOCKED: ENDBRANCH   1   8
+DOCKED: TORSDOF 3
+DOCKED: TER
+DOCKED: ENDMDL
+________________________________________________________________________________
+
+
+    FINAL DOCKED STATE:
+    ________________________
+
+
+Run:   13 / 50
+Time taken for this run:   0.742s
+
+DOCKED: MODEL        13
+DOCKED: USER    Run = 13
+DOCKED: USER
+DOCKED: USER    Estimated Free Energy of Binding    =  -5.88 kcal/mol  [=(1)+(2)+(3)-(4)]
+DOCKED: USER
+DOCKED: USER    (1) Final Intermolecular Energy     =  -6.78 kcal/mol
+DOCKED: USER        vdW + Hbond + desolv Energy     =  -4.36 kcal/mol
+DOCKED: USER        Electrostatic Energy            =  -2.42 kcal/mol
+DOCKED: USER        Moving Ligand-Fixed Receptor    =  -6.78 kcal/mol
+DOCKED: USER        Moving Ligand-Moving Receptor   =  +0.00 kcal/mol
+DOCKED: USER    (2) Final Total Internal Energy     =  -0.19 kcal/mol
+DOCKED: USER    (3) Torsional Free Energy           =  +0.89 kcal/mol
+DOCKED: USER    (4) Unbound System's Energy         =  -0.19 kcal/mol
+DOCKED: USER
+DOCKED: USER
+DOCKED: REMARK  3 active torsions:
+DOCKED: REMARK  status: ('A' for Active; 'I' for Inactive)
+DOCKED: REMARK    1  A    between atoms: C1_2056  and  C2_2058 
+DOCKED: REMARK    2  A    between atoms: C2_2058  and  C3_2060 
+DOCKED: REMARK    3  A    between atoms: C3_2060  and  C4_2061 
+DOCKED: USER                              x       y       z     vdW  Elec       q    Type
+DOCKED: USER                           _______ _______ _______ _____ _____    ______ ____
+DOCKED: ROOT
+DOCKED: HETATM    1  C4  BRH A 611      42.524  15.983  15.540 -0.25 -0.03    +0.116 A  
+DOCKED: HETATM    2  C5  BRH A 611      42.293  16.629  14.336 -0.23 -0.02    +0.115 A  
+DOCKED: HETATM    3 BR1  BRH A 611      40.724  16.780  13.404 -0.80 +0.02    -0.042 Br 
+DOCKED: HETATM    4  C6  BRH A 611      43.635  17.180  13.963 -0.03 +0.07    +0.309 A  
+DOCKED: HETATM    5  O3  BRH A 611      43.913  17.858  12.919 -0.31 -0.10    -0.263 OA 
+DOCKED: HETATM    6  N2  BRH A 611      44.530  16.830  14.947 -0.53 -0.05    -0.083 NA 
+DOCKED: HETATM    7  O4  BRH A 611      43.876  16.126  15.875 -0.64 -0.13    -0.212 OA 
+DOCKED: ENDROOT
+DOCKED: BRANCH   1   8
+DOCKED: HETATM    8  C3  BRH A 611      41.680  15.227  16.475 -0.05 -0.06    +0.105 C  
+DOCKED: BRANCH   8   9
+DOCKED: HETATM    9  C2  BRH A 611      42.362  13.996  17.077 -0.06 -0.18    +0.394 C  
+DOCKED: HETATM   10  N1  BRH A 611      41.448  12.838  17.176 +0.02 -0.57    +0.628 N  
+DOCKED: BRANCH   9  11
+DOCKED: HETATM   11  C1  BRH A 611      42.863  14.426  18.505 -0.34 +0.16    +0.224 C  
+DOCKED: HETATM   12  O1  BRH A 611      42.280  13.891  19.513 -0.62 -0.62    -0.646 OA 
+DOCKED: HETATM   13  O2  BRH A 611      43.794  15.279  18.554 -0.52 -0.91    -0.646 OA 
+DOCKED: ENDBRANCH   9  11
+DOCKED: ENDBRANCH   8   9
+DOCKED: ENDBRANCH   1   8
+DOCKED: TORSDOF 3
+DOCKED: TER
+DOCKED: ENDMDL
+________________________________________________________________________________
+
+
+    FINAL DOCKED STATE:
+    ________________________
+
+
+Run:   14 / 50
+Time taken for this run:   0.742s
+
+DOCKED: MODEL        14
+DOCKED: USER    Run = 14
+DOCKED: USER
+DOCKED: USER    Estimated Free Energy of Binding    =  -5.90 kcal/mol  [=(1)+(2)+(3)-(4)]
+DOCKED: USER
+DOCKED: USER    (1) Final Intermolecular Energy     =  -6.79 kcal/mol
+DOCKED: USER        vdW + Hbond + desolv Energy     =  -4.36 kcal/mol
+DOCKED: USER        Electrostatic Energy            =  -2.43 kcal/mol
+DOCKED: USER        Moving Ligand-Fixed Receptor    =  -6.79 kcal/mol
+DOCKED: USER        Moving Ligand-Moving Receptor   =  +0.00 kcal/mol
+DOCKED: USER    (2) Final Total Internal Energy     =  -0.19 kcal/mol
+DOCKED: USER    (3) Torsional Free Energy           =  +0.89 kcal/mol
+DOCKED: USER    (4) Unbound System's Energy         =  -0.19 kcal/mol
+DOCKED: USER
+DOCKED: USER
+DOCKED: REMARK  3 active torsions:
+DOCKED: REMARK  status: ('A' for Active; 'I' for Inactive)
+DOCKED: REMARK    1  A    between atoms: C1_2056  and  C2_2058 
+DOCKED: REMARK    2  A    between atoms: C2_2058  and  C3_2060 
+DOCKED: REMARK    3  A    between atoms: C3_2060  and  C4_2061 
+DOCKED: USER                              x       y       z     vdW  Elec       q    Type
+DOCKED: USER                           _______ _______ _______ _____ _____    ______ ____
+DOCKED: ROOT
+DOCKED: HETATM    1  C4  BRH A 611      42.551  15.969  15.530 -0.25 -0.03    +0.116 A  
+DOCKED: HETATM    2  C5  BRH A 611      42.311  16.732  14.398 -0.24 -0.02    +0.115 A  
+DOCKED: HETATM    3 BR1  BRH A 611      40.719  17.048  13.549 -0.79 +0.01    -0.042 Br 
+DOCKED: HETATM    4  C6  BRH A 611      43.667  17.244  14.020 -0.05 +0.08    +0.309 A  
+DOCKED: HETATM    5  O3  BRH A 611      43.944  17.997  13.029 -0.32 -0.09    -0.263 OA 
+DOCKED: HETATM    6  N2  BRH A 611      44.577  16.760  14.931 -0.54 -0.05    -0.083 NA 
+DOCKED: HETATM    7  O4  BRH A 611      43.919  16.010  15.820 -0.64 -0.12    -0.212 OA 
+DOCKED: ENDROOT
+DOCKED: BRANCH   1   8
+DOCKED: HETATM    8  C3  BRH A 611      41.700  15.176  16.429 -0.09 -0.06    +0.105 C  
+DOCKED: BRANCH   8   9
+DOCKED: HETATM    9  C2  BRH A 611      42.404  13.966  17.048 -0.03 -0.18    +0.394 C  
+DOCKED: HETATM   10  N1  BRH A 611      41.510  12.794  17.165 +0.04 -0.58    +0.628 N  
+DOCKED: BRANCH   9  11
+DOCKED: HETATM   11  C1  BRH A 611      42.898  14.425  18.469 -0.33 +0.15    +0.224 C  
+DOCKED: HETATM   12  O1  BRH A 611      42.329  13.890  19.485 -0.63 -0.63    -0.646 OA 
+DOCKED: HETATM   13  O2  BRH A 611      43.811  15.299  18.505 -0.50 -0.91    -0.646 OA 
+DOCKED: ENDBRANCH   9  11
+DOCKED: ENDBRANCH   8   9
+DOCKED: ENDBRANCH   1   8
+DOCKED: TORSDOF 3
+DOCKED: TER
+DOCKED: ENDMDL
+________________________________________________________________________________
+
+
+    FINAL DOCKED STATE:
+    ________________________
+
+
+Run:   15 / 50
+Time taken for this run:   0.742s
+
+DOCKED: MODEL        15
+DOCKED: USER    Run = 15
+DOCKED: USER
+DOCKED: USER    Estimated Free Energy of Binding    =  -5.92 kcal/mol  [=(1)+(2)+(3)-(4)]
+DOCKED: USER
+DOCKED: USER    (1) Final Intermolecular Energy     =  -6.82 kcal/mol
+DOCKED: USER        vdW + Hbond + desolv Energy     =  -4.39 kcal/mol
+DOCKED: USER        Electrostatic Energy            =  -2.42 kcal/mol
+DOCKED: USER        Moving Ligand-Fixed Receptor    =  -6.82 kcal/mol
+DOCKED: USER        Moving Ligand-Moving Receptor   =  +0.00 kcal/mol
+DOCKED: USER    (2) Final Total Internal Energy     =  -0.20 kcal/mol
+DOCKED: USER    (3) Torsional Free Energy           =  +0.89 kcal/mol
+DOCKED: USER    (4) Unbound System's Energy         =  -0.20 kcal/mol
+DOCKED: USER
+DOCKED: USER
+DOCKED: REMARK  3 active torsions:
+DOCKED: REMARK  status: ('A' for Active; 'I' for Inactive)
+DOCKED: REMARK    1  A    between atoms: C1_2056  and  C2_2058 
+DOCKED: REMARK    2  A    between atoms: C2_2058  and  C3_2060 
+DOCKED: REMARK    3  A    between atoms: C3_2060  and  C4_2061 
+DOCKED: USER                              x       y       z     vdW  Elec       q    Type
+DOCKED: USER                           _______ _______ _______ _____ _____    ______ ____
+DOCKED: ROOT
+DOCKED: HETATM    1  C4  BRH A 611      42.554  15.983  15.563 -0.26 -0.02    +0.116 A  
+DOCKED: HETATM    2  C5  BRH A 611      42.304  16.741  14.430 -0.24 -0.02    +0.115 A  
+DOCKED: HETATM    3 BR1  BRH A 611      40.703  17.058  13.599 -0.78 +0.01    -0.042 Br 
+DOCKED: HETATM    4  C6  BRH A 611      43.656  17.247  14.033 -0.05 +0.07    +0.309 A  
+DOCKED: HETATM    5  O3  BRH A 611      43.924  17.994  13.035 -0.32 -0.09    -0.263 OA 
+DOCKED: HETATM    6  N2  BRH A 611      44.576  16.764  14.935 -0.54 -0.05    -0.083 NA 
+DOCKED: HETATM    7  O4  BRH A 611      43.927  16.020  15.836 -0.64 -0.12    -0.212 OA 
+DOCKED: ENDROOT
+DOCKED: BRANCH   1   8
+DOCKED: HETATM    8  C3  BRH A 611      41.713  15.197  16.476 -0.08 -0.06    +0.105 C  
+DOCKED: BRANCH   8   9
+DOCKED: HETATM    9  C2  BRH A 611      42.417  13.982  17.085 -0.05 -0.17    +0.394 C  
+DOCKED: HETATM   10  N1  BRH A 611      41.535  12.797  17.157 +0.05 -0.59    +0.628 N  
+DOCKED: BRANCH   9  11
+DOCKED: HETATM   11  C1  BRH A 611      42.873  14.416  18.527 -0.34 +0.16    +0.224 C  
+DOCKED: HETATM   12  O1  BRH A 611      43.834  15.260  18.606 -0.54 -0.93    -0.646 OA 
+DOCKED: HETATM   13  O2  BRH A 611      42.267  13.889  19.503 -0.62 -0.62    -0.646 OA 
+DOCKED: ENDBRANCH   9  11
+DOCKED: ENDBRANCH   8   9
+DOCKED: ENDBRANCH   1   8
+DOCKED: TORSDOF 3
+DOCKED: TER
+DOCKED: ENDMDL
+________________________________________________________________________________
+
+
+    FINAL DOCKED STATE:
+    ________________________
+
+
+Run:   16 / 50
+Time taken for this run:   0.742s
+
+DOCKED: MODEL        16
+DOCKED: USER    Run = 16
+DOCKED: USER
+DOCKED: USER    Estimated Free Energy of Binding    =  -5.05 kcal/mol  [=(1)+(2)+(3)-(4)]
+DOCKED: USER
+DOCKED: USER    (1) Final Intermolecular Energy     =  -5.94 kcal/mol
+DOCKED: USER        vdW + Hbond + desolv Energy     =  -3.88 kcal/mol
+DOCKED: USER        Electrostatic Energy            =  -2.06 kcal/mol
+DOCKED: USER        Moving Ligand-Fixed Receptor    =  -5.94 kcal/mol
+DOCKED: USER        Moving Ligand-Moving Receptor   =  +0.00 kcal/mol
+DOCKED: USER    (2) Final Total Internal Energy     =  -0.32 kcal/mol
+DOCKED: USER    (3) Torsional Free Energy           =  +0.89 kcal/mol
+DOCKED: USER    (4) Unbound System's Energy         =  -0.32 kcal/mol
+DOCKED: USER
+DOCKED: USER
+DOCKED: REMARK  3 active torsions:
+DOCKED: REMARK  status: ('A' for Active; 'I' for Inactive)
+DOCKED: REMARK    1  A    between atoms: C1_2056  and  C2_2058 
+DOCKED: REMARK    2  A    between atoms: C2_2058  and  C3_2060 
+DOCKED: REMARK    3  A    between atoms: C3_2060  and  C4_2061 
+DOCKED: USER                              x       y       z     vdW  Elec       q    Type
+DOCKED: USER                           _______ _______ _______ _____ _____    ______ ____
+DOCKED: ROOT
+DOCKED: HETATM    1  C4  BRH A 611      41.871  16.337  15.315 -0.22 -0.04    +0.116 A  
+DOCKED: HETATM    2  C5  BRH A 611      42.364  17.062  14.241 -0.23 -0.01    +0.115 A  
+DOCKED: HETATM    3 BR1  BRH A 611      43.922  18.018  14.128 -0.76 -0.01    -0.042 Br 
+DOCKED: HETATM    4  C6  BRH A 611      41.319  16.887  13.183 -0.10 -0.06    +0.309 A  
+DOCKED: HETATM    5  O3  BRH A 611      41.339  17.381  12.007 -0.29 -0.03    -0.263 OA 
+DOCKED: HETATM    6  N2  BRH A 611      40.318  16.094  13.695 -0.30 +0.06    -0.083 NA 
+DOCKED: HETATM    7  O4  BRH A 611      40.644  15.770  14.950 -0.30 +0.22    -0.212 OA 
+DOCKED: ENDROOT
+DOCKED: BRANCH   1   8
+DOCKED: HETATM    8  C3  BRH A 611      42.356  16.063  16.675 -0.31 +0.01    +0.105 C  
+DOCKED: BRANCH   8   9
+DOCKED: HETATM    9  C2  BRH A 611      42.510  14.575  16.995 -0.14 -0.08    +0.394 C  
+DOCKED: HETATM   10  N1  BRH A 611      41.236  13.834  16.857 +0.23 -0.64    +0.628 N  
+DOCKED: BRANCH   9  11
+DOCKED: HETATM   11  C1  BRH A 611      43.034  14.496  18.476 -0.33 +0.17    +0.224 C  
+DOCKED: HETATM   12  O1  BRH A 611      42.289  13.894  19.328 -0.64 -0.58    -0.646 OA 
+DOCKED: HETATM   13  O2  BRH A 611      44.146  15.045  18.721 -0.49 -1.07    -0.646 OA 
+DOCKED: ENDBRANCH   9  11
+DOCKED: ENDBRANCH   8   9
+DOCKED: ENDBRANCH   1   8
+DOCKED: TORSDOF 3
+DOCKED: TER
+DOCKED: ENDMDL
+________________________________________________________________________________
+
+
+    FINAL DOCKED STATE:
+    ________________________
+
+
+Run:   17 / 50
+Time taken for this run:   0.742s
+
+DOCKED: MODEL        17
+DOCKED: USER    Run = 17
+DOCKED: USER
+DOCKED: USER    Estimated Free Energy of Binding    =  -5.92 kcal/mol  [=(1)+(2)+(3)-(4)]
+DOCKED: USER
+DOCKED: USER    (1) Final Intermolecular Energy     =  -6.82 kcal/mol
+DOCKED: USER        vdW + Hbond + desolv Energy     =  -4.40 kcal/mol
+DOCKED: USER        Electrostatic Energy            =  -2.42 kcal/mol
+DOCKED: USER        Moving Ligand-Fixed Receptor    =  -6.82 kcal/mol
+DOCKED: USER        Moving Ligand-Moving Receptor   =  +0.00 kcal/mol
+DOCKED: USER    (2) Final Total Internal Energy     =  -0.19 kcal/mol
+DOCKED: USER    (3) Torsional Free Energy           =  +0.89 kcal/mol
+DOCKED: USER    (4) Unbound System's Energy         =  -0.19 kcal/mol
+DOCKED: USER
+DOCKED: USER
+DOCKED: REMARK  3 active torsions:
+DOCKED: REMARK  status: ('A' for Active; 'I' for Inactive)
+DOCKED: REMARK    1  A    between atoms: C1_2056  and  C2_2058 
+DOCKED: REMARK    2  A    between atoms: C2_2058  and  C3_2060 
+DOCKED: REMARK    3  A    between atoms: C3_2060  and  C4_2061 
+DOCKED: USER                              x       y       z     vdW  Elec       q    Type
+DOCKED: USER                           _______ _______ _______ _____ _____    ______ ____
+DOCKED: ROOT
+DOCKED: HETATM    1  C4  BRH A 611      42.473  15.911  15.587 -0.25 -0.03    +0.116 A  
+DOCKED: HETATM    2  C5  BRH A 611      42.241  16.482  14.346 -0.23 -0.03    +0.115 A  
+DOCKED: HETATM    3 BR1  BRH A 611      40.685  16.526  13.382 -0.78 +0.02    -0.042 Br 
+DOCKED: HETATM    4  C6  BRH A 611      43.569  17.062  13.967 -0.03 +0.06    +0.309 A  
+DOCKED: HETATM    5  O3  BRH A 611      43.842  17.693  12.893 -0.32 -0.10    -0.263 OA 
+DOCKED: HETATM    6  N2  BRH A 611      44.458  16.798  14.983 -0.53 -0.05    -0.083 NA 
+DOCKED: HETATM    7  O4  BRH A 611      43.813  16.120  15.937 -0.67 -0.13    -0.212 OA 
+DOCKED: ENDROOT
+DOCKED: BRANCH   1   8
+DOCKED: HETATM    8  C3  BRH A 611      41.640  15.174  16.548 +0.01 -0.06    +0.105 C  
+DOCKED: BRANCH   8   9
+DOCKED: HETATM    9  C2  BRH A 611      42.311  13.930  17.132 -0.08 -0.18    +0.394 C  
+DOCKED: HETATM   10  N1  BRH A 611      41.401  12.764  17.169 +0.02 -0.58    +0.628 N  
+DOCKED: BRANCH   9  11
+DOCKED: HETATM   11  C1  BRH A 611      42.767  14.318  18.587 -0.35 +0.15    +0.224 C  
+DOCKED: HETATM   12  O1  BRH A 611      43.836  15.016  18.697 -0.60 -0.93    -0.646 OA 
+DOCKED: HETATM   13  O2  BRH A 611      42.053  13.899  19.543 -0.60 -0.56    -0.646 OA 
+DOCKED: ENDBRANCH   9  11
+DOCKED: ENDBRANCH   8   9
+DOCKED: ENDBRANCH   1   8
+DOCKED: TORSDOF 3
+DOCKED: TER
+DOCKED: ENDMDL
+________________________________________________________________________________
+
+
+    FINAL DOCKED STATE:
+    ________________________
+
+
+Run:   18 / 50
+Time taken for this run:   0.742s
+
+DOCKED: MODEL        18
+DOCKED: USER    Run = 18
+DOCKED: USER
+DOCKED: USER    Estimated Free Energy of Binding    =  -5.95 kcal/mol  [=(1)+(2)+(3)-(4)]
+DOCKED: USER
+DOCKED: USER    (1) Final Intermolecular Energy     =  -6.85 kcal/mol
+DOCKED: USER        vdW + Hbond + desolv Energy     =  -4.45 kcal/mol
+DOCKED: USER        Electrostatic Energy            =  -2.40 kcal/mol
+DOCKED: USER        Moving Ligand-Fixed Receptor    =  -6.85 kcal/mol
+DOCKED: USER        Moving Ligand-Moving Receptor   =  +0.00 kcal/mol
+DOCKED: USER    (2) Final Total Internal Energy     =  -0.20 kcal/mol
+DOCKED: USER    (3) Torsional Free Energy           =  +0.89 kcal/mol
+DOCKED: USER    (4) Unbound System's Energy         =  -0.20 kcal/mol
+DOCKED: USER
+DOCKED: USER
+DOCKED: REMARK  3 active torsions:
+DOCKED: REMARK  status: ('A' for Active; 'I' for Inactive)
+DOCKED: REMARK    1  A    between atoms: C1_2056  and  C2_2058 
+DOCKED: REMARK    2  A    between atoms: C2_2058  and  C3_2060 
+DOCKED: REMARK    3  A    between atoms: C3_2060  and  C4_2061 
+DOCKED: USER                              x       y       z     vdW  Elec       q    Type
+DOCKED: USER                           _______ _______ _______ _____ _____    ______ ____
+DOCKED: ROOT
+DOCKED: HETATM    1  C4  BRH A 611      42.491  15.901  15.586 -0.25 -0.03    +0.116 A  
+DOCKED: HETATM    2  C5  BRH A 611      42.247  16.619  14.426 -0.23 -0.02    +0.115 A  
+DOCKED: HETATM    3 BR1  BRH A 611      40.654  16.886  13.563 -0.78 +0.02    -0.042 Br 
+DOCKED: HETATM    4  C6  BRH A 611      43.598  17.131  14.032 -0.05 +0.07    +0.309 A  
+DOCKED: HETATM    5  O3  BRH A 611      43.869  17.850  13.014 -0.31 -0.09    -0.263 OA 
+DOCKED: HETATM    6  N2  BRH A 611      44.511  16.690  14.962 -0.56 -0.05    -0.083 NA 
+DOCKED: HETATM    7  O4  BRH A 611      43.859  15.967  15.877 -0.68 -0.12    -0.212 OA 
+DOCKED: ENDROOT
+DOCKED: BRANCH   1   8
+DOCKED: HETATM    8  C3  BRH A 611      41.648  15.133  16.513 -0.02 -0.06    +0.105 C  
+DOCKED: BRANCH   8   9
+DOCKED: HETATM    9  C2  BRH A 611      42.333  13.900  17.105 -0.06 -0.19    +0.394 C  
+DOCKED: HETATM   10  N1  BRH A 611      41.436  12.725  17.154 +0.05 -0.59    +0.628 N  
+DOCKED: BRANCH   9  11
+DOCKED: HETATM   11  C1  BRH A 611      42.788  14.305  18.556 -0.35 +0.15    +0.224 C  
+DOCKED: HETATM   12  O1  BRH A 611      42.067  13.889  19.531 -0.61 -0.57    -0.646 OA 
+DOCKED: HETATM   13  O2  BRH A 611      43.824  15.024  18.653 -0.61 -0.91    -0.646 OA 
+DOCKED: ENDBRANCH   9  11
+DOCKED: ENDBRANCH   8   9
+DOCKED: ENDBRANCH   1   8
+DOCKED: TORSDOF 3
+DOCKED: TER
+DOCKED: ENDMDL
+________________________________________________________________________________
+
+
+    FINAL DOCKED STATE:
+    ________________________
+
+
+Run:   19 / 50
+Time taken for this run:   0.742s
+
+DOCKED: MODEL        19
+DOCKED: USER    Run = 19
+DOCKED: USER
+DOCKED: USER    Estimated Free Energy of Binding    =  -5.96 kcal/mol  [=(1)+(2)+(3)-(4)]
+DOCKED: USER
+DOCKED: USER    (1) Final Intermolecular Energy     =  -6.86 kcal/mol
+DOCKED: USER        vdW + Hbond + desolv Energy     =  -4.47 kcal/mol
+DOCKED: USER        Electrostatic Energy            =  -2.39 kcal/mol
+DOCKED: USER        Moving Ligand-Fixed Receptor    =  -6.86 kcal/mol
+DOCKED: USER        Moving Ligand-Moving Receptor   =  +0.00 kcal/mol
+DOCKED: USER    (2) Final Total Internal Energy     =  -0.20 kcal/mol
+DOCKED: USER    (3) Torsional Free Energy           =  +0.89 kcal/mol
+DOCKED: USER    (4) Unbound System's Energy         =  -0.20 kcal/mol
+DOCKED: USER
+DOCKED: USER
+DOCKED: REMARK  3 active torsions:
+DOCKED: REMARK  status: ('A' for Active; 'I' for Inactive)
+DOCKED: REMARK    1  A    between atoms: C1_2056  and  C2_2058 
+DOCKED: REMARK    2  A    between atoms: C2_2058  and  C3_2060 
+DOCKED: REMARK    3  A    between atoms: C3_2060  and  C4_2061 
+DOCKED: USER                              x       y       z     vdW  Elec       q    Type
+DOCKED: USER                           _______ _______ _______ _____ _____    ______ ____
+DOCKED: ROOT
+DOCKED: HETATM    1  C4  BRH A 611      42.495  15.907  15.640 -0.25 -0.03    +0.116 A  
+DOCKED: HETATM    2  C5  BRH A 611      42.267  16.691  14.520 -0.24 -0.02    +0.115 A  
+DOCKED: HETATM    3 BR1  BRH A 611      40.681  17.042  13.674 -0.77 +0.01    -0.042 Br 
+DOCKED: HETATM    4  C6  BRH A 611      43.631  17.191  14.152 -0.07 +0.07    +0.309 A  
+DOCKED: HETATM    5  O3  BRH A 611      43.919  17.956  13.173 -0.31 -0.09    -0.263 OA 
+DOCKED: HETATM    6  N2  BRH A 611      44.533  16.680  15.056 -0.55 -0.05    -0.083 NA 
+DOCKED: HETATM    7  O4  BRH A 611      43.864  15.925  15.932 -0.69 -0.12    -0.212 OA 
+DOCKED: ENDROOT
+DOCKED: BRANCH   1   8
+DOCKED: HETATM    8  C3  BRH A 611      41.633  15.112  16.526 -0.01 -0.06    +0.105 C  
+DOCKED: BRANCH   8   9
+DOCKED: HETATM    9  C2  BRH A 611      42.320  13.885  17.129 -0.07 -0.18    +0.394 C  
+DOCKED: HETATM   10  N1  BRH A 611      41.429  12.705  17.174 +0.05 -0.58    +0.628 N  
+DOCKED: BRANCH   9  11
+DOCKED: HETATM   11  C1  BRH A 611      42.760  14.298  18.582 -0.35 +0.15    +0.224 C  
+DOCKED: HETATM   12  O1  BRH A 611      43.822  15.008  18.691 -0.61 -0.92    -0.646 OA 
+DOCKED: HETATM   13  O2  BRH A 611      42.042  13.887  19.538 -0.60 -0.56    -0.646 OA 
+DOCKED: ENDBRANCH   9  11
+DOCKED: ENDBRANCH   8   9
+DOCKED: ENDBRANCH   1   8
+DOCKED: TORSDOF 3
+DOCKED: TER
+DOCKED: ENDMDL
+________________________________________________________________________________
+
+
+    FINAL DOCKED STATE:
+    ________________________
+
+
+Run:   20 / 50
+Time taken for this run:   0.742s
+
+DOCKED: MODEL        20
+DOCKED: USER    Run = 20
+DOCKED: USER
+DOCKED: USER    Estimated Free Energy of Binding    =  -5.90 kcal/mol  [=(1)+(2)+(3)-(4)]
+DOCKED: USER
+DOCKED: USER    (1) Final Intermolecular Energy     =  -6.80 kcal/mol
+DOCKED: USER        vdW + Hbond + desolv Energy     =  -4.42 kcal/mol
+DOCKED: USER        Electrostatic Energy            =  -2.38 kcal/mol
+DOCKED: USER        Moving Ligand-Fixed Receptor    =  -6.80 kcal/mol
+DOCKED: USER        Moving Ligand-Moving Receptor   =  +0.00 kcal/mol
+DOCKED: USER    (2) Final Total Internal Energy     =  -0.20 kcal/mol
+DOCKED: USER    (3) Torsional Free Energy           =  +0.89 kcal/mol
+DOCKED: USER    (4) Unbound System's Energy         =  -0.20 kcal/mol
+DOCKED: USER
+DOCKED: USER
+DOCKED: REMARK  3 active torsions:
+DOCKED: REMARK  status: ('A' for Active; 'I' for Inactive)
+DOCKED: REMARK    1  A    between atoms: C1_2056  and  C2_2058 
+DOCKED: REMARK    2  A    between atoms: C2_2058  and  C3_2060 
+DOCKED: REMARK    3  A    between atoms: C3_2060  and  C4_2061 
+DOCKED: USER                              x       y       z     vdW  Elec       q    Type
+DOCKED: USER                           _______ _______ _______ _____ _____    ______ ____
+DOCKED: ROOT
+DOCKED: HETATM    1  C4  BRH A 611      42.531  15.978  15.608 -0.26 -0.02    +0.116 A  
+DOCKED: HETATM    2  C5  BRH A 611      42.271  16.737  14.478 -0.24 -0.02    +0.115 A  
+DOCKED: HETATM    3 BR1  BRH A 611      40.663  17.060  13.663 -0.77 +0.01    -0.042 Br 
+DOCKED: HETATM    4  C6  BRH A 611      43.621  17.239  14.068 -0.06 +0.07    +0.309 A  
+DOCKED: HETATM    5  O3  BRH A 611      43.881  17.986  13.067 -0.32 -0.09    -0.263 OA 
+DOCKED: HETATM    6  N2  BRH A 611      44.548  16.753  14.961 -0.54 -0.05    -0.083 NA 
+DOCKED: HETATM    7  O4  BRH A 611      43.906  16.011  15.867 -0.65 -0.12    -0.212 OA 
+DOCKED: ENDROOT
+DOCKED: BRANCH   1   8
+DOCKED: HETATM    8  C3  BRH A 611      41.695  15.194  16.529 -0.04 -0.06    +0.105 C  
+DOCKED: BRANCH   8   9
+DOCKED: HETATM    9  C2  BRH A 611      42.402  13.977  17.130 -0.07 -0.16    +0.394 C  
+DOCKED: HETATM   10  N1  BRH A 611      41.522  12.790  17.193 +0.04 -0.57    +0.628 N  
+DOCKED: BRANCH   9  11
+DOCKED: HETATM   11  C1  BRH A 611      42.857  14.402  18.575 -0.34 +0.16    +0.224 C  
+DOCKED: HETATM   12  O1  BRH A 611      42.219  13.890  19.561 -0.61 -0.61    -0.646 OA 
+DOCKED: HETATM   13  O2  BRH A 611      43.809  15.229  18.656 -0.57 -0.93    -0.646 OA 
+DOCKED: ENDBRANCH   9  11
+DOCKED: ENDBRANCH   8   9
+DOCKED: ENDBRANCH   1   8
+DOCKED: TORSDOF 3
+DOCKED: TER
+DOCKED: ENDMDL
+________________________________________________________________________________
+
+
+    FINAL DOCKED STATE:
+    ________________________
+
+
+Run:   21 / 50
+Time taken for this run:   0.742s
+
+DOCKED: MODEL        21
+DOCKED: USER    Run = 21
+DOCKED: USER
+DOCKED: USER    Estimated Free Energy of Binding    =  -5.91 kcal/mol  [=(1)+(2)+(3)-(4)]
+DOCKED: USER
+DOCKED: USER    (1) Final Intermolecular Energy     =  -6.80 kcal/mol
+DOCKED: USER        vdW + Hbond + desolv Energy     =  -4.37 kcal/mol
+DOCKED: USER        Electrostatic Energy            =  -2.43 kcal/mol
+DOCKED: USER        Moving Ligand-Fixed Receptor    =  -6.80 kcal/mol
+DOCKED: USER        Moving Ligand-Moving Receptor   =  +0.00 kcal/mol
+DOCKED: USER    (2) Final Total Internal Energy     =  -0.19 kcal/mol
+DOCKED: USER    (3) Torsional Free Energy           =  +0.89 kcal/mol
+DOCKED: USER    (4) Unbound System's Energy         =  -0.19 kcal/mol
+DOCKED: USER
+DOCKED: USER
+DOCKED: REMARK  3 active torsions:
+DOCKED: REMARK  status: ('A' for Active; 'I' for Inactive)
+DOCKED: REMARK    1  A    between atoms: C1_2056  and  C2_2058 
+DOCKED: REMARK    2  A    between atoms: C2_2058  and  C3_2060 
+DOCKED: REMARK    3  A    between atoms: C3_2060  and  C4_2061 
+DOCKED: USER                              x       y       z     vdW  Elec       q    Type
+DOCKED: USER                           _______ _______ _______ _____ _____    ______ ____
+DOCKED: ROOT
+DOCKED: HETATM    1  C4  BRH A 611      42.497  15.903  15.583 -0.25 -0.03    +0.116 A  
+DOCKED: HETATM    2  C5  BRH A 611      42.265  16.459  14.335 -0.23 -0.03    +0.115 A  
+DOCKED: HETATM    3 BR1  BRH A 611      40.713  16.478  13.364 -0.77 +0.02    -0.042 Br 
+DOCKED: HETATM    4  C6  BRH A 611      43.590  17.046  13.955 -0.02 +0.06    +0.309 A  
+DOCKED: HETATM    5  O3  BRH A 611      43.862  17.668  12.875 -0.31 -0.10    -0.263 OA 
+DOCKED: HETATM    6  N2  BRH A 611      44.476  16.801  14.978 -0.53 -0.05    -0.083 NA 
+DOCKED: HETATM    7  O4  BRH A 611      43.833  16.129  15.936 -0.66 -0.13    -0.212 OA 
+DOCKED: ENDROOT
+DOCKED: BRANCH   1   8
+DOCKED: HETATM    8  C3  BRH A 611      41.665  15.170  16.549 -0.01 -0.06    +0.105 C  
+DOCKED: BRANCH   8   9
+DOCKED: HETATM    9  C2  BRH A 611      42.336  13.924  17.130 -0.08 -0.18    +0.394 C  
+DOCKED: HETATM   10  N1  BRH A 611      41.425  12.759  17.165 +0.03 -0.59    +0.628 N  
+DOCKED: BRANCH   9  11
+DOCKED: HETATM   11  C1  BRH A 611      42.792  14.309  18.586 -0.35 +0.15    +0.224 C  
+DOCKED: HETATM   12  O1  BRH A 611      43.866  14.999  18.698 -0.59 -0.94    -0.646 OA 
+DOCKED: HETATM   13  O2  BRH A 611      42.072  13.898  19.541 -0.60 -0.57    -0.646 OA 
+DOCKED: ENDBRANCH   9  11
+DOCKED: ENDBRANCH   8   9
+DOCKED: ENDBRANCH   1   8
+DOCKED: TORSDOF 3
+DOCKED: TER
+DOCKED: ENDMDL
+________________________________________________________________________________
+
+
+    FINAL DOCKED STATE:
+    ________________________
+
+
+Run:   22 / 50
+Time taken for this run:   0.742s
+
+DOCKED: MODEL        22
+DOCKED: USER    Run = 22
+DOCKED: USER
+DOCKED: USER    Estimated Free Energy of Binding    =  -5.97 kcal/mol  [=(1)+(2)+(3)-(4)]
+DOCKED: USER
+DOCKED: USER    (1) Final Intermolecular Energy     =  -6.86 kcal/mol
+DOCKED: USER        vdW + Hbond + desolv Energy     =  -4.46 kcal/mol
+DOCKED: USER        Electrostatic Energy            =  -2.40 kcal/mol
+DOCKED: USER        Moving Ligand-Fixed Receptor    =  -6.86 kcal/mol
+DOCKED: USER        Moving Ligand-Moving Receptor   =  +0.00 kcal/mol
+DOCKED: USER    (2) Final Total Internal Energy     =  -0.20 kcal/mol
+DOCKED: USER    (3) Torsional Free Energy           =  +0.89 kcal/mol
+DOCKED: USER    (4) Unbound System's Energy         =  -0.20 kcal/mol
+DOCKED: USER
+DOCKED: USER
+DOCKED: REMARK  3 active torsions:
+DOCKED: REMARK  status: ('A' for Active; 'I' for Inactive)
+DOCKED: REMARK    1  A    between atoms: C1_2056  and  C2_2058 
+DOCKED: REMARK    2  A    between atoms: C2_2058  and  C3_2060 
+DOCKED: REMARK    3  A    between atoms: C3_2060  and  C4_2061 
+DOCKED: USER                              x       y       z     vdW  Elec       q    Type
+DOCKED: USER                           _______ _______ _______ _____ _____    ______ ____
+DOCKED: ROOT
+DOCKED: HETATM    1  C4  BRH A 611      42.482  15.912  15.604 -0.25 -0.03    +0.116 A  
+DOCKED: HETATM    2  C5  BRH A 611      42.244  16.626  14.441 -0.23 -0.02    +0.115 A  
+DOCKED: HETATM    3 BR1  BRH A 611      40.657  16.884  13.564 -0.78 +0.02    -0.042 Br 
+DOCKED: HETATM    4  C6  BRH A 611      43.596  17.144  14.057 -0.05 +0.07    +0.309 A  
+DOCKED: HETATM    5  O3  BRH A 611      43.872  17.862  13.040 -0.31 -0.09    -0.263 OA 
+DOCKED: HETATM    6  N2  BRH A 611      44.503  16.710  14.995 -0.55 -0.05    -0.083 NA 
+DOCKED: HETATM    7  O4  BRH A 611      43.847  15.985  15.907 -0.68 -0.12    -0.212 OA 
+DOCKED: ENDROOT
+DOCKED: BRANCH   1   8
+DOCKED: HETATM    8  C3  BRH A 611      41.634  15.142  16.525 -0.01 -0.06    +0.105 C  
+DOCKED: BRANCH   8   9
+DOCKED: HETATM    9  C2  BRH A 611      42.317  13.907  17.117 -0.07 -0.19    +0.394 C  
+DOCKED: HETATM   10  N1  BRH A 611      41.416  12.733  17.161 +0.04 -0.59    +0.628 N  
+DOCKED: BRANCH   9  11
+DOCKED: HETATM   11  C1  BRH A 611      42.769  14.308  18.569 -0.35 +0.15    +0.224 C  
+DOCKED: HETATM   12  O1  BRH A 611      43.832  15.016  18.674 -0.62 -0.92    -0.646 OA 
+DOCKED: HETATM   13  O2  BRH A 611      42.060  13.888  19.528 -0.61 -0.56    -0.646 OA 
+DOCKED: ENDBRANCH   9  11
+DOCKED: ENDBRANCH   8   9
+DOCKED: ENDBRANCH   1   8
+DOCKED: TORSDOF 3
+DOCKED: TER
+DOCKED: ENDMDL
+________________________________________________________________________________
+
+
+    FINAL DOCKED STATE:
+    ________________________
+
+
+Run:   23 / 50
+Time taken for this run:   0.742s
+
+DOCKED: MODEL        23
+DOCKED: USER    Run = 23
+DOCKED: USER
+DOCKED: USER    Estimated Free Energy of Binding    =  -5.61 kcal/mol  [=(1)+(2)+(3)-(4)]
+DOCKED: USER
+DOCKED: USER    (1) Final Intermolecular Energy     =  -6.50 kcal/mol
+DOCKED: USER        vdW + Hbond + desolv Energy     =  -4.00 kcal/mol
+DOCKED: USER        Electrostatic Energy            =  -2.51 kcal/mol
+DOCKED: USER        Moving Ligand-Fixed Receptor    =  -6.50 kcal/mol
+DOCKED: USER        Moving Ligand-Moving Receptor   =  +0.00 kcal/mol
+DOCKED: USER    (2) Final Total Internal Energy     =  -0.22 kcal/mol
+DOCKED: USER    (3) Torsional Free Energy           =  +0.89 kcal/mol
+DOCKED: USER    (4) Unbound System's Energy         =  -0.22 kcal/mol
+DOCKED: USER
+DOCKED: USER
+DOCKED: REMARK  3 active torsions:
+DOCKED: REMARK  status: ('A' for Active; 'I' for Inactive)
+DOCKED: REMARK    1  A    between atoms: C1_2056  and  C2_2058 
+DOCKED: REMARK    2  A    between atoms: C2_2058  and  C3_2060 
+DOCKED: REMARK    3  A    between atoms: C3_2060  and  C4_2061 
+DOCKED: USER                              x       y       z     vdW  Elec       q    Type
+DOCKED: USER                           _______ _______ _______ _____ _____    ______ ____
+DOCKED: ROOT
+DOCKED: HETATM    1  C4  BRH A 611      42.675  16.210  15.626 -0.28 -0.01    +0.116 A  
+DOCKED: HETATM    2  C5  BRH A 611      42.221  16.540  14.358 -0.23 -0.03    +0.115 A  
+DOCKED: HETATM    3 BR1  BRH A 611      40.530  16.383  13.674 -0.66 +0.02    -0.042 Br 
+DOCKED: HETATM    4  C6  BRH A 611      43.443  17.059  13.666 -0.05 +0.06    +0.309 A  
+DOCKED: HETATM    5  O3  BRH A 611      43.512  17.485  12.466 -0.40 -0.10    -0.263 OA 
+DOCKED: HETATM    6  N2  BRH A 611      44.495  16.999  14.551 -0.26 -0.04    -0.083 NA 
+DOCKED: HETATM    7  O4  BRH A 611      44.042  16.499  15.704 -0.49 -0.15    -0.212 OA 
+DOCKED: ENDROOT
+DOCKED: BRANCH   1   8
+DOCKED: HETATM    8  C3  BRH A 611      42.040  15.651  16.828 -0.16 -0.01    +0.105 C  
+DOCKED: BRANCH   8   9
+DOCKED: HETATM    9  C2  BRH A 611      42.563  14.269  17.224 -0.16 -0.06    +0.394 C  
+DOCKED: HETATM   10  N1  BRH A 611      41.528  13.219  17.105 +0.08 -0.57    +0.628 N  
+DOCKED: BRANCH   9  11
+DOCKED: HETATM   11  C1  BRH A 611      43.050  14.394  18.715 -0.32 +0.20    +0.224 C  
+DOCKED: HETATM   12  O1  BRH A 611      44.170  14.984  18.916 -0.48 -1.17    -0.646 OA 
+DOCKED: HETATM   13  O2  BRH A 611      42.307  13.891  19.606 -0.60 -0.65    -0.646 OA 
+DOCKED: ENDBRANCH   9  11
+DOCKED: ENDBRANCH   8   9
+DOCKED: ENDBRANCH   1   8
+DOCKED: TORSDOF 3
+DOCKED: TER
+DOCKED: ENDMDL
+________________________________________________________________________________
+
+
+    FINAL DOCKED STATE:
+    ________________________
+
+
+Run:   24 / 50
+Time taken for this run:   0.742s
+
+DOCKED: MODEL        24
+DOCKED: USER    Run = 24
+DOCKED: USER
+DOCKED: USER    Estimated Free Energy of Binding    =  -5.97 kcal/mol  [=(1)+(2)+(3)-(4)]
+DOCKED: USER
+DOCKED: USER    (1) Final Intermolecular Energy     =  -6.86 kcal/mol
+DOCKED: USER        vdW + Hbond + desolv Energy     =  -4.46 kcal/mol
+DOCKED: USER        Electrostatic Energy            =  -2.40 kcal/mol
+DOCKED: USER        Moving Ligand-Fixed Receptor    =  -6.86 kcal/mol
+DOCKED: USER        Moving Ligand-Moving Receptor   =  +0.00 kcal/mol
+DOCKED: USER    (2) Final Total Internal Energy     =  -0.20 kcal/mol
+DOCKED: USER    (3) Torsional Free Energy           =  +0.89 kcal/mol
+DOCKED: USER    (4) Unbound System's Energy         =  -0.20 kcal/mol
+DOCKED: USER
+DOCKED: USER
+DOCKED: REMARK  3 active torsions:
+DOCKED: REMARK  status: ('A' for Active; 'I' for Inactive)
+DOCKED: REMARK    1  A    between atoms: C1_2056  and  C2_2058 
+DOCKED: REMARK    2  A    between atoms: C2_2058  and  C3_2060 
+DOCKED: REMARK    3  A    between atoms: C3_2060  and  C4_2061 
+DOCKED: USER                              x       y       z     vdW  Elec       q    Type
+DOCKED: USER                           _______ _______ _______ _____ _____    ______ ____
+DOCKED: ROOT
+DOCKED: HETATM    1  C4  BRH A 611      42.488  15.902  15.606 -0.25 -0.03    +0.116 A  
+DOCKED: HETATM    2  C5  BRH A 611      42.248  16.637  14.456 -0.23 -0.02    +0.115 A  
+DOCKED: HETATM    3 BR1  BRH A 611      40.656  16.927  13.598 -0.78 +0.02    -0.042 Br 
+DOCKED: HETATM    4  C6  BRH A 611      43.602  17.145  14.068 -0.05 +0.07    +0.309 A  
+DOCKED: HETATM    5  O3  BRH A 611      43.878  17.876  13.060 -0.31 -0.09    -0.263 OA 
+DOCKED: HETATM    6  N2  BRH A 611      44.513  16.686  14.991 -0.55 -0.05    -0.083 NA 
+DOCKED: HETATM    7  O4  BRH A 611      43.857  15.955  15.897 -0.68 -0.12    -0.212 OA 
+DOCKED: ENDROOT
+DOCKED: BRANCH   1   8
+DOCKED: HETATM    8  C3  BRH A 611      41.640  15.127  16.523 -0.01 -0.06    +0.105 C  
+DOCKED: BRANCH   8   9
+DOCKED: HETATM    9  C2  BRH A 611      42.326  13.896  17.119 -0.07 -0.19    +0.394 C  
+DOCKED: HETATM   10  N1  BRH A 611      41.430  12.720  17.166 +0.04 -0.59    +0.628 N  
+DOCKED: BRANCH   9  11
+DOCKED: HETATM   11  C1  BRH A 611      42.776  14.304  18.570 -0.35 +0.15    +0.224 C  
+DOCKED: HETATM   12  O1  BRH A 611      43.840  15.011  18.675 -0.61 -0.92    -0.646 OA 
+DOCKED: HETATM   13  O2  BRH A 611      42.063  13.891  19.529 -0.61 -0.56    -0.646 OA 
+DOCKED: ENDBRANCH   9  11
+DOCKED: ENDBRANCH   8   9
+DOCKED: ENDBRANCH   1   8
+DOCKED: TORSDOF 3
+DOCKED: TER
+DOCKED: ENDMDL
+________________________________________________________________________________
+
+
+    FINAL DOCKED STATE:
+    ________________________
+
+
+Run:   25 / 50
+Time taken for this run:   0.742s
+
+DOCKED: MODEL        25
+DOCKED: USER    Run = 25
+DOCKED: USER
+DOCKED: USER    Estimated Free Energy of Binding    =  -5.90 kcal/mol  [=(1)+(2)+(3)-(4)]
+DOCKED: USER
+DOCKED: USER    (1) Final Intermolecular Energy     =  -6.80 kcal/mol
+DOCKED: USER        vdW + Hbond + desolv Energy     =  -4.35 kcal/mol
+DOCKED: USER        Electrostatic Energy            =  -2.45 kcal/mol
+DOCKED: USER        Moving Ligand-Fixed Receptor    =  -6.80 kcal/mol
+DOCKED: USER        Moving Ligand-Moving Receptor   =  +0.00 kcal/mol
+DOCKED: USER    (2) Final Total Internal Energy     =  -0.19 kcal/mol
+DOCKED: USER    (3) Torsional Free Energy           =  +0.89 kcal/mol
+DOCKED: USER    (4) Unbound System's Energy         =  -0.19 kcal/mol
+DOCKED: USER
+DOCKED: USER
+DOCKED: REMARK  3 active torsions:
+DOCKED: REMARK  status: ('A' for Active; 'I' for Inactive)
+DOCKED: REMARK    1  A    between atoms: C1_2056  and  C2_2058 
+DOCKED: REMARK    2  A    between atoms: C2_2058  and  C3_2060 
+DOCKED: REMARK    3  A    between atoms: C3_2060  and  C4_2061 
+DOCKED: USER                              x       y       z     vdW  Elec       q    Type
+DOCKED: USER                           _______ _______ _______ _____ _____    ______ ____
+DOCKED: ROOT
+DOCKED: HETATM    1  C4  BRH A 611      42.563  15.973  15.526 -0.25 -0.02    +0.116 A  
+DOCKED: HETATM    2  C5  BRH A 611      42.320  16.677  14.357 -0.23 -0.02    +0.115 A  
+DOCKED: HETATM    3 BR1  BRH A 611      40.737  16.895  13.463 -0.80 +0.01    -0.042 Br 
+DOCKED: HETATM    4  C6  BRH A 611      43.664  17.224  13.985 -0.04 +0.07    +0.309 A  
+DOCKED: HETATM    5  O3  BRH A 611      43.934  17.945  12.968 -0.32 -0.09    -0.263 OA 
+DOCKED: HETATM    6  N2  BRH A 611      44.571  16.815  14.935 -0.54 -0.05    -0.083 NA 
+DOCKED: HETATM    7  O4  BRH A 611      43.922  16.079  15.842 -0.63 -0.13    -0.212 OA 
+DOCKED: ENDROOT
+DOCKED: BRANCH   1   8
+DOCKED: HETATM    8  C3  BRH A 611      41.723  15.186  16.441 -0.10 -0.06    +0.105 C  
+DOCKED: BRANCH   8   9
+DOCKED: HETATM    9  C2  BRH A 611      42.432  13.977  17.055 -0.03 -0.17    +0.394 C  
+DOCKED: HETATM   10  N1  BRH A 611      41.548  12.795  17.151 +0.06 -0.59    +0.628 N  
+DOCKED: BRANCH   9  11
+DOCKED: HETATM   11  C1  BRH A 611      42.907  14.426  18.486 -0.33 +0.16    +0.224 C  
+DOCKED: HETATM   12  O1  BRH A 611      42.318  13.892  19.491 -0.63 -0.63    -0.646 OA 
+DOCKED: HETATM   13  O2  BRH A 611      43.827  15.292  18.540 -0.51 -0.92    -0.646 OA 
+DOCKED: ENDBRANCH   9  11
+DOCKED: ENDBRANCH   8   9
+DOCKED: ENDBRANCH   1   8
+DOCKED: TORSDOF 3
+DOCKED: TER
+DOCKED: ENDMDL
+________________________________________________________________________________
+
+
+    FINAL DOCKED STATE:
+    ________________________
+
+
+Run:   26 / 50
+Time taken for this run:   0.742s
+
+DOCKED: MODEL        26
+DOCKED: USER    Run = 26
+DOCKED: USER
+DOCKED: USER    Estimated Free Energy of Binding    =  -5.95 kcal/mol  [=(1)+(2)+(3)-(4)]
+DOCKED: USER
+DOCKED: USER    (1) Final Intermolecular Energy     =  -6.84 kcal/mol
+DOCKED: USER        vdW + Hbond + desolv Energy     =  -4.45 kcal/mol
+DOCKED: USER        Electrostatic Energy            =  -2.39 kcal/mol
+DOCKED: USER        Moving Ligand-Fixed Receptor    =  -6.84 kcal/mol
+DOCKED: USER        Moving Ligand-Moving Receptor   =  +0.00 kcal/mol
+DOCKED: USER    (2) Final Total Internal Energy     =  -0.20 kcal/mol
+DOCKED: USER    (3) Torsional Free Energy           =  +0.89 kcal/mol
+DOCKED: USER    (4) Unbound System's Energy         =  -0.20 kcal/mol
+DOCKED: USER
+DOCKED: USER
+DOCKED: REMARK  3 active torsions:
+DOCKED: REMARK  status: ('A' for Active; 'I' for Inactive)
+DOCKED: REMARK    1  A    between atoms: C1_2056  and  C2_2058 
+DOCKED: REMARK    2  A    between atoms: C2_2058  and  C3_2060 
+DOCKED: REMARK    3  A    between atoms: C3_2060  and  C4_2061 
+DOCKED: USER                              x       y       z     vdW  Elec       q    Type
+DOCKED: USER                           _______ _______ _______ _____ _____    ______ ____
+DOCKED: ROOT
+DOCKED: HETATM    1  C4  BRH A 611      42.486  15.910  15.621 -0.25 -0.03    +0.116 A  
+DOCKED: HETATM    2  C5  BRH A 611      42.256  16.614  14.450 -0.23 -0.02    +0.115 A  
+DOCKED: HETATM    3 BR1  BRH A 611      40.680  16.842  13.545 -0.78 +0.02    -0.042 Br 
+DOCKED: HETATM    4  C6  BRH A 611      43.606  17.152  14.086 -0.06 +0.07    +0.309 A  
+DOCKED: HETATM    5  O3  BRH A 611      43.888  17.869  13.070 -0.31 -0.09    -0.263 OA 
+DOCKED: HETATM    6  N2  BRH A 611      44.504  16.738  15.043 -0.54 -0.05    -0.083 NA 
+DOCKED: HETATM    7  O4  BRH A 611      43.844  16.007  15.947 -0.68 -0.12    -0.212 OA 
+DOCKED: ENDROOT
+DOCKED: BRANCH   1   8
+DOCKED: HETATM    8  C3  BRH A 611      41.635  15.131  16.532 -0.00 -0.06    +0.105 C  
+DOCKED: BRANCH   8   9
+DOCKED: HETATM    9  C2  BRH A 611      42.319  13.896  17.122 -0.07 -0.19    +0.394 C  
+DOCKED: HETATM   10  N1  BRH A 611      41.417  12.724  17.173 +0.04 -0.58    +0.628 N  
+DOCKED: BRANCH   9  11
+DOCKED: HETATM   11  C1  BRH A 611      42.780  14.299  18.571 -0.35 +0.15    +0.224 C  
+DOCKED: HETATM   12  O1  BRH A 611      42.057  13.891  19.548 -0.60 -0.57    -0.646 OA 
+DOCKED: HETATM   13  O2  BRH A 611      43.822  15.008  18.666 -0.62 -0.91    -0.646 OA 
+DOCKED: ENDBRANCH   9  11
+DOCKED: ENDBRANCH   8   9
+DOCKED: ENDBRANCH   1   8
+DOCKED: TORSDOF 3
+DOCKED: TER
+DOCKED: ENDMDL
+________________________________________________________________________________
+
+
+    FINAL DOCKED STATE:
+    ________________________
+
+
+Run:   27 / 50
+Time taken for this run:   0.742s
+
+DOCKED: MODEL        27
+DOCKED: USER    Run = 27
+DOCKED: USER
+DOCKED: USER    Estimated Free Energy of Binding    =  -5.95 kcal/mol  [=(1)+(2)+(3)-(4)]
+DOCKED: USER
+DOCKED: USER    (1) Final Intermolecular Energy     =  -6.84 kcal/mol
+DOCKED: USER        vdW + Hbond + desolv Energy     =  -4.42 kcal/mol
+DOCKED: USER        Electrostatic Energy            =  -2.42 kcal/mol
+DOCKED: USER        Moving Ligand-Fixed Receptor    =  -6.84 kcal/mol
+DOCKED: USER        Moving Ligand-Moving Receptor   =  +0.00 kcal/mol
+DOCKED: USER    (2) Final Total Internal Energy     =  -0.20 kcal/mol
+DOCKED: USER    (3) Torsional Free Energy           =  +0.89 kcal/mol
+DOCKED: USER    (4) Unbound System's Energy         =  -0.20 kcal/mol
+DOCKED: USER
+DOCKED: USER
+DOCKED: REMARK  3 active torsions:
+DOCKED: REMARK  status: ('A' for Active; 'I' for Inactive)
+DOCKED: REMARK    1  A    between atoms: C1_2056  and  C2_2058 
+DOCKED: REMARK    2  A    between atoms: C2_2058  and  C3_2060 
+DOCKED: REMARK    3  A    between atoms: C3_2060  and  C4_2061 
+DOCKED: USER                              x       y       z     vdW  Elec       q    Type
+DOCKED: USER                           _______ _______ _______ _____ _____    ______ ____
+DOCKED: ROOT
+DOCKED: HETATM    1  C4  BRH A 611      42.479  15.899  15.582 -0.25 -0.03    +0.116 A  
+DOCKED: HETATM    2  C5  BRH A 611      42.238  16.529  14.371 -0.23 -0.03    +0.115 A  
+DOCKED: HETATM    3 BR1  BRH A 611      40.666  16.651  13.439 -0.78 +0.02    -0.042 Br 
+DOCKED: HETATM    4  C6  BRH A 611      43.573  17.094  13.992 -0.04 +0.06    +0.309 A  
+DOCKED: HETATM    5  O3  BRH A 611      43.842  17.764  12.941 -0.32 -0.09    -0.263 OA 
+DOCKED: HETATM    6  N2  BRH A 611      44.473  16.765  14.978 -0.54 -0.05    -0.083 NA 
+DOCKED: HETATM    7  O4  BRH A 611      43.828  16.062  15.914 -0.68 -0.12    -0.212 OA 
+DOCKED: ENDROOT
+DOCKED: BRANCH   1   8
+DOCKED: HETATM    8  C3  BRH A 611      41.644  15.141  16.525 -0.01 -0.06    +0.105 C  
+DOCKED: BRANCH   8   9
+DOCKED: HETATM    9  C2  BRH A 611      42.332  13.908  17.115 -0.07 -0.18    +0.394 C  
+DOCKED: HETATM   10  N1  BRH A 611      41.438  12.729  17.154 +0.05 -0.59    +0.628 N  
+DOCKED: BRANCH   9  11
+DOCKED: HETATM   11  C1  BRH A 611      42.779  14.307  18.569 -0.35 +0.15    +0.224 C  
+DOCKED: HETATM   12  O1  BRH A 611      43.842  15.013  18.680 -0.61 -0.92    -0.646 OA 
+DOCKED: HETATM   13  O2  BRH A 611      42.064  13.889  19.525 -0.61 -0.56    -0.646 OA 
+DOCKED: ENDBRANCH   9  11
+DOCKED: ENDBRANCH   8   9
+DOCKED: ENDBRANCH   1   8
+DOCKED: TORSDOF 3
+DOCKED: TER
+DOCKED: ENDMDL
+________________________________________________________________________________
+
+
+    FINAL DOCKED STATE:
+    ________________________
+
+
+Run:   28 / 50
+Time taken for this run:   0.742s
+
+DOCKED: MODEL        28
+DOCKED: USER    Run = 28
+DOCKED: USER
+DOCKED: USER    Estimated Free Energy of Binding    =  -5.85 kcal/mol  [=(1)+(2)+(3)-(4)]
+DOCKED: USER
+DOCKED: USER    (1) Final Intermolecular Energy     =  -6.74 kcal/mol
+DOCKED: USER        vdW + Hbond + desolv Energy     =  -4.31 kcal/mol
+DOCKED: USER        Electrostatic Energy            =  -2.43 kcal/mol
+DOCKED: USER        Moving Ligand-Fixed Receptor    =  -6.74 kcal/mol
+DOCKED: USER        Moving Ligand-Moving Receptor   =  +0.00 kcal/mol
+DOCKED: USER    (2) Final Total Internal Energy     =  -0.19 kcal/mol
+DOCKED: USER    (3) Torsional Free Energy           =  +0.89 kcal/mol
+DOCKED: USER    (4) Unbound System's Energy         =  -0.19 kcal/mol
+DOCKED: USER
+DOCKED: USER
+DOCKED: REMARK  3 active torsions:
+DOCKED: REMARK  status: ('A' for Active; 'I' for Inactive)
+DOCKED: REMARK    1  A    between atoms: C1_2056  and  C2_2058 
+DOCKED: REMARK    2  A    between atoms: C2_2058  and  C3_2060 
+DOCKED: REMARK    3  A    between atoms: C3_2060  and  C4_2061 
+DOCKED: USER                              x       y       z     vdW  Elec       q    Type
+DOCKED: USER                           _______ _______ _______ _____ _____    ______ ____
+DOCKED: ROOT
+DOCKED: HETATM    1  C4  BRH A 611      42.498  15.985  15.584 -0.25 -0.03    +0.116 A  
+DOCKED: HETATM    2  C5  BRH A 611      42.251  16.498  14.321 -0.23 -0.03    +0.115 A  
+DOCKED: HETATM    3 BR1  BRH A 611      40.690  16.472  13.363 -0.76 +0.02    -0.042 Br 
+DOCKED: HETATM    4  C6  BRH A 611      43.567  17.085  13.911 -0.03 +0.06    +0.309 A  
+DOCKED: HETATM    5  O3  BRH A 611      43.824  17.673  12.809 -0.33 -0.10    -0.263 OA 
+DOCKED: HETATM    6  N2  BRH A 611      44.464  16.881  14.933 -0.52 -0.05    -0.083 NA 
+DOCKED: HETATM    7  O4  BRH A 611      43.834  16.234  15.919 -0.63 -0.13    -0.212 OA 
+DOCKED: ENDROOT
+DOCKED: BRANCH   1   8
+DOCKED: HETATM    8  C3  BRH A 611      41.681  15.276  16.580 +0.03 -0.05    +0.105 C  
+DOCKED: BRANCH   8   9
+DOCKED: HETATM    9  C2  BRH A 611      42.332  14.006  17.130 -0.10 -0.16    +0.394 C  
+DOCKED: HETATM   10  N1  BRH A 611      41.397  12.859  17.153 +0.03 -0.58    +0.628 N  
+DOCKED: BRANCH   9  11
+DOCKED: HETATM   11  C1  BRH A 611      42.811  14.353  18.588 -0.34 +0.16    +0.224 C  
+DOCKED: HETATM   12  O1  BRH A 611      43.864  15.075  18.700 -0.58 -0.95    -0.646 OA 
+DOCKED: HETATM   13  O2  BRH A 611      42.130  13.882  19.544 -0.59 -0.59    -0.646 OA 
+DOCKED: ENDBRANCH   9  11
+DOCKED: ENDBRANCH   8   9
+DOCKED: ENDBRANCH   1   8
+DOCKED: TORSDOF 3
+DOCKED: TER
+DOCKED: ENDMDL
+________________________________________________________________________________
+
+
+    FINAL DOCKED STATE:
+    ________________________
+
+
+Run:   29 / 50
+Time taken for this run:   0.742s
+
+DOCKED: MODEL        29
+DOCKED: USER    Run = 29
+DOCKED: USER
+DOCKED: USER    Estimated Free Energy of Binding    =  -5.94 kcal/mol  [=(1)+(2)+(3)-(4)]
+DOCKED: USER
+DOCKED: USER    (1) Final Intermolecular Energy     =  -6.84 kcal/mol
+DOCKED: USER        vdW + Hbond + desolv Energy     =  -4.47 kcal/mol
+DOCKED: USER        Electrostatic Energy            =  -2.37 kcal/mol
+DOCKED: USER        Moving Ligand-Fixed Receptor    =  -6.84 kcal/mol
+DOCKED: USER        Moving Ligand-Moving Receptor   =  +0.00 kcal/mol
+DOCKED: USER    (2) Final Total Internal Energy     =  -0.21 kcal/mol
+DOCKED: USER    (3) Torsional Free Energy           =  +0.89 kcal/mol
+DOCKED: USER    (4) Unbound System's Energy         =  -0.21 kcal/mol
+DOCKED: USER
+DOCKED: USER
+DOCKED: REMARK  3 active torsions:
+DOCKED: REMARK  status: ('A' for Active; 'I' for Inactive)
+DOCKED: REMARK    1  A    between atoms: C1_2056  and  C2_2058 
+DOCKED: REMARK    2  A    between atoms: C2_2058  and  C3_2060 
+DOCKED: REMARK    3  A    between atoms: C3_2060  and  C4_2061 
+DOCKED: USER                              x       y       z     vdW  Elec       q    Type
+DOCKED: USER                           _______ _______ _______ _____ _____    ______ ____
+DOCKED: ROOT
+DOCKED: HETATM    1  C4  BRH A 611      42.528  15.917  15.606 -0.25 -0.03    +0.116 A  
+DOCKED: HETATM    2  C5  BRH A 611      42.303  16.757  14.527 -0.24 -0.02    +0.115 A  
+DOCKED: HETATM    3 BR1  BRH A 611      40.706  17.252  13.778 -0.75 +0.01    -0.042 Br 
+DOCKED: HETATM    4  C6  BRH A 611      43.679  17.173  14.106 -0.05 +0.07    +0.309 A  
+DOCKED: HETATM    5  O3  BRH A 611      43.973  17.953  13.141 -0.31 -0.09    -0.263 OA 
+DOCKED: HETATM    6  N2  BRH A 611      44.585  16.565  14.944 -0.56 -0.05    -0.083 NA 
+DOCKED: HETATM    7  O4  BRH A 611      43.907  15.826  15.828 -0.68 -0.11    -0.212 OA 
+DOCKED: ENDROOT
+DOCKED: BRANCH   1   8
+DOCKED: HETATM    8  C3  BRH A 611      41.655  15.151  16.508 -0.03 -0.06    +0.105 C  
+DOCKED: BRANCH   8   9
+DOCKED: HETATM    9  C2  BRH A 611      42.315  13.909  17.110 -0.07 -0.19    +0.394 C  
+DOCKED: HETATM   10  N1  BRH A 611      41.394  12.753  17.166 +0.03 -0.58    +0.628 N  
+DOCKED: BRANCH   9  11
+DOCKED: HETATM   11  C1  BRH A 611      42.778  14.315  18.558 -0.35 +0.15    +0.224 C  
+DOCKED: HETATM   12  O1  BRH A 611      43.840  15.025  18.653 -0.61 -0.91    -0.646 OA 
+DOCKED: HETATM   13  O2  BRH A 611      42.075  13.899  19.522 -0.61 -0.56    -0.646 OA 
+DOCKED: ENDBRANCH   9  11
+DOCKED: ENDBRANCH   8   9
+DOCKED: ENDBRANCH   1   8
+DOCKED: TORSDOF 3
+DOCKED: TER
+DOCKED: ENDMDL
+________________________________________________________________________________
+
+
+    FINAL DOCKED STATE:
+    ________________________
+
+
+Run:   30 / 50
+Time taken for this run:   0.742s
+
+DOCKED: MODEL        30
+DOCKED: USER    Run = 30
+DOCKED: USER
+DOCKED: USER    Estimated Free Energy of Binding    =  -5.96 kcal/mol  [=(1)+(2)+(3)-(4)]
+DOCKED: USER
+DOCKED: USER    (1) Final Intermolecular Energy     =  -6.85 kcal/mol
+DOCKED: USER        vdW + Hbond + desolv Energy     =  -4.47 kcal/mol
+DOCKED: USER        Electrostatic Energy            =  -2.38 kcal/mol
+DOCKED: USER        Moving Ligand-Fixed Receptor    =  -6.85 kcal/mol
+DOCKED: USER        Moving Ligand-Moving Receptor   =  +0.00 kcal/mol
+DOCKED: USER    (2) Final Total Internal Energy     =  -0.20 kcal/mol
+DOCKED: USER    (3) Torsional Free Energy           =  +0.89 kcal/mol
+DOCKED: USER    (4) Unbound System's Energy         =  -0.20 kcal/mol
+DOCKED: USER
+DOCKED: USER
+DOCKED: REMARK  3 active torsions:
+DOCKED: REMARK  status: ('A' for Active; 'I' for Inactive)
+DOCKED: REMARK    1  A    between atoms: C1_2056  and  C2_2058 
+DOCKED: REMARK    2  A    between atoms: C2_2058  and  C3_2060 
+DOCKED: REMARK    3  A    between atoms: C3_2060  and  C4_2061 
+DOCKED: USER                              x       y       z     vdW  Elec       q    Type
+DOCKED: USER                           _______ _______ _______ _____ _____    ______ ____
+DOCKED: ROOT
+DOCKED: HETATM    1  C4  BRH A 611      42.494  15.914  15.635 -0.25 -0.03    +0.116 A  
+DOCKED: HETATM    2  C5  BRH A 611      42.262  16.705  14.521 -0.24 -0.02    +0.115 A  
+DOCKED: HETATM    3 BR1  BRH A 611      40.670  17.082  13.699 -0.76 +0.01    -0.042 Br 
+DOCKED: HETATM    4  C6  BRH A 611      43.628  17.185  14.134 -0.07 +0.07    +0.309 A  
+DOCKED: HETATM    5  O3  BRH A 611      43.914  17.949  13.154 -0.31 -0.09    -0.263 OA 
+DOCKED: HETATM    6  N2  BRH A 611      44.535  16.658  15.024 -0.56 -0.05    -0.083 NA 
+DOCKED: HETATM    7  O4  BRH A 611      43.867  15.910  15.908 -0.69 -0.12    -0.212 OA 
+DOCKED: ENDROOT
+DOCKED: BRANCH   1   8
+DOCKED: HETATM    8  C3  BRH A 611      41.633  15.129  16.531 -0.00 -0.06    +0.105 C  
+DOCKED: BRANCH   8   9
+DOCKED: HETATM    9  C2  BRH A 611      42.315  13.897  17.131 -0.08 -0.18    +0.394 C  
+DOCKED: HETATM   10  N1  BRH A 611      41.417  12.722  17.174 +0.04 -0.58    +0.628 N  
+DOCKED: BRANCH   9  11
+DOCKED: HETATM   11  C1  BRH A 611      42.757  14.305  18.585 -0.35 +0.15    +0.224 C  
+DOCKED: HETATM   12  O1  BRH A 611      43.817  15.017  18.694 -0.61 -0.92    -0.646 OA 
+DOCKED: HETATM   13  O2  BRH A 611      42.043  13.888  19.540 -0.60 -0.56    -0.646 OA 
+DOCKED: ENDBRANCH   9  11
+DOCKED: ENDBRANCH   8   9
+DOCKED: ENDBRANCH   1   8
+DOCKED: TORSDOF 3
+DOCKED: TER
+DOCKED: ENDMDL
+________________________________________________________________________________
+
+
+    FINAL DOCKED STATE:
+    ________________________
+
+
+Run:   31 / 50
+Time taken for this run:   0.742s
+
+DOCKED: MODEL        31
+DOCKED: USER    Run = 31
+DOCKED: USER
+DOCKED: USER    Estimated Free Energy of Binding    =  -5.94 kcal/mol  [=(1)+(2)+(3)-(4)]
+DOCKED: USER
+DOCKED: USER    (1) Final Intermolecular Energy     =  -6.84 kcal/mol
+DOCKED: USER        vdW + Hbond + desolv Energy     =  -4.44 kcal/mol
+DOCKED: USER        Electrostatic Energy            =  -2.40 kcal/mol
+DOCKED: USER        Moving Ligand-Fixed Receptor    =  -6.84 kcal/mol
+DOCKED: USER        Moving Ligand-Moving Receptor   =  +0.00 kcal/mol
+DOCKED: USER    (2) Final Total Internal Energy     =  -0.20 kcal/mol
+DOCKED: USER    (3) Torsional Free Energy           =  +0.89 kcal/mol
+DOCKED: USER    (4) Unbound System's Energy         =  -0.20 kcal/mol
+DOCKED: USER
+DOCKED: USER
+DOCKED: REMARK  3 active torsions:
+DOCKED: REMARK  status: ('A' for Active; 'I' for Inactive)
+DOCKED: REMARK    1  A    between atoms: C1_2056  and  C2_2058 
+DOCKED: REMARK    2  A    between atoms: C2_2058  and  C3_2060 
+DOCKED: REMARK    3  A    between atoms: C3_2060  and  C4_2061 
+DOCKED: USER                              x       y       z     vdW  Elec       q    Type
+DOCKED: USER                           _______ _______ _______ _____ _____    ______ ____
+DOCKED: ROOT
+DOCKED: HETATM    1  C4  BRH A 611      42.479  15.925  15.592 -0.25 -0.03    +0.116 A  
+DOCKED: HETATM    2  C5  BRH A 611      42.230  16.667  14.448 -0.23 -0.02    +0.115 A  
+DOCKED: HETATM    3 BR1  BRH A 611      40.631  16.961  13.605 -0.78 +0.02    -0.042 Br 
+DOCKED: HETATM    4  C6  BRH A 611      43.581  17.178  14.052 -0.06 +0.07    +0.309 A  
+DOCKED: HETATM    5  O3  BRH A 611      43.848  17.914  13.046 -0.32 -0.09    -0.263 OA 
+DOCKED: HETATM    6  N2  BRH A 611      44.499  16.714  14.966 -0.55 -0.05    -0.083 NA 
+DOCKED: HETATM    7  O4  BRH A 611      43.850  15.977  15.873 -0.68 -0.11    -0.212 OA 
+DOCKED: ENDROOT
+DOCKED: BRANCH   1   8
+DOCKED: HETATM    8  C3  BRH A 611      41.638  15.145  16.511 -0.01 -0.06    +0.105 C  
+DOCKED: BRANCH   8   9
+DOCKED: HETATM    9  C2  BRH A 611      42.333  13.916  17.102 -0.06 -0.19    +0.394 C  
+DOCKED: HETATM   10  N1  BRH A 611      41.448  12.731  17.135 +0.06 -0.61    +0.628 N  
+DOCKED: BRANCH   9  11
+DOCKED: HETATM   11  C1  BRH A 611      42.770  14.317  18.559 -0.35 +0.15    +0.224 C  
+DOCKED: HETATM   12  O1  BRH A 611      43.836  15.018  18.677 -0.61 -0.92    -0.646 OA 
+DOCKED: HETATM   13  O2  BRH A 611      42.045  13.905  19.510 -0.60 -0.55    -0.646 OA 
+DOCKED: ENDBRANCH   9  11
+DOCKED: ENDBRANCH   8   9
+DOCKED: ENDBRANCH   1   8
+DOCKED: TORSDOF 3
+DOCKED: TER
+DOCKED: ENDMDL
+________________________________________________________________________________
+
+
+    FINAL DOCKED STATE:
+    ________________________
+
+
+Run:   32 / 50
+Time taken for this run:   0.742s
+
+DOCKED: MODEL        32
+DOCKED: USER    Run = 32
+DOCKED: USER
+DOCKED: USER    Estimated Free Energy of Binding    =  -5.01 kcal/mol  [=(1)+(2)+(3)-(4)]
+DOCKED: USER
+DOCKED: USER    (1) Final Intermolecular Energy     =  -5.90 kcal/mol
+DOCKED: USER        vdW + Hbond + desolv Energy     =  -3.92 kcal/mol
+DOCKED: USER        Electrostatic Energy            =  -1.99 kcal/mol
+DOCKED: USER        Moving Ligand-Fixed Receptor    =  -5.90 kcal/mol
+DOCKED: USER        Moving Ligand-Moving Receptor   =  +0.00 kcal/mol
+DOCKED: USER    (2) Final Total Internal Energy     =  -0.33 kcal/mol
+DOCKED: USER    (3) Torsional Free Energy           =  +0.89 kcal/mol
+DOCKED: USER    (4) Unbound System's Energy         =  -0.33 kcal/mol
+DOCKED: USER
+DOCKED: USER
+DOCKED: REMARK  3 active torsions:
+DOCKED: REMARK  status: ('A' for Active; 'I' for Inactive)
+DOCKED: REMARK    1  A    between atoms: C1_2056  and  C2_2058 
+DOCKED: REMARK    2  A    between atoms: C2_2058  and  C3_2060 
+DOCKED: REMARK    3  A    between atoms: C3_2060  and  C4_2061 
+DOCKED: USER                              x       y       z     vdW  Elec       q    Type
+DOCKED: USER                           _______ _______ _______ _____ _____    ______ ____
+DOCKED: ROOT
+DOCKED: HETATM    1  C4  BRH A 611      41.831  16.384  15.351 -0.21 -0.04    +0.116 A  
+DOCKED: HETATM    2  C5  BRH A 611      42.313  17.033  14.225 -0.23 -0.01    +0.115 A  
+DOCKED: HETATM    3 BR1  BRH A 611      43.844  18.022  14.044 -0.81 -0.01    -0.042 Br 
+DOCKED: HETATM    4  C6  BRH A 611      41.284  16.740  13.176 -0.10 -0.07    +0.309 A  
+DOCKED: HETATM    5  O3  BRH A 611      41.302  17.136  11.964 -0.31 -0.02    -0.263 OA 
+DOCKED: HETATM    6  N2  BRH A 611      40.302  15.963  13.745 -0.25 +0.07    -0.083 NA 
+DOCKED: HETATM    7  O4  BRH A 611      40.625  15.753  15.025 -0.28 +0.22    -0.212 OA 
+DOCKED: ENDROOT
+DOCKED: BRANCH   1   8
+DOCKED: HETATM    8  C3  BRH A 611      42.310  16.238  16.733 -0.28 +0.01    +0.105 C  
+DOCKED: BRANCH   8   9
+DOCKED: HETATM    9  C2  BRH A 611      42.661  14.801  17.123 -0.16 +0.01    +0.394 C  
+DOCKED: HETATM   10  N1  BRH A 611      41.549  13.860  16.866 +0.22 -0.60    +0.628 N  
+DOCKED: BRANCH   9  11
+DOCKED: HETATM   11  C1  BRH A 611      43.010  14.835  18.656 -0.31 +0.20    +0.224 C  
+DOCKED: HETATM   12  O1  BRH A 611      43.826  15.742  19.049 -0.58 -1.10    -0.646 OA 
+DOCKED: HETATM   13  O2  BRH A 611      42.472  13.955  19.387 -0.61 -0.64    -0.646 OA 
+DOCKED: ENDBRANCH   9  11
+DOCKED: ENDBRANCH   8   9
+DOCKED: ENDBRANCH   1   8
+DOCKED: TORSDOF 3
+DOCKED: TER
+DOCKED: ENDMDL
+________________________________________________________________________________
+
+
+    FINAL DOCKED STATE:
+    ________________________
+
+
+Run:   33 / 50
+Time taken for this run:   0.742s
+
+DOCKED: MODEL        33
+DOCKED: USER    Run = 33
+DOCKED: USER
+DOCKED: USER    Estimated Free Energy of Binding    =  -5.94 kcal/mol  [=(1)+(2)+(3)-(4)]
+DOCKED: USER
+DOCKED: USER    (1) Final Intermolecular Energy     =  -6.83 kcal/mol
+DOCKED: USER        vdW + Hbond + desolv Energy     =  -4.45 kcal/mol
+DOCKED: USER        Electrostatic Energy            =  -2.38 kcal/mol
+DOCKED: USER        Moving Ligand-Fixed Receptor    =  -6.83 kcal/mol
+DOCKED: USER        Moving Ligand-Moving Receptor   =  +0.00 kcal/mol
+DOCKED: USER    (2) Final Total Internal Energy     =  -0.20 kcal/mol
+DOCKED: USER    (3) Torsional Free Energy           =  +0.89 kcal/mol
+DOCKED: USER    (4) Unbound System's Energy         =  -0.20 kcal/mol
+DOCKED: USER
+DOCKED: USER
+DOCKED: REMARK  3 active torsions:
+DOCKED: REMARK  status: ('A' for Active; 'I' for Inactive)
+DOCKED: REMARK    1  A    between atoms: C1_2056  and  C2_2058 
+DOCKED: REMARK    2  A    between atoms: C2_2058  and  C3_2060 
+DOCKED: REMARK    3  A    between atoms: C3_2060  and  C4_2061 
+DOCKED: USER                              x       y       z     vdW  Elec       q    Type
+DOCKED: USER                           _______ _______ _______ _____ _____    ______ ____
+DOCKED: ROOT
+DOCKED: HETATM    1  C4  BRH A 611      42.491  15.944  15.596 -0.25 -0.03    +0.116 A  
+DOCKED: HETATM    2  C5  BRH A 611      42.243  16.647  14.427 -0.23 -0.02    +0.115 A  
+DOCKED: HETATM    3 BR1  BRH A 611      40.646  16.912  13.570 -0.78 +0.02    -0.042 Br 
+DOCKED: HETATM    4  C6  BRH A 611      43.595  17.147  14.019 -0.05 +0.07    +0.309 A  
+DOCKED: HETATM    5  O3  BRH A 611      43.864  17.850  12.989 -0.31 -0.09    -0.263 OA 
+DOCKED: HETATM    6  N2  BRH A 611      44.511  16.714  14.949 -0.55 -0.05    -0.083 NA 
+DOCKED: HETATM    7  O4  BRH A 611      43.861  16.007  15.878 -0.67 -0.12    -0.212 OA 
+DOCKED: ENDROOT
+DOCKED: BRANCH   1   8
+DOCKED: HETATM    8  C3  BRH A 611      41.648  15.193  16.538 +0.00 -0.06    +0.105 C  
+DOCKED: BRANCH   8   9
+DOCKED: HETATM    9  C2  BRH A 611      42.319  13.947  17.118 -0.08 -0.18    +0.394 C  
+DOCKED: HETATM   10  N1  BRH A 611      41.406  12.783  17.159 +0.03 -0.59    +0.628 N  
+DOCKED: BRANCH   9  11
+DOCKED: HETATM   11  C1  BRH A 611      42.784  14.333  18.570 -0.34 +0.15    +0.224 C  
+DOCKED: HETATM   12  O1  BRH A 611      42.071  13.902  19.545 -0.60 -0.57    -0.646 OA 
+DOCKED: HETATM   13  O2  BRH A 611      43.818  15.053  18.670 -0.61 -0.92    -0.646 OA 
+DOCKED: ENDBRANCH   9  11
+DOCKED: ENDBRANCH   8   9
+DOCKED: ENDBRANCH   1   8
+DOCKED: TORSDOF 3
+DOCKED: TER
+DOCKED: ENDMDL
+________________________________________________________________________________
+
+
+    FINAL DOCKED STATE:
+    ________________________
+
+
+Run:   34 / 50
+Time taken for this run:   0.742s
+
+DOCKED: MODEL        34
+DOCKED: USER    Run = 34
+DOCKED: USER
+DOCKED: USER    Estimated Free Energy of Binding    =  -5.96 kcal/mol  [=(1)+(2)+(3)-(4)]
+DOCKED: USER
+DOCKED: USER    (1) Final Intermolecular Energy     =  -6.86 kcal/mol
+DOCKED: USER        vdW + Hbond + desolv Energy     =  -4.47 kcal/mol
+DOCKED: USER        Electrostatic Energy            =  -2.39 kcal/mol
+DOCKED: USER        Moving Ligand-Fixed Receptor    =  -6.86 kcal/mol
+DOCKED: USER        Moving Ligand-Moving Receptor   =  +0.00 kcal/mol
+DOCKED: USER    (2) Final Total Internal Energy     =  -0.20 kcal/mol
+DOCKED: USER    (3) Torsional Free Energy           =  +0.89 kcal/mol
+DOCKED: USER    (4) Unbound System's Energy         =  -0.20 kcal/mol
+DOCKED: USER
+DOCKED: USER
+DOCKED: REMARK  3 active torsions:
+DOCKED: REMARK  status: ('A' for Active; 'I' for Inactive)
+DOCKED: REMARK    1  A    between atoms: C1_2056  and  C2_2058 
+DOCKED: REMARK    2  A    between atoms: C2_2058  and  C3_2060 
+DOCKED: REMARK    3  A    between atoms: C3_2060  and  C4_2061 
+DOCKED: USER                              x       y       z     vdW  Elec       q    Type
+DOCKED: USER                           _______ _______ _______ _____ _____    ______ ____
+DOCKED: ROOT
+DOCKED: HETATM    1  C4  BRH A 611      42.473  15.901  15.599 -0.25 -0.03    +0.116 A  
+DOCKED: HETATM    2  C5  BRH A 611      42.235  16.618  14.437 -0.23 -0.02    +0.115 A  
+DOCKED: HETATM    3 BR1  BRH A 611      40.648  16.884  13.564 -0.78 +0.02    -0.042 Br 
+DOCKED: HETATM    4  C6  BRH A 611      43.589  17.132  14.053 -0.05 +0.07    +0.309 A  
+DOCKED: HETATM    5  O3  BRH A 611      43.866  17.851  13.037 -0.31 -0.09    -0.263 OA 
+DOCKED: HETATM    6  N2  BRH A 611      44.496  16.693  14.989 -0.55 -0.05    -0.083 NA 
+DOCKED: HETATM    7  O4  BRH A 611      43.838  15.968  15.900 -0.69 -0.12    -0.212 OA 
+DOCKED: ENDROOT
+DOCKED: BRANCH   1   8
+DOCKED: HETATM    8  C3  BRH A 611      41.623  15.132  16.520 -0.00 -0.06    +0.105 C  
+DOCKED: BRANCH   8   9
+DOCKED: HETATM    9  C2  BRH A 611      42.306  13.899  17.117 -0.07 -0.19    +0.394 C  
+DOCKED: HETATM   10  N1  BRH A 611      41.406  12.726  17.166 +0.04 -0.59    +0.628 N  
+DOCKED: BRANCH   9  11
+DOCKED: HETATM   11  C1  BRH A 611      42.758  14.306  18.567 -0.35 +0.15    +0.224 C  
+DOCKED: HETATM   12  O1  BRH A 611      43.817  15.020  18.670 -0.62 -0.91    -0.646 OA 
+DOCKED: HETATM   13  O2  BRH A 611      42.051  13.887  19.528 -0.60 -0.56    -0.646 OA 
+DOCKED: ENDBRANCH   9  11
+DOCKED: ENDBRANCH   8   9
+DOCKED: ENDBRANCH   1   8
+DOCKED: TORSDOF 3
+DOCKED: TER
+DOCKED: ENDMDL
+________________________________________________________________________________
+
+
+    FINAL DOCKED STATE:
+    ________________________
+
+
+Run:   35 / 50
+Time taken for this run:   0.742s
+
+DOCKED: MODEL        35
+DOCKED: USER    Run = 35
+DOCKED: USER
+DOCKED: USER    Estimated Free Energy of Binding    =  -5.96 kcal/mol  [=(1)+(2)+(3)-(4)]
+DOCKED: USER
+DOCKED: USER    (1) Final Intermolecular Energy     =  -6.86 kcal/mol
+DOCKED: USER        vdW + Hbond + desolv Energy     =  -4.47 kcal/mol
+DOCKED: USER        Electrostatic Energy            =  -2.39 kcal/mol
+DOCKED: USER        Moving Ligand-Fixed Receptor    =  -6.86 kcal/mol
+DOCKED: USER        Moving Ligand-Moving Receptor   =  +0.00 kcal/mol
+DOCKED: USER    (2) Final Total Internal Energy     =  -0.20 kcal/mol
+DOCKED: USER    (3) Torsional Free Energy           =  +0.89 kcal/mol
+DOCKED: USER    (4) Unbound System's Energy         =  -0.20 kcal/mol
+DOCKED: USER
+DOCKED: USER
+DOCKED: REMARK  3 active torsions:
+DOCKED: REMARK  status: ('A' for Active; 'I' for Inactive)
+DOCKED: REMARK    1  A    between atoms: C1_2056  and  C2_2058 
+DOCKED: REMARK    2  A    between atoms: C2_2058  and  C3_2060 
+DOCKED: REMARK    3  A    between atoms: C3_2060  and  C4_2061 
+DOCKED: USER                              x       y       z     vdW  Elec       q    Type
+DOCKED: USER                           _______ _______ _______ _____ _____    ______ ____
+DOCKED: ROOT
+DOCKED: HETATM    1  C4  BRH A 611      42.506  15.918  15.609 -0.25 -0.03    +0.116 A  
+DOCKED: HETATM    2  C5  BRH A 611      42.271  16.713  14.498 -0.24 -0.02    +0.115 A  
+DOCKED: HETATM    3 BR1  BRH A 611      40.676  17.099  13.687 -0.76 +0.01    -0.042 Br 
+DOCKED: HETATM    4  C6  BRH A 611      43.636  17.188  14.105 -0.06 +0.07    +0.309 A  
+DOCKED: HETATM    5  O3  BRH A 611      43.920  17.953  13.125 -0.31 -0.09    -0.263 OA 
+DOCKED: HETATM    6  N2  BRH A 611      44.546  16.655  14.988 -0.56 -0.05    -0.083 NA 
+DOCKED: HETATM    7  O4  BRH A 611      43.881  15.908  15.874 -0.68 -0.11    -0.212 OA 
+DOCKED: ENDROOT
+DOCKED: BRANCH   1   8
+DOCKED: HETATM    8  C3  BRH A 611      41.647  15.134  16.508 -0.03 -0.06    +0.105 C  
+DOCKED: BRANCH   8   9
+DOCKED: HETATM    9  C2  BRH A 611      42.330  13.904  17.109 -0.06 -0.19    +0.394 C  
+DOCKED: HETATM   10  N1  BRH A 611      41.433  12.729  17.159 +0.05 -0.59    +0.628 N  
+DOCKED: BRANCH   9  11
+DOCKED: HETATM   11  C1  BRH A 611      42.779  14.316  18.560 -0.35 +0.15    +0.224 C  
+DOCKED: HETATM   12  O1  BRH A 611      43.831  15.040  18.661 -0.61 -0.92    -0.646 OA 
+DOCKED: HETATM   13  O2  BRH A 611      42.077  13.889  19.520 -0.61 -0.57    -0.646 OA 
+DOCKED: ENDBRANCH   9  11
+DOCKED: ENDBRANCH   8   9
+DOCKED: ENDBRANCH   1   8
+DOCKED: TORSDOF 3
+DOCKED: TER
+DOCKED: ENDMDL
+________________________________________________________________________________
+
+
+    FINAL DOCKED STATE:
+    ________________________
+
+
+Run:   36 / 50
+Time taken for this run:   0.742s
+
+DOCKED: MODEL        36
+DOCKED: USER    Run = 36
+DOCKED: USER
+DOCKED: USER    Estimated Free Energy of Binding    =  -5.95 kcal/mol  [=(1)+(2)+(3)-(4)]
+DOCKED: USER
+DOCKED: USER    (1) Final Intermolecular Energy     =  -6.84 kcal/mol
+DOCKED: USER        vdW + Hbond + desolv Energy     =  -4.44 kcal/mol
+DOCKED: USER        Electrostatic Energy            =  -2.40 kcal/mol
+DOCKED: USER        Moving Ligand-Fixed Receptor    =  -6.84 kcal/mol
+DOCKED: USER        Moving Ligand-Moving Receptor   =  +0.00 kcal/mol
+DOCKED: USER    (2) Final Total Internal Energy     =  -0.19 kcal/mol
+DOCKED: USER    (3) Torsional Free Energy           =  +0.89 kcal/mol
+DOCKED: USER    (4) Unbound System's Energy         =  -0.19 kcal/mol
+DOCKED: USER
+DOCKED: USER
+DOCKED: REMARK  3 active torsions:
+DOCKED: REMARK  status: ('A' for Active; 'I' for Inactive)
+DOCKED: REMARK    1  A    between atoms: C1_2056  and  C2_2058 
+DOCKED: REMARK    2  A    between atoms: C2_2058  and  C3_2060 
+DOCKED: REMARK    3  A    between atoms: C3_2060  and  C4_2061 
+DOCKED: USER                              x       y       z     vdW  Elec       q    Type
+DOCKED: USER                           _______ _______ _______ _____ _____    ______ ____
+DOCKED: ROOT
+DOCKED: HETATM    1  C4  BRH A 611      42.485  15.894  15.587 -0.25 -0.03    +0.116 A  
+DOCKED: HETATM    2  C5  BRH A 611      42.241  16.548  14.390 -0.23 -0.03    +0.115 A  
+DOCKED: HETATM    3 BR1  BRH A 611      40.659  16.715  13.482 -0.78 +0.02    -0.042 Br 
+DOCKED: HETATM    4  C6  BRH A 611      43.581  17.091  14.000 -0.04 +0.06    +0.309 A  
+DOCKED: HETATM    5  O3  BRH A 611      43.849  17.772  12.956 -0.31 -0.09    -0.263 OA 
+DOCKED: HETATM    6  N2  BRH A 611      44.488  16.730  14.969 -0.55 -0.05    -0.083 NA 
+DOCKED: HETATM    7  O4  BRH A 611      43.842  16.025  15.904 -0.68 -0.12    -0.212 OA 
+DOCKED: ENDROOT
+DOCKED: BRANCH   1   8
+DOCKED: HETATM    8  C3  BRH A 611      41.649  15.139  16.531 -0.01 -0.06    +0.105 C  
+DOCKED: BRANCH   8   9
+DOCKED: HETATM    9  C2  BRH A 611      42.331  13.901  17.117 -0.07 -0.18    +0.394 C  
+DOCKED: HETATM   10  N1  BRH A 611      41.426  12.732  17.172 +0.04 -0.58    +0.628 N  
+DOCKED: BRANCH   9  11
+DOCKED: HETATM   11  C1  BRH A 611      42.800  14.302  18.565 -0.34 +0.15    +0.224 C  
+DOCKED: HETATM   12  O1  BRH A 611      42.085  13.889  19.545 -0.61 -0.57    -0.646 OA 
+DOCKED: HETATM   13  O2  BRH A 611      43.840  15.014  18.654 -0.61 -0.91    -0.646 OA 
+DOCKED: ENDBRANCH   9  11
+DOCKED: ENDBRANCH   8   9
+DOCKED: ENDBRANCH   1   8
+DOCKED: TORSDOF 3
+DOCKED: TER
+DOCKED: ENDMDL
+________________________________________________________________________________
+
+
+    FINAL DOCKED STATE:
+    ________________________
+
+
+Run:   37 / 50
+Time taken for this run:   0.742s
+
+DOCKED: MODEL        37
+DOCKED: USER    Run = 37
+DOCKED: USER
+DOCKED: USER    Estimated Free Energy of Binding    =  -5.96 kcal/mol  [=(1)+(2)+(3)-(4)]
+DOCKED: USER
+DOCKED: USER    (1) Final Intermolecular Energy     =  -6.85 kcal/mol
+DOCKED: USER        vdW + Hbond + desolv Energy     =  -4.47 kcal/mol
+DOCKED: USER        Electrostatic Energy            =  -2.38 kcal/mol
+DOCKED: USER        Moving Ligand-Fixed Receptor    =  -6.85 kcal/mol
+DOCKED: USER        Moving Ligand-Moving Receptor   =  +0.00 kcal/mol
+DOCKED: USER    (2) Final Total Internal Energy     =  -0.20 kcal/mol
+DOCKED: USER    (3) Torsional Free Energy           =  +0.89 kcal/mol
+DOCKED: USER    (4) Unbound System's Energy         =  -0.20 kcal/mol
+DOCKED: USER
+DOCKED: USER
+DOCKED: REMARK  3 active torsions:
+DOCKED: REMARK  status: ('A' for Active; 'I' for Inactive)
+DOCKED: REMARK    1  A    between atoms: C1_2056  and  C2_2058 
+DOCKED: REMARK    2  A    between atoms: C2_2058  and  C3_2060 
+DOCKED: REMARK    3  A    between atoms: C3_2060  and  C4_2061 
+DOCKED: USER                              x       y       z     vdW  Elec       q    Type
+DOCKED: USER                           _______ _______ _______ _____ _____    ______ ____
+DOCKED: ROOT
+DOCKED: HETATM    1  C4  BRH A 611      42.468  15.897  15.595 -0.25 -0.03    +0.116 A  
+DOCKED: HETATM    2  C5  BRH A 611      42.222  16.603  14.428 -0.23 -0.03    +0.115 A  
+DOCKED: HETATM    3 BR1  BRH A 611      40.630  16.851  13.557 -0.78 +0.02    -0.042 Br 
+DOCKED: HETATM    4  C6  BRH A 611      43.570  17.122  14.033 -0.05 +0.06    +0.309 A  
+DOCKED: HETATM    5  O3  BRH A 611      43.840  17.834  13.010 -0.31 -0.09    -0.263 OA 
+DOCKED: HETATM    6  N2  BRH A 611      44.483  16.697  14.970 -0.56 -0.05    -0.083 NA 
+DOCKED: HETATM    7  O4  BRH A 611      43.834  15.976  15.890 -0.69 -0.11    -0.212 OA 
+DOCKED: ENDROOT
+DOCKED: BRANCH   1   8
+DOCKED: HETATM    8  C3  BRH A 611      41.627  15.131  16.525 -0.00 -0.06    +0.105 C  
+DOCKED: BRANCH   8   9
+DOCKED: HETATM    9  C2  BRH A 611      42.318  13.905  17.126 -0.08 -0.18    +0.394 C  
+DOCKED: HETATM   10  N1  BRH A 611      41.425  12.727  17.184 +0.04 -0.58    +0.628 N  
+DOCKED: BRANCH   9  11
+DOCKED: HETATM   11  C1  BRH A 611      42.772  14.323  18.574 -0.35 +0.15    +0.224 C  
+DOCKED: HETATM   12  O1  BRH A 611      43.824  15.049  18.669 -0.61 -0.92    -0.646 OA 
+DOCKED: HETATM   13  O2  BRH A 611      42.074  13.899  19.539 -0.60 -0.57    -0.646 OA 
+DOCKED: ENDBRANCH   9  11
+DOCKED: ENDBRANCH   8   9
+DOCKED: ENDBRANCH   1   8
+DOCKED: TORSDOF 3
+DOCKED: TER
+DOCKED: ENDMDL
+________________________________________________________________________________
+
+
+    FINAL DOCKED STATE:
+    ________________________
+
+
+Run:   38 / 50
+Time taken for this run:   0.742s
+
+DOCKED: MODEL        38
+DOCKED: USER    Run = 38
+DOCKED: USER
+DOCKED: USER    Estimated Free Energy of Binding    =  -5.94 kcal/mol  [=(1)+(2)+(3)-(4)]
+DOCKED: USER
+DOCKED: USER    (1) Final Intermolecular Energy     =  -6.83 kcal/mol
+DOCKED: USER        vdW + Hbond + desolv Energy     =  -4.38 kcal/mol
+DOCKED: USER        Electrostatic Energy            =  -2.45 kcal/mol
+DOCKED: USER        Moving Ligand-Fixed Receptor    =  -6.83 kcal/mol
+DOCKED: USER        Moving Ligand-Moving Receptor   =  +0.00 kcal/mol
+DOCKED: USER    (2) Final Total Internal Energy     =  -0.20 kcal/mol
+DOCKED: USER    (3) Torsional Free Energy           =  +0.89 kcal/mol
+DOCKED: USER    (4) Unbound System's Energy         =  -0.20 kcal/mol
+DOCKED: USER
+DOCKED: USER
+DOCKED: REMARK  3 active torsions:
+DOCKED: REMARK  status: ('A' for Active; 'I' for Inactive)
+DOCKED: REMARK    1  A    between atoms: C1_2056  and  C2_2058 
+DOCKED: REMARK    2  A    between atoms: C2_2058  and  C3_2060 
+DOCKED: REMARK    3  A    between atoms: C3_2060  and  C4_2061 
+DOCKED: USER                              x       y       z     vdW  Elec       q    Type
+DOCKED: USER                           _______ _______ _______ _____ _____    ______ ____
+DOCKED: ROOT
+DOCKED: HETATM    1  C4  BRH A 611      42.511  15.922  15.567 -0.25 -0.03    +0.116 A  
+DOCKED: HETATM    2  C5  BRH A 611      42.256  16.616  14.394 -0.23 -0.02    +0.115 A  
+DOCKED: HETATM    3 BR1  BRH A 611      40.662  16.833  13.518 -0.79 +0.02    -0.042 Br 
+DOCKED: HETATM    4  C6  BRH A 611      43.597  17.154  14.000 -0.04 +0.07    +0.309 A  
+DOCKED: HETATM    5  O3  BRH A 611      43.857  17.864  12.972 -0.32 -0.09    -0.263 OA 
+DOCKED: HETATM    6  N2  BRH A 611      44.515  16.750  14.941 -0.55 -0.05    -0.083 NA 
+DOCKED: HETATM    7  O4  BRH A 611      43.875  16.026  15.864 -0.66 -0.12    -0.212 OA 
+DOCKED: ENDROOT
+DOCKED: BRANCH   1   8
+DOCKED: HETATM    8  C3  BRH A 611      41.680  15.149  16.500 -0.05 -0.06    +0.105 C  
+DOCKED: BRANCH   8   9
+DOCKED: HETATM    9  C2  BRH A 611      42.377  13.918  17.083 -0.04 -0.18    +0.394 C  
+DOCKED: HETATM   10  N1  BRH A 611      41.495  12.730  17.108 +0.09 -0.63    +0.628 N  
+DOCKED: BRANCH   9  11
+DOCKED: HETATM   11  C1  BRH A 611      42.813  14.310  18.543 -0.34 +0.15    +0.224 C  
+DOCKED: HETATM   12  O1  BRH A 611      43.877  15.012  18.666 -0.60 -0.93    -0.646 OA 
+DOCKED: HETATM   13  O2  BRH A 611      42.088  13.890  19.491 -0.61 -0.56    -0.646 OA 
+DOCKED: ENDBRANCH   9  11
+DOCKED: ENDBRANCH   8   9
+DOCKED: ENDBRANCH   1   8
+DOCKED: TORSDOF 3
+DOCKED: TER
+DOCKED: ENDMDL
+________________________________________________________________________________
+
+
+    FINAL DOCKED STATE:
+    ________________________
+
+
+Run:   39 / 50
+Time taken for this run:   0.742s
+
+DOCKED: MODEL        39
+DOCKED: USER    Run = 39
+DOCKED: USER
+DOCKED: USER    Estimated Free Energy of Binding    =  -5.70 kcal/mol  [=(1)+(2)+(3)-(4)]
+DOCKED: USER
+DOCKED: USER    (1) Final Intermolecular Energy     =  -6.60 kcal/mol
+DOCKED: USER        vdW + Hbond + desolv Energy     =  -4.10 kcal/mol
+DOCKED: USER        Electrostatic Energy            =  -2.50 kcal/mol
+DOCKED: USER        Moving Ligand-Fixed Receptor    =  -6.60 kcal/mol
+DOCKED: USER        Moving Ligand-Moving Receptor   =  +0.00 kcal/mol
+DOCKED: USER    (2) Final Total Internal Energy     =  -0.21 kcal/mol
+DOCKED: USER    (3) Torsional Free Energy           =  +0.89 kcal/mol
+DOCKED: USER    (4) Unbound System's Energy         =  -0.21 kcal/mol
+DOCKED: USER
+DOCKED: USER
+DOCKED: REMARK  3 active torsions:
+DOCKED: REMARK  status: ('A' for Active; 'I' for Inactive)
+DOCKED: REMARK    1  A    between atoms: C1_2056  and  C2_2058 
+DOCKED: REMARK    2  A    between atoms: C2_2058  and  C3_2060 
+DOCKED: REMARK    3  A    between atoms: C3_2060  and  C4_2061 
+DOCKED: USER                              x       y       z     vdW  Elec       q    Type
+DOCKED: USER                           _______ _______ _______ _____ _____    ______ ____
+DOCKED: ROOT
+DOCKED: HETATM    1  C4  BRH A 611      42.619  16.164  15.609 -0.27 -0.01    +0.116 A  
+DOCKED: HETATM    2  C5  BRH A 611      42.184  16.583  14.362 -0.23 -0.03    +0.115 A  
+DOCKED: HETATM    3 BR1  BRH A 611      40.495  16.512  13.658 -0.71 +0.02    -0.042 Br 
+DOCKED: HETATM    4  C6  BRH A 611      43.426  17.112  13.711 -0.06 +0.06    +0.309 A  
+DOCKED: HETATM    5  O3  BRH A 611      43.515  17.608  12.539 -0.37 -0.09    -0.263 OA 
+DOCKED: HETATM    6  N2  BRH A 611      44.468  16.970  14.597 -0.30 -0.04    -0.083 NA 
+DOCKED: HETATM    7  O4  BRH A 611      43.993  16.413  15.715 -0.52 -0.14    -0.212 OA 
+DOCKED: ENDROOT
+DOCKED: BRANCH   1   8
+DOCKED: HETATM    8  C3  BRH A 611      41.960  15.550  16.771 -0.17 -0.02    +0.105 C  
+DOCKED: BRANCH   8   9
+DOCKED: HETATM    9  C2  BRH A 611      42.557  14.204  17.187 -0.13 -0.08    +0.394 C  
+DOCKED: HETATM   10  N1  BRH A 611      41.576  13.101  17.097 +0.09 -0.59    +0.628 N  
+DOCKED: BRANCH   9  11
+DOCKED: HETATM   11  C1  BRH A 611      43.049  14.382  18.671 -0.33 +0.19    +0.224 C  
+DOCKED: HETATM   12  O1  BRH A 611      42.303  13.901  19.595 -0.61 -0.64    -0.646 OA 
+DOCKED: HETATM   13  O2  BRH A 611      44.138  15.001  18.844 -0.49 -1.12    -0.646 OA 
+DOCKED: ENDBRANCH   9  11
+DOCKED: ENDBRANCH   8   9
+DOCKED: ENDBRANCH   1   8
+DOCKED: TORSDOF 3
+DOCKED: TER
+DOCKED: ENDMDL
+________________________________________________________________________________
+
+
+    FINAL DOCKED STATE:
+    ________________________
+
+
+Run:   40 / 50
+Time taken for this run:   0.742s
+
+DOCKED: MODEL        40
+DOCKED: USER    Run = 40
+DOCKED: USER
+DOCKED: USER    Estimated Free Energy of Binding    =  -5.92 kcal/mol  [=(1)+(2)+(3)-(4)]
+DOCKED: USER
+DOCKED: USER    (1) Final Intermolecular Energy     =  -6.82 kcal/mol
+DOCKED: USER        vdW + Hbond + desolv Energy     =  -4.41 kcal/mol
+DOCKED: USER        Electrostatic Energy            =  -2.41 kcal/mol
+DOCKED: USER        Moving Ligand-Fixed Receptor    =  -6.82 kcal/mol
+DOCKED: USER        Moving Ligand-Moving Receptor   =  +0.00 kcal/mol
+DOCKED: USER    (2) Final Total Internal Energy     =  -0.19 kcal/mol
+DOCKED: USER    (3) Torsional Free Energy           =  +0.89 kcal/mol
+DOCKED: USER    (4) Unbound System's Energy         =  -0.19 kcal/mol
+DOCKED: USER
+DOCKED: USER
+DOCKED: REMARK  3 active torsions:
+DOCKED: REMARK  status: ('A' for Active; 'I' for Inactive)
+DOCKED: REMARK    1  A    between atoms: C1_2056  and  C2_2058 
+DOCKED: REMARK    2  A    between atoms: C2_2058  and  C3_2060 
+DOCKED: REMARK    3  A    between atoms: C3_2060  and  C4_2061 
+DOCKED: USER                              x       y       z     vdW  Elec       q    Type
+DOCKED: USER                           _______ _______ _______ _____ _____    ______ ____
+DOCKED: ROOT
+DOCKED: HETATM    1  C4  BRH A 611      42.468  15.893  15.571 -0.24 -0.03    +0.116 A  
+DOCKED: HETATM    2  C5  BRH A 611      42.233  16.465  14.331 -0.23 -0.03    +0.115 A  
+DOCKED: HETATM    3 BR1  BRH A 611      40.676  16.507  13.368 -0.77 +0.02    -0.042 Br 
+DOCKED: HETATM    4  C6  BRH A 611      43.560  17.046  13.950 -0.03 +0.06    +0.309 A  
+DOCKED: HETATM    5  O3  BRH A 611      43.831  17.677  12.875 -0.32 -0.10    -0.263 OA 
+DOCKED: HETATM    6  N2  BRH A 611      44.451  16.782  14.964 -0.54 -0.05    -0.083 NA 
+DOCKED: HETATM    7  O4  BRH A 611      43.807  16.104  15.919 -0.67 -0.12    -0.212 OA 
+DOCKED: ENDROOT
+DOCKED: BRANCH   1   8
+DOCKED: HETATM    8  C3  BRH A 611      41.636  15.156  16.533 +0.00 -0.06    +0.105 C  
+DOCKED: BRANCH   8   9
+DOCKED: HETATM    9  C2  BRH A 611      42.310  13.912  17.116 -0.07 -0.19    +0.394 C  
+DOCKED: HETATM   10  N1  BRH A 611      41.399  12.747  17.162 +0.03 -0.59    +0.628 N  
+DOCKED: BRANCH   9  11
+DOCKED: HETATM   11  C1  BRH A 611      42.775  14.303  18.567 -0.35 +0.15    +0.224 C  
+DOCKED: HETATM   12  O1  BRH A 611      42.053  13.890  19.542 -0.60 -0.56    -0.646 OA 
+DOCKED: HETATM   13  O2  BRH A 611      43.819  15.009  18.664 -0.61 -0.91    -0.646 OA 
+DOCKED: ENDBRANCH   9  11
+DOCKED: ENDBRANCH   8   9
+DOCKED: ENDBRANCH   1   8
+DOCKED: TORSDOF 3
+DOCKED: TER
+DOCKED: ENDMDL
+________________________________________________________________________________
+
+
+    FINAL DOCKED STATE:
+    ________________________
+
+
+Run:   41 / 50
+Time taken for this run:   0.742s
+
+DOCKED: MODEL        41
+DOCKED: USER    Run = 41
+DOCKED: USER
+DOCKED: USER    Estimated Free Energy of Binding    =  -5.96 kcal/mol  [=(1)+(2)+(3)-(4)]
+DOCKED: USER
+DOCKED: USER    (1) Final Intermolecular Energy     =  -6.85 kcal/mol
+DOCKED: USER        vdW + Hbond + desolv Energy     =  -4.47 kcal/mol
+DOCKED: USER        Electrostatic Energy            =  -2.39 kcal/mol
+DOCKED: USER        Moving Ligand-Fixed Receptor    =  -6.85 kcal/mol
+DOCKED: USER        Moving Ligand-Moving Receptor   =  +0.00 kcal/mol
+DOCKED: USER    (2) Final Total Internal Energy     =  -0.20 kcal/mol
+DOCKED: USER    (3) Torsional Free Energy           =  +0.89 kcal/mol
+DOCKED: USER    (4) Unbound System's Energy         =  -0.20 kcal/mol
+DOCKED: USER
+DOCKED: USER
+DOCKED: REMARK  3 active torsions:
+DOCKED: REMARK  status: ('A' for Active; 'I' for Inactive)
+DOCKED: REMARK    1  A    between atoms: C1_2056  and  C2_2058 
+DOCKED: REMARK    2  A    between atoms: C2_2058  and  C3_2060 
+DOCKED: REMARK    3  A    between atoms: C3_2060  and  C4_2061 
+DOCKED: USER                              x       y       z     vdW  Elec       q    Type
+DOCKED: USER                           _______ _______ _______ _____ _____    ______ ____
+DOCKED: ROOT
+DOCKED: HETATM    1  C4  BRH A 611      42.510  15.919  15.623 -0.25 -0.03    +0.116 A  
+DOCKED: HETATM    2  C5  BRH A 611      42.275  16.714  14.512 -0.24 -0.02    +0.115 A  
+DOCKED: HETATM    3 BR1  BRH A 611      40.679  17.097  13.699 -0.76 +0.01    -0.042 Br 
+DOCKED: HETATM    4  C6  BRH A 611      43.639  17.194  14.121 -0.06 +0.07    +0.309 A  
+DOCKED: HETATM    5  O3  BRH A 611      43.922  17.960  13.142 -0.31 -0.09    -0.263 OA 
+DOCKED: HETATM    6  N2  BRH A 611      44.549  16.662  15.005 -0.56 -0.05    -0.083 NA 
+DOCKED: HETATM    7  O4  BRH A 611      43.884  15.912  15.889 -0.68 -0.12    -0.212 OA 
+DOCKED: ENDROOT
+DOCKED: BRANCH   1   8
+DOCKED: HETATM    8  C3  BRH A 611      41.652  15.132  16.519 -0.02 -0.06    +0.105 C  
+DOCKED: BRANCH   8   9
+DOCKED: HETATM    9  C2  BRH A 611      42.338  13.905  17.122 -0.07 -0.18    +0.394 C  
+DOCKED: HETATM   10  N1  BRH A 611      41.443  12.728  17.175 +0.04 -0.58    +0.628 N  
+DOCKED: BRANCH   9  11
+DOCKED: HETATM   11  C1  BRH A 611      42.787  14.320  18.572 -0.34 +0.15    +0.224 C  
+DOCKED: HETATM   12  O1  BRH A 611      43.831  15.055  18.672 -0.61 -0.92    -0.646 OA 
+DOCKED: HETATM   13  O2  BRH A 611      42.091  13.885  19.534 -0.60 -0.57    -0.646 OA 
+DOCKED: ENDBRANCH   9  11
+DOCKED: ENDBRANCH   8   9
+DOCKED: ENDBRANCH   1   8
+DOCKED: TORSDOF 3
+DOCKED: TER
+DOCKED: ENDMDL
+________________________________________________________________________________
+
+
+    FINAL DOCKED STATE:
+    ________________________
+
+
+Run:   42 / 50
+Time taken for this run:   0.742s
+
+DOCKED: MODEL        42
+DOCKED: USER    Run = 42
+DOCKED: USER
+DOCKED: USER    Estimated Free Energy of Binding    =  -5.87 kcal/mol  [=(1)+(2)+(3)-(4)]
+DOCKED: USER
+DOCKED: USER    (1) Final Intermolecular Energy     =  -6.77 kcal/mol
+DOCKED: USER        vdW + Hbond + desolv Energy     =  -4.39 kcal/mol
+DOCKED: USER        Electrostatic Energy            =  -2.37 kcal/mol
+DOCKED: USER        Moving Ligand-Fixed Receptor    =  -6.77 kcal/mol
+DOCKED: USER        Moving Ligand-Moving Receptor   =  +0.00 kcal/mol
+DOCKED: USER    (2) Final Total Internal Energy     =  -0.20 kcal/mol
+DOCKED: USER    (3) Torsional Free Energy           =  +0.89 kcal/mol
+DOCKED: USER    (4) Unbound System's Energy         =  -0.20 kcal/mol
+DOCKED: USER
+DOCKED: USER
+DOCKED: REMARK  3 active torsions:
+DOCKED: REMARK  status: ('A' for Active; 'I' for Inactive)
+DOCKED: REMARK    1  A    between atoms: C1_2056  and  C2_2058 
+DOCKED: REMARK    2  A    between atoms: C2_2058  and  C3_2060 
+DOCKED: REMARK    3  A    between atoms: C3_2060  and  C4_2061 
+DOCKED: USER                              x       y       z     vdW  Elec       q    Type
+DOCKED: USER                           _______ _______ _______ _____ _____    ______ ____
+DOCKED: ROOT
+DOCKED: HETATM    1  C4  BRH A 611      42.500  16.007  15.559 -0.25 -0.02    +0.116 A  
+DOCKED: HETATM    2  C5  BRH A 611      42.259  16.793  14.443 -0.24 -0.02    +0.115 A  
+DOCKED: HETATM    3 BR1  BRH A 611      40.660  17.161  13.630 -0.77 +0.01    -0.042 Br 
+DOCKED: HETATM    4  C6  BRH A 611      43.619  17.279  14.048 -0.06 +0.07    +0.309 A  
+DOCKED: HETATM    5  O3  BRH A 611      43.896  18.041  13.063 -0.32 -0.09    -0.263 OA 
+DOCKED: HETATM    6  N2  BRH A 611      44.534  16.759  14.934 -0.55 -0.05    -0.083 NA 
+DOCKED: HETATM    7  O4  BRH A 611      43.875  16.011  15.824 -0.66 -0.11    -0.212 OA 
+DOCKED: ENDROOT
+DOCKED: BRANCH   1   8
+DOCKED: HETATM    8  C3  BRH A 611      41.648  15.221  16.462 -0.04 -0.06    +0.105 C  
+DOCKED: BRANCH   8   9
+DOCKED: HETATM    9  C2  BRH A 611      42.344  14.004  17.075 -0.06 -0.18    +0.394 C  
+DOCKED: HETATM   10  N1  BRH A 611      41.448  12.831  17.172 +0.02 -0.57    +0.628 N  
+DOCKED: BRANCH   9  11
+DOCKED: HETATM   11  C1  BRH A 611      42.825  14.448  18.506 -0.34 +0.15    +0.224 C  
+DOCKED: HETATM   12  O1  BRH A 611      42.251  13.898  19.511 -0.62 -0.61    -0.646 OA 
+DOCKED: HETATM   13  O2  BRH A 611      43.733  15.326  18.560 -0.51 -0.89    -0.646 OA 
+DOCKED: ENDBRANCH   9  11
+DOCKED: ENDBRANCH   8   9
+DOCKED: ENDBRANCH   1   8
+DOCKED: TORSDOF 3
+DOCKED: TER
+DOCKED: ENDMDL
+________________________________________________________________________________
+
+
+    FINAL DOCKED STATE:
+    ________________________
+
+
+Run:   43 / 50
+Time taken for this run:   0.742s
+
+DOCKED: MODEL        43
+DOCKED: USER    Run = 43
+DOCKED: USER
+DOCKED: USER    Estimated Free Energy of Binding    =  -5.90 kcal/mol  [=(1)+(2)+(3)-(4)]
+DOCKED: USER
+DOCKED: USER    (1) Final Intermolecular Energy     =  -6.80 kcal/mol
+DOCKED: USER        vdW + Hbond + desolv Energy     =  -4.39 kcal/mol
+DOCKED: USER        Electrostatic Energy            =  -2.40 kcal/mol
+DOCKED: USER        Moving Ligand-Fixed Receptor    =  -6.80 kcal/mol
+DOCKED: USER        Moving Ligand-Moving Receptor   =  +0.00 kcal/mol
+DOCKED: USER    (2) Final Total Internal Energy     =  -0.20 kcal/mol
+DOCKED: USER    (3) Torsional Free Energy           =  +0.89 kcal/mol
+DOCKED: USER    (4) Unbound System's Energy         =  -0.20 kcal/mol
+DOCKED: USER
+DOCKED: USER
+DOCKED: REMARK  3 active torsions:
+DOCKED: REMARK  status: ('A' for Active; 'I' for Inactive)
+DOCKED: REMARK    1  A    between atoms: C1_2056  and  C2_2058 
+DOCKED: REMARK    2  A    between atoms: C2_2058  and  C3_2060 
+DOCKED: REMARK    3  A    between atoms: C3_2060  and  C4_2061 
+DOCKED: USER                              x       y       z     vdW  Elec       q    Type
+DOCKED: USER                           _______ _______ _______ _____ _____    ______ ____
+DOCKED: ROOT
+DOCKED: HETATM    1  C4  BRH A 611      42.525  15.995  15.561 -0.26 -0.02    +0.116 A  
+DOCKED: HETATM    2  C5  BRH A 611      42.273  16.822  14.478 -0.24 -0.02    +0.115 A  
+DOCKED: HETATM    3 BR1  BRH A 611      40.664  17.238  13.709 -0.76 +0.01    -0.042 Br 
+DOCKED: HETATM    4  C6  BRH A 611      43.632  17.302  14.072 -0.07 +0.07    +0.309 A  
+DOCKED: HETATM    5  O3  BRH A 611      43.901  18.094  13.109 -0.33 -0.08    -0.263 OA 
+DOCKED: HETATM    6  N2  BRH A 611      44.556  16.740  14.922 -0.55 -0.05    -0.083 NA 
+DOCKED: HETATM    7  O4  BRH A 611      43.904  15.971  15.799 -0.66 -0.11    -0.212 OA 
+DOCKED: ENDROOT
+DOCKED: BRANCH   1   8
+DOCKED: HETATM    8  C3  BRH A 611      41.679  15.189  16.453 -0.07 -0.06    +0.105 C  
+DOCKED: BRANCH   8   9
+DOCKED: HETATM    9  C2  BRH A 611      42.391  13.981  17.065 -0.04 -0.18    +0.394 C  
+DOCKED: HETATM   10  N1  BRH A 611      41.518  12.788  17.133 +0.06 -0.60    +0.628 N  
+DOCKED: BRANCH   9  11
+DOCKED: HETATM   11  C1  BRH A 611      42.838  14.419  18.509 -0.34 +0.15    +0.224 C  
+DOCKED: HETATM   12  O1  BRH A 611      43.815  15.244  18.592 -0.54 -0.92    -0.646 OA 
+DOCKED: HETATM   13  O2  BRH A 611      42.210  13.912  19.482 -0.62 -0.59    -0.646 OA 
+DOCKED: ENDBRANCH   9  11
+DOCKED: ENDBRANCH   8   9
+DOCKED: ENDBRANCH   1   8
+DOCKED: TORSDOF 3
+DOCKED: TER
+DOCKED: ENDMDL
+________________________________________________________________________________
+
+
+    FINAL DOCKED STATE:
+    ________________________
+
+
+Run:   44 / 50
+Time taken for this run:   0.742s
+
+DOCKED: MODEL        44
+DOCKED: USER    Run = 44
+DOCKED: USER
+DOCKED: USER    Estimated Free Energy of Binding    =  -5.92 kcal/mol  [=(1)+(2)+(3)-(4)]
+DOCKED: USER
+DOCKED: USER    (1) Final Intermolecular Energy     =  -6.82 kcal/mol
+DOCKED: USER        vdW + Hbond + desolv Energy     =  -4.42 kcal/mol
+DOCKED: USER        Electrostatic Energy            =  -2.40 kcal/mol
+DOCKED: USER        Moving Ligand-Fixed Receptor    =  -6.82 kcal/mol
+DOCKED: USER        Moving Ligand-Moving Receptor   =  +0.00 kcal/mol
+DOCKED: USER    (2) Final Total Internal Energy     =  -0.19 kcal/mol
+DOCKED: USER    (3) Torsional Free Energy           =  +0.89 kcal/mol
+DOCKED: USER    (4) Unbound System's Energy         =  -0.19 kcal/mol
+DOCKED: USER
+DOCKED: USER
+DOCKED: REMARK  3 active torsions:
+DOCKED: REMARK  status: ('A' for Active; 'I' for Inactive)
+DOCKED: REMARK    1  A    between atoms: C1_2056  and  C2_2058 
+DOCKED: REMARK    2  A    between atoms: C2_2058  and  C3_2060 
+DOCKED: REMARK    3  A    between atoms: C3_2060  and  C4_2061 
+DOCKED: USER                              x       y       z     vdW  Elec       q    Type
+DOCKED: USER                           _______ _______ _______ _____ _____    ______ ____
+DOCKED: ROOT
+DOCKED: HETATM    1  C4  BRH A 611      42.491  15.917  15.579 -0.25 -0.03    +0.116 A  
+DOCKED: HETATM    2  C5  BRH A 611      42.252  16.524  14.356 -0.23 -0.03    +0.115 A  
+DOCKED: HETATM    3 BR1  BRH A 611      40.681  16.631  13.421 -0.78 +0.02    -0.042 Br 
+DOCKED: HETATM    4  C6  BRH A 611      43.588  17.079  13.967 -0.03 +0.06    +0.309 A  
+DOCKED: HETATM    5  O3  BRH A 611      43.859  17.728  12.903 -0.31 -0.10    -0.263 OA 
+DOCKED: HETATM    6  N2  BRH A 611      44.487  16.767  14.960 -0.54 -0.05    -0.083 NA 
+DOCKED: HETATM    7  O4  BRH A 611      43.841  16.084  15.909 -0.67 -0.13    -0.212 OA 
+DOCKED: ENDROOT
+DOCKED: BRANCH   1   8
+DOCKED: HETATM    8  C3  BRH A 611      41.655  15.179  16.537 -0.01 -0.06    +0.105 C  
+DOCKED: BRANCH   8   9
+DOCKED: HETATM    9  C2  BRH A 611      42.327  13.937  17.125 -0.08 -0.18    +0.394 C  
+DOCKED: HETATM   10  N1  BRH A 611      41.412  12.776  17.184 +0.02 -0.57    +0.628 N  
+DOCKED: BRANCH   9  11
+DOCKED: HETATM   11  C1  BRH A 611      42.802  14.338  18.571 -0.34 +0.15    +0.224 C  
+DOCKED: HETATM   12  O1  BRH A 611      42.106  13.902  19.555 -0.60 -0.58    -0.646 OA 
+DOCKED: HETATM   13  O2  BRH A 611      43.827  15.072  18.655 -0.60 -0.92    -0.646 OA 
+DOCKED: ENDBRANCH   9  11
+DOCKED: ENDBRANCH   8   9
+DOCKED: ENDBRANCH   1   8
+DOCKED: TORSDOF 3
+DOCKED: TER
+DOCKED: ENDMDL
+________________________________________________________________________________
+
+
+    FINAL DOCKED STATE:
+    ________________________
+
+
+Run:   45 / 50
+Time taken for this run:   0.742s
+
+DOCKED: MODEL        45
+DOCKED: USER    Run = 45
+DOCKED: USER
+DOCKED: USER    Estimated Free Energy of Binding    =  -5.90 kcal/mol  [=(1)+(2)+(3)-(4)]
+DOCKED: USER
+DOCKED: USER    (1) Final Intermolecular Energy     =  -6.79 kcal/mol
+DOCKED: USER        vdW + Hbond + desolv Energy     =  -4.40 kcal/mol
+DOCKED: USER        Electrostatic Energy            =  -2.39 kcal/mol
+DOCKED: USER        Moving Ligand-Fixed Receptor    =  -6.79 kcal/mol
+DOCKED: USER        Moving Ligand-Moving Receptor   =  +0.00 kcal/mol
+DOCKED: USER    (2) Final Total Internal Energy     =  -0.20 kcal/mol
+DOCKED: USER    (3) Torsional Free Energy           =  +0.89 kcal/mol
+DOCKED: USER    (4) Unbound System's Energy         =  -0.20 kcal/mol
+DOCKED: USER
+DOCKED: USER
+DOCKED: REMARK  3 active torsions:
+DOCKED: REMARK  status: ('A' for Active; 'I' for Inactive)
+DOCKED: REMARK    1  A    between atoms: C1_2056  and  C2_2058 
+DOCKED: REMARK    2  A    between atoms: C2_2058  and  C3_2060 
+DOCKED: REMARK    3  A    between atoms: C3_2060  and  C4_2061 
+DOCKED: USER                              x       y       z     vdW  Elec       q    Type
+DOCKED: USER                           _______ _______ _______ _____ _____    ______ ____
+DOCKED: ROOT
+DOCKED: HETATM    1  C4  BRH A 611      42.525  15.982  15.584 -0.26 -0.02    +0.116 A  
+DOCKED: HETATM    2  C5  BRH A 611      42.272  16.813  14.504 -0.24 -0.02    +0.115 A  
+DOCKED: HETATM    3 BR1  BRH A 611      40.663  17.222  13.730 -0.76 +0.01    -0.042 Br 
+DOCKED: HETATM    4  C6  BRH A 611      43.629  17.305  14.107 -0.07 +0.07    +0.309 A  
+DOCKED: HETATM    5  O3  BRH A 611      43.896  18.104  13.149 -0.33 -0.08    -0.263 OA 
+DOCKED: HETATM    6  N2  BRH A 611      44.554  16.745  14.958 -0.54 -0.05    -0.083 NA 
+DOCKED: HETATM    7  O4  BRH A 611      43.903  15.967  15.827 -0.66 -0.12    -0.212 OA 
+DOCKED: ENDROOT
+DOCKED: BRANCH   1   8
+DOCKED: HETATM    8  C3  BRH A 611      41.681  15.166  16.468 -0.06 -0.06    +0.105 C  
+DOCKED: BRANCH   8   9
+DOCKED: HETATM    9  C2  BRH A 611      42.400  13.962  17.081 -0.04 -0.17    +0.394 C  
+DOCKED: HETATM   10  N1  BRH A 611      41.529  12.770  17.168 +0.04 -0.58    +0.628 N  
+DOCKED: BRANCH   9  11
+DOCKED: HETATM   11  C1  BRH A 611      42.863  14.411  18.516 -0.34 +0.16    +0.224 C  
+DOCKED: HETATM   12  O1  BRH A 611      42.241  13.903  19.515 -0.62 -0.61    -0.646 OA 
+DOCKED: HETATM   13  O2  BRH A 611      43.805  15.251  18.579 -0.53 -0.91    -0.646 OA 
+DOCKED: ENDBRANCH   9  11
+DOCKED: ENDBRANCH   8   9
+DOCKED: ENDBRANCH   1   8
+DOCKED: TORSDOF 3
+DOCKED: TER
+DOCKED: ENDMDL
+________________________________________________________________________________
+
+
+    FINAL DOCKED STATE:
+    ________________________
+
+
+Run:   46 / 50
+Time taken for this run:   0.742s
+
+DOCKED: MODEL        46
+DOCKED: USER    Run = 46
+DOCKED: USER
+DOCKED: USER    Estimated Free Energy of Binding    =  -5.05 kcal/mol  [=(1)+(2)+(3)-(4)]
+DOCKED: USER
+DOCKED: USER    (1) Final Intermolecular Energy     =  -5.95 kcal/mol
+DOCKED: USER        vdW + Hbond + desolv Energy     =  -3.88 kcal/mol
+DOCKED: USER        Electrostatic Energy            =  -2.06 kcal/mol
+DOCKED: USER        Moving Ligand-Fixed Receptor    =  -5.95 kcal/mol
+DOCKED: USER        Moving Ligand-Moving Receptor   =  +0.00 kcal/mol
+DOCKED: USER    (2) Final Total Internal Energy     =  -0.32 kcal/mol
+DOCKED: USER    (3) Torsional Free Energy           =  +0.89 kcal/mol
+DOCKED: USER    (4) Unbound System's Energy         =  -0.32 kcal/mol
+DOCKED: USER
+DOCKED: USER
+DOCKED: REMARK  3 active torsions:
+DOCKED: REMARK  status: ('A' for Active; 'I' for Inactive)
+DOCKED: REMARK    1  A    between atoms: C1_2056  and  C2_2058 
+DOCKED: REMARK    2  A    between atoms: C2_2058  and  C3_2060 
+DOCKED: REMARK    3  A    between atoms: C3_2060  and  C4_2061 
+DOCKED: USER                              x       y       z     vdW  Elec       q    Type
+DOCKED: USER                           _______ _______ _______ _____ _____    ______ ____
+DOCKED: ROOT
+DOCKED: HETATM    1  C4  BRH A 611      41.909  16.328  15.409 -0.22 -0.04    +0.116 A  
+DOCKED: HETATM    2  C5  BRH A 611      42.377  17.053  14.325 -0.24 -0.01    +0.115 A  
+DOCKED: HETATM    3 BR1  BRH A 611      43.930  18.012  14.176 -0.77 -0.01    -0.042 Br 
+DOCKED: HETATM    4  C6  BRH A 611      41.311  16.872  13.288 -0.10 -0.07    +0.309 A  
+DOCKED: HETATM    5  O3  BRH A 611      41.305  17.364  12.112 -0.28 -0.02    -0.263 OA 
+DOCKED: HETATM    6  N2  BRH A 611      40.324  16.078  13.824 -0.30 +0.06    -0.083 NA 
+DOCKED: HETATM    7  O4  BRH A 611      40.676  15.757  15.072 -0.28 +0.22    -0.212 OA 
+DOCKED: ENDROOT
+DOCKED: BRANCH   1   8
+DOCKED: HETATM    8  C3  BRH A 611      42.423  16.059  16.760 -0.31 +0.02    +0.105 C  
+DOCKED: BRANCH   8   9
+DOCKED: HETATM    9  C2  BRH A 611      42.568  14.571  17.088 -0.15 -0.05    +0.394 C  
+DOCKED: HETATM   10  N1  BRH A 611      41.296  13.833  16.926 +0.19 -0.60    +0.628 N  
+DOCKED: BRANCH   9  11
+DOCKED: HETATM   11  C1  BRH A 611      43.062  14.496  18.579 -0.33 +0.19    +0.224 C  
+DOCKED: HETATM   12  O1  BRH A 611      44.206  15.010  18.842 -0.47 -1.15    -0.646 OA 
+DOCKED: HETATM   13  O2  BRH A 611      42.300  13.920  19.408 -0.63 -0.60    -0.646 OA 
+DOCKED: ENDBRANCH   9  11
+DOCKED: ENDBRANCH   8   9
+DOCKED: ENDBRANCH   1   8
+DOCKED: TORSDOF 3
+DOCKED: TER
+DOCKED: ENDMDL
+________________________________________________________________________________
+
+
+    FINAL DOCKED STATE:
+    ________________________
+
+
+Run:   47 / 50
+Time taken for this run:   0.742s
+
+DOCKED: MODEL        47
+DOCKED: USER    Run = 47
+DOCKED: USER
+DOCKED: USER    Estimated Free Energy of Binding    =  -5.90 kcal/mol  [=(1)+(2)+(3)-(4)]
+DOCKED: USER
+DOCKED: USER    (1) Final Intermolecular Energy     =  -6.80 kcal/mol
+DOCKED: USER        vdW + Hbond + desolv Energy     =  -4.42 kcal/mol
+DOCKED: USER        Electrostatic Energy            =  -2.38 kcal/mol
+DOCKED: USER        Moving Ligand-Fixed Receptor    =  -6.80 kcal/mol
+DOCKED: USER        Moving Ligand-Moving Receptor   =  +0.00 kcal/mol
+DOCKED: USER    (2) Final Total Internal Energy     =  -0.20 kcal/mol
+DOCKED: USER    (3) Torsional Free Energy           =  +0.89 kcal/mol
+DOCKED: USER    (4) Unbound System's Energy         =  -0.20 kcal/mol
+DOCKED: USER
+DOCKED: USER
+DOCKED: REMARK  3 active torsions:
+DOCKED: REMARK  status: ('A' for Active; 'I' for Inactive)
+DOCKED: REMARK    1  A    between atoms: C1_2056  and  C2_2058 
+DOCKED: REMARK    2  A    between atoms: C2_2058  and  C3_2060 
+DOCKED: REMARK    3  A    between atoms: C3_2060  and  C4_2061 
+DOCKED: USER                              x       y       z     vdW  Elec       q    Type
+DOCKED: USER                           _______ _______ _______ _____ _____    ______ ____
+DOCKED: ROOT
+DOCKED: HETATM    1  C4  BRH A 611      42.525  15.994  15.625 -0.26 -0.02    +0.116 A  
+DOCKED: HETATM    2  C5  BRH A 611      42.268  16.711  14.467 -0.24 -0.02    +0.115 A  
+DOCKED: HETATM    3 BR1  BRH A 611      40.658  17.036  13.657 -0.77 +0.02    -0.042 Br 
+DOCKED: HETATM    4  C6  BRH A 611      43.625  17.165  14.022 -0.04 +0.07    +0.309 A  
+DOCKED: HETATM    5  O3  BRH A 611      43.889  17.864  12.988 -0.31 -0.09    -0.263 OA 
+DOCKED: HETATM    6  N2  BRH A 611      44.551  16.697  14.924 -0.56 -0.05    -0.083 NA 
+DOCKED: HETATM    7  O4  BRH A 611      43.903  16.008  15.868 -0.65 -0.12    -0.212 OA 
+DOCKED: ENDROOT
+DOCKED: BRANCH   1   8
+DOCKED: HETATM    8  C3  BRH A 611      41.683  15.269  16.588 +0.03 -0.05    +0.105 C  
+DOCKED: BRANCH   8   9
+DOCKED: HETATM    9  C2  BRH A 611      42.323  13.993  17.139 -0.10 -0.16    +0.394 C  
+DOCKED: HETATM   10  N1  BRH A 611      41.372  12.861  17.186 +0.01 -0.57    +0.628 N  
+DOCKED: BRANCH   9  11
+DOCKED: HETATM   11  C1  BRH A 611      42.831  14.345  18.586 -0.34 +0.16    +0.224 C  
+DOCKED: HETATM   12  O1  BRH A 611      42.150  13.888  19.571 -0.60 -0.60    -0.646 OA 
+DOCKED: HETATM   13  O2  BRH A 611      43.865  15.067  18.672 -0.59 -0.94    -0.646 OA 
+DOCKED: ENDBRANCH   9  11
+DOCKED: ENDBRANCH   8   9
+DOCKED: ENDBRANCH   1   8
+DOCKED: TORSDOF 3
+DOCKED: TER
+DOCKED: ENDMDL
+________________________________________________________________________________
+
+
+    FINAL DOCKED STATE:
+    ________________________
+
+
+Run:   48 / 50
+Time taken for this run:   0.742s
+
+DOCKED: MODEL        48
+DOCKED: USER    Run = 48
+DOCKED: USER
+DOCKED: USER    Estimated Free Energy of Binding    =  -5.90 kcal/mol  [=(1)+(2)+(3)-(4)]
+DOCKED: USER
+DOCKED: USER    (1) Final Intermolecular Energy     =  -6.80 kcal/mol
+DOCKED: USER        vdW + Hbond + desolv Energy     =  -4.37 kcal/mol
+DOCKED: USER        Electrostatic Energy            =  -2.43 kcal/mol
+DOCKED: USER        Moving Ligand-Fixed Receptor    =  -6.80 kcal/mol
+DOCKED: USER        Moving Ligand-Moving Receptor   =  +0.00 kcal/mol
+DOCKED: USER    (2) Final Total Internal Energy     =  -0.19 kcal/mol
+DOCKED: USER    (3) Torsional Free Energy           =  +0.89 kcal/mol
+DOCKED: USER    (4) Unbound System's Energy         =  -0.19 kcal/mol
+DOCKED: USER
+DOCKED: USER
+DOCKED: REMARK  3 active torsions:
+DOCKED: REMARK  status: ('A' for Active; 'I' for Inactive)
+DOCKED: REMARK    1  A    between atoms: C1_2056  and  C2_2058 
+DOCKED: REMARK    2  A    between atoms: C2_2058  and  C3_2060 
+DOCKED: REMARK    3  A    between atoms: C3_2060  and  C4_2061 
+DOCKED: USER                              x       y       z     vdW  Elec       q    Type
+DOCKED: USER                           _______ _______ _______ _____ _____    ______ ____
+DOCKED: ROOT
+DOCKED: HETATM    1  C4  BRH A 611      42.547  15.984  15.539 -0.25 -0.02    +0.116 A  
+DOCKED: HETATM    2  C5  BRH A 611      42.306  16.653  14.350 -0.23 -0.02    +0.115 A  
+DOCKED: HETATM    3 BR1  BRH A 611      40.724  16.843  13.446 -0.80 +0.02    -0.042 Br 
+DOCKED: HETATM    4  C6  BRH A 611      43.650  17.191  13.965 -0.03 +0.07    +0.309 A  
+DOCKED: HETATM    5  O3  BRH A 611      43.922  17.882  12.928 -0.31 -0.10    -0.263 OA 
+DOCKED: HETATM    6  N2  BRH A 611      44.555  16.811  14.928 -0.54 -0.05    -0.083 NA 
+DOCKED: HETATM    7  O4  BRH A 611      43.905  16.101  15.855 -0.63 -0.13    -0.212 OA 
+DOCKED: ENDROOT
+DOCKED: BRANCH   1   8
+DOCKED: HETATM    8  C3  BRH A 611      41.706  15.224  16.475 -0.07 -0.06    +0.105 C  
+DOCKED: BRANCH   8   9
+DOCKED: HETATM    9  C2  BRH A 611      42.393  13.996  17.075 -0.05 -0.17    +0.394 C  
+DOCKED: HETATM   10  N1  BRH A 611      41.483  12.834  17.175 +0.03 -0.57    +0.628 N  
+DOCKED: BRANCH   9  11
+DOCKED: HETATM   11  C1  BRH A 611      42.894  14.426  18.503 -0.33 +0.16    +0.224 C  
+DOCKED: HETATM   12  O1  BRH A 611      42.315  13.887  19.511 -0.62 -0.63    -0.646 OA 
+DOCKED: HETATM   13  O2  BRH A 611      43.822  15.283  18.551 -0.52 -0.92    -0.646 OA 
+DOCKED: ENDBRANCH   9  11
+DOCKED: ENDBRANCH   8   9
+DOCKED: ENDBRANCH   1   8
+DOCKED: TORSDOF 3
+DOCKED: TER
+DOCKED: ENDMDL
+________________________________________________________________________________
+
+
+    FINAL DOCKED STATE:
+    ________________________
+
+
+Run:   49 / 50
+Time taken for this run:   0.742s
+
+DOCKED: MODEL        49
+DOCKED: USER    Run = 49
+DOCKED: USER
+DOCKED: USER    Estimated Free Energy of Binding    =  -5.91 kcal/mol  [=(1)+(2)+(3)-(4)]
+DOCKED: USER
+DOCKED: USER    (1) Final Intermolecular Energy     =  -6.81 kcal/mol
+DOCKED: USER        vdW + Hbond + desolv Energy     =  -4.37 kcal/mol
+DOCKED: USER        Electrostatic Energy            =  -2.44 kcal/mol
+DOCKED: USER        Moving Ligand-Fixed Receptor    =  -6.81 kcal/mol
+DOCKED: USER        Moving Ligand-Moving Receptor   =  +0.00 kcal/mol
+DOCKED: USER    (2) Final Total Internal Energy     =  -0.19 kcal/mol
+DOCKED: USER    (3) Torsional Free Energy           =  +0.89 kcal/mol
+DOCKED: USER    (4) Unbound System's Energy         =  -0.19 kcal/mol
+DOCKED: USER
+DOCKED: USER
+DOCKED: REMARK  3 active torsions:
+DOCKED: REMARK  status: ('A' for Active; 'I' for Inactive)
+DOCKED: REMARK    1  A    between atoms: C1_2056  and  C2_2058 
+DOCKED: REMARK    2  A    between atoms: C2_2058  and  C3_2060 
+DOCKED: REMARK    3  A    between atoms: C3_2060  and  C4_2061 
+DOCKED: USER                              x       y       z     vdW  Elec       q    Type
+DOCKED: USER                           _______ _______ _______ _____ _____    ______ ____
+DOCKED: ROOT
+DOCKED: HETATM    1  C4  BRH A 611      42.558  15.992  15.523 -0.25 -0.02    +0.116 A  
+DOCKED: HETATM    2  C5  BRH A 611      42.316  16.676  14.342 -0.23 -0.02    +0.115 A  
+DOCKED: HETATM    3 BR1  BRH A 611      40.734  16.873  13.440 -0.80 +0.01    -0.042 Br 
+DOCKED: HETATM    4  C6  BRH A 611      43.659  17.222  13.965 -0.03 +0.07    +0.309 A  
+DOCKED: HETATM    5  O3  BRH A 611      43.929  17.927  12.937 -0.32 -0.09    -0.263 OA 
+DOCKED: HETATM    6  N2  BRH A 611      44.565  16.832  14.923 -0.54 -0.05    -0.083 NA 
+DOCKED: HETATM    7  O4  BRH A 611      43.916  16.109  15.841 -0.62 -0.13    -0.212 OA 
+DOCKED: ENDROOT
+DOCKED: BRANCH   1   8
+DOCKED: HETATM    8  C3  BRH A 611      41.719  15.218  16.449 -0.10 -0.06    +0.105 C  
+DOCKED: BRANCH   8   9
+DOCKED: HETATM    9  C2  BRH A 611      42.423  14.008  17.066 -0.05 -0.17    +0.394 C  
+DOCKED: HETATM   10  N1  BRH A 611      41.538  12.826  17.156 +0.05 -0.59    +0.628 N  
+DOCKED: BRANCH   9  11
+DOCKED: HETATM   11  C1  BRH A 611      42.890  14.456  18.500 -0.33 +0.16    +0.224 C  
+DOCKED: HETATM   12  O1  BRH A 611      43.815  15.340  18.563 -0.51 -0.93    -0.646 OA 
+DOCKED: HETATM   13  O2  BRH A 611      42.329  13.898  19.487 -0.63 -0.63    -0.646 OA 
+DOCKED: ENDBRANCH   9  11
+DOCKED: ENDBRANCH   8   9
+DOCKED: ENDBRANCH   1   8
+DOCKED: TORSDOF 3
+DOCKED: TER
+DOCKED: ENDMDL
+________________________________________________________________________________
+
+
+    FINAL DOCKED STATE:
+    ________________________
+
+
+Run:   50 / 50
+Time taken for this run:   0.742s
+
+DOCKED: MODEL        50
+DOCKED: USER    Run = 50
+DOCKED: USER
+DOCKED: USER    Estimated Free Energy of Binding    =  -5.96 kcal/mol  [=(1)+(2)+(3)-(4)]
+DOCKED: USER
+DOCKED: USER    (1) Final Intermolecular Energy     =  -6.86 kcal/mol
+DOCKED: USER        vdW + Hbond + desolv Energy     =  -4.48 kcal/mol
+DOCKED: USER        Electrostatic Energy            =  -2.38 kcal/mol
+DOCKED: USER        Moving Ligand-Fixed Receptor    =  -6.86 kcal/mol
+DOCKED: USER        Moving Ligand-Moving Receptor   =  +0.00 kcal/mol
+DOCKED: USER    (2) Final Total Internal Energy     =  -0.21 kcal/mol
+DOCKED: USER    (3) Torsional Free Energy           =  +0.89 kcal/mol
+DOCKED: USER    (4) Unbound System's Energy         =  -0.21 kcal/mol
+DOCKED: USER
+DOCKED: USER
+DOCKED: REMARK  3 active torsions:
+DOCKED: REMARK  status: ('A' for Active; 'I' for Inactive)
+DOCKED: REMARK    1  A    between atoms: C1_2056  and  C2_2058 
+DOCKED: REMARK    2  A    between atoms: C2_2058  and  C3_2060 
+DOCKED: REMARK    3  A    between atoms: C3_2060  and  C4_2061 
+DOCKED: USER                              x       y       z     vdW  Elec       q    Type
+DOCKED: USER                           _______ _______ _______ _____ _____    ______ ____
+DOCKED: ROOT
+DOCKED: HETATM    1  C4  BRH A 611      42.500  15.903  15.630 -0.25 -0.03    +0.116 A  
+DOCKED: HETATM    2  C5  BRH A 611      42.265  16.738  14.549 -0.24 -0.02    +0.115 A  
+DOCKED: HETATM    3 BR1  BRH A 611      40.666  17.186  13.778 -0.75 +0.01    -0.042 Br 
+DOCKED: HETATM    4  C6  BRH A 611      43.634  17.196  14.148 -0.07 +0.07    +0.309 A  
+DOCKED: HETATM    5  O3  BRH A 611      43.919  17.985  13.188 -0.32 -0.09    -0.263 OA 
+DOCKED: HETATM    6  N2  BRH A 611      44.546  16.614  14.998 -0.57 -0.05    -0.083 NA 
+DOCKED: HETATM    7  O4  BRH A 611      43.878  15.854  15.870 -0.69 -0.11    -0.212 OA 
+DOCKED: ENDROOT
+DOCKED: BRANCH   1   8
+DOCKED: HETATM    8  C3  BRH A 611      41.638  15.110  16.518 -0.02 -0.06    +0.105 C  
+DOCKED: BRANCH   8   9
+DOCKED: HETATM    9  C2  BRH A 611      42.325  13.884  17.122 -0.06 -0.19    +0.394 C  
+DOCKED: HETATM   10  N1  BRH A 611      41.433  12.704  17.169 +0.05 -0.59    +0.628 N  
+DOCKED: BRANCH   9  11
+DOCKED: HETATM   11  C1  BRH A 611      42.765  14.298  18.575 -0.35 +0.15    +0.224 C  
+DOCKED: HETATM   12  O1  BRH A 611      43.826  15.008  18.683 -0.61 -0.92    -0.646 OA 
+DOCKED: HETATM   13  O2  BRH A 611      42.047  13.888  19.531 -0.61 -0.56    -0.646 OA 
+DOCKED: ENDBRANCH   9  11
+DOCKED: ENDBRANCH   8   9
+DOCKED: ENDBRANCH   1   8
+DOCKED: TORSDOF 3
+DOCKED: TER
+DOCKED: ENDMDL
+________________________________________________________________________________
+
+
+    CLUSTERING HISTOGRAM
+    ____________________
+
+
+________________________________________________________________________________
+     |           |     |           |     |
+Clus | Lowest    | Run | Mean      | Num | Histogram
+-ter | Binding   |     | Binding   | in  |
+Rank | Energy    |     | Energy    | Clus|    5    10   15   20   25   30   35
+_____|___________|_____|___________|_____|____:____|____:____|____:____|____:___
+   1 |     -5.97 |  22 |     -5.92 |  47 |###############################################
+   2 |     -5.05 |  46 |     -5.03 |   3 |###
+_____|___________|_____|___________|_____|______________________________________
+
+
+    RMSD TABLE
+    __________
+
+
+_______________________________________________________________________
+     |      |      |           |         |                 |
+Rank | Sub- | Run  | Binding   | Cluster | Reference       | Grep
+     | Rank |      | Energy    | RMSD    | RMSD            | Pattern
+_____|______|______|___________|_________|_________________|___________
+   1      1     22       -5.97      0.00      1.09           RANKING
+   1      2     24       -5.97      0.02      1.10           RANKING
+   1      3     50       -5.96      0.14      1.13           RANKING
+   1      4     35       -5.96      0.09      1.11           RANKING
+   1      5     34       -5.96      0.01      1.09           RANKING
+   1      6      4       -5.96      0.07      1.13           RANKING
+   1      7     19       -5.96      0.09      1.14           RANKING
+   1      8     30       -5.96      0.09      1.12           RANKING
+   1      9     37       -5.96      0.03      1.07           RANKING
+   1     10     41       -5.96      0.10      1.12           RANKING
+   1     11     10       -5.95      0.02      1.08           RANKING
+   1     12      9       -5.95      0.07      1.13           RANKING
+   1     13      1       -5.95      0.09      1.11           RANKING
+   1     14     18       -5.95      0.02      1.08           RANKING
+   1     15     26       -5.95      0.03      1.11           RANKING
+   1     16     27       -5.95      0.10      1.07           RANKING
+   1     17     36       -5.95      0.07      1.07           RANKING
+   1     18     31       -5.94      0.04      1.08           RANKING
+   1     19     29       -5.94      0.16      1.12           RANKING
+   1     20      5       -5.94      0.14      1.07           RANKING
+   1     21     11       -5.94      0.11      1.05           RANKING
+   1     22     33       -5.94      0.04      1.06           RANKING
+   1     23     38       -5.94      0.06      1.07           RANKING
+   1     24     15       -5.92      0.15      1.08           RANKING
+   1     25     17       -5.92      0.15      1.07           RANKING
+   1     26     44       -5.92      0.12      1.06           RANKING
+   1     27     40       -5.92      0.16      1.06           RANKING
+   1     28      6       -5.92      0.14      1.03           RANKING
+   1     29      3       -5.92      0.07      1.05           RANKING
+   1     30     12       -5.91      0.17      1.07           RANKING
+   1     31     49       -5.91      0.18      1.06           RANKING
+   1     32     21       -5.91      0.17      1.08           RANKING
+   1     33     25       -5.90      0.17      1.08           RANKING
+   1     34     20       -5.90      0.13      1.08           RANKING
+   1     35     47       -5.90      0.10      1.06           RANKING
+   1     36     43       -5.90      0.19      1.09           RANKING
+   1     37     48       -5.90      0.16      1.06           RANKING
+   1     38     14       -5.90      0.17      1.09           RANKING
+   1     39     45       -5.90      0.19      1.10           RANKING
+   1     40      8       -5.89      0.19      1.06           RANKING
+   1     41     13       -5.88      0.16      1.06           RANKING
+   1     42      7       -5.88      0.25      1.14           RANKING
+   1     43     42       -5.87      0.18      1.07           RANKING
+   1     44     28       -5.85      0.20      1.04           RANKING
+   1     45      2       -5.84      0.37      1.23           RANKING
+   1     46     39       -5.70      0.42      0.88           RANKING
+   1     47     23       -5.61      0.49      0.88           RANKING
+   2      1     46       -5.05      0.00      1.84           RANKING
+   2      2     16       -5.05      0.11      1.83           RANKING
+   2      3     32       -5.01      0.31      1.81           RANKING
+
+Run time 39.031 sec
+Idle time 6.576 sec

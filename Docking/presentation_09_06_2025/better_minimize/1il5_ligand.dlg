@@ -1,0 +1,2376 @@
+AutoDock-GPU version: v1.6-7-ga46ab564d2ac5f1a1523f65239b43505a1c29364
+
+**********************************************************
+**    AutoDock-GPU AUTODOCKTOOLS-COMPATIBLE DLG FILE    **
+**********************************************************
+
+
+    DOCKING PARAMETERS
+    ________________________
+
+
+Ligand file:                               pdbqt_files/1il5_ligand.pdbqt
+Grid fld file:                             map_grid_files/1il5_receptor.maps.fld
+
+Random seed:                               1749244089, 861
+Number of runs:                            50
+Number of energy evaluations:              480000
+Number of generations:                     42000
+Size of population:                        150
+Rate of crossover:                         80.000000%
+Tournament selection probability limit:    60.000000%
+Rate of mutation:                          2.000000%
+Maximal allowed delta movement:            +/- 6.000000A
+Maximal allowed delta angle:               +/- 90.000000
+
+Rate of local search:                      100.000000%
+Maximal number of local search iterations: 300
+Rho lower bound:                           0.010000
+Spread of local search delta movement:     2.000000A
+Spread of local search delta angle:        74.999999
+Limit of consecutive successes/failures:   4
+
+Handle symmetry during clustering:         YES
+RMSD tolerance:                            2.000000A
+
+Program call in command line was:          /home/tajgero/AutoDock-GPU/bin/autodock_gpu_128wi --lfile pdbqt_files/1il5_ligand.pdbqt --ffile map_grid_files/1il5_receptor.maps.fld --nrun 50 
+
+
+    GRID PARAMETERS
+    ________________________
+
+
+Receptor name:                             pdbqt_files/1il5_receptor
+Number of grid points (x, y, z):           41, 41, 41
+Grid center (x, y, z):                     -15.701000, 35.911000, 40.611000A
+Grid size (x, y, z):                       15.000000, 15.000000, 15.000000A
+Grid spacing:                              0.375000A
+
+
+    LIGAND PARAMETERS
+    ________________________
+
+
+Ligand name:                               pdbqt_files/1il5_ligand
+Number of atoms:                           10
+Number of rotatable bonds:                 0
+Number of atom types:                      3
+
+
+    DUMMY DATA (only for ADT-compatibility)
+    ________________________
+
+
+DPF> outlev 1
+DPF> ga_run 50
+DPF> fld map_grid_files/1il5_receptor.maps.fld
+DPF> move pdbqt_files/1il5_ligand.pdbqt
+
+
+    COUNTER STATES
+    ________________________
+
+
+Number of energy evaluations performed:    476289
+Number of generations used:                25
+
+
+    INPUT LIGAND PDBQT FILE:
+    ________________________
+
+
+INPUT-LIGAND-PDBQT: REMARK  0 active torsions:
+INPUT-LIGAND-PDBQT: REMARK  status: ('A' for Active; 'I' for Inactive)
+INPUT-LIGAND-PDBQT: ROOT
+INPUT-LIGAND-PDBQT: HETATM    1  C5  DDP A 301     -15.305  36.134  39.568  0.92 34.09     0.171 A 
+INPUT-LIGAND-PDBQT: HETATM    2  N7  DDP A 301     -14.854  36.411  38.267  0.92 35.61    -0.092 NA
+INPUT-LIGAND-PDBQT: HETATM    3  C4  DDP A 301     -14.438  35.854  40.641  0.92 34.60     0.233 A 
+INPUT-LIGAND-PDBQT: HETATM    4  N3  DDP A 301     -14.955  35.594  41.867  0.92 34.19    -0.187 NA
+INPUT-LIGAND-PDBQT: HETATM    5  C2  DDP A 301     -16.285  35.597  42.088  0.92 33.44     0.242 A 
+INPUT-LIGAND-PDBQT: HETATM    6  N2  DDP A 301     -16.783  35.322  43.370  0.92 33.38    -0.059 NA
+INPUT-LIGAND-PDBQT: HETATM    7  N1  DDP A 301     -17.134  35.866  41.064  0.92 35.07    -0.175 NA
+INPUT-LIGAND-PDBQT: HETATM    8  C6  DDP A 301     -16.684  36.135  39.815  0.92 34.87     0.298 A 
+INPUT-LIGAND-PDBQT: HETATM    9  O6  DDP A 301     -17.511  36.360  38.972  0.92 33.50    -0.264 OA
+INPUT-LIGAND-PDBQT: HETATM   10  O9  DDP A 301     -13.058  35.841  40.457  0.92 34.04    -0.168 OA
+INPUT-LIGAND-PDBQT: ENDROOT
+INPUT-LIGAND-PDBQT: TORSDOF 0
+
+
+    FINAL DOCKED STATE:
+    ________________________
+
+
+Run:   1 / 50
+Time taken for this run:   0.450s
+
+DOCKED: MODEL        1
+DOCKED: USER    Run = 1
+DOCKED: USER
+DOCKED: USER    Estimated Free Energy of Binding    =  -3.10 kcal/mol  [=(1)+(2)+(3)-(4)]
+DOCKED: USER
+DOCKED: USER    (1) Final Intermolecular Energy     =  -3.10 kcal/mol
+DOCKED: USER        vdW + Hbond + desolv Energy     =  -3.10 kcal/mol
+DOCKED: USER        Electrostatic Energy            =  -0.00 kcal/mol
+DOCKED: USER        Moving Ligand-Fixed Receptor    =  -3.10 kcal/mol
+DOCKED: USER        Moving Ligand-Moving Receptor   =  +0.00 kcal/mol
+DOCKED: USER    (2) Final Total Internal Energy     =  +0.00 kcal/mol
+DOCKED: USER    (3) Torsional Free Energy           =  +0.00 kcal/mol
+DOCKED: USER    (4) Unbound System's Energy         =  +0.00 kcal/mol
+DOCKED: USER
+DOCKED: USER
+DOCKED: REMARK  0 active torsions:
+DOCKED: REMARK  status: ('A' for Active; 'I' for Inactive)
+DOCKED: USER                              x       y       z     vdW  Elec       q    Type
+DOCKED: USER                           _______ _______ _______ _____ _____    ______ ____
+DOCKED: ROOT
+DOCKED: HETATM    1  C5  DDP A 301     -19.473  36.493  34.341 -0.12 +0.00    +0.171 A  
+DOCKED: HETATM    2  N7  DDP A 301     -19.081  35.772  33.201 -0.25 +0.00    -0.092 NA 
+DOCKED: HETATM    3  C4  DDP A 301     -19.831  37.854  34.308 -0.09 -0.01    +0.233 A  
+DOCKED: HETATM    4  N3  DDP A 301     -20.195  38.477  35.455 -0.23 +0.01    -0.187 NA 
+DOCKED: HETATM    5  C2  DDP A 301     -20.224  37.825  36.635 -0.03 +0.09    +0.242 A  
+DOCKED: HETATM    6  N2  DDP A 301     -20.605  38.504  37.802 -0.65 -0.03    -0.059 NA 
+DOCKED: HETATM    7  N1  DDP A 301     -19.883  36.512  36.684 -0.39 -0.09    -0.175 NA 
+DOCKED: HETATM    8  C6  DDP A 301     -19.510  35.830  35.575 -0.08 +0.05    +0.298 A  
+DOCKED: HETATM    9  O6  DDP A 301     -19.224  34.671  35.716 -0.34 -0.01    -0.264 OA 
+DOCKED: HETATM   10  O9  DDP A 301     -19.815  38.565  33.111 -0.92 -0.01    -0.168 OA 
+DOCKED: ENDROOT
+DOCKED: TORSDOF 0
+DOCKED: TER
+DOCKED: ENDMDL
+________________________________________________________________________________
+
+
+    FINAL DOCKED STATE:
+    ________________________
+
+
+Run:   2 / 50
+Time taken for this run:   0.450s
+
+DOCKED: MODEL        2
+DOCKED: USER    Run = 2
+DOCKED: USER
+DOCKED: USER    Estimated Free Energy of Binding    =  -3.09 kcal/mol  [=(1)+(2)+(3)-(4)]
+DOCKED: USER
+DOCKED: USER    (1) Final Intermolecular Energy     =  -3.09 kcal/mol
+DOCKED: USER        vdW + Hbond + desolv Energy     =  -3.05 kcal/mol
+DOCKED: USER        Electrostatic Energy            =  -0.04 kcal/mol
+DOCKED: USER        Moving Ligand-Fixed Receptor    =  -3.09 kcal/mol
+DOCKED: USER        Moving Ligand-Moving Receptor   =  +0.00 kcal/mol
+DOCKED: USER    (2) Final Total Internal Energy     =  +0.00 kcal/mol
+DOCKED: USER    (3) Torsional Free Energy           =  +0.00 kcal/mol
+DOCKED: USER    (4) Unbound System's Energy         =  +0.00 kcal/mol
+DOCKED: USER
+DOCKED: USER
+DOCKED: REMARK  0 active torsions:
+DOCKED: REMARK  status: ('A' for Active; 'I' for Inactive)
+DOCKED: USER                              x       y       z     vdW  Elec       q    Type
+DOCKED: USER                           _______ _______ _______ _____ _____    ______ ____
+DOCKED: ROOT
+DOCKED: HETATM    1  C5  DDP A 301     -19.628  35.317  35.297 -0.22 +0.02    +0.171 A  
+DOCKED: HETATM    2  N7  DDP A 301     -19.583  34.096  35.991 -0.44 -0.01    -0.092 NA 
+DOCKED: HETATM    3  C4  DDP A 301     -19.584  36.569  35.938 -0.08 +0.05    +0.233 A  
+DOCKED: HETATM    4  N3  DDP A 301     -19.635  37.702  35.194 -0.14 -0.01    -0.187 NA 
+DOCKED: HETATM    5  C2  DDP A 301     -19.726  37.661  33.850 -0.09 -0.01    +0.242 A  
+DOCKED: HETATM    6  N2  DDP A 301     -19.778  38.854  33.114 -0.86 -0.01    -0.059 NA 
+DOCKED: HETATM    7  N1  DDP A 301     -19.769  36.461  33.217 -0.21 -0.00    -0.175 NA 
+DOCKED: HETATM    8  C6  DDP A 301     -19.721  35.291  33.900 -0.13 +0.01    +0.298 A  
+DOCKED: HETATM    9  O6  DDP A 301     -19.766  34.279  33.254 -0.35 -0.02    -0.264 OA 
+DOCKED: HETATM   10  O9  DDP A 301     -19.489  36.658  37.324 -0.53 -0.09    -0.168 OA 
+DOCKED: ENDROOT
+DOCKED: TORSDOF 0
+DOCKED: TER
+DOCKED: ENDMDL
+________________________________________________________________________________
+
+
+    FINAL DOCKED STATE:
+    ________________________
+
+
+Run:   3 / 50
+Time taken for this run:   0.450s
+
+DOCKED: MODEL        3
+DOCKED: USER    Run = 3
+DOCKED: USER
+DOCKED: USER    Estimated Free Energy of Binding    =  -3.11 kcal/mol  [=(1)+(2)+(3)-(4)]
+DOCKED: USER
+DOCKED: USER    (1) Final Intermolecular Energy     =  -3.11 kcal/mol
+DOCKED: USER        vdW + Hbond + desolv Energy     =  -3.11 kcal/mol
+DOCKED: USER        Electrostatic Energy            =  -0.00 kcal/mol
+DOCKED: USER        Moving Ligand-Fixed Receptor    =  -3.11 kcal/mol
+DOCKED: USER        Moving Ligand-Moving Receptor   =  +0.00 kcal/mol
+DOCKED: USER    (2) Final Total Internal Energy     =  +0.00 kcal/mol
+DOCKED: USER    (3) Torsional Free Energy           =  +0.00 kcal/mol
+DOCKED: USER    (4) Unbound System's Energy         =  +0.00 kcal/mol
+DOCKED: USER
+DOCKED: USER
+DOCKED: REMARK  0 active torsions:
+DOCKED: REMARK  status: ('A' for Active; 'I' for Inactive)
+DOCKED: USER                              x       y       z     vdW  Elec       q    Type
+DOCKED: USER                           _______ _______ _______ _____ _____    ______ ____
+DOCKED: ROOT
+DOCKED: HETATM    1  C5  DDP A 301     -18.972  36.915  34.249 -0.05 -0.01    +0.171 A  
+DOCKED: HETATM    2  N7  DDP A 301     -18.175  36.428  33.200 -0.14 +0.01    -0.092 NA 
+DOCKED: HETATM    3  C4  DDP A 301     -19.187  36.206  35.446 -0.07 +0.03    +0.233 A  
+DOCKED: HETATM    4  N3  DDP A 301     -19.973  36.745  36.410 -0.46 -0.08    -0.187 NA 
+DOCKED: HETATM    5  C2  DDP A 301     -20.557  37.950  36.252 -0.09 +0.06    +0.242 A  
+DOCKED: HETATM    6  N2  DDP A 301     -21.365  38.476  37.271 -0.73 -0.03    -0.059 NA 
+DOCKED: HETATM    7  N1  DDP A 301     -20.358  38.647  35.105 -0.34 +0.02    -0.175 NA 
+DOCKED: HETATM    8  C6  DDP A 301     -19.584  38.166  34.103 -0.03 -0.01    +0.298 A  
+DOCKED: HETATM    9  O6  DDP A 301     -19.467  38.854  33.123 -0.85 +0.00    -0.264 OA 
+DOCKED: HETATM   10  O9  DDP A 301     -18.603  34.958  35.650 -0.35 +0.01    -0.168 OA 
+DOCKED: ENDROOT
+DOCKED: TORSDOF 0
+DOCKED: TER
+DOCKED: ENDMDL
+________________________________________________________________________________
+
+
+    FINAL DOCKED STATE:
+    ________________________
+
+
+Run:   4 / 50
+Time taken for this run:   0.450s
+
+DOCKED: MODEL        4
+DOCKED: USER    Run = 4
+DOCKED: USER
+DOCKED: USER    Estimated Free Energy of Binding    =  -3.08 kcal/mol  [=(1)+(2)+(3)-(4)]
+DOCKED: USER
+DOCKED: USER    (1) Final Intermolecular Energy     =  -3.08 kcal/mol
+DOCKED: USER        vdW + Hbond + desolv Energy     =  -3.03 kcal/mol
+DOCKED: USER        Electrostatic Energy            =  -0.04 kcal/mol
+DOCKED: USER        Moving Ligand-Fixed Receptor    =  -3.08 kcal/mol
+DOCKED: USER        Moving Ligand-Moving Receptor   =  +0.00 kcal/mol
+DOCKED: USER    (2) Final Total Internal Energy     =  +0.00 kcal/mol
+DOCKED: USER    (3) Torsional Free Energy           =  +0.00 kcal/mol
+DOCKED: USER    (4) Unbound System's Energy         =  +0.00 kcal/mol
+DOCKED: USER
+DOCKED: USER
+DOCKED: REMARK  0 active torsions:
+DOCKED: REMARK  status: ('A' for Active; 'I' for Inactive)
+DOCKED: USER                              x       y       z     vdW  Elec       q    Type
+DOCKED: USER                           _______ _______ _______ _____ _____    ______ ____
+DOCKED: ROOT
+DOCKED: HETATM    1  C5  DDP A 301     -19.359  36.774  34.489 -0.09 +0.00    +0.171 A  
+DOCKED: HETATM    2  N7  DDP A 301     -18.696  36.060  33.477 -0.19 +0.01    -0.092 NA 
+DOCKED: HETATM    3  C4  DDP A 301     -19.544  36.272  35.791 -0.09 +0.05    +0.233 A  
+DOCKED: HETATM    4  N3  DDP A 301     -20.198  37.025  36.710 -0.56 -0.11    -0.187 NA 
+DOCKED: HETATM    5  C2  DDP A 301     -20.678  38.248  36.408 -0.10 +0.05    +0.242 A  
+DOCKED: HETATM    6  N2  DDP A 301     -21.351  38.997  37.385 -0.43 -0.01    -0.059 NA 
+DOCKED: HETATM    7  N1  DDP A 301     -20.507  38.746  35.158 -0.31 +0.03    -0.175 NA 
+DOCKED: HETATM    8  C6  DDP A 301     -19.862  38.047  34.193 -0.03 -0.01    +0.298 A  
+DOCKED: HETATM    9  O6  DDP A 301     -19.760  38.569  33.115 -0.84 -0.02    -0.264 OA 
+DOCKED: HETATM   10  O9  DDP A 301     -19.064  35.014  36.145 -0.39 -0.02    -0.168 OA 
+DOCKED: ENDROOT
+DOCKED: TORSDOF 0
+DOCKED: TER
+DOCKED: ENDMDL
+________________________________________________________________________________
+
+
+    FINAL DOCKED STATE:
+    ________________________
+
+
+Run:   5 / 50
+Time taken for this run:   0.450s
+
+DOCKED: MODEL        5
+DOCKED: USER    Run = 5
+DOCKED: USER
+DOCKED: USER    Estimated Free Energy of Binding    =  -3.05 kcal/mol  [=(1)+(2)+(3)-(4)]
+DOCKED: USER
+DOCKED: USER    (1) Final Intermolecular Energy     =  -3.05 kcal/mol
+DOCKED: USER        vdW + Hbond + desolv Energy     =  -3.02 kcal/mol
+DOCKED: USER        Electrostatic Energy            =  -0.03 kcal/mol
+DOCKED: USER        Moving Ligand-Fixed Receptor    =  -3.05 kcal/mol
+DOCKED: USER        Moving Ligand-Moving Receptor   =  +0.00 kcal/mol
+DOCKED: USER    (2) Final Total Internal Energy     =  +0.00 kcal/mol
+DOCKED: USER    (3) Torsional Free Energy           =  +0.00 kcal/mol
+DOCKED: USER    (4) Unbound System's Energy         =  +0.00 kcal/mol
+DOCKED: USER
+DOCKED: USER
+DOCKED: REMARK  0 active torsions:
+DOCKED: REMARK  status: ('A' for Active; 'I' for Inactive)
+DOCKED: USER                              x       y       z     vdW  Elec       q    Type
+DOCKED: USER                           _______ _______ _______ _____ _____    ______ ____
+DOCKED: ROOT
+DOCKED: HETATM    1  C5  DDP A 301     -19.534  34.905  35.374 -0.26 +0.02    +0.171 A  
+DOCKED: HETATM    2  N7  DDP A 301     -19.452  33.634  35.965 -0.48 -0.00    -0.092 NA 
+DOCKED: HETATM    3  C4  DDP A 301     -19.330  36.102  36.087 -0.10 +0.05    +0.233 A  
+DOCKED: HETATM    4  N3  DDP A 301     -19.430  37.289  35.441 -0.12 -0.02    -0.187 NA 
+DOCKED: HETATM    5  C2  DDP A 301     -19.720  37.356  34.126 -0.08 -0.00    +0.242 A  
+DOCKED: HETATM    6  N2  DDP A 301     -19.816  38.604  33.492 -0.88 -0.01    -0.059 NA 
+DOCKED: HETATM    7  N1  DDP A 301     -19.919  36.212  33.424 -0.23 -0.01    -0.175 NA 
+DOCKED: HETATM    8  C6  DDP A 301     -19.833  34.993  34.008 -0.14 +0.02    +0.298 A  
+DOCKED: HETATM    9  O6  DDP A 301     -20.026  34.036  33.306 -0.38 -0.02    -0.264 OA 
+DOCKED: HETATM   10  O9  DDP A 301     -19.028  36.078  37.446 -0.35 -0.06    -0.168 OA 
+DOCKED: ENDROOT
+DOCKED: TORSDOF 0
+DOCKED: TER
+DOCKED: ENDMDL
+________________________________________________________________________________
+
+
+    FINAL DOCKED STATE:
+    ________________________
+
+
+Run:   6 / 50
+Time taken for this run:   0.450s
+
+DOCKED: MODEL        6
+DOCKED: USER    Run = 6
+DOCKED: USER
+DOCKED: USER    Estimated Free Energy of Binding    =  -3.01 kcal/mol  [=(1)+(2)+(3)-(4)]
+DOCKED: USER
+DOCKED: USER    (1) Final Intermolecular Energy     =  -3.01 kcal/mol
+DOCKED: USER        vdW + Hbond + desolv Energy     =  -2.92 kcal/mol
+DOCKED: USER        Electrostatic Energy            =  -0.09 kcal/mol
+DOCKED: USER        Moving Ligand-Fixed Receptor    =  -3.01 kcal/mol
+DOCKED: USER        Moving Ligand-Moving Receptor   =  +0.00 kcal/mol
+DOCKED: USER    (2) Final Total Internal Energy     =  +0.00 kcal/mol
+DOCKED: USER    (3) Torsional Free Energy           =  +0.00 kcal/mol
+DOCKED: USER    (4) Unbound System's Energy         =  +0.00 kcal/mol
+DOCKED: USER
+DOCKED: USER
+DOCKED: REMARK  0 active torsions:
+DOCKED: REMARK  status: ('A' for Active; 'I' for Inactive)
+DOCKED: USER                              x       y       z     vdW  Elec       q    Type
+DOCKED: USER                           _______ _______ _______ _____ _____    ______ ____
+DOCKED: ROOT
+DOCKED: HETATM    1  C5  DDP A 301     -19.596  35.416  35.409 -0.22 +0.02    +0.171 A  
+DOCKED: HETATM    2  N7  DDP A 301     -19.553  34.269  36.219 -0.38 -0.02    -0.092 NA 
+DOCKED: HETATM    3  C4  DDP A 301     -19.494  35.372  34.006 -0.17 +0.01    +0.233 A  
+DOCKED: HETATM    4  N3  DDP A 301     -19.541  36.527  33.297 -0.17 +0.00    -0.187 NA 
+DOCKED: HETATM    5  C2  DDP A 301     -19.685  37.723  33.902 -0.09 -0.01    +0.242 A  
+DOCKED: HETATM    6  N2  DDP A 301     -19.728  38.896  33.135 -0.86 -0.01    -0.059 NA 
+DOCKED: HETATM    7  N1  DDP A 301     -19.785  37.781  35.254 -0.17 -0.00    -0.175 NA 
+DOCKED: HETATM    8  C6  DDP A 301     -19.746  36.666  36.023 -0.03 +0.08    +0.298 A  
+DOCKED: HETATM    9  O6  DDP A 301     -19.842  36.817  37.211 -0.52 -0.17    -0.264 OA 
+DOCKED: HETATM   10  O9  DDP A 301     -19.345  34.159  33.340 -0.32 +0.00    -0.168 OA 
+DOCKED: ENDROOT
+DOCKED: TORSDOF 0
+DOCKED: TER
+DOCKED: ENDMDL
+________________________________________________________________________________
+
+
+    FINAL DOCKED STATE:
+    ________________________
+
+
+Run:   7 / 50
+Time taken for this run:   0.450s
+
+DOCKED: MODEL        7
+DOCKED: USER    Run = 7
+DOCKED: USER
+DOCKED: USER    Estimated Free Energy of Binding    =  -3.00 kcal/mol  [=(1)+(2)+(3)-(4)]
+DOCKED: USER
+DOCKED: USER    (1) Final Intermolecular Energy     =  -3.00 kcal/mol
+DOCKED: USER        vdW + Hbond + desolv Energy     =  -2.82 kcal/mol
+DOCKED: USER        Electrostatic Energy            =  -0.18 kcal/mol
+DOCKED: USER        Moving Ligand-Fixed Receptor    =  -3.00 kcal/mol
+DOCKED: USER        Moving Ligand-Moving Receptor   =  +0.00 kcal/mol
+DOCKED: USER    (2) Final Total Internal Energy     =  +0.00 kcal/mol
+DOCKED: USER    (3) Torsional Free Energy           =  +0.00 kcal/mol
+DOCKED: USER    (4) Unbound System's Energy         =  +0.00 kcal/mol
+DOCKED: USER
+DOCKED: USER
+DOCKED: REMARK  0 active torsions:
+DOCKED: REMARK  status: ('A' for Active; 'I' for Inactive)
+DOCKED: USER                              x       y       z     vdW  Elec       q    Type
+DOCKED: USER                           _______ _______ _______ _____ _____    ______ ____
+DOCKED: ROOT
+DOCKED: HETATM    1  C5  DDP A 301     -15.543  35.542  41.861 -0.13 +0.03    +0.171 A  
+DOCKED: HETATM    2  N7  DDP A 301     -16.366  36.064  40.849 -0.23 -0.02    -0.092 NA 
+DOCKED: HETATM    3  C4  DDP A 301     -15.950  35.430  43.204 -0.11 +0.03    +0.233 A  
+DOCKED: HETATM    4  N3  DDP A 301     -15.093  34.917  44.121 -0.08 +0.00    -0.187 NA 
+DOCKED: HETATM    5  C2  DDP A 301     -13.855  34.508  43.779 -0.06 -0.03    +0.242 A  
+DOCKED: HETATM    6  N2  DDP A 301     -12.995  33.984  44.756 -0.35 +0.03    -0.059 NA 
+DOCKED: HETATM    7  N1  DDP A 301     -13.448  34.608  42.488 -0.42 -0.07    -0.175 NA 
+DOCKED: HETATM    8  C6  DDP A 301     -14.254  35.110  41.522 +0.02 +0.14    +0.298 A  
+DOCKED: HETATM    9  O6  DDP A 301     -13.806  35.161  40.408 -0.74 -0.23    -0.264 OA 
+DOCKED: HETATM   10  O9  DDP A 301     -17.220  35.841  43.600 -0.73 -0.06    -0.168 OA 
+DOCKED: ENDROOT
+DOCKED: TORSDOF 0
+DOCKED: TER
+DOCKED: ENDMDL
+________________________________________________________________________________
+
+
+    FINAL DOCKED STATE:
+    ________________________
+
+
+Run:   8 / 50
+Time taken for this run:   0.450s
+
+DOCKED: MODEL        8
+DOCKED: USER    Run = 8
+DOCKED: USER
+DOCKED: USER    Estimated Free Energy of Binding    =  -3.00 kcal/mol  [=(1)+(2)+(3)-(4)]
+DOCKED: USER
+DOCKED: USER    (1) Final Intermolecular Energy     =  -3.00 kcal/mol
+DOCKED: USER        vdW + Hbond + desolv Energy     =  -2.82 kcal/mol
+DOCKED: USER        Electrostatic Energy            =  -0.18 kcal/mol
+DOCKED: USER        Moving Ligand-Fixed Receptor    =  -3.00 kcal/mol
+DOCKED: USER        Moving Ligand-Moving Receptor   =  +0.00 kcal/mol
+DOCKED: USER    (2) Final Total Internal Energy     =  +0.00 kcal/mol
+DOCKED: USER    (3) Torsional Free Energy           =  +0.00 kcal/mol
+DOCKED: USER    (4) Unbound System's Energy         =  +0.00 kcal/mol
+DOCKED: USER
+DOCKED: USER
+DOCKED: REMARK  0 active torsions:
+DOCKED: REMARK  status: ('A' for Active; 'I' for Inactive)
+DOCKED: USER                              x       y       z     vdW  Elec       q    Type
+DOCKED: USER                           _______ _______ _______ _____ _____    ______ ____
+DOCKED: ROOT
+DOCKED: HETATM    1  C5  DDP A 301     -15.544  35.538  41.849 -0.13 +0.03    +0.171 A  
+DOCKED: HETATM    2  N7  DDP A 301     -16.374  36.047  40.836 -0.23 -0.02    -0.092 NA 
+DOCKED: HETATM    3  C4  DDP A 301     -15.946  35.432  43.193 -0.11 +0.03    +0.233 A  
+DOCKED: HETATM    4  N3  DDP A 301     -15.083  34.931  44.111 -0.08 +0.00    -0.187 NA 
+DOCKED: HETATM    5  C2  DDP A 301     -13.842  34.530  43.769 -0.06 -0.02    +0.242 A  
+DOCKED: HETATM    6  N2  DDP A 301     -12.976  34.019  44.746 -0.35 +0.03    -0.059 NA 
+DOCKED: HETATM    7  N1  DDP A 301     -13.440  34.625  42.476 -0.42 -0.07    -0.175 NA 
+DOCKED: HETATM    8  C6  DDP A 301     -14.252  35.115  41.509 +0.02 +0.14    +0.298 A  
+DOCKED: HETATM    9  O6  DDP A 301     -13.808  35.163  40.393 -0.74 -0.23    -0.264 OA 
+DOCKED: HETATM   10  O9  DDP A 301     -17.219  35.834  43.590 -0.73 -0.06    -0.168 OA 
+DOCKED: ENDROOT
+DOCKED: TORSDOF 0
+DOCKED: TER
+DOCKED: ENDMDL
+________________________________________________________________________________
+
+
+    FINAL DOCKED STATE:
+    ________________________
+
+
+Run:   9 / 50
+Time taken for this run:   0.450s
+
+DOCKED: MODEL        9
+DOCKED: USER    Run = 9
+DOCKED: USER
+DOCKED: USER    Estimated Free Energy of Binding    =  -3.00 kcal/mol  [=(1)+(2)+(3)-(4)]
+DOCKED: USER
+DOCKED: USER    (1) Final Intermolecular Energy     =  -3.00 kcal/mol
+DOCKED: USER        vdW + Hbond + desolv Energy     =  -2.82 kcal/mol
+DOCKED: USER        Electrostatic Energy            =  -0.18 kcal/mol
+DOCKED: USER        Moving Ligand-Fixed Receptor    =  -3.00 kcal/mol
+DOCKED: USER        Moving Ligand-Moving Receptor   =  +0.00 kcal/mol
+DOCKED: USER    (2) Final Total Internal Energy     =  +0.00 kcal/mol
+DOCKED: USER    (3) Torsional Free Energy           =  +0.00 kcal/mol
+DOCKED: USER    (4) Unbound System's Energy         =  +0.00 kcal/mol
+DOCKED: USER
+DOCKED: USER
+DOCKED: REMARK  0 active torsions:
+DOCKED: REMARK  status: ('A' for Active; 'I' for Inactive)
+DOCKED: USER                              x       y       z     vdW  Elec       q    Type
+DOCKED: USER                           _______ _______ _______ _____ _____    ______ ____
+DOCKED: ROOT
+DOCKED: HETATM    1  C5  DDP A 301     -15.570  35.536  41.826 -0.13 +0.03    +0.171 A  
+DOCKED: HETATM    2  N7  DDP A 301     -16.410  35.997  40.800 -0.24 -0.02    -0.092 NA 
+DOCKED: HETATM    3  C4  DDP A 301     -15.970  35.457  43.173 -0.11 +0.03    +0.233 A  
+DOCKED: HETATM    4  N3  DDP A 301     -15.096  35.003  44.105 -0.09 +0.00    -0.187 NA 
+DOCKED: HETATM    5  C2  DDP A 301     -13.846  34.622  43.773 -0.05 -0.02    +0.242 A  
+DOCKED: HETATM    6  N2  DDP A 301     -12.968  34.159  44.765 -0.34 +0.02    -0.059 NA 
+DOCKED: HETATM    7  N1  DDP A 301     -13.445  34.692  42.479 -0.42 -0.07    -0.175 NA 
+DOCKED: HETATM    8  C6  DDP A 301     -14.268  35.135  41.499 +0.02 +0.14    +0.298 A  
+DOCKED: HETATM    9  O6  DDP A 301     -13.824  35.162  40.382 -0.74 -0.23    -0.264 OA 
+DOCKED: HETATM   10  O9  DDP A 301     -17.252  35.840  43.559 -0.72 -0.07    -0.168 OA 
+DOCKED: ENDROOT
+DOCKED: TORSDOF 0
+DOCKED: TER
+DOCKED: ENDMDL
+________________________________________________________________________________
+
+
+    FINAL DOCKED STATE:
+    ________________________
+
+
+Run:   10 / 50
+Time taken for this run:   0.450s
+
+DOCKED: MODEL        10
+DOCKED: USER    Run = 10
+DOCKED: USER
+DOCKED: USER    Estimated Free Energy of Binding    =  -3.11 kcal/mol  [=(1)+(2)+(3)-(4)]
+DOCKED: USER
+DOCKED: USER    (1) Final Intermolecular Energy     =  -3.11 kcal/mol
+DOCKED: USER        vdW + Hbond + desolv Energy     =  -3.11 kcal/mol
+DOCKED: USER        Electrostatic Energy            =  -0.01 kcal/mol
+DOCKED: USER        Moving Ligand-Fixed Receptor    =  -3.11 kcal/mol
+DOCKED: USER        Moving Ligand-Moving Receptor   =  +0.00 kcal/mol
+DOCKED: USER    (2) Final Total Internal Energy     =  +0.00 kcal/mol
+DOCKED: USER    (3) Torsional Free Energy           =  +0.00 kcal/mol
+DOCKED: USER    (4) Unbound System's Energy         =  +0.00 kcal/mol
+DOCKED: USER
+DOCKED: USER
+DOCKED: REMARK  0 active torsions:
+DOCKED: REMARK  status: ('A' for Active; 'I' for Inactive)
+DOCKED: USER                              x       y       z     vdW  Elec       q    Type
+DOCKED: USER                           _______ _______ _______ _____ _____    ______ ____
+DOCKED: ROOT
+DOCKED: HETATM    1  C5  DDP A 301     -19.147  36.695  34.366 -0.07 -0.00    +0.171 A  
+DOCKED: HETATM    2  N7  DDP A 301     -18.491  36.109  33.270 -0.18 +0.01    -0.092 NA 
+DOCKED: HETATM    3  C4  DDP A 301     -19.164  36.121  35.651 -0.08 +0.03    +0.233 A  
+DOCKED: HETATM    4  N3  DDP A 301     -19.823  36.750  36.655 -0.48 -0.09    -0.187 NA 
+DOCKED: HETATM    5  C2  DDP A 301     -20.466  37.918  36.455 -0.05 +0.08    +0.242 A  
+DOCKED: HETATM    6  N2  DDP A 301     -21.139  38.539  37.517 -0.74 -0.03    -0.059 NA 
+DOCKED: HETATM    7  N1  DDP A 301     -20.458  38.485  35.221 -0.29 +0.02    -0.175 NA 
+DOCKED: HETATM    8  C6  DDP A 301     -19.818  37.910  34.175 -0.04 -0.01    +0.298 A  
+DOCKED: HETATM    9  O6  DDP A 301     -19.867  38.485  33.121 -0.82 -0.02    -0.264 OA 
+DOCKED: HETATM   10  O9  DDP A 301     -18.512  34.916  35.902 -0.35 +0.00    -0.168 OA 
+DOCKED: ENDROOT
+DOCKED: TORSDOF 0
+DOCKED: TER
+DOCKED: ENDMDL
+________________________________________________________________________________
+
+
+    FINAL DOCKED STATE:
+    ________________________
+
+
+Run:   11 / 50
+Time taken for this run:   0.450s
+
+DOCKED: MODEL        11
+DOCKED: USER    Run = 11
+DOCKED: USER
+DOCKED: USER    Estimated Free Energy of Binding    =  -3.15 kcal/mol  [=(1)+(2)+(3)-(4)]
+DOCKED: USER
+DOCKED: USER    (1) Final Intermolecular Energy     =  -3.15 kcal/mol
+DOCKED: USER        vdW + Hbond + desolv Energy     =  -3.08 kcal/mol
+DOCKED: USER        Electrostatic Energy            =  -0.07 kcal/mol
+DOCKED: USER        Moving Ligand-Fixed Receptor    =  -3.15 kcal/mol
+DOCKED: USER        Moving Ligand-Moving Receptor   =  +0.00 kcal/mol
+DOCKED: USER    (2) Final Total Internal Energy     =  +0.00 kcal/mol
+DOCKED: USER    (3) Torsional Free Energy           =  +0.00 kcal/mol
+DOCKED: USER    (4) Unbound System's Energy         =  +0.00 kcal/mol
+DOCKED: USER
+DOCKED: USER
+DOCKED: REMARK  0 active torsions:
+DOCKED: REMARK  status: ('A' for Active; 'I' for Inactive)
+DOCKED: USER                              x       y       z     vdW  Elec       q    Type
+DOCKED: USER                           _______ _______ _______ _____ _____    ______ ____
+DOCKED: ROOT
+DOCKED: HETATM    1  C5  DDP A 301     -19.789  35.247  35.257 -0.22 +0.03    +0.171 A  
+DOCKED: HETATM    2  N7  DDP A 301     -19.770  34.061  36.009 -0.39 -0.02    -0.092 NA 
+DOCKED: HETATM    3  C4  DDP A 301     -19.941  35.269  33.857 -0.18 +0.02    +0.233 A  
+DOCKED: HETATM    4  N3  DDP A 301     -19.946  36.458  33.205 -0.23 -0.00    -0.187 NA 
+DOCKED: HETATM    5  C2  DDP A 301     -19.810  37.626  33.864 -0.10 -0.01    +0.242 A  
+DOCKED: HETATM    6  N2  DDP A 301     -19.819  38.836  33.155 -0.85 -0.01    -0.059 NA 
+DOCKED: HETATM    7  N1  DDP A 301     -19.664  37.621  35.213 -0.15 -0.01    -0.175 NA 
+DOCKED: HETATM    8  C6  DDP A 301     -19.651  36.469  35.926 -0.04 +0.07    +0.298 A  
+DOCKED: HETATM    9  O6  DDP A 301     -19.515  36.564  37.117 -0.43 -0.13    -0.264 OA 
+DOCKED: HETATM   10  O9  DDP A 301     -20.084  34.086  33.137 -0.48 -0.02    -0.168 OA 
+DOCKED: ENDROOT
+DOCKED: TORSDOF 0
+DOCKED: TER
+DOCKED: ENDMDL
+________________________________________________________________________________
+
+
+    FINAL DOCKED STATE:
+    ________________________
+
+
+Run:   12 / 50
+Time taken for this run:   0.450s
+
+DOCKED: MODEL        12
+DOCKED: USER    Run = 12
+DOCKED: USER
+DOCKED: USER    Estimated Free Energy of Binding    =  -3.00 kcal/mol  [=(1)+(2)+(3)-(4)]
+DOCKED: USER
+DOCKED: USER    (1) Final Intermolecular Energy     =  -3.00 kcal/mol
+DOCKED: USER        vdW + Hbond + desolv Energy     =  -2.82 kcal/mol
+DOCKED: USER        Electrostatic Energy            =  -0.18 kcal/mol
+DOCKED: USER        Moving Ligand-Fixed Receptor    =  -3.00 kcal/mol
+DOCKED: USER        Moving Ligand-Moving Receptor   =  +0.00 kcal/mol
+DOCKED: USER    (2) Final Total Internal Energy     =  +0.00 kcal/mol
+DOCKED: USER    (3) Torsional Free Energy           =  +0.00 kcal/mol
+DOCKED: USER    (4) Unbound System's Energy         =  +0.00 kcal/mol
+DOCKED: USER
+DOCKED: USER
+DOCKED: REMARK  0 active torsions:
+DOCKED: REMARK  status: ('A' for Active; 'I' for Inactive)
+DOCKED: USER                              x       y       z     vdW  Elec       q    Type
+DOCKED: USER                           _______ _______ _______ _____ _____    ______ ____
+DOCKED: ROOT
+DOCKED: HETATM    1  C5  DDP A 301     -15.557  35.535  41.861 -0.13 +0.03    +0.171 A  
+DOCKED: HETATM    2  N7  DDP A 301     -16.395  36.021  40.844 -0.24 -0.02    -0.092 NA 
+DOCKED: HETATM    3  C4  DDP A 301     -15.954  35.444  43.208 -0.11 +0.03    +0.233 A  
+DOCKED: HETATM    4  N3  DDP A 301     -15.083  34.965  44.130 -0.08 +0.00    -0.187 NA 
+DOCKED: HETATM    5  C2  DDP A 301     -13.840  34.570  43.789 -0.05 -0.02    +0.242 A  
+DOCKED: HETATM    6  N2  DDP A 301     -12.966  34.080  44.771 -0.35 +0.03    -0.059 NA 
+DOCKED: HETATM    7  N1  DDP A 301     -13.443  34.650  42.494 -0.41 -0.07    -0.175 NA 
+DOCKED: HETATM    8  C6  DDP A 301     -14.263  35.118  41.523 +0.02 +0.14    +0.298 A  
+DOCKED: HETATM    9  O6  DDP A 301     -13.823  35.153  40.405 -0.74 -0.23    -0.264 OA 
+DOCKED: HETATM   10  O9  DDP A 301     -17.228  35.841  43.604 -0.73 -0.06    -0.168 OA 
+DOCKED: ENDROOT
+DOCKED: TORSDOF 0
+DOCKED: TER
+DOCKED: ENDMDL
+________________________________________________________________________________
+
+
+    FINAL DOCKED STATE:
+    ________________________
+
+
+Run:   13 / 50
+Time taken for this run:   0.450s
+
+DOCKED: MODEL        13
+DOCKED: USER    Run = 13
+DOCKED: USER
+DOCKED: USER    Estimated Free Energy of Binding    =  -3.00 kcal/mol  [=(1)+(2)+(3)-(4)]
+DOCKED: USER
+DOCKED: USER    (1) Final Intermolecular Energy     =  -3.00 kcal/mol
+DOCKED: USER        vdW + Hbond + desolv Energy     =  -2.81 kcal/mol
+DOCKED: USER        Electrostatic Energy            =  -0.18 kcal/mol
+DOCKED: USER        Moving Ligand-Fixed Receptor    =  -3.00 kcal/mol
+DOCKED: USER        Moving Ligand-Moving Receptor   =  +0.00 kcal/mol
+DOCKED: USER    (2) Final Total Internal Energy     =  +0.00 kcal/mol
+DOCKED: USER    (3) Torsional Free Energy           =  +0.00 kcal/mol
+DOCKED: USER    (4) Unbound System's Energy         =  +0.00 kcal/mol
+DOCKED: USER
+DOCKED: USER
+DOCKED: REMARK  0 active torsions:
+DOCKED: REMARK  status: ('A' for Active; 'I' for Inactive)
+DOCKED: USER                              x       y       z     vdW  Elec       q    Type
+DOCKED: USER                           _______ _______ _______ _____ _____    ______ ____
+DOCKED: ROOT
+DOCKED: HETATM    1  C5  DDP A 301     -15.564  35.510  41.854 -0.13 +0.03    +0.171 A  
+DOCKED: HETATM    2  N7  DDP A 301     -16.398  36.009  40.840 -0.24 -0.02    -0.092 NA 
+DOCKED: HETATM    3  C4  DDP A 301     -15.968  35.398  43.198 -0.11 +0.02    +0.233 A  
+DOCKED: HETATM    4  N3  DDP A 301     -15.100  34.907  44.117 -0.08 +0.00    -0.187 NA 
+DOCKED: HETATM    5  C2  DDP A 301     -13.853  34.522  43.776 -0.05 -0.02    +0.242 A  
+DOCKED: HETATM    6  N2  DDP A 301     -12.983  34.021  44.755 -0.35 +0.03    -0.059 NA 
+DOCKED: HETATM    7  N1  DDP A 301     -13.450  34.623  42.485 -0.42 -0.07    -0.175 NA 
+DOCKED: HETATM    8  C6  DDP A 301     -14.267  35.103  41.517 +0.03 +0.14    +0.298 A  
+DOCKED: HETATM    9  O6  DDP A 301     -13.821  35.157  40.401 -0.74 -0.23    -0.264 OA 
+DOCKED: HETATM   10  O9  DDP A 301     -17.246  35.784  43.592 -0.72 -0.06    -0.168 OA 
+DOCKED: ENDROOT
+DOCKED: TORSDOF 0
+DOCKED: TER
+DOCKED: ENDMDL
+________________________________________________________________________________
+
+
+    FINAL DOCKED STATE:
+    ________________________
+
+
+Run:   14 / 50
+Time taken for this run:   0.450s
+
+DOCKED: MODEL        14
+DOCKED: USER    Run = 14
+DOCKED: USER
+DOCKED: USER    Estimated Free Energy of Binding    =  -3.06 kcal/mol  [=(1)+(2)+(3)-(4)]
+DOCKED: USER
+DOCKED: USER    (1) Final Intermolecular Energy     =  -3.06 kcal/mol
+DOCKED: USER        vdW + Hbond + desolv Energy     =  -3.06 kcal/mol
+DOCKED: USER        Electrostatic Energy            =  -0.01 kcal/mol
+DOCKED: USER        Moving Ligand-Fixed Receptor    =  -3.06 kcal/mol
+DOCKED: USER        Moving Ligand-Moving Receptor   =  +0.00 kcal/mol
+DOCKED: USER    (2) Final Total Internal Energy     =  +0.00 kcal/mol
+DOCKED: USER    (3) Torsional Free Energy           =  +0.00 kcal/mol
+DOCKED: USER    (4) Unbound System's Energy         =  +0.00 kcal/mol
+DOCKED: USER
+DOCKED: USER
+DOCKED: REMARK  0 active torsions:
+DOCKED: REMARK  status: ('A' for Active; 'I' for Inactive)
+DOCKED: USER                              x       y       z     vdW  Elec       q    Type
+DOCKED: USER                           _______ _______ _______ _____ _____    ______ ____
+DOCKED: ROOT
+DOCKED: HETATM    1  C5  DDP A 301     -19.187  36.825  34.323 -0.08 -0.00    +0.171 A  
+DOCKED: HETATM    2  N7  DDP A 301     -18.644  36.302  33.138 -0.17 +0.01    -0.092 NA 
+DOCKED: HETATM    3  C4  DDP A 301     -19.369  36.059  35.490 -0.10 +0.03    +0.233 A  
+DOCKED: HETATM    4  N3  DDP A 301     -19.904  36.640  36.593 -0.44 -0.09    -0.187 NA 
+DOCKED: HETATM    5  C2  DDP A 301     -20.267  37.938  36.602 -0.04 +0.08    +0.242 A  
+DOCKED: HETATM    6  N2  DDP A 301     -20.819  38.504  37.761 -0.70 -0.03    -0.059 NA 
+DOCKED: HETATM    7  N1  DDP A 301     -20.097  38.689  35.485 -0.23 +0.01    -0.175 NA 
+DOCKED: HETATM    8  C6  DDP A 301     -19.568  38.172  34.350 -0.02 -0.01    +0.298 A  
+DOCKED: HETATM    9  O6  DDP A 301     -19.458  38.914  33.410 -0.86 -0.00    -0.264 OA 
+DOCKED: HETATM   10  O9  DDP A 301     -19.007  34.715  35.525 -0.40 +0.00    -0.168 OA 
+DOCKED: ENDROOT
+DOCKED: TORSDOF 0
+DOCKED: TER
+DOCKED: ENDMDL
+________________________________________________________________________________
+
+
+    FINAL DOCKED STATE:
+    ________________________
+
+
+Run:   15 / 50
+Time taken for this run:   0.450s
+
+DOCKED: MODEL        15
+DOCKED: USER    Run = 15
+DOCKED: USER
+DOCKED: USER    Estimated Free Energy of Binding    =  -3.09 kcal/mol  [=(1)+(2)+(3)-(4)]
+DOCKED: USER
+DOCKED: USER    (1) Final Intermolecular Energy     =  -3.09 kcal/mol
+DOCKED: USER        vdW + Hbond + desolv Energy     =  -3.08 kcal/mol
+DOCKED: USER        Electrostatic Energy            =  -0.00 kcal/mol
+DOCKED: USER        Moving Ligand-Fixed Receptor    =  -3.09 kcal/mol
+DOCKED: USER        Moving Ligand-Moving Receptor   =  +0.00 kcal/mol
+DOCKED: USER    (2) Final Total Internal Energy     =  +0.00 kcal/mol
+DOCKED: USER    (3) Torsional Free Energy           =  +0.00 kcal/mol
+DOCKED: USER    (4) Unbound System's Energy         =  +0.00 kcal/mol
+DOCKED: USER
+DOCKED: USER
+DOCKED: REMARK  0 active torsions:
+DOCKED: REMARK  status: ('A' for Active; 'I' for Inactive)
+DOCKED: USER                              x       y       z     vdW  Elec       q    Type
+DOCKED: USER                           _______ _______ _______ _____ _____    ______ ____
+DOCKED: ROOT
+DOCKED: HETATM    1  C5  DDP A 301     -19.583  36.433  34.313 -0.13 +0.01    +0.171 A  
+DOCKED: HETATM    2  N7  DDP A 301     -19.273  35.708  33.151 -0.28 +0.00    -0.092 NA 
+DOCKED: HETATM    3  C4  DDP A 301     -19.893  37.806  34.304 -0.09 -0.01    +0.233 A  
+DOCKED: HETATM    4  N3  DDP A 301     -20.178  38.434  35.472 -0.23 +0.01    -0.187 NA 
+DOCKED: HETATM    5  C2  DDP A 301     -20.173  37.775  36.648 -0.03 +0.09    +0.242 A  
+DOCKED: HETATM    6  N2  DDP A 301     -20.472  38.458  37.836 -0.61 -0.03    -0.059 NA 
+DOCKED: HETATM    7  N1  DDP A 301     -19.877  36.451  36.673 -0.37 -0.09    -0.175 NA 
+DOCKED: HETATM    8  C6  DDP A 301     -19.584  35.763  35.543 -0.08 +0.05    +0.298 A  
+DOCKED: HETATM    9  O6  DDP A 301     -19.332  34.594  35.664 -0.36 -0.02    -0.264 OA 
+DOCKED: HETATM   10  O9  DDP A 301     -19.910  38.525  33.112 -0.90 -0.02    -0.168 OA 
+DOCKED: ENDROOT
+DOCKED: TORSDOF 0
+DOCKED: TER
+DOCKED: ENDMDL
+________________________________________________________________________________
+
+
+    FINAL DOCKED STATE:
+    ________________________
+
+
+Run:   16 / 50
+Time taken for this run:   0.450s
+
+DOCKED: MODEL        16
+DOCKED: USER    Run = 16
+DOCKED: USER
+DOCKED: USER    Estimated Free Energy of Binding    =  -3.00 kcal/mol  [=(1)+(2)+(3)-(4)]
+DOCKED: USER
+DOCKED: USER    (1) Final Intermolecular Energy     =  -3.00 kcal/mol
+DOCKED: USER        vdW + Hbond + desolv Energy     =  -2.81 kcal/mol
+DOCKED: USER        Electrostatic Energy            =  -0.18 kcal/mol
+DOCKED: USER        Moving Ligand-Fixed Receptor    =  -3.00 kcal/mol
+DOCKED: USER        Moving Ligand-Moving Receptor   =  +0.00 kcal/mol
+DOCKED: USER    (2) Final Total Internal Energy     =  +0.00 kcal/mol
+DOCKED: USER    (3) Torsional Free Energy           =  +0.00 kcal/mol
+DOCKED: USER    (4) Unbound System's Energy         =  +0.00 kcal/mol
+DOCKED: USER
+DOCKED: USER
+DOCKED: REMARK  0 active torsions:
+DOCKED: REMARK  status: ('A' for Active; 'I' for Inactive)
+DOCKED: USER                              x       y       z     vdW  Elec       q    Type
+DOCKED: USER                           _______ _______ _______ _____ _____    ______ ____
+DOCKED: ROOT
+DOCKED: HETATM    1  C5  DDP A 301     -15.530  35.555  41.852 -0.13 +0.03    +0.171 A  
+DOCKED: HETATM    2  N7  DDP A 301     -16.349  36.067  40.832 -0.23 -0.02    -0.092 NA 
+DOCKED: HETATM    3  C4  DDP A 301     -15.941  35.456  43.194 -0.11 +0.03    +0.233 A  
+DOCKED: HETATM    4  N3  DDP A 301     -15.087  34.952  44.119 -0.08 +0.00    -0.187 NA 
+DOCKED: HETATM    5  C2  DDP A 301     -13.847  34.540  43.785 -0.05 -0.02    +0.242 A  
+DOCKED: HETATM    6  N2  DDP A 301     -12.991  34.025  44.769 -0.35 +0.03    -0.059 NA 
+DOCKED: HETATM    7  N1  DDP A 301     -13.437  34.628  42.494 -0.41 -0.07    -0.175 NA 
+DOCKED: HETATM    8  C6  DDP A 301     -14.240  35.120  41.521 +0.02 +0.14    +0.298 A  
+DOCKED: HETATM    9  O6  DDP A 301     -13.789  35.161  40.407 -0.74 -0.24    -0.264 OA 
+DOCKED: HETATM   10  O9  DDP A 301     -17.212  35.870  43.582 -0.73 -0.06    -0.168 OA 
+DOCKED: ENDROOT
+DOCKED: TORSDOF 0
+DOCKED: TER
+DOCKED: ENDMDL
+________________________________________________________________________________
+
+
+    FINAL DOCKED STATE:
+    ________________________
+
+
+Run:   17 / 50
+Time taken for this run:   0.450s
+
+DOCKED: MODEL        17
+DOCKED: USER    Run = 17
+DOCKED: USER
+DOCKED: USER    Estimated Free Energy of Binding    =  -3.00 kcal/mol  [=(1)+(2)+(3)-(4)]
+DOCKED: USER
+DOCKED: USER    (1) Final Intermolecular Energy     =  -3.00 kcal/mol
+DOCKED: USER        vdW + Hbond + desolv Energy     =  -2.81 kcal/mol
+DOCKED: USER        Electrostatic Energy            =  -0.18 kcal/mol
+DOCKED: USER        Moving Ligand-Fixed Receptor    =  -3.00 kcal/mol
+DOCKED: USER        Moving Ligand-Moving Receptor   =  +0.00 kcal/mol
+DOCKED: USER    (2) Final Total Internal Energy     =  +0.00 kcal/mol
+DOCKED: USER    (3) Torsional Free Energy           =  +0.00 kcal/mol
+DOCKED: USER    (4) Unbound System's Energy         =  +0.00 kcal/mol
+DOCKED: USER
+DOCKED: USER
+DOCKED: REMARK  0 active torsions:
+DOCKED: REMARK  status: ('A' for Active; 'I' for Inactive)
+DOCKED: USER                              x       y       z     vdW  Elec       q    Type
+DOCKED: USER                           _______ _______ _______ _____ _____    ______ ____
+DOCKED: ROOT
+DOCKED: HETATM    1  C5  DDP A 301     -15.548  35.522  41.867 -0.13 +0.03    +0.171 A  
+DOCKED: HETATM    2  N7  DDP A 301     -16.381  36.024  40.855 -0.24 -0.02    -0.092 NA 
+DOCKED: HETATM    3  C4  DDP A 301     -15.949  35.412  43.212 -0.11 +0.02    +0.233 A  
+DOCKED: HETATM    4  N3  DDP A 301     -15.082  34.918  44.130 -0.08 +0.00    -0.187 NA 
+DOCKED: HETATM    5  C2  DDP A 301     -13.838  34.527  43.787 -0.05 -0.03    +0.242 A  
+DOCKED: HETATM    6  N2  DDP A 301     -12.968  34.022  44.765 -0.35 +0.03    -0.059 NA 
+DOCKED: HETATM    7  N1  DDP A 301     -13.436  34.626  42.495 -0.41 -0.07    -0.175 NA 
+DOCKED: HETATM    8  C6  DDP A 301     -14.253  35.109  41.528 +0.02 +0.14    +0.298 A  
+DOCKED: HETATM    9  O6  DDP A 301     -13.809  35.161  40.412 -0.74 -0.23    -0.264 OA 
+DOCKED: HETATM   10  O9  DDP A 301     -17.225  35.804  43.609 -0.72 -0.06    -0.168 OA 
+DOCKED: ENDROOT
+DOCKED: TORSDOF 0
+DOCKED: TER
+DOCKED: ENDMDL
+________________________________________________________________________________
+
+
+    FINAL DOCKED STATE:
+    ________________________
+
+
+Run:   18 / 50
+Time taken for this run:   0.450s
+
+DOCKED: MODEL        18
+DOCKED: USER    Run = 18
+DOCKED: USER
+DOCKED: USER    Estimated Free Energy of Binding    =  -3.05 kcal/mol  [=(1)+(2)+(3)-(4)]
+DOCKED: USER
+DOCKED: USER    (1) Final Intermolecular Energy     =  -3.05 kcal/mol
+DOCKED: USER        vdW + Hbond + desolv Energy     =  -3.02 kcal/mol
+DOCKED: USER        Electrostatic Energy            =  -0.03 kcal/mol
+DOCKED: USER        Moving Ligand-Fixed Receptor    =  -3.05 kcal/mol
+DOCKED: USER        Moving Ligand-Moving Receptor   =  +0.00 kcal/mol
+DOCKED: USER    (2) Final Total Internal Energy     =  +0.00 kcal/mol
+DOCKED: USER    (3) Torsional Free Energy           =  +0.00 kcal/mol
+DOCKED: USER    (4) Unbound System's Energy         =  +0.00 kcal/mol
+DOCKED: USER
+DOCKED: USER
+DOCKED: REMARK  0 active torsions:
+DOCKED: REMARK  status: ('A' for Active; 'I' for Inactive)
+DOCKED: USER                              x       y       z     vdW  Elec       q    Type
+DOCKED: USER                           _______ _______ _______ _____ _____    ______ ____
+DOCKED: ROOT
+DOCKED: HETATM    1  C5  DDP A 301     -19.531  34.914  35.349 -0.26 +0.02    +0.171 A  
+DOCKED: HETATM    2  N7  DDP A 301     -19.451  33.644  35.942 -0.48 -0.00    -0.092 NA 
+DOCKED: HETATM    3  C4  DDP A 301     -19.313  36.111  36.058 -0.10 +0.05    +0.233 A  
+DOCKED: HETATM    4  N3  DDP A 301     -19.413  37.298  35.411 -0.11 -0.01    -0.187 NA 
+DOCKED: HETATM    5  C2  DDP A 301     -19.716  37.364  34.099 -0.08 -0.01    +0.242 A  
+DOCKED: HETATM    6  N2  DDP A 301     -19.811  38.611  33.463 -0.88 -0.01    -0.059 NA 
+DOCKED: HETATM    7  N1  DDP A 301     -19.928  36.219  33.401 -0.23 -0.01    -0.175 NA 
+DOCKED: HETATM    8  C6  DDP A 301     -19.844  35.000  33.986 -0.14 +0.02    +0.298 A  
+DOCKED: HETATM    9  O6  DDP A 301     -20.049  34.043  33.289 -0.39 -0.02    -0.264 OA 
+DOCKED: HETATM   10  O9  DDP A 301     -18.998  36.088  37.414 -0.34 -0.06    -0.168 OA 
+DOCKED: ENDROOT
+DOCKED: TORSDOF 0
+DOCKED: TER
+DOCKED: ENDMDL
+________________________________________________________________________________
+
+
+    FINAL DOCKED STATE:
+    ________________________
+
+
+Run:   19 / 50
+Time taken for this run:   0.450s
+
+DOCKED: MODEL        19
+DOCKED: USER    Run = 19
+DOCKED: USER
+DOCKED: USER    Estimated Free Energy of Binding    =  -3.00 kcal/mol  [=(1)+(2)+(3)-(4)]
+DOCKED: USER
+DOCKED: USER    (1) Final Intermolecular Energy     =  -3.00 kcal/mol
+DOCKED: USER        vdW + Hbond + desolv Energy     =  -2.81 kcal/mol
+DOCKED: USER        Electrostatic Energy            =  -0.18 kcal/mol
+DOCKED: USER        Moving Ligand-Fixed Receptor    =  -3.00 kcal/mol
+DOCKED: USER        Moving Ligand-Moving Receptor   =  +0.00 kcal/mol
+DOCKED: USER    (2) Final Total Internal Energy     =  +0.00 kcal/mol
+DOCKED: USER    (3) Torsional Free Energy           =  +0.00 kcal/mol
+DOCKED: USER    (4) Unbound System's Energy         =  +0.00 kcal/mol
+DOCKED: USER
+DOCKED: USER
+DOCKED: REMARK  0 active torsions:
+DOCKED: REMARK  status: ('A' for Active; 'I' for Inactive)
+DOCKED: USER                              x       y       z     vdW  Elec       q    Type
+DOCKED: USER                           _______ _______ _______ _____ _____    ______ ____
+DOCKED: ROOT
+DOCKED: HETATM    1  C5  DDP A 301     -15.547  35.531  41.840 -0.13 +0.03    +0.171 A  
+DOCKED: HETATM    2  N7  DDP A 301     -16.369  36.046  40.825 -0.23 -0.02    -0.092 NA 
+DOCKED: HETATM    3  C4  DDP A 301     -15.957  35.418  43.182 -0.11 +0.03    +0.233 A  
+DOCKED: HETATM    4  N3  DDP A 301     -15.100  34.911  44.102 -0.08 +0.00    -0.187 NA 
+DOCKED: HETATM    5  C2  DDP A 301     -13.857  34.510  43.765 -0.06 -0.02    +0.242 A  
+DOCKED: HETATM    6  N2  DDP A 301     -12.998  33.992  44.745 -0.35 +0.03    -0.059 NA 
+DOCKED: HETATM    7  N1  DDP A 301     -13.447  34.612  42.475 -0.42 -0.07    -0.175 NA 
+DOCKED: HETATM    8  C6  DDP A 301     -14.253  35.108  41.506 +0.03 +0.14    +0.298 A  
+DOCKED: HETATM    9  O6  DDP A 301     -13.803  35.161  40.393 -0.74 -0.24    -0.264 OA 
+DOCKED: HETATM   10  O9  DDP A 301     -17.231  35.819  43.573 -0.72 -0.06    -0.168 OA 
+DOCKED: ENDROOT
+DOCKED: TORSDOF 0
+DOCKED: TER
+DOCKED: ENDMDL
+________________________________________________________________________________
+
+
+    FINAL DOCKED STATE:
+    ________________________
+
+
+Run:   20 / 50
+Time taken for this run:   0.450s
+
+DOCKED: MODEL        20
+DOCKED: USER    Run = 20
+DOCKED: USER
+DOCKED: USER    Estimated Free Energy of Binding    =  -3.10 kcal/mol  [=(1)+(2)+(3)-(4)]
+DOCKED: USER
+DOCKED: USER    (1) Final Intermolecular Energy     =  -3.10 kcal/mol
+DOCKED: USER        vdW + Hbond + desolv Energy     =  -3.09 kcal/mol
+DOCKED: USER        Electrostatic Energy            =  -0.01 kcal/mol
+DOCKED: USER        Moving Ligand-Fixed Receptor    =  -3.10 kcal/mol
+DOCKED: USER        Moving Ligand-Moving Receptor   =  +0.00 kcal/mol
+DOCKED: USER    (2) Final Total Internal Energy     =  +0.00 kcal/mol
+DOCKED: USER    (3) Torsional Free Energy           =  +0.00 kcal/mol
+DOCKED: USER    (4) Unbound System's Energy         =  +0.00 kcal/mol
+DOCKED: USER
+DOCKED: USER
+DOCKED: REMARK  0 active torsions:
+DOCKED: REMARK  status: ('A' for Active; 'I' for Inactive)
+DOCKED: USER                              x       y       z     vdW  Elec       q    Type
+DOCKED: USER                           _______ _______ _______ _____ _____    ______ ____
+DOCKED: ROOT
+DOCKED: HETATM    1  C5  DDP A 301     -19.249  36.724  34.297 -0.08 -0.00    +0.171 A  
+DOCKED: HETATM    2  N7  DDP A 301     -18.728  36.175  33.114 -0.19 +0.01    -0.092 NA 
+DOCKED: HETATM    3  C4  DDP A 301     -19.367  35.999  35.497 -0.10 +0.03    +0.233 A  
+DOCKED: HETATM    4  N3  DDP A 301     -19.883  36.603  36.595 -0.44 -0.09    -0.187 NA 
+DOCKED: HETATM    5  C2  DDP A 301     -20.288  37.889  36.569 -0.04 +0.08    +0.242 A  
+DOCKED: HETATM    6  N2  DDP A 301     -20.819  38.480  37.725 -0.71 -0.03    -0.059 NA 
+DOCKED: HETATM    7  N1  DDP A 301     -20.180  38.602  35.420 -0.25 +0.01    -0.175 NA 
+DOCKED: HETATM    8  C6  DDP A 301     -19.673  38.060  34.287 -0.03 -0.01    +0.298 A  
+DOCKED: HETATM    9  O6  DDP A 301     -19.617  38.768  33.318 -0.84 -0.01    -0.264 OA 
+DOCKED: HETATM   10  O9  DDP A 301     -18.960  34.669  35.569 -0.41 +0.00    -0.168 OA 
+DOCKED: ENDROOT
+DOCKED: TORSDOF 0
+DOCKED: TER
+DOCKED: ENDMDL
+________________________________________________________________________________
+
+
+    FINAL DOCKED STATE:
+    ________________________
+
+
+Run:   21 / 50
+Time taken for this run:   0.450s
+
+DOCKED: MODEL        21
+DOCKED: USER    Run = 21
+DOCKED: USER
+DOCKED: USER    Estimated Free Energy of Binding    =  -3.04 kcal/mol  [=(1)+(2)+(3)-(4)]
+DOCKED: USER
+DOCKED: USER    (1) Final Intermolecular Energy     =  -3.04 kcal/mol
+DOCKED: USER        vdW + Hbond + desolv Energy     =  -3.03 kcal/mol
+DOCKED: USER        Electrostatic Energy            =  -0.01 kcal/mol
+DOCKED: USER        Moving Ligand-Fixed Receptor    =  -3.04 kcal/mol
+DOCKED: USER        Moving Ligand-Moving Receptor   =  +0.00 kcal/mol
+DOCKED: USER    (2) Final Total Internal Energy     =  +0.00 kcal/mol
+DOCKED: USER    (3) Torsional Free Energy           =  +0.00 kcal/mol
+DOCKED: USER    (4) Unbound System's Energy         =  +0.00 kcal/mol
+DOCKED: USER
+DOCKED: USER
+DOCKED: REMARK  0 active torsions:
+DOCKED: REMARK  status: ('A' for Active; 'I' for Inactive)
+DOCKED: USER                              x       y       z     vdW  Elec       q    Type
+DOCKED: USER                           _______ _______ _______ _____ _____    ______ ____
+DOCKED: ROOT
+DOCKED: HETATM    1  C5  DDP A 301     -19.308  36.954  34.197 -0.09 -0.00    +0.171 A  
+DOCKED: HETATM    2  N7  DDP A 301     -18.581  36.389  33.136 -0.17 +0.01    -0.092 NA 
+DOCKED: HETATM    3  C4  DDP A 301     -19.815  36.199  35.271 -0.12 +0.04    +0.233 A  
+DOCKED: HETATM    4  N3  DDP A 301     -20.510  36.821  36.255 -0.45 -0.10    -0.187 NA 
+DOCKED: HETATM    5  C2  DDP A 301     -20.728  38.151  36.234 -0.10 +0.04    +0.242 A  
+DOCKED: HETATM    6  N2  DDP A 301     -21.452  38.759  37.270 -0.55 -0.02    -0.059 NA 
+DOCKED: HETATM    7  N1  DDP A 301     -20.244  38.893  35.205 -0.35 +0.02    -0.175 NA 
+DOCKED: HETATM    8  C6  DDP A 301     -19.542  38.335  34.190 -0.01 -0.01    +0.298 A  
+DOCKED: HETATM    9  O6  DDP A 301     -19.155  39.072  33.323 -0.78 +0.03    -0.264 OA 
+DOCKED: HETATM   10  O9  DDP A 301     -19.612  34.823  35.333 -0.42 -0.02    -0.168 OA 
+DOCKED: ENDROOT
+DOCKED: TORSDOF 0
+DOCKED: TER
+DOCKED: ENDMDL
+________________________________________________________________________________
+
+
+    FINAL DOCKED STATE:
+    ________________________
+
+
+Run:   22 / 50
+Time taken for this run:   0.450s
+
+DOCKED: MODEL        22
+DOCKED: USER    Run = 22
+DOCKED: USER
+DOCKED: USER    Estimated Free Energy of Binding    =  -3.00 kcal/mol  [=(1)+(2)+(3)-(4)]
+DOCKED: USER
+DOCKED: USER    (1) Final Intermolecular Energy     =  -3.00 kcal/mol
+DOCKED: USER        vdW + Hbond + desolv Energy     =  -2.82 kcal/mol
+DOCKED: USER        Electrostatic Energy            =  -0.18 kcal/mol
+DOCKED: USER        Moving Ligand-Fixed Receptor    =  -3.00 kcal/mol
+DOCKED: USER        Moving Ligand-Moving Receptor   =  +0.00 kcal/mol
+DOCKED: USER    (2) Final Total Internal Energy     =  +0.00 kcal/mol
+DOCKED: USER    (3) Torsional Free Energy           =  +0.00 kcal/mol
+DOCKED: USER    (4) Unbound System's Energy         =  +0.00 kcal/mol
+DOCKED: USER
+DOCKED: USER
+DOCKED: REMARK  0 active torsions:
+DOCKED: REMARK  status: ('A' for Active; 'I' for Inactive)
+DOCKED: USER                              x       y       z     vdW  Elec       q    Type
+DOCKED: USER                           _______ _______ _______ _____ _____    ______ ____
+DOCKED: ROOT
+DOCKED: HETATM    1  C5  DDP A 301     -15.558  35.536  41.863 -0.13 +0.03    +0.171 A  
+DOCKED: HETATM    2  N7  DDP A 301     -16.386  36.050  40.852 -0.23 -0.02    -0.092 NA 
+DOCKED: HETATM    3  C4  DDP A 301     -15.959  35.428  43.208 -0.11 +0.03    +0.233 A  
+DOCKED: HETATM    4  N3  DDP A 301     -15.097  34.923  44.124 -0.08 +0.00    -0.187 NA 
+DOCKED: HETATM    5  C2  DDP A 301     -13.858  34.517  43.780 -0.05 -0.03    +0.242 A  
+DOCKED: HETATM    6  N2  DDP A 301     -12.993  34.001  44.756 -0.35 +0.03    -0.059 NA 
+DOCKED: HETATM    7  N1  DDP A 301     -13.456  34.614  42.487 -0.42 -0.07    -0.175 NA 
+DOCKED: HETATM    8  C6  DDP A 301     -14.268  35.109  41.522 +0.02 +0.14    +0.298 A  
+DOCKED: HETATM    9  O6  DDP A 301     -13.824  35.157  40.406 -0.74 -0.23    -0.264 OA 
+DOCKED: HETATM   10  O9  DDP A 301     -17.230  35.835  43.607 -0.73 -0.06    -0.168 OA 
+DOCKED: ENDROOT
+DOCKED: TORSDOF 0
+DOCKED: TER
+DOCKED: ENDMDL
+________________________________________________________________________________
+
+
+    FINAL DOCKED STATE:
+    ________________________
+
+
+Run:   23 / 50
+Time taken for this run:   0.450s
+
+DOCKED: MODEL        23
+DOCKED: USER    Run = 23
+DOCKED: USER
+DOCKED: USER    Estimated Free Energy of Binding    =  -3.05 kcal/mol  [=(1)+(2)+(3)-(4)]
+DOCKED: USER
+DOCKED: USER    (1) Final Intermolecular Energy     =  -3.05 kcal/mol
+DOCKED: USER        vdW + Hbond + desolv Energy     =  -3.02 kcal/mol
+DOCKED: USER        Electrostatic Energy            =  -0.03 kcal/mol
+DOCKED: USER        Moving Ligand-Fixed Receptor    =  -3.05 kcal/mol
+DOCKED: USER        Moving Ligand-Moving Receptor   =  +0.00 kcal/mol
+DOCKED: USER    (2) Final Total Internal Energy     =  +0.00 kcal/mol
+DOCKED: USER    (3) Torsional Free Energy           =  +0.00 kcal/mol
+DOCKED: USER    (4) Unbound System's Energy         =  +0.00 kcal/mol
+DOCKED: USER
+DOCKED: USER
+DOCKED: REMARK  0 active torsions:
+DOCKED: REMARK  status: ('A' for Active; 'I' for Inactive)
+DOCKED: USER                              x       y       z     vdW  Elec       q    Type
+DOCKED: USER                           _______ _______ _______ _____ _____    ______ ____
+DOCKED: ROOT
+DOCKED: HETATM    1  C5  DDP A 301     -19.526  34.909  35.369 -0.26 +0.02    +0.171 A  
+DOCKED: HETATM    2  N7  DDP A 301     -19.439  33.636  35.956 -0.48 -0.00    -0.092 NA 
+DOCKED: HETATM    3  C4  DDP A 301     -19.308  36.103  36.082 -0.10 +0.05    +0.233 A  
+DOCKED: HETATM    4  N3  DDP A 301     -19.415  37.293  35.440 -0.11 -0.02    -0.187 NA 
+DOCKED: HETATM    5  C2  DDP A 301     -19.724  37.364  34.130 -0.08 -0.00    +0.242 A  
+DOCKED: HETATM    6  N2  DDP A 301     -19.826  38.613  33.501 -0.88 -0.01    -0.059 NA 
+DOCKED: HETATM    7  N1  DDP A 301     -19.937  36.221  33.429 -0.23 -0.01    -0.175 NA 
+DOCKED: HETATM    8  C6  DDP A 301     -19.846  35.000  34.008 -0.13 +0.02    +0.298 A  
+DOCKED: HETATM    9  O6  DDP A 301     -20.052  34.046  33.307 -0.39 -0.02    -0.264 OA 
+DOCKED: HETATM   10  O9  DDP A 301     -18.986  36.076  37.436 -0.34 -0.06    -0.168 OA 
+DOCKED: ENDROOT
+DOCKED: TORSDOF 0
+DOCKED: TER
+DOCKED: ENDMDL
+________________________________________________________________________________
+
+
+    FINAL DOCKED STATE:
+    ________________________
+
+
+Run:   24 / 50
+Time taken for this run:   0.450s
+
+DOCKED: MODEL        24
+DOCKED: USER    Run = 24
+DOCKED: USER
+DOCKED: USER    Estimated Free Energy of Binding    =  -3.00 kcal/mol  [=(1)+(2)+(3)-(4)]
+DOCKED: USER
+DOCKED: USER    (1) Final Intermolecular Energy     =  -3.00 kcal/mol
+DOCKED: USER        vdW + Hbond + desolv Energy     =  -2.82 kcal/mol
+DOCKED: USER        Electrostatic Energy            =  -0.18 kcal/mol
+DOCKED: USER        Moving Ligand-Fixed Receptor    =  -3.00 kcal/mol
+DOCKED: USER        Moving Ligand-Moving Receptor   =  +0.00 kcal/mol
+DOCKED: USER    (2) Final Total Internal Energy     =  +0.00 kcal/mol
+DOCKED: USER    (3) Torsional Free Energy           =  +0.00 kcal/mol
+DOCKED: USER    (4) Unbound System's Energy         =  +0.00 kcal/mol
+DOCKED: USER
+DOCKED: USER
+DOCKED: REMARK  0 active torsions:
+DOCKED: REMARK  status: ('A' for Active; 'I' for Inactive)
+DOCKED: USER                              x       y       z     vdW  Elec       q    Type
+DOCKED: USER                           _______ _______ _______ _____ _____    ______ ____
+DOCKED: ROOT
+DOCKED: HETATM    1  C5  DDP A 301     -15.563  35.530  41.855 -0.13 +0.03    +0.171 A  
+DOCKED: HETATM    2  N7  DDP A 301     -16.397  36.023  40.839 -0.24 -0.02    -0.092 NA 
+DOCKED: HETATM    3  C4  DDP A 301     -15.964  35.427  43.200 -0.11 +0.03    +0.233 A  
+DOCKED: HETATM    4  N3  DDP A 301     -15.096  34.942  44.121 -0.08 +0.00    -0.187 NA 
+DOCKED: HETATM    5  C2  DDP A 301     -13.851  34.552  43.782 -0.05 -0.02    +0.242 A  
+DOCKED: HETATM    6  N2  DDP A 301     -12.980  34.056  44.763 -0.35 +0.03    -0.059 NA 
+DOCKED: HETATM    7  N1  DDP A 301     -13.449  34.643  42.489 -0.42 -0.07    -0.175 NA 
+DOCKED: HETATM    8  C6  DDP A 301     -14.267  35.118  41.519 +0.02 +0.14    +0.298 A  
+DOCKED: HETATM    9  O6  DDP A 301     -13.822  35.164  40.403 -0.74 -0.23    -0.264 OA 
+DOCKED: HETATM   10  O9  DDP A 301     -17.241  35.818  43.594 -0.72 -0.06    -0.168 OA 
+DOCKED: ENDROOT
+DOCKED: TORSDOF 0
+DOCKED: TER
+DOCKED: ENDMDL
+________________________________________________________________________________
+
+
+    FINAL DOCKED STATE:
+    ________________________
+
+
+Run:   25 / 50
+Time taken for this run:   0.450s
+
+DOCKED: MODEL        25
+DOCKED: USER    Run = 25
+DOCKED: USER
+DOCKED: USER    Estimated Free Energy of Binding    =  -3.01 kcal/mol  [=(1)+(2)+(3)-(4)]
+DOCKED: USER
+DOCKED: USER    (1) Final Intermolecular Energy     =  -3.01 kcal/mol
+DOCKED: USER        vdW + Hbond + desolv Energy     =  -2.91 kcal/mol
+DOCKED: USER        Electrostatic Energy            =  -0.10 kcal/mol
+DOCKED: USER        Moving Ligand-Fixed Receptor    =  -3.01 kcal/mol
+DOCKED: USER        Moving Ligand-Moving Receptor   =  +0.00 kcal/mol
+DOCKED: USER    (2) Final Total Internal Energy     =  +0.00 kcal/mol
+DOCKED: USER    (3) Torsional Free Energy           =  +0.00 kcal/mol
+DOCKED: USER    (4) Unbound System's Energy         =  +0.00 kcal/mol
+DOCKED: USER
+DOCKED: USER
+DOCKED: REMARK  0 active torsions:
+DOCKED: REMARK  status: ('A' for Active; 'I' for Inactive)
+DOCKED: USER                              x       y       z     vdW  Elec       q    Type
+DOCKED: USER                           _______ _______ _______ _____ _____    ______ ____
+DOCKED: ROOT
+DOCKED: HETATM    1  C5  DDP A 301     -19.825  37.967  35.514 -0.12 +0.01    +0.171 A  
+DOCKED: HETATM    2  N7  DDP A 301     -19.943  39.287  35.981 -0.15 +0.01    -0.092 NA 
+DOCKED: HETATM    3  C4  DDP A 301     -19.768  37.636  34.147 -0.09 -0.01    +0.233 A  
+DOCKED: HETATM    4  N3  DDP A 301     -19.656  36.336  33.779 -0.17 -0.00    -0.187 NA 
+DOCKED: HETATM    5  C2  DDP A 301     -19.598  35.346  34.692 -0.16 +0.02    +0.242 A  
+DOCKED: HETATM    6  N2  DDP A 301     -19.484  34.012  34.273 -0.46 +0.01    -0.059 NA 
+DOCKED: HETATM    7  N1  DDP A 301     -19.651  35.649  36.014 -0.26 -0.05    -0.175 NA 
+DOCKED: HETATM    8  C6  DDP A 301     -19.761  36.927  36.450 +0.01 +0.11    +0.298 A  
+DOCKED: HETATM    9  O6  DDP A 301     -19.803  37.098  37.639 -0.58 -0.18    -0.264 OA 
+DOCKED: HETATM   10  O9  DDP A 301     -19.824  38.627  33.171 -0.92 -0.02    -0.168 OA 
+DOCKED: ENDROOT
+DOCKED: TORSDOF 0
+DOCKED: TER
+DOCKED: ENDMDL
+________________________________________________________________________________
+
+
+    FINAL DOCKED STATE:
+    ________________________
+
+
+Run:   26 / 50
+Time taken for this run:   0.450s
+
+DOCKED: MODEL        26
+DOCKED: USER    Run = 26
+DOCKED: USER
+DOCKED: USER    Estimated Free Energy of Binding    =  -3.04 kcal/mol  [=(1)+(2)+(3)-(4)]
+DOCKED: USER
+DOCKED: USER    (1) Final Intermolecular Energy     =  -3.04 kcal/mol
+DOCKED: USER        vdW + Hbond + desolv Energy     =  -3.02 kcal/mol
+DOCKED: USER        Electrostatic Energy            =  -0.03 kcal/mol
+DOCKED: USER        Moving Ligand-Fixed Receptor    =  -3.04 kcal/mol
+DOCKED: USER        Moving Ligand-Moving Receptor   =  +0.00 kcal/mol
+DOCKED: USER    (2) Final Total Internal Energy     =  +0.00 kcal/mol
+DOCKED: USER    (3) Torsional Free Energy           =  +0.00 kcal/mol
+DOCKED: USER    (4) Unbound System's Energy         =  +0.00 kcal/mol
+DOCKED: USER
+DOCKED: USER
+DOCKED: REMARK  0 active torsions:
+DOCKED: REMARK  status: ('A' for Active; 'I' for Inactive)
+DOCKED: USER                              x       y       z     vdW  Elec       q    Type
+DOCKED: USER                           _______ _______ _______ _____ _____    ______ ____
+DOCKED: ROOT
+DOCKED: HETATM    1  C5  DDP A 301     -19.532  34.884  35.316 -0.26 +0.01    +0.171 A  
+DOCKED: HETATM    2  N7  DDP A 301     -19.450  33.605  35.890 -0.48 +0.00    -0.092 NA 
+DOCKED: HETATM    3  C4  DDP A 301     -19.282  36.069  36.034 -0.10 +0.05    +0.233 A  
+DOCKED: HETATM    4  N3  DDP A 301     -19.385  37.265  35.405 -0.11 -0.01    -0.187 NA 
+DOCKED: HETATM    5  C2  DDP A 301     -19.723  37.352  34.103 -0.08 -0.00    +0.242 A  
+DOCKED: HETATM    6  N2  DDP A 301     -19.822  38.609  33.487 -0.88 -0.01    -0.059 NA 
+DOCKED: HETATM    7  N1  DDP A 301     -19.967  36.219  33.397 -0.24 -0.01    -0.175 NA 
+DOCKED: HETATM    8  C6  DDP A 301     -19.880  34.992  33.963 -0.12 +0.02    +0.298 A  
+DOCKED: HETATM    9  O6  DDP A 301     -20.115  34.047  33.259 -0.40 -0.02    -0.264 OA 
+DOCKED: HETATM   10  O9  DDP A 301     -18.930  36.025  37.380 -0.33 -0.06    -0.168 OA 
+DOCKED: ENDROOT
+DOCKED: TORSDOF 0
+DOCKED: TER
+DOCKED: ENDMDL
+________________________________________________________________________________
+
+
+    FINAL DOCKED STATE:
+    ________________________
+
+
+Run:   27 / 50
+Time taken for this run:   0.450s
+
+DOCKED: MODEL        27
+DOCKED: USER    Run = 27
+DOCKED: USER
+DOCKED: USER    Estimated Free Energy of Binding    =  -3.05 kcal/mol  [=(1)+(2)+(3)-(4)]
+DOCKED: USER
+DOCKED: USER    (1) Final Intermolecular Energy     =  -3.05 kcal/mol
+DOCKED: USER        vdW + Hbond + desolv Energy     =  -3.02 kcal/mol
+DOCKED: USER        Electrostatic Energy            =  -0.03 kcal/mol
+DOCKED: USER        Moving Ligand-Fixed Receptor    =  -3.05 kcal/mol
+DOCKED: USER        Moving Ligand-Moving Receptor   =  +0.00 kcal/mol
+DOCKED: USER    (2) Final Total Internal Energy     =  +0.00 kcal/mol
+DOCKED: USER    (3) Torsional Free Energy           =  +0.00 kcal/mol
+DOCKED: USER    (4) Unbound System's Energy         =  +0.00 kcal/mol
+DOCKED: USER
+DOCKED: USER
+DOCKED: REMARK  0 active torsions:
+DOCKED: REMARK  status: ('A' for Active; 'I' for Inactive)
+DOCKED: USER                              x       y       z     vdW  Elec       q    Type
+DOCKED: USER                           _______ _______ _______ _____ _____    ______ ____
+DOCKED: ROOT
+DOCKED: HETATM    1  C5  DDP A 301     -19.532  34.837  35.212 -0.26 +0.01    +0.171 A  
+DOCKED: HETATM    2  N7  DDP A 301     -19.451  33.542  35.751 -0.46 +0.00    -0.092 NA 
+DOCKED: HETATM    3  C4  DDP A 301     -19.247  35.999  35.953 -0.10 +0.04    +0.233 A  
+DOCKED: HETATM    4  N3  DDP A 301     -19.353  37.213  35.358 -0.11 -0.01    -0.187 NA 
+DOCKED: HETATM    5  C2  DDP A 301     -19.724  37.338  34.069 -0.08 -0.00    +0.242 A  
+DOCKED: HETATM    6  N2  DDP A 301     -19.824  38.611  33.488 -0.88 -0.01    -0.059 NA 
+DOCKED: HETATM    7  N1  DDP A 301     -20.002  36.227  33.340 -0.25 -0.01    -0.175 NA 
+DOCKED: HETATM    8  C6  DDP A 301     -19.915  34.984  33.873 -0.12 +0.02    +0.298 A  
+DOCKED: HETATM    9  O6  DDP A 301     -20.181  34.060  33.151 -0.42 -0.03    -0.264 OA 
+DOCKED: HETATM   10  O9  DDP A 301     -18.859  35.916  37.288 -0.33 -0.05    -0.168 OA 
+DOCKED: ENDROOT
+DOCKED: TORSDOF 0
+DOCKED: TER
+DOCKED: ENDMDL
+________________________________________________________________________________
+
+
+    FINAL DOCKED STATE:
+    ________________________
+
+
+Run:   28 / 50
+Time taken for this run:   0.450s
+
+DOCKED: MODEL        28
+DOCKED: USER    Run = 28
+DOCKED: USER
+DOCKED: USER    Estimated Free Energy of Binding    =  -3.00 kcal/mol  [=(1)+(2)+(3)-(4)]
+DOCKED: USER
+DOCKED: USER    (1) Final Intermolecular Energy     =  -3.00 kcal/mol
+DOCKED: USER        vdW + Hbond + desolv Energy     =  -2.81 kcal/mol
+DOCKED: USER        Electrostatic Energy            =  -0.18 kcal/mol
+DOCKED: USER        Moving Ligand-Fixed Receptor    =  -3.00 kcal/mol
+DOCKED: USER        Moving Ligand-Moving Receptor   =  +0.00 kcal/mol
+DOCKED: USER    (2) Final Total Internal Energy     =  +0.00 kcal/mol
+DOCKED: USER    (3) Torsional Free Energy           =  +0.00 kcal/mol
+DOCKED: USER    (4) Unbound System's Energy         =  +0.00 kcal/mol
+DOCKED: USER
+DOCKED: USER
+DOCKED: REMARK  0 active torsions:
+DOCKED: REMARK  status: ('A' for Active; 'I' for Inactive)
+DOCKED: USER                              x       y       z     vdW  Elec       q    Type
+DOCKED: USER                           _______ _______ _______ _____ _____    ______ ____
+DOCKED: ROOT
+DOCKED: HETATM    1  C5  DDP A 301     -15.558  35.518  41.848 -0.13 +0.03    +0.171 A  
+DOCKED: HETATM    2  N7  DDP A 301     -16.394  36.012  40.834 -0.24 -0.02    -0.092 NA 
+DOCKED: HETATM    3  C4  DDP A 301     -15.958  35.411  43.193 -0.11 +0.03    +0.233 A  
+DOCKED: HETATM    4  N3  DDP A 301     -15.088  34.926  44.113 -0.08 +0.00    -0.187 NA 
+DOCKED: HETATM    5  C2  DDP A 301     -13.843  34.539  43.771 -0.05 -0.02    +0.242 A  
+DOCKED: HETATM    6  N2  DDP A 301     -12.970  34.042  44.751 -0.35 +0.03    -0.059 NA 
+DOCKED: HETATM    7  N1  DDP A 301     -13.442  34.634  42.478 -0.42 -0.07    -0.175 NA 
+DOCKED: HETATM    8  C6  DDP A 301     -14.261  35.110  41.510 +0.03 +0.14    +0.298 A  
+DOCKED: HETATM    9  O6  DDP A 301     -13.818  35.159  40.393 -0.74 -0.23    -0.264 OA 
+DOCKED: HETATM   10  O9  DDP A 301     -17.236  35.799  43.589 -0.72 -0.06    -0.168 OA 
+DOCKED: ENDROOT
+DOCKED: TORSDOF 0
+DOCKED: TER
+DOCKED: ENDMDL
+________________________________________________________________________________
+
+
+    FINAL DOCKED STATE:
+    ________________________
+
+
+Run:   29 / 50
+Time taken for this run:   0.450s
+
+DOCKED: MODEL        29
+DOCKED: USER    Run = 29
+DOCKED: USER
+DOCKED: USER    Estimated Free Energy of Binding    =  -3.05 kcal/mol  [=(1)+(2)+(3)-(4)]
+DOCKED: USER
+DOCKED: USER    (1) Final Intermolecular Energy     =  -3.05 kcal/mol
+DOCKED: USER        vdW + Hbond + desolv Energy     =  -3.02 kcal/mol
+DOCKED: USER        Electrostatic Energy            =  -0.03 kcal/mol
+DOCKED: USER        Moving Ligand-Fixed Receptor    =  -3.05 kcal/mol
+DOCKED: USER        Moving Ligand-Moving Receptor   =  +0.00 kcal/mol
+DOCKED: USER    (2) Final Total Internal Energy     =  +0.00 kcal/mol
+DOCKED: USER    (3) Torsional Free Energy           =  +0.00 kcal/mol
+DOCKED: USER    (4) Unbound System's Energy         =  +0.00 kcal/mol
+DOCKED: USER
+DOCKED: USER
+DOCKED: REMARK  0 active torsions:
+DOCKED: REMARK  status: ('A' for Active; 'I' for Inactive)
+DOCKED: USER                              x       y       z     vdW  Elec       q    Type
+DOCKED: USER                           _______ _______ _______ _____ _____    ______ ____
+DOCKED: ROOT
+DOCKED: HETATM    1  C5  DDP A 301     -19.528  34.821  35.209 -0.27 +0.01    +0.171 A  
+DOCKED: HETATM    2  N7  DDP A 301     -19.446  33.527  35.749 -0.46 +0.00    -0.092 NA 
+DOCKED: HETATM    3  C4  DDP A 301     -19.242  35.984  35.949 -0.11 +0.04    +0.233 A  
+DOCKED: HETATM    4  N3  DDP A 301     -19.347  37.198  35.353 -0.11 -0.01    -0.187 NA 
+DOCKED: HETATM    5  C2  DDP A 301     -19.720  37.321  34.063 -0.08 -0.00    +0.242 A  
+DOCKED: HETATM    6  N2  DDP A 301     -19.820  38.593  33.481 -0.89 -0.01    -0.059 NA 
+DOCKED: HETATM    7  N1  DDP A 301     -19.999  36.209  33.337 -0.25 -0.01    -0.175 NA 
+DOCKED: HETATM    8  C6  DDP A 301     -19.912  34.967  33.870 -0.12 +0.02    +0.298 A  
+DOCKED: HETATM    9  O6  DDP A 301     -20.180  34.043  33.150 -0.42 -0.03    -0.264 OA 
+DOCKED: HETATM   10  O9  DDP A 301     -18.853  35.902  37.283 -0.33 -0.05    -0.168 OA 
+DOCKED: ENDROOT
+DOCKED: TORSDOF 0
+DOCKED: TER
+DOCKED: ENDMDL
+________________________________________________________________________________
+
+
+    FINAL DOCKED STATE:
+    ________________________
+
+
+Run:   30 / 50
+Time taken for this run:   0.450s
+
+DOCKED: MODEL        30
+DOCKED: USER    Run = 30
+DOCKED: USER
+DOCKED: USER    Estimated Free Energy of Binding    =  -3.00 kcal/mol  [=(1)+(2)+(3)-(4)]
+DOCKED: USER
+DOCKED: USER    (1) Final Intermolecular Energy     =  -3.00 kcal/mol
+DOCKED: USER        vdW + Hbond + desolv Energy     =  -2.82 kcal/mol
+DOCKED: USER        Electrostatic Energy            =  -0.18 kcal/mol
+DOCKED: USER        Moving Ligand-Fixed Receptor    =  -3.00 kcal/mol
+DOCKED: USER        Moving Ligand-Moving Receptor   =  +0.00 kcal/mol
+DOCKED: USER    (2) Final Total Internal Energy     =  +0.00 kcal/mol
+DOCKED: USER    (3) Torsional Free Energy           =  +0.00 kcal/mol
+DOCKED: USER    (4) Unbound System's Energy         =  +0.00 kcal/mol
+DOCKED: USER
+DOCKED: USER
+DOCKED: REMARK  0 active torsions:
+DOCKED: REMARK  status: ('A' for Active; 'I' for Inactive)
+DOCKED: USER                              x       y       z     vdW  Elec       q    Type
+DOCKED: USER                           _______ _______ _______ _____ _____    ______ ____
+DOCKED: ROOT
+DOCKED: HETATM    1  C5  DDP A 301     -15.552  35.534  41.846 -0.13 +0.03    +0.171 A  
+DOCKED: HETATM    2  N7  DDP A 301     -16.377  36.043  40.830 -0.23 -0.02    -0.092 NA 
+DOCKED: HETATM    3  C4  DDP A 301     -15.961  35.427  43.189 -0.11 +0.03    +0.233 A  
+DOCKED: HETATM    4  N3  DDP A 301     -15.102  34.926  44.110 -0.08 +0.00    -0.187 NA 
+DOCKED: HETATM    5  C2  DDP A 301     -13.859  34.526  43.773 -0.05 -0.02    +0.242 A  
+DOCKED: HETATM    6  N2  DDP A 301     -12.998  34.014  44.755 -0.35 +0.03    -0.059 NA 
+DOCKED: HETATM    7  N1  DDP A 301     -13.451  34.622  42.483 -0.42 -0.07    -0.175 NA 
+DOCKED: HETATM    8  C6  DDP A 301     -14.259  35.112  41.513 +0.02 +0.14    +0.298 A  
+DOCKED: HETATM    9  O6  DDP A 301     -13.809  35.161  40.399 -0.74 -0.23    -0.264 OA 
+DOCKED: HETATM   10  O9  DDP A 301     -17.236  35.828  43.580 -0.72 -0.06    -0.168 OA 
+DOCKED: ENDROOT
+DOCKED: TORSDOF 0
+DOCKED: TER
+DOCKED: ENDMDL
+________________________________________________________________________________
+
+
+    FINAL DOCKED STATE:
+    ________________________
+
+
+Run:   31 / 50
+Time taken for this run:   0.450s
+
+DOCKED: MODEL        31
+DOCKED: USER    Run = 31
+DOCKED: USER
+DOCKED: USER    Estimated Free Energy of Binding    =  -3.00 kcal/mol  [=(1)+(2)+(3)-(4)]
+DOCKED: USER
+DOCKED: USER    (1) Final Intermolecular Energy     =  -3.00 kcal/mol
+DOCKED: USER        vdW + Hbond + desolv Energy     =  -2.81 kcal/mol
+DOCKED: USER        Electrostatic Energy            =  -0.18 kcal/mol
+DOCKED: USER        Moving Ligand-Fixed Receptor    =  -3.00 kcal/mol
+DOCKED: USER        Moving Ligand-Moving Receptor   =  +0.00 kcal/mol
+DOCKED: USER    (2) Final Total Internal Energy     =  +0.00 kcal/mol
+DOCKED: USER    (3) Torsional Free Energy           =  +0.00 kcal/mol
+DOCKED: USER    (4) Unbound System's Energy         =  +0.00 kcal/mol
+DOCKED: USER
+DOCKED: USER
+DOCKED: REMARK  0 active torsions:
+DOCKED: REMARK  status: ('A' for Active; 'I' for Inactive)
+DOCKED: USER                              x       y       z     vdW  Elec       q    Type
+DOCKED: USER                           _______ _______ _______ _____ _____    ______ ____
+DOCKED: ROOT
+DOCKED: HETATM    1  C5  DDP A 301     -15.555  35.517  41.860 -0.13 +0.03    +0.171 A  
+DOCKED: HETATM    2  N7  DDP A 301     -16.387  36.026  40.849 -0.24 -0.02    -0.092 NA 
+DOCKED: HETATM    3  C4  DDP A 301     -15.957  35.401  43.204 -0.11 +0.02    +0.233 A  
+DOCKED: HETATM    4  N3  DDP A 301     -15.091  34.902  44.120 -0.08 +0.00    -0.187 NA 
+DOCKED: HETATM    5  C2  DDP A 301     -13.848  34.510  43.776 -0.06 -0.03    +0.242 A  
+DOCKED: HETATM    6  N2  DDP A 301     -12.979  34.000  44.752 -0.35 +0.03    -0.059 NA 
+DOCKED: HETATM    7  N1  DDP A 301     -13.445  34.615  42.485 -0.42 -0.07    -0.175 NA 
+DOCKED: HETATM    8  C6  DDP A 301     -14.260  35.104  41.520 +0.03 +0.14    +0.298 A  
+DOCKED: HETATM    9  O6  DDP A 301     -13.815  35.161  40.404 -0.74 -0.23    -0.264 OA 
+DOCKED: HETATM   10  O9  DDP A 301     -17.232  35.793  43.602 -0.72 -0.06    -0.168 OA 
+DOCKED: ENDROOT
+DOCKED: TORSDOF 0
+DOCKED: TER
+DOCKED: ENDMDL
+________________________________________________________________________________
+
+
+    FINAL DOCKED STATE:
+    ________________________
+
+
+Run:   32 / 50
+Time taken for this run:   0.450s
+
+DOCKED: MODEL        32
+DOCKED: USER    Run = 32
+DOCKED: USER
+DOCKED: USER    Estimated Free Energy of Binding    =  -3.00 kcal/mol  [=(1)+(2)+(3)-(4)]
+DOCKED: USER
+DOCKED: USER    (1) Final Intermolecular Energy     =  -3.00 kcal/mol
+DOCKED: USER        vdW + Hbond + desolv Energy     =  -2.81 kcal/mol
+DOCKED: USER        Electrostatic Energy            =  -0.18 kcal/mol
+DOCKED: USER        Moving Ligand-Fixed Receptor    =  -3.00 kcal/mol
+DOCKED: USER        Moving Ligand-Moving Receptor   =  +0.00 kcal/mol
+DOCKED: USER    (2) Final Total Internal Energy     =  +0.00 kcal/mol
+DOCKED: USER    (3) Torsional Free Energy           =  +0.00 kcal/mol
+DOCKED: USER    (4) Unbound System's Energy         =  +0.00 kcal/mol
+DOCKED: USER
+DOCKED: USER
+DOCKED: REMARK  0 active torsions:
+DOCKED: REMARK  status: ('A' for Active; 'I' for Inactive)
+DOCKED: USER                              x       y       z     vdW  Elec       q    Type
+DOCKED: USER                           _______ _______ _______ _____ _____    ______ ____
+DOCKED: ROOT
+DOCKED: HETATM    1  C5  DDP A 301     -15.545  35.520  41.855 -0.13 +0.03    +0.171 A  
+DOCKED: HETATM    2  N7  DDP A 301     -16.380  36.027  40.847 -0.24 -0.02    -0.092 NA 
+DOCKED: HETATM    3  C4  DDP A 301     -15.943  35.405  43.201 -0.11 +0.02    +0.233 A  
+DOCKED: HETATM    4  N3  DDP A 301     -15.073  34.907  44.114 -0.08 +0.00    -0.187 NA 
+DOCKED: HETATM    5  C2  DDP A 301     -13.831  34.516  43.767 -0.06 -0.02    +0.242 A  
+DOCKED: HETATM    6  N2  DDP A 301     -12.959  34.007  44.740 -0.35 +0.03    -0.059 NA 
+DOCKED: HETATM    7  N1  DDP A 301     -13.432  34.619  42.474 -0.41 -0.07    -0.175 NA 
+DOCKED: HETATM    8  C6  DDP A 301     -14.251  35.107  41.511 +0.03 +0.14    +0.298 A  
+DOCKED: HETATM    9  O6  DDP A 301     -13.810  35.162  40.394 -0.74 -0.23    -0.264 OA 
+DOCKED: HETATM   10  O9  DDP A 301     -17.217  35.797  43.603 -0.72 -0.06    -0.168 OA 
+DOCKED: ENDROOT
+DOCKED: TORSDOF 0
+DOCKED: TER
+DOCKED: ENDMDL
+________________________________________________________________________________
+
+
+    FINAL DOCKED STATE:
+    ________________________
+
+
+Run:   33 / 50
+Time taken for this run:   0.450s
+
+DOCKED: MODEL        33
+DOCKED: USER    Run = 33
+DOCKED: USER
+DOCKED: USER    Estimated Free Energy of Binding    =  -3.15 kcal/mol  [=(1)+(2)+(3)-(4)]
+DOCKED: USER
+DOCKED: USER    (1) Final Intermolecular Energy     =  -3.15 kcal/mol
+DOCKED: USER        vdW + Hbond + desolv Energy     =  -3.07 kcal/mol
+DOCKED: USER        Electrostatic Energy            =  -0.07 kcal/mol
+DOCKED: USER        Moving Ligand-Fixed Receptor    =  -3.15 kcal/mol
+DOCKED: USER        Moving Ligand-Moving Receptor   =  +0.00 kcal/mol
+DOCKED: USER    (2) Final Total Internal Energy     =  +0.00 kcal/mol
+DOCKED: USER    (3) Torsional Free Energy           =  +0.00 kcal/mol
+DOCKED: USER    (4) Unbound System's Energy         =  +0.00 kcal/mol
+DOCKED: USER
+DOCKED: USER
+DOCKED: REMARK  0 active torsions:
+DOCKED: REMARK  status: ('A' for Active; 'I' for Inactive)
+DOCKED: USER                              x       y       z     vdW  Elec       q    Type
+DOCKED: USER                           _______ _______ _______ _____ _____    ______ ____
+DOCKED: ROOT
+DOCKED: HETATM    1  C5  DDP A 301     -19.748  35.282  35.304 -0.22 +0.03    +0.171 A  
+DOCKED: HETATM    2  N7  DDP A 301     -19.714  34.116  36.086 -0.40 -0.02    -0.092 NA 
+DOCKED: HETATM    3  C4  DDP A 301     -19.858  35.267  33.901 -0.19 +0.02    +0.233 A  
+DOCKED: HETATM    4  N3  DDP A 301     -19.881  36.439  33.220 -0.22 -0.00    -0.187 NA 
+DOCKED: HETATM    5  C2  DDP A 301     -19.801  37.626  33.854 -0.10 -0.01    +0.242 A  
+DOCKED: HETATM    6  N2  DDP A 301     -19.826  38.818  33.115 -0.85 -0.01    -0.059 NA 
+DOCKED: HETATM    7  N1  DDP A 301     -19.695  37.657  35.207 -0.16 -0.01    -0.175 NA 
+DOCKED: HETATM    8  C6  DDP A 301     -19.667  36.524  35.948 -0.03 +0.08    +0.298 A  
+DOCKED: HETATM    9  O6  DDP A 301     -19.570  36.651  37.139 -0.46 -0.13    -0.264 OA 
+DOCKED: HETATM   10  O9  DDP A 301     -19.944  34.063  33.206 -0.44 -0.01    -0.168 OA 
+DOCKED: ENDROOT
+DOCKED: TORSDOF 0
+DOCKED: TER
+DOCKED: ENDMDL
+________________________________________________________________________________
+
+
+    FINAL DOCKED STATE:
+    ________________________
+
+
+Run:   34 / 50
+Time taken for this run:   0.450s
+
+DOCKED: MODEL        34
+DOCKED: USER    Run = 34
+DOCKED: USER
+DOCKED: USER    Estimated Free Energy of Binding    =  -3.00 kcal/mol  [=(1)+(2)+(3)-(4)]
+DOCKED: USER
+DOCKED: USER    (1) Final Intermolecular Energy     =  -3.00 kcal/mol
+DOCKED: USER        vdW + Hbond + desolv Energy     =  -2.82 kcal/mol
+DOCKED: USER        Electrostatic Energy            =  -0.18 kcal/mol
+DOCKED: USER        Moving Ligand-Fixed Receptor    =  -3.00 kcal/mol
+DOCKED: USER        Moving Ligand-Moving Receptor   =  +0.00 kcal/mol
+DOCKED: USER    (2) Final Total Internal Energy     =  +0.00 kcal/mol
+DOCKED: USER    (3) Torsional Free Energy           =  +0.00 kcal/mol
+DOCKED: USER    (4) Unbound System's Energy         =  +0.00 kcal/mol
+DOCKED: USER
+DOCKED: USER
+DOCKED: REMARK  0 active torsions:
+DOCKED: REMARK  status: ('A' for Active; 'I' for Inactive)
+DOCKED: USER                              x       y       z     vdW  Elec       q    Type
+DOCKED: USER                           _______ _______ _______ _____ _____    ______ ____
+DOCKED: ROOT
+DOCKED: HETATM    1  C5  DDP A 301     -15.552  35.532  41.875 -0.13 +0.03    +0.171 A  
+DOCKED: HETATM    2  N7  DDP A 301     -16.390  36.047  40.872 -0.23 -0.02    -0.092 NA 
+DOCKED: HETATM    3  C4  DDP A 301     -15.942  35.418  43.222 -0.11 +0.02    +0.233 A  
+DOCKED: HETATM    4  N3  DDP A 301     -15.071  34.911  44.129 -0.08 +0.00    -0.187 NA 
+DOCKED: HETATM    5  C2  DDP A 301     -13.834  34.511  43.773 -0.06 -0.03    +0.242 A  
+DOCKED: HETATM    6  N2  DDP A 301     -12.960  33.993  44.740 -0.35 +0.03    -0.059 NA 
+DOCKED: HETATM    7  N1  DDP A 301     -13.443  34.613  42.478 -0.42 -0.07    -0.175 NA 
+DOCKED: HETATM    8  C6  DDP A 301     -14.264  35.109  41.521 +0.02 +0.14    +0.298 A  
+DOCKED: HETATM    9  O6  DDP A 301     -13.829  35.163  40.402 -0.74 -0.23    -0.264 OA 
+DOCKED: HETATM   10  O9  DDP A 301     -17.211  35.819  43.633 -0.73 -0.06    -0.168 OA 
+DOCKED: ENDROOT
+DOCKED: TORSDOF 0
+DOCKED: TER
+DOCKED: ENDMDL
+________________________________________________________________________________
+
+
+    FINAL DOCKED STATE:
+    ________________________
+
+
+Run:   35 / 50
+Time taken for this run:   0.450s
+
+DOCKED: MODEL        35
+DOCKED: USER    Run = 35
+DOCKED: USER
+DOCKED: USER    Estimated Free Energy of Binding    =  -3.00 kcal/mol  [=(1)+(2)+(3)-(4)]
+DOCKED: USER
+DOCKED: USER    (1) Final Intermolecular Energy     =  -3.00 kcal/mol
+DOCKED: USER        vdW + Hbond + desolv Energy     =  -2.81 kcal/mol
+DOCKED: USER        Electrostatic Energy            =  -0.18 kcal/mol
+DOCKED: USER        Moving Ligand-Fixed Receptor    =  -3.00 kcal/mol
+DOCKED: USER        Moving Ligand-Moving Receptor   =  +0.00 kcal/mol
+DOCKED: USER    (2) Final Total Internal Energy     =  +0.00 kcal/mol
+DOCKED: USER    (3) Torsional Free Energy           =  +0.00 kcal/mol
+DOCKED: USER    (4) Unbound System's Energy         =  +0.00 kcal/mol
+DOCKED: USER
+DOCKED: USER
+DOCKED: REMARK  0 active torsions:
+DOCKED: REMARK  status: ('A' for Active; 'I' for Inactive)
+DOCKED: USER                              x       y       z     vdW  Elec       q    Type
+DOCKED: USER                           _______ _______ _______ _____ _____    ______ ____
+DOCKED: ROOT
+DOCKED: HETATM    1  C5  DDP A 301     -15.566  35.516  41.835 -0.13 +0.03    +0.171 A  
+DOCKED: HETATM    2  N7  DDP A 301     -16.401  36.012  40.820 -0.24 -0.02    -0.092 NA 
+DOCKED: HETATM    3  C4  DDP A 301     -15.970  35.407  43.179 -0.11 +0.03    +0.233 A  
+DOCKED: HETATM    4  N3  DDP A 301     -15.102  34.920  44.100 -0.08 +0.00    -0.187 NA 
+DOCKED: HETATM    5  C2  DDP A 301     -13.855  34.535  43.761 -0.05 -0.02    +0.242 A  
+DOCKED: HETATM    6  N2  DDP A 301     -12.985  34.038  44.742 -0.35 +0.03    -0.059 NA 
+DOCKED: HETATM    7  N1  DDP A 301     -13.451  34.634  42.469 -0.42 -0.07    -0.175 NA 
+DOCKED: HETATM    8  C6  DDP A 301     -14.268  35.111  41.500 +0.03 +0.14    +0.298 A  
+DOCKED: HETATM    9  O6  DDP A 301     -13.822  35.163  40.385 -0.74 -0.23    -0.264 OA 
+DOCKED: HETATM   10  O9  DDP A 301     -17.249  35.792  43.573 -0.71 -0.07    -0.168 OA 
+DOCKED: ENDROOT
+DOCKED: TORSDOF 0
+DOCKED: TER
+DOCKED: ENDMDL
+________________________________________________________________________________
+
+
+    FINAL DOCKED STATE:
+    ________________________
+
+
+Run:   36 / 50
+Time taken for this run:   0.450s
+
+DOCKED: MODEL        36
+DOCKED: USER    Run = 36
+DOCKED: USER
+DOCKED: USER    Estimated Free Energy of Binding    =  -2.99 kcal/mol  [=(1)+(2)+(3)-(4)]
+DOCKED: USER
+DOCKED: USER    (1) Final Intermolecular Energy     =  -2.99 kcal/mol
+DOCKED: USER        vdW + Hbond + desolv Energy     =  -2.81 kcal/mol
+DOCKED: USER        Electrostatic Energy            =  -0.18 kcal/mol
+DOCKED: USER        Moving Ligand-Fixed Receptor    =  -2.99 kcal/mol
+DOCKED: USER        Moving Ligand-Moving Receptor   =  +0.00 kcal/mol
+DOCKED: USER    (2) Final Total Internal Energy     =  +0.00 kcal/mol
+DOCKED: USER    (3) Torsional Free Energy           =  +0.00 kcal/mol
+DOCKED: USER    (4) Unbound System's Energy         =  +0.00 kcal/mol
+DOCKED: USER
+DOCKED: USER
+DOCKED: REMARK  0 active torsions:
+DOCKED: REMARK  status: ('A' for Active; 'I' for Inactive)
+DOCKED: USER                              x       y       z     vdW  Elec       q    Type
+DOCKED: USER                           _______ _______ _______ _____ _____    ______ ____
+DOCKED: ROOT
+DOCKED: HETATM    1  C5  DDP A 301     -15.535  35.525  41.866 -0.13 +0.03    +0.171 A  
+DOCKED: HETATM    2  N7  DDP A 301     -16.363  36.042  40.857 -0.23 -0.02    -0.092 NA 
+DOCKED: HETATM    3  C4  DDP A 301     -15.939  35.407  43.210 -0.11 +0.02    +0.233 A  
+DOCKED: HETATM    4  N3  DDP A 301     -15.077  34.900  44.124 -0.08 +0.00    -0.187 NA 
+DOCKED: HETATM    5  C2  DDP A 301     -13.835  34.502  43.780 -0.06 -0.03    +0.242 A  
+DOCKED: HETATM    6  N2  DDP A 301     -12.970  33.983  44.755 -0.35 +0.03    -0.059 NA 
+DOCKED: HETATM    7  N1  DDP A 301     -13.431  34.609  42.489 -0.41 -0.07    -0.175 NA 
+DOCKED: HETATM    8  C6  DDP A 301     -14.243  35.106  41.525 +0.02 +0.14    +0.298 A  
+DOCKED: HETATM    9  O6  DDP A 301     -13.797  35.163  40.411 -0.74 -0.24    -0.264 OA 
+DOCKED: HETATM   10  O9  DDP A 301     -17.212  35.805  43.608 -0.72 -0.06    -0.168 OA 
+DOCKED: ENDROOT
+DOCKED: TORSDOF 0
+DOCKED: TER
+DOCKED: ENDMDL
+________________________________________________________________________________
+
+
+    FINAL DOCKED STATE:
+    ________________________
+
+
+Run:   37 / 50
+Time taken for this run:   0.450s
+
+DOCKED: MODEL        37
+DOCKED: USER    Run = 37
+DOCKED: USER
+DOCKED: USER    Estimated Free Energy of Binding    =  -3.00 kcal/mol  [=(1)+(2)+(3)-(4)]
+DOCKED: USER
+DOCKED: USER    (1) Final Intermolecular Energy     =  -3.00 kcal/mol
+DOCKED: USER        vdW + Hbond + desolv Energy     =  -2.82 kcal/mol
+DOCKED: USER        Electrostatic Energy            =  -0.18 kcal/mol
+DOCKED: USER        Moving Ligand-Fixed Receptor    =  -3.00 kcal/mol
+DOCKED: USER        Moving Ligand-Moving Receptor   =  +0.00 kcal/mol
+DOCKED: USER    (2) Final Total Internal Energy     =  +0.00 kcal/mol
+DOCKED: USER    (3) Torsional Free Energy           =  +0.00 kcal/mol
+DOCKED: USER    (4) Unbound System's Energy         =  +0.00 kcal/mol
+DOCKED: USER
+DOCKED: USER
+DOCKED: REMARK  0 active torsions:
+DOCKED: REMARK  status: ('A' for Active; 'I' for Inactive)
+DOCKED: USER                              x       y       z     vdW  Elec       q    Type
+DOCKED: USER                           _______ _______ _______ _____ _____    ______ ____
+DOCKED: ROOT
+DOCKED: HETATM    1  C5  DDP A 301     -15.545  35.532  41.862 -0.13 +0.03    +0.171 A  
+DOCKED: HETATM    2  N7  DDP A 301     -16.379  36.036  40.850 -0.23 -0.02    -0.092 NA 
+DOCKED: HETATM    3  C4  DDP A 301     -15.944  35.427  43.208 -0.11 +0.03    +0.233 A  
+DOCKED: HETATM    4  N3  DDP A 301     -15.077  34.932  44.124 -0.08 +0.00    -0.187 NA 
+DOCKED: HETATM    5  C2  DDP A 301     -13.836  34.534  43.780 -0.05 -0.02    +0.242 A  
+DOCKED: HETATM    6  N2  DDP A 301     -12.966  34.028  44.757 -0.35 +0.03    -0.059 NA 
+DOCKED: HETATM    7  N1  DDP A 301     -13.437  34.628  42.486 -0.41 -0.07    -0.175 NA 
+DOCKED: HETATM    8  C6  DDP A 301     -14.253  35.113  41.520 +0.02 +0.14    +0.298 A  
+DOCKED: HETATM    9  O6  DDP A 301     -13.811  35.160  40.403 -0.74 -0.23    -0.264 OA 
+DOCKED: HETATM   10  O9  DDP A 301     -17.217  35.826  43.607 -0.73 -0.06    -0.168 OA 
+DOCKED: ENDROOT
+DOCKED: TORSDOF 0
+DOCKED: TER
+DOCKED: ENDMDL
+________________________________________________________________________________
+
+
+    FINAL DOCKED STATE:
+    ________________________
+
+
+Run:   38 / 50
+Time taken for this run:   0.450s
+
+DOCKED: MODEL        38
+DOCKED: USER    Run = 38
+DOCKED: USER
+DOCKED: USER    Estimated Free Energy of Binding    =  -3.00 kcal/mol  [=(1)+(2)+(3)-(4)]
+DOCKED: USER
+DOCKED: USER    (1) Final Intermolecular Energy     =  -3.00 kcal/mol
+DOCKED: USER        vdW + Hbond + desolv Energy     =  -2.81 kcal/mol
+DOCKED: USER        Electrostatic Energy            =  -0.18 kcal/mol
+DOCKED: USER        Moving Ligand-Fixed Receptor    =  -3.00 kcal/mol
+DOCKED: USER        Moving Ligand-Moving Receptor   =  +0.00 kcal/mol
+DOCKED: USER    (2) Final Total Internal Energy     =  +0.00 kcal/mol
+DOCKED: USER    (3) Torsional Free Energy           =  +0.00 kcal/mol
+DOCKED: USER    (4) Unbound System's Energy         =  +0.00 kcal/mol
+DOCKED: USER
+DOCKED: USER
+DOCKED: REMARK  0 active torsions:
+DOCKED: REMARK  status: ('A' for Active; 'I' for Inactive)
+DOCKED: USER                              x       y       z     vdW  Elec       q    Type
+DOCKED: USER                           _______ _______ _______ _____ _____    ______ ____
+DOCKED: ROOT
+DOCKED: HETATM    1  C5  DDP A 301     -15.541  35.518  41.849 -0.13 +0.03    +0.171 A  
+DOCKED: HETATM    2  N7  DDP A 301     -16.376  36.027  40.840 -0.23 -0.02    -0.092 NA 
+DOCKED: HETATM    3  C4  DDP A 301     -15.940  35.403  43.194 -0.11 +0.02    +0.233 A  
+DOCKED: HETATM    4  N3  DDP A 301     -15.071  34.904  44.108 -0.08 +0.00    -0.187 NA 
+DOCKED: HETATM    5  C2  DDP A 301     -13.829  34.512  43.760 -0.06 -0.02    +0.242 A  
+DOCKED: HETATM    6  N2  DDP A 301     -12.957  34.001  44.734 -0.35 +0.03    -0.059 NA 
+DOCKED: HETATM    7  N1  DDP A 301     -13.430  34.615  42.467 -0.42 -0.07    -0.175 NA 
+DOCKED: HETATM    8  C6  DDP A 301     -14.248  35.104  41.505 +0.03 +0.14    +0.298 A  
+DOCKED: HETATM    9  O6  DDP A 301     -13.806  35.160  40.388 -0.74 -0.24    -0.264 OA 
+DOCKED: HETATM   10  O9  DDP A 301     -17.213  35.796  43.596 -0.72 -0.06    -0.168 OA 
+DOCKED: ENDROOT
+DOCKED: TORSDOF 0
+DOCKED: TER
+DOCKED: ENDMDL
+________________________________________________________________________________
+
+
+    FINAL DOCKED STATE:
+    ________________________
+
+
+Run:   39 / 50
+Time taken for this run:   0.450s
+
+DOCKED: MODEL        39
+DOCKED: USER    Run = 39
+DOCKED: USER
+DOCKED: USER    Estimated Free Energy of Binding    =  -3.05 kcal/mol  [=(1)+(2)+(3)-(4)]
+DOCKED: USER
+DOCKED: USER    (1) Final Intermolecular Energy     =  -3.05 kcal/mol
+DOCKED: USER        vdW + Hbond + desolv Energy     =  -3.02 kcal/mol
+DOCKED: USER        Electrostatic Energy            =  -0.03 kcal/mol
+DOCKED: USER        Moving Ligand-Fixed Receptor    =  -3.05 kcal/mol
+DOCKED: USER        Moving Ligand-Moving Receptor   =  +0.00 kcal/mol
+DOCKED: USER    (2) Final Total Internal Energy     =  +0.00 kcal/mol
+DOCKED: USER    (3) Torsional Free Energy           =  +0.00 kcal/mol
+DOCKED: USER    (4) Unbound System's Energy         =  +0.00 kcal/mol
+DOCKED: USER
+DOCKED: USER
+DOCKED: REMARK  0 active torsions:
+DOCKED: REMARK  status: ('A' for Active; 'I' for Inactive)
+DOCKED: USER                              x       y       z     vdW  Elec       q    Type
+DOCKED: USER                           _______ _______ _______ _____ _____    ______ ____
+DOCKED: ROOT
+DOCKED: HETATM    1  C5  DDP A 301     -19.534  34.825  35.208 -0.26 +0.01    +0.171 A  
+DOCKED: HETATM    2  N7  DDP A 301     -19.450  33.531  35.748 -0.46 +0.00    -0.092 NA 
+DOCKED: HETATM    3  C4  DDP A 301     -19.250  35.988  35.948 -0.11 +0.04    +0.233 A  
+DOCKED: HETATM    4  N3  DDP A 301     -19.358  37.201  35.352 -0.11 -0.01    -0.187 NA 
+DOCKED: HETATM    5  C2  DDP A 301     -19.731  37.324  34.063 -0.08 -0.00    +0.242 A  
+DOCKED: HETATM    6  N2  DDP A 301     -19.832  38.596  33.481 -0.88 -0.01    -0.059 NA 
+DOCKED: HETATM    7  N1  DDP A 301     -20.007  36.212  33.336 -0.25 -0.01    -0.175 NA 
+DOCKED: HETATM    8  C6  DDP A 301     -19.918  34.970  33.869 -0.11 +0.02    +0.298 A  
+DOCKED: HETATM    9  O6  DDP A 301     -20.183  34.045  33.148 -0.42 -0.03    -0.264 OA 
+DOCKED: HETATM   10  O9  DDP A 301     -18.861  35.906  37.282 -0.33 -0.05    -0.168 OA 
+DOCKED: ENDROOT
+DOCKED: TORSDOF 0
+DOCKED: TER
+DOCKED: ENDMDL
+________________________________________________________________________________
+
+
+    FINAL DOCKED STATE:
+    ________________________
+
+
+Run:   40 / 50
+Time taken for this run:   0.450s
+
+DOCKED: MODEL        40
+DOCKED: USER    Run = 40
+DOCKED: USER
+DOCKED: USER    Estimated Free Energy of Binding    =  -3.00 kcal/mol  [=(1)+(2)+(3)-(4)]
+DOCKED: USER
+DOCKED: USER    (1) Final Intermolecular Energy     =  -3.00 kcal/mol
+DOCKED: USER        vdW + Hbond + desolv Energy     =  -2.82 kcal/mol
+DOCKED: USER        Electrostatic Energy            =  -0.18 kcal/mol
+DOCKED: USER        Moving Ligand-Fixed Receptor    =  -3.00 kcal/mol
+DOCKED: USER        Moving Ligand-Moving Receptor   =  +0.00 kcal/mol
+DOCKED: USER    (2) Final Total Internal Energy     =  +0.00 kcal/mol
+DOCKED: USER    (3) Torsional Free Energy           =  +0.00 kcal/mol
+DOCKED: USER    (4) Unbound System's Energy         =  +0.00 kcal/mol
+DOCKED: USER
+DOCKED: USER
+DOCKED: REMARK  0 active torsions:
+DOCKED: REMARK  status: ('A' for Active; 'I' for Inactive)
+DOCKED: USER                              x       y       z     vdW  Elec       q    Type
+DOCKED: USER                           _______ _______ _______ _____ _____    ______ ____
+DOCKED: ROOT
+DOCKED: HETATM    1  C5  DDP A 301     -15.552  35.533  41.862 -0.13 +0.03    +0.171 A  
+DOCKED: HETATM    2  N7  DDP A 301     -16.385  36.037  40.850 -0.23 -0.02    -0.092 NA 
+DOCKED: HETATM    3  C4  DDP A 301     -15.949  35.430  43.208 -0.11 +0.03    +0.233 A  
+DOCKED: HETATM    4  N3  DDP A 301     -15.082  34.934  44.125 -0.08 +0.00    -0.187 NA 
+DOCKED: HETATM    5  C2  DDP A 301     -13.842  34.533  43.780 -0.05 -0.02    +0.242 A  
+DOCKED: HETATM    6  N2  DDP A 301     -12.972  34.026  44.756 -0.35 +0.03    -0.059 NA 
+DOCKED: HETATM    7  N1  DDP A 301     -13.444  34.625  42.486 -0.42 -0.07    -0.175 NA 
+DOCKED: HETATM    8  C6  DDP A 301     -14.260  35.110  41.520 +0.02 +0.14    +0.298 A  
+DOCKED: HETATM    9  O6  DDP A 301     -13.820  35.155  40.402 -0.74 -0.23    -0.264 OA 
+DOCKED: HETATM   10  O9  DDP A 301     -17.221  35.831  43.608 -0.73 -0.06    -0.168 OA 
+DOCKED: ENDROOT
+DOCKED: TORSDOF 0
+DOCKED: TER
+DOCKED: ENDMDL
+________________________________________________________________________________
+
+
+    FINAL DOCKED STATE:
+    ________________________
+
+
+Run:   41 / 50
+Time taken for this run:   0.450s
+
+DOCKED: MODEL        41
+DOCKED: USER    Run = 41
+DOCKED: USER
+DOCKED: USER    Estimated Free Energy of Binding    =  -3.00 kcal/mol  [=(1)+(2)+(3)-(4)]
+DOCKED: USER
+DOCKED: USER    (1) Final Intermolecular Energy     =  -3.00 kcal/mol
+DOCKED: USER        vdW + Hbond + desolv Energy     =  -2.82 kcal/mol
+DOCKED: USER        Electrostatic Energy            =  -0.18 kcal/mol
+DOCKED: USER        Moving Ligand-Fixed Receptor    =  -3.00 kcal/mol
+DOCKED: USER        Moving Ligand-Moving Receptor   =  +0.00 kcal/mol
+DOCKED: USER    (2) Final Total Internal Energy     =  +0.00 kcal/mol
+DOCKED: USER    (3) Torsional Free Energy           =  +0.00 kcal/mol
+DOCKED: USER    (4) Unbound System's Energy         =  +0.00 kcal/mol
+DOCKED: USER
+DOCKED: USER
+DOCKED: REMARK  0 active torsions:
+DOCKED: REMARK  status: ('A' for Active; 'I' for Inactive)
+DOCKED: USER                              x       y       z     vdW  Elec       q    Type
+DOCKED: USER                           _______ _______ _______ _____ _____    ______ ____
+DOCKED: ROOT
+DOCKED: HETATM    1  C5  DDP A 301     -15.543  35.535  41.861 -0.13 +0.03    +0.171 A  
+DOCKED: HETATM    2  N7  DDP A 301     -16.372  36.045  40.848 -0.23 -0.02    -0.092 NA 
+DOCKED: HETATM    3  C4  DDP A 301     -15.944  35.429  43.205 -0.11 +0.03    +0.233 A  
+DOCKED: HETATM    4  N3  DDP A 301     -15.081  34.927  44.123 -0.08 +0.00    -0.187 NA 
+DOCKED: HETATM    5  C2  DDP A 301     -13.841  34.524  43.780 -0.06 -0.02    +0.242 A  
+DOCKED: HETATM    6  N2  DDP A 301     -12.976  34.011  44.757 -0.35 +0.03    -0.059 NA 
+DOCKED: HETATM    7  N1  DDP A 301     -13.439  34.619  42.487 -0.41 -0.07    -0.175 NA 
+DOCKED: HETATM    8  C6  DDP A 301     -14.252  35.110  41.521 +0.02 +0.14    +0.298 A  
+DOCKED: HETATM    9  O6  DDP A 301     -13.808  35.157  40.404 -0.74 -0.23    -0.264 OA 
+DOCKED: HETATM   10  O9  DDP A 301     -17.216  35.833  43.603 -0.73 -0.06    -0.168 OA 
+DOCKED: ENDROOT
+DOCKED: TORSDOF 0
+DOCKED: TER
+DOCKED: ENDMDL
+________________________________________________________________________________
+
+
+    FINAL DOCKED STATE:
+    ________________________
+
+
+Run:   42 / 50
+Time taken for this run:   0.450s
+
+DOCKED: MODEL        42
+DOCKED: USER    Run = 42
+DOCKED: USER
+DOCKED: USER    Estimated Free Energy of Binding    =  -3.00 kcal/mol  [=(1)+(2)+(3)-(4)]
+DOCKED: USER
+DOCKED: USER    (1) Final Intermolecular Energy     =  -3.00 kcal/mol
+DOCKED: USER        vdW + Hbond + desolv Energy     =  -2.81 kcal/mol
+DOCKED: USER        Electrostatic Energy            =  -0.18 kcal/mol
+DOCKED: USER        Moving Ligand-Fixed Receptor    =  -3.00 kcal/mol
+DOCKED: USER        Moving Ligand-Moving Receptor   =  +0.00 kcal/mol
+DOCKED: USER    (2) Final Total Internal Energy     =  +0.00 kcal/mol
+DOCKED: USER    (3) Torsional Free Energy           =  +0.00 kcal/mol
+DOCKED: USER    (4) Unbound System's Energy         =  +0.00 kcal/mol
+DOCKED: USER
+DOCKED: USER
+DOCKED: REMARK  0 active torsions:
+DOCKED: REMARK  status: ('A' for Active; 'I' for Inactive)
+DOCKED: USER                              x       y       z     vdW  Elec       q    Type
+DOCKED: USER                           _______ _______ _______ _____ _____    ______ ____
+DOCKED: ROOT
+DOCKED: HETATM    1  C5  DDP A 301     -15.562  35.542  41.813 -0.13 +0.03    +0.171 A  
+DOCKED: HETATM    2  N7  DDP A 301     -16.392  36.023  40.787 -0.24 -0.02    -0.092 NA 
+DOCKED: HETATM    3  C4  DDP A 301     -15.970  35.454  43.157 -0.11 +0.03    +0.233 A  
+DOCKED: HETATM    4  N3  DDP A 301     -15.106  34.981  44.088 -0.09 +0.00    -0.187 NA 
+DOCKED: HETATM    5  C2  DDP A 301     -13.858  34.589  43.759 -0.05 -0.02    +0.242 A  
+DOCKED: HETATM    6  N2  DDP A 301     -12.991  34.106  44.750 -0.34 +0.03    -0.059 NA 
+DOCKED: HETATM    7  N1  DDP A 301     -13.450  34.667  42.467 -0.42 -0.07    -0.175 NA 
+DOCKED: HETATM    8  C6  DDP A 301     -14.263  35.129  41.488 +0.02 +0.14    +0.298 A  
+DOCKED: HETATM    9  O6  DDP A 301     -13.813  35.163  40.373 -0.73 -0.23    -0.264 OA 
+DOCKED: HETATM   10  O9  DDP A 301     -17.249  35.848  43.540 -0.71 -0.06    -0.168 OA 
+DOCKED: ENDROOT
+DOCKED: TORSDOF 0
+DOCKED: TER
+DOCKED: ENDMDL
+________________________________________________________________________________
+
+
+    FINAL DOCKED STATE:
+    ________________________
+
+
+Run:   43 / 50
+Time taken for this run:   0.450s
+
+DOCKED: MODEL        43
+DOCKED: USER    Run = 43
+DOCKED: USER
+DOCKED: USER    Estimated Free Energy of Binding    =  -3.04 kcal/mol  [=(1)+(2)+(3)-(4)]
+DOCKED: USER
+DOCKED: USER    (1) Final Intermolecular Energy     =  -3.04 kcal/mol
+DOCKED: USER        vdW + Hbond + desolv Energy     =  -3.02 kcal/mol
+DOCKED: USER        Electrostatic Energy            =  -0.01 kcal/mol
+DOCKED: USER        Moving Ligand-Fixed Receptor    =  -3.04 kcal/mol
+DOCKED: USER        Moving Ligand-Moving Receptor   =  +0.00 kcal/mol
+DOCKED: USER    (2) Final Total Internal Energy     =  +0.00 kcal/mol
+DOCKED: USER    (3) Torsional Free Energy           =  +0.00 kcal/mol
+DOCKED: USER    (4) Unbound System's Energy         =  +0.00 kcal/mol
+DOCKED: USER
+DOCKED: USER
+DOCKED: REMARK  0 active torsions:
+DOCKED: REMARK  status: ('A' for Active; 'I' for Inactive)
+DOCKED: USER                              x       y       z     vdW  Elec       q    Type
+DOCKED: USER                           _______ _______ _______ _____ _____    ______ ____
+DOCKED: ROOT
+DOCKED: HETATM    1  C5  DDP A 301     -19.264  36.819  34.324 -0.08 -0.00    +0.171 A  
+DOCKED: HETATM    2  N7  DDP A 301     -18.778  36.293  33.116 -0.19 +0.01    -0.092 NA 
+DOCKED: HETATM    3  C4  DDP A 301     -19.431  36.046  35.489 -0.10 +0.03    +0.233 A  
+DOCKED: HETATM    4  N3  DDP A 301     -19.910  36.631  36.614 -0.44 -0.09    -0.187 NA 
+DOCKED: HETATM    5  C2  DDP A 301     -20.232  37.940  36.649 -0.04 +0.08    +0.242 A  
+DOCKED: HETATM    6  N2  DDP A 301     -20.726  38.509  37.832 -0.67 -0.03    -0.059 NA 
+DOCKED: HETATM    7  N1  DDP A 301     -20.076  38.698  35.534 -0.22 +0.01    -0.175 NA 
+DOCKED: HETATM    8  C6  DDP A 301     -19.602  38.177  34.377 -0.02 -0.01    +0.298 A  
+DOCKED: HETATM    9  O6  DDP A 301     -19.499  38.926  33.442 -0.85 -0.01    -0.264 OA 
+DOCKED: HETATM   10  O9  DDP A 301     -19.111  34.692  35.497 -0.41 +0.00    -0.168 OA 
+DOCKED: ENDROOT
+DOCKED: TORSDOF 0
+DOCKED: TER
+DOCKED: ENDMDL
+________________________________________________________________________________
+
+
+    FINAL DOCKED STATE:
+    ________________________
+
+
+Run:   44 / 50
+Time taken for this run:   0.450s
+
+DOCKED: MODEL        44
+DOCKED: USER    Run = 44
+DOCKED: USER
+DOCKED: USER    Estimated Free Energy of Binding    =  -3.00 kcal/mol  [=(1)+(2)+(3)-(4)]
+DOCKED: USER
+DOCKED: USER    (1) Final Intermolecular Energy     =  -3.00 kcal/mol
+DOCKED: USER        vdW + Hbond + desolv Energy     =  -2.82 kcal/mol
+DOCKED: USER        Electrostatic Energy            =  -0.18 kcal/mol
+DOCKED: USER        Moving Ligand-Fixed Receptor    =  -3.00 kcal/mol
+DOCKED: USER        Moving Ligand-Moving Receptor   =  +0.00 kcal/mol
+DOCKED: USER    (2) Final Total Internal Energy     =  +0.00 kcal/mol
+DOCKED: USER    (3) Torsional Free Energy           =  +0.00 kcal/mol
+DOCKED: USER    (4) Unbound System's Energy         =  +0.00 kcal/mol
+DOCKED: USER
+DOCKED: USER
+DOCKED: REMARK  0 active torsions:
+DOCKED: REMARK  status: ('A' for Active; 'I' for Inactive)
+DOCKED: USER                              x       y       z     vdW  Elec       q    Type
+DOCKED: USER                           _______ _______ _______ _____ _____    ______ ____
+DOCKED: ROOT
+DOCKED: HETATM    1  C5  DDP A 301     -15.546  35.533  41.861 -0.13 +0.03    +0.171 A  
+DOCKED: HETATM    2  N7  DDP A 301     -16.376  36.051  40.854 -0.23 -0.02    -0.092 NA 
+DOCKED: HETATM    3  C4  DDP A 301     -15.945  35.417  43.206 -0.11 +0.02    +0.233 A  
+DOCKED: HETATM    4  N3  DDP A 301     -15.081  34.907  44.118 -0.08 +0.00    -0.187 NA 
+DOCKED: HETATM    5  C2  DDP A 301     -13.842  34.505  43.770 -0.06 -0.03    +0.242 A  
+DOCKED: HETATM    6  N2  DDP A 301     -12.975  33.984  44.742 -0.35 +0.03    -0.059 NA 
+DOCKED: HETATM    7  N1  DDP A 301     -13.442  34.609  42.477 -0.42 -0.07    -0.175 NA 
+DOCKED: HETATM    8  C6  DDP A 301     -14.256  35.108  41.516 +0.02 +0.14    +0.298 A  
+DOCKED: HETATM    9  O6  DDP A 301     -13.814  35.163  40.399 -0.74 -0.23    -0.264 OA 
+DOCKED: HETATM   10  O9  DDP A 301     -17.216  35.820  43.609 -0.73 -0.06    -0.168 OA 
+DOCKED: ENDROOT
+DOCKED: TORSDOF 0
+DOCKED: TER
+DOCKED: ENDMDL
+________________________________________________________________________________
+
+
+    FINAL DOCKED STATE:
+    ________________________
+
+
+Run:   45 / 50
+Time taken for this run:   0.450s
+
+DOCKED: MODEL        45
+DOCKED: USER    Run = 45
+DOCKED: USER
+DOCKED: USER    Estimated Free Energy of Binding    =  -3.00 kcal/mol  [=(1)+(2)+(3)-(4)]
+DOCKED: USER
+DOCKED: USER    (1) Final Intermolecular Energy     =  -3.00 kcal/mol
+DOCKED: USER        vdW + Hbond + desolv Energy     =  -2.82 kcal/mol
+DOCKED: USER        Electrostatic Energy            =  -0.18 kcal/mol
+DOCKED: USER        Moving Ligand-Fixed Receptor    =  -3.00 kcal/mol
+DOCKED: USER        Moving Ligand-Moving Receptor   =  +0.00 kcal/mol
+DOCKED: USER    (2) Final Total Internal Energy     =  +0.00 kcal/mol
+DOCKED: USER    (3) Torsional Free Energy           =  +0.00 kcal/mol
+DOCKED: USER    (4) Unbound System's Energy         =  +0.00 kcal/mol
+DOCKED: USER
+DOCKED: USER
+DOCKED: REMARK  0 active torsions:
+DOCKED: REMARK  status: ('A' for Active; 'I' for Inactive)
+DOCKED: USER                              x       y       z     vdW  Elec       q    Type
+DOCKED: USER                           _______ _______ _______ _____ _____    ______ ____
+DOCKED: ROOT
+DOCKED: HETATM    1  C5  DDP A 301     -15.548  35.538  41.848 -0.13 +0.03    +0.171 A  
+DOCKED: HETATM    2  N7  DDP A 301     -16.373  36.050  40.833 -0.23 -0.02    -0.092 NA 
+DOCKED: HETATM    3  C4  DDP A 301     -15.955  35.431  43.191 -0.11 +0.03    +0.233 A  
+DOCKED: HETATM    4  N3  DDP A 301     -15.095  34.928  44.111 -0.08 +0.00    -0.187 NA 
+DOCKED: HETATM    5  C2  DDP A 301     -13.854  34.525  43.772 -0.05 -0.02    +0.242 A  
+DOCKED: HETATM    6  N2  DDP A 301     -12.993  34.011  44.752 -0.35 +0.03    -0.059 NA 
+DOCKED: HETATM    7  N1  DDP A 301     -13.447  34.621  42.481 -0.42 -0.07    -0.175 NA 
+DOCKED: HETATM    8  C6  DDP A 301     -14.256  35.113  41.512 +0.02 +0.14    +0.298 A  
+DOCKED: HETATM    9  O6  DDP A 301     -13.808  35.162  40.398 -0.74 -0.23    -0.264 OA 
+DOCKED: HETATM   10  O9  DDP A 301     -17.228  35.835  43.584 -0.72 -0.06    -0.168 OA 
+DOCKED: ENDROOT
+DOCKED: TORSDOF 0
+DOCKED: TER
+DOCKED: ENDMDL
+________________________________________________________________________________
+
+
+    FINAL DOCKED STATE:
+    ________________________
+
+
+Run:   46 / 50
+Time taken for this run:   0.450s
+
+DOCKED: MODEL        46
+DOCKED: USER    Run = 46
+DOCKED: USER
+DOCKED: USER    Estimated Free Energy of Binding    =  -3.00 kcal/mol  [=(1)+(2)+(3)-(4)]
+DOCKED: USER
+DOCKED: USER    (1) Final Intermolecular Energy     =  -3.00 kcal/mol
+DOCKED: USER        vdW + Hbond + desolv Energy     =  -2.81 kcal/mol
+DOCKED: USER        Electrostatic Energy            =  -0.18 kcal/mol
+DOCKED: USER        Moving Ligand-Fixed Receptor    =  -3.00 kcal/mol
+DOCKED: USER        Moving Ligand-Moving Receptor   =  +0.00 kcal/mol
+DOCKED: USER    (2) Final Total Internal Energy     =  +0.00 kcal/mol
+DOCKED: USER    (3) Torsional Free Energy           =  +0.00 kcal/mol
+DOCKED: USER    (4) Unbound System's Energy         =  +0.00 kcal/mol
+DOCKED: USER
+DOCKED: USER
+DOCKED: REMARK  0 active torsions:
+DOCKED: REMARK  status: ('A' for Active; 'I' for Inactive)
+DOCKED: USER                              x       y       z     vdW  Elec       q    Type
+DOCKED: USER                           _______ _______ _______ _____ _____    ______ ____
+DOCKED: ROOT
+DOCKED: HETATM    1  C5  DDP A 301     -15.540  35.534  41.861 -0.13 +0.03    +0.171 A  
+DOCKED: HETATM    2  N7  DDP A 301     -16.368  36.048  40.849 -0.23 -0.02    -0.092 NA 
+DOCKED: HETATM    3  C4  DDP A 301     -15.943  35.426  43.205 -0.11 +0.03    +0.233 A  
+DOCKED: HETATM    4  N3  DDP A 301     -15.082  34.920  44.122 -0.08 +0.00    -0.187 NA 
+DOCKED: HETATM    5  C2  DDP A 301     -13.843  34.515  43.779 -0.06 -0.03    +0.242 A  
+DOCKED: HETATM    6  N2  DDP A 301     -12.979  33.998  44.756 -0.35 +0.03    -0.059 NA 
+DOCKED: HETATM    7  N1  DDP A 301     -13.440  34.612  42.487 -0.41 -0.07    -0.175 NA 
+DOCKED: HETATM    8  C6  DDP A 301     -14.250  35.107  41.521 +0.02 +0.14    +0.298 A  
+DOCKED: HETATM    9  O6  DDP A 301     -13.805  35.156  40.405 -0.74 -0.24    -0.264 OA 
+DOCKED: HETATM   10  O9  DDP A 301     -17.215  35.832  43.603 -0.73 -0.06    -0.168 OA 
+DOCKED: ENDROOT
+DOCKED: TORSDOF 0
+DOCKED: TER
+DOCKED: ENDMDL
+________________________________________________________________________________
+
+
+    FINAL DOCKED STATE:
+    ________________________
+
+
+Run:   47 / 50
+Time taken for this run:   0.450s
+
+DOCKED: MODEL        47
+DOCKED: USER    Run = 47
+DOCKED: USER
+DOCKED: USER    Estimated Free Energy of Binding    =  -3.01 kcal/mol  [=(1)+(2)+(3)-(4)]
+DOCKED: USER
+DOCKED: USER    (1) Final Intermolecular Energy     =  -3.01 kcal/mol
+DOCKED: USER        vdW + Hbond + desolv Energy     =  -2.96 kcal/mol
+DOCKED: USER        Electrostatic Energy            =  -0.05 kcal/mol
+DOCKED: USER        Moving Ligand-Fixed Receptor    =  -3.01 kcal/mol
+DOCKED: USER        Moving Ligand-Moving Receptor   =  +0.00 kcal/mol
+DOCKED: USER    (2) Final Total Internal Energy     =  +0.00 kcal/mol
+DOCKED: USER    (3) Torsional Free Energy           =  +0.00 kcal/mol
+DOCKED: USER    (4) Unbound System's Energy         =  +0.00 kcal/mol
+DOCKED: USER
+DOCKED: USER
+DOCKED: REMARK  0 active torsions:
+DOCKED: REMARK  status: ('A' for Active; 'I' for Inactive)
+DOCKED: USER                              x       y       z     vdW  Elec       q    Type
+DOCKED: USER                           _______ _______ _______ _____ _____    ______ ____
+DOCKED: ROOT
+DOCKED: HETATM    1  C5  DDP A 301     -19.628  35.198  35.608 -0.23 +0.03    +0.171 A  
+DOCKED: HETATM    2  N7  DDP A 301     -19.431  34.107  36.470 -0.39 -0.02    -0.092 NA 
+DOCKED: HETATM    3  C4  DDP A 301     -19.833  35.059  34.222 -0.19 +0.02    +0.233 A  
+DOCKED: HETATM    4  N3  DDP A 301     -20.014  36.166  33.460 -0.24 -0.01    -0.187 NA 
+DOCKED: HETATM    5  C2  DDP A 301     -20.004  37.403  33.996 -0.11 -0.01    +0.242 A  
+DOCKED: HETATM    6  N2  DDP A 301     -20.193  38.524  33.175 -0.78 -0.01    -0.059 NA 
+DOCKED: HETATM    7  N1  DDP A 301     -19.809  37.553  35.330 -0.17 -0.01    -0.175 NA 
+DOCKED: HETATM    8  C6  DDP A 301     -19.623  36.491  36.149 -0.02 +0.09    +0.298 A  
+DOCKED: HETATM    9  O6  DDP A 301     -19.457  36.722  37.317 -0.47 -0.13    -0.264 OA 
+DOCKED: HETATM   10  O9  DDP A 301     -19.850  33.801  33.628 -0.37 -0.00    -0.168 OA 
+DOCKED: ENDROOT
+DOCKED: TORSDOF 0
+DOCKED: TER
+DOCKED: ENDMDL
+________________________________________________________________________________
+
+
+    FINAL DOCKED STATE:
+    ________________________
+
+
+Run:   48 / 50
+Time taken for this run:   0.450s
+
+DOCKED: MODEL        48
+DOCKED: USER    Run = 48
+DOCKED: USER
+DOCKED: USER    Estimated Free Energy of Binding    =  -3.00 kcal/mol  [=(1)+(2)+(3)-(4)]
+DOCKED: USER
+DOCKED: USER    (1) Final Intermolecular Energy     =  -3.00 kcal/mol
+DOCKED: USER        vdW + Hbond + desolv Energy     =  -2.81 kcal/mol
+DOCKED: USER        Electrostatic Energy            =  -0.18 kcal/mol
+DOCKED: USER        Moving Ligand-Fixed Receptor    =  -3.00 kcal/mol
+DOCKED: USER        Moving Ligand-Moving Receptor   =  +0.00 kcal/mol
+DOCKED: USER    (2) Final Total Internal Energy     =  +0.00 kcal/mol
+DOCKED: USER    (3) Torsional Free Energy           =  +0.00 kcal/mol
+DOCKED: USER    (4) Unbound System's Energy         =  +0.00 kcal/mol
+DOCKED: USER
+DOCKED: USER
+DOCKED: REMARK  0 active torsions:
+DOCKED: REMARK  status: ('A' for Active; 'I' for Inactive)
+DOCKED: USER                              x       y       z     vdW  Elec       q    Type
+DOCKED: USER                           _______ _______ _______ _____ _____    ______ ____
+DOCKED: ROOT
+DOCKED: HETATM    1  C5  DDP A 301     -15.559  35.516  41.842 -0.13 +0.03    +0.171 A  
+DOCKED: HETATM    2  N7  DDP A 301     -16.390  36.015  40.826 -0.24 -0.02    -0.092 NA 
+DOCKED: HETATM    3  C4  DDP A 301     -15.966  35.405  43.185 -0.11 +0.03    +0.233 A  
+DOCKED: HETATM    4  N3  DDP A 301     -15.100  34.915  44.107 -0.08 +0.00    -0.187 NA 
+DOCKED: HETATM    5  C2  DDP A 301     -13.854  34.528  43.770 -0.05 -0.02    +0.242 A  
+DOCKED: HETATM    6  N2  DDP A 301     -12.986  34.027  44.751 -0.35 +0.03    -0.059 NA 
+DOCKED: HETATM    7  N1  DDP A 301     -13.447  34.628  42.479 -0.42 -0.07    -0.175 NA 
+DOCKED: HETATM    8  C6  DDP A 301     -14.261  35.108  41.508 +0.03 +0.14    +0.298 A  
+DOCKED: HETATM    9  O6  DDP A 301     -13.813  35.161  40.394 -0.74 -0.23    -0.264 OA 
+DOCKED: HETATM   10  O9  DDP A 301     -17.244  35.793  43.577 -0.71 -0.06    -0.168 OA 
+DOCKED: ENDROOT
+DOCKED: TORSDOF 0
+DOCKED: TER
+DOCKED: ENDMDL
+________________________________________________________________________________
+
+
+    FINAL DOCKED STATE:
+    ________________________
+
+
+Run:   49 / 50
+Time taken for this run:   0.450s
+
+DOCKED: MODEL        49
+DOCKED: USER    Run = 49
+DOCKED: USER
+DOCKED: USER    Estimated Free Energy of Binding    =  -3.00 kcal/mol  [=(1)+(2)+(3)-(4)]
+DOCKED: USER
+DOCKED: USER    (1) Final Intermolecular Energy     =  -3.00 kcal/mol
+DOCKED: USER        vdW + Hbond + desolv Energy     =  -2.81 kcal/mol
+DOCKED: USER        Electrostatic Energy            =  -0.18 kcal/mol
+DOCKED: USER        Moving Ligand-Fixed Receptor    =  -3.00 kcal/mol
+DOCKED: USER        Moving Ligand-Moving Receptor   =  +0.00 kcal/mol
+DOCKED: USER    (2) Final Total Internal Energy     =  +0.00 kcal/mol
+DOCKED: USER    (3) Torsional Free Energy           =  +0.00 kcal/mol
+DOCKED: USER    (4) Unbound System's Energy         =  +0.00 kcal/mol
+DOCKED: USER
+DOCKED: USER
+DOCKED: REMARK  0 active torsions:
+DOCKED: REMARK  status: ('A' for Active; 'I' for Inactive)
+DOCKED: USER                              x       y       z     vdW  Elec       q    Type
+DOCKED: USER                           _______ _______ _______ _____ _____    ______ ____
+DOCKED: ROOT
+DOCKED: HETATM    1  C5  DDP A 301     -15.561  35.517  41.844 -0.13 +0.03    +0.171 A  
+DOCKED: HETATM    2  N7  DDP A 301     -16.391  36.019  40.829 -0.24 -0.02    -0.092 NA 
+DOCKED: HETATM    3  C4  DDP A 301     -15.968  35.403  43.187 -0.11 +0.03    +0.233 A  
+DOCKED: HETATM    4  N3  DDP A 301     -15.104  34.910  44.108 -0.08 +0.00    -0.187 NA 
+DOCKED: HETATM    5  C2  DDP A 301     -13.858  34.522  43.770 -0.05 -0.02    +0.242 A  
+DOCKED: HETATM    6  N2  DDP A 301     -12.991  34.017  44.750 -0.35 +0.03    -0.059 NA 
+DOCKED: HETATM    7  N1  DDP A 301     -13.450  34.624  42.479 -0.42 -0.07    -0.175 NA 
+DOCKED: HETATM    8  C6  DDP A 301     -14.264  35.107  41.510 +0.03 +0.14    +0.298 A  
+DOCKED: HETATM    9  O6  DDP A 301     -13.815  35.162  40.396 -0.74 -0.23    -0.264 OA 
+DOCKED: HETATM   10  O9  DDP A 301     -17.246  35.792  43.579 -0.71 -0.06    -0.168 OA 
+DOCKED: ENDROOT
+DOCKED: TORSDOF 0
+DOCKED: TER
+DOCKED: ENDMDL
+________________________________________________________________________________
+
+
+    FINAL DOCKED STATE:
+    ________________________
+
+
+Run:   50 / 50
+Time taken for this run:   0.450s
+
+DOCKED: MODEL        50
+DOCKED: USER    Run = 50
+DOCKED: USER
+DOCKED: USER    Estimated Free Energy of Binding    =  -3.12 kcal/mol  [=(1)+(2)+(3)-(4)]
+DOCKED: USER
+DOCKED: USER    (1) Final Intermolecular Energy     =  -3.12 kcal/mol
+DOCKED: USER        vdW + Hbond + desolv Energy     =  -3.09 kcal/mol
+DOCKED: USER        Electrostatic Energy            =  -0.02 kcal/mol
+DOCKED: USER        Moving Ligand-Fixed Receptor    =  -3.12 kcal/mol
+DOCKED: USER        Moving Ligand-Moving Receptor   =  +0.00 kcal/mol
+DOCKED: USER    (2) Final Total Internal Energy     =  +0.00 kcal/mol
+DOCKED: USER    (3) Torsional Free Energy           =  +0.00 kcal/mol
+DOCKED: USER    (4) Unbound System's Energy         =  +0.00 kcal/mol
+DOCKED: USER
+DOCKED: USER
+DOCKED: REMARK  0 active torsions:
+DOCKED: REMARK  status: ('A' for Active; 'I' for Inactive)
+DOCKED: USER                              x       y       z     vdW  Elec       q    Type
+DOCKED: USER                           _______ _______ _______ _____ _____    ______ ____
+DOCKED: ROOT
+DOCKED: HETATM    1  C5  DDP A 301     -19.124  36.852  34.288 -0.07 -0.00    +0.171 A  
+DOCKED: HETATM    2  N7  DDP A 301     -18.442  36.329  33.178 -0.16 +0.01    -0.092 NA 
+DOCKED: HETATM    3  C4  DDP A 301     -19.192  36.195  35.531 -0.07 +0.03    +0.233 A  
+DOCKED: HETATM    4  N3  DDP A 301     -19.874  36.768  36.553 -0.48 -0.08    -0.187 NA 
+DOCKED: HETATM    5  C2  DDP A 301     -20.492  37.958  36.411 -0.06 +0.07    +0.242 A  
+DOCKED: HETATM    6  N2  DDP A 301     -21.190  38.518  37.491 -0.73 -0.03    -0.059 NA 
+DOCKED: HETATM    7  N1  DDP A 301     -20.436  38.604  35.219 -0.30 +0.02    -0.175 NA 
+DOCKED: HETATM    8  C6  DDP A 301     -19.771  38.088  34.158 -0.03 -0.01    +0.298 A  
+DOCKED: HETATM    9  O6  DDP A 301     -19.777  38.732  33.143 -0.84 -0.03    -0.264 OA 
+DOCKED: HETATM   10  O9  DDP A 301     -18.567  34.966  35.722 -0.35 +0.01    -0.168 OA 
+DOCKED: ENDROOT
+DOCKED: TORSDOF 0
+DOCKED: TER
+DOCKED: ENDMDL
+________________________________________________________________________________
+
+
+    CLUSTERING HISTOGRAM
+    ____________________
+
+
+________________________________________________________________________________
+     |           |     |           |     |
+Clus | Lowest    | Run | Mean      | Num | Histogram
+-ter | Binding   |     | Binding   | in  |
+Rank | Energy    |     | Energy    | Clus|    5    10   15   20   25   30   35
+_____|___________|_____|___________|_____|____:____|____:____|____:____|____:___
+   1 |     -3.15 |  11 |     -3.06 |  13 |#############
+   2 |     -3.12 |  50 |     -3.09 |  10 |##########
+   3 |     -3.00 |  37 |     -3.00 |  27 |###########################
+_____|___________|_____|___________|_____|______________________________________
+
+
+    RMSD TABLE
+    __________
+
+
+_______________________________________________________________________
+     |      |      |           |         |                 |
+Rank | Sub- | Run  | Binding   | Cluster | Reference       | Grep
+     | Rank |      | Energy    | RMSD    | RMSD            | Pattern
+_____|______|______|___________|_________|_________________|___________
+   1      1     11       -3.15      0.00      6.16           RANKING
+   1      2     33       -3.15      0.09      6.13           RANKING
+   1      3      2       -3.09      0.20      6.06           RANKING
+   1      4      5       -3.05      0.46      5.93           RANKING
+   1      5     29       -3.05      0.53      6.02           RANKING
+   1      6     18       -3.05      0.45      5.95           RANKING
+   1      7     23       -3.05      0.47      5.93           RANKING
+   1      8     27       -3.05      0.52      6.02           RANKING
+   1      9     39       -3.05      0.52      6.03           RANKING
+   1     10     26       -3.04      0.48      5.97           RANKING
+   1     11     47       -3.01      0.41      5.98           RANKING
+   1     12      6       -3.01      0.39      5.99           RANKING
+   1     13     25       -3.01      1.83      5.82           RANKING
+   2      1     50       -3.12      0.00      5.86           RANKING
+   2      2     10       -3.11      0.17      5.80           RANKING
+   2      3      3       -3.11      0.21      5.90           RANKING
+   2      4      1       -3.10      0.51      5.79           RANKING
+   2      5     20       -3.10      0.31      5.78           RANKING
+   2      6     15       -3.09      0.62      5.81           RANKING
+   2      7      4       -3.08      0.40      5.92           RANKING
+   2      8     14       -3.06      0.35      5.75           RANKING
+   2      9     21       -3.04      0.58      6.09           RANKING
+   2     10     43       -3.04      0.41      5.75           RANKING
+   3      1     37       -3.00      0.00      2.43           RANKING
+   3      2     40       -3.00      0.01      2.43           RANKING
+   3      3     24       -3.00      0.02      2.42           RANKING
+   3      4     44       -3.00      0.02      2.43           RANKING
+   3      5      7       -3.00      0.02      2.42           RANKING
+   3      6     34       -3.00      0.02      2.44           RANKING
+   3      7      8       -3.00      0.01      2.42           RANKING
+   3      8     22       -3.00      0.02      2.42           RANKING
+   3      9     45       -3.00      0.02      2.42           RANKING
+   3     10     30       -3.00      0.02      2.41           RANKING
+   3     11      9       -3.00      0.07      2.39           RANKING
+   3     12     12       -3.00      0.03      2.42           RANKING
+   3     13     41       -3.00      0.01      2.43           RANKING
+   3     14     31       -3.00      0.02      2.43           RANKING
+   3     15     28       -3.00      0.02      2.42           RANKING
+   3     16     17       -3.00      0.01      2.43           RANKING
+   3     17     32       -3.00      0.02      2.43           RANKING
+   3     18     35       -3.00      0.04      2.41           RANKING
+   3     19     46       -3.00      0.02      2.43           RANKING
+   3     20     48       -3.00      0.03      2.41           RANKING
+   3     21     49       -3.00      0.03      2.41           RANKING
+   3     22     42       -3.00      0.06      2.39           RANKING
+   3     23     16       -3.00      0.03      2.42           RANKING
+   3     24     13       -3.00      0.03      2.42           RANKING
+   3     25     19       -3.00      0.03      2.41           RANKING
+   3     26     38       -3.00      0.03      2.43           RANKING
+   3     27     36       -2.99      0.03      2.43           RANKING
+
+Run time 24.432 sec
+Idle time 6.014 sec

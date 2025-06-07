@@ -1,0 +1,883 @@
+AutoDock-GPU version: v1.6-7-ga46ab564d2ac5f1a1523f65239b43505a1c29364
+
+**********************************************************
+**    AutoDock-GPU AUTODOCKTOOLS-COMPATIBLE DLG FILE    **
+**********************************************************
+
+
+    DOCKING PARAMETERS
+    ________________________
+
+
+Ligand file:                               pdbqt_files/1o4k_ligand.pdbqt
+Grid fld file:                             map_grid_files/1o4k_receptor.maps.fld
+
+Random seed:                               1749308808, 1456
+Number of runs:                            10
+Number of energy evaluations:              2068966
+Number of generations:                     42000
+Size of population:                        150
+Rate of crossover:                         80.000000%
+Tournament selection probability limit:    60.000000%
+Rate of mutation:                          2.000000%
+Maximal allowed delta movement:            +/- 6.000000A
+Maximal allowed delta angle:               +/- 90.000000
+
+Rate of local search:                      100.000000%
+Maximal number of local search iterations: 300
+Rho lower bound:                           0.010000
+Spread of local search delta movement:     2.000000A
+Spread of local search delta angle:        74.999999
+Limit of consecutive successes/failures:   4
+
+Handle symmetry during clustering:         YES
+RMSD tolerance:                            2.000000A
+
+Program call in command line was:          /home/tajgero/AutoDock-GPU/bin/autodock_gpu_128wi --lfile pdbqt_files/1o4k_ligand.pdbqt --ffile map_grid_files/1o4k_receptor.maps.fld --nrun 10 
+
+
+    GRID PARAMETERS
+    ________________________
+
+
+Receptor name:                             pdbqt_files/1o4k_receptor
+Number of grid points (x, y, z):           41, 41, 41
+Grid center (x, y, z):                     17.668000, 27.322000, 18.396000A
+Grid size (x, y, z):                       15.000000, 15.000000, 15.000000A
+Grid spacing:                              0.375000A
+
+
+    LIGAND PARAMETERS
+    ________________________
+
+
+Ligand name:                               pdbqt_files/1o4k_ligand
+Number of atoms:                           20
+Number of rotatable bonds:                 6
+Number of atom types:                      4
+
+
+    DUMMY DATA (only for ADT-compatibility)
+    ________________________
+
+
+DPF> outlev 1
+DPF> ga_run 10
+DPF> fld map_grid_files/1o4k_receptor.maps.fld
+DPF> move pdbqt_files/1o4k_ligand.pdbqt
+
+
+    COUNTER STATES
+    ________________________
+
+
+Number of energy evaluations performed:    1198993
+Number of generations used:                65
+
+
+    INPUT LIGAND PDBQT FILE:
+    ________________________
+
+
+INPUT-LIGAND-PDBQT: REMARK  6 active torsions:
+INPUT-LIGAND-PDBQT: REMARK  status: ('A' for Active; 'I' for Inactive)
+INPUT-LIGAND-PDBQT: REMARK    1  A    between atoms: C4_860  and  C7_863 
+INPUT-LIGAND-PDBQT: REMARK    2  A    between atoms: C5_861  and  O8_864 
+INPUT-LIGAND-PDBQT: REMARK    3  A    between atoms: O8_864  and  P9_865 
+INPUT-LIGAND-PDBQT: REMARK    4  A    between atoms: P9_865  and  O10_866 
+INPUT-LIGAND-PDBQT: REMARK    5  A    between atoms: O10_866  and  C12_868 
+INPUT-LIGAND-PDBQT: REMARK    6  A    between atoms: C12_868  and  C13_869 
+INPUT-LIGAND-PDBQT: ROOT
+INPUT-LIGAND-PDBQT: HETATM    1  P9  PSN A 300      15.828  28.279  17.291  1.00 20.13     0.414 P 
+INPUT-LIGAND-PDBQT: HETATM    2  O11 PSN A 300      14.459  28.783  16.749  1.00 16.31    -0.624 OA
+INPUT-LIGAND-PDBQT: HETATM    3  O32 PSN A 300      16.524  27.465  16.187  1.00 19.70    -0.624 OA
+INPUT-LIGAND-PDBQT: ENDROOT
+INPUT-LIGAND-PDBQT: BRANCH   1   4
+INPUT-LIGAND-PDBQT: HETATM    4  O8  PSN A 300      15.448  27.415  18.587  1.00 20.99    -0.249 OA
+INPUT-LIGAND-PDBQT: BRANCH   4   5
+INPUT-LIGAND-PDBQT: HETATM    5  C5  PSN A 300      16.436  26.596  19.232  1.00 17.57     0.090 A 
+INPUT-LIGAND-PDBQT: HETATM    6  C4  PSN A 300      16.480  25.236  18.809  1.00 16.79     0.046 A 
+INPUT-LIGAND-PDBQT: HETATM    7  C3  PSN A 300      17.409  24.374  19.484  1.00 17.96     0.004 A 
+INPUT-LIGAND-PDBQT: HETATM    8  C2  PSN A 300      18.298  24.848  20.500  1.00 16.20    -0.004 A 
+INPUT-LIGAND-PDBQT: HETATM    9  C1  PSN A 300      18.255  26.221  20.886  1.00 20.15    -0.019 A 
+INPUT-LIGAND-PDBQT: HETATM   10  C6  PSN A 300      17.292  27.103  20.294  1.00 16.81     0.078 A 
+INPUT-LIGAND-PDBQT: BRANCH   6  11
+INPUT-LIGAND-PDBQT: HETATM   11  C7  PSN A 300      15.607  24.671  17.714  1.00 16.65     0.158 C 
+INPUT-LIGAND-PDBQT: HETATM   12  O25 PSN A 300      15.770  24.824  16.382  1.00 19.05    -0.188 OA
+INPUT-LIGAND-PDBQT: ENDBRANCH   6  11
+INPUT-LIGAND-PDBQT: ENDBRANCH   4   5
+INPUT-LIGAND-PDBQT: ENDBRANCH   1   4
+INPUT-LIGAND-PDBQT: BRANCH   1  13
+INPUT-LIGAND-PDBQT: HETATM   13  O10 PSN A 300      16.551  29.599  17.580  1.00 33.05    -0.271 OA
+INPUT-LIGAND-PDBQT: BRANCH  13  14
+INPUT-LIGAND-PDBQT: HETATM   14  C12 PSN A 300      17.561  29.847  18.630  0.00 48.07     0.154 C 
+INPUT-LIGAND-PDBQT: BRANCH  14  15
+INPUT-LIGAND-PDBQT: HETATM   15  C13 PSN A 300      18.959  29.128  18.441  0.00 55.36     0.030 C 
+INPUT-LIGAND-PDBQT: HETATM   16  C16 PSN A 300      20.020  29.470  19.379  0.00 57.38     0.003 C 
+INPUT-LIGAND-PDBQT: HETATM   17  C17 PSN A 300      21.311  28.898  19.155  0.00 60.23     0.000 C 
+INPUT-LIGAND-PDBQT: HETATM   18  C18 PSN A 300      21.538  27.994  18.029  0.00 61.30     0.000 C 
+INPUT-LIGAND-PDBQT: HETATM   19  C19 PSN A 300      20.446  27.550  17.199  0.00 60.17     0.000 C 
+INPUT-LIGAND-PDBQT: HETATM   20  C20 PSN A 300      19.159  28.135  17.387  0.00 57.72     0.003 C 
+INPUT-LIGAND-PDBQT: ENDBRANCH  14  15
+INPUT-LIGAND-PDBQT: ENDBRANCH  13  14
+INPUT-LIGAND-PDBQT: ENDBRANCH   1  13
+INPUT-LIGAND-PDBQT: TORSDOF 6
+
+
+    FINAL DOCKED STATE:
+    ________________________
+
+
+Run:   1 / 10
+Time taken for this run:   1.993s
+
+DOCKED: MODEL        1
+DOCKED: USER    Run = 1
+DOCKED: USER
+DOCKED: USER    Estimated Free Energy of Binding    =  -4.88 kcal/mol  [=(1)+(2)+(3)-(4)]
+DOCKED: USER
+DOCKED: USER    (1) Final Intermolecular Energy     =  -6.67 kcal/mol
+DOCKED: USER        vdW + Hbond + desolv Energy     =  -4.09 kcal/mol
+DOCKED: USER        Electrostatic Energy            =  -2.58 kcal/mol
+DOCKED: USER        Moving Ligand-Fixed Receptor    =  -6.67 kcal/mol
+DOCKED: USER        Moving Ligand-Moving Receptor   =  +0.00 kcal/mol
+DOCKED: USER    (2) Final Total Internal Energy     =  -0.98 kcal/mol
+DOCKED: USER    (3) Torsional Free Energy           =  +1.79 kcal/mol
+DOCKED: USER    (4) Unbound System's Energy         =  -0.98 kcal/mol
+DOCKED: USER
+DOCKED: USER
+DOCKED: REMARK  6 active torsions:
+DOCKED: REMARK  status: ('A' for Active; 'I' for Inactive)
+DOCKED: REMARK    1  A    between atoms: C4_860  and  C7_863 
+DOCKED: REMARK    2  A    between atoms: C5_861  and  O8_864 
+DOCKED: REMARK    3  A    between atoms: O8_864  and  P9_865 
+DOCKED: REMARK    4  A    between atoms: P9_865  and  O10_866 
+DOCKED: REMARK    5  A    between atoms: O10_866  and  C12_868 
+DOCKED: REMARK    6  A    between atoms: C12_868  and  C13_869 
+DOCKED: USER                              x       y       z     vdW  Elec       q    Type
+DOCKED: USER                           _______ _______ _______ _____ _____    ______ ____
+DOCKED: ROOT
+DOCKED: HETATM    1  P9  PSN A 300      15.421  28.291  17.502 -0.02 +0.71    +0.414 P  
+DOCKED: HETATM    2  O11 PSN A 300      14.294  27.892  16.507 -0.54 -1.56    -0.624 OA 
+DOCKED: HETATM    3  O32 PSN A 300      14.817  29.196  18.590 -0.41 -1.21    -0.624 OA 
+DOCKED: ENDROOT
+DOCKED: BRANCH   1   4
+DOCKED: HETATM    4  O8  PSN A 300      16.516  29.024  16.589 -0.33 -0.28    -0.249 OA 
+DOCKED: BRANCH   4   5
+DOCKED: HETATM    5  C5  PSN A 300      17.236  30.163  17.087 -0.13 +0.06    +0.090 A  
+DOCKED: HETATM    6  C4  PSN A 300      18.638  29.977  17.260 -0.03 +0.03    +0.046 A  
+DOCKED: HETATM    7  C3  PSN A 300      19.376  31.073  17.823 -0.02 +0.00    +0.004 A  
+DOCKED: HETATM    8  C2  PSN A 300      18.763  32.323  18.151 -0.04 -0.00    -0.004 A  
+DOCKED: HETATM    9  C1  PSN A 300      17.362  32.495  17.941 -0.10 -0.00    -0.019 A  
+DOCKED: HETATM   10  C6  PSN A 300      16.570  31.404  17.453 -0.12 +0.02    +0.078 A  
+DOCKED: BRANCH   6  11
+DOCKED: HETATM   11  C7  PSN A 300      19.366  28.704  16.896 -0.06 +0.17    +0.158 C  
+DOCKED: HETATM   12  O25 PSN A 300      19.426  28.121  15.679 -0.77 -0.34    -0.188 OA 
+DOCKED: ENDBRANCH   6  11
+DOCKED: ENDBRANCH   4   5
+DOCKED: ENDBRANCH   1   4
+DOCKED: BRANCH   1  13
+DOCKED: HETATM   13  O10 PSN A 300      15.845  26.926  18.054 -0.18 -0.44    -0.271 OA 
+DOCKED: BRANCH  13  14
+DOCKED: HETATM   14  C12 PSN A 300      16.645  25.896  17.359 -0.09 +0.21    +0.154 C  
+DOCKED: BRANCH  14  15
+DOCKED: HETATM   15  C13 PSN A 300      17.753  25.168  18.224 -0.22 +0.04    +0.030 C  
+DOCKED: HETATM   16  C16 PSN A 300      19.126  25.639  18.087 -0.10 +0.00    +0.003 C  
+DOCKED: HETATM   17  C17 PSN A 300      20.143  24.923  18.791 -0.12 +0.00    +0.000 C  
+DOCKED: HETATM   18  C18 PSN A 300      19.802  23.771  19.624 -0.20 +0.00    +0.000 C  
+DOCKED: HETATM   19  C19 PSN A 300      18.427  23.410  19.866 -0.27 +0.00    +0.000 C  
+DOCKED: HETATM   20  C20 PSN A 300      17.401  24.091  19.147 -0.34 +0.00    +0.003 C  
+DOCKED: ENDBRANCH  14  15
+DOCKED: ENDBRANCH  13  14
+DOCKED: ENDBRANCH   1  13
+DOCKED: TORSDOF 6
+DOCKED: TER
+DOCKED: ENDMDL
+________________________________________________________________________________
+
+
+    FINAL DOCKED STATE:
+    ________________________
+
+
+Run:   2 / 10
+Time taken for this run:   1.993s
+
+DOCKED: MODEL        2
+DOCKED: USER    Run = 2
+DOCKED: USER
+DOCKED: USER    Estimated Free Energy of Binding    =  -5.07 kcal/mol  [=(1)+(2)+(3)-(4)]
+DOCKED: USER
+DOCKED: USER    (1) Final Intermolecular Energy     =  -6.86 kcal/mol
+DOCKED: USER        vdW + Hbond + desolv Energy     =  -4.56 kcal/mol
+DOCKED: USER        Electrostatic Energy            =  -2.30 kcal/mol
+DOCKED: USER        Moving Ligand-Fixed Receptor    =  -6.86 kcal/mol
+DOCKED: USER        Moving Ligand-Moving Receptor   =  +0.00 kcal/mol
+DOCKED: USER    (2) Final Total Internal Energy     =  -1.16 kcal/mol
+DOCKED: USER    (3) Torsional Free Energy           =  +1.79 kcal/mol
+DOCKED: USER    (4) Unbound System's Energy         =  -1.16 kcal/mol
+DOCKED: USER
+DOCKED: USER
+DOCKED: REMARK  6 active torsions:
+DOCKED: REMARK  status: ('A' for Active; 'I' for Inactive)
+DOCKED: REMARK    1  A    between atoms: C4_860  and  C7_863 
+DOCKED: REMARK    2  A    between atoms: C5_861  and  O8_864 
+DOCKED: REMARK    3  A    between atoms: O8_864  and  P9_865 
+DOCKED: REMARK    4  A    between atoms: P9_865  and  O10_866 
+DOCKED: REMARK    5  A    between atoms: O10_866  and  C12_868 
+DOCKED: REMARK    6  A    between atoms: C12_868  and  C13_869 
+DOCKED: USER                              x       y       z     vdW  Elec       q    Type
+DOCKED: USER                           _______ _______ _______ _____ _____    ______ ____
+DOCKED: ROOT
+DOCKED: HETATM    1  P9  PSN A 300      15.099  28.579  17.282 +0.06 +0.76    +0.414 P  
+DOCKED: HETATM    2  O11 PSN A 300      14.653  27.247  16.613 -0.32 -1.21    -0.624 OA 
+DOCKED: HETATM    3  O32 PSN A 300      13.925  29.572  17.231 -0.46 -1.21    -0.624 OA 
+DOCKED: ENDROOT
+DOCKED: BRANCH   1   4
+DOCKED: HETATM    4  O8  PSN A 300      16.374  29.044  16.428 -0.45 -0.29    -0.249 OA 
+DOCKED: BRANCH   4   5
+DOCKED: HETATM    5  C5  PSN A 300      17.241  30.079  16.919 -0.14 +0.06    +0.090 A  
+DOCKED: HETATM    6  C4  PSN A 300      18.625  29.743  16.986 +0.02 +0.03    +0.046 A  
+DOCKED: HETATM    7  C3  PSN A 300      19.508  30.731  17.537 -0.02 +0.00    +0.004 A  
+DOCKED: HETATM    8  C2  PSN A 300      19.053  32.021  17.956 -0.04 -0.00    -0.004 A  
+DOCKED: HETATM    9  C1  PSN A 300      17.667  32.344  17.852 -0.10 -0.00    -0.019 A  
+DOCKED: HETATM   10  C6  PSN A 300      16.735  31.363  17.379 -0.13 +0.02    +0.078 A  
+DOCKED: BRANCH   6  11
+DOCKED: HETATM   11  C7  PSN A 300      19.189  28.421  16.522 -0.10 +0.20    +0.158 C  
+DOCKED: HETATM   12  O25 PSN A 300      19.538  28.082  15.262 -0.86 -0.38    -0.188 OA 
+DOCKED: ENDBRANCH   6  11
+DOCKED: ENDBRANCH   4   5
+DOCKED: ENDBRANCH   1   4
+DOCKED: BRANCH   1  13
+DOCKED: HETATM   13  O10 PSN A 300      15.407  28.120  18.711 -0.74 -0.56    -0.271 OA 
+DOCKED: BRANCH  13  14
+DOCKED: HETATM   14  C12 PSN A 300      16.743  27.924  19.313 -0.06 +0.24    +0.154 C  
+DOCKED: BRANCH  14  15
+DOCKED: HETATM   15  C13 PSN A 300      17.310  26.446  19.294 -0.12 +0.04    +0.030 C  
+DOCKED: HETATM   16  C16 PSN A 300      17.846  25.919  20.541 -0.15 +0.00    +0.003 C  
+DOCKED: HETATM   17  C17 PSN A 300      18.447  24.622  20.507 -0.21 +0.00    +0.000 C  
+DOCKED: HETATM   18  C18 PSN A 300      18.501  23.860  19.261 -0.30 +0.00    +0.000 C  
+DOCKED: HETATM   19  C19 PSN A 300      17.836  24.331  18.071 -0.24 +0.00    +0.000 C  
+DOCKED: HETATM   20  C20 PSN A 300      17.261  25.636  18.078 -0.22 +0.00    +0.003 C  
+DOCKED: ENDBRANCH  14  15
+DOCKED: ENDBRANCH  13  14
+DOCKED: ENDBRANCH   1  13
+DOCKED: TORSDOF 6
+DOCKED: TER
+DOCKED: ENDMDL
+________________________________________________________________________________
+
+
+    FINAL DOCKED STATE:
+    ________________________
+
+
+Run:   3 / 10
+Time taken for this run:   1.993s
+
+DOCKED: MODEL        3
+DOCKED: USER    Run = 3
+DOCKED: USER
+DOCKED: USER    Estimated Free Energy of Binding    =  -4.70 kcal/mol  [=(1)+(2)+(3)-(4)]
+DOCKED: USER
+DOCKED: USER    (1) Final Intermolecular Energy     =  -6.49 kcal/mol
+DOCKED: USER        vdW + Hbond + desolv Energy     =  -4.01 kcal/mol
+DOCKED: USER        Electrostatic Energy            =  -2.48 kcal/mol
+DOCKED: USER        Moving Ligand-Fixed Receptor    =  -6.49 kcal/mol
+DOCKED: USER        Moving Ligand-Moving Receptor   =  +0.00 kcal/mol
+DOCKED: USER    (2) Final Total Internal Energy     =  -1.68 kcal/mol
+DOCKED: USER    (3) Torsional Free Energy           =  +1.79 kcal/mol
+DOCKED: USER    (4) Unbound System's Energy         =  -1.68 kcal/mol
+DOCKED: USER
+DOCKED: USER
+DOCKED: REMARK  6 active torsions:
+DOCKED: REMARK  status: ('A' for Active; 'I' for Inactive)
+DOCKED: REMARK    1  A    between atoms: C4_860  and  C7_863 
+DOCKED: REMARK    2  A    between atoms: C5_861  and  O8_864 
+DOCKED: REMARK    3  A    between atoms: O8_864  and  P9_865 
+DOCKED: REMARK    4  A    between atoms: P9_865  and  O10_866 
+DOCKED: REMARK    5  A    between atoms: O10_866  and  C12_868 
+DOCKED: REMARK    6  A    between atoms: C12_868  and  C13_869 
+DOCKED: USER                              x       y       z     vdW  Elec       q    Type
+DOCKED: USER                           _______ _______ _______ _____ _____    ______ ____
+DOCKED: ROOT
+DOCKED: HETATM    1  P9  PSN A 300      15.413  28.488  17.786 -0.02 +0.71    +0.414 P  
+DOCKED: HETATM    2  O11 PSN A 300      14.297  29.092  16.885 -0.86 -1.40    -0.624 OA 
+DOCKED: HETATM    3  O32 PSN A 300      15.046  28.739  19.259 -0.49 -1.41    -0.624 OA 
+DOCKED: ENDROOT
+DOCKED: BRANCH   1   4
+DOCKED: HETATM    4  O8  PSN A 300      16.751  29.237  17.318 -0.14 -0.26    -0.249 OA 
+DOCKED: BRANCH   4   5
+DOCKED: HETATM    5  C5  PSN A 300      18.010  28.936  17.940 +0.00 +0.09    +0.090 A  
+DOCKED: HETATM    6  C4  PSN A 300      18.987  28.336  17.093 -0.07 +0.05    +0.046 A  
+DOCKED: HETATM    7  C3  PSN A 300      20.232  27.959  17.701 -0.03 +0.00    +0.004 A  
+DOCKED: HETATM    8  C2  PSN A 300      20.522  28.213  19.079 +0.03 -0.00    -0.004 A  
+DOCKED: HETATM    9  C1  PSN A 300      19.538  28.841  19.899 +0.01 -0.02    -0.019 A  
+DOCKED: HETATM   10  C6  PSN A 300      18.252  29.167  19.356 +0.06 +0.10    +0.078 A  
+DOCKED: BRANCH   6  11
+DOCKED: HETATM   11  C7  PSN A 300      18.773  28.077  15.621 -0.14 +0.25    +0.158 C  
+DOCKED: HETATM   12  O25 PSN A 300      19.706  28.108  14.645 -0.88 -0.39    -0.188 OA 
+DOCKED: ENDBRANCH   6  11
+DOCKED: ENDBRANCH   4   5
+DOCKED: ENDBRANCH   1   4
+DOCKED: BRANCH   1  13
+DOCKED: HETATM   13  O10 PSN A 300      15.338  27.002  17.416 -0.24 -0.47    -0.271 OA 
+DOCKED: BRANCH  13  14
+DOCKED: HETATM   14  C12 PSN A 300      16.470  26.110  17.091 -0.11 +0.21    +0.154 C  
+DOCKED: BRANCH  14  15
+DOCKED: HETATM   15  C13 PSN A 300      17.299  25.554  18.320 -0.20 +0.04    +0.030 C  
+DOCKED: HETATM   16  C16 PSN A 300      18.343  24.578  18.036 -0.17 +0.00    +0.003 C  
+DOCKED: HETATM   17  C17 PSN A 300      19.029  24.000  19.150 -0.26 +0.00    +0.000 C  
+DOCKED: HETATM   18  C18 PSN A 300      18.692  24.395  20.516 -0.21 +0.00    +0.000 C  
+DOCKED: HETATM   19  C19 PSN A 300      17.763  25.467  20.774 -0.14 +0.00    +0.000 C  
+DOCKED: HETATM   20  C20 PSN A 300      17.046  26.031  19.678 -0.17 +0.00    +0.003 C  
+DOCKED: ENDBRANCH  14  15
+DOCKED: ENDBRANCH  13  14
+DOCKED: ENDBRANCH   1  13
+DOCKED: TORSDOF 6
+DOCKED: TER
+DOCKED: ENDMDL
+________________________________________________________________________________
+
+
+    FINAL DOCKED STATE:
+    ________________________
+
+
+Run:   4 / 10
+Time taken for this run:   1.993s
+
+DOCKED: MODEL        4
+DOCKED: USER    Run = 4
+DOCKED: USER
+DOCKED: USER    Estimated Free Energy of Binding    =  -4.68 kcal/mol  [=(1)+(2)+(3)-(4)]
+DOCKED: USER
+DOCKED: USER    (1) Final Intermolecular Energy     =  -6.47 kcal/mol
+DOCKED: USER        vdW + Hbond + desolv Energy     =  -3.78 kcal/mol
+DOCKED: USER        Electrostatic Energy            =  -2.69 kcal/mol
+DOCKED: USER        Moving Ligand-Fixed Receptor    =  -6.47 kcal/mol
+DOCKED: USER        Moving Ligand-Moving Receptor   =  +0.00 kcal/mol
+DOCKED: USER    (2) Final Total Internal Energy     =  -1.70 kcal/mol
+DOCKED: USER    (3) Torsional Free Energy           =  +1.79 kcal/mol
+DOCKED: USER    (4) Unbound System's Energy         =  -1.70 kcal/mol
+DOCKED: USER
+DOCKED: USER
+DOCKED: REMARK  6 active torsions:
+DOCKED: REMARK  status: ('A' for Active; 'I' for Inactive)
+DOCKED: REMARK    1  A    between atoms: C4_860  and  C7_863 
+DOCKED: REMARK    2  A    between atoms: C5_861  and  O8_864 
+DOCKED: REMARK    3  A    between atoms: O8_864  and  P9_865 
+DOCKED: REMARK    4  A    between atoms: P9_865  and  O10_866 
+DOCKED: REMARK    5  A    between atoms: O10_866  and  C12_868 
+DOCKED: REMARK    6  A    between atoms: C12_868  and  C13_869 
+DOCKED: USER                              x       y       z     vdW  Elec       q    Type
+DOCKED: USER                           _______ _______ _______ _____ _____    ______ ____
+DOCKED: ROOT
+DOCKED: HETATM    1  P9  PSN A 300      15.427  28.246  17.722 -0.00 +0.73    +0.414 P  
+DOCKED: HETATM    2  O11 PSN A 300      14.300  28.830  16.821 -0.78 -1.56    -0.624 OA 
+DOCKED: HETATM    3  O32 PSN A 300      15.045  28.472  19.195 -0.49 -1.51    -0.624 OA 
+DOCKED: ENDROOT
+DOCKED: BRANCH   1   4
+DOCKED: HETATM    4  O8  PSN A 300      16.747  29.035  17.269 -0.14 -0.27    -0.249 OA 
+DOCKED: BRANCH   4   5
+DOCKED: HETATM    5  C5  PSN A 300      18.005  28.778  17.912 +0.00 +0.10    +0.090 A  
+DOCKED: HETATM    6  C4  PSN A 300      19.036  28.272  17.067 -0.07 +0.06    +0.046 A  
+DOCKED: HETATM    7  C3  PSN A 300      20.285  27.939  17.692 -0.03 +0.00    +0.004 A  
+DOCKED: HETATM    8  C2  PSN A 300      20.526  28.147  19.087 +0.03 -0.00    -0.004 A  
+DOCKED: HETATM    9  C1  PSN A 300      19.487  28.683  19.906 +0.02 -0.02    -0.019 A  
+DOCKED: HETATM   10  C6  PSN A 300      18.199  28.960  19.342 +0.05 +0.10    +0.078 A  
+DOCKED: BRANCH   6  11
+DOCKED: HETATM   11  C7  PSN A 300      18.874  28.066  15.580 -0.11 +0.26    +0.158 C  
+DOCKED: HETATM   12  O25 PSN A 300      19.818  28.227  14.628 -0.86 -0.38    -0.188 OA 
+DOCKED: ENDBRANCH   6  11
+DOCKED: ENDBRANCH   4   5
+DOCKED: ENDBRANCH   1   4
+DOCKED: BRANCH   1  13
+DOCKED: HETATM   13  O10 PSN A 300      15.393  26.763  17.336 -0.15 -0.45    -0.271 OA 
+DOCKED: BRANCH  13  14
+DOCKED: HETATM   14  C12 PSN A 300      16.552  25.895  17.043 -0.13 +0.21    +0.154 C  
+DOCKED: BRANCH  14  15
+DOCKED: HETATM   15  C13 PSN A 300      17.380  25.385  18.293 -0.22 +0.04    +0.030 C  
+DOCKED: HETATM   16  C16 PSN A 300      18.498  24.488  18.035 -0.13 +0.00    +0.003 C  
+DOCKED: HETATM   17  C17 PSN A 300      19.188  23.948  19.165 -0.26 +0.00    +0.000 C  
+DOCKED: HETATM   18  C18 PSN A 300      18.781  24.303  20.523 -0.21 +0.00    +0.000 C  
+DOCKED: HETATM   19  C19 PSN A 300      17.771  25.304  20.760 -0.13 +0.00    +0.000 C  
+DOCKED: HETATM   20  C20 PSN A 300      17.050  25.829  19.646 -0.18 +0.00    +0.003 C  
+DOCKED: ENDBRANCH  14  15
+DOCKED: ENDBRANCH  13  14
+DOCKED: ENDBRANCH   1  13
+DOCKED: TORSDOF 6
+DOCKED: TER
+DOCKED: ENDMDL
+________________________________________________________________________________
+
+
+    FINAL DOCKED STATE:
+    ________________________
+
+
+Run:   5 / 10
+Time taken for this run:   1.993s
+
+DOCKED: MODEL        5
+DOCKED: USER    Run = 5
+DOCKED: USER
+DOCKED: USER    Estimated Free Energy of Binding    =  -4.98 kcal/mol  [=(1)+(2)+(3)-(4)]
+DOCKED: USER
+DOCKED: USER    (1) Final Intermolecular Energy     =  -6.77 kcal/mol
+DOCKED: USER        vdW + Hbond + desolv Energy     =  -4.47 kcal/mol
+DOCKED: USER        Electrostatic Energy            =  -2.30 kcal/mol
+DOCKED: USER        Moving Ligand-Fixed Receptor    =  -6.77 kcal/mol
+DOCKED: USER        Moving Ligand-Moving Receptor   =  +0.00 kcal/mol
+DOCKED: USER    (2) Final Total Internal Energy     =  -1.16 kcal/mol
+DOCKED: USER    (3) Torsional Free Energy           =  +1.79 kcal/mol
+DOCKED: USER    (4) Unbound System's Energy         =  -1.16 kcal/mol
+DOCKED: USER
+DOCKED: USER
+DOCKED: REMARK  6 active torsions:
+DOCKED: REMARK  status: ('A' for Active; 'I' for Inactive)
+DOCKED: REMARK    1  A    between atoms: C4_860  and  C7_863 
+DOCKED: REMARK    2  A    between atoms: C5_861  and  O8_864 
+DOCKED: REMARK    3  A    between atoms: O8_864  and  P9_865 
+DOCKED: REMARK    4  A    between atoms: P9_865  and  O10_866 
+DOCKED: REMARK    5  A    between atoms: O10_866  and  C12_868 
+DOCKED: REMARK    6  A    between atoms: C12_868  and  C13_869 
+DOCKED: USER                              x       y       z     vdW  Elec       q    Type
+DOCKED: USER                           _______ _______ _______ _____ _____    ______ ____
+DOCKED: ROOT
+DOCKED: HETATM    1  P9  PSN A 300      15.121  28.628  17.297 +0.04 +0.74    +0.414 P  
+DOCKED: HETATM    2  O11 PSN A 300      14.721  27.250  16.692 -0.28 -1.20    -0.624 OA 
+DOCKED: HETATM    3  O32 PSN A 300      13.912  29.574  17.207 -0.43 -1.22    -0.624 OA 
+DOCKED: ENDROOT
+DOCKED: BRANCH   1   4
+DOCKED: HETATM    4  O8  PSN A 300      16.376  29.098  16.416 -0.45 -0.28    -0.249 OA 
+DOCKED: BRANCH   4   5
+DOCKED: HETATM    5  C5  PSN A 300      17.267  30.115  16.902 -0.14 +0.06    +0.090 A  
+DOCKED: HETATM    6  C4  PSN A 300      18.639  29.742  16.985 +0.02 +0.03    +0.046 A  
+DOCKED: HETATM    7  C3  PSN A 300      19.545  30.713  17.533 -0.02 +0.00    +0.004 A  
+DOCKED: HETATM    8  C2  PSN A 300      19.121  32.019  17.933 -0.03 -0.00    -0.004 A  
+DOCKED: HETATM    9  C1  PSN A 300      17.746  32.379  17.813 -0.10 -0.00    -0.019 A  
+DOCKED: HETATM   10  C6  PSN A 300      16.791  31.418  17.342 -0.13 +0.02    +0.078 A  
+DOCKED: BRANCH   6  11
+DOCKED: HETATM   11  C7  PSN A 300      19.171  28.400  16.542 -0.10 +0.20    +0.158 C  
+DOCKED: HETATM   12  O25 PSN A 300      19.504  28.030  15.287 -0.82 -0.39    -0.188 OA 
+DOCKED: ENDBRANCH   6  11
+DOCKED: ENDBRANCH   4   5
+DOCKED: ENDBRANCH   1   4
+DOCKED: BRANCH   1  13
+DOCKED: HETATM   13  O10 PSN A 300      15.451  28.246  18.744 -0.73 -0.54    -0.271 OA 
+DOCKED: BRANCH  13  14
+DOCKED: HETATM   14  C12 PSN A 300      16.788  27.962  19.305 -0.06 +0.24    +0.154 C  
+DOCKED: BRANCH  14  15
+DOCKED: HETATM   15  C13 PSN A 300      17.261  26.452  19.261 -0.12 +0.04    +0.030 C  
+DOCKED: HETATM   16  C16 PSN A 300      17.850  25.898  20.473 -0.15 +0.00    +0.003 C  
+DOCKED: HETATM   17  C17 PSN A 300      18.366  24.567  20.410 -0.22 +0.00    +0.000 C  
+DOCKED: HETATM   18  C18 PSN A 300      18.286  23.797  19.170 -0.30 +0.00    +0.000 C  
+DOCKED: HETATM   19  C19 PSN A 300      17.570  24.302  18.025 -0.26 +0.00    +0.000 C  
+DOCKED: HETATM   20  C20 PSN A 300      17.078  25.640  18.059 -0.21 +0.00    +0.003 C  
+DOCKED: ENDBRANCH  14  15
+DOCKED: ENDBRANCH  13  14
+DOCKED: ENDBRANCH   1  13
+DOCKED: TORSDOF 6
+DOCKED: TER
+DOCKED: ENDMDL
+________________________________________________________________________________
+
+
+    FINAL DOCKED STATE:
+    ________________________
+
+
+Run:   6 / 10
+Time taken for this run:   1.993s
+
+DOCKED: MODEL        6
+DOCKED: USER    Run = 6
+DOCKED: USER
+DOCKED: USER    Estimated Free Energy of Binding    =  -4.20 kcal/mol  [=(1)+(2)+(3)-(4)]
+DOCKED: USER
+DOCKED: USER    (1) Final Intermolecular Energy     =  -5.99 kcal/mol
+DOCKED: USER        vdW + Hbond + desolv Energy     =  -3.65 kcal/mol
+DOCKED: USER        Electrostatic Energy            =  -2.34 kcal/mol
+DOCKED: USER        Moving Ligand-Fixed Receptor    =  -5.99 kcal/mol
+DOCKED: USER        Moving Ligand-Moving Receptor   =  +0.00 kcal/mol
+DOCKED: USER    (2) Final Total Internal Energy     =  -1.75 kcal/mol
+DOCKED: USER    (3) Torsional Free Energy           =  +1.79 kcal/mol
+DOCKED: USER    (4) Unbound System's Energy         =  -1.75 kcal/mol
+DOCKED: USER
+DOCKED: USER
+DOCKED: REMARK  6 active torsions:
+DOCKED: REMARK  status: ('A' for Active; 'I' for Inactive)
+DOCKED: REMARK    1  A    between atoms: C4_860  and  C7_863 
+DOCKED: REMARK    2  A    between atoms: C5_861  and  O8_864 
+DOCKED: REMARK    3  A    between atoms: O8_864  and  P9_865 
+DOCKED: REMARK    4  A    between atoms: P9_865  and  O10_866 
+DOCKED: REMARK    5  A    between atoms: O10_866  and  C12_868 
+DOCKED: REMARK    6  A    between atoms: C12_868  and  C13_869 
+DOCKED: USER                              x       y       z     vdW  Elec       q    Type
+DOCKED: USER                           _______ _______ _______ _____ _____    ______ ____
+DOCKED: ROOT
+DOCKED: HETATM    1  P9  PSN A 300      15.529  28.479  17.525 -0.04 +0.67    +0.414 P  
+DOCKED: HETATM    2  O11 PSN A 300      14.293  29.189  16.900 -0.89 -1.34    -0.624 OA 
+DOCKED: HETATM    3  O32 PSN A 300      15.355  28.445  19.053 -0.52 -1.31    -0.624 OA 
+DOCKED: ENDROOT
+DOCKED: BRANCH   1   4
+DOCKED: HETATM    4  O8  PSN A 300      16.779  29.357  17.038 -0.18 -0.25    -0.249 OA 
+DOCKED: BRANCH   4   5
+DOCKED: HETATM    5  C5  PSN A 300      18.004  29.359  17.787 -0.02 +0.08    +0.090 A  
+DOCKED: HETATM    6  C4  PSN A 300      19.131  28.789  17.127 -0.06 +0.05    +0.046 A  
+DOCKED: HETATM    7  C3  PSN A 300      20.354  28.713  17.875 -0.01 +0.00    +0.004 A  
+DOCKED: HETATM    8  C2  PSN A 300      20.474  29.227  19.205 +0.03 -0.00    -0.004 A  
+DOCKED: HETATM    9  C1  PSN A 300      19.339  29.819  19.834 +0.02 -0.02    -0.019 A  
+DOCKED: HETATM   10  C6  PSN A 300      18.077  29.850  19.155 +0.03 +0.09    +0.078 A  
+DOCKED: BRANCH   6  11
+DOCKED: HETATM   11  C7  PSN A 300      19.095  28.266  15.711 -0.01 +0.25    +0.158 C  
+DOCKED: HETATM   12  O25 PSN A 300      20.137  28.148  14.860 -0.79 -0.39    -0.188 OA 
+DOCKED: ENDBRANCH   6  11
+DOCKED: ENDBRANCH   4   5
+DOCKED: ENDBRANCH   1   4
+DOCKED: BRANCH   1  13
+DOCKED: HETATM   13  O10 PSN A 300      15.432  27.083  16.901 -0.31 -0.43    -0.271 OA 
+DOCKED: BRANCH  13  14
+DOCKED: HETATM   14  C12 PSN A 300      16.497  26.059  16.847 -0.15 +0.21    +0.154 C  
+DOCKED: BRANCH  14  15
+DOCKED: HETATM   15  C13 PSN A 300      17.389  25.908  18.146 -0.17 +0.04    +0.030 C  
+DOCKED: HETATM   16  C16 PSN A 300      18.805  25.621  17.956 -0.07 +0.00    +0.003 C  
+DOCKED: HETATM   17  C17 PSN A 300      19.595  25.387  19.124 -0.09 +0.00    +0.000 C  
+DOCKED: HETATM   18  C18 PSN A 300      18.993  25.451  20.454 -0.10 +0.00    +0.000 C  
+DOCKED: HETATM   19  C19 PSN A 300      17.628  25.880  20.633 -0.15 +0.00    +0.000 C  
+DOCKED: HETATM   20  C20 PSN A 300      16.816  26.085  19.479 -0.18 +0.00    +0.003 C  
+DOCKED: ENDBRANCH  14  15
+DOCKED: ENDBRANCH  13  14
+DOCKED: ENDBRANCH   1  13
+DOCKED: TORSDOF 6
+DOCKED: TER
+DOCKED: ENDMDL
+________________________________________________________________________________
+
+
+    FINAL DOCKED STATE:
+    ________________________
+
+
+Run:   7 / 10
+Time taken for this run:   1.993s
+
+DOCKED: MODEL        7
+DOCKED: USER    Run = 7
+DOCKED: USER
+DOCKED: USER    Estimated Free Energy of Binding    =  -4.78 kcal/mol  [=(1)+(2)+(3)-(4)]
+DOCKED: USER
+DOCKED: USER    (1) Final Intermolecular Energy     =  -6.57 kcal/mol
+DOCKED: USER        vdW + Hbond + desolv Energy     =  -3.96 kcal/mol
+DOCKED: USER        Electrostatic Energy            =  -2.61 kcal/mol
+DOCKED: USER        Moving Ligand-Fixed Receptor    =  -6.57 kcal/mol
+DOCKED: USER        Moving Ligand-Moving Receptor   =  +0.00 kcal/mol
+DOCKED: USER    (2) Final Total Internal Energy     =  -1.68 kcal/mol
+DOCKED: USER    (3) Torsional Free Energy           =  +1.79 kcal/mol
+DOCKED: USER    (4) Unbound System's Energy         =  -1.68 kcal/mol
+DOCKED: USER
+DOCKED: USER
+DOCKED: REMARK  6 active torsions:
+DOCKED: REMARK  status: ('A' for Active; 'I' for Inactive)
+DOCKED: REMARK    1  A    between atoms: C4_860  and  C7_863 
+DOCKED: REMARK    2  A    between atoms: C5_861  and  O8_864 
+DOCKED: REMARK    3  A    between atoms: O8_864  and  P9_865 
+DOCKED: REMARK    4  A    between atoms: P9_865  and  O10_866 
+DOCKED: REMARK    5  A    between atoms: O10_866  and  C12_868 
+DOCKED: REMARK    6  A    between atoms: C12_868  and  C13_869 
+DOCKED: USER                              x       y       z     vdW  Elec       q    Type
+DOCKED: USER                           _______ _______ _______ _____ _____    ______ ____
+DOCKED: ROOT
+DOCKED: HETATM    1  P9  PSN A 300      15.425  28.353  17.746 -0.01 +0.72    +0.414 P  
+DOCKED: HETATM    2  O11 PSN A 300      14.295  29.009  16.900 -0.84 -1.45    -0.624 OA 
+DOCKED: HETATM    3  O32 PSN A 300      15.053  28.464  19.234 -0.49 -1.51    -0.624 OA 
+DOCKED: ENDROOT
+DOCKED: BRANCH   1   4
+DOCKED: HETATM    4  O8  PSN A 300      16.745  29.171  17.348 -0.13 -0.27    -0.249 OA 
+DOCKED: BRANCH   4   5
+DOCKED: HETATM    5  C5  PSN A 300      18.006  28.862  17.962 +0.01 +0.09    +0.090 A  
+DOCKED: HETATM    6  C4  PSN A 300      18.984  28.283  17.103 -0.07 +0.05    +0.046 A  
+DOCKED: HETATM    7  C3  PSN A 300      20.231  27.898  17.702 -0.03 +0.00    +0.004 A  
+DOCKED: HETATM    8  C2  PSN A 300      20.522  28.125  19.084 +0.03 -0.00    -0.004 A  
+DOCKED: HETATM    9  C1  PSN A 300      19.537  28.734  19.918 +0.01 -0.02    -0.019 A  
+DOCKED: HETATM   10  C6  PSN A 300      18.249  29.066  19.382 +0.06 +0.10    +0.078 A  
+DOCKED: BRANCH   6  11
+DOCKED: HETATM   11  C7  PSN A 300      18.770  28.052  15.626 -0.14 +0.26    +0.158 C  
+DOCKED: HETATM   12  O25 PSN A 300      19.701  28.105  14.650 -0.88 -0.39    -0.188 OA 
+DOCKED: ENDBRANCH   6  11
+DOCKED: ENDBRANCH   4   5
+DOCKED: ENDBRANCH   1   4
+DOCKED: BRANCH   1  13
+DOCKED: HETATM   13  O10 PSN A 300      15.383  26.905  17.246 -0.21 -0.45    -0.271 OA 
+DOCKED: BRANCH  13  14
+DOCKED: HETATM   14  C12 PSN A 300      16.539  26.020  16.990 -0.14 +0.21    +0.154 C  
+DOCKED: BRANCH  14  15
+DOCKED: HETATM   15  C13 PSN A 300      17.337  25.523  18.265 -0.20 +0.04    +0.030 C  
+DOCKED: HETATM   16  C16 PSN A 300      18.440  24.597  18.045 -0.16 +0.00    +0.003 C  
+DOCKED: HETATM   17  C17 PSN A 300      19.101  24.070  19.198 -0.25 +0.00    +0.000 C  
+DOCKED: HETATM   18  C18 PSN A 300      18.681  24.466  20.541 -0.20 +0.00    +0.000 C  
+DOCKED: HETATM   19  C19 PSN A 300      17.689  25.493  20.738 -0.13 +0.00    +0.000 C  
+DOCKED: HETATM   20  C20 PSN A 300      16.996  26.006  19.602 -0.18 +0.00    +0.003 C  
+DOCKED: ENDBRANCH  14  15
+DOCKED: ENDBRANCH  13  14
+DOCKED: ENDBRANCH   1  13
+DOCKED: TORSDOF 6
+DOCKED: TER
+DOCKED: ENDMDL
+________________________________________________________________________________
+
+
+    FINAL DOCKED STATE:
+    ________________________
+
+
+Run:   8 / 10
+Time taken for this run:   1.993s
+
+DOCKED: MODEL        8
+DOCKED: USER    Run = 8
+DOCKED: USER
+DOCKED: USER    Estimated Free Energy of Binding    =  -5.07 kcal/mol  [=(1)+(2)+(3)-(4)]
+DOCKED: USER
+DOCKED: USER    (1) Final Intermolecular Energy     =  -6.86 kcal/mol
+DOCKED: USER        vdW + Hbond + desolv Energy     =  -3.93 kcal/mol
+DOCKED: USER        Electrostatic Energy            =  -2.92 kcal/mol
+DOCKED: USER        Moving Ligand-Fixed Receptor    =  -6.86 kcal/mol
+DOCKED: USER        Moving Ligand-Moving Receptor   =  +0.00 kcal/mol
+DOCKED: USER    (2) Final Total Internal Energy     =  -0.77 kcal/mol
+DOCKED: USER    (3) Torsional Free Energy           =  +1.79 kcal/mol
+DOCKED: USER    (4) Unbound System's Energy         =  -0.77 kcal/mol
+DOCKED: USER
+DOCKED: USER
+DOCKED: REMARK  6 active torsions:
+DOCKED: REMARK  status: ('A' for Active; 'I' for Inactive)
+DOCKED: REMARK    1  A    between atoms: C4_860  and  C7_863 
+DOCKED: REMARK    2  A    between atoms: C5_861  and  O8_864 
+DOCKED: REMARK    3  A    between atoms: O8_864  and  P9_865 
+DOCKED: REMARK    4  A    between atoms: P9_865  and  O10_866 
+DOCKED: REMARK    5  A    between atoms: O10_866  and  C12_868 
+DOCKED: REMARK    6  A    between atoms: C12_868  and  C13_869 
+DOCKED: USER                              x       y       z     vdW  Elec       q    Type
+DOCKED: USER                           _______ _______ _______ _____ _____    ______ ____
+DOCKED: ROOT
+DOCKED: HETATM    1  P9  PSN A 300      15.520  28.323  17.543 -0.03 +0.69    +0.414 P  
+DOCKED: HETATM    2  O11 PSN A 300      15.062  28.040  19.003 -0.36 -1.61    -0.624 OA 
+DOCKED: HETATM    3  O32 PSN A 300      14.310  28.830  16.739 -0.78 -1.55    -0.624 OA 
+DOCKED: ENDROOT
+DOCKED: BRANCH   1   4
+DOCKED: HETATM    4  O8  PSN A 300      16.095  26.918  17.027 -0.20 -0.35    -0.249 OA 
+DOCKED: BRANCH   4   5
+DOCKED: HETATM    5  C5  PSN A 300      17.239  26.323  17.659 -0.07 +0.12    +0.090 A  
+DOCKED: HETATM    6  C4  PSN A 300      18.503  26.849  17.264 -0.04 +0.07    +0.046 A  
+DOCKED: HETATM    7  C3  PSN A 300      19.670  26.228  17.825 -0.02 +0.01    +0.004 A  
+DOCKED: HETATM    8  C2  PSN A 300      19.591  25.165  18.780 -0.10 -0.00    -0.004 A  
+DOCKED: HETATM    9  C1  PSN A 300      18.313  24.676  19.181 -0.20 -0.02    -0.019 A  
+DOCKED: HETATM   10  C6  PSN A 300      17.121  25.213  18.592 -0.12 +0.10    +0.078 A  
+DOCKED: BRANCH   6  11
+DOCKED: HETATM   11  C7  PSN A 300      18.668  27.997  16.298 -0.14 +0.23    +0.158 C  
+DOCKED: HETATM   12  O25 PSN A 300      19.523  28.068  15.255 -0.86 -0.38    -0.188 OA 
+DOCKED: ENDBRANCH   6  11
+DOCKED: ENDBRANCH   4   5
+DOCKED: ENDBRANCH   1   4
+DOCKED: BRANCH   1  13
+DOCKED: HETATM   13  O10 PSN A 300      16.572  29.417  17.756 -0.11 -0.29    -0.271 OA 
+DOCKED: BRANCH  13  14
+DOCKED: HETATM   14  C12 PSN A 300      16.808  30.601  16.904 -0.16 +0.08    +0.154 C  
+DOCKED: BRANCH  14  15
+DOCKED: HETATM   15  C13 PSN A 300      16.807  32.004  17.638 -0.14 +0.00    +0.030 C  
+DOCKED: HETATM   16  C16 PSN A 300      17.299  33.152  16.888 -0.17 -0.00    +0.003 C  
+DOCKED: HETATM   17  C17 PSN A 300      17.391  34.402  17.576 -0.10 -0.00    +0.000 C  
+DOCKED: HETATM   18  C18 PSN A 300      16.989  34.509  18.978 -0.06 +0.00    +0.000 C  
+DOCKED: HETATM   19  C19 PSN A 300      16.366  33.403  19.661 -0.12 +0.00    +0.000 C  
+DOCKED: HETATM   20  C20 PSN A 300      16.297  32.140  19.001 -0.16 +0.00    +0.003 C  
+DOCKED: ENDBRANCH  14  15
+DOCKED: ENDBRANCH  13  14
+DOCKED: ENDBRANCH   1  13
+DOCKED: TORSDOF 6
+DOCKED: TER
+DOCKED: ENDMDL
+________________________________________________________________________________
+
+
+    FINAL DOCKED STATE:
+    ________________________
+
+
+Run:   9 / 10
+Time taken for this run:   1.993s
+
+DOCKED: MODEL        9
+DOCKED: USER    Run = 9
+DOCKED: USER
+DOCKED: USER    Estimated Free Energy of Binding    =  -4.73 kcal/mol  [=(1)+(2)+(3)-(4)]
+DOCKED: USER
+DOCKED: USER    (1) Final Intermolecular Energy     =  -6.52 kcal/mol
+DOCKED: USER        vdW + Hbond + desolv Energy     =  -3.93 kcal/mol
+DOCKED: USER        Electrostatic Energy            =  -2.60 kcal/mol
+DOCKED: USER        Moving Ligand-Fixed Receptor    =  -6.52 kcal/mol
+DOCKED: USER        Moving Ligand-Moving Receptor   =  +0.00 kcal/mol
+DOCKED: USER    (2) Final Total Internal Energy     =  -1.33 kcal/mol
+DOCKED: USER    (3) Torsional Free Energy           =  +1.79 kcal/mol
+DOCKED: USER    (4) Unbound System's Energy         =  -1.33 kcal/mol
+DOCKED: USER
+DOCKED: USER
+DOCKED: REMARK  6 active torsions:
+DOCKED: REMARK  status: ('A' for Active; 'I' for Inactive)
+DOCKED: REMARK    1  A    between atoms: C4_860  and  C7_863 
+DOCKED: REMARK    2  A    between atoms: C5_861  and  O8_864 
+DOCKED: REMARK    3  A    between atoms: O8_864  and  P9_865 
+DOCKED: REMARK    4  A    between atoms: P9_865  and  O10_866 
+DOCKED: REMARK    5  A    between atoms: O10_866  and  C12_868 
+DOCKED: REMARK    6  A    between atoms: C12_868  and  C13_869 
+DOCKED: USER                              x       y       z     vdW  Elec       q    Type
+DOCKED: USER                           _______ _______ _______ _____ _____    ______ ____
+DOCKED: ROOT
+DOCKED: HETATM    1  P9  PSN A 300      15.552  28.411  17.833 -0.01 +0.70    +0.414 P  
+DOCKED: HETATM    2  O11 PSN A 300      14.643  28.207  16.586 -0.88 -1.40    -0.624 OA 
+DOCKED: HETATM    3  O32 PSN A 300      14.672  28.849  19.016 -0.38 -1.56    -0.624 OA 
+DOCKED: ENDROOT
+DOCKED: BRANCH   1   4
+DOCKED: HETATM    4  O8  PSN A 300      16.614  29.520  17.373 -0.15 -0.25    -0.249 OA 
+DOCKED: BRANCH   4   5
+DOCKED: HETATM    5  C5  PSN A 300      17.960  29.491  17.871 -0.02 +0.08    +0.090 A  
+DOCKED: HETATM    6  C4  PSN A 300      18.901  28.787  17.065 -0.07 +0.05    +0.046 A  
+DOCKED: HETATM    7  C3  PSN A 300      20.240  28.680  17.570 -0.03 +0.00    +0.004 A  
+DOCKED: HETATM    8  C2  PSN A 300      20.649  29.290  18.798 +0.03 -0.00    -0.004 A  
+DOCKED: HETATM    9  C1  PSN A 300      19.696  30.015  19.574 +0.01 -0.02    -0.019 A  
+DOCKED: HETATM   10  C6  PSN A 300      18.328  30.085  19.148 +0.02 +0.09    +0.078 A  
+DOCKED: BRANCH   6  11
+DOCKED: HETATM   11  C7  PSN A 300      18.557  28.155  15.737 -0.16 +0.23    +0.158 C  
+DOCKED: HETATM   12  O25 PSN A 300      19.354  28.058  14.651 -0.90 -0.38    -0.188 OA 
+DOCKED: ENDBRANCH   6  11
+DOCKED: ENDBRANCH   4   5
+DOCKED: ENDBRANCH   1   4
+DOCKED: BRANCH   1  13
+DOCKED: HETATM   13  O10 PSN A 300      16.127  27.004  18.029 -0.13 -0.42    -0.271 OA 
+DOCKED: BRANCH  13  14
+DOCKED: HETATM   14  C12 PSN A 300      16.629  26.418  19.290 -0.07 +0.23    +0.154 C  
+DOCKED: BRANCH  14  15
+DOCKED: HETATM   15  C13 PSN A 300      17.830  25.394  19.156 -0.18 +0.04    +0.030 C  
+DOCKED: HETATM   16  C16 PSN A 300      17.693  24.110  19.832 -0.28 +0.00    +0.003 C  
+DOCKED: HETATM   17  C17 PSN A 300      18.812  23.221  19.796 -0.29 +0.00    +0.000 C  
+DOCKED: HETATM   18  C18 PSN A 300      20.037  23.596  19.092 -0.21 +0.00    +0.000 C  
+DOCKED: HETATM   19  C19 PSN A 300      20.104  24.803  18.306 -0.13 +0.00    +0.000 C  
+DOCKED: HETATM   20  C20 PSN A 300      19.010  25.717  18.356 -0.12 +0.00    +0.003 C  
+DOCKED: ENDBRANCH  14  15
+DOCKED: ENDBRANCH  13  14
+DOCKED: ENDBRANCH   1  13
+DOCKED: TORSDOF 6
+DOCKED: TER
+DOCKED: ENDMDL
+________________________________________________________________________________
+
+
+    FINAL DOCKED STATE:
+    ________________________
+
+
+Run:   10 / 10
+Time taken for this run:   1.993s
+
+DOCKED: MODEL        10
+DOCKED: USER    Run = 10
+DOCKED: USER
+DOCKED: USER    Estimated Free Energy of Binding    =  -4.86 kcal/mol  [=(1)+(2)+(3)-(4)]
+DOCKED: USER
+DOCKED: USER    (1) Final Intermolecular Energy     =  -6.65 kcal/mol
+DOCKED: USER        vdW + Hbond + desolv Energy     =  -4.01 kcal/mol
+DOCKED: USER        Electrostatic Energy            =  -2.64 kcal/mol
+DOCKED: USER        Moving Ligand-Fixed Receptor    =  -6.65 kcal/mol
+DOCKED: USER        Moving Ligand-Moving Receptor   =  +0.00 kcal/mol
+DOCKED: USER    (2) Final Total Internal Energy     =  -1.52 kcal/mol
+DOCKED: USER    (3) Torsional Free Energy           =  +1.79 kcal/mol
+DOCKED: USER    (4) Unbound System's Energy         =  -1.52 kcal/mol
+DOCKED: USER
+DOCKED: USER
+DOCKED: REMARK  6 active torsions:
+DOCKED: REMARK  status: ('A' for Active; 'I' for Inactive)
+DOCKED: REMARK    1  A    between atoms: C4_860  and  C7_863 
+DOCKED: REMARK    2  A    between atoms: C5_861  and  O8_864 
+DOCKED: REMARK    3  A    between atoms: O8_864  and  P9_865 
+DOCKED: REMARK    4  A    between atoms: P9_865  and  O10_866 
+DOCKED: REMARK    5  A    between atoms: O10_866  and  C12_868 
+DOCKED: REMARK    6  A    between atoms: C12_868  and  C13_869 
+DOCKED: USER                              x       y       z     vdW  Elec       q    Type
+DOCKED: USER                           _______ _______ _______ _____ _____    ______ ____
+DOCKED: ROOT
+DOCKED: HETATM    1  P9  PSN A 300      15.473  28.338  17.473 -0.03 +0.69    +0.414 P  
+DOCKED: HETATM    2  O11 PSN A 300      14.303  28.805  16.559 -0.75 -1.57    -0.624 OA 
+DOCKED: HETATM    3  O32 PSN A 300      15.054  28.523  18.941 -0.50 -1.45    -0.624 OA 
+DOCKED: ENDROOT
+DOCKED: BRANCH   1   4
+DOCKED: HETATM    4  O8  PSN A 300      16.711  29.258  17.035 -0.19 -0.26    -0.249 OA 
+DOCKED: BRANCH   4   5
+DOCKED: HETATM    5  C5  PSN A 300      17.952  29.200  17.754 -0.02 +0.09    +0.090 A  
+DOCKED: HETATM    6  C4  PSN A 300      19.034  28.578  17.066 -0.07 +0.05    +0.046 A  
+DOCKED: HETATM    7  C3  PSN A 300      20.270  28.441  17.784 -0.02 +0.00    +0.004 A  
+DOCKED: HETATM    8  C2  PSN A 300      20.447  28.947  19.111 +0.03 -0.00    -0.004 A  
+DOCKED: HETATM    9  C1  PSN A 300      19.358  29.592  19.768 +0.02 -0.02    -0.019 A  
+DOCKED: HETATM   10  C6  PSN A 300      18.082  29.685  19.120 +0.03 +0.09    +0.078 A  
+DOCKED: BRANCH   6  11
+DOCKED: HETATM   11  C7  PSN A 300      18.939  28.059  15.651 -0.09 +0.27    +0.158 C  
+DOCKED: HETATM   12  O25 PSN A 300      19.810  28.280  14.643 -0.87 -0.37    -0.188 OA 
+DOCKED: ENDBRANCH   6  11
+DOCKED: ENDBRANCH   4   5
+DOCKED: ENDBRANCH   1   4
+DOCKED: BRANCH   1  13
+DOCKED: HETATM   13  O10 PSN A 300      15.595  26.860  17.087 -0.22 -0.42    -0.271 OA 
+DOCKED: BRANCH  13  14
+DOCKED: HETATM   14  C12 PSN A 300      16.835  26.058  17.025 -0.14 +0.21    +0.154 C  
+DOCKED: BRANCH  14  15
+DOCKED: HETATM   15  C13 PSN A 300      17.456  25.620  18.414 -0.18 +0.04    +0.030 C  
+DOCKED: HETATM   16  C16 PSN A 300      18.331  24.455  18.419 -0.26 +0.00    +0.003 C  
+DOCKED: HETATM   17  C17 PSN A 300      18.817  23.998  19.683 -0.27 +0.00    +0.000 C  
+DOCKED: HETATM   18  C18 PSN A 300      18.450  24.693  20.916 -0.19 +0.00    +0.000 C  
+DOCKED: HETATM   19  C19 PSN A 300      17.706  25.927  20.881 -0.15 +0.00    +0.000 C  
+DOCKED: HETATM   20  C20 PSN A 300      17.186  26.380  19.633 -0.15 +0.00    +0.003 C  
+DOCKED: ENDBRANCH  14  15
+DOCKED: ENDBRANCH  13  14
+DOCKED: ENDBRANCH   1  13
+DOCKED: TORSDOF 6
+DOCKED: TER
+DOCKED: ENDMDL
+________________________________________________________________________________
+
+
+    CLUSTERING HISTOGRAM
+    ____________________
+
+
+________________________________________________________________________________
+     |           |     |           |     |
+Clus | Lowest    | Run | Mean      | Num | Histogram
+-ter | Binding   |     | Binding   | in  |
+Rank | Energy    |     | Energy    | Clus|    5    10   15   20   25   30   35
+_____|___________|_____|___________|_____|____:____|____:____|____:____|____:___
+   1 |     -5.07 |   2 |     -4.76 |   9 |#########
+   2 |     -5.07 |   8 |     -5.07 |   1 |#
+_____|___________|_____|___________|_____|______________________________________
+
+
+    RMSD TABLE
+    __________
+
+
+_______________________________________________________________________
+     |      |      |           |         |                 |
+Rank | Sub- | Run  | Binding   | Cluster | Reference       | Grep
+     | Rank |      | Energy    | RMSD    | RMSD            | Pattern
+_____|______|______|___________|_________|_________________|___________
+   1      1      2       -5.07      0.00      3.45           RANKING
+   1      2      5       -4.98      0.12      3.43           RANKING
+   1      3      1       -4.88      0.95      3.45           RANKING
+   1      4     10       -4.86      1.29      2.95           RANKING
+   1      5      7       -4.78      1.51      2.78           RANKING
+   1      6      9       -4.73      1.44      3.03           RANKING
+   1      7      3       -4.70      1.48      2.79           RANKING
+   1      8      4       -4.68      1.53      2.80           RANKING
+   1      9      6       -4.20      1.37      2.89           RANKING
+   2      1      8       -5.07      0.00      2.58           RANKING
+
+Run time 20.407 sec
+Idle time 1.682 sec

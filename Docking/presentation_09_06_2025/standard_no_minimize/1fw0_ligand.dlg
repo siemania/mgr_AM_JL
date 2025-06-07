@@ -1,0 +1,761 @@
+AutoDock-GPU version: v1.6-7-ga46ab564d2ac5f1a1523f65239b43505a1c29364
+
+**********************************************************
+**    AutoDock-GPU AUTODOCKTOOLS-COMPATIBLE DLG FILE    **
+**********************************************************
+
+
+    DOCKING PARAMETERS
+    ________________________
+
+
+Ligand file:                               pdbqt_files/1fw0_ligand.pdbqt
+Grid fld file:                             map_grid_files/1fw0_receptor.maps.fld
+
+Random seed:                               1749308162, 638
+Number of runs:                            10
+Number of energy evaluations:              2068966
+Number of generations:                     42000
+Size of population:                        150
+Rate of crossover:                         80.000000%
+Tournament selection probability limit:    60.000000%
+Rate of mutation:                          2.000000%
+Maximal allowed delta movement:            +/- 6.000000A
+Maximal allowed delta angle:               +/- 90.000000
+
+Rate of local search:                      100.000000%
+Maximal number of local search iterations: 300
+Rho lower bound:                           0.010000
+Spread of local search delta movement:     2.000000A
+Spread of local search delta angle:        74.999999
+Limit of consecutive successes/failures:   4
+
+Handle symmetry during clustering:         YES
+RMSD tolerance:                            2.000000A
+
+Program call in command line was:          /home/tajgero/AutoDock-GPU/bin/autodock_gpu_128wi --lfile pdbqt_files/1fw0_ligand.pdbqt --ffile map_grid_files/1fw0_receptor.maps.fld --nrun 10 
+
+
+    GRID PARAMETERS
+    ________________________
+
+
+Receptor name:                             pdbqt_files/1fw0_receptor
+Number of grid points (x, y, z):           41, 41, 41
+Grid center (x, y, z):                     15.953000, -3.443000, 15.444000A
+Grid size (x, y, z):                       15.000000, 15.000000, 15.000000A
+Grid spacing:                              0.375000A
+
+
+    LIGAND PARAMETERS
+    ________________________
+
+
+Ligand name:                               pdbqt_files/1fw0_ligand
+Number of atoms:                           15
+Number of rotatable bonds:                 4
+Number of atom types:                      3
+
+
+    DUMMY DATA (only for ADT-compatibility)
+    ________________________
+
+
+DPF> outlev 1
+DPF> ga_run 10
+DPF> fld map_grid_files/1fw0_receptor.maps.fld
+DPF> move pdbqt_files/1fw0_ligand.pdbqt
+
+
+    COUNTER STATES
+    ________________________
+
+
+Number of energy evaluations performed:    580259
+Number of generations used:                40
+
+
+    INPUT LIGAND PDBQT FILE:
+    ________________________
+
+
+INPUT-LIGAND-PDBQT: REMARK  4 active torsions:
+INPUT-LIGAND-PDBQT: REMARK  status: ('A' for Active; 'I' for Inactive)
+INPUT-LIGAND-PDBQT: REMARK    1  A    between atoms: CA_1889  and  C_1895 
+INPUT-LIGAND-PDBQT: REMARK    2  A    between atoms: CB_1890  and  CB1_1891 
+INPUT-LIGAND-PDBQT: REMARK    3  A    between atoms: CB1_1891  and  CG1_1893 
+INPUT-LIGAND-PDBQT: REMARK    4  A    between atoms: CG_1892  and  CG2_1894 
+INPUT-LIGAND-PDBQT: ROOT
+INPUT-LIGAND-PDBQT: HETATM    1  N   KAI A 999      14.351  -1.898  16.037  1.00 24.22     0.353 N 
+INPUT-LIGAND-PDBQT: HETATM    2  CD  KAI A 999      15.605  -1.213  15.570  1.00 25.92     0.313 C 
+INPUT-LIGAND-PDBQT: HETATM    3  CA  KAI A 999      14.601  -3.328  16.099  1.00 26.05     0.347 C 
+INPUT-LIGAND-PDBQT: HETATM    4  CB  KAI A 999      15.950  -3.686  15.471  1.00 28.77     0.076 C 
+INPUT-LIGAND-PDBQT: HETATM    5  CG  KAI A 999      16.690  -2.386  15.712  1.00 29.59    -0.010 C 
+INPUT-LIGAND-PDBQT: ENDROOT
+INPUT-LIGAND-PDBQT: BRANCH   4   6
+INPUT-LIGAND-PDBQT: HETATM    6  CB1 KAI A 999      16.073  -3.908  13.871  1.00 30.73     0.104 C 
+INPUT-LIGAND-PDBQT: BRANCH   6   7
+INPUT-LIGAND-PDBQT: HETATM    7  CG1 KAI A 999      15.719  -5.341  13.422  1.00 30.61     0.186 C 
+INPUT-LIGAND-PDBQT: HETATM    8  OD2 KAI A 999      15.840  -6.277  14.238  1.00 33.12    -0.647 OA
+INPUT-LIGAND-PDBQT: HETATM    9  OD1 KAI A 999      15.384  -5.457  12.238  1.00 30.69    -0.647 OA
+INPUT-LIGAND-PDBQT: ENDBRANCH   6   7
+INPUT-LIGAND-PDBQT: ENDBRANCH   4   6
+INPUT-LIGAND-PDBQT: BRANCH   5  10
+INPUT-LIGAND-PDBQT: HETATM   10  CG2 KAI A 999      18.135  -2.132  15.189  1.00 32.09    -0.028 C 
+INPUT-LIGAND-PDBQT: HETATM   11  CD1 KAI A 999      18.291  -1.088  14.434  1.00 30.69    -0.005 C 
+INPUT-LIGAND-PDBQT: HETATM   12  CD2 KAI A 999      19.192  -3.129  15.542  1.00 31.17     0.030 C 
+INPUT-LIGAND-PDBQT: ENDBRANCH   5  10
+INPUT-LIGAND-PDBQT: BRANCH   3  13
+INPUT-LIGAND-PDBQT: HETATM   13  C   KAI A 999      14.507  -3.818  17.586  1.00 24.53     0.221 C 
+INPUT-LIGAND-PDBQT: HETATM   14  O   KAI A 999      14.185  -2.958  18.435  1.00 22.74    -0.646 OA
+INPUT-LIGAND-PDBQT: HETATM   15  OXT KAI A 999      14.772  -5.025  17.817  1.00 26.59    -0.646 OA
+INPUT-LIGAND-PDBQT: ENDBRANCH   3  13
+INPUT-LIGAND-PDBQT: TORSDOF 4
+
+
+    FINAL DOCKED STATE:
+    ________________________
+
+
+Run:   1 / 10
+Time taken for this run:   1.123s
+
+DOCKED: MODEL        1
+DOCKED: USER    Run = 1
+DOCKED: USER
+DOCKED: USER    Estimated Free Energy of Binding    =  -6.66 kcal/mol  [=(1)+(2)+(3)-(4)]
+DOCKED: USER
+DOCKED: USER    (1) Final Intermolecular Energy     =  -7.86 kcal/mol
+DOCKED: USER        vdW + Hbond + desolv Energy     =  -4.70 kcal/mol
+DOCKED: USER        Electrostatic Energy            =  -3.15 kcal/mol
+DOCKED: USER        Moving Ligand-Fixed Receptor    =  -7.86 kcal/mol
+DOCKED: USER        Moving Ligand-Moving Receptor   =  +0.00 kcal/mol
+DOCKED: USER    (2) Final Total Internal Energy     =  -0.92 kcal/mol
+DOCKED: USER    (3) Torsional Free Energy           =  +1.19 kcal/mol
+DOCKED: USER    (4) Unbound System's Energy         =  -0.92 kcal/mol
+DOCKED: USER
+DOCKED: USER
+DOCKED: REMARK  4 active torsions:
+DOCKED: REMARK  status: ('A' for Active; 'I' for Inactive)
+DOCKED: REMARK    1  A    between atoms: CA_1889  and  C_1895 
+DOCKED: REMARK    2  A    between atoms: CB_1890  and  CB1_1891 
+DOCKED: REMARK    3  A    between atoms: CB1_1891  and  CG1_1893 
+DOCKED: REMARK    4  A    between atoms: CG_1892  and  CG2_1894 
+DOCKED: USER                              x       y       z     vdW  Elec       q    Type
+DOCKED: USER                           _______ _______ _______ _____ _____    ______ ____
+DOCKED: ROOT
+DOCKED: HETATM    1  N   KAI A 999      14.340  -2.234  15.813 -0.18 -0.25    +0.353 N  
+DOCKED: HETATM    2  CD  KAI A 999      15.514  -1.567  15.152 -0.20 -0.22    +0.313 C  
+DOCKED: HETATM    3  CA  KAI A 999      14.753  -3.549  16.273 -0.15 +0.01    +0.347 C  
+DOCKED: HETATM    4  CB  KAI A 999      16.146  -3.909  15.751 -0.25 +0.01    +0.076 C  
+DOCKED: HETATM    5  CG  KAI A 999      16.725  -2.517  15.603 -0.34 +0.00    -0.010 C  
+DOCKED: ENDROOT
+DOCKED: BRANCH   4   6
+DOCKED: HETATM    6  CB1 KAI A 999      16.323  -4.558  14.277 -0.23 +0.00    +0.104 C  
+DOCKED: BRANCH   6   7
+DOCKED: HETATM    7  CG1 KAI A 999      15.685  -5.956  14.142 -0.17 +0.09    +0.186 C  
+DOCKED: HETATM    8  OD2 KAI A 999      16.321  -6.857  13.559 -0.51 -0.42    -0.647 OA 
+DOCKED: HETATM    9  OD1 KAI A 999      14.537  -6.059  14.589 -0.24 -0.37    -0.647 OA 
+DOCKED: ENDBRANCH   6   7
+DOCKED: ENDBRANCH   4   6
+DOCKED: BRANCH   5  10
+DOCKED: HETATM   10  CG2 KAI A 999      18.140  -2.254  15.007 -0.29 +0.01    -0.028 C  
+DOCKED: HETATM   11  CD1 KAI A 999      18.227  -1.276  14.159 -0.37 +0.00    -0.005 C  
+DOCKED: HETATM   12  CD2 KAI A 999      19.249  -3.174  15.406 -0.24 -0.00    +0.030 C  
+DOCKED: ENDBRANCH   5  10
+DOCKED: BRANCH   3  13
+DOCKED: HETATM   13  C   KAI A 999      14.690  -3.606  17.839 -0.30 +0.23    +0.221 C  
+DOCKED: HETATM   14  O   KAI A 999      15.629  -4.201  18.411 -0.46 -1.08    -0.646 OA 
+DOCKED: HETATM   15  OXT KAI A 999      13.703  -3.066  18.400 -0.76 -1.18    -0.646 OA 
+DOCKED: ENDBRANCH   3  13
+DOCKED: TORSDOF 4
+DOCKED: TER
+DOCKED: ENDMDL
+________________________________________________________________________________
+
+
+    FINAL DOCKED STATE:
+    ________________________
+
+
+Run:   2 / 10
+Time taken for this run:   1.123s
+
+DOCKED: MODEL        2
+DOCKED: USER    Run = 2
+DOCKED: USER
+DOCKED: USER    Estimated Free Energy of Binding    =  -6.65 kcal/mol  [=(1)+(2)+(3)-(4)]
+DOCKED: USER
+DOCKED: USER    (1) Final Intermolecular Energy     =  -7.85 kcal/mol
+DOCKED: USER        vdW + Hbond + desolv Energy     =  -4.70 kcal/mol
+DOCKED: USER        Electrostatic Energy            =  -3.15 kcal/mol
+DOCKED: USER        Moving Ligand-Fixed Receptor    =  -7.85 kcal/mol
+DOCKED: USER        Moving Ligand-Moving Receptor   =  +0.00 kcal/mol
+DOCKED: USER    (2) Final Total Internal Energy     =  -0.93 kcal/mol
+DOCKED: USER    (3) Torsional Free Energy           =  +1.19 kcal/mol
+DOCKED: USER    (4) Unbound System's Energy         =  -0.93 kcal/mol
+DOCKED: USER
+DOCKED: USER
+DOCKED: REMARK  4 active torsions:
+DOCKED: REMARK  status: ('A' for Active; 'I' for Inactive)
+DOCKED: REMARK    1  A    between atoms: CA_1889  and  C_1895 
+DOCKED: REMARK    2  A    between atoms: CB_1890  and  CB1_1891 
+DOCKED: REMARK    3  A    between atoms: CB1_1891  and  CG1_1893 
+DOCKED: REMARK    4  A    between atoms: CG_1892  and  CG2_1894 
+DOCKED: USER                              x       y       z     vdW  Elec       q    Type
+DOCKED: USER                           _______ _______ _______ _____ _____    ______ ____
+DOCKED: ROOT
+DOCKED: HETATM    1  N   KAI A 999      14.365  -2.253  15.792 -0.17 -0.25    +0.353 N  
+DOCKED: HETATM    2  CD  KAI A 999      15.542  -1.585  15.138 -0.20 -0.21    +0.313 C  
+DOCKED: HETATM    3  CA  KAI A 999      14.782  -3.561  16.268 -0.15 +0.02    +0.347 C  
+DOCKED: HETATM    4  CB  KAI A 999      16.183  -3.917  15.764 -0.25 +0.01    +0.076 C  
+DOCKED: HETATM    5  CG  KAI A 999      16.754  -2.523  15.609 -0.34 +0.00    -0.010 C  
+DOCKED: ENDROOT
+DOCKED: BRANCH   4   6
+DOCKED: HETATM    6  CB1 KAI A 999      16.379  -4.578  14.298 -0.22 +0.01    +0.104 C  
+DOCKED: BRANCH   6   7
+DOCKED: HETATM    7  CG1 KAI A 999      15.719  -5.966  14.157 -0.17 +0.09    +0.186 C  
+DOCKED: HETATM    8  OD2 KAI A 999      16.336  -6.870  13.560 -0.51 -0.42    -0.647 OA 
+DOCKED: HETATM    9  OD1 KAI A 999      14.575  -6.056  14.617 -0.25 -0.38    -0.647 OA 
+DOCKED: ENDBRANCH   6   7
+DOCKED: ENDBRANCH   4   6
+DOCKED: BRANCH   5  10
+DOCKED: HETATM   10  CG2 KAI A 999      18.174  -2.256  15.026 -0.29 +0.01    -0.028 C  
+DOCKED: HETATM   11  CD1 KAI A 999      18.266  -1.273  14.184 -0.37 +0.00    -0.005 C  
+DOCKED: HETATM   12  CD2 KAI A 999      19.280  -3.178  15.428 -0.24 -0.00    +0.030 C  
+DOCKED: ENDBRANCH   5  10
+DOCKED: BRANCH   3  13
+DOCKED: HETATM   13  C   KAI A 999      14.703  -3.605  17.834 -0.30 +0.23    +0.221 C  
+DOCKED: HETATM   14  O   KAI A 999      15.646  -4.178  18.422 -0.47 -1.07    -0.646 OA 
+DOCKED: HETATM   15  OXT KAI A 999      13.701  -3.077  18.379 -0.76 -1.17    -0.646 OA 
+DOCKED: ENDBRANCH   3  13
+DOCKED: TORSDOF 4
+DOCKED: TER
+DOCKED: ENDMDL
+________________________________________________________________________________
+
+
+    FINAL DOCKED STATE:
+    ________________________
+
+
+Run:   3 / 10
+Time taken for this run:   1.123s
+
+DOCKED: MODEL        3
+DOCKED: USER    Run = 3
+DOCKED: USER
+DOCKED: USER    Estimated Free Energy of Binding    =  -6.65 kcal/mol  [=(1)+(2)+(3)-(4)]
+DOCKED: USER
+DOCKED: USER    (1) Final Intermolecular Energy     =  -7.85 kcal/mol
+DOCKED: USER        vdW + Hbond + desolv Energy     =  -4.71 kcal/mol
+DOCKED: USER        Electrostatic Energy            =  -3.14 kcal/mol
+DOCKED: USER        Moving Ligand-Fixed Receptor    =  -7.85 kcal/mol
+DOCKED: USER        Moving Ligand-Moving Receptor   =  +0.00 kcal/mol
+DOCKED: USER    (2) Final Total Internal Energy     =  -0.92 kcal/mol
+DOCKED: USER    (3) Torsional Free Energy           =  +1.19 kcal/mol
+DOCKED: USER    (4) Unbound System's Energy         =  -0.92 kcal/mol
+DOCKED: USER
+DOCKED: USER
+DOCKED: REMARK  4 active torsions:
+DOCKED: REMARK  status: ('A' for Active; 'I' for Inactive)
+DOCKED: REMARK    1  A    between atoms: CA_1889  and  C_1895 
+DOCKED: REMARK    2  A    between atoms: CB_1890  and  CB1_1891 
+DOCKED: REMARK    3  A    between atoms: CB1_1891  and  CG1_1893 
+DOCKED: REMARK    4  A    between atoms: CG_1892  and  CG2_1894 
+DOCKED: USER                              x       y       z     vdW  Elec       q    Type
+DOCKED: USER                           _______ _______ _______ _____ _____    ______ ____
+DOCKED: ROOT
+DOCKED: HETATM    1  N   KAI A 999      14.398  -2.230  15.825 -0.18 -0.24    +0.353 N  
+DOCKED: HETATM    2  CD  KAI A 999      15.587  -1.579  15.174 -0.20 -0.21    +0.313 C  
+DOCKED: HETATM    3  CA  KAI A 999      14.789  -3.551  16.287 -0.15 +0.02    +0.347 C  
+DOCKED: HETATM    4  CB  KAI A 999      16.181  -3.931  15.775 -0.25 +0.01    +0.076 C  
+DOCKED: HETATM    5  CG  KAI A 999      16.781  -2.547  15.633 -0.33 +0.00    -0.010 C  
+DOCKED: ENDROOT
+DOCKED: BRANCH   4   6
+DOCKED: HETATM    6  CB1 KAI A 999      16.361  -4.581  14.303 -0.22 +0.01    +0.104 C  
+DOCKED: BRANCH   6   7
+DOCKED: HETATM    7  CG1 KAI A 999      15.698  -5.967  14.160 -0.17 +0.09    +0.186 C  
+DOCKED: HETATM    8  OD2 KAI A 999      16.322  -6.878  13.577 -0.51 -0.43    -0.647 OA 
+DOCKED: HETATM    9  OD1 KAI A 999      14.547  -6.051  14.601 -0.25 -0.37    -0.647 OA 
+DOCKED: ENDBRANCH   6   7
+DOCKED: ENDBRANCH   4   6
+DOCKED: BRANCH   5  10
+DOCKED: HETATM   10  CG2 KAI A 999      18.204  -2.304  15.049 -0.29 +0.01    -0.028 C  
+DOCKED: HETATM   11  CD1 KAI A 999      18.312  -1.327  14.202 -0.38 +0.00    -0.005 C  
+DOCKED: HETATM   12  CD2 KAI A 999      19.297  -3.239  15.457 -0.24 -0.00    +0.030 C  
+DOCKED: ENDBRANCH   5  10
+DOCKED: BRANCH   3  13
+DOCKED: HETATM   13  C   KAI A 999      14.713  -3.609  17.852 -0.30 +0.23    +0.221 C  
+DOCKED: HETATM   14  O   KAI A 999      15.657  -4.187  18.434 -0.46 -1.08    -0.646 OA 
+DOCKED: HETATM   15  OXT KAI A 999      13.711  -3.086  18.404 -0.76 -1.18    -0.646 OA 
+DOCKED: ENDBRANCH   3  13
+DOCKED: TORSDOF 4
+DOCKED: TER
+DOCKED: ENDMDL
+________________________________________________________________________________
+
+
+    FINAL DOCKED STATE:
+    ________________________
+
+
+Run:   4 / 10
+Time taken for this run:   1.123s
+
+DOCKED: MODEL        4
+DOCKED: USER    Run = 4
+DOCKED: USER
+DOCKED: USER    Estimated Free Energy of Binding    =  -6.67 kcal/mol  [=(1)+(2)+(3)-(4)]
+DOCKED: USER
+DOCKED: USER    (1) Final Intermolecular Energy     =  -7.86 kcal/mol
+DOCKED: USER        vdW + Hbond + desolv Energy     =  -4.68 kcal/mol
+DOCKED: USER        Electrostatic Energy            =  -3.19 kcal/mol
+DOCKED: USER        Moving Ligand-Fixed Receptor    =  -7.86 kcal/mol
+DOCKED: USER        Moving Ligand-Moving Receptor   =  +0.00 kcal/mol
+DOCKED: USER    (2) Final Total Internal Energy     =  -0.93 kcal/mol
+DOCKED: USER    (3) Torsional Free Energy           =  +1.19 kcal/mol
+DOCKED: USER    (4) Unbound System's Energy         =  -0.93 kcal/mol
+DOCKED: USER
+DOCKED: USER
+DOCKED: REMARK  4 active torsions:
+DOCKED: REMARK  status: ('A' for Active; 'I' for Inactive)
+DOCKED: REMARK    1  A    between atoms: CA_1889  and  C_1895 
+DOCKED: REMARK    2  A    between atoms: CB_1890  and  CB1_1891 
+DOCKED: REMARK    3  A    between atoms: CB1_1891  and  CG1_1893 
+DOCKED: REMARK    4  A    between atoms: CG_1892  and  CG2_1894 
+DOCKED: USER                              x       y       z     vdW  Elec       q    Type
+DOCKED: USER                           _______ _______ _______ _____ _____    ______ ____
+DOCKED: ROOT
+DOCKED: HETATM    1  N   KAI A 999      14.348  -2.267  15.808 -0.17 -0.24    +0.353 N  
+DOCKED: HETATM    2  CD  KAI A 999      15.520  -1.595  15.149 -0.20 -0.22    +0.313 C  
+DOCKED: HETATM    3  CA  KAI A 999      14.773  -3.572  16.286 -0.15 +0.02    +0.347 C  
+DOCKED: HETATM    4  CB  KAI A 999      16.174  -3.922  15.779 -0.25 +0.01    +0.076 C  
+DOCKED: HETATM    5  CG  KAI A 999      16.738  -2.525  15.620 -0.34 +0.00    -0.010 C  
+DOCKED: ENDROOT
+DOCKED: BRANCH   4   6
+DOCKED: HETATM    6  CB1 KAI A 999      16.371  -4.586  14.315 -0.22 +0.01    +0.104 C  
+DOCKED: BRANCH   6   7
+DOCKED: HETATM    7  CG1 KAI A 999      15.712  -5.974  14.177 -0.17 +0.09    +0.186 C  
+DOCKED: HETATM    8  OD2 KAI A 999      16.322  -6.875  13.568 -0.51 -0.43    -0.647 OA 
+DOCKED: HETATM    9  OD1 KAI A 999      14.574  -6.069  14.651 -0.25 -0.39    -0.647 OA 
+DOCKED: ENDBRANCH   6   7
+DOCKED: ENDBRANCH   4   6
+DOCKED: BRANCH   5  10
+DOCKED: HETATM   10  CG2 KAI A 999      18.155  -2.253  15.032 -0.29 +0.01    -0.028 C  
+DOCKED: HETATM   11  CD1 KAI A 999      18.240  -1.273  14.186 -0.37 +0.00    -0.005 C  
+DOCKED: HETATM   12  CD2 KAI A 999      19.268  -3.166  15.437 -0.24 -0.00    +0.030 C  
+DOCKED: ENDBRANCH   5  10
+DOCKED: BRANCH   3  13
+DOCKED: HETATM   13  C   KAI A 999      14.698  -3.612  17.852 -0.30 +0.23    +0.221 C  
+DOCKED: HETATM   14  O   KAI A 999      15.631  -4.205  18.438 -0.45 -1.10    -0.646 OA 
+DOCKED: HETATM   15  OXT KAI A 999      13.709  -3.063  18.400 -0.76 -1.17    -0.646 OA 
+DOCKED: ENDBRANCH   3  13
+DOCKED: TORSDOF 4
+DOCKED: TER
+DOCKED: ENDMDL
+________________________________________________________________________________
+
+
+    FINAL DOCKED STATE:
+    ________________________
+
+
+Run:   5 / 10
+Time taken for this run:   1.123s
+
+DOCKED: MODEL        5
+DOCKED: USER    Run = 5
+DOCKED: USER
+DOCKED: USER    Estimated Free Energy of Binding    =  -6.67 kcal/mol  [=(1)+(2)+(3)-(4)]
+DOCKED: USER
+DOCKED: USER    (1) Final Intermolecular Energy     =  -7.86 kcal/mol
+DOCKED: USER        vdW + Hbond + desolv Energy     =  -4.72 kcal/mol
+DOCKED: USER        Electrostatic Energy            =  -3.14 kcal/mol
+DOCKED: USER        Moving Ligand-Fixed Receptor    =  -7.86 kcal/mol
+DOCKED: USER        Moving Ligand-Moving Receptor   =  +0.00 kcal/mol
+DOCKED: USER    (2) Final Total Internal Energy     =  -0.91 kcal/mol
+DOCKED: USER    (3) Torsional Free Energy           =  +1.19 kcal/mol
+DOCKED: USER    (4) Unbound System's Energy         =  -0.91 kcal/mol
+DOCKED: USER
+DOCKED: USER
+DOCKED: REMARK  4 active torsions:
+DOCKED: REMARK  status: ('A' for Active; 'I' for Inactive)
+DOCKED: REMARK    1  A    between atoms: CA_1889  and  C_1895 
+DOCKED: REMARK    2  A    between atoms: CB_1890  and  CB1_1891 
+DOCKED: REMARK    3  A    between atoms: CB1_1891  and  CG1_1893 
+DOCKED: REMARK    4  A    between atoms: CG_1892  and  CG2_1894 
+DOCKED: USER                              x       y       z     vdW  Elec       q    Type
+DOCKED: USER                           _______ _______ _______ _____ _____    ______ ____
+DOCKED: ROOT
+DOCKED: HETATM    1  N   KAI A 999      14.400  -2.201  15.844 -0.19 -0.24    +0.353 N  
+DOCKED: HETATM    2  CD  KAI A 999      15.590  -1.547  15.199 -0.21 -0.20    +0.313 C  
+DOCKED: HETATM    3  CA  KAI A 999      14.788  -3.527  16.294 -0.15 +0.02    +0.347 C  
+DOCKED: HETATM    4  CB  KAI A 999      16.179  -3.906  15.779 -0.25 +0.01    +0.076 C  
+DOCKED: HETATM    5  CG  KAI A 999      16.782  -2.522  15.650 -0.33 +0.00    -0.010 C  
+DOCKED: ENDROOT
+DOCKED: BRANCH   4   6
+DOCKED: HETATM    6  CB1 KAI A 999      16.357  -4.543  14.301 -0.22 +0.00    +0.104 C  
+DOCKED: BRANCH   6   7
+DOCKED: HETATM    7  CG1 KAI A 999      15.718  -5.939  14.154 -0.18 +0.09    +0.186 C  
+DOCKED: HETATM    8  OD2 KAI A 999      16.334  -6.823  13.524 -0.50 -0.41    -0.647 OA 
+DOCKED: HETATM    9  OD1 KAI A 999      14.588  -6.059  14.642 -0.25 -0.39    -0.647 OA 
+DOCKED: ENDBRANCH   6   7
+DOCKED: ENDBRANCH   4   6
+DOCKED: BRANCH   5  10
+DOCKED: HETATM   10  CG2 KAI A 999      18.206  -2.277  15.068 -0.29 +0.01    -0.028 C  
+DOCKED: HETATM   11  CD1 KAI A 999      18.322  -1.272  14.255 -0.39 +0.00    -0.005 C  
+DOCKED: HETATM   12  CD2 KAI A 999      19.288  -3.240  15.438 -0.24 -0.00    +0.030 C  
+DOCKED: ENDBRANCH   5  10
+DOCKED: BRANCH   3  13
+DOCKED: HETATM   13  C   KAI A 999      14.711  -3.599  17.859 -0.30 +0.23    +0.221 C  
+DOCKED: HETATM   14  O   KAI A 999      15.662  -4.170  18.436 -0.46 -1.07    -0.646 OA 
+DOCKED: HETATM   15  OXT KAI A 999      13.703  -3.093  18.414 -0.75 -1.19    -0.646 OA 
+DOCKED: ENDBRANCH   3  13
+DOCKED: TORSDOF 4
+DOCKED: TER
+DOCKED: ENDMDL
+________________________________________________________________________________
+
+
+    FINAL DOCKED STATE:
+    ________________________
+
+
+Run:   6 / 10
+Time taken for this run:   1.123s
+
+DOCKED: MODEL        6
+DOCKED: USER    Run = 6
+DOCKED: USER
+DOCKED: USER    Estimated Free Energy of Binding    =  -6.65 kcal/mol  [=(1)+(2)+(3)-(4)]
+DOCKED: USER
+DOCKED: USER    (1) Final Intermolecular Energy     =  -7.84 kcal/mol
+DOCKED: USER        vdW + Hbond + desolv Energy     =  -4.69 kcal/mol
+DOCKED: USER        Electrostatic Energy            =  -3.16 kcal/mol
+DOCKED: USER        Moving Ligand-Fixed Receptor    =  -7.84 kcal/mol
+DOCKED: USER        Moving Ligand-Moving Receptor   =  +0.00 kcal/mol
+DOCKED: USER    (2) Final Total Internal Energy     =  -0.91 kcal/mol
+DOCKED: USER    (3) Torsional Free Energy           =  +1.19 kcal/mol
+DOCKED: USER    (4) Unbound System's Energy         =  -0.91 kcal/mol
+DOCKED: USER
+DOCKED: USER
+DOCKED: REMARK  4 active torsions:
+DOCKED: REMARK  status: ('A' for Active; 'I' for Inactive)
+DOCKED: REMARK    1  A    between atoms: CA_1889  and  C_1895 
+DOCKED: REMARK    2  A    between atoms: CB_1890  and  CB1_1891 
+DOCKED: REMARK    3  A    between atoms: CB1_1891  and  CG1_1893 
+DOCKED: REMARK    4  A    between atoms: CG_1892  and  CG2_1894 
+DOCKED: USER                              x       y       z     vdW  Elec       q    Type
+DOCKED: USER                           _______ _______ _______ _____ _____    ______ ____
+DOCKED: ROOT
+DOCKED: HETATM    1  N   KAI A 999      14.430  -2.281  15.755 -0.16 -0.25    +0.353 N  
+DOCKED: HETATM    2  CD  KAI A 999      15.622  -1.629  15.113 -0.19 -0.20    +0.313 C  
+DOCKED: HETATM    3  CA  KAI A 999      14.829  -3.588  16.250 -0.15 +0.02    +0.347 C  
+DOCKED: HETATM    4  CB  KAI A 999      16.234  -3.960  15.772 -0.25 +0.01    +0.076 C  
+DOCKED: HETATM    5  CG  KAI A 999      16.819  -2.572  15.613 -0.33 +0.00    -0.010 C  
+DOCKED: ENDROOT
+DOCKED: BRANCH   4   6
+DOCKED: HETATM    6  CB1 KAI A 999      16.448  -4.637  14.316 -0.22 +0.01    +0.104 C  
+DOCKED: BRANCH   6   7
+DOCKED: HETATM    7  CG1 KAI A 999      15.748  -6.003  14.166 -0.17 +0.10    +0.186 C  
+DOCKED: HETATM    8  OD2 KAI A 999      16.326  -6.913  13.538 -0.50 -0.43    -0.647 OA 
+DOCKED: HETATM    9  OD1 KAI A 999      14.612  -6.071  14.649 -0.26 -0.40    -0.647 OA 
+DOCKED: ENDBRANCH   6   7
+DOCKED: ENDBRANCH   4   6
+DOCKED: BRANCH   5  10
+DOCKED: HETATM   10  CG2 KAI A 999      18.250  -2.322  15.050 -0.29 +0.01    -0.028 C  
+DOCKED: HETATM   11  CD1 KAI A 999      19.173  -3.137  15.460 -0.25 +0.00    -0.005 C  
+DOCKED: HETATM   12  CD2 KAI A 999      18.451  -1.146  14.148 -0.37 -0.01    +0.030 C  
+DOCKED: ENDBRANCH   5  10
+DOCKED: BRANCH   3  13
+DOCKED: HETATM   13  C   KAI A 999      14.724  -3.616  17.815 -0.30 +0.23    +0.221 C  
+DOCKED: HETATM   14  O   KAI A 999      15.651  -4.194  18.424 -0.47 -1.08    -0.646 OA 
+DOCKED: HETATM   15  OXT KAI A 999      13.719  -3.071  18.339 -0.78 -1.14    -0.646 OA 
+DOCKED: ENDBRANCH   3  13
+DOCKED: TORSDOF 4
+DOCKED: TER
+DOCKED: ENDMDL
+________________________________________________________________________________
+
+
+    FINAL DOCKED STATE:
+    ________________________
+
+
+Run:   7 / 10
+Time taken for this run:   1.123s
+
+DOCKED: MODEL        7
+DOCKED: USER    Run = 7
+DOCKED: USER
+DOCKED: USER    Estimated Free Energy of Binding    =  -6.66 kcal/mol  [=(1)+(2)+(3)-(4)]
+DOCKED: USER
+DOCKED: USER    (1) Final Intermolecular Energy     =  -7.85 kcal/mol
+DOCKED: USER        vdW + Hbond + desolv Energy     =  -4.67 kcal/mol
+DOCKED: USER        Electrostatic Energy            =  -3.18 kcal/mol
+DOCKED: USER        Moving Ligand-Fixed Receptor    =  -7.85 kcal/mol
+DOCKED: USER        Moving Ligand-Moving Receptor   =  +0.00 kcal/mol
+DOCKED: USER    (2) Final Total Internal Energy     =  -0.93 kcal/mol
+DOCKED: USER    (3) Torsional Free Energy           =  +1.19 kcal/mol
+DOCKED: USER    (4) Unbound System's Energy         =  -0.93 kcal/mol
+DOCKED: USER
+DOCKED: USER
+DOCKED: REMARK  4 active torsions:
+DOCKED: REMARK  status: ('A' for Active; 'I' for Inactive)
+DOCKED: REMARK    1  A    between atoms: CA_1889  and  C_1895 
+DOCKED: REMARK    2  A    between atoms: CB_1890  and  CB1_1891 
+DOCKED: REMARK    3  A    between atoms: CB1_1891  and  CG1_1893 
+DOCKED: REMARK    4  A    between atoms: CG_1892  and  CG2_1894 
+DOCKED: USER                              x       y       z     vdW  Elec       q    Type
+DOCKED: USER                           _______ _______ _______ _____ _____    ______ ____
+DOCKED: ROOT
+DOCKED: HETATM    1  N   KAI A 999      14.343  -2.306  15.764 -0.16 -0.25    +0.353 N  
+DOCKED: HETATM    2  CD  KAI A 999      15.507  -1.619  15.106 -0.19 -0.22    +0.313 C  
+DOCKED: HETATM    3  CA  KAI A 999      14.789  -3.597  16.260 -0.15 +0.02    +0.347 C  
+DOCKED: HETATM    4  CB  KAI A 999      16.200  -3.927  15.767 -0.25 +0.01    +0.076 C  
+DOCKED: HETATM    5  CG  KAI A 999      16.739  -2.521  15.596 -0.34 +0.00    -0.010 C  
+DOCKED: ENDROOT
+DOCKED: BRANCH   4   6
+DOCKED: HETATM    6  CB1 KAI A 999      16.419  -4.603  14.311 -0.22 +0.01    +0.104 C  
+DOCKED: BRANCH   6   7
+DOCKED: HETATM    7  CG1 KAI A 999      15.737  -5.980  14.166 -0.17 +0.09    +0.186 C  
+DOCKED: HETATM    8  OD2 KAI A 999      16.324  -6.880  13.532 -0.50 -0.42    -0.647 OA 
+DOCKED: HETATM    9  OD1 KAI A 999      14.608  -6.065  14.659 -0.26 -0.40    -0.647 OA 
+DOCKED: ENDBRANCH   6   7
+DOCKED: ENDBRANCH   4   6
+DOCKED: BRANCH   5  10
+DOCKED: HETATM   10  CG2 KAI A 999      18.155  -2.229  15.015 -0.29 +0.01    -0.028 C  
+DOCKED: HETATM   11  CD1 KAI A 999      18.230  -1.250  14.167 -0.37 +0.00    -0.005 C  
+DOCKED: HETATM   12  CD2 KAI A 999      19.279  -3.125  15.427 -0.24 -0.00    +0.030 C  
+DOCKED: ENDBRANCH   5  10
+DOCKED: BRANCH   3  13
+DOCKED: HETATM   13  C   KAI A 999      14.703  -3.621  17.826 -0.30 +0.23    +0.221 C  
+DOCKED: HETATM   14  O   KAI A 999      15.638  -4.197  18.425 -0.46 -1.09    -0.646 OA 
+DOCKED: HETATM   15  OXT KAI A 999      13.705  -3.077  18.361 -0.77 -1.16    -0.646 OA 
+DOCKED: ENDBRANCH   3  13
+DOCKED: TORSDOF 4
+DOCKED: TER
+DOCKED: ENDMDL
+________________________________________________________________________________
+
+
+    FINAL DOCKED STATE:
+    ________________________
+
+
+Run:   8 / 10
+Time taken for this run:   1.123s
+
+DOCKED: MODEL        8
+DOCKED: USER    Run = 8
+DOCKED: USER
+DOCKED: USER    Estimated Free Energy of Binding    =  -6.66 kcal/mol  [=(1)+(2)+(3)-(4)]
+DOCKED: USER
+DOCKED: USER    (1) Final Intermolecular Energy     =  -7.86 kcal/mol
+DOCKED: USER        vdW + Hbond + desolv Energy     =  -4.70 kcal/mol
+DOCKED: USER        Electrostatic Energy            =  -3.16 kcal/mol
+DOCKED: USER        Moving Ligand-Fixed Receptor    =  -7.86 kcal/mol
+DOCKED: USER        Moving Ligand-Moving Receptor   =  +0.00 kcal/mol
+DOCKED: USER    (2) Final Total Internal Energy     =  -0.90 kcal/mol
+DOCKED: USER    (3) Torsional Free Energy           =  +1.19 kcal/mol
+DOCKED: USER    (4) Unbound System's Energy         =  -0.90 kcal/mol
+DOCKED: USER
+DOCKED: USER
+DOCKED: REMARK  4 active torsions:
+DOCKED: REMARK  status: ('A' for Active; 'I' for Inactive)
+DOCKED: REMARK    1  A    between atoms: CA_1889  and  C_1895 
+DOCKED: REMARK    2  A    between atoms: CB_1890  and  CB1_1891 
+DOCKED: REMARK    3  A    between atoms: CB1_1891  and  CG1_1893 
+DOCKED: REMARK    4  A    between atoms: CG_1892  and  CG2_1894 
+DOCKED: USER                              x       y       z     vdW  Elec       q    Type
+DOCKED: USER                           _______ _______ _______ _____ _____    ______ ____
+DOCKED: ROOT
+DOCKED: HETATM    1  N   KAI A 999      14.410  -2.220  15.828 -0.18 -0.24    +0.353 N  
+DOCKED: HETATM    2  CD  KAI A 999      15.607  -1.582  15.181 -0.20 -0.20    +0.313 C  
+DOCKED: HETATM    3  CA  KAI A 999      14.784  -3.548  16.284 -0.15 +0.02    +0.347 C  
+DOCKED: HETATM    4  CB  KAI A 999      16.170  -3.944  15.772 -0.25 +0.01    +0.076 C  
+DOCKED: HETATM    5  CG  KAI A 999      16.788  -2.567  15.637 -0.33 +0.00    -0.010 C  
+DOCKED: ENDROOT
+DOCKED: BRANCH   4   6
+DOCKED: HETATM    6  CB1 KAI A 999      16.342  -4.589  14.296 -0.23 +0.01    +0.104 C  
+DOCKED: BRANCH   6   7
+DOCKED: HETATM    7  CG1 KAI A 999      15.684  -5.978  14.154 -0.16 +0.09    +0.186 C  
+DOCKED: HETATM    8  OD2 KAI A 999      16.312  -6.887  13.576 -0.51 -0.43    -0.647 OA 
+DOCKED: HETATM    9  OD1 KAI A 999      14.532  -6.065  14.593 -0.24 -0.37    -0.647 OA 
+DOCKED: ENDBRANCH   6   7
+DOCKED: ENDBRANCH   4   6
+DOCKED: BRANCH   5  10
+DOCKED: HETATM   10  CG2 KAI A 999      18.215  -2.340  15.054 -0.29 +0.00    -0.028 C  
+DOCKED: HETATM   11  CD1 KAI A 999      19.133  -3.162  15.461 -0.25 +0.00    -0.005 C  
+DOCKED: HETATM   12  CD2 KAI A 999      18.419  -1.176  14.138 -0.37 -0.01    +0.030 C  
+DOCKED: ENDBRANCH   5  10
+DOCKED: BRANCH   3  13
+DOCKED: HETATM   13  C   KAI A 999      14.705  -3.611  17.850 -0.30 +0.23    +0.221 C  
+DOCKED: HETATM   14  O   KAI A 999      15.646  -4.196  18.429 -0.46 -1.09    -0.646 OA 
+DOCKED: HETATM   15  OXT KAI A 999      13.706  -3.087  18.402 -0.76 -1.18    -0.646 OA 
+DOCKED: ENDBRANCH   3  13
+DOCKED: TORSDOF 4
+DOCKED: TER
+DOCKED: ENDMDL
+________________________________________________________________________________
+
+
+    FINAL DOCKED STATE:
+    ________________________
+
+
+Run:   9 / 10
+Time taken for this run:   1.123s
+
+DOCKED: MODEL        9
+DOCKED: USER    Run = 9
+DOCKED: USER
+DOCKED: USER    Estimated Free Energy of Binding    =  -6.63 kcal/mol  [=(1)+(2)+(3)-(4)]
+DOCKED: USER
+DOCKED: USER    (1) Final Intermolecular Energy     =  -7.82 kcal/mol
+DOCKED: USER        vdW + Hbond + desolv Energy     =  -4.70 kcal/mol
+DOCKED: USER        Electrostatic Energy            =  -3.13 kcal/mol
+DOCKED: USER        Moving Ligand-Fixed Receptor    =  -7.82 kcal/mol
+DOCKED: USER        Moving Ligand-Moving Receptor   =  +0.00 kcal/mol
+DOCKED: USER    (2) Final Total Internal Energy     =  -0.94 kcal/mol
+DOCKED: USER    (3) Torsional Free Energy           =  +1.19 kcal/mol
+DOCKED: USER    (4) Unbound System's Energy         =  -0.94 kcal/mol
+DOCKED: USER
+DOCKED: USER
+DOCKED: REMARK  4 active torsions:
+DOCKED: REMARK  status: ('A' for Active; 'I' for Inactive)
+DOCKED: REMARK    1  A    between atoms: CA_1889  and  C_1895 
+DOCKED: REMARK    2  A    between atoms: CB_1890  and  CB1_1891 
+DOCKED: REMARK    3  A    between atoms: CB1_1891  and  CG1_1893 
+DOCKED: REMARK    4  A    between atoms: CG_1892  and  CG2_1894 
+DOCKED: USER                              x       y       z     vdW  Elec       q    Type
+DOCKED: USER                           _______ _______ _______ _____ _____    ______ ____
+DOCKED: ROOT
+DOCKED: HETATM    1  N   KAI A 999      14.452  -2.332  15.695 -0.15 -0.26    +0.353 N  
+DOCKED: HETATM    2  CD  KAI A 999      15.649  -1.671  15.070 -0.19 -0.20    +0.313 C  
+DOCKED: HETATM    3  CA  KAI A 999      14.859  -3.625  16.219 -0.14 +0.02    +0.347 C  
+DOCKED: HETATM    4  CB  KAI A 999      16.281  -3.983  15.778 -0.25 +0.01    +0.076 C  
+DOCKED: HETATM    5  CG  KAI A 999      16.849  -2.588  15.612 -0.33 +0.00    -0.010 C  
+DOCKED: ENDROOT
+DOCKED: BRANCH   4   6
+DOCKED: HETATM    6  CB1 KAI A 999      16.539  -4.678  14.338 -0.22 +0.01    +0.104 C  
+DOCKED: BRANCH   6   7
+DOCKED: HETATM    7  CG1 KAI A 999      15.798  -6.020  14.164 -0.18 +0.10    +0.186 C  
+DOCKED: HETATM    8  OD2 KAI A 999      16.352  -6.937  13.525 -0.48 -0.43    -0.647 OA 
+DOCKED: HETATM    9  OD1 KAI A 999      14.659  -6.062  14.641 -0.28 -0.40    -0.647 OA 
+DOCKED: ENDBRANCH   6   7
+DOCKED: ENDBRANCH   4   6
+DOCKED: BRANCH   5  10
+DOCKED: HETATM   10  CG2 KAI A 999      18.288  -2.325  15.078 -0.28 +0.00    -0.028 C  
+DOCKED: HETATM   11  CD1 KAI A 999      18.423  -1.308  14.284 -0.39 +0.00    -0.005 C  
+DOCKED: HETATM   12  CD2 KAI A 999      19.365  -3.286  15.467 -0.24 -0.00    +0.030 C  
+DOCKED: ENDBRANCH   5  10
+DOCKED: BRANCH   3  13
+DOCKED: HETATM   13  C   KAI A 999      14.719  -3.631  17.781 -0.31 +0.22    +0.221 C  
+DOCKED: HETATM   14  O   KAI A 999      13.705  -3.068  18.250 -0.81 -1.10    -0.646 OA 
+DOCKED: HETATM   15  OXT KAI A 999      15.633  -4.184  18.443 -0.46 -1.10    -0.646 OA 
+DOCKED: ENDBRANCH   3  13
+DOCKED: TORSDOF 4
+DOCKED: TER
+DOCKED: ENDMDL
+________________________________________________________________________________
+
+
+    FINAL DOCKED STATE:
+    ________________________
+
+
+Run:   10 / 10
+Time taken for this run:   1.123s
+
+DOCKED: MODEL        10
+DOCKED: USER    Run = 10
+DOCKED: USER
+DOCKED: USER    Estimated Free Energy of Binding    =  -6.65 kcal/mol  [=(1)+(2)+(3)-(4)]
+DOCKED: USER
+DOCKED: USER    (1) Final Intermolecular Energy     =  -7.84 kcal/mol
+DOCKED: USER        vdW + Hbond + desolv Energy     =  -4.70 kcal/mol
+DOCKED: USER        Electrostatic Energy            =  -3.14 kcal/mol
+DOCKED: USER        Moving Ligand-Fixed Receptor    =  -7.84 kcal/mol
+DOCKED: USER        Moving Ligand-Moving Receptor   =  +0.00 kcal/mol
+DOCKED: USER    (2) Final Total Internal Energy     =  -0.92 kcal/mol
+DOCKED: USER    (3) Torsional Free Energy           =  +1.19 kcal/mol
+DOCKED: USER    (4) Unbound System's Energy         =  -0.92 kcal/mol
+DOCKED: USER
+DOCKED: USER
+DOCKED: REMARK  4 active torsions:
+DOCKED: REMARK  status: ('A' for Active; 'I' for Inactive)
+DOCKED: REMARK    1  A    between atoms: CA_1889  and  C_1895 
+DOCKED: REMARK    2  A    between atoms: CB_1890  and  CB1_1891 
+DOCKED: REMARK    3  A    between atoms: CB1_1891  and  CG1_1893 
+DOCKED: REMARK    4  A    between atoms: CG_1892  and  CG2_1894 
+DOCKED: USER                              x       y       z     vdW  Elec       q    Type
+DOCKED: USER                           _______ _______ _______ _____ _____    ______ ____
+DOCKED: ROOT
+DOCKED: HETATM    1  N   KAI A 999      14.367  -2.191  15.858 -0.19 -0.24    +0.353 N  
+DOCKED: HETATM    2  CD  KAI A 999      15.556  -1.549  15.199 -0.21 -0.21    +0.313 C  
+DOCKED: HETATM    3  CA  KAI A 999      14.743  -3.528  16.286 -0.15 +0.01    +0.347 C  
+DOCKED: HETATM    4  CB  KAI A 999      16.118  -3.922  15.743 -0.26 +0.01    +0.076 C  
+DOCKED: HETATM    5  CG  KAI A 999      16.740  -2.546  15.619 -0.34 +0.00    -0.010 C  
+DOCKED: ENDROOT
+DOCKED: BRANCH   4   6
+DOCKED: HETATM    6  CB1 KAI A 999      16.261  -4.545  14.255 -0.23 +0.00    +0.104 C  
+DOCKED: BRANCH   6   7
+DOCKED: HETATM    7  CG1 KAI A 999      15.646  -5.953  14.118 -0.17 +0.09    +0.186 C  
+DOCKED: HETATM    8  OD2 KAI A 999      16.311  -6.852  13.564 -0.51 -0.42    -0.647 OA 
+DOCKED: HETATM    9  OD1 KAI A 999      14.488  -6.068  14.534 -0.23 -0.35    -0.647 OA 
+DOCKED: ENDBRANCH   6   7
+DOCKED: ENDBRANCH   4   6
+DOCKED: BRANCH   5  10
+DOCKED: HETATM   10  CG2 KAI A 999      18.158  -2.316  15.015 -0.29 +0.01    -0.028 C  
+DOCKED: HETATM   11  CD1 KAI A 999      18.253  -1.369  14.133 -0.37 +0.00    -0.005 C  
+DOCKED: HETATM   12  CD2 KAI A 999      19.259  -3.230  15.447 -0.24 -0.00    +0.030 C  
+DOCKED: ENDBRANCH   5  10
+DOCKED: BRANCH   3  13
+DOCKED: HETATM   13  C   KAI A 999      14.691  -3.617  17.851 -0.30 +0.24    +0.221 C  
+DOCKED: HETATM   14  O   KAI A 999      13.702  -3.088  18.405 -0.76 -1.19    -0.646 OA 
+DOCKED: HETATM   15  OXT KAI A 999      15.645  -4.195  18.431 -0.46 -1.09    -0.646 OA 
+DOCKED: ENDBRANCH   3  13
+DOCKED: TORSDOF 4
+DOCKED: TER
+DOCKED: ENDMDL
+________________________________________________________________________________
+
+
+    CLUSTERING HISTOGRAM
+    ____________________
+
+
+________________________________________________________________________________
+     |           |     |           |     |
+Clus | Lowest    | Run | Mean      | Num | Histogram
+-ter | Binding   |     | Binding   | in  |
+Rank | Energy    |     | Energy    | Clus|    5    10   15   20   25   30   35
+_____|___________|_____|___________|_____|____:____|____:____|____:____|____:___
+   1 |     -6.67 |   5 |     -6.66 |  10 |##########
+_____|___________|_____|___________|_____|______________________________________
+
+
+    RMSD TABLE
+    __________
+
+
+_______________________________________________________________________
+     |      |      |           |         |                 |
+Rank | Sub- | Run  | Binding   | Cluster | Reference       | Grep
+     | Rank |      | Energy    | RMSD    | RMSD            | Pattern
+_____|______|______|___________|_________|_________________|___________
+   1      1      5       -6.67      0.00      0.71           RANKING
+   1      2      4       -6.67      0.06      0.72           RANKING
+   1      3      8       -6.66      0.08      0.72           RANKING
+   1      4      1       -6.66      0.07      0.71           RANKING
+   1      5      7       -6.66      0.09      0.73           RANKING
+   1      6      3       -6.65      0.04      0.72           RANKING
+   1      7      2       -6.65      0.05      0.72           RANKING
+   1      8      6       -6.65      0.10      0.74           RANKING
+   1      9     10       -6.65      0.08      0.71           RANKING
+   1     10      9       -6.63      0.14      0.76           RANKING
+
+Run time 11.706 sec
+Idle time 1.649 sec
