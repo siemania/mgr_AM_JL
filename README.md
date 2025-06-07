@@ -2,7 +2,7 @@
 
 Projekt **mgr_AM_JL** to zestaw skryptów mających na celu automatyzację przygotowania receptorów i ligandów do dokowania. Początkowo projekt automatycznie wykonuje serię poleceń związanych z przygotowaniem receptorów i ligandów przy użyciu MGLTools oraz AutoDock/AutoDock GPU, a w dalszej perspektywie planowane jest rozwinięcie narzędzi do:
 
-- Optymalizacji konformacji wybranych reszt (np. HIS, GLU, ASP)
+- Optymalizacji konformacji wybranych reszt (np. HIS, GLN, ASN)
 - Dokowania z wodą i bez wody
 - Optymalizacji układu wodorów (obrót grup metylowych itp.)
 - Dodatkowych algorytmów optymalizacyjnych wykorzystujących pola siłowe z programów jak np. OpenMM, OpenBabel, GROMACS
