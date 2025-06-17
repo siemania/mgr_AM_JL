@@ -1,3 +1,4 @@
+import argparse
 import os
 import subprocess
 from shutil import copyfile
@@ -11,6 +12,13 @@ from openbabel import openbabel as ob
 from openmm.app import PDBFile
 from openmm import unit
 from pdbfixer import PDBFixer
+import tempfile
+from openmm.app import PDBFile, ForceField, Simulation, Modeller
+from openmm import LangevinIntegrator, Platform
+from openmm.unit import kelvin, picoseconds, picosecond
+
+from Docking import flip_res
+
 
 
 
@@ -62,12 +70,16 @@ class PDBModelOptimization:
         """
         mdl = model(env, file=pdb_code)
         aln = alignment(env)
+
         aln.append_model(mdl, atom_files=pdb_code, align_codes=pdb_code)
         aln.append_model(mdl, atom_files=pdb_code, align_codes=temple_code)
-        aln.write(file='alignment.ali')
-        print("alignment.ali zostal zapisany")
 
-    """Nie dodaje mi wodorów kompletnie"""
+        aln.write(file='alignment.ali')
+
+        print("alignment.ali zostal zapisany")
+        self.aln = aln
+
+
     def add_hydrogens(self, pdb_path):
         """
         Dodaje wodory do pliku PDB, próbując najpierw przez subprocess (obabel CLI),
@@ -101,6 +113,31 @@ class PDBModelOptimization:
         except Exception as e:
             print(f"Błąd OpenBabel Python API: {e}")
 
+    def remove_duplicate_atoms(self, pdb_path):
+        """
+        Usuwa duplikaty atomów o tej samej nazwie w tej samej reszcie (np. H, H, H...).
+        Nadpisuje plik PDB.
+        """
+        seen = set()
+        cleaned_lines = []
+
+        with open(pdb_path, 'r') as f:
+            for line in f:
+                if line.startswith('ATOM') or line.startswith('HETATM'):
+                    atom_name = line[12:16].strip()
+                    res_id = line[17:26]  # Łańcuch + numer + insertion code
+                    key = (res_id, atom_name)
+
+                    if key in seen:
+                        continue  # pomiń duplikat
+                    seen.add(key)
+
+                cleaned_lines.append(line)
+
+        with open(pdb_path, 'w') as f:
+            f.writelines(cleaned_lines)
+
+        print(f"Usunięto duplikaty atomów w: {pdb_path}")
 
     def rotate_atoms(self, positions, center, axis, angle_rad):
         """Obraca pozycje wokół zadanej osi i punktu."""
@@ -124,6 +161,25 @@ class PDBModelOptimization:
 
         return [unit.Quantity(r, unit.nanometer) for r in rotated]
 
+
+
+    def flip_asn(self, pdb_path):
+        model = complete_pdb(self.env, os.path.splitext(os.path.basename(pdb_path))[0])
+        for res in model.residues:
+            if res.name.strip() == 'ASN':
+                atom_dict = {a.name.strip(): a for a in res.atoms}
+                if 'OD1' in atom_dict and 'ND2' in atom_dict:
+                    self.swap_atom_coords(atom_dict['OD1'], atom_dict['ND2'])
+        model.write(file=pdb_path)
+
+    def flip_gln(self, pdb_path):
+        model = complete_pdb(self.env, os.path.splitext(os.path.basename(pdb_path))[0])
+        for res in model.residues:
+            if res.name.strip() == 'GLN':
+                atom_dict = {a.name.strip(): a for a in res.atoms}
+                if 'OE1' in atom_dict and 'NE2' in atom_dict:
+                    self.swap_atom_coords(atom_dict['OE1'], atom_dict['NE2'])
+        model.write(file=pdb_path)
 
     def flip_HIS(self, input_file):
         try:
@@ -172,6 +228,42 @@ class PDBModelOptimization:
             print(f"Błąd przy obracaniu HIS: {e}")
             return input_file
 
+    def flip_HIS_single(self, pdb_path, target_resnum):
+        try:
+            fixer = PDBFixer(filename=pdb_path)
+            structure = fixer.topology
+            positions = fixer.positions
+
+            for residue in structure.residues():
+                if residue.name not in ('HIS', 'HID', 'HIE', 'HIP'):
+                    continue
+                if int(residue.id) != target_resnum:
+                    continue
+
+                atom_dict = {atom.name: atom for atom in residue.atoms()}
+                required_atoms = ['CG', 'CD2', 'ND1', 'CE1', 'NE2']
+                if not all(a in atom_dict for a in required_atoms):
+                    continue
+
+                cg_idx = list(structure.atoms()).index(atom_dict['CG'])
+                cd2_idx = list(structure.atoms()).index(atom_dict['CD2'])
+                axis = positions[cd2_idx].value_in_unit(unit.nanometer) - positions[cg_idx].value_in_unit(
+                    unit.nanometer)
+                center = positions[cg_idx].value_in_unit(unit.nanometer)
+
+                ring_indices = [list(structure.atoms()).index(atom_dict[name]) for name in ['ND1', 'CD2', 'CE1', 'NE2']]
+                ring_positions = [positions[i].value_in_unit(unit.nanometer) for i in ring_indices]
+                new_positions = self.rotate_atoms(ring_positions, center, axis, np.pi)
+
+                for i, idx in enumerate(ring_indices):
+                    positions[idx] = new_positions[i]
+
+                with open(pdb_path, 'w') as f:
+                    PDBFile.writeFile(structure, positions, f)
+                print(f"Wykonano flip HIS {target_resnum}")
+                break
+        except Exception as e:
+            print(f"Błąd w flip_HIS_single dla {target_resnum}: {e}")
 
     def swap_atom_coords(self, atom1, atom2):
         """
@@ -180,6 +272,7 @@ class PDBModelOptimization:
         atom1.x, atom2.x = atom2.x, atom1.x
         atom1.y, atom2.y = atom2.y, atom1.y
         atom1.z, atom2.z = atom2.z, atom1.z
+
 
 
     def flip_residues (self, residue, pdb_path=None):
@@ -197,20 +290,19 @@ class PDBModelOptimization:
         if name == 'ASN':
 
             if 'OD1' in atom_dict and 'ND2' in atom_dict:
-                self.swap_atom_coords(atom_dict['OD1'], atom_dict['ND2'])
+                self.choose_lower_energy_flip(pdb_path, self.flip_asn)
                 print(f"Wykonano flip ASN: {residue.num}")
 
         elif name == 'GLN':
 
             if 'OE1' in atom_dict and 'NE2' in atom_dict:
-                self.swap_atom_coords(atom_dict['OE1'], atom_dict['NE2'])
+                self.choose_lower_energy_flip(pdb_path, self.flip_gln)
                 print(f"Wykonano flip GLN: {residue.num}")
-        elif name == 'HIS' and pdb_path:
-            print(f"Obracanie HIS w {residue.num} przez PDBFixer")
-            rotated_path = self.flip_HIS(pdb_path)
-            if rotated_path:
-                print(f"Obrócono pierścień histydyny: {residue.num}")
 
+        elif name == 'HIS' and pdb_path:
+
+            print(f"Rozważam flip HIS {residue.num} na podstawie energii")
+            self.choose_lower_energy_flip(pdb_path, self.flip_HIS)
 
     def optimize_heavy_atom(self, model, code):
         """
@@ -255,7 +347,7 @@ class PDBModelOptimization:
         print(f"Zoptymalizowano pełną strukturę i zapisano: {final_path}")
 
 
-    def fill_missing_residues_and_atoms(self):
+    def fill_missing_residues_and_atoms(self, single_file=None):
         """
         Główna funkcja przetwarzająca wszystkie pliki PDB:
              - uzupełnia brakujące reszty,
@@ -264,7 +356,9 @@ class PDBModelOptimization:
              - flipuje reszty HIS/ASN/GLN,
              - przeprowadza optymalizację struktury.
         """
-        for filename in os.listdir(self.input_path):
+        files = [single_file] if single_file else os.listdir(self.input_path)
+
+        for filename in files:
             if not filename.endswith(".pdb"):
                 continue
 
@@ -301,9 +395,21 @@ class PDBModelOptimization:
                 os.rename(model_output_file, final_output_file)
                 print(f"Uzupełniony model zapisany do: {final_output_file}")
 
+                # 1) Dodanie wodorow (tylko jeśli ich nie ma)
+                with open(final_output_file, 'r') as f:
+                    lines = f.readlines()
 
-                # 1) Dodanie wodorow
-                self.add_hydrogens(final_output_file)
+                has_hydrogens = any(
+                    line.startswith("ATOM") and line[76:78].strip() == "H"
+                    for line in lines
+                )
+
+                if not has_hydrogens:
+                    self.add_hydrogens(final_output_file)
+                    self.remove_duplicate_atoms(final_output_file)
+                else:
+                    print(f"{final_output_file} już zawiera atomy wodoru – pomijam dodawanie.")
+                    self.remove_duplicate_atoms(final_output_file)
 
                 code = os.path.splitext(os.path.basename(final_output_file))[0]
                 self.env.io.atom_files_directory.append(os.path.dirname(final_output_file))
@@ -311,22 +417,30 @@ class PDBModelOptimization:
                 # 2) Wczytanie uzupelnionej struktury
                 model = complete_pdb(self.env, code)
 
+                flip_res.ResidueFlipper(final_output_file, self.aln)
                 # 3) Flipy odpowiednich reszt aminokwasowych
-                for res in model.residues:
-                    self.flip_residues(res, final_output_file)
+                flipper = flip_res.ResidueFlipper(final_output_file, self.aln)
+                flipper.run()
 
                 # 4) Optymalizacje
                 self.optimize_heavy_atom(model, code)
                 self.optimize_full_structure(model, code)
 
                 # 5) Czyszczenie plików roboczych
-                self.cleanup_working_files(pdb_name)
+                #self.cleanup_working_files(pdb_name)
             else:
                 print(f"Błąd: nie znaleziono modelu dla {pdb_name}!")
 
 
 if __name__ == '__main__':
+    parser = argparse.ArgumentParser(description="Naprawianie struktury PDB (reszty, wodory, flipy)")
+    parser.add_argument("--file", type=str, help="Nazwa pliku .pdb do przetworzenia (opcjonalnie jeden)")
+    args = parser.parse_args()
 
     project_root = os.getcwd()
     processor = PDBModelOptimization(project_root)
-    processor.fill_missing_residues_and_atoms()
+
+    if args.file:
+        processor.fill_missing_residues_and_atoms(single_file=args.file)
+    else:
+        processor.fill_missing_residues_and_atoms()
