@@ -23,13 +23,19 @@ from Docking import flip_res
 
 
 # Klasa dziedzicząca po AutoModel – umożliwia późniejszy wybór atomów do modelowania
+# Pozwala wskazać, które atomy mają być modelowane
 class MyModel(AutoModel):
     def select_atoms(self):
         return Selection(self) # domyślnie wybiera wszystkie atomy
 
-
+# Klasa główna do przetwarzania i naprawy plików PDB
 class PDBModelOptimization:
     def __init__(self, project_root):
+        """
+        Inicjalizacja ścieżek i środowiska Modeller.
+        Tworzy foldery robocze, jeśli ich nie ma.
+        """
+
         # Ścieżki do folderów wejściowych, wyjściowych i roboczych
         self.project_root = project_root
         self.input_path = os.path.join(project_root, 'pdb_files') # Folder z wejsciowymi plikami PDB
@@ -51,7 +57,7 @@ class PDBModelOptimization:
 
     def cleanup_working_files(self, pdb_code):
         """
-        Remove all files starting with given PDB code from working directory
+        Usuwa tymczasowe pliki z katalogu roboczego po zakończeniu pracy.
         """
         for file in os.listdir(self.work_path):
             if file.startswith(pdb_code):
@@ -115,8 +121,8 @@ class PDBModelOptimization:
 
     def remove_duplicate_atoms(self, pdb_path):
         """
-        Usuwa duplikaty atomów o tej samej nazwie w tej samej reszcie (np. H, H, H...).
-        Nadpisuje plik PDB.
+        Filtruje plik PDB z powielonych atomów.
+        Unika błędów przy dalszym przetwarzaniu.
         """
         seen = set()
         cleaned_lines = []
@@ -140,8 +146,10 @@ class PDBModelOptimization:
         print(f"Usunięto duplikaty atomów w: {pdb_path}")
 
     def rotate_atoms(self, positions, center, axis, angle_rad):
-        """Obraca pozycje wokół zadanej osi i punktu."""
-
+        """
+        Obraca listę wektorów wokół zadanej osi i środka.
+        Przydatne do obracania pierścieni HIS.
+        """
         axis = np.array(axis)
         center = np.array(center)
 
@@ -164,6 +172,9 @@ class PDBModelOptimization:
 
 
     def flip_asn(self, pdb_path):
+        """
+        Flip ASN: zamienia pozycje OD1 i ND2.
+        """
         model = complete_pdb(self.env, os.path.splitext(os.path.basename(pdb_path))[0])
         for res in model.residues:
             if res.name.strip() == 'ASN':
@@ -173,6 +184,9 @@ class PDBModelOptimization:
         model.write(file=pdb_path)
 
     def flip_gln(self, pdb_path):
+        """
+        Flip GLN: zamienia pozycje OE1 i NE2.
+        """
         model = complete_pdb(self.env, os.path.splitext(os.path.basename(pdb_path))[0])
         for res in model.residues:
             if res.name.strip() == 'GLN':
@@ -182,6 +196,9 @@ class PDBModelOptimization:
         model.write(file=pdb_path)
 
     def flip_HIS(self, input_file):
+        """
+        Flip HIS: obraca pierścień imidazolowy o 180°.
+        """
         try:
             fixer = PDBFixer(filename=input_file)
             structure = fixer.topology
@@ -229,6 +246,9 @@ class PDBModelOptimization:
             return input_file
 
     def flip_HIS_single(self, pdb_path, target_resnum):
+        """
+        Flip tylko jednej reszty HIS o podanym numerze.
+        """
         try:
             fixer = PDBFixer(filename=pdb_path)
             structure = fixer.topology
@@ -274,35 +294,6 @@ class PDBModelOptimization:
         atom1.z, atom2.z = atom2.z, atom1.z
 
 
-
-    def flip_residues (self, residue, pdb_path=None):
-        """
-        Flipuje reszty GLN, ASN i HIS przez zamianę współrzędnych wybranych atomów.
-        Pomaga ustawić poprawną orientację grup funkcyjnych.
-        Zachodzą zmiany miedzy atomami:
-            - ASN: OD1 <-> ND2
-            - GLN: OE1 <-> NE2
-            - HIS: ND1 <-> NE2 (uproszczony sposob)
-         """
-        atom_dict = {a.name.strip(): a for a in residue.atoms}
-        name = residue.name.strip().upper()
-
-        if name == 'ASN':
-
-            if 'OD1' in atom_dict and 'ND2' in atom_dict:
-                self.choose_lower_energy_flip(pdb_path, self.flip_asn)
-                print(f"Wykonano flip ASN: {residue.num}")
-
-        elif name == 'GLN':
-
-            if 'OE1' in atom_dict and 'NE2' in atom_dict:
-                self.choose_lower_energy_flip(pdb_path, self.flip_gln)
-                print(f"Wykonano flip GLN: {residue.num}")
-
-        elif name == 'HIS' and pdb_path:
-
-            print(f"Rozważam flip HIS {residue.num} na podstawie energii")
-            self.choose_lower_energy_flip(pdb_path, self.flip_HIS)
 
     def optimize_heavy_atom(self, model, code):
         """
@@ -404,6 +395,7 @@ class PDBModelOptimization:
                     for line in lines
                 )
 
+                # Sprawdzenie, czy są wodory — jeśli nie, to je dodaj
                 if not has_hydrogens:
                     self.add_hydrogens(final_output_file)
                     self.remove_duplicate_atoms(final_output_file)
@@ -427,12 +419,13 @@ class PDBModelOptimization:
                 self.optimize_full_structure(model, code)
 
                 # 5) Czyszczenie plików roboczych
-                #self.cleanup_working_files(pdb_name)
+                self.cleanup_working_files(pdb_name)
             else:
                 print(f"Błąd: nie znaleziono modelu dla {pdb_name}!")
 
 
 if __name__ == '__main__':
+    # Parser argumentów: pozwala uruchomić skrypt dla 1 pliku lub wszystkich.
     parser = argparse.ArgumentParser(description="Naprawianie struktury PDB (reszty, wodory, flipy)")
     parser.add_argument("--file", type=str, help="Nazwa pliku .pdb do przetworzenia (opcjonalnie jeden)")
     args = parser.parse_args()

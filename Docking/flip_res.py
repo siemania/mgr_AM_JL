@@ -14,15 +14,23 @@ except ImportError:
 
 nanometer = unit.nanometer
 
-
+# ResidueFlipper – wykonuje flipy ASN, GLN i HIS.
 class ResidueFlipper:
     def __init__(self, input_pdb_path, aln):
+        """
+        Przyjmuje ścieżkę do PDB i alignment.
+        Inicjalizuje środowisko Modeller.
+        """
         self.input_pdb_path = input_pdb_path
         self.aln = aln
         self.env = environ()
         self.env.io.hetatm = True
 
     def count_local_hbonds(self, residue, topology, positions, cutoff=0.35):
+        """
+        Liczy lokalne wiązania wodorowe O/N wokół reszty.
+        Wykorzystuje KDTree dla efektywności.
+        """
         atoms = list(topology.atoms())
         pos_array = np.array([[positions[i].x, positions[i].y, positions[i].z] for i in range(len(atoms))])
         elements = [atom.element.symbol for atom in atoms]
@@ -44,6 +52,9 @@ class ResidueFlipper:
         return count
 
     def flip_and_count_hbonds(self, resname, residue, structure, positions):
+        """
+        Próbuje flipować i sprawdza, czy liczba HBonds wzrosła.
+        """
         original_positions = positions[:]
         flipped = False
 
@@ -60,6 +71,9 @@ class ResidueFlipper:
         return positions[:], True
 
     def flip_GLN_single(self, residue, structure, positions):
+        """
+        Flip GLN: zamienia OE1 i NE2.
+        """
         try:
             atom_indices = {atom.name: atom.index for atom in structure.atoms() if atom.residue == residue}
             if 'OE1' not in atom_indices or 'NE2' not in atom_indices:
@@ -72,6 +86,9 @@ class ResidueFlipper:
             return False
 
     def flip_ASN_single(self, residue, structure, positions):
+        """
+        Flip ASN: zamienia OD1 i ND2.
+        """
         try:
             atom_indices = {atom.name: atom.index for atom in structure.atoms() if atom.residue == residue}
             if 'OD1' not in atom_indices or 'ND2' not in atom_indices:
@@ -84,6 +101,9 @@ class ResidueFlipper:
             return False
 
     def flip_HIS_single(self, residue, mdl, fixer, structure, positions):
+        """
+        Flip HIS: obraca pierścień o 180°.
+        """
         try:
             atom_dict = {atom.name: atom for atom in residue.atoms()}
             if not all(name in atom_dict for name in ['CG', 'CD2', 'ND1', 'CE1', 'NE2']):
@@ -111,6 +131,9 @@ class ResidueFlipper:
             return False
 
     def rotate_atoms(self, atom_positions, center, axis, angle):
+        """
+        Właściwa funkcja do obrotu pozycji atomów.
+        """
         axis = axis / np.linalg.norm(axis)
         cos_theta = np.cos(angle)
         sin_theta = np.sin(angle)
@@ -124,6 +147,12 @@ class ResidueFlipper:
         return rotated_positions
 
     def run(self):
+        """
+        Główna funkcja:
+            - wypełnia brakujące reszty,
+            - flipuje jeśli zysk HBonds,
+            - zapisuje wynik.
+        """
         fixer = PDBFixer(filename=self.input_pdb_path)
         fixer.findMissingResidues()
         fixer.findMissingAtoms()
