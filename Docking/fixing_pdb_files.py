@@ -2,6 +2,8 @@ import argparse
 import os
 import subprocess
 from shutil import copyfile
+from time import sleep
+
 import numpy as np
 from modeller import *
 from modeller import environ, model
@@ -16,6 +18,7 @@ import tempfile
 from openmm.app import PDBFile, ForceField, Simulation, Modeller
 from openmm import LangevinIntegrator, Platform
 from openmm.unit import kelvin, picoseconds, picosecond
+import time
 
 from Docking import flip_res
 
@@ -348,12 +351,14 @@ class PDBModelOptimization:
              - przeprowadza optymalizację struktury.
         """
         files = [single_file] if single_file else os.listdir(self.input_path)
+        stats = {}
 
         for filename in files:
             if not filename.endswith(".pdb"):
                 continue
 
             print(f"Przetwarzanie pliku: {filename}")
+            start = time.perf_counter()
 
             pdb_path = os.path.join(self.input_path, filename)
             pdb_name = os.path.splitext(filename)[0]
@@ -376,6 +381,10 @@ class PDBModelOptimization:
             a.starting_model = 1
             a.ending_model = 1
             a.make()
+
+            prepare_alignment_end = time.perf_counter()
+            prepare_alignment_time = prepare_alignment_end - start
+            print("prepare_alignment_time trwał: ", prepare_alignment_time)
 
             # Zapisanie pliku wyjsciowego
             model_output_file = f"{temple_name}.B99990001.pdb"
@@ -406,22 +415,53 @@ class PDBModelOptimization:
                 code = os.path.splitext(os.path.basename(final_output_file))[0]
                 self.env.io.atom_files_directory.append(os.path.dirname(final_output_file))
 
+                hydrogens_added_end = time.perf_counter()
+                hydrogens_added_time = hydrogens_added_end - prepare_alignment_end
+                print("hydrogens_added_time trwał: ", hydrogens_added_time)
                 # 2) Wczytanie uzupelnionej struktury
                 model = complete_pdb(self.env, code)
 
                 flip_res.ResidueFlipper(final_output_file, self.aln)
+
+                model_loaded_end = time.perf_counter()
+                model_loaded_time = model_loaded_end - hydrogens_added_end
+                print("model_loaded_time trwał: ", model_loaded_time)
                 # 3) Flipy odpowiednich reszt aminokwasowych
                 flipper = flip_res.ResidueFlipper(final_output_file, self.aln)
                 flipper.run()
 
+                residues_flipped_end = time.perf_counter()
+                residues_flipped_time = residues_flipped_end - model_loaded_end
+                print("residues_flipped_time trwał: ", residues_flipped_time)
                 # 4) Optymalizacje
                 self.optimize_heavy_atom(model, code)
                 self.optimize_full_structure(model, code)
 
+                optimized_end = time.perf_counter()
+                optimized_time = optimized_end - residues_flipped_end
                 # 5) Czyszczenie plików roboczych
                 self.cleanup_working_files(pdb_name)
+
+                files_cleaned_end = time.perf_counter()
+                files_cleaned_time = files_cleaned_end - optimized_end
+                print("files_cleaned_time trwał: ", files_cleaned_time)
+
+                file_stats = {
+                    "prepare_alignment_time": prepare_alignment_time,
+                    "hydrogens_added_time": hydrogens_added_time,
+                    "model_loaded_time": model_loaded_time,
+                    "residues_flipped_time": residues_flipped_time,
+                    "optimized_time": optimized_time,
+                    "files_cleaned_time": files_cleaned_time
+                }
+                print(file_stats)
+                stats[filename] = file_stats
+                end = time.perf_counter()
+                print("całość: ", end - start)
             else:
                 print(f"Błąd: nie znaleziono modelu dla {pdb_name}!")
+
+        print(stats)
 
 
 if __name__ == '__main__':
