@@ -107,7 +107,7 @@ Projekt **mgr_AM_JL** to zestaw skryptów mających na celu automatyzację przyg
 ### Pobieranie i przygotowanie plików `.pdb`
 
 1. **Przygotowanie listy PDB:**
-   - W pliku `.csv` (np. `baza_ids.csv`) w kolumnie o nazwie `ID` umieść kody PDB interesujących Cię kompleksów, każdy w osobnej linii.
+   - W pliku `.csv` (np. `baza_ids.csv`) w kolumnie o nazwie `id` umieść kody PDB interesujących Cię kompleksów, każdy w osobnej linii.
 
 2. **Pobieranie struktur:**
    - W katalogu głównym projektu uruchom skrypt `request_pdb_files.py`, który automatycznie pobierze wskazane struktury PDB.
