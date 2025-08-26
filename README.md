@@ -133,10 +133,10 @@ Projekt **mgr_AM_JL** to zestaw skryptów mających na celu automatyzację przyg
 6. **(Opcjonalnie) Zbieranie wartości Energii i RMSD:**
    - W folderze statistics znajdują się użyteczne narzędzia do wykorzystania z użyciem wiersza poleceń
    ```bash
-    python extract_docking_info.py -f example.dlg
-    python extract_docking_info.py -f 1abc.dlg 2def.dlg 3ghi.dlg
-    python extract_docking_info.py -d docking_results/
-    python extract_docking_info.py -d docking_results/ -o wyniki_dokowania.txt
+    python extract_energy_values.py -f example.dlg
+    python extract_energy_values.py -f 1abc.dlg 2def.dlg 3ghi.dlg
+    python extract_energy_values.py -d docking_results/
+    python extract_energy_values.py -d docking_results/ -o wyniki_dokowania.txt
    ```
    | Argument | | Description | Default value |
    | ------ | -- | ------------------- | -- |
