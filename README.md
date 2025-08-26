@@ -226,8 +226,7 @@ Ten skrypt automatyzuje proces uzupełniania i optymalizacji struktur białek za
 
 ## Plany rozwoju
 
-W kolejnych etapach projektu planujemy:
-- Rozwój modułów optymalizacyjnych, takich jak:
+W kolejnych etapach projektu planujemy rozwój modułów optymalizacyjnych, takich jak:
 - Opcjonalne dokowanie z wodą lub bez wody.
 - Dodanie interfejsu graficznego lub narzędzi do analizy wyników.
 
