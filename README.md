@@ -111,6 +111,7 @@ Projekt **mgr_AM_JL** to zestaw skryptów mających na celu automatyzację przyg
 2. **Pobieranie struktur:**
    - W katalogu głównym projektu uruchom skrypt `request_pdb_files.py`, który automatycznie pobierze wskazane struktury PDB.
    - Po zakończeniu działania skryptu upewnij się, że w folderze `Docking/pdb_files/` znajdują się pobrane pliki `.pdb` z bazy [RCSB](rcsb.org).
+   - Po pobraniu struktur należy uruchomić skrypt `ligand_extractor.py` z folderu `Docking/`, który wyłapie i zapisze największy znaleziony ligand w PDB do folderu `ligands/`.
 
 3. **Naprawa i standaryzacja plików:**
    - Aby przygotować pliki do dalszej analizy (np. usunąć ligandy, uzupełnić atomy wodoru, wyczyścić błędy strukturalne), w folderze `Docking/` uruchom skrypt `fixing_pdb_files.py`.
@@ -125,7 +126,7 @@ Projekt **mgr_AM_JL** to zestaw skryptów mających na celu automatyzację przyg
 
 5. **(Opcjonalnie) Analiza danych BioLiP:**
    - Po pobraniu pliku `BioLiP.txt` (np. z oficjalnej [strony](https://zhanggroup.org/BioLiP/) bazy), możesz skorzystać ze skryptu
-     `binding_energy_reader.py` w głównym katalogu do automatycznej analizy energii wiązania:
+     `binding_energy_reader.py` w głównym katalogu do automatycznej analizy energii wiązania.
      
      ```bash
      python binding_energy_reader.py -c baza_ids.csv -b BioLiP.txt -o pdb_energy/ligands_energy.txt
@@ -149,6 +150,7 @@ Projekt **mgr_AM_JL** to zestaw skryptów mających na celu automatyzację przyg
    python rmsd_hist.py -s wyniki_standard.txt -b wyniki_fixed.txt
    python correlation.py -s wyniki_standard.txt -b wyniki_fixed.txt -f wyniki_eksperymentalne_kcalmol.txt -o wynik_korelacji.png
    ```
+   
    | Argument | | Description |
    | ------ | -- | ------------------- |
    | --help | -h | Wyświetlenie pomocy |
