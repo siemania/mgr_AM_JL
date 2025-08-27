@@ -66,7 +66,7 @@ def process_docking(pdb_file, commands=None):
             run_command([
                 "python",
                 "fixing_pdb_files.py",            # Program naprawiający pliki
-                "-f", filename + ".pdb"          # Przetwarza ten plik PDB w kolejce (pobiera z pdb_files/!!!!)
+                "-f", file_name + ".pdb"          # Przetwarza ten plik PDB w kolejce (pobiera z pdb_files/!!!!)
             ])
             print(f"Zastosowano fixing do {file_name}", flush=True)
 
