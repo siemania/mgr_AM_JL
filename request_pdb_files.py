@@ -7,10 +7,13 @@ def download_pdb_files(csv_file, folder_pdb, folder_ent):
 	
     # Wczytanie pliku CSV
     df = pd.read_csv(csv_file)
+
+    # Zmiana nazw kolumn do małych liter
+    df.columns = map(str.lower, df.columns)
     
     # Sprawdzenie czy kolumna "ID" istnieje
     if "id" not in df.columns:
-        raise ValueError("Brak kolumny 'ID' w pliku CSV")
+        raise ValueError("Brak kolumny 'id' w pliku CSV")
     
     # Tworzenie folderow na pliki
     os.makedirs(folder_pdb, exist_ok=True)

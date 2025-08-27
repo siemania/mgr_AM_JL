@@ -31,7 +31,6 @@ Projekt **mgr_AM_JL** to zestaw skryptów mających na celu automatyzację przyg
   - `pdbfixer`
   - `numpy`
   - `openmm`
-  - Standardowe biblioteki: `os`, `glob`, `time`, `datetime`, `subprocess`, `sys`
 
 ## Instalacja
 
@@ -107,42 +106,60 @@ Projekt **mgr_AM_JL** to zestaw skryptów mających na celu automatyzację przyg
 ### Pobieranie i przygotowanie plików `.pdb`
 
 1. **Przygotowanie listy PDB:**
-   - W pliku `.csv` (np. `baza_ids.csv`) w kolumnie o nazwie `id` umieść kody PDB interesujących Cię kompleksów, każdy w osobnej linii.
+   - W pliku `.csv` (np. `baza_ids.csv`) w katalogu głównym projektu, w kolumnie o nazwie `id` umieść kody PDB interesujących Cię kompleksów, każdy w osobnej linii.
 
 2. **Pobieranie struktur:**
    - W katalogu głównym projektu uruchom skrypt `request_pdb_files.py`, który automatycznie pobierze wskazane struktury PDB.
-   - Po zakończeniu działania skryptu upewnij się, że w folderze `Docking/pdb_files/` znajdują się pobrane pliki `.pdb`.
+   - Po zakończeniu działania skryptu upewnij się, że w folderze `Docking/pdb_files/` znajdują się pobrane pliki `.pdb` z bazy [RCSB](rcsb.org).
+   - Po pobraniu struktur należy uruchomić skrypt `ligand_extractor.py` z folderu `Docking/`, który wyłapie i zapisze największy znaleziony ligand w PDB do folderu `ligands/`.
 
 3. **Naprawa i standaryzacja plików:**
-   - Aby przygotować pliki do dalszej analizy (np. usunąć ligandy, uzupełnić atomy wodoru, wyczyścić błędy strukturalne), uruchom skrypt `fixing_pdb_files.py`.
+   - Aby przygotować pliki do dalszej analizy (np. usunąć ligandy, uzupełnić atomy wodoru, wyczyścić błędy strukturalne), w folderze `Docking/` uruchom skrypt `fixing_pdb_files.py`.
    - Skrypt utworzy nowy folder `Docking/fixed_pdb/` zawierający zminimalizowane i gotowe do dokowania struktury.
 
-4. **Właściwe dokowanie:**
-   - Uruchom skrypt `dock.py` z poziomu terminala.
+4. **Dokowanie:**
+   - Uruchom skrypt `dock.py`.
    - Skrypt przyjmuje jako wejście:
-     - pojedynczy plik `.pdb`,
-     - folder z wieloma plikami `.pdb`, lub
+     - pliki `.pdb`,
+     - folder z wieloma plikami `.pdb` jak `pdb_files/`, lub
      - plik `.txt` zawierający czteroliterowe kody PDB (każdy w osobnej linii), np. `list_of_ids.txt`.
 
 5. **(Opcjonalnie) Analiza danych BioLiP:**
-   - Po pobraniu pliku `BioLiP.txt` (np. z oficjalnej strony bazy), możesz skorzystać ze skryptu `binding_energy_reader.py` do automatycznej analizy energii wiązania:
+   - Po pobraniu pliku `BioLiP.txt` (np. z oficjalnej [strony](https://zhanggroup.org/BioLiP/) bazy), możesz skorzystać ze skryptu
+     `binding_energy_reader.py` w głównym katalogu do automatycznej analizy energii wiązania.
+     
      ```bash
      python binding_energy_reader.py -c baza_ids.csv -b BioLiP.txt -o pdb_energy/ligands_energy.txt
      ```
 
 6. **(Opcjonalnie) Zbieranie wartości Energii i RMSD:**
-   - W folderze statistics znajdują się użyteczne narzędzia do wykorzystania z użyciem wiersza poleceń
+   - W folderze `statistics/` znajdują się użyteczne narzędzia do wykorzystania z użyciem CLI w odpowiedniej kolejności
+   - Skrypt `statystyka.py` zawiera wszystkie kroki aby otrzymać wykresy RMSD oraz korelacyjny dla **2 zbiorów** wyników dokowania (plików z rozszerzeniem .dlg),
+     należy tylko do 2 osobnych folderów pogrupować swoje pliki `.dlg`
+   
+   - `extract_experiment_energy.py` służy do zebrania tylko niezbędnych wartości energii kcal/mol po obróbce `binding_energy_reader.py` na podstawie własnych plików `.pdb`
+   - `extract_energy_values.py` służy do zebrania wartości energii kcal/mol oraz RMSD z wyników dokowań `.dlg` w formie tabeli do pojedynczego pliku `.txt`
+   - `rmsd_histogram.py` służy do wykonania histogramów RMSD na zbiorach dokowań i porównania wartości między sobą
+   - `energy_correlation.py` służy do wykonania wykresów korelacyjnych dla plików po obróbkach: `extract_energy_values.py` dla zbiorów dokowań
+     oraz `extract_experiment_energy.py` dla eksperymentalnych wartości energii kcal/mol
+
+   Przykłady użycia:
    ```bash
-    python extract_docking_info.py -f example.dlg
-    python extract_docking_info.py -f 1abc.dlg 2def.dlg 3ghi.dlg
-    python extract_docking_info.py -d docking_results/
-    python extract_docking_info.py -d docking_results/ -o wyniki_dokowania.txt
+   python extract_energy_values.py -d docking_results/ -o wyniki_dokowania.txt
+   python extract_experiment_energy.py -f ligands_energy.txt -d results_pdb -o experiment_energy.txt
+   python rmsd_hist.py -s wyniki_standard.txt -b wyniki_fixed.txt
+   python correlation.py -s wyniki_standard.txt -b wyniki_fixed.txt -f wyniki_eksperymentalne_kcalmol.txt -o wynik_korelacji.png
    ```
-   | Argument | | Description | Default value |
-   | ------ | -- | ------------------- | -- |
-   | --help | -h | Wyświetlenie pomocy | No |
-   | --file | -f | Pliki wynikowe .dlg | Test files |
-   | --directory | -d | Wybór katalogu z plikami .dlg | Test folder |
+   
+   | Argument | | Description |
+   | ------ | -- | ------------------- |
+   | --help | -h | Wyświetlenie pomocy |
+   | --file | -f | Pliki wynikowe .dlg lub .txt |
+   | --names | -n | Nazwy zbiorów dla programu `statystyka.py` |
+   | --directory | -d | Wybór katalogu z plikami .dlg lub .pdb |
+   | --standard | -s | Plik .txt z wynikami po obróbce |
+   | --fixed | -b | Plik .txt z wynikami po obróbce |
+   | --labels | -l | Nazwy zbiorów dla dokowań |
 
 > **Uwaga:** Upewnij się, że wszystkie ścieżki do katalogów i plików są poprawnie ustawione oraz że wszystkie wymagane zależności zostały wcześniej zainstalowane.
 
@@ -163,6 +180,7 @@ mgr_AM_JL/
     ├── pdbqt_files/             # Wynikowe pliki PDBQT (nie commitowane)
     ├── grid_dock_files/         # Pliki parametrów siatki i logi AutoGrid/AutoDock (nie commitowane)
     ├── output_files/            # Wynikowe kompleksy receptor-ligand (nie commitowane)
+    ├── statistics/              # Folder z pomocnymi skryptami do statystyki automatycznej lub manualnej
     └── *.py                     # Mnóstwo innych skryptów (AutoDockTools oraz własnych)
 ```
 
@@ -204,19 +222,14 @@ Ten skrypt automatyzuje proces uzupełniania i optymalizacji struktur białek za
   + `optimize_full_structure` - pełna optymalizacja struktury (gradienty + dynamika molekularna)
   + `fill_missing_residues_and_atoms` - główna metoda przetwarzająca wszystkie pliki PDB z folderu wejściowego
 
-
-
 ## Argumenty do wiersza poleceń
 
-1. **Skonfiguruj środowisko** (utwórz `.env`, zainstaluj zależności).
-2. **Uruchom główny skrypt:**
-   ```bash
-   python dock.py [opt. arguments]
-   ```
-3. **Monitoruj postęp:**  
-   Pasek postępu pojawi się w terminalu, a komunikaty zostaną wyświetlone na bieżąco.
-
-## Dodatkowe argumenty
+  ```bash
+  python dock.py [opt. arguments]
+  python dock.py -f 1akw.pdb 1hgw.pdb
+  python dock.py -d pdb_files/ -s "receptor" "ligand" "grid" "autogrid" "dock"
+  ```
+   
 | Argument | | Description | Default value |
 | ------ | -- | ------------------- | -- |
 | --help | -h | Wyświetlenie pomocy | No |

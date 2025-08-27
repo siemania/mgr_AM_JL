@@ -1,111 +1,79 @@
 ﻿# -*- coding: utf-8 -*-
+import argparse
+import subprocess
+from pathlib import Path
 import os
-import sys
-import getopt
-import matplotlib
-matplotlib.use('Agg')  # Use a non-interactive backend
-import matplotlib.pyplot as pl
-from AutoDockTools.Docking import Docking
 
-# Ścieżka do folderu z plikami wynikowymi
-# RESULTS_DIR = "/home/mateusz/IdeaProjects/mgr_AM_JL/Docking/TEST_SKRYPTU/grid_dock_files"
-RESULTS_DIR = "presentation_pdb/out"
+def main():
+    """
+    Skrypt łączący wszystkie inne skrypty wykonujące analizę statystyczną:
+    1a. extract_energy_values.py -> wyciąga dane z plików .dlg i tworzy pliki .txt
+    1b. !!! Wcześniej należy przerobić plik z bazy BioLip.txt przez binding_energy_reader.py
+        !!! oraz extract_experiment_energy.py
+    2. rmsd_histogram.py -> tworzy histogram RMSD
+    3. energy_correlation.py -> tworzy wykres korelacji energii
 
-def parse_dlg_file(file_path):
-    """Parsuje plik .dlg, aby znaleźć wartości RMSD i energii (Delta G)."""
-    docking = Docking()
-    docking.readDlg(file_path)
-    id_pdb = os.path.basename(file_path).split(".")[0]  # ID = nazwa pliku bez rozszerzenia
+    Program przyjmuje 2 foldery oraz nazywa je odpowiednio według uznania
 
-    energy_values = []
-    rmsd_values = []
+    Usage:
+    python statystyka.py -f ligands_exp.txt -d standard/ fixed/ -n "Zbiór_1" "Zbiór_2"
+    """
 
-    for cluster in docking.clusterer_dict.values():
-        for docking_instance in cluster.clustering_dict.values():
-            for docking_pose in docking_instance.data:
-                for conformation in docking_pose.data:
-                    rmsd_values.append(conformation.refRMS)
+    # Folder statystyka
+    statistics_folder = os.path.dirname(os.path.abspath(Path(__file__)))
 
-                    energy_values.append(conformation.binding_energy)
+    # ArgParser
+    parser = argparse.ArgumentParser(description="Pipeline do analizy wyników dokowań")
+    parser.add_argument("-d", "--directories", nargs="+", required=True, help="Podaj foldery z plikami .dlg (-d standard fixed)")
+    parser.add_argument("-n", "--names", nargs="+", required=True, help="Nazwy odpowiadające folderom (-n Standard Fixed)")
+    parser.add_argument("-f", "--file", required=True, help="Plik z wartościami eksperymentalnymi (-f energies_exp.txt)")
+    args = parser.parse_args()
 
-    return id_pdb, energy_values, rmsd_values
+    if len(args.directories) != len(args.names):
+        raise ValueError("Liczba nazw (-n) musi odpowiadać liczbie folderów (-d)")
 
+    generated_txt_files = []
+    group_name = "_".join(args.names)
 
-def extract_best_values():
-    """Przetwarza pliki .dlg i zwraca słownik {id_pdb: najlepsza wartość} dla wybranego trybu."""
-    energy_results = {}
-    rmsd_results = {}
+    # 1. Uruchom extract_energy_values.py dla każdego folderu
+    for folder, name in zip(args.directories, args.names):
+        if not Path(folder).exists():
+            raise NameError("Brak folderu")
+        out_file = f"wyniki_{name}.txt"
+        print(f"[INFO] Wyciągam wartości energii z folderu {folder} → {out_file}")
+        subprocess.run([
+            "python", os.path.join(statistics_folder, "extract_energy_values.py"),
+            "-d", folder, "-o", out_file
+        ], check=True)
+        generated_txt_files.append(out_file)
 
-    for file in os.listdir(RESULTS_DIR):
-        if file.endswith(".dlg"):
-            file_path = os.path.join(RESULTS_DIR, file)
-            id_pdb, energy_values, rmsd_values = parse_dlg_file(file_path)
+    # 2. Uruchom rmsd_histogram.py na wygenerowanych plikach
+    if len(generated_txt_files) >= 2:
+        print(f"[INFO] Tworzę histogram RMSD dla {generated_txt_files}")
+        subprocess.run([
+            "python", os.path.join(statistics_folder, "rmsd_histogram.py"),
+            "-s", generated_txt_files[0],
+            "-b", generated_txt_files[1],
+            "-l", args.names[0], args.names[1],
+            "-o", f"histogram_{group_name}.png"
+        ], check=True)
 
-            # Wyznaczanie najniższej energii
-            if energy_values:
-                energy_results[id_pdb] = min(energy_values)
+    # 3. Uruchom energy_correlation.py na wygenerowanych plikach + eksperymentalny
+    if len(generated_txt_files) >= 2:
+        print(f"[INFO] Tworzę wykres korelacji energii")
+        subprocess.run([
+            "python", os.path.join(statistics_folder, "energy_correlation.py"),
+            "-s", generated_txt_files[0],
+            "-b", generated_txt_files[1],
+            "-f", args.file,
+            "-l", args.names[0], args.names[1],
+            "-o", f"correlation_{group_name}.png"
+        ], check=True)
 
-            # Wyznaczanie najniższej wartości RMSD
-            if rmsd_values:
-                rmsd_results[id_pdb] = min(rmsd_values)
+    print("[DONE] Analiza zakończona!")
 
-    return energy_results, rmsd_results
+if __name__ == '__main__':
+    main()
 
-
-def plot_results(energy_data, rmsd_data, exp_energy):
-    """Tworzy i zapisuje wykresy Delta G i histogram RMS."""
-    # output_dir = "/home/mateusz/IdeaProjects/mgr_AM_JL/Docking/plots"
-    output_dir = "plots"
-    if not os.path.exists(output_dir):
-        os.makedirs(output_dir)
-
-    # Tworzenie wykresu Delta G
-    if energy_data:
-        pl.figure()
-        pl.scatter(energy_data.values(), exp_energy)
-        pl.xlabel("Wartosci delta G z dokowania")
-        pl.ylabel("Eksperymentalne wartosci delta G")
-        pl.title("Porownanie wartosci Delta G wzgledem wartosci ekperymentalnych")
-        pl.savefig(os.path.join(output_dir, "delta_g_plot.jpg"))
-        pl.close()
-
-    # Tworzenie histogramu wartości RMSD
-    if rmsd_data:
-        pl.figure()
-        pl.hist(list(rmsd_data.values()), bins=10, edgecolor='black')
-        pl.xlabel("RMSD")
-        pl.ylabel("Liczba wynikow")
-        pl.title("Histogram RMSD wzgledem liganda eksperymentalnego")
-        pl.savefig(os.path.join(output_dir, "rmsd_histogram.jpg"))
-        pl.close()
-
-
-def main(argv):
-    """Obsluga argumentów wywołania skryptu."""
-
-    exp_energy = [-7.5, 5, 6, 67, 345, 211]  # Przykładowa wartość eksperymentalna Delta G
-
-
-    try:
-        opts, _ = getopt.getopt(argv, "e:", ["exp_energy="])
-    except getopt.GetoptError:
-        print("Użycie: extract_energy.py -e <delta_g_eksperymentalne>")
-        sys.exit(2)
-
-    for opt, arg in opts:
-        if opt in ("-e", "--exp_energy"):
-            try:
-                exp_energy = float(arg)
-            except ValueError:
-                print("Niepoprawna wartość eksperymentalnej Delta G. Wprowadź liczbę.")
-                sys.exit(2)
-
-    energy_results, rmsd_results = extract_best_values()
-    print("Wyniki energii:", energy_results)
-    print ("Wyniki RMSD:", rmsd_results)
-
-    plots = plot_results(energy_results, rmsd_results, exp_energy)
-    print (plots)
-
-if __name__ == "__main__":
-    main(sys.argv[1:])
+# Usage
+# python statystyka.py -f ligands_exp.txt -d standard/ fixed/ -n "Standard" "Fixed"

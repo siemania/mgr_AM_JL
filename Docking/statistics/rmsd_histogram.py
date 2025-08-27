@@ -2,39 +2,32 @@
 import numpy as np
 import matplotlib.pyplot as plt
 import argparse
-import sys
 
 def extract_rmsd(filepath):
-    with open(filepath, 'r') as f:
-        lines = f.readlines()
-
-    idx = next(i for i, l in enumerate(lines) if l.startswith("#_Better"))
-
-    def parse_block(block):
-        """
-        Pozwala na podstawie # rozdzielić kolumny
-        """
-        rmsds = []
-        for line in block:
-            if line.strip() and not line.startswith("#"):
-                parts = line.split()
+    """Wczytuje trzecią kolumnę RMSD z pliku TSV"""
+    rmsds = []
+    with open(filepath, 'r', encoding="utf-8") as f:
+        header = f.readline()  # pomiń nagłówek
+        for line in f:
+            parts = line.strip().split("\t")
+            if len(parts) >= 3:
                 try:
-                    rmsd = float(parts[2])  # kolumna RMSD
+                    rmsd = float(parts[2])
                     rmsds.append(rmsd)
-                except (IndexError, ValueError):
+                except ValueError:
                     continue
-        return rmsds
+    return rmsds
 
-    rmsd1 = parse_block(lines[1:idx])
-    rmsd2 = parse_block(lines[idx+2:])
-    return rmsd1, rmsd2
 
-def plot_rmsd_histogram(rmsd1, rmsd2):
+# Standardowe opcje wyboru zapewnia argparse, ale tylko dla tego pliku rozruchowego!
+def plot_rmsd_histogram(rmsd1, rmsd2, labels=("Standard", "Fixed"), output="histogram_rmsd.png"):
     plt.figure(figsize=(6, 6))
-    bins = np.linspace(0, max(max(rmsd1), max(rmsd2)) + 1, 8)
+    bins = np.linspace(0, max(max(rmsd1), max(rmsd2)) + 1, num=12) # num - bins number /4
 
-    plt.hist(rmsd1, bins=bins, alpha=0.6, label='Standard', color='skyblue', edgecolor='black')
-    plt.hist(rmsd2, bins=bins, alpha=0.6, label='Better', color='lightgreen', edgecolor='black')
+    plt.hist(rmsd1, bins=bins, alpha=0.6, label=labels[0],
+             color='skyblue', edgecolor='black')
+    plt.hist(rmsd2, bins=bins, alpha=0.6, label=labels[1],
+             color='lightgreen', edgecolor='black')
 
     plt.xlabel('RMSD GROMACS [Å]')
     plt.ylabel('Liczba struktur')
@@ -42,23 +35,28 @@ def plot_rmsd_histogram(rmsd1, rmsd2):
     plt.legend()
     plt.grid(True, linestyle=':')
     plt.tight_layout()
-    plt.savefig("histogram_rmsd.png", dpi=600)
+    plt.savefig(output, dpi=600)
+    print(f"Wykres RMSD zapisany do: {output}")
     plt.show()
-
-def main():
-    # Argumenty systemów Unix
-    parser = argparse.ArgumentParser(description="Utwórz histogram na podstawie pliku.")
-    parser.add_argument("-f", "--file", help="Podaj ścieżki do plików .txt z RMSD", type=str, nargs='*',
-                        default=None)
-    args = parser.parse_args()
-    
-    if args.file:
-        filepath = sys.argv[1:]
-    else:
-        filepath = "energies_after_docking.txt"
-    rmsd1, rmsd2 = extract_rmsd(filepath)
-    plot_rmsd_histogram(rmsd1, rmsd2)
 
 
 if __name__ == '__main__':
-    main()
+    parser = argparse.ArgumentParser(description="Utwórz histogram na podstawie dwóch plików TXT z RMSD.")
+    parser.add_argument("-s", "--standard", required=True, help="Plik TXT z wynikami standard")
+    parser.add_argument("-b", "--fixed", required=True, help="Plik TXT z wynikami fixed")
+    parser.add_argument("-l", "--labels", required=False, help="Nazwy etykiet", nargs=2, default=("Standard", "Fixed"))
+    parser.add_argument("-o", "--output", required=False, help="Plik wynikowy .png", default="histogram_rmsd.png", type=str)
+    args = parser.parse_args()
+
+    # Suffix
+    if not args.output.endswith(".png"):
+        args.output += ".png"
+
+    rmsd_standard = extract_rmsd(args.standard)
+    rmsd_fixed = extract_rmsd(args.fixed)
+
+    plot_rmsd_histogram(rmsd_standard, rmsd_fixed,
+                        labels=args.labels, output=args.output)
+
+# Usage:
+# python rmsd_hist.py -s wyniki_standard.txt -b wyniki_fixed.txt

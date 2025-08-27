@@ -2,95 +2,122 @@
 import numpy as np
 import matplotlib.pyplot as plt
 from scipy.stats import linregress
+from math import atan, degrees
+import argparse
 
-def parse_sections(filepath):
-    """
-    Wczytuje dwie sekcje danych z pliku txt.
-    Zwraca (names1, x1, y1), (names2, x2, y2), gdzie:
-      names = kolumna 1 (nazwa liganda)
-      x = kolumna 7 (eksperymentalna energia),
-      y = kolumna 4 (energia z dokowania).
-    """
-    with open(filepath, 'r') as f:
-        lines = f.readlines()
 
-    idx = next(i for i, l in enumerate(lines) if l.startswith("#_Better"))
-
-    def parse_block(block):
-        names, xs, ys = [], [], []
-        for line in block:
-            if line.strip() and not line.startswith("#"):
-                parts = line.split()
+def load_energy_file(filepath):
+    """Wczytuje {ID: DeltaG} z pliku txt (2. kolumna)."""
+    data = {}
+    with open(filepath, "r", encoding="utf-8") as f:
+        header = f.readline()  # pomiń nagłówek
+        for line in f:
+            parts = line.strip().split("\t")
+            if len(parts) >= 2:
                 try:
-                    name = parts[0]
-                    y = float(parts[3])
-                    x = float(parts[6].replace('|', ''))
-                    names.append(name)
-                    xs.append(x)
-                    ys.append(y)
-                except (IndexError, ValueError):
+                    data[parts[0]] = float(parts[1])
+                except ValueError:
                     continue
-        return names, np.array(xs), np.array(ys)
+    return data
 
-    names1, y1, x1 = parse_block(lines[1:idx])
-    names2, y2, x2 = parse_block(lines[idx+2:])
-    print((x1, y1), (x2, y2))
-    return (names1, x1, y1), (names2, x2, y2)
+
+def prepare_data(exp_data, dock_data):
+    """Dopasuj wartości (X = docking, Y = experiment) tylko dla wspólnych ID."""
+    names, xs, ys = [], [], []
+    for lig, dock_val in dock_data.items():
+        if lig in exp_data:
+            names.append(lig)
+            xs.append(dock_val)
+            ys.append(exp_data[lig])
+    return names, np.array(xs), np.array(ys)
+
 
 def main():
-    # if len(sys.argv) != 2:
-    #     print("Użycie: python plot_correlation.py <ścieżka_do_pliku_txt>")
-    #     sys.exit(1)
+    parser = argparse.ArgumentParser(
+        description="Porównanie energii wiązania: dokowanie vs dane eksperymentalne"
+    )
+    parser.add_argument("-s", "--standard", required=True, help="Plik TXT z wynikami (np. standard)")
+    parser.add_argument("-b", "--fixed", required=True, help="Plik TXT z wynikami (np. fixed)")
+    parser.add_argument("-f", "--experiment", required=True, help="Plik TXT z wynikami eksperymentalnymi")
+    parser.add_argument("-l", "--labels", required=False, help="Nazwy etykiet", nargs=2, default=("Standard", "Fixed"))
+    parser.add_argument("-o", "--output", help="Nazwa pliku wyjściowego (PNG)", default="correlation_plot.png")
+    args = parser.parse_args()
 
-    # filepath = sys.argv[1]
-    filepath = "energies_after_docking.txt"
-    (names1, x1, y1), (names2, x2, y2) = parse_sections(filepath)
+    if not args.output.endswith(".png"):
+        args.output += ".png"
 
-    # regresje
-    slope1, intercept1, r1, _, _ = linregress(x1, y1)
-    slope2, intercept2, r2, _, _ = linregress(x2, y2)
+    # Wczytaj dane
+    exp_data = load_energy_file(args.experiment)
+    std_data = load_energy_file(args.standard)
+    fix_data = load_energy_file(args.fixed)
 
-    # zakresy osi
-    all_x = np.concatenate([x1, x2])
-    all_y = np.concatenate([y1, y2])
+    # Przygotuj wartości (nazwy, punkty itp.)
+    names_std, x_std, y_std = prepare_data(exp_data, std_data)
+    names_fix, x_fix, y_fix = prepare_data(exp_data, fix_data)
+
+    # Regresje
+    slope_std, intercept_std, r_std, _, _ = linregress(x_std, y_std)
+    slope_fix, intercept_fix, r_fix, _, _ = linregress(x_fix, y_fix)
+
+    # Obliczenie odchylenia kąta od 45°
+    angle_std = degrees(atan(slope_std))
+    angle_fix = degrees(atan(slope_fix))
+    delta_std = abs(angle_std - 45)
+    delta_fix = abs(angle_fix - 45)
+
+    # Zakresy osi
+    all_x = np.concatenate([x_std, x_fix])
+    all_y = np.concatenate([y_std, y_fix])
     min_val = min(all_x.min(), all_y.min()) - 1
     max_val = max(all_x.max(), all_y.max()) + 1
 
-    # rysowanie
+    # Rysowanie (s - size)
     plt.figure(figsize=(10, 6))
-    plt.scatter(x1, y1, label='Standard', marker='x')
-    plt.plot(x1, slope1 * x1 + intercept1, 'b--',
-             label=f'Regresja Standard (R²={r1**2:.2f})')
 
-    plt.scatter(x2, y2, label='Better', marker='o')
-    plt.plot(x2, slope2 * x2 + intercept2, 'g--',
-             label=f'Regresja Better (R²={r2**2:.2f})')
+    plt.scatter(x_std, y_std, label=args.labels[0], marker="x", s=4, color="blue")
+    plt.plot(x_std,
+             slope_std * x_std + intercept_std,
+             "b--",
+             label=f"Regresja {args.labels[0]} (R²={r_std**2:.2f}, Δθ={delta_std:.2f}°)")
 
-    # podpisy punktów
-    for name, x, y in zip(names1, x1, y1):
-        plt.text(x + 0.3, y - 0.2, name, fontsize=8, color='blue')
-    for name, x, y in zip(names2, x2, y2):
-        plt.text(x - 1, y + 0.3, name, fontsize=8, color='green')
+    plt.scatter(x_fix, y_fix, label=args.labels[1], marker="o", s=4, color="green")
+    plt.plot(x_fix,
+             slope_fix * x_fix + intercept_fix,
+             "g--",
+             label=f"Regresja {args.labels[1]} (R²={r_fix**2:.2f}, Δθ={delta_fix:.2f}°)")
 
-    plt.title('Porównanie energii wiązania: dokowanie vs dane eksperymentalne')
-    plt.ylabel('Energia eksperymentalna [kcal/mol]')
-    plt.xlabel('Energia z dokowania [kcal/mol]')
-    plt.legend(loc='best')
-    plt.grid(True, which='both', linestyle=':', linewidth=0.5)
+    # Podpisy punktów
+    # for name, x, y in zip(names_std, x_std, y_std):
+    #     plt.text(x + 0.3, y - 0.2, name, fontsize=8, color="blue")
+    for name, x, y in zip(names_fix, x_fix, y_fix):
+        plt.text(x - 0.4, y + 0.2, name, fontsize=4, color="purple")
 
-    # ustawienie tych samych zakresów i kroków osi
+    # Podpis wykresu
+    plt.title("Porównanie energii wiązania: dokowanie vs dane eksperymentalne")
+    plt.ylabel("Energia eksperymentalna [kcal/mol]", fontsize=12)
+    plt.xlabel("Energia z dokowania [kcal/mol]", fontsize=12)
+    plt.legend(loc="best")
+    plt.grid(True, linestyle=":", linewidth=0.5)
+
+    # Parametry wykresu
     plt.xlim(min_val, max_val)
     plt.ylim(min_val, max_val)
     plt.xticks(np.arange(np.floor(min_val), np.ceil(max_val) + 1, 1))
     plt.yticks(np.arange(np.floor(min_val), np.ceil(max_val) + 1, 1))
+    plt.tick_params(axis='both', which='major', labelsize=8) # Wielkość wartości osi
 
-    plt.gca().set_aspect('equal', adjustable='box')
+    # Tworzy kwadratowy wykres
+    plt.gca().set_aspect("equal", adjustable="box")
     plt.tight_layout()
 
-    out_png = filepath.rsplit('.',1)[0] + '_correlation.png'
-    plt.savefig(out_png, dpi=600)
-    print(f"Wykres zapisany do: {out_png}")
+    # Zapisywanie wykresu
+    plt.savefig(args.output, dpi=600)
+    print(f"Wykres zapisany do: {args.output}")
     plt.show()
+
 
 if __name__ == "__main__":
     main()
+
+# Usage:
+# python correlation.py -s wyniki_standard.txt -b wyniki_fixed.txt -f wyniki_eksperymentalne_kcalmol.txt -o wynik_korelacji.png

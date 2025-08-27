@@ -127,6 +127,6 @@ def modify_fld_overwrite(input_fld, quiet=False):
 
 if __name__ == '__main__':
     # Przykładowe użycie
-    # modify_gpf("grid_dock_files/1hsg_grid.gpf", "output.gpf")
+    # modify_gdpf("grid_dock_files/1hsg_grid.gpf", "output.gpf")
     modify_gdpf_overwrite("grid_dock_files/1hsg_grid.gpf")
     # modify_fld_overwrite("map_grid_files/example.fld")

@@ -1,4 +1,5 @@
 from pathlib import Path
+from sys import exit
 import argparse
 
 # Funkcja do wyciągania RMSD i energii z najlepiej zadokowanej konformacji pliku .dlg
@@ -19,6 +20,10 @@ def extract_best_conformation_info(dlg_file_path) -> tuple:
 
 
 if __name__ == "__main__":
+    """
+    Wyciąga wszystkie wartości energetyczne oraz RMSD 
+    dla najlepiej zadokowanej konformacji na podstawie plików .dlg
+    """
     
     parser = argparse.ArgumentParser(description="Extract minimum energy and RMSD from .dlg docking files.")
     parser.add_argument("-f", "--file", help="One or more .dlg files to process", type=str, nargs='*')
@@ -38,7 +43,7 @@ if __name__ == "__main__":
         dlg_files.extend(dlg_folder.glob("*.dlg"))
     else:
         # Domyślny folder, jeśli nie podano niczego
-        dlg_folder = Path("better_minimize")
+        dlg_folder = Path("energy_rmsd_from_dlg")
         dlg_files.extend(dlg_folder.glob("*.dlg"))
 
     # Popraw nazwę pliku wyjściowego jeśli trzeba
@@ -48,7 +53,7 @@ if __name__ == "__main__":
         output_path = output_path.with_suffix(".txt")
 
     # Lista wyników
-    results = ["PDB\tENERGY\tRMSD"]
+    results = ["ID\tDeltaG (kcal/mol)\tRMSD"]
 
     for dlg_file in dlg_files:
         try:
@@ -65,7 +70,7 @@ if __name__ == "__main__":
     print(f"\nData saved in: {output_path.resolve()}")
     
     # Użycie:
-    # python extract_docking_info.py -f example.dlg
-    # python extract_docking_info.py -f 1abc.dlg 2def.dlg 3ghi.dlg
-    # python extract_docking_info.py -d docking_results/
-    # python extract_docking_info.py -d docking_results/ -o wyniki_dokowania.txt
+    # python extract_energy_values.py -f example.dlg
+    # python extract_energy_values.py -f 1abc.dlg 2def.dlg 3ghi.dlg
+    # python extract_energy_values.py -d docking_results/
+    # python extract_energy_values.py -d docking_results/ -o wyniki_dokowania.txt

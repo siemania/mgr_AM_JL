@@ -61,6 +61,15 @@ def process_docking(pdb_file, commands=None):
     # =============================================================================
     #                       start - Właściwy program
     # =============================================================================    
+        if not commands or 'fixing' in commands:
+            # Naprawianie plików PDB według autorskiej receptury
+            run_command([
+                "python",
+                "fixing_pdb_files.py",            # Program naprawiający pliki
+                "-f", filename + ".pdb"          # Przetwarza ten plik PDB w kolejce (pobiera z pdb_files/!!!!)
+            ])
+            print(f"Zastosowano fixing do {file_name}", flush=True)
+
         if not commands or 'receptor' in commands:
             # Przygotowanie receptorów
             run_command([
@@ -182,7 +191,7 @@ if __name__ == '__main__':
                         default=None)
     parser.add_argument("-s", "--select_command",
                         help="Wybierz argumenty do wykonania",
-                        type=str, nargs="+", choices=['receptor', 'ligand', 'grid', 'autogrid',
+                        type=str, nargs="+", choices=['fixing', 'receptor', 'ligand', 'grid', 'autogrid',
                                                       'dock', 'autodock', 'autodocklegacy','complex'])
     args = parser.parse_args()
 
@@ -199,7 +208,15 @@ if __name__ == '__main__':
     else:
         pdb_directory = glob("pdb_files/*.pdb")
 
-            # Ustawienie liczby równoległych procesów
+    # Przykładowe użycie:
+    # python dock.py -f id_list.txt                         (pobiera pliki z pdb_files/ biorąc ID z każdej linii w
+    #                                                        pierwszej kolumnie w pliku tekstowym)
+    # python dock.py -f 1akt 1r04
+    # python dock.py -d directory_of_pdb_files
+    # python dock.py -d pdb_files -s "fixing" "autodock"
+    # python dock.py                                        (default: pdb_files/ and all commands)
+
+    # Ustawienie liczby równoległych procesów
     max_workers = 4
     
     # Tworzenie katalogów, jeśli nie istnieją

@@ -1,3 +1,6 @@
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
+
 import argparse
 import os
 import subprocess
@@ -20,7 +23,7 @@ from openmm import LangevinIntegrator, Platform
 from openmm.unit import kelvin, picoseconds, picosecond
 import time
 
-from Docking import flip_res
+import flip_res
 
 
 
@@ -70,6 +73,20 @@ class PDBModelOptimization:
                     print(f"Usunięto pliki robocze: {pdb_code}")
                 except Exception as e:
                     print(f"Error przy usuwaniu {file}: {e}")
+
+
+    def rename_flipped_files(self, pdb_name):
+        """
+        Zmienia nazwy plików z _flipped_openmm.pdb na .pdb
+        """
+        flipped_file = os.path.join(self.output_path, f"{pdb_name}_flipped_openmm.pdb")
+        target_file = os.path.join(self.output_path, f"{pdb_name}.pdb")
+
+        if os.path.exists(flipped_file):
+            if os.path.exists(target_file):
+                os.remove(target_file)
+            os.rename(flipped_file, target_file)
+            print(f"Zmieniono nazwę: {flipped_file} -> {target_file}")
 
 
     def prepare_alignment(self, env, pdb_code, temple_code):
@@ -122,6 +139,7 @@ class PDBModelOptimization:
         except Exception as e:
             print(f"Błąd OpenBabel Python API: {e}")
 
+
     def remove_duplicate_atoms(self, pdb_path):
         """
         Filtruje plik PDB z powielonych atomów.
@@ -148,6 +166,7 @@ class PDBModelOptimization:
 
         print(f"Usunięto duplikaty atomów w: {pdb_path}")
 
+
     def rotate_atoms(self, positions, center, axis, angle_rad):
         """
         Obraca listę wektorów wokół zadanej osi i środka.
@@ -173,7 +192,6 @@ class PDBModelOptimization:
         return [unit.Quantity(r, unit.nanometer) for r in rotated]
 
 
-
     def flip_asn(self, pdb_path):
         """
         Flip ASN: zamienia pozycje OD1 i ND2.
@@ -186,6 +204,7 @@ class PDBModelOptimization:
                     self.swap_atom_coords(atom_dict['OD1'], atom_dict['ND2'])
         model.write(file=pdb_path)
 
+
     def flip_gln(self, pdb_path):
         """
         Flip GLN: zamienia pozycje OE1 i NE2.
@@ -197,6 +216,7 @@ class PDBModelOptimization:
                 if 'OE1' in atom_dict and 'NE2' in atom_dict:
                     self.swap_atom_coords(atom_dict['OE1'], atom_dict['NE2'])
         model.write(file=pdb_path)
+
 
     def flip_HIS(self, input_file):
         """
@@ -248,6 +268,7 @@ class PDBModelOptimization:
             print(f"Błąd przy obracaniu HIS: {e}")
             return input_file
 
+
     def flip_HIS_single(self, pdb_path, target_resnum):
         """
         Flip tylko jednej reszty HIS o podanym numerze.
@@ -288,6 +309,7 @@ class PDBModelOptimization:
         except Exception as e:
             print(f"Błąd w flip_HIS_single dla {target_resnum}: {e}")
 
+
     def swap_atom_coords(self, atom1, atom2):
         """
         Zamienia wspolrzedne (x, y, z) dwoch podanych atomow.
@@ -295,7 +317,6 @@ class PDBModelOptimization:
         atom1.x, atom2.x = atom2.x, atom1.x
         atom1.y, atom2.y = atom2.y, atom1.y
         atom1.z, atom2.z = atom2.z, atom1.z
-
 
 
     def optimize_heavy_atom(self, model, code):
@@ -439,9 +460,14 @@ class PDBModelOptimization:
 
                 optimized_end = time.perf_counter()
                 optimized_time = optimized_end - residues_flipped_end
-                # 5) Czyszczenie plików roboczych
+
+                # 5) Zmiana nazwy plików na poprawne (podmienia pliki)
+                self.rename_flipped_files(pdb_name)
+
+                # 6) Czyszczenie plików roboczych
                 self.cleanup_working_files(pdb_name)
 
+                # 7) Licznik
                 files_cleaned_end = time.perf_counter()
                 files_cleaned_time = files_cleaned_end - optimized_end
                 print("files_cleaned_time trwał: ", files_cleaned_time)
@@ -464,10 +490,11 @@ class PDBModelOptimization:
         print(stats)
 
 
+
 if __name__ == '__main__':
     # Parser argumentów: pozwala uruchomić skrypt dla 1 pliku lub wszystkich.
     parser = argparse.ArgumentParser(description="Naprawianie struktury PDB (reszty, wodory, flipy)")
-    parser.add_argument("--file", type=str, help="Nazwa pliku .pdb do przetworzenia (opcjonalnie jeden)")
+    parser.add_argument("-f", "--file", type=str, help="Nazwa pliku .pdb do przetworzenia")
     args = parser.parse_args()
 
     project_root = os.getcwd()
