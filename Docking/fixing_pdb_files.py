@@ -20,7 +20,7 @@ from pdbfixer import PDBFixer
 import tempfile
 from openmm.app import PDBFile, ForceField, Simulation, Modeller
 from openmm import LangevinIntegrator, Platform
-from openmm.unit import kelvin, picoseconds, picosecond
+from openmm.unit import kelvin
 import time
 
 import flip_res
@@ -165,159 +165,6 @@ class PDBModelOptimization:
             f.writelines(cleaned_lines)
 
         print(f"Usunięto duplikaty atomów w: {pdb_path}")
-
-
-    def rotate_atoms(self, positions, center, axis, angle_rad):
-        """
-        Obraca listę wektorów wokół zadanej osi i środka.
-        Przydatne do obracania pierścieni HIS.
-        """
-        axis = np.array(axis)
-        center = np.array(center)
-
-        # Normalizacja osi
-        axis = axis / np.linalg.norm(axis)
-
-        rotated = []
-
-        for pos in positions:
-            rel = pos - center
-            rot = (
-                    np.cos(angle_rad) * rel +
-                    np.sin(angle_rad) * np.cross(axis, rel) +
-                    (1 - np.cos(angle_rad)) * np.dot(axis, rel) * axis
-            )
-            rotated.append(rot + center)
-
-        return [unit.Quantity(r, unit.nanometer) for r in rotated]
-
-
-    def flip_asn(self, pdb_path):
-        """
-        Flip ASN: zamienia pozycje OD1 i ND2.
-        """
-        model = complete_pdb(self.env, os.path.splitext(os.path.basename(pdb_path))[0])
-        for res in model.residues:
-            if res.name.strip() == 'ASN':
-                atom_dict = {a.name.strip(): a for a in res.atoms}
-                if 'OD1' in atom_dict and 'ND2' in atom_dict:
-                    self.swap_atom_coords(atom_dict['OD1'], atom_dict['ND2'])
-        model.write(file=pdb_path)
-
-
-    def flip_gln(self, pdb_path):
-        """
-        Flip GLN: zamienia pozycje OE1 i NE2.
-        """
-        model = complete_pdb(self.env, os.path.splitext(os.path.basename(pdb_path))[0])
-        for res in model.residues:
-            if res.name.strip() == 'GLN':
-                atom_dict = {a.name.strip(): a for a in res.atoms}
-                if 'OE1' in atom_dict and 'NE2' in atom_dict:
-                    self.swap_atom_coords(atom_dict['OE1'], atom_dict['NE2'])
-        model.write(file=pdb_path)
-
-
-    def flip_HIS(self, input_file):
-        """
-        Flip HIS: obraca pierścień imidazolowy o 180°.
-        """
-        try:
-            fixer = PDBFixer(filename=input_file)
-            structure = fixer.topology
-            positions = fixer.positions
-
-            changed = False
-            for residue in structure.residues():
-                if residue.name not in ('HIS', 'HID', 'HIE', 'HIP'):
-                    continue
-
-                atom_dict = {atom.name: atom for atom in residue.atoms()}
-                required_atoms = ['CG', 'CD2', 'ND1', 'CE1', 'NE2']
-
-                if not all(name in atom_dict for name in required_atoms):
-                    continue  # pomiń niekompletne reszty
-
-                cg_idx = list(structure.atoms()).index(atom_dict['CG'])
-                cd2_idx = list(structure.atoms()).index(atom_dict['CD2'])
-
-                axis = positions[cd2_idx].value_in_unit(unit.nanometer) - positions[cg_idx].value_in_unit(
-                    unit.nanometer)
-                center = positions[cg_idx].value_in_unit(unit.nanometer)
-
-                ring_atom_indices = [list(structure.atoms()).index(atom_dict[name]) for name in
-                                     ['ND1', 'CD2', 'CE1', 'NE2']]
-                ring_positions = [positions[i].value_in_unit(unit.nanometer) for i in ring_atom_indices]
-
-
-                new_positions = self.rotate_atoms(ring_positions, center, axis, np.pi)
-
-                for i, idx in enumerate(ring_atom_indices):
-                    positions[idx] = new_positions[i]
-
-                changed = True
-
-            if changed:
-                with open(input_file, 'w') as f:
-                    PDBFile.writeFile(structure, positions, f)
-
-                return input_file
-            else:
-                return input_file #brak zmian, zwraca orginał
-        except Exception as e:
-            print(f"Błąd przy obracaniu HIS: {e}")
-            return input_file
-
-
-    def flip_HIS_single(self, pdb_path, target_resnum):
-        """
-        Flip tylko jednej reszty HIS o podanym numerze.
-        """
-        try:
-            fixer = PDBFixer(filename=pdb_path)
-            structure = fixer.topology
-            positions = fixer.positions
-
-            for residue in structure.residues():
-                if residue.name not in ('HIS', 'HID', 'HIE', 'HIP'):
-                    continue
-                if int(residue.id) != target_resnum:
-                    continue
-
-                atom_dict = {atom.name: atom for atom in residue.atoms()}
-                required_atoms = ['CG', 'CD2', 'ND1', 'CE1', 'NE2']
-                if not all(a in atom_dict for a in required_atoms):
-                    continue
-
-                cg_idx = list(structure.atoms()).index(atom_dict['CG'])
-                cd2_idx = list(structure.atoms()).index(atom_dict['CD2'])
-                axis = positions[cd2_idx].value_in_unit(unit.nanometer) - positions[cg_idx].value_in_unit(
-                    unit.nanometer)
-                center = positions[cg_idx].value_in_unit(unit.nanometer)
-
-                ring_indices = [list(structure.atoms()).index(atom_dict[name]) for name in ['ND1', 'CD2', 'CE1', 'NE2']]
-                ring_positions = [positions[i].value_in_unit(unit.nanometer) for i in ring_indices]
-                new_positions = self.rotate_atoms(ring_positions, center, axis, np.pi)
-
-                for i, idx in enumerate(ring_indices):
-                    positions[idx] = new_positions[i]
-
-                with open(pdb_path, 'w') as f:
-                    PDBFile.writeFile(structure, positions, f)
-                print(f"Wykonano flip HIS {target_resnum}")
-                break
-        except Exception as e:
-            print(f"Błąd w flip_HIS_single dla {target_resnum}: {e}")
-
-
-    def swap_atom_coords(self, atom1, atom2):
-        """
-        Zamienia wspolrzedne (x, y, z) dwoch podanych atomow.
-        """
-        atom1.x, atom2.x = atom2.x, atom1.x
-        atom1.y, atom2.y = atom2.y, atom1.y
-        atom1.z, atom2.z = atom2.z, atom1.z
-
 
     def optimize_heavy_atom(self, model, code):
         """
@@ -465,7 +312,7 @@ class PDBModelOptimization:
                 self.rename_flipped_files(pdb_name)
 
                 # 6) Czyszczenie plików roboczych
-                self.cleanup_working_files(pdb_name)
+                #self.cleanup_working_files(pdb_name)
 
                 # 7) Licznik
                 files_cleaned_end = time.perf_counter()
@@ -501,6 +348,6 @@ if __name__ == '__main__':
     processor = PDBModelOptimization(project_root)
 
     if args.file:
-        processor.fill_missing_residues_and_atoms(single_file=args.file)
+        processor.fill_missing_residues_and_atoms(single_file="4m84.pdb")
     else:
-        processor.fill_missing_residues_and_atoms()
+        processor.fill_missing_residues_and_atoms(single_file="4m84.pdb")
