@@ -59,9 +59,9 @@ class ResidueFlipper:
         flipped = False
 
         if resname == 'ASN':
-            flipped = self.flip_ASN_single(residue, structure, positions)
+            flipped = self.flip_amide_single(residue, structure, positions, 'ASN')
         elif resname == 'GLN':
-            flipped = self.flip_GLN_single(residue, structure, positions)
+            flipped = self.flip_amide_single(residue, structure, positions, 'GLN')
         elif resname == 'HIS':
             flipped = self.flip_HIS_single(residue, None, None, structure, positions)
 
@@ -70,87 +70,54 @@ class ResidueFlipper:
 
         return positions[:], True
 
-    def flip_GLN_single(self, residue, structure, positions):
+    def flip_amide_single(self, residue, structure, positions, resname):
         """
-        Flip GLN: obraca całą grupę amidową (OE1, NE2 i ew. hydrogens NE2) o 180° wokół wiązania CD–CG.
+        Flip ASN/GLN: obraca grupę amidową (O, N, hydrogens) o 180°
+        wokół odpowiedniego wiązania (ASN: CG–CB, GLN: CD–CG).
         """
         try:
-            # Słownik atomów w reszcie
             atom_dict = {atom.name: atom for atom in residue.atoms()}
-            required = ['CD', 'OE1', 'NE2']
+
+            if resname == 'ASN':
+                required = ['CG', 'OD1', 'ND2']
+                pivot_name = 'CG'
+                axis_partner = 'CB'  # fallback: CA
+                group_base = ['OD1', 'ND2']
+                hyd_prefix = 'HD2'
+
+            elif resname == 'GLN':
+                required = ['CD', 'OE1', 'NE2']
+                pivot_name = 'CD'
+                axis_partner = 'CG'  # fallback: CB
+                group_base = ['OE1', 'NE2']
+                hyd_prefix = 'HE2'
+
+            else:
+                return False
+
+            # Sprawdź wymagane atomy
             if not all(name in atom_dict for name in required):
                 return False
 
             # Mapowanie na indeksy
             atom_lookup = {atom.name: i for i, atom in enumerate(structure.atoms()) if atom.residue == residue}
 
-            cd_idx = atom_lookup['CD']
-            cd_pos = positions[cd_idx].value_in_unit(nanometer)
-            center = np.array([cd_pos.x, cd_pos.y, cd_pos.z])
+            # Pivot atom
+            pivot_idx = atom_lookup[pivot_name]
+            pivot_pos = positions[pivot_idx].value_in_unit(nanometer)
+            center = np.array([pivot_pos.x, pivot_pos.y, pivot_pos.z])
 
-            # Oś obrotu: CD–CG
-            if 'CG' in atom_lookup:
-                cg_idx = atom_lookup['CG']
+            # Axis partner (np. CB lub CG)
+            if axis_partner in atom_lookup:
+                partner_idx = atom_lookup[axis_partner]
             else:
-                cg_idx = atom_lookup['CB']  # fallback
-            cg_pos = positions[cg_idx].value_in_unit(nanometer)
-            axis = np.array([cg_pos.x, cg_pos.y, cg_pos.z]) - center
+                partner_idx = atom_lookup['CA']  # fallback
+            partner_pos = positions[partner_idx].value_in_unit(nanometer)
+            axis = np.array([partner_pos.x, partner_pos.y, partner_pos.z]) - center
             axis /= np.linalg.norm(axis)
 
-            # Atomy do obrotu: OE1, NE2 + hydrogens NE2
-            group_names = ['OE1', 'NE2']
-            group_names += [a.name for a in residue.atoms() if a.name.startswith('HE2')]
-            group_indices = [atom_lookup[n] for n in group_names if n in atom_lookup]
-
-            group_positions = [
-                np.array([positions[i].x, positions[i].y, positions[i].z])
-                for i in group_indices
-            ]
-
-            # Obrót o 180°
-            new_positions = self.rotate_atoms(group_positions, center, axis, np.pi)
-
-            # Zapisz nowe pozycje
-            for i, idx in enumerate(group_indices):
-                new_pos = new_positions[i]
-                positions[idx] = Vec3(new_pos[0], new_pos[1], new_pos[2]) * nanometer
-
-            return True
-        except Exception as e:
-            print(f"Błąd w flip_GLN_single: {e}")
-            return False
-
-    def flip_ASN_single(self, residue, structure, positions):
-        """
-        Flip ASN: obraca całą grupę amidową (OD1, ND2 i ew. hydrogens ND2) o 180° wokół wiązania CG–CB.
-        """
-        try:
-            # Zbuduj słownik atomów w tej reszcie
-            atom_dict = {atom.name: atom for atom in residue.atoms()}
-            required = ['CG', 'OD1', 'ND2']
-            if not all(name in atom_dict for name in required):
-                return False
-
-            # Mapowanie na indeksy w strukturze
-            atom_lookup = {atom.name: i for i, atom in enumerate(structure.atoms()) if atom.residue == residue}
-
-            cg_idx = atom_lookup['CG']
-            cg_pos = positions[cg_idx].value_in_unit(nanometer)
-            center = np.array([cg_pos.x, cg_pos.y, cg_pos.z])
-
-            # Oś obrotu: CG–C (w ASN: CG–CB)
-            if 'CB' in atom_lookup:
-                cb_idx = atom_lookup['CB']
-            else:
-                # fallback, obrót względem CA jak brak CB
-                cb_idx = atom_lookup['CA']
-            cb_pos = positions[cb_idx].value_in_unit(nanometer)
-            axis = np.array([cb_pos.x, cb_pos.y, cb_pos.z]) - center
-            axis /= np.linalg.norm(axis)
-
-            # Atomy do obrotu: OD1, ND2 i ew. hydrogens ND2
-            group_names = ['OD1', 'ND2']
-            group_names += [a.name for a in residue.atoms() if a.name.startswith('HD2')]
+            # Grupa do obrotu
+            group_names = group_base + [a.name for a in residue.atoms() if a.name.startswith(hyd_prefix)]
             group_indices = [atom_lookup[n] for n in group_names if n in atom_lookup]
 
             group_positions = [
@@ -168,7 +135,7 @@ class ResidueFlipper:
 
             return True
         except Exception as e:
-            print(f"Błąd w flip_ASN_single: {e}")
+            print(f"Błąd w flip_amide_single ({resname}): {e}")
             return False
 
     def flip_HIS_single(self, residue, mdl, fixer, structure, positions):
@@ -232,39 +199,11 @@ class ResidueFlipper:
         fixer.findMissingAtoms()
         fixer.addMissingAtoms()
         fixer.addMissingHydrogens(pH=7.0)
-
-        with open('4m84_fixed.pdb', 'w') as f:
-            PDBFile.writeFile(fixer.topology, fixer.positions, f)
-
-        # System do minimalizacji
-        ff = ForceField('charmm36.xml', 'charmm36/water.xml')
-
-        system = ff.createSystem(
-            fixer.topology,
-            nonbondedMethod=NoCutoff,
-            constraints=HBonds
-        )
-
-        integrator = LangevinIntegrator(
-            300 * unit.kelvin,  # temperatura
-            1.0 / unit.picosecond,  # damping
-            0.002 * unit.picoseconds  # krok
-        )
-
-        sim = Simulation(fixer.topology, system, integrator)
-        sim.context.setPositions(fixer.positions)
-
-        # Minimalizacja energii
-        print(">>> Minimalizacja energii...")
-        sim.minimizeEnergy(maxIterations=500)
-
-        # Zapis pozycji po minimalizacji
-        positions = sim.context.getState(getPositions=True).getPositions()
-        with open(self.output_pdb_path, 'w') as f:
-            PDBFile.writeFile(fixer.topology, positions, f)
-
-        print(f">>> Gotowy plik zapisany do: {self.output_pdb_path}")
         structure = fixer.topology
+        positions = fixer.positions
+
+
+
 
 
         for chain in structure.chains():
