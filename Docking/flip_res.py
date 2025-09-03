@@ -16,7 +16,7 @@ nanometer = unit.nanometer
 
 # ResidueFlipper – wykonuje flipy ASN, GLN i HIS.
 class ResidueFlipper:
-    def __init__(self, input_pdb_path, aln):
+    def __init__(self, input_pdb_path, aln=None):
         """
         Przyjmuje ścieżkę do PDB i alignment.
         Inicjalizuje środowisko Modeller.
@@ -25,6 +25,7 @@ class ResidueFlipper:
         self.aln = aln
         self.env = environ()
         self.env.io.hetatm = True
+        self.output_pdb_path = os.path.splitext(input_pdb_path)[0] + "_fixed.pdb"
 
     def count_local_hbonds(self, residue, topology, positions, cutoff=0.35):
         """
@@ -58,10 +59,8 @@ class ResidueFlipper:
         original_positions = positions[:]
         flipped = False
 
-        if resname == 'ASN':
-            flipped = self.flip_amide_single(residue, structure, positions, 'ASN')
-        elif resname == 'GLN':
-            flipped = self.flip_amide_single(residue, structure, positions, 'GLN')
+        if resname in ['ASN', 'GLN']:
+            flipped = self.flip_amide_single(residue, structure, positions, resname)
         elif resname == 'HIS':
             flipped = self.flip_HIS_single(residue, None, None, structure, positions)
 
@@ -199,13 +198,39 @@ class ResidueFlipper:
         fixer.findMissingAtoms()
         fixer.addMissingAtoms()
         fixer.addMissingHydrogens(pH=7.0)
+
+        with open('4m84_fixed.pdb', 'w') as f:
+            PDBFile.writeFile(fixer.topology, fixer.positions, f)
+
+        # System do minimalizacji
+        ff = ForceField('amber14/protein.ff14SB.xml', 'amber14/tip3pfb.xml')
+
+        system = ff.createSystem(
+            fixer.topology,
+            nonbondedMethod=NoCutoff,
+            constraints=HBonds
+        )
+
+        integrator = VerletIntegrator(0.001 * unit.picoseconds)
+        platform = Platform.getPlatformByName('CPU')  # można też 'CUDA' / 'OpenCL'
+        context = Context(system, integrator, platform)
+        context.setPositions(fixer.positions)
+
+        # Minimalizacja energii
+        print(">>> Minimalizacja energii...")
+        LocalEnergyMinimizer.minimize(context, tolerance=10.0 * unit.kilojoule_per_mole, maxIterations=500)
+
+        # Pobranie wynikowych pozycji
+        state = context.getState(getPositions=True)
+        positions = state.getPositions()
+
+        # Zapis po minimalizacji
+        with open(self.output_pdb_path, 'w') as f:
+            PDBFile.writeFile(fixer.topology, positions, f)
+        print(f">>> Gotowy plik zapisany do: {self.output_pdb_path}")
         structure = fixer.topology
-        positions = fixer.positions
 
-
-
-
-
+        # Przechodzimy po resztach i flipujemy
         for chain in structure.chains():
             for residue in chain.residues():
                 resname = residue.name.upper()
@@ -233,6 +258,6 @@ class ResidueFlipper:
             PDBFile.writeFile(structure, positions, out_file)
         print(f"Zapisano wynikowy plik do: {output_path}")
 
-# Użycie
+# Użycie:
 # flipper = ResidueFlipper("sciezka/do/pliku.pdb")
 # flipper.run()
