@@ -1,12 +1,10 @@
-import os
 import numpy as np
 from modeller import *
-from modeller.automodel import *
-from pdbfixer import PDBFixer
-from openmm.app import *
 from openmm import *
-from openmm.unit import *
+from openmm.app import *
+from pdbfixer import PDBFixer
 from scipy.spatial import cKDTree
+
 try:
     from simtk import unit
 except ImportError:
@@ -62,7 +60,7 @@ class ResidueFlipper:
         if resname in ['ASN', 'GLN']:
             flipped = self.flip_amide_single(residue, structure, positions, resname)
         elif resname == 'HIS':
-            flipped = self.flip_HIS_single(residue, None, None, structure, positions)
+            flipped = self.flip_HIS_single(residue, structure, positions)
 
         if not flipped:
             return original_positions, False
@@ -137,7 +135,7 @@ class ResidueFlipper:
             print(f"Błąd w flip_amide_single ({resname}): {e}")
             return False
 
-    def flip_HIS_single(self, residue, mdl, fixer, structure, positions):
+    def flip_HIS_single(self, residue, structure, positions):
         """
         Flip HIS: obraca pierścień o 180°.
         """
@@ -193,42 +191,12 @@ class ResidueFlipper:
         # Wczytanie pliku
         fixer = PDBFixer(filename=self.input_pdb_path)
 
-        # Naprawa brakujących fragmentów
-        fixer.findMissingResidues()
-        fixer.findMissingAtoms()
-        fixer.addMissingAtoms()
-        fixer.addMissingHydrogens(pH=7.0)
-
-        with open('4m84_fixed.pdb', 'w') as f:
-            PDBFile.writeFile(fixer.topology, fixer.positions, f)
-
-        # System do minimalizacji
-        ff = ForceField('amber14/protein.ff14SB.xml', 'amber14/tip3pfb.xml')
-
-        system = ff.createSystem(
-            fixer.topology,
-            nonbondedMethod=NoCutoff,
-            constraints=HBonds
-        )
-
-        integrator = VerletIntegrator(0.001 * unit.picoseconds)
-        platform = Platform.getPlatformByName('CPU')  # można też 'CUDA' / 'OpenCL'
-        context = Context(system, integrator, platform)
-        context.setPositions(fixer.positions)
-
-        # Minimalizacja energii
-        print(">>> Minimalizacja energii...")
-        LocalEnergyMinimizer.minimize(context, tolerance=10.0 * unit.kilojoule_per_mole, maxIterations=500)
-
-        # Pobranie wynikowych pozycji
-        state = context.getState(getPositions=True)
-        positions = state.getPositions()
-
-        # Zapis po minimalizacji
+        # Zapis
         with open(self.output_pdb_path, 'w') as f:
-            PDBFile.writeFile(fixer.topology, positions, f)
+            PDBFile.writeFile(fixer.topology, fixer.positions, f)
         print(f">>> Gotowy plik zapisany do: {self.output_pdb_path}")
         structure = fixer.topology
+        positions = fixer.positions
 
         # Przechodzimy po resztach i flipujemy
         for chain in structure.chains():

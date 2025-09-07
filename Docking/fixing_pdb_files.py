@@ -4,28 +4,15 @@
 import argparse
 import os
 import subprocess
+import time
 from shutil import copyfile
-from time import sleep
-
-import numpy as np
 from modeller import *
 from modeller import environ, model
 from modeller.automodel import AutoModel, assess
-from modeller.scripts import complete_pdb
 from modeller.optimizers import molecular_dynamics, actions, conjugate_gradients
+from modeller.scripts import complete_pdb
 from openbabel import openbabel as ob
-from openmm.app import PDBFile
-from openmm import unit
-from pdbfixer import PDBFixer
-import tempfile
-from openmm.app import PDBFile, ForceField, Simulation, Modeller
-from openmm import LangevinIntegrator, Platform
-from openmm.unit import kelvin
-import time
-
 import flip_res
-
-
 
 
 # Klasa dziedzicząca po AutoModel – umożliwia późniejszy wybór atomów do modelowania
@@ -348,6 +335,6 @@ if __name__ == '__main__':
     processor = PDBModelOptimization(project_root)
 
     if args.file:
-        processor.fill_missing_residues_and_atoms(single_file="4m84.pdb")
+        processor.fill_missing_residues_and_atoms(single_file=args.file)
     else:
-        processor.fill_missing_residues_and_atoms(single_file="4m84.pdb")
+        processor.fill_missing_residues_and_atoms()
