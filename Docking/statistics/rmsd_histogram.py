@@ -22,12 +22,12 @@ def extract_rmsd(filepath):
 # Standardowe opcje wyboru zapewnia argparse, ale tylko dla tego pliku rozruchowego!
 def plot_rmsd_histogram(rmsd1, rmsd2, labels=("Standard", "Fixed"), output="histogram_rmsd.png"):
     plt.figure(figsize=(6, 6))
-    bins = np.linspace(0, max(max(rmsd1), max(rmsd2)) + 1, num=12) # num - bins number /4
+    bins = np.linspace(0, max(max(rmsd1), max(rmsd2)) + 1, num=10) # num - bins number /4
 
     plt.hist(rmsd1, bins=bins, alpha=0.6, label=labels[0],
-             color='skyblue', edgecolor='black')
+             color="limegreen", edgecolor='black')
     plt.hist(rmsd2, bins=bins, alpha=0.6, label=labels[1],
-             color='lightgreen', edgecolor='black')
+             color="skyblue", edgecolor='black')
 
     plt.xlabel('RMSD GROMACS [Å]')
     plt.ylabel('Liczba struktur')

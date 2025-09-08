@@ -67,4 +67,4 @@ if __name__ == '__main__':
     for PDB_file in os.listdir(input_folder):
         if PDB_file.endswith(".pdb"):
             extract_ligand(os.path.join(input_folder, PDB_file), output_folder)
-    input("~~~~~~~~Naciśnij dowolny przycisk by zakończyć~~~~~~~~")
+    # input("~~~~~~~~Naciśnij dowolny przycisk by zakończyć~~~~~~~~")

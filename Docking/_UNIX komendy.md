@@ -10,7 +10,7 @@ hetID=$(awk '/\<^HET\>/ {print $2}' 1hsg.pdb | awk 'NR==1'); grep "$hetID" 1hsg.
 watch -n 1 'for f in *.dlg; do tail -n 3 "$f" | grep -q "^___" && continue; echo "==> $f <=="; tail -n 3 "$f"; done'
 
 # Modyfikacja parametr extension
-${variable#pattern} – usuwa najkrótszy fragment pasujący do wzorca z początku wartości.
+${variable#pattern} – usuwa najkrótszy fragment pasujący do wzorca z początku.
 ${variable##pattern} – usuwa najdłuższy fragment pasujący do wzorca z początku.
 ${variable%pattern} – usuwa najkrótszy fragment pasujący do wzorca z końca.
 ${variable%%pattern} – usuwa najdłuższy fragment pasujący do wzorca z końca.

@@ -13,7 +13,7 @@ def main():
     2. rmsd_histogram.py -> tworzy histogram RMSD
     3. energy_correlation.py -> tworzy wykres korelacji energii
 
-    Program przyjmuje 2 foldery oraz nazywa je odpowiednio według uznania
+    Program przyjmuje 2 foldery oraz nazywa je odpowiednio według uznania.
 
     Usage:
     python statystyka.py -f ligands_exp.txt -d standard/ fixed/ -n "Zbiór_1" "Zbiór_2"

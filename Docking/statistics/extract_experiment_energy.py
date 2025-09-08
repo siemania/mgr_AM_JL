@@ -37,6 +37,9 @@ if __name__ == "__main__":
         exit(1)
 
     pdb_files = list(folder.glob("*.pdb"))
+	
+    if len(pdb_files) == 0:
+        pdb_files = list(folder.glob("*.dlg"))
 
     # Przygotuj ścieżkę wyjściową
     output_path = Path(args.output)

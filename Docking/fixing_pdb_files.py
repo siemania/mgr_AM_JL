@@ -5,6 +5,7 @@ import argparse
 import os
 import subprocess
 import time
+from tqdm import tqdm
 from shutil import copyfile
 from modeller import *
 from modeller import environ, model
@@ -208,7 +209,7 @@ class PDBModelOptimization:
         files = [single_file] if single_file else os.listdir(self.input_path)
         stats = {}
 
-        for filename in files:
+        for filename in tqdm(files):
             if not filename.endswith(".pdb"):
                 continue
 
@@ -273,6 +274,7 @@ class PDBModelOptimization:
                 hydrogens_added_end = time.perf_counter()
                 hydrogens_added_time = hydrogens_added_end - prepare_alignment_end
                 print("hydrogens_added_time trwał: ", hydrogens_added_time)
+
                 # 2) Wczytanie uzupelnionej struktury
                 model = complete_pdb(self.env, code)
 
@@ -281,6 +283,7 @@ class PDBModelOptimization:
                 model_loaded_end = time.perf_counter()
                 model_loaded_time = model_loaded_end - hydrogens_added_end
                 print("model_loaded_time trwał: ", model_loaded_time)
+
                 # 3) Flipy odpowiednich reszt aminokwasowych
                 flipper = flip_res.ResidueFlipper(final_output_file, self.aln)
                 flipper.run()
@@ -288,6 +291,7 @@ class PDBModelOptimization:
                 residues_flipped_end = time.perf_counter()
                 residues_flipped_time = residues_flipped_end - model_loaded_end
                 print("residues_flipped_time trwał: ", residues_flipped_time)
+
                 # 4) Optymalizacje
                 self.optimize_heavy_atom(model, code)
                 self.optimize_full_structure(model, code)
@@ -299,7 +303,7 @@ class PDBModelOptimization:
                 self.rename_flipped_files(pdb_name)
 
                 # 6) Czyszczenie plików roboczych
-                #self.cleanup_working_files(pdb_name)
+                self.cleanup_working_files(pdb_name)
 
                 # 7) Licznik
                 files_cleaned_end = time.perf_counter()

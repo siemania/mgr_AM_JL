@@ -71,9 +71,14 @@ def main():
     min_val = min(all_x.min(), all_y.min()) - 1
     max_val = max(all_x.max(), all_y.max()) + 1
 
-    # Rysowanie (s - size)
+    ## Rysowanie (s - size)
     plt.figure(figsize=(10, 6))
 
+    # Linia ukośna
+    fig, ax = plt.subplots()
+    ax.plot([0, 1], [0, 1], transform=ax.transAxes, color="grey", linestyle="--", alpha=0.2, linewidth=1)
+
+    # Dane
     plt.scatter(x_std, y_std, label=args.labels[0], marker="x", s=4, color="blue")
     plt.plot(x_std,
              slope_std * x_std + intercept_std,
@@ -89,8 +94,8 @@ def main():
     # Podpisy punktów
     # for name, x, y in zip(names_std, x_std, y_std):
     #     plt.text(x + 0.3, y - 0.2, name, fontsize=8, color="blue")
-    for name, x, y in zip(names_fix, x_fix, y_fix):
-        plt.text(x - 0.4, y + 0.2, name, fontsize=4, color="purple")
+    # for name, x, y in zip(names_fix, x_fix, y_fix):
+    #     plt.text(x - 0.2, y + 0.1, name, fontsize=4, color="purple")
 
     # Podpis wykresu
     plt.title("Porównanie energii wiązania: dokowanie vs dane eksperymentalne")
