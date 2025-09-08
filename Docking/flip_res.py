@@ -185,7 +185,7 @@ class ResidueFlipper:
         """
         Główna funkcja:
             - wypełnia brakujące reszty,
-            - flipuje jeśli zysk HBonds,
+            - flipuje jesli zysk HBonds,
             - zapisuje wynik.
         """
         # Wczytanie pliku
