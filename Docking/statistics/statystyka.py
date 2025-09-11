@@ -27,6 +27,7 @@ def main():
     parser.add_argument("-d", "--directories", nargs="+", required=True, help="Podaj foldery z plikami .dlg (-d standard fixed)")
     parser.add_argument("-n", "--names", nargs="+", required=True, help="Nazwy odpowiadające folderom (-n Standard Fixed)")
     parser.add_argument("-f", "--file", required=True, help="Plik z wartościami eksperymentalnymi (-f energies_exp.txt)")
+    parser.add_argument("-i", "--index", required=False, help="Plik z kodami PDB do uwzględnienia w analizie")
     args = parser.parse_args()
 
     if len(args.directories) != len(args.names):
@@ -50,25 +51,31 @@ def main():
     # 2. Uruchom rmsd_histogram.py na wygenerowanych plikach
     if len(generated_txt_files) >= 2:
         print(f"[INFO] Tworzę histogram RMSD dla {generated_txt_files}")
-        subprocess.run([
+        cmd = [
             "python", os.path.join(statistics_folder, "rmsd_histogram.py"),
             "-s", generated_txt_files[0],
             "-b", generated_txt_files[1],
             "-l", args.names[0], args.names[1],
             "-o", f"histogram_{group_name}.png"
-        ], check=True)
+        ]
+        if args.index:
+            cmd.extend(["-i", args.index])
+        subprocess.run(cmd, check=True)
 
     # 3. Uruchom energy_correlation.py na wygenerowanych plikach + eksperymentalny
     if len(generated_txt_files) >= 2:
         print(f"[INFO] Tworzę wykres korelacji energii")
-        subprocess.run([
+        cmd = [
             "python", os.path.join(statistics_folder, "energy_correlation.py"),
             "-s", generated_txt_files[0],
             "-b", generated_txt_files[1],
             "-f", args.file,
             "-l", args.names[0], args.names[1],
             "-o", f"correlation_{group_name}.png"
-        ], check=True)
+        ]
+        if args.index:
+            cmd.extend(["-i", args.index])
+        subprocess.run(cmd, check=True)
 
     print("[DONE] Analiza zakończona!")
 
