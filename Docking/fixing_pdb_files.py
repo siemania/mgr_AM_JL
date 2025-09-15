@@ -182,15 +182,16 @@ class PDBModelOptimization:
         trace_file = open(code + ".full_opt.log", "w")
 
         # Gradienty sprzężone
-        cg.optimize(all_atoms, max_iterations=30, actions=[actions.trace(5, trace_file)])
+        cg.optimize(all_atoms, max_iterations=300, actions=[actions.trace(10, trace_file)])
 
-        # Dynamika molekularna
-        md.optimize(all_atoms, temperature=300, max_iterations=50,
-                    actions=[actions.write_structure(10, code + ".dyn%04d.pdb"),
-                             actions.trace(10, trace_file)])
+        # Dynamika molekularna z rampowaniem temperatury
+        for temp in [100, 200, 300]:
+            md.optimize(all_atoms, temperature=temp, max_iterations=200,
+                        actions=[actions.write_structure(20, code + ".dyn%04d.pdb"),
+                                 actions.trace(20, trace_file)])
 
         # Ponowna optymalizacja
-        cg.optimize(all_atoms, max_iterations=20, actions=[actions.trace(5, trace_file)])
+        cg.optimize(all_atoms, max_iterations=200, actions=[actions.trace(10, trace_file)])
 
         final_path = os.path.join(self.output_path, code + ".pdb")
         model.write(file=final_path)
