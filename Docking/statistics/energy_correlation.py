@@ -6,7 +6,7 @@ from math import atan, degrees
 import argparse
 
 
-def load_energy_file(filepath):
+def load_energy_file(filepath, index_pdbs=None):
     """Wczytuje {ID: DeltaG} z pliku txt (2. kolumna)."""
     data = {}
     with open(filepath, "r", encoding="utf-8") as f:
@@ -15,9 +15,10 @@ def load_energy_file(filepath):
             parts = line.strip().split("\t")
             if len(parts) >= 2:
                 try:
-                    data[parts[0]] = float(parts[1])
+                    if index_pdbs is None or parts[0].lower() in index_pdbs:
+                        data[parts[0]] = float(parts[1])
                 except ValueError:
-                    continue
+                        continue
     return data
 
 
@@ -41,15 +42,23 @@ def main():
     parser.add_argument("-f", "--experiment", required=True, help="Plik TXT z wynikami eksperymentalnymi")
     parser.add_argument("-l", "--labels", required=False, help="Nazwy etykiet", nargs=2, default=("Standard", "Fixed"))
     parser.add_argument("-o", "--output", help="Nazwa pliku wyjściowego (PNG)", default="correlation_plot.png")
+    parser.add_argument("-i", "--index", required=False, help="Plik z kodami PDB do uwzględnienia w analizie")
     args = parser.parse_args()
 
     if not args.output.endswith(".png"):
         args.output += ".png"
 
+    # Load PDB codes from index file if provided
+    if args.index:
+        index_pdbs = set()
+        with open(args.index, 'r', encoding="utf-8") as f:
+            for line in f:
+                index_pdbs.add(line.strip().lower())
+
     # Wczytaj dane
-    exp_data = load_energy_file(args.experiment)
-    std_data = load_energy_file(args.standard)
-    fix_data = load_energy_file(args.fixed)
+    exp_data = load_energy_file(args.experiment, index_pdbs if args.index else None)
+    std_data = load_energy_file(args.standard, index_pdbs if args.index else None)
+    fix_data = load_energy_file(args.fixed, index_pdbs if args.index else None)
 
     # Przygotuj wartości (nazwy, punkty itp.)
     names_std, x_std, y_std = prepare_data(exp_data, std_data)
@@ -91,11 +100,11 @@ def main():
              "g--",
              label=f"Regresja {args.labels[1]} (R²={r_fix**2:.2f}, Δθ={delta_fix:.2f}°)")
 
-    # Podpisy punktów
-    # for name, x, y in zip(names_std, x_std, y_std):
-    #     plt.text(x + 0.3, y - 0.2, name, fontsize=8, color="blue")
-    # for name, x, y in zip(names_fix, x_fix, y_fix):
-    #     plt.text(x - 0.2, y + 0.1, name, fontsize=4, color="purple")
+    # Podpisy punktów (Standardowe, Naprawione)
+    for name, x, y in zip(names_std, x_std, y_std):
+        plt.text(x + 0.3, y - 0.2, name, fontsize=3, color="blue")
+    for name, x, y in zip(names_fix, x_fix, y_fix):
+        plt.text(x - 0.2, y + 0.1, name, fontsize=3, color="green")
 
     # Podpis wykresu
     plt.title("Porównanie energii wiązania: dokowanie vs dane eksperymentalne")

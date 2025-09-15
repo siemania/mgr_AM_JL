@@ -132,34 +132,36 @@ Projekt **mgr_AM_JL** to zestaw skryptów mających na celu automatyzację przyg
      python binding_energy_reader.py -c baza_ids.csv -b BioLiP.txt -o pdb_energy/ligands_energy.txt
      ```
 
-6. **(Opcjonalnie) Zbieranie wartości Energii i RMSD:**
-   - W folderze `statistics/` znajdują się użyteczne narzędzia do wykorzystania z użyciem CLI w odpowiedniej kolejności
-   - Skrypt `statystyka.py` zawiera wszystkie kroki aby otrzymać wykresy RMSD oraz korelacyjny dla **2 zbiorów** wyników dokowania (plików z rozszerzeniem .dlg),
-     należy tylko do 2 osobnych folderów pogrupować swoje pliki `.dlg`
+   6. **(Opcjonalnie) Zbieranie wartości Energii i RMSD:**
+      - W folderze `statistics/` znajdują się użyteczne narzędzia do wykorzystania z użyciem CLI w odpowiedniej kolejności
+      - Skrypt `statystyka.py` zawiera wszystkie kroki aby otrzymać wykresy RMSD oraz korelacyjny dla **2 zbiorów** wyników dokowania (plików z rozszerzeniem .dlg),
+        należy tylko do 2 osobnych folderów pogrupować swoje pliki `.dlg`
    
-   - `extract_experiment_energy.py` służy do zebrania tylko niezbędnych wartości energii kcal/mol po obróbce `binding_energy_reader.py` na podstawie własnych plików `.pdb`
-   - `extract_energy_values.py` służy do zebrania wartości energii kcal/mol oraz RMSD z wyników dokowań `.dlg` w formie tabeli do pojedynczego pliku `.txt`
-   - `rmsd_histogram.py` służy do wykonania histogramów RMSD na zbiorach dokowań i porównania wartości między sobą
-   - `energy_correlation.py` służy do wykonania wykresów korelacyjnych dla plików po obróbkach: `extract_energy_values.py` dla zbiorów dokowań
-     oraz `extract_experiment_energy.py` dla eksperymentalnych wartości energii kcal/mol
+      - `extract_experiment_energy.py` służy do zebrania tylko niezbędnych wartości energii kcal/mol po obróbce `binding_energy_reader.py` na podstawie własnych plików `.pdb`
+      - `extract_energy_values.py` służy do zebrania wartości energii kcal/mol oraz RMSD z wyników dokowań `.dlg` w formie tabeli do pojedynczego pliku `.txt`
+      - `rmsd_histogram.py` służy do wykonania histogramów RMSD na zbiorach dokowań i porównania wartości między sobą
+      - `energy_correlation.py` służy do wykonania wykresów korelacyjnych dla plików po obróbkach: `extract_energy_values.py` dla zbiorów dokowań
+        oraz `extract_experiment_energy.py` dla eksperymentalnych wartości energii kcal/mol
 
-   Przykłady użycia:
-   ```bash
-   python extract_energy_values.py -d docking_results/ -o wyniki_dokowania.txt
-   python extract_experiment_energy.py -f ligands_energy.txt -d results_pdb -o experiment_energy.txt
-   python rmsd_hist.py -s wyniki_standard.txt -b wyniki_fixed.txt
-   python correlation.py -s wyniki_standard.txt -b wyniki_fixed.txt -f wyniki_eksperymentalne_kcalmol.txt -o wynik_korelacji.png
-   ```
+      Przykłady użycia:
+      ```bash
+      python extract_energy_values.py -d docking_results/ -o wyniki_dokowania.txt
+      python extract_experiment_energy.py -f ligands_energy.txt -d results_pdb -o experiment_energy.txt
+      python rmsd_hist.py -s wyniki_standard.txt -b wyniki_fixed.txt
+      python correlation.py -s wyniki_standard.txt -b wyniki_fixed.txt -f wyniki_eksperymentalne_kcalmol.txt -o wynik_korelacji.png
+      python statystyka.py -d dlg_folder_1/ dlg_folder_2 -n "group_1" "group_2" -f exp.txt -i index_file.csv
+      ```
    
-   | Argument | | Description |
-   | ------ | -- | ------------------- |
-   | --help | -h | Wyświetlenie pomocy |
-   | --file | -f | Pliki wynikowe .dlg lub .txt |
-   | --names | -n | Nazwy zbiorów dla programu `statystyka.py` |
-   | --directory | -d | Wybór katalogu z plikami .dlg lub .pdb |
-   | --standard | -s | Plik .txt z wynikami po obróbce |
-   | --fixed | -b | Plik .txt z wynikami po obróbce |
-   | --labels | -l | Nazwy zbiorów dla dokowań |
+      | Argument | | Description                                                              |
+      | ------ | -- |--------------------------------------------------------------------------|
+      | --help | -h | Wyświetlenie pomocy                                                      |
+      | --file | -f | Pliki wynikowe .dlg lub .txt                                             |
+      | --names | -n | Nazwy zbiorów dla programu `statystyka.py`                               |
+      | --directory | -d | Wybór katalogu z plikami .dlg lub .pdb                                   |
+      | --standard | -s | Plik .txt z wynikami po obróbce                                          |
+      | --fixed | -b | Plik .txt z wynikami po obróbce                                          |
+      | --labels | -l | Nazwy zbiorów dla dokowań                                                |
+      | --index | -i | (opt) Plik indeksowy dla których ma być zastosowana analiza z kodami PDB |
 
 > **Uwaga:** Upewnij się, że wszystkie ścieżki do katalogów i plików są poprawnie ustawione oraz że wszystkie wymagane zależności zostały wcześniej zainstalowane.
 
