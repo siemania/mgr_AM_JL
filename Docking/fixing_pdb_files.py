@@ -193,6 +193,7 @@ class PDBModelOptimization:
         # Ponowna optymalizacja
         cg.optimize(all_atoms, max_iterations=200, actions=[actions.trace(10, trace_file)])
 
+
         final_path = os.path.join(self.output_path, code + ".pdb")
         model.write(file=final_path)
         print(f"Zoptymalizowano pełną strukturę i zapisano: {final_path}")
