@@ -33,7 +33,7 @@ class PDBModelOptimization:
         # Ścieżki do folderów wejściowych, wyjściowych i roboczych
         self.project_root = project_root
         self.input_path = os.path.join(project_root, 'pdb_files') # Folder z wejsciowymi plikami PDB
-        self.output_path = os.path.join(project_root, 'fixed_pdb') # Folder na naprawione pliki PDB
+        self.output_path = os.path.join(project_root, 'pdb_files') # Folder na naprawione pliki PDB
         self.work_path = os.path.join(project_root, 'work_folder') # Folder roboczy
 
         os.makedirs(self.input_path, exist_ok=True)
@@ -95,38 +95,24 @@ class PDBModelOptimization:
 
 
     def add_hydrogens(self, pdb_path):
-        """
-        Dodaje wodory do pliku PDB, próbując najpierw przez subprocess (obabel CLI),
-        a potem przez Open Babel Python API. Nadpisuje plik wejściowy.
-        """
-        try:
-            subprocess.run(["obabel", pdb_path, "-O", pdb_path, "-h"], check=True)
-            print(f"Dodano wodory za pomocą Open Babel CLI: {pdb_path}")
-            return
-        except subprocess.CalledProcessError as e:
-            print("Błąd Open Babel CLI:", e)
-        except Exception as e:
-            print("Nieoczekiwany błąd podczas uruchamiania obabel:", e)
-
-        # Fallback – OpenBabel Python API
-        try:
-            obConversion = ob.OBConversion()
-            obConversion.SetInAndOutFormats("pdb", "pdb")
-
-            mol = ob.OBMol()
-            if not obConversion.ReadFile(mol, pdb_path):
-                print(f"Błąd przy wczytywaniu pliku: {pdb_path}")
-                return
-
-            mol.AddHydrogens()
-
-            if obConversion.WriteFile(mol, pdb_path):
-                print(f"Dodano wodory za pomocą OpenBabel Python API: {pdb_path}")
-            else:
-                print(f"Błąd przy zapisie pliku: {pdb_path}")
-        except Exception as e:
-            print(f"Błąd OpenBabel Python API: {e}")
-
+            """
+            Dodaje wodory i flipuje reszty przy użyciu Reduce (-BUILD).
+            Nadpisuje plik wejściowy.
+            """
+            os.environ["REDUCE_HET_DICT"] = "/home/mateusz/miniconda3/envs/env/reduce_wwPDB_het_dict.txt"
+            try:
+                fixed_path = pdb_path.replace(".pdb", "_withH.pdb")
+                with open(fixed_path, "w") as out_f:
+                    subprocess.run(
+                        ["reduce", "-NOFLIP", "-Quiet", pdb_path],
+                        stdout=out_f,
+                        stderr=subprocess.PIPE,
+                        check=True
+                    )
+            except subprocess.CalledProcessError as e:
+                print(f"Reduce zwrócił błąd: {e.stderr.decode()}")
+            except Exception as e:
+                print(f"Nieoczekiwany błąd podczas dodawania wodorów: {e}")
 
     def remove_duplicate_atoms(self, pdb_path):
         """
@@ -210,6 +196,8 @@ class PDBModelOptimization:
         """
         files = [single_file] if single_file else os.listdir(self.input_path)
         stats = {}
+        print(self.input_path)
+        print(self.output_path)
 
         for filename in tqdm(files):
             if not filename.endswith(".pdb"):
@@ -265,6 +253,8 @@ class PDBModelOptimization:
                 # Sprawdzenie, czy są wodory — jeśli nie, to je dodaj
                 if not has_hydrogens:
                     self.add_hydrogens(final_output_file)
+                    #os.remove(final_output_file)
+                    os.replace(final_output_file.replace('.pdb', '_withH.pdb'), final_output_file)
                     self.remove_duplicate_atoms(final_output_file)
                 else:
                     print(f"{final_output_file} już zawiera atomy wodoru – pomijam dodawanie.")
