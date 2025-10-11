@@ -27,21 +27,21 @@ def run_command(command): # Pamiętać o podwójnym cudzysłowie, gdy są spacje
 
 # Funkcja przetwarzająca pojedynczy plik PDB 
 def process_docking(pdb_file, commands=None):
+    # Pobranie nazwy pliku bez rozszerzenia
+    file_name = os.path.splitext(os.path.basename(pdb_file))[0]
+
+    # Ścieżki do plików - absolute path nie zawsze działa, bo tworzy w parametrach pełne ścieżki
+    receptor_pdb = pdb_file
+    ligand_pdb = os.path.join("ligands", f"{file_name}_ligand.pdb")
+    receptor_pdbqt = os.path.join("pdbqt_files", f"{file_name}_receptor.pdbqt")
+    ligand_pdbqt = os.path.join("pdbqt_files", f"{file_name}_ligand.pdbqt")
+    gpf = os.path.join("grid_dock_files", f"{file_name}_grid.gpf")
+    glg = os.path.join("grid_dock_files", f"{file_name}_grid.glg")
+    dpf = os.path.join("grid_dock_files", f"{file_name}_dock.dpf")
+    dlg = os.path.join("grid_dock_files", f"{file_name}_ligand.dlg")
+    fld = os.path.join("map_grid_files", f"{file_name}_receptor.maps.fld")
+
     try:
-        # Pobranie nazwy pliku bez rozszerzenia
-        file_name = os.path.splitext(os.path.basename(pdb_file))[0]
-    
-        # Ścieżki do plików - absolute path nie zawsze działa, bo tworzy w parametrach pełne ścieżki
-        receptor_pdb = pdb_file
-        ligand_pdb = os.path.join("ligands", f"{file_name}_ligand.pdb")
-        receptor_pdbqt = os.path.join("pdbqt_files", f"{file_name}_receptor.pdbqt")
-        ligand_pdbqt = os.path.join("pdbqt_files", f"{file_name}_ligand.pdbqt")
-        gpf = os.path.join("grid_dock_files", f"{file_name}_grid.gpf")
-        glg = os.path.join("grid_dock_files", f"{file_name}_grid.glg")
-        dpf = os.path.join("grid_dock_files", f"{file_name}_dock.dpf")
-        dlg = os.path.join("grid_dock_files", f"{file_name}_ligand.dlg")
-        fld = os.path.join("map_grid_files", f"{file_name}_receptor.maps.fld")
-    
         # Ścieżki do innych programów (kompatybilność)
         user = os.environ.get("USER") or os.environ.get("USERNAME")
         if os.name.startswith("nt"):
@@ -62,13 +62,15 @@ def process_docking(pdb_file, commands=None):
     #                       start - Właściwy program
     # =============================================================================    
         if not commands or 'fixing' in commands:
+            pass
+            # TODO:
             # Naprawianie plików PDB według autorskiej receptury
-            run_command([
-                "python",
-                "fixing_pdb_files.py",            # Program naprawiający pliki
-                "-f", file_name + ".pdb"          # Przetwarza ten plik PDB w kolejce (pobiera z pdb_files/!!!!)
-            ])
-            print(f"Zastosowano fixing do {file_name}", flush=True)
+            # run_command([
+            #     "python",
+            #     "fixing_pdb_files.py",            # Program naprawiający pliki
+            #     "-f", file_name + ".pdb"          # Przetwarza ten plik PDB w kolejce (pobiera z pdb_files/!!!!)
+            # ])
+            # print(f"Zastosowano fixing do {file_name}", flush=True)
 
         if not commands or 'receptor' in commands:
             # Przygotowanie receptorów
@@ -102,6 +104,7 @@ def process_docking(pdb_file, commands=None):
                 "-l", ligand_pdbqt,
                 "-r", receptor_pdbqt,
                 "-y", # Centruje na ligandzie
+                "-I", "25", # Zwiększa objętość siatki o ten int
                 "-o", gpf
             ])
             modify_gdpf_overwrite(f"grid_dock_files/{file_name}_grid.gpf", quiet=True)  # Poprawki lokalizacyjne w pliku
@@ -192,15 +195,16 @@ if __name__ == '__main__':
     parser.add_argument("-s", "--select_command",
                         help="Wybierz argumenty do wykonania",
                         type=str, nargs="+", choices=['fixing', 'receptor', 'ligand', 'grid', 'autogrid',
-                                                      'dock', 'autodock', 'autodocklegacy','complex'])
+                                                      'dock', 'autodock', 'autodocklegacy', 'complex']
+                        )
     args = parser.parse_args()
 
     # Pozwala wykorzystać 1 kolumnę z pliku .txt lub wypisać własne ścieżki do plików, lub wykorzysta folder pdb_files
     if args.file:
-        if len(args.file) == 1 and args.file[0].endswith('.txt'): # Sprawdza, czy podano jeden plik .txt
+        if len(args.file) == 1 and args.file[0].endswith(('.txt', '.csv')): # Sprawdza, czy podano jeden plik .txt
             with open(args.file[0], 'r') as f:
                 ids = [line.split()[0].strip() for line in f] # Otwiera plik i pobiera ID z pierwszej kolumny
-            pdb_directory = [os.path.join('pdb_files', f'{id}.pdb') for id in ids] # Utworzy ścieżki do plików PDB na podstawie ID
+            pdb_directory = [os.path.join('pdb_files', f'{id_name}.pdb') for id_name in ids] # Utworzy ścieżki do plików PDB na podstawie ID
         else:
             pdb_directory = args.file # Jeśli nie podano pliku .txt, użyje bezpośrednio podanych ścieżek
     elif args.directory:

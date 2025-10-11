@@ -4,6 +4,9 @@
 import argparse
 import os
 import time
+import fnmatch
+import numpy as np
+import flip_res
 from tqdm import tqdm
 from shutil import copyfile
 from modeller import *
@@ -12,8 +15,6 @@ from modeller.automodel import AutoModel, assess
 from modeller.optimizers import molecular_dynamics, actions, conjugate_gradients
 from modeller.scripts import complete_pdb
 from scipy.spatial import cKDTree
-import numpy as np
-import flip_res
 
 
 # Klasa MyModel dziedziczy po AutoModel (Modeller)
@@ -42,7 +43,7 @@ class PDBModelOptimization:
         # Ścieżki do folderów wejściowych, wyjściowych i roboczych
         self.project_root = project_root
         self.input_path = os.path.join(project_root, 'pdb_files') # Folder z wejsciowymi plikami PDB
-        self.output_path = os.path.join(project_root, 'pdb_files') # Folder na naprawione pliki PDB
+        self.output_path = os.path.join(project_root, 'fixed_pdb') # Folder na naprawione pliki PDB
         self.work_path = os.path.join(project_root, 'work_folder') # Folder roboczy
 
         os.makedirs(self.input_path, exist_ok=True)
@@ -62,29 +63,40 @@ class PDBModelOptimization:
         """
             Usuwa tymczasowe pliki z katalogu roboczego po zakończeniu pracy.
         """
+        # Work path
         for file in os.listdir(self.work_path):
             if file.startswith(pdb_code):
                 file_path = os.path.join(self.work_path, file)
                 try:
                     os.remove(file_path)
-                    print(f"Usunięto pliki robocze: {pdb_code}")
+                    print(f"Usunięto pliki robocze: {file}")
+                except Exception as e:
+                    print(f"Error przy usuwaniu {file}: {e}")
+
+        # Fixed_pdb path
+        for file in os.listdir(self.output_path): # Usuwa wszystkie pliki z przedrostkami w .pdb
+            if fnmatch.fnmatch(file, "????_*.pdb"):
+                file_path = os.path.join(self.output_path, file)
+                try:
+                    os.remove(file_path)
+                    print(f"Usunięto niepotrzebny plik: {file}")
                 except Exception as e:
                     print(f"Error przy usuwaniu {file}: {e}")
 
 
-    def rename_flipped_files(self, pdb_name):
+    def rename_files(self, source_pattern, target_pattern):
         """
-            Zastępuje nazwę pliku *_flipped_openmm.pdb standardową nazwą *.pdb.
-            Pozwala utrzymać spójność nazw po flipowaniu reszt aminokwasowych.
+            Renames files matching the source pattern to target pattern.
+            Allows keeping consistent naming after file modifications.
         """
-        flipped_file = os.path.join(self.output_path, f"{pdb_name}_flipped_openmm.pdb")
-        target_file = os.path.join(self.output_path, f"{pdb_name}.pdb")
+        source_file = os.path.join(self.output_path, source_pattern)
+        target_file = os.path.join(self.output_path, target_pattern)
 
-        if os.path.exists(flipped_file):
+        if os.path.exists(source_file):
             if os.path.exists(target_file):
                 os.remove(target_file)
-            os.rename(flipped_file, target_file)
-            print(f"Zmieniono nazwę: {flipped_file} -> {target_file}")
+            os.rename(source_file, target_file)
+            print(f"Zmieniono nazwę: {source_file} -> {target_file}")
 
 
     def prepare_alignment(self, env, pdb_code, temple_code):
@@ -102,9 +114,6 @@ class PDBModelOptimization:
 
         print("alignment.ali zostal zapisany")
         self.aln = aln
-
-
-
 
 
     def optimize_heavy_atom(self, model, code):
@@ -240,7 +249,7 @@ class PDBModelOptimization:
         model.write(file=final_path)
         print(f"Zapisano zoptymalizowaną strukturę (z więzami): {final_path}")
 
-    def fill_missing_residues_and_atoms(self, single_file=None):
+    def fill_missing_residues_and_atoms(self, files_list=None):
         """
             Główna funkcja przetwarzająca pojedyncze lub wszystkie pliki PDB.
             Wykonuje kompletny pipeline naprawczy:
@@ -255,21 +264,15 @@ class PDBModelOptimization:
             Zwraca statystyki czasów poszczególnych etapów.
         """
 
-        files = [single_file] if single_file else os.listdir(self.input_path)
-        stats = {}
-        print(self.input_path)
-        print(self.output_path)
+        files = files_list if files_list else os.listdir(self.input_path)
 
         for filename in tqdm(files):
-            if not filename.endswith(".pdb"):
-                continue
 
             print(f"Przetwarzanie pliku: {filename}")
             start = time.perf_counter()
 
             pdb_path = os.path.join(self.input_path, filename)
             pdb_name = os.path.splitext(filename)[0]
-
             temple_name = f"{pdb_name}_fill"
 
             self.env.io.atom_files_directory = ['.', self.input_path]
@@ -293,10 +296,8 @@ class PDBModelOptimization:
 
             prepare_alignment_end = time.perf_counter()
             prepare_alignment_time = prepare_alignment_end - start
-            print("prepare_alignment_time trwał: ", prepare_alignment_time)
 
             # 1) Zapisanie pliku wyjsciowego
-
             model_output_file = f"{temple_name}.B99990001.pdb"
             if os.path.isfile(model_output_file):
                 final_output_file = os.path.join(self.output_path, f"{pdb_name}.pdb")
@@ -311,25 +312,20 @@ class PDBModelOptimization:
 
                 hydrogens_added_end = time.perf_counter()
                 hydrogens_added_time = hydrogens_added_end - prepare_alignment_end
-                print("hydrogens_added_time trwał: ", hydrogens_added_time)
 
                 # 2) Wczytanie uzupelnionej struktury
                 model = complete_pdb(self.env, code)
                 model.write(file=f"{self.output_path}/{pdb_name}_withH.pdb")
                 print("Modeller automatycznie dodał wodory (top_allh.lib).")
 
-
-
                 model_loaded_end = time.perf_counter()
                 model_loaded_time = model_loaded_end - hydrogens_added_end
-                print("model_loaded_time trwał: ", model_loaded_time)
 
                 # 3) Flipy odpowiednich reszt aminokwasowych
                 flipper = flip_res.ResidueFlipper(final_output_file, self.aln)
                 flipper.run()
 
                 # Wczytanie ponownie strukturę po flipowaniu
-
                 flipped_file = f"{self.output_path}/{pdb_name}_flipped_openmm.pdb"
                 if os.path.exists(flipped_file):
                     model = complete_pdb(self.env, f"{pdb_name}_flipped_openmm")
@@ -338,27 +334,20 @@ class PDBModelOptimization:
 
                 residues_flipped_end = time.perf_counter()
                 residues_flipped_time = residues_flipped_end - model_loaded_end
-                print("residues_flipped_time trwał: ", residues_flipped_time)
 
                 # 4) Optymalizacje
-
                 self.optimize_with_restraints(model, code, pdb_name)
-
                 self.optimize_full_structure(model, code)
 
                 optimized_end = time.perf_counter()
                 optimized_time = optimized_end - residues_flipped_end
 
-                # 5) Zmiana nazwy plików na poprawne (podmienia pliki)
-                self.rename_flipped_files(pdb_name)
-
                 # 6) Czyszczenie plików roboczych
                 self.cleanup_working_files(pdb_name)
 
-
+                # 7) Licznik
                 files_cleaned_end = time.perf_counter()
                 files_cleaned_time = files_cleaned_end - optimized_end
-                print("files_cleaned_time trwał: ", files_cleaned_time)
 
                 file_stats = {
                     "prepare_alignment_time": prepare_alignment_time,
@@ -368,27 +357,27 @@ class PDBModelOptimization:
                     "optimized_time": optimized_time,
                     "files_cleaned_time": files_cleaned_time
                 }
-                print(file_stats)
-                stats[filename] = file_stats
+
+                for key, value in file_stats.items():
+                    print(f"{key}: {round(value, 2)} s")
                 end = time.perf_counter()
-                print("całość: ", end - start)
+                print(f"Całość programu: {round(end - start, 2)} s")
             else:
                 print(f"Błąd: nie znaleziono modelu dla {pdb_name}!")
-
-        print(stats)
 
 
 
 if __name__ == '__main__':
-    # Parser argumentów: pozwala uruchomić skrypt dla 1 pliku lub wszystkich.
+    # Parser argumentów: pozwala uruchomić skrypt dla listy plików lub wszystkich.
     parser = argparse.ArgumentParser(description="Naprawianie struktury PDB (reszty, wodory, flipy)")
-    parser.add_argument("-f", "--file", type=str, help="Nazwa pliku .pdb do przetworzenia")
+    parser.add_argument("-f", "--files", type=str, nargs='+', help="Lista plików .pdb do przetworzenia")
     args = parser.parse_args()
 
     project_root = os.getcwd()
     processor = PDBModelOptimization(project_root)
 
-    if args.file:
-        processor.fill_missing_residues_and_atoms(single_file=args.file)
+    if args.files:
+        files_list = [f if f.endswith('.pdb') else f + '.pdb' for f in args.files]
+        processor.fill_missing_residues_and_atoms(files_list=files_list)
     else:
         processor.fill_missing_residues_and_atoms()
