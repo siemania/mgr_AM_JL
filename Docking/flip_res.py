@@ -10,6 +10,7 @@ try:
 except ImportError:
     from openmm import unit
 
+# noinspection PyUnresolvedReferences
 nanometer = unit.nanometer
 
 # ResidueFlipper – wykonuje flipy ASN, GLN i HIS.
@@ -23,7 +24,7 @@ class ResidueFlipper:
         self.aln = aln
         self.env = environ()
         self.env.io.hetatm = True
-        self.output_pdb_path = os.path.splitext(input_pdb_path)[0] + "_fixed.pdb"
+        self.output_pdb_path = os.path.splitext(input_pdb_path)[0] + "_flipped_openmm.pdb"
 
     def count_local_hbonds(self, residue, topology, positions, cutoff=0.35):
         """
@@ -43,6 +44,7 @@ class ResidueFlipper:
         res_indices = [i for i, atom in enumerate(atoms) if atom.residue == residue and elements[i] in ('O', 'N')]
         res_coords = pos_array[res_indices]
 
+        # Znajduje wszystkie punkty w zasięgu koordynatów
         count = 0
         for coord in res_coords:
             close = kdtree.query_ball_point(coord, cutoff)
@@ -190,15 +192,10 @@ class ResidueFlipper:
         """
         # Wczytanie pliku
         fixer = PDBFixer(filename=self.input_pdb_path)
-
-        # Zapis
-        with open(self.output_pdb_path, 'w') as f:
-            PDBFile.writeFile(fixer.topology, fixer.positions, f)
-        print(f">>> Gotowy plik zapisany do: {self.output_pdb_path}")
         structure = fixer.topology
         positions = fixer.positions
 
-        # Przechodzimy po resztach i flipujemy
+        # Przechodzimy po resztach i flipujemy jeśli jest to potrzebne
         for chain in structure.chains():
             for residue in chain.residues():
                 resname = residue.name.upper()
@@ -215,16 +212,19 @@ class ResidueFlipper:
 
                 hbonds_after = self.count_local_hbonds(residue, structure, flipped_positions)
 
+                # Flipuje tylko jeśli występuje zysk HBonds
                 if hbonds_after > hbonds_before:
                     print(f"Zastosowano flip {resname} {resid}, zwiększono lokalne wiązania wodorowe: {hbonds_before} → {hbonds_after}")
-                    positions[:] = flipped_positions[:]
+                    positions[:] = flipped_positions[:] # Copying positions is necessary here!
                 else:
                     print(f"Nie zastosowano flipa {resname} {resid}, brak poprawy: {hbonds_before} → {hbonds_after}")
 
-        output_path = os.path.splitext(self.input_pdb_path)[0] + "_flipped_openmm.pdb"
-        with open(output_path, 'w') as out_file:
+        # Zapis do pliku
+        with open(self.output_pdb_path, 'w') as out_file:
             PDBFile.writeFile(structure, positions, out_file)
-        print(f"Zapisano wynikowy plik do: {output_path}")
+        print(f">>> Gotowe flipy zapisano do: {self.output_pdb_path}")
+
+        return self.output_pdb_path
 
 # Użycie:
 # flipper = ResidueFlipper("sciezka/do/pliku.pdb")
