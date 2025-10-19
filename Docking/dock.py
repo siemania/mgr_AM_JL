@@ -212,14 +212,16 @@ if __name__ == '__main__':
     else:
         pdb_directory = glob("pdb_files/*.pdb")
 
-    # Przykładowe użycie:
-    # python dock.py -f id_list.txt                         (pobiera pliki z pdb_files/ biorąc ID z każdej linii w
-    #                                                        pierwszej kolumnie w pliku tekstowym)
-    # python dock.py -f 1akt 1r04
-    # python dock.py -d directory_of_pdb_files
-    # python dock.py -d pdb_files -s "fixing" "autodock"
-    # python dock.py                                        (default: pdb_files/ and all commands)
-
+    """
+    Przykładowe użycie:
+    ====================
+    python dock.py -f id_list.txt                         (pobiera pliki z pdb_files/ biorąc ID z każdej linii w
+                                                           pierwszej kolumnie w pliku tekstowym)
+    python dock.py -f 1akt 1r04
+    python dock.py -d directory_of_pdb_files
+    python dock.py -d pdb_files -s "fixing" "autodock"
+    python dock.py                                        (default: pdb_files/ and all commands)
+    """
     # Ustawienie liczby równoległych procesów
     max_workers = 4
     
@@ -227,7 +229,7 @@ if __name__ == '__main__':
     os.makedirs("pdbqt_files", exist_ok=True)
     os.makedirs("map_grid_files", exist_ok=True)
     os.makedirs("grid_dock_files", exist_ok=True)
-    os.makedirs("output_files", exist_ok=True)
+    # os.makedirs("output_files", exist_ok=True)
     
     # Pomiar czasu
     date_stamp = date.isoformat(date.today())

@@ -48,7 +48,7 @@ class PDBModelOptimization:
         self.env.libs.topology.read(file='$(LIB)/top_allh.lib')
         self.env.libs.parameters.read(file='$(LIB)/par.lib')
         self.env.edat.dynamic_sphere = True
-
+        self.env.io.hetatm = True
 
     def cleanup_working_files(self, pdb_code):
         """
@@ -74,7 +74,6 @@ class PDBModelOptimization:
                 except Exception as e:
                     print(f"Error przy usuwaniu {file}: {e}")
 
-
     def prepare_alignment(self, env, pdb_code, temple_code):
         """
         Tworzy alignment pomiędzy strukturą wzorcową (template) a sekwencją docelową (target).
@@ -91,45 +90,51 @@ class PDBModelOptimization:
         print("alignment.ali został zapisany")
         self.aln = aln
 
-
-    def find_active_site(self, model, ligand_pdb_path, cutoff=5.0):
+    def find_active_site(self, protein_model, ligand_pdb_path, cutoff=5.0):
         """
         Identyfikuje reszty centrum aktywnego na podstawie odległości od liganda.
         Wykorzystuje drzewo KDTree (scipy.spatial) do efektywnego wyszukiwania sąsiadujących reszt.
-
-        Parametry
-        ----------
-        model : obiekt Modeller model
-            Model białka
-        ligand_pdb_path : str
-            Ścieżka do pliku liganda (PDB)
-        cutoff : float
-            Promień (Å), w którym wyszukiwane są reszty w centrum aktywnym
         """
+        # TODO: Upewnić się że wszystko zostało poprawnie zaznaczone
+        # 1. Wczytaj atomy LIGANDA z osobnego pliku
+        try:
+            # Używamy teraz 'model' (klasa) zamiast 'protein_model' (argument)
+            ligand_mdl = model(self.env, file=ligand_pdb_path)
+        except Exception as e:
+            print(f"BŁĄD: Nie można wczytać pliku liganda: {ligand_pdb_path}")
+            print(f"Szczegóły: {e}")
+            return Selection() # Zwróć pustą selekcję
 
-        ligand_atoms = [a for r in model.residues for a in r.atoms]
+        ligand_atoms = list(ligand_mdl.atoms)
 
         if not ligand_atoms:
             print("Nie znaleziono atomów liganda w pliku:", ligand_pdb_path)
             return Selection()
 
-        # współrzędne atomów liganda
+        # Współrzędne atomów liganda
         ligand_coords = np.array([[a.x, a.y, a.z] for a in ligand_atoms])
 
-        # współrzędne atomów modelu (bez wody)
-        model_atoms = [a for a in model.atoms if a.residue.name != "HOH"]
+        # 2. Wczytaj atomy MODELU (białka) - używamy nowej nazwy 'protein_model'
+        model_atoms = [a for a in protein_model.atoms if a.residue.name != "HOH"]
         model_coords = np.array([[a.x, a.y, a.z] for a in model_atoms])
 
-        # budowa KDTree dla modelu
+        # 3. Zbuduj KDTree dla modelu i znajdź sąsiadów
         tree = cKDTree(model_coords)
 
-        nearby_indices = tree.query_ball_point(ligand_coords, cutoff)
-        nearby_residues = {model_atoms[i].residue for idx_list in nearby_indices for i in idx_list}
+        # query_ball_point zwraca listę list indeksów
+        nearby_indices_lists = tree.query_ball_point(ligand_coords, cutoff)
 
+        # 4. Zbierz unikalne RESZTY (nie atomy)
+        nearby_residues = set()
+        for idx_list in nearby_indices_lists:
+            for i in idx_list:
+                nearby_residues.add(model_atoms[i].residue)
+
+        # 5. Stwórz selekcję ATOMÓW należących do tych reszt
         active_site = Selection(*nearby_residues)
-        print(f"Znaleziono {len(nearby_residues)} reszt w centrum aktywnym (KDTree optymalizacja)")
-        return active_site
 
+        print(f"Znaleziono {len(nearby_residues)} reszt w centrum aktywnym (w promieniu {cutoff}Å od liganda)")
+        return active_site
 
     def optimize_heavy_atoms(self, model, pdb_code):
         """
@@ -144,7 +149,6 @@ class PDBModelOptimization:
         final_path = os.path.join(self.output_path, pdb_code + ".pdb")
         model.write(file=final_path)
         print(f">>> Zoptymalizowano atomy ciężkie i zapisano: {final_path}")
-
 
     def optimize_with_restraints(self, model, pdb_code):
         """
@@ -189,7 +193,6 @@ class PDBModelOptimization:
         model.write(file=final_path)
         print(f">>> Zapisano zoptymalizowaną strukturę (z więzami): {final_path}")
 
-
     def optimize_full_structure(self, model, pdb_code):
         """
         Wykonuje pełną optymalizację modelu:
@@ -226,7 +229,6 @@ class PDBModelOptimization:
         model.write(file=final_path)
         print(f">>> Zoptymalizowano pełną strukturę i zapisano: {final_path}")
 
-
     def optimize_active_site_sidechains(self, model, pdb_code):
         """
         Optymalizuje tylko atomy łańcuchów bocznych w centrum aktywnym.
@@ -241,16 +243,18 @@ class PDBModelOptimization:
             print(f"Ostrzeżenie: Nie znaleziono pliku liganda: {ligand_path}. Pomijanie optymalizacji centrum aktywnego.")
             return
 
-        active_site_residues = self.find_active_site(model, ligand_path)
+        active_site_residues = self.find_active_site(model, ligand_path, cutoff=7.0)
         if not active_site_residues:
             print("Ostrzeżenie: Nie znaleziono centrum aktywnego. Pomijanie optymalizacji.")
             return
 
         # 2. Tworzenie selekcji
         backbone_atoms_names = ("N", "CA", "C", "O")
+
+        # active_site_residues to już jest selekcja ATOMÓW.
+        # Iterujemy po niej bezpośrednio.
         sidechain_atoms_to_optimize = Selection(*[
-            atom for res in active_site_residues.residues
-            for atom in res.atoms
+            atom for atom in active_site_residues # <-- POPRAWKA
             if atom.name.strip() not in backbone_atoms_names
         ])
 
@@ -271,7 +275,8 @@ class PDBModelOptimization:
         for atom in atoms_to_freeze:
             atom.fix = True
 
-        # 4. Stabilna Optymalizacja (CG -> MD -> CG)
+        # 4. Stabilna Optymalizacja (CG -> Annealing MD -> CG)
+        #    TEN BLOK JEST ZASTĄPIONY
 
         # Definicja optymalizatorów
         cg = conjugate_gradients(output='REPORT')
@@ -281,15 +286,24 @@ class PDBModelOptimization:
         model.restraints.make(sidechain_atoms_to_optimize, restraint_type='stereo', spline_on_site=False)
 
         # Krok A: Wstępne CG (usuwa najgorsze zderzenia)
-        print("   Krok A: Wstępna minimalizacja CG (50 iteracji)...")
-        cg.optimize(sidechain_atoms_to_optimize, max_iterations=50, actions=[actions.trace(10, trace_file)])
+        print("   Krok A: Wstępna minimalizacja CG (30 iteracji)...")
+        cg.optimize(sidechain_atoms_to_optimize, max_iterations=30, actions=[actions.trace(10, trace_file)])
 
-        # Krok B: Relaksacja MD (pozwala atomom "uciec" ze zderzeń)
-        print("   Krok B: Relaksacja MD (100 iteracji @ 300K)...")
+        # Krok B: Symulowane Wyżarzanie (Simulated Annealing)
+        print("   Krok B: Wyżarzanie MD (600K -> 300K -> 50K)...")
+
+        # 1. Rozgrzanie i intensywna rotacja (dajemy więcej kroków niż wodorom)
         md.optimize(sidechain_atoms_to_optimize,
-                    temperature=300.0,
-                    max_iterations=100,
+                    temperature=600.0,
+                    max_iterations=150, # Więcej iteracji dla cięższych łańcuchów
                     actions=[actions.trace(20, trace_file)])
+
+        # 2. Stopniowe chłodzenie
+        for temp in [300.0, 50.0]:
+            md.optimize(sidechain_atoms_to_optimize,
+                        temperature=temp,
+                        max_iterations=75, # Więcej iteracji
+                        actions=[actions.trace(10, trace_file)])
 
         # Krok C: Finałowe CG (dopracowanie geometrii)
         print("   Krok C: Finałowa minimalizacja CG (150 iteracji)...")
@@ -306,13 +320,14 @@ class PDBModelOptimization:
         model.write(file=final_path)
         print(f">>> Zoptymalizowano łańcuchy boczne w centrum aktywnym i zapisano: {final_path}")
 
-
     def optimize_hydrogens(self, model, pdb_code):
         """
-        Przeprowadza stabilną optymalizację (CG-MD-CG) geometrii tylko atomów wodoru.
-        Wszystkie atomy ciężkie są jawnie MROŻONE na czas optymalizacji.
+        Przeprowadza stabilną optymalizację (CG -> Annealing MD -> CG) geometrii tylko atomów wodoru.
+        Wykorzystuje symulowane wyżarzanie (wysoka temperatura), aby pozwolić terminalnym grupom ("luźnym głowom")
+        na swobodną rotację i znalezienie optymalnych pozycji.
+        Wszystkie atomy ciężkie są mrożone na czas optymalizacji.
         """
-        # Selekcje
+        # Selekcje TODO: Ogarnąć tak żeby atomy ciężkie się zrelaksowały, a wodory ułożyły jak należy
         hydrogen_atoms = Selection(*[atom for atom in model.atoms if atom.name.strip().startswith('H')])
         heavy_atoms = Selection(*[atom for atom in model.atoms if not atom.name.strip().startswith('H')])
 
@@ -320,34 +335,44 @@ class PDBModelOptimization:
             print("Ostrzeżenie: Nie znaleziono atomów wodoru do optymalizacji.")
             return
 
-        # 1. ZAMROŻENIE atomów ciężkich
+        # 1. ZAMROŻENIE atomów ciężkich (blokuje translacje, ale nie rotację)
         print(f"Mrożenie {len(heavy_atoms)} atomów ciężkich.")
         for atom in heavy_atoms:
             atom.fix = True
 
-        print("Rozpoczynanie optymalizacji atomów wodoru (CG-MD-CG)...")
+        print("Rozpoczynanie optymalizacji atomów wodoru (Simulated Annealing)...")
 
-        # 2. Stabilna Optymalizacja (CG -> MD -> CG)
-        cg = conjugate_gradients(output='REPORT')
+        # 2. Stabilna Optymalizacja (CG -> Annealing MD -> CG)
         md = molecular_dynamics(output='REPORT')
+        cg = conjugate_gradients(output='REPORT')
         trace_file = open(pdb_code + ".hydrogens_opt.log", "w")
 
         model.restraints.make(hydrogen_atoms, restraint_type='stereo', spline_on_site=False)
 
-        # Krok A: Wstępne CG
+        # Krok A: Wstępne CG (szybkie usunięcie tragicznych zderzeń)
         print("   Krok A: Wstępne CG (30 iteracji)...")
         cg.optimize(hydrogen_atoms, max_iterations=30, actions=[actions.trace(10, trace_file)])
 
-        # Krok B: Relaksacja MD
-        print("   Krok B: Relaksacja MD (50 iteracji 300K)...")
-        md.optimize(hydrogen_atoms,
-                    temperature=300.0,
-                    max_iterations=50,
-                    actions=[actions.trace(10, trace_file)])
+        # Krok B: Symulowane Wyżarzanie (Simulated Annealing)
+        # "Rozgrzewamy" wodory, aby pozwolić im swobodnie rotować ("luźne głowy")
+        print("   Krok B: Wyżarzanie MD (600K -> 300K -> 50K)...")
 
-        # Krok C: Finałowe CG
-        print("   Krok C: Finałowe CG (100 iteracji)...")
-        cg.optimize(hydrogen_atoms, max_iterations=100, actions=[actions.trace(10, trace_file)])
+        # 1. Rozgrzanie i intensywna rotacja
+        md.optimize(hydrogen_atoms,
+                    temperature=600.0,  # Wysoka temp. do swobodnej rotacji
+                    max_iterations=100, # Wystarczająco długo, by grupy się obróciły
+                    actions=[actions.trace(20, trace_file)])
+
+        # 2. Stopniowe chłodzenie
+        for temp in [300.0, 50.0]:
+            md.optimize(hydrogen_atoms,
+                        temperature=temp,
+                        max_iterations=50,
+                        actions=[actions.trace(10, trace_file)])
+
+        # Krok C: Finałowe CG (dopracowanie pozycji po ochłodzeniu)
+        print("   Krok C: Finałowe CG (150 iteracji)...")
+        cg.optimize(hydrogen_atoms, max_iterations=150, actions=[actions.trace(10, trace_file)])
 
         trace_file.close()
 
@@ -356,10 +381,10 @@ class PDBModelOptimization:
         for atom in heavy_atoms:
             atom.fix = False
 
+        # Zmieniam nazwę pliku wyjściowego, aby uniknąć nadpisania (patrz uwaga poniżej)
         final_path = os.path.join(self.output_path, pdb_code + ".pdb")
         model.write(file=final_path)
         print(f">>> Zoptymalizowano atomy wodoru i zapisano: {final_path}")
-
 
     def fill_missing_residues_and_atoms(self, files_list=None):
         """
@@ -430,10 +455,10 @@ class PDBModelOptimization:
 
             # Następnie optymalizujemy łańcuchy boczne w centrum aktywnym
             # (na modelu, który ma już zoptymalizowane wodory)
-            # self.optimize_active_site_sidechains(model, pdb_code)
+            self.optimize_active_site_sidechains(model, pdb_code)
 
             # self.optimize_with_restraints(model, pdb_code)
-            self.optimize_full_structure(model, pdb_code)
+            # self.optimize_full_structure(model, pdb_code)
 
             optimized_end = time.perf_counter()
             optimized_time = optimized_end - residues_flipped_end
@@ -458,7 +483,6 @@ class PDBModelOptimization:
                 print(f"{key}: {round(value, 2)} s")
             end = time.perf_counter()
             print(f"Całość programu: {round(end - start, 2)} s")
-
 
 
 if __name__ == '__main__':

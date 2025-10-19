@@ -26,6 +26,7 @@ class ResidueFlipper:
         self.env.io.hetatm = True
         self.output_pdb_path = os.path.splitext(input_pdb_path)[0] + "_flipped_openmm.pdb"
 
+
     def count_local_hbonds(self, residue, topology, positions, cutoff=0.35):
         """
         Liczy lokalne wiązania wodorowe O/N wokół reszty.
@@ -52,6 +53,7 @@ class ResidueFlipper:
 
         return count
 
+
     def flip_and_count_hbonds(self, resname, residue, structure, positions):
         """
         Próbuje flipować i sprawdza, czy liczba HBonds wzrosła.
@@ -68,6 +70,7 @@ class ResidueFlipper:
             return original_positions, False
 
         return positions[:], True
+
 
     def flip_amide_single(self, residue, structure, positions, resname):
         """
@@ -137,6 +140,7 @@ class ResidueFlipper:
             print(f"Błąd w flip_amide_single ({resname}): {e}")
             return False
 
+
     def flip_HIS_single(self, residue, structure, positions):
         """
         Flip HIS: obraca pierścień o 180°.
@@ -167,6 +171,7 @@ class ResidueFlipper:
         except:
             return False
 
+
     def rotate_atoms(self, atom_positions, center, axis, angle):
         """
         Właściwa funkcja do obrotu pozycji atomów.
@@ -182,6 +187,7 @@ class ResidueFlipper:
                        axis * np.dot(axis, rel_pos) * (1 - cos_theta))
             rotated_positions.append(rotated + center)
         return rotated_positions
+
 
     def run(self):
         """
@@ -225,6 +231,7 @@ class ResidueFlipper:
         print(f">>> Gotowe flipy zapisano do: {self.output_pdb_path}")
 
         return self.output_pdb_path
+
 
 # Użycie:
 # flipper = ResidueFlipper("sciezka/do/pliku.pdb")
