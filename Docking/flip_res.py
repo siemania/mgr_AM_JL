@@ -1,3 +1,4 @@
+import os
 import numpy as np
 from modeller import *
 from openmm import *
@@ -13,8 +14,10 @@ except ImportError:
 # noinspection PyUnresolvedReferences
 nanometer = unit.nanometer
 
+
 # ResidueFlipper – wykonuje flipy ASN, GLN i HIS.
 class ResidueFlipper:
+
     def __init__(self, input_pdb_path, aln=None):
         """
         Przyjmuje ścieżkę do PDB i alignment.
@@ -25,7 +28,6 @@ class ResidueFlipper:
         self.env = environ()
         self.env.io.hetatm = True
         self.output_pdb_path = os.path.splitext(input_pdb_path)[0] + "_flipped_openmm.pdb"
-
 
     def count_local_hbonds(self, residue, topology, positions, cutoff=0.35):
         """
@@ -53,29 +55,12 @@ class ResidueFlipper:
 
         return count
 
-
-    def flip_and_count_hbonds(self, resname, residue, structure, positions):
-        """
-        Próbuje flipować i sprawdza, czy liczba HBonds wzrosła.
-        """
-        original_positions = positions[:]
-        flipped = False
-
-        if resname in ['ASN', 'GLN']:
-            flipped = self.flip_amide_single(residue, structure, positions, resname)
-        elif resname == 'HIS':
-            flipped = self.flip_HIS_single(residue, structure, positions)
-
-        if not flipped:
-            return original_positions, False
-
-        return positions[:], True
-
-
     def flip_amide_single(self, residue, structure, positions, resname):
         """
         Flip ASN/GLN: obraca grupę amidową (O, N, hydrogens) o 180°
         wokół odpowiedniego wiązania (ASN: CG–CB, GLN: CD–CG).
+
+        Modyfikuje obiekt 'positions' w miejscu.
         """
         try:
             atom_dict = {atom.name: atom for atom in residue.atoms()}
@@ -86,19 +71,20 @@ class ResidueFlipper:
                 axis_partner = 'CB'  # fallback: CA
                 group_base = ['OD1', 'ND2']
                 hyd_prefix = 'HD2'
-
             elif resname == 'GLN':
                 required = ['CD', 'OE1', 'NE2']
                 pivot_name = 'CD'
                 axis_partner = 'CG'  # fallback: CB
                 group_base = ['OE1', 'NE2']
                 hyd_prefix = 'HE2'
-
             else:
                 return False
 
             # Sprawdź wymagane atomy
             if not all(name in atom_dict for name in required):
+                # Dzieje się tak, gdy PDBFixer doda brakujące atomy (np. w GLN 222),
+                # ale plik wejściowy był tak zepsuty, że nie dodał ich poprawnie.
+                print(f"Ostrzeżenie: Pomijanie flipa {resname} {residue.id} - brak wymaganych atomów ({required})")
                 return False
 
             # Mapowanie na indeksy
@@ -116,6 +102,12 @@ class ResidueFlipper:
                 partner_idx = atom_lookup['CA']  # fallback
             partner_pos = positions[partner_idx].value_in_unit(nanometer)
             axis = np.array([partner_pos.x, partner_pos.y, partner_pos.z]) - center
+
+            # Gdyby CD
+            if np.linalg.norm(axis) < 1e-6:
+                print(f"Ostrzeżenie: Pomijanie flipa {resname} {residue.id} - oś rotacji ma zerową długość.")
+                return False
+
             axis /= np.linalg.norm(axis)
 
             # Grupa do obrotu
@@ -137,46 +129,77 @@ class ResidueFlipper:
 
             return True
         except Exception as e:
-            print(f"Błąd w flip_amide_single ({resname}): {e}")
+            print(f"Błąd w flip_amide_single ({resname} {residue.id}): {e}")
             return False
-
 
     def flip_HIS_single(self, residue, structure, positions):
         """
-        Flip HIS: obraca pierścień o 180°.
+        Flip HIS: obraca cały pierścień (i jego wodory) o 180°
+        wokół osi CB-CG.
+        Modyfikuje obiekt 'positions' w miejscu.
         """
         try:
             atom_dict = {atom.name: atom for atom in residue.atoms()}
-            if not all(name in atom_dict for name in ['CG', 'CD2', 'ND1', 'CE1', 'NE2']):
+
+            # Wymagamy atomów do zdefiniowania osi (CB, CG) i pierścienia
+            required = ['CB', 'CG', 'ND1', 'CD2', 'CE1', 'NE2']
+            if not all(name in atom_dict for name in required):
+                print(f"Ostrzeżenie: Pomijanie flipa HIS {residue.id} - brak wymaganych atomów ({required})")
                 return False
-            atom_lookup = {atom.name: i for i, atom in enumerate(structure.atoms())}
+
+            # Mapowanie na indeksy LOKALNE DLA TEJ RESZTY
+            atom_lookup = {atom.name: i for i, atom in enumerate(structure.atoms()) if atom.residue == residue}
+
+            # Definicja osi rotacji: CB -> CG
+            cb_idx = atom_lookup['CB']
             cg_idx = atom_lookup['CG']
-            cd2_idx = atom_lookup['CD2']
+
+            cb_pos = positions[cb_idx].value_in_unit(nanometer)
             cg_pos = positions[cg_idx].value_in_unit(nanometer)
-            cd2_pos = positions[cd2_idx].value_in_unit(nanometer)
-            center = np.array([cg_pos.x, cg_pos.y, cg_pos.z])
-            axis = np.array([cd2_pos.x, cd2_pos.y, cd2_pos.z]) - center
+
+            center = cb_pos # Pivot (punkt na osi) to CB
+            axis = cg_pos - center # Wektor osi
+
+            if np.linalg.norm(axis) < 1e-6:
+                print(f"Ostrzeżenie: Pomijanie flipa HIS {residue.id} - oś rotacji CB-CG ma zerową długość.")
+                return False
+
             axis /= np.linalg.norm(axis)
-            ring_atom_names = ['ND1', 'CD2', 'CE1', 'NE2']
-            ring_indices = [atom_lookup[name] for name in ring_atom_names]
+
+            # Grupa do rotacji: Cały pierścień (włącznie z CG)
+            ring_atom_names = ['CG', 'ND1', 'CD2', 'CE1', 'NE2']
+
+            # Dodaj wodory pierścienia do rotacji
+            hyd_names = [a.name for a in residue.atoms() if a.name.startswith('H') and a.name not in ('H', 'HA', 'HB2', 'HB3')]
+            ring_atom_names.extend(hyd_names)
+
+            ring_indices = [atom_lookup[name] for name in ring_atom_names if name in atom_lookup]
+
             ring_positions = [
                 np.array([positions[i].x, positions[i].y, positions[i].z])
                 for i in ring_indices
             ]
+
+            # Obrót o 180°
             new_positions = self.rotate_atoms(ring_positions, center, axis, np.pi)
+
             for i, idx in enumerate(ring_indices):
                 new_pos = new_positions[i]
                 positions[idx] = Vec3(new_pos[0], new_pos[1], new_pos[2]) * nanometer
             return True
-        except:
+        except Exception as e:
+            print(f"Błąd w flip_HIS_single (HIS {residue.id}): {e}")
             return False
-
 
     def rotate_atoms(self, atom_positions, center, axis, angle):
         """
         Właściwa funkcja do obrotu pozycji atomów.
         """
-        axis = axis / np.linalg.norm(axis)
+        axis_norm = np.linalg.norm(axis)
+        if axis_norm < 1e-6:
+            return atom_positions # Nie można obracać wokół osi zerowej
+
+        axis = axis / axis_norm
         cos_theta = np.cos(angle)
         sin_theta = np.sin(angle)
         rotated_positions = []
@@ -186,20 +209,23 @@ class ResidueFlipper:
                        np.cross(axis, rel_pos) * sin_theta +
                        axis * np.dot(axis, rel_pos) * (1 - cos_theta))
             rotated_positions.append(rotated + center)
-        return rotated_positions
 
+        return rotated_positions
 
     def run(self):
         """
         Główna funkcja:
-            - wypełnia brakujące reszty,
-            - flipuje jesli zysk HBonds,
+            - wczytuje strukturę,
+            - testuje flipy na KOPII współrzędnych,
+            - zatwierdza flip tylko jeśli jest zysk HBonds,
             - zapisuje wynik.
         """
         # Wczytanie pliku
         fixer = PDBFixer(filename=self.input_pdb_path)
         structure = fixer.topology
         positions = fixer.positions
+
+        flip_count = 0
 
         # Przechodzimy po resztach i flipujemy jeśli jest to potrzebne
         for chain in structure.chains():
@@ -210,28 +236,44 @@ class ResidueFlipper:
                 if resname not in ['ASN', 'GLN', 'HIS']:
                     continue
 
+                # 1. Policz wiązania na ORYGINALNYCH pozycjach
                 hbonds_before = self.count_local_hbonds(residue, structure, positions)
-                flipped_positions, did_flip = self.flip_and_count_hbonds(resname, residue, structure, positions)
 
-                if not did_flip:
+                # 2. Stwórz tymczasową KOPIĘ do testowania flipa
+                temp_positions = positions[:]
+                flipped = False
+
+                # 3. Wykonaj flip na KOPII
+                if resname in ['ASN', 'GLN']:
+                    flipped = self.flip_amide_single(residue, structure, temp_positions, resname)
+                elif resname == 'HIS':
+                    flipped = self.flip_HIS_single(residue, structure, temp_positions)
+
+                # Jeśli doszło do flipa, rotacja atomów już została wykonana
+                if not flipped:
                     continue
 
-                hbonds_after = self.count_local_hbonds(residue, structure, flipped_positions)
+                # 4. Policz wiązania na sflipowanej KOPII
+                hbonds_after = self.count_local_hbonds(residue, structure, temp_positions)
 
-                # Flipuje tylko jeśli występuje zysk HBonds
+                # 5. Porównaj i podejmij decyzję
                 if hbonds_after > hbonds_before:
+                    # ZYSK: Nadpisz oryginalne pozycje sflipowaną kopią
                     print(f"Zastosowano flip {resname} {resid}, zwiększono lokalne wiązania wodorowe: {hbonds_before} → {hbonds_after}")
-                    positions[:] = flipped_positions[:] # Copying positions is necessary here!
+                    positions[:] = temp_positions[:] # Zastosuj zmiany do oryginału
+                    flip_count += 1
                 else:
+                    # BRAK ZYSKU: Nie rób nic, kopia zostanie porzucona.
                     print(f"Nie zastosowano flipa {resname} {resid}, brak poprawy: {hbonds_before} → {hbonds_after}")
 
         # Zapis do pliku
         with open(self.output_pdb_path, 'w') as out_file:
             PDBFile.writeFile(structure, positions, out_file)
+
+        print(f"\nZakończono. Zastosowano łącznie {flip_count} flipów.")
         print(f">>> Gotowe flipy zapisano do: {self.output_pdb_path}")
 
         return self.output_pdb_path
-
 
 # Użycie:
 # flipper = ResidueFlipper("sciezka/do/pliku.pdb")
