@@ -7,7 +7,7 @@ from datetime import date
 from tqdm import tqdm # Do pobrania pasek postępu
 import subprocess
 from concurrent.futures import ProcessPoolExecutor, as_completed
-from modify_parameters import modify_gdpf_overwrite, modify_pdbqt_overwrite, modify_fld_overwrite
+from modify_parameters import modify_gdpf_overwrite, modify_pdbqt_overwrite, modify_fld_overwrite, modify_dpf_overwrite_parameters
 from move_files import move_dlg_xml_files
 
 def format_time(seconds):
@@ -56,7 +56,6 @@ def process_docking(pdb_file, commands=None):
         try:
             autodock_gpu_path = glob(f"/home/{user}/**/autodock_*wi", recursive=True)[0]
         except:
-            print("Nie znaleziono AutoDock-GPU !")
             autodock_gpu_path = None
     # =============================================================================
     #                       start - Właściwy program
@@ -107,7 +106,7 @@ def process_docking(pdb_file, commands=None):
                 "-I", "25", # Zwiększa objętość siatki o ten int
                 "-o", gpf
             ])
-            modify_gdpf_overwrite(f"grid_dock_files/{file_name}_grid.gpf", quiet=True)  # Poprawki lokalizacyjne w pliku
+            modify_gdpf_overwrite(gpf, quiet=True)  # Poprawki lokalizacyjne w pliku
             print(f"Parametry do grida {file_name} gotowe", flush=True)
 
         if not commands or 'autogrid' in commands:
@@ -129,10 +128,11 @@ def process_docking(pdb_file, commands=None):
                 "-r", receptor_pdbqt,
                 "-o", dpf
             ])
-            modify_gdpf_overwrite(f"grid_dock_files/{file_name}_dock.dpf", quiet=True) # Poprawki lokalizacyjne w pliku
+            modify_gdpf_overwrite(dpf, quiet=True) # Poprawki lokalizacyjne w pliku
+            modify_dpf_overwrite_parameters(dpf, ga_run=0, do_local_only=100, quiet=True) # Modyfikuje parametry
             print(f"Parametry do dokowania {file_name} gotowe", flush=True)
 
-        ad4_done = False # Upewnia się że autodock nie zostanie ponownie uruchomiony
+        ad_gpu_done = False
         if not commands or 'autodock' in commands:
             print(f"Rozpoczynanie procesu Autodock-GPU dla {file_name} ...", flush=True)
             try:
@@ -140,22 +140,18 @@ def process_docking(pdb_file, commands=None):
                     autodock_gpu_path,
                     "--lfile", ligand_pdbqt,
                     "--ffile", fld,
+                    "--xmloutput", "0",
                     "--nrun", "10",
                 ])
                 move_dlg_xml_files("pdbqt_files", "grid_dock_files")
                 print(f"Dokowanie {file_name} zakonczono pomyslnie", flush=True)
-            except: # Może brzydko wygląda, ale przynajmniej w razie wypadku uruchomi autodock4
-                print(f"Błąd podczas wykonywania Autodock-GPU, uruchamiam autodock4 dla {file_name} ...", flush=True)
-                run_command([
-                    autodocklegacy,
-                    "-p", dpf,
-                    "-l", dlg
-                ])
-                print(f"Dokowanie {file_name} zakonczono pomyslnie", flush=True)
-                ad4_done = True # Przełącza na True i nie uruchomi kolejnego autodocka
+                ad_gpu_done = True
+            except: # W razie wypadku uruchomi autodock4
+                print("Nie znaleziono AutoDock-GPU !", flush=True)
+                commands.extend(['autodocklegacy'])
 
         # DLA KOMPATYBILNOŚCI
-        if (not commands or 'autodocklegacy' in commands) and ad4_done == False:
+        if (not commands or 'autodocklegacy' in commands) and ad_gpu_done is False:
             # Brak programu autodock-gpu, wykonuje autodock4.exe/autodock4
             print(f"Rozpoczynanie procesu autodock4|.exe dla {file_name} ...", flush=True)
             run_command([
@@ -163,10 +159,10 @@ def process_docking(pdb_file, commands=None):
                 "-p", dpf,
                 "-l", dlg
             ])
-
             print(f"Dokowanie {file_name} zakonczono pomyslnie", flush=True)
 
         if not commands or 'complex' in commands:
+            os.makedirs("output_files", exist_ok=True) # Nie zawsze potrzebne
             run_command([
               python,
                "write_all_complexes.py",
@@ -201,7 +197,7 @@ if __name__ == '__main__':
 
     # Pozwala wykorzystać 1 kolumnę z pliku .txt lub wypisać własne ścieżki do plików, lub wykorzysta folder pdb_files
     if args.file:
-        if len(args.file) == 1 and args.file[0].endswith(('.txt', '.csv')): # Sprawdza, czy podano jeden plik .txt
+        if len(args.file) == 1 and args.file[0].endswith(('.txt', '.csv')): # Sprawdza, czy podano jeden plik .txt/.csv
             with open(args.file[0], 'r') as f:
                 ids = [line.split()[0].strip() for line in f] # Otwiera plik i pobiera ID z pierwszej kolumny
             pdb_directory = [os.path.join('pdb_files', f'{id_name}.pdb') for id_name in ids] # Utworzy ścieżki do plików PDB na podstawie ID
@@ -229,34 +225,28 @@ if __name__ == '__main__':
     os.makedirs("pdbqt_files", exist_ok=True)
     os.makedirs("map_grid_files", exist_ok=True)
     os.makedirs("grid_dock_files", exist_ok=True)
-    # os.makedirs("output_files", exist_ok=True)
-    
+
     # Pomiar czasu
     date_stamp = date.isoformat(date.today())
     start_time = time.time()
-    
+    results_list = []
+
     # Uruchamianie przetwarzania w puli procesów + pasek postępu
     with ProcessPoolExecutor(max_workers=max_workers) as executor, tqdm(total=len(pdb_directory), desc="Docking Progress") as progress:
         future_to_file = {executor.submit(process_docking, pdb_file, args.select_command): pdb_file for pdb_file in
                           pdb_directory}
 
-        # Zapis do Docking_log.txt
-        with open(f"Docking_log_{date_stamp}.txt", "w", encoding="utf-8") as log_file:
-    
-            # Monitorowanie zakończonych zadań w czasie rzeczywistym
-            for future in as_completed(future_to_file):
-                result = future.result()
-                print(f"\n{result}") # Wypisuje komunikat o zakończonym pliku
-                
-                # Zapis do logu
-                log_file.write(result + "\n")
-                log_file.flush() # Zapis na bieżąco
+        # Monitorowanie zakończonych zadań w czasie rzeczywistym
+        for future in as_completed(future_to_file):
+            result = future.result()
+            results_list.append(result)
+            print(f"\n{result}") # Wypisuje komunikat o zakończonym pliku
+            progress.update(1) # Aktualizacja paska postępu
 
-                # Aktualizacja paska postępu i zapis do pliku
-                progress.update(1)
-                estimated_time = format_time(progress.format_dict.get("elapsed")) # Pozostały czas bez ms
-                log_file.write(
-                    f"Progress: {progress.n}/{progress.total} ({(progress.n / progress.total)*100:.2f}%) | Czas: {estimated_time}\n")
-    
+    # Podsumowanie zakończenia programu
+    print("Program się zakończył, poniżej podsumowanie:")
+    for result in results_list:
+        print(result)
+                
     print(f'Czas zakończenia programu: {format_time(time.time() - start_time)}')
     # input("~~~~~~~~Naciśnij dowolny przycisk, by zakończyć~~~~~~~~")

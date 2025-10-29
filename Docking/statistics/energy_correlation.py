@@ -10,7 +10,7 @@ def load_energy_file(filepath, index_pdbs=None):
     """Wczytuje {ID: DeltaG} z pliku txt (2. kolumna)."""
     data = {}
     with open(filepath, "r", encoding="utf-8") as f:
-        header = f.readline()  # pomiń nagłówek
+        f.readline()  # pomiń nagłówek
         for line in f:
             parts = line.strip().split("\t")
             if len(parts) >= 2:
@@ -49,8 +49,8 @@ def main():
         args.output += ".png"
 
     # Load PDB codes from index file if provided
+    index_pdbs = set()
     if args.index:
-        index_pdbs = set()
         with open(args.index, 'r', encoding="utf-8") as f:
             for line in f:
                 index_pdbs.add(line.strip().lower())
@@ -68,6 +68,10 @@ def main():
     slope_std, intercept_std, r_std, _, _ = linregress(x_std, y_std)
     slope_fix, intercept_fix, r_fix, _, _ = linregress(x_fix, y_fix)
 
+    # Obliczenie MSE - y: eksperymentalne, x: dokowanie
+    mse_std = np.mean((y_std - x_std) ** 2)
+    mse_fix = np.mean((y_fix - x_fix) ** 2)
+
     # Obliczenie odchylenia kąta od 45°
     angle_std = degrees(atan(slope_std))
     angle_fix = degrees(atan(slope_fix))
@@ -80,9 +84,6 @@ def main():
     min_val = min(all_x.min(), all_y.min()) - 1
     max_val = max(all_x.max(), all_y.max()) + 1
 
-    ## Rysowanie (s - size)
-    plt.figure(figsize=(10, 6))
-
     # Linia ukośna
     fig, ax = plt.subplots()
     ax.plot([0, 1], [0, 1], transform=ax.transAxes, color="grey", linestyle="--", alpha=0.2, linewidth=1)
@@ -92,25 +93,24 @@ def main():
     plt.plot(x_std,
              slope_std * x_std + intercept_std,
              "b--",
-             label=f"Regresja {args.labels[0]} (R²={r_std**2:.2f}, Δθ={delta_std:.2f}°)")
+             label=f"Regresja {args.labels[0]} (R²={r_std ** 2:.2f}, Δθ={delta_std:.2f}°, MSE={mse_std:.2f})")
 
     plt.scatter(x_fix, y_fix, label=args.labels[1], marker="o", s=4, color="green")
     plt.plot(x_fix,
              slope_fix * x_fix + intercept_fix,
              "g--",
-             label=f"Regresja {args.labels[1]} (R²={r_fix**2:.2f}, Δθ={delta_fix:.2f}°)")
+             label=f"Regresja {args.labels[1]} (R²={r_fix ** 2:.2f}, Δθ={delta_fix:.2f}°, MSE={mse_fix:.2f})")
 
     # Podpisy punktów (Standardowe, Naprawione)
     for name, x, y in zip(names_std, x_std, y_std):
-        plt.text(x + 0.3, y - 0.2, name, fontsize=3, color="blue")
+        plt.text(x + 0.2, y - 0.1, name, fontsize=3, color="blue")
     for name, x, y in zip(names_fix, x_fix, y_fix):
         plt.text(x - 0.2, y + 0.1, name, fontsize=3, color="green")
 
     # Podpis wykresu
-    plt.title("Porównanie energii wiązania: dokowanie vs dane eksperymentalne")
-    plt.ylabel("Energia eksperymentalna [kcal/mol]", fontsize=12)
-    plt.xlabel("Energia z dokowania [kcal/mol]", fontsize=12)
-    plt.legend(loc="best")
+    plt.title("Porównanie energii wiązania: dokowanie vs dane eksperymentalne", fontsize=11)
+    plt.ylabel("Energia eksperymentalna [kcal/mol]", fontsize=10)
+    plt.xlabel("Energia z dokowania [kcal/mol]", fontsize=10)
     plt.grid(True, linestyle=":", linewidth=0.5)
 
     # Parametry wykresu
@@ -124,6 +124,9 @@ def main():
     plt.gca().set_aspect("equal", adjustable="box")
     plt.tight_layout()
 
+    #Adjust the plot to allow the legend to fit nicely
+    plt.legend(loc='upper left', fontsize=6)
+
     # Zapisywanie wykresu
     plt.savefig(args.output, dpi=600)
     print(f"Wykres zapisany do: {args.output}")
@@ -134,4 +137,4 @@ if __name__ == "__main__":
     main()
 
 # Usage:
-# python correlation.py -s wyniki_standard.txt -b wyniki_fixed.txt -f wyniki_eksperymentalne_kcalmol.txt -o wynik_korelacji.png
+# python energy_correlation.py -s wyniki_standard.txt -b wyniki_fixed.txt -f wyniki_eksperymentalne_kcalmol.txt -o wynik_korelacji.png

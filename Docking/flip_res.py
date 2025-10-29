@@ -270,7 +270,7 @@ class ResidueFlipper:
         with open(self.output_pdb_path, 'w') as out_file:
             PDBFile.writeFile(structure, positions, out_file)
 
-        print(f"\nZakończono. Zastosowano łącznie {flip_count} flipów.")
+        print(f"\nZastosowano łącznie {flip_count} flipów.")
         print(f">>> Gotowe flipy zapisano do: {self.output_pdb_path}")
 
         return self.output_pdb_path

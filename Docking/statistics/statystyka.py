@@ -1,8 +1,9 @@
-﻿# -*- coding: utf-8 -*-
+﻿#!/usr/bin/python
 import argparse
 import subprocess
 from pathlib import Path
 import os
+
 
 def main():
     """
@@ -45,7 +46,7 @@ def main():
         subprocess.run([
             "python", os.path.join(statistics_folder, "extract_energy_values.py"),
             "-d", folder, "-o", out_file
-        ], check=True)
+        ], check=True, shell=True)
         generated_txt_files.append(out_file)
 
     # 2. Uruchom rmsd_histogram.py na wygenerowanych plikach
@@ -60,11 +61,11 @@ def main():
         ]
         if args.index:
             cmd.extend(["-i", args.index])
-        subprocess.run(cmd, check=True)
+        subprocess.run(cmd, check=True, shell=True)
 
     # 3. Uruchom energy_correlation.py na wygenerowanych plikach + eksperymentalny
     if len(generated_txt_files) >= 2:
-        print(f"[INFO] Tworzę wykres korelacji energii")
+        print("[INFO] Tworzę wykres korelacji energii")
         cmd = [
             "python", os.path.join(statistics_folder, "energy_correlation.py"),
             "-s", generated_txt_files[0],
@@ -75,7 +76,7 @@ def main():
         ]
         if args.index:
             cmd.extend(["-i", args.index])
-        subprocess.run(cmd, check=True)
+        subprocess.run(cmd, check=True, shell=True)
 
     print("[DONE] Analiza zakończona!")
 

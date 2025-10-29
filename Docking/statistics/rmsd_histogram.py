@@ -3,12 +3,13 @@ import numpy as np
 import matplotlib.pyplot as plt
 import argparse
 
+
 def extract_rmsd(filepath):
     """Wczytuje pierwszą kolumnę (PDB) i trzecią kolumnę (RMSD) z pliku TSV"""
     rmsds = []
     pdb_codes = []
     with open(filepath, 'r', encoding="utf-8") as f:
-        header = f.readline()  # pomiń nagłówek
+        f.readline()  # pomiń nagłówek
         for line in f:
             parts = line.strip().split("\t")
             if len(parts) >= 3:

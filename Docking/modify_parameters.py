@@ -87,6 +87,29 @@ def modify_gdpf_overwrite(input_gpf, map_dir="map_grid_files", receptor_dir="pdb
     return
 
 
+def modify_dpf_overwrite_parameters(input_dpf, ga_run=None, do_local_only=None, quiet=False):
+    """Modyfikuje i nadpisuje plik .gpf uwzględniając inne foldery dla map energetycznych oraz receptora"""
+    # Wczytanie pliku i sprawdzenie, czy już zawiera poprawne ścieżki
+    with open(input_dpf, "r+") as f:
+        lines = f.readlines()
+        f.seek(0)  # Cofnięcie wskaźnika na początek pliku
+        f.truncate()  # Usunięcie starej zawartości
+
+        for line in lines:
+            if line.startswith("ga_run ") and ga_run is not None:
+                new_line = f"ga_run {ga_run}\n"
+                if do_local_only is not None:
+                    new_line += f"do_local_only {do_local_only}\n"
+            else:
+                new_line = line  # Zostawiamy linię bez zmian
+
+            # Zapisujemy przetworzoną linię do pliku
+            f.write(new_line)
+
+    if quiet != True: print(f"Parametry w {input_gpf} zostały zaktualizowane.")
+    return
+
+
 def modify_pdbqt_overwrite(input_pdbqt, quiet=False):
     """Modyfikuje i nadpisuje plik .pdbqt usuwając wiersze na podstawie alternatywnej pozycji z kolumny 17 w pliku
     receptora, gdzie znajduje się znak inny niż A lub biały znak, końcowo pozostałe wiersze w kolumnie 17 zastąpi znak
@@ -124,6 +147,7 @@ def modify_fld_overwrite(input_fld, quiet=False):
 
     if quiet != True: print(f"Plik {input_fld} został zaktualizowany.")
     return
+
 
 if __name__ == '__main__':
     # Przykładowe użycie
