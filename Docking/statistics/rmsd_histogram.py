@@ -1,5 +1,6 @@
-#!/usr/bin/env python3
 import numpy as np
+import matplotlib
+matplotlib.use('Agg') # Nie tworzy GUI
 import matplotlib.pyplot as plt
 import argparse
 
@@ -41,7 +42,7 @@ def plot_rmsd_histogram(rmsd1, rmsd2, labels=("Standard", "Fixed"), output="hist
     plt.tight_layout()
     plt.savefig(output, dpi=600)
     print(f"Wykres RMSD zapisany do: {output}")
-    plt.show()
+    # plt.show()
 
 
 if __name__ == '__main__':

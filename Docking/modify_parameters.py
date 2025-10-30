@@ -97,7 +97,7 @@ def modify_dpf_overwrite_parameters(input_dpf, ga_run=None, do_local_only=None, 
 
         for line in lines:
             if line.startswith("ga_run ") and ga_run is not None:
-                new_line = f"ga_run {ga_run}\n"
+                new_line = f"ga_run {ga_run}\n" if ga_run != 0 else ""
                 if do_local_only is not None:
                     new_line += f"do_local_only {do_local_only}\n"
             else:
@@ -106,7 +106,7 @@ def modify_dpf_overwrite_parameters(input_dpf, ga_run=None, do_local_only=None, 
             # Zapisujemy przetworzoną linię do pliku
             f.write(new_line)
 
-    if quiet != True: print(f"Parametry w {input_gpf} zostały zaktualizowane.")
+    if quiet != True: print(f"Parametry w {input_dpf} zostały zaktualizowane.")
     return
 
 

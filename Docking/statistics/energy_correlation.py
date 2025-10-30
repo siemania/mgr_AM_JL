@@ -1,5 +1,7 @@
 #!/usr/bin/env python3
 import numpy as np
+import matplotlib
+matplotlib.use('Agg') # Nie tworzy GUI
 import matplotlib.pyplot as plt
 from scipy.stats import linregress
 from math import atan, degrees
@@ -130,7 +132,7 @@ def main():
     # Zapisywanie wykresu
     plt.savefig(args.output, dpi=600)
     print(f"Wykres zapisany do: {args.output}")
-    plt.show()
+    # plt.show()
 
 
 if __name__ == "__main__":

@@ -64,7 +64,7 @@ class PDBModelOptimization:
 
         # Wartości w trakcie testowania
         # self.env.edat.relative_dielectric = 2.0
-        self.env.edat.relative_dielectric = 4.0
+        # self.env.edat.relative_dielectric = 4.0
         # self.env.edat.relative_dielectric = 8.0
         # self.env.edat.relative_dielectric = 20.0
         # self.env.edat.relative_dielectric = 80.0

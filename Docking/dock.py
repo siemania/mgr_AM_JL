@@ -103,7 +103,7 @@ def process_docking(pdb_file, commands=None):
                 "-l", ligand_pdbqt,
                 "-r", receptor_pdbqt,
                 "-y", # Centruje na ligandzie
-                "-I", "25", # Zwiększa objętość siatki o ten int
+                "-I", "11", # Zwiększa objętość siatki o ten int
                 "-o", gpf
             ])
             modify_gdpf_overwrite(gpf, quiet=True)  # Poprawki lokalizacyjne w pliku
@@ -129,7 +129,7 @@ def process_docking(pdb_file, commands=None):
                 "-o", dpf
             ])
             modify_gdpf_overwrite(dpf, quiet=True) # Poprawki lokalizacyjne w pliku
-            modify_dpf_overwrite_parameters(dpf, ga_run=0, do_local_only=100, quiet=True) # Modyfikuje parametry
+            modify_dpf_overwrite_parameters(dpf, ga_run=0, do_local_only=10, quiet=True) # Modyfikuje parametry
             print(f"Parametry do dokowania {file_name} gotowe", flush=True)
 
         ad_gpu_done = False
