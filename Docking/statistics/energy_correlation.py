@@ -74,12 +74,6 @@ def main():
     mse_std = np.mean((y_std - x_std) ** 2)
     mse_fix = np.mean((y_fix - x_fix) ** 2)
 
-    # Obliczenie odchylenia kąta od 45°
-    angle_std = degrees(atan(slope_std))
-    angle_fix = degrees(atan(slope_fix))
-    delta_std = abs(angle_std - 45)
-    delta_fix = abs(angle_fix - 45)
-
     # Zakresy osi
     all_x = np.concatenate([x_std, x_fix])
     all_y = np.concatenate([y_std, y_fix])
@@ -93,15 +87,15 @@ def main():
     # Dane
     plt.scatter(x_std, y_std, label=args.labels[0], marker="x", s=4, color="blue")
     plt.plot(x_std,
-             slope_std * x_std + intercept_std,
+             1 * x_std + intercept_std,
              "b--",
-             label=f"Regresja {args.labels[0]} (R²={r_std ** 2:.2f}, Δθ={delta_std:.2f}°, MSE={mse_std:.2f})")
+             label=f"Regresja {args.labels[0]} (R²={r_std ** 2:.2f}, b={intercept_std:.2f}, MSE={mse_std:.2f})")
 
     plt.scatter(x_fix, y_fix, label=args.labels[1], marker="o", s=4, color="green")
     plt.plot(x_fix,
-             slope_fix * x_fix + intercept_fix,
+             1 * x_fix + intercept_fix,
              "g--",
-             label=f"Regresja {args.labels[1]} (R²={r_fix ** 2:.2f}, Δθ={delta_fix:.2f}°, MSE={mse_fix:.2f})")
+             label=f"Regresja {args.labels[1]} (R²={r_fix ** 2:.2f}, b={intercept_fix:.2f}, MSE={mse_fix:.2f})")
 
     # Podpisy punktów (Standardowe, Naprawione)
     for name, x, y in zip(names_std, x_std, y_std):

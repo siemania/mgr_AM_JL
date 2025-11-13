@@ -98,8 +98,8 @@ def modify_dpf_overwrite_parameters(input_dpf, ga_run=None, do_local_only=None, 
         for line in lines:
             if line.startswith("ga_run ") and ga_run is not None:
                 new_line = f"ga_run {ga_run}\n" if ga_run != 0 else ""
-                if do_local_only is not None:
-                    new_line += f"do_local_only {do_local_only}\n"
+            if line.startswith("do_local_only ") and do_local_only is not None:
+                new_line = f"do_local_only {do_local_only}\n"
             else:
                 new_line = line  # Zostawiamy linię bez zmian
 

@@ -62,12 +62,7 @@ class PDBModelOptimization:
         # Wartość standardowa w modellerze
         # self.env.edat.relative_dielectric, self.env.edat.coulomb_switch = 1.0, (6.5, 7.5)
 
-        # Wartości w trakcie testowania
-        # self.env.edat.relative_dielectric = 2.0
-        # self.env.edat.relative_dielectric = 4.0
-        # self.env.edat.relative_dielectric = 8.0
-        # self.env.edat.relative_dielectric = 20.0
-        # self.env.edat.relative_dielectric = 80.0
+        self.env.edat.relative_dielectric = 80.0
 
     def cleanup_working_files(self, pdb_code):
         """
@@ -232,12 +227,6 @@ class PDBModelOptimization:
         for atom in atoms_to_freeze:
             atom.fix = False
 
-        # # DEBUG
-        # energy_result = Selection(model).energy()
-        # print(energy_result[0], "Całkowita")
-        # print(energy_result[1], "Terms")
-        # print(energy_result[1][physical.coulomb], "Coulomb")
-
         final_path = os.path.join(self.output_path, pdb_code + ".pdb")
         model.write(file=final_path)
         print(f">>> Zoptymalizowano łańcuchy boczne w centrum aktywnym i zapisano: {final_path}")
@@ -277,18 +266,58 @@ class PDBModelOptimization:
         for atom in heavy_atoms:
             atom.fix = False
 
-        # # DEBUG
-        # energy_result = Selection(model).energy()
-        # print(energy_result[0], "Całkowita")
-        # print(energy_result[1], "Terms")
-        # print(energy_result[1][physical.coulomb], "Coulomb")
-
         # Nazwa pliku wyjściowego
         final_path = os.path.join(self.output_path, pdb_code + ".pdb")
         model.write(file=final_path)
         print(f">>> Zoptymalizowano atomy wodoru i zapisano: {final_path}")
 
-    def fill_missing_residues_and_atoms(self, files_list=None):
+    def rename_atoms_in_pdb_file(self, pdb_file):
+        """
+        Zmienia nazwy atomów bezpośrednio w pliku PDB po jego zapisaniu.
+        """
+        # Mapa dla nazw, które AutoDockTools rozumie
+        rename_map = {
+            'ARG': {'HH11':'1HH1', 'HH12':'2HH1', 'HH21':'1HH2', 'HH22':'2HH2'},
+            'ASN': {'HD21':'1HD2', 'HD22':'2HD2'},
+            'GLN': {'HE21':'1HE2', 'HE22':'2HE2'},
+            'H': 'HN',
+        }
+
+        print("Zmieniam nazwy atomów w pliku PDB...")
+        # Wczytaj zawartość pliku
+        with open(pdb_file, 'r') as f:
+            lines = f.readlines()
+
+        modified_lines = []
+        for line in lines:
+            if line.startswith('ATOM'):
+                # Wyciąga informacje z linii PDB
+                atom_name = line[12:16].strip()
+                res_name = line[17:20].strip()
+
+                # Zamienia wodory amidowe na poprawne
+                if atom_name in rename_map:
+                    new_name = rename_map[atom_name]
+                    new_line = line[:12] + f"{new_name:^4}" + line[16:]
+                    modified_lines.append(new_line)
+                    continue
+
+                # Sprawdza, czy trzeba zmienić nazwę
+                if res_name in rename_map and atom_name in rename_map[res_name]:
+                    new_name = rename_map[res_name][atom_name]
+                    new_line = line[:12] + f"{new_name:<4}" + line[16:]
+                    modified_lines.append(new_line)
+                else:
+                    modified_lines.append(line)
+            else:
+                modified_lines.append(line)
+
+        # Zapisz zmodyfikowany plik
+        with open(pdb_file, 'w') as f:
+            f.writelines(modified_lines)
+        print(">>> Zmieniono nazwę atomów na konwencję PDB w pliku.")
+
+    def fill_missing_residues_and_atoms(self, files_list=None, optimize_hydrogens=True, optimize_sidechains=True):
         """
         Główna funkcja przetwarzająca pojedyncze lub wszystkie pliki PDB.
         Wykonuje kompletny pipeline naprawczy:
@@ -305,19 +334,19 @@ class PDBModelOptimization:
         # Get files from the input folder, if provided.
         files = files_list if files_list else next(os.walk(self.input_path))[2]
 
-        for filename in tqdm(files):
-            print(f"Przetwarzanie pliku: {filename}")
+        for file in tqdm(files):
+            print(f"Przetwarzanie pliku: {file}")
             start = time.perf_counter()
 
-            pdb_path = os.path.join(self.input_path, filename)
-            pdb_code = os.path.splitext(filename)[0]
+            pdb_path = os.path.join(self.input_path, file)
+            pdb_code = os.path.splitext(file)[0]
             temple_name = f"{pdb_code}_fill"
 
             os.chdir(self.work_path)
 
-            if not os.path.exists(filename):
-                print(f"Nie znaleziono {filename}, szukanie w {pdb_path}")
-                copyfile(pdb_path, filename)
+            if not os.path.exists(file):
+                print(f"Nie znaleziono {file}, szukanie w {pdb_path}")
+                copyfile(pdb_path, file)
 
             self.prepare_alignment(self.env, pdb_code, temple_name)
 
@@ -353,14 +382,20 @@ class PDBModelOptimization:
             # 3) Optymalizacje
 
             # Optymalizacja tylko wodorów
-            self.optimize_hydrogens(model, pdb_code)
+            if optimize_hydrogens:
+                self.optimize_hydrogens(model, pdb_code)
 
             # Optymalizacja łańcuchów bocznych w centrum aktywnym
             # (na modelu, który ma już zoptymalizowane wodory)
-            self.optimize_active_site_sidechains(model, pdb_code)
+            if optimize_sidechains:
+                self.optimize_active_site_sidechains(model, pdb_code)
 
             optimized_end = time.perf_counter()
             optimized_time = optimized_end - residues_flipped_end
+
+            # Zmiana nazwy atomów i nadpisywanie
+            final_path = os.path.join(self.output_path, pdb_code + ".pdb")
+            self.rename_atoms_in_pdb_file(final_path)
 
             # 6) Czyszczenie plików roboczych
             self.cleanup_working_files(pdb_code)
@@ -385,15 +420,20 @@ class PDBModelOptimization:
 
 
 if __name__ == '__main__':
-    # Parser argumentów: pozwala uruchomić skrypt dla listy plików lub wszystkich.
     parser = argparse.ArgumentParser(description="Naprawianie struktury PDB (reszty, wodory, flipy)")
     parser.add_argument("-f", "--files", type=str, nargs='+', help="Lista plików .pdb do przetworzenia")
+    parser.add_argument("-nh", "--no-hydrogens", action="store_true", help="Wyłącz optymalizację wodorów")
+    parser.add_argument("-ns", "--no-sidechains", action="store_true", help="Wyłącz optymalizację łańcuchów bocznych")
+
     args = parser.parse_args()
     project_root = os.path.dirname(os.path.abspath(__file__)) # File path to the project root.
     processor = PDBModelOptimization(project_root)
 
     if args.files:
         files_list = [f if f.endswith('.pdb') else f + '.pdb' for f in args.files]
-        processor.fill_missing_residues_and_atoms(files_list=files_list)
+        processor.fill_missing_residues_and_atoms(files_list=files_list,
+                                                  optimize_hydrogens=not args.no_hydrogens,
+                                                  optimize_sidechains=not args.no_sidechains)
     else:
-        processor.fill_missing_residues_and_atoms()
+        processor.fill_missing_residues_and_atoms(optimize_hydrogens=not args.no_hydrogens,
+                                                  optimize_sidechains=not args.no_sidechains)

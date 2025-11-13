@@ -60,17 +60,6 @@ def process_docking(pdb_file, commands=None):
     # =============================================================================
     #                       start - Właściwy program
     # =============================================================================    
-        if not commands or 'fixing' in commands:
-            pass
-            # TODO:
-            # Naprawianie plików PDB według autorskiej receptury
-            # run_command([
-            #     "python",
-            #     "fixing_pdb_files.py",            # Program naprawiający pliki
-            #     "-f", file_name + ".pdb"          # Przetwarza ten plik PDB w kolejce (pobiera z pdb_files/!!!!)
-            # ])
-            # print(f"Zastosowano fixing do {file_name}", flush=True)
-
         if not commands or 'receptor' in commands:
             # Przygotowanie receptorów
             run_command([
@@ -103,7 +92,7 @@ def process_docking(pdb_file, commands=None):
                 "-l", ligand_pdbqt,
                 "-r", receptor_pdbqt,
                 "-y", # Centruje na ligandzie
-                "-I", "11", # Zwiększa objętość siatki o ten int
+                "-I", "1", # Zwiększa objętość siatki o ten int
                 "-o", gpf
             ])
             modify_gdpf_overwrite(gpf, quiet=True)  # Poprawki lokalizacyjne w pliku
@@ -126,10 +115,10 @@ def process_docking(pdb_file, commands=None):
                 "prepare_dpf42.py",
                 "-l", ligand_pdbqt,
                 "-r", receptor_pdbqt,
-                "-o", dpf
+                "-o", dpf,
             ])
             modify_gdpf_overwrite(dpf, quiet=True) # Poprawki lokalizacyjne w pliku
-            modify_dpf_overwrite_parameters(dpf, ga_run=0, do_local_only=10, quiet=True) # Modyfikuje parametry
+            # modify_dpf_overwrite_parameters(dpf, do_local_only=10, quiet=True) # Modyfikuje parametry
             print(f"Parametry do dokowania {file_name} gotowe", flush=True)
 
         ad_gpu_done = False
@@ -141,7 +130,7 @@ def process_docking(pdb_file, commands=None):
                     "--lfile", ligand_pdbqt,
                     "--ffile", fld,
                     "--xmloutput", "0",
-                    "--nrun", "10",
+                    "--nrun", "20",
                 ])
                 move_dlg_xml_files("pdbqt_files", "grid_dock_files")
                 print(f"Dokowanie {file_name} zakonczono pomyslnie", flush=True)
@@ -189,9 +178,9 @@ if __name__ == '__main__':
     parser.add_argument("-d", "--directory", help="Podaj folder w którym są pliki pdb", type=str, nargs='*',
                         default=None)
     parser.add_argument("-s", "--select_command",
-                        help="Wybierz argumenty do wykonania",
-                        type=str, nargs="+", choices=['fixing', 'receptor', 'ligand', 'grid', 'autogrid',
-                                                      'dock', 'autodock', 'autodocklegacy', 'complex']
+                        help="Wybierz komendę: fixing, receptor, ligand, grid, autogrid, dock, autodock, autodocklegacy, complex",
+                        type=str, nargs="+", metavar="KOMENDA",
+                        choices=['receptor', 'ligand', 'grid', 'autogrid', 'dock', 'autodock', 'autodocklegacy', 'complex']
                         )
     args = parser.parse_args()
 

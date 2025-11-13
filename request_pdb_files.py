@@ -2,6 +2,7 @@ import os
 import requests
 import pandas as pd
 
+
 def download_pdb_files(csv_file, folder_pdb, folder_ent):
     """Pobiera pliki PDB na podstawie ID z pliku CSV."""
 	
@@ -25,9 +26,7 @@ def download_pdb_files(csv_file, folder_pdb, folder_ent):
     for pdb_id in df["id"].dropna().astype(str):
         pdb_id_clean = pdb_id.strip().lower()  # Usunięcie białych znaków
 
-
         pdb_path = os.path.join(folder_pdb, f"{pdb_id_clean}.pdb")
-        # ent_path = os.path.join(folder_ent, f"{pdb_id_clean}.entOrg")
 
         # Pobieranie plikow pdb
         try:
@@ -37,10 +36,6 @@ def download_pdb_files(csv_file, folder_pdb, folder_ent):
                     f.write(response.content)
                 print(f"Pobrano: {pdb_id_clean}.pdb")
 
-               # Skopiowanie pliku z rozszerzeniem .ent
-               # with open (ent_path, "wb") as f:
-               #    f.write(response.content)
-               # print(f"Zapisano jako: pdb{pdb_id_clean}.entOrg")
             else:
                 print(f"Nie udało się pobrać: {pdb_id_clean}")
                 missing_files.append(pdb_id_clean)
@@ -56,7 +51,6 @@ def download_pdb_files(csv_file, folder_pdb, folder_ent):
             print(" -", m)
     else:
         print("\nWszystkie pliki zostały pobrane i zapisane pomyślnie.")
-
 
 
 if __name__ == "__main__":

@@ -21,7 +21,6 @@ def main(args):
         
         occ_temp = []
         for line in file:
-
             # Check for best ligand docked    
             if line.startswith("DOCKED: USER    Run"):
                 run = int(line.split()[-1])
@@ -39,15 +38,26 @@ def main(args):
             if line.startswith(("DOCKED: HETATM", "DOCKED: ATOM")): # AD4
                 ligand.append(line[8:62])
                 charges.append(line[74:88])
+                if args.verbose:
+                    print(line, end="")
+            elif line.startswith("DOCKED: ENDMDL"):
+                break
                 
     # Concat lists
     union = []
     for part1, part2, part3 in zip(ligand, occ_temp, charges):
-        u = ''.join((part1, part2, part3, "\n"))
+        u = ''.join((part1, part2, part3))
         union.append(u)
     
     # Save ligand
-    with open(f"{filename}.pdb", "w", encoding="utf-8") as f:
+    if args.output:
+        fileout = str(args.output); ext = splitext(fileout)[1];
+        if len(ext) == 0:
+            fileout += ".pdb"
+    else:
+        fileout = f"{filename}.pdb"
+            
+    with open(fileout, "w", encoding="utf-8") as f:
         f.writelines(union)
                 
 
@@ -60,8 +70,9 @@ if __name__ == '__main__':
     )
     
     parser.add_argument("-f", "--file", nargs=1, help="Input .dlg file")
-    parser.add_argument("-n", "--number", nargs="?", help="Run number for ligand",
-                        default=None)
+    parser.add_argument("-n", "--number", nargs="?", help="Run number for ligand")
+    parser.add_argument("-o", "--output", nargs="?", help="Output file .pdb")
+    parser.add_argument("-v", "--verbose", action="store_true", help="Shows ligand in console")
     
     args = parser.parse_args()
     
