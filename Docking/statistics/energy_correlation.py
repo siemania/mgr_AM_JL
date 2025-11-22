@@ -3,8 +3,6 @@ import numpy as np
 import matplotlib
 matplotlib.use('Agg') # Nie tworzy GUI
 import matplotlib.pyplot as plt
-from scipy.stats import linregress
-from math import atan, degrees
 import argparse
 
 
@@ -50,7 +48,7 @@ def main():
     if not args.output.endswith(".png"):
         args.output += ".png"
 
-    # Load PDB codes from index file if provided
+    # Wczytuje kody PDB z pliku (jeśli podano)
     index_pdbs = set()
     if args.index:
         with open(args.index, 'r', encoding="utf-8") as f:
@@ -66,67 +64,77 @@ def main():
     names_std, x_std, y_std = prepare_data(exp_data, std_data)
     names_fix, x_fix, y_fix = prepare_data(exp_data, fix_data)
 
-    # Regresje
-    slope_std, intercept_std, r_std, _, _ = linregress(x_std, y_std)
-    slope_fix, intercept_fix, r_fix, _, _ = linregress(x_fix, y_fix)
+    ## Regresje
+    slope_std, slope_fix = 1, 1
+
+    # Dla nachylenia = 1 trzeba zmienić b => Wzór: y = 1 * x + b
+    intercept_std = np.mean(y_std - x_std)
+    intercept_fix = np.mean(y_fix - x_fix)
 
     # Obliczenie MSE - y: eksperymentalne, x: dokowanie
     mse_std = np.mean((y_std - x_std) ** 2)
     mse_fix = np.mean((y_fix - x_fix) ** 2)
+    mse_corr = np.mean((x_std - x_fix) ** 2)
 
-    # Zakresy osi
+    # Zakresy osi i margines
     all_x = np.concatenate([x_std, x_fix])
     all_y = np.concatenate([y_std, y_fix])
     min_val = min(all_x.min(), all_y.min()) - 1
     max_val = max(all_x.max(), all_y.max()) + 1
 
+    ##############
+    ### Wykres ###
+    ##############
+
+    fig, (ax1, ax2) = plt.subplots(2, 1, figsize=(6, 10), sharey=True)
+
     # Linia ukośna
-    fig, ax = plt.subplots()
-    ax.plot([0, 1], [0, 1], transform=ax.transAxes, color="grey", linestyle="--", alpha=0.2, linewidth=1)
+    for ax in (ax1, ax2):
+        ax.plot([0, 1], [0, 1], transform=ax.transAxes, color="grey", linestyle="--", alpha=0.2, linewidth=1)
 
-    # Dane
-    plt.scatter(x_std, y_std, label=args.labels[0], marker="x", s=4, color="blue")
-    plt.plot(x_std,
-             1 * x_std + intercept_std,
-             "b--",
-             label=f"Regresja {args.labels[0]} (R²={r_std ** 2:.2f}, b={intercept_std:.2f}, MSE={mse_std:.2f})")
+    # === Panel 1: Standard ===
+    ax1.scatter(x_std, y_std, label=args.labels[0], marker="x", s=5, color="blue")
+    ax1.plot(x_std,
+        slope_std * x_std + intercept_std,
+        "b-",
+        label=f"Regresja {args.labels[0]}, b={intercept_std:.2f}, MSE={mse_std:.2f})")
 
-    plt.scatter(x_fix, y_fix, label=args.labels[1], marker="o", s=4, color="green")
-    plt.plot(x_fix,
-             1 * x_fix + intercept_fix,
-             "g--",
-             label=f"Regresja {args.labels[1]} (R²={r_fix ** 2:.2f}, b={intercept_fix:.2f}, MSE={mse_fix:.2f})")
+    # === Panel 2: Fixed ===
+    ax2.scatter(x_fix, y_fix, label=args.labels[1], marker="o", s=5, color="green")
+    ax2.plot(x_fix,
+        slope_fix * x_fix + intercept_fix,
+        "g-",
+        label=f"Regresja {args.labels[1]}, b={intercept_fix:.2f}, MSE={mse_fix:.2f}")
+
+    # === Wspólne parametry ===
+    for i, ax in enumerate((ax1, ax2)):
+        ax.plot([], [], ' ', label=f'MSE między regresjami={mse_corr:.2f}') # Dodaje MSE_corr do legendy
+        ax.set_title(f"{args.labels[i]} vs eksperyment")
+        ax.set_xlabel("Energia z dokowania [kcal/mol]")
+        ax.set_ylabel("Energia eksperymentalna [kcal/mol]")
+        ax.grid(True, linestyle=":", linewidth=0.5)
+        ax.set_xlim(min_val, max_val)
+        ax.set_ylim(min_val, max_val)
+        ax.set_xticks(np.arange(np.floor(min_val), np.ceil(max_val) + 1, 1))
+        ax.set_yticks(np.arange(np.floor(min_val), np.ceil(max_val) + 1, 1))
+        ax.tick_params(axis='both', which='major', labelsize=8)  # Wielkość wartości osi
+        ax.set_aspect("equal", adjustable="box") # Tworzy kwadratowy wykres
+        ax.legend(loc='upper left', fontsize=8, framealpha=0.8) # Legenda
+
+    # === Layout ===
+    plt.tight_layout(h_pad=1.5)
 
     # Podpisy punktów (Standardowe, Naprawione)
     for name, x, y in zip(names_std, x_std, y_std):
-        plt.text(x + 0.2, y - 0.1, name, fontsize=3, color="blue")
+        if name == '4tw7':
+            ax1.text(x + 0.2, y - 0.1, name, fontsize=5, color="blue")
     for name, x, y in zip(names_fix, x_fix, y_fix):
-        plt.text(x - 0.2, y + 0.1, name, fontsize=3, color="green")
-
-    # Podpis wykresu
-    plt.title("Porównanie energii wiązania: dokowanie vs dane eksperymentalne", fontsize=11)
-    plt.ylabel("Energia eksperymentalna [kcal/mol]", fontsize=10)
-    plt.xlabel("Energia z dokowania [kcal/mol]", fontsize=10)
-    plt.grid(True, linestyle=":", linewidth=0.5)
-
-    # Parametry wykresu
-    plt.xlim(min_val, max_val)
-    plt.ylim(min_val, max_val)
-    plt.xticks(np.arange(np.floor(min_val), np.ceil(max_val) + 1, 1))
-    plt.yticks(np.arange(np.floor(min_val), np.ceil(max_val) + 1, 1))
-    plt.tick_params(axis='both', which='major', labelsize=8) # Wielkość wartości osi
-
-    # Tworzy kwadratowy wykres
-    plt.gca().set_aspect("equal", adjustable="box")
-    plt.tight_layout()
-
-    #Adjust the plot to allow the legend to fit nicely
-    plt.legend(loc='upper left', fontsize=6)
+        if name == '4tw7':
+            ax2.text(x - 0.2, y + 0.2, name, fontsize=5, color="green")
 
     # Zapisywanie wykresu
     plt.savefig(args.output, dpi=600)
     print(f"Wykres zapisany do: {args.output}")
-    # plt.show()
 
 
 if __name__ == "__main__":

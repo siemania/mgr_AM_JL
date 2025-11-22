@@ -34,7 +34,7 @@ def plot_rmsd_histogram(rmsd1, rmsd2, labels=("Standard", "Fixed"), output="hist
     plt.hist(rmsd2, bins=bins, alpha=0.6, label=labels[1],
              color="limegreen", edgecolor='black')
 
-    plt.xlabel('RMSD GROMACS [Å]')
+    plt.xlabel('RMSD [Å]')
     plt.ylabel('Liczba struktur')
     plt.title('Histogram wartości RMSD dla receptorów')
     plt.legend()
