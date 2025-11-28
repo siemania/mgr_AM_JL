@@ -4,7 +4,6 @@ Projekt **mgr_AM_JL** to zestaw skryptów mających na celu automatyzację przyg
 
 - Optymalizacji konformacji wybranych reszt (np. HIS, GLN, ASN)
 - Dokowania z wodą i bez wody
-- Optymalizacji układu wodorów (obrót grup metylowych itp.)
 - Dodatkowych algorytmów optymalizacyjnych wykorzystujących pola siłowe z programów jak np. OpenMM, OpenBabel, GROMACS
 
 ## Spis treści
@@ -197,7 +196,7 @@ Projekt automatycznie wykonuje następujące kroki:
   Tworzony jest plik GPF, który jest zapisywany, a następnie wykorzystywany przez AutoGrid/AutoDock.
 - **Dokowanie:**  
   Uruchamiane są odpowiednie polecenia AutoDock lub AutoDock-GPU.
-- **Minimalizacja receptora:**
+- **Optymalizacja receptora:**
   Do poprawienia konformacji receptora (m.in. dodania wodoru i minimalizacji energii) wykorzystywane są wcześniej wspominane moduły. W ramach dalszego rozwoju chcemy dodać automatyczną optymalizację konformacyjną wybranych reszt (His, Gln, Asn) oraz innych aspektów.
 
 Wszystkie etapy są wywoływane automatycznie, a postęp monitorowany jest przy użyciu `tqdm`. Po zakończeniu, wyniki (przygotowane pliki receptorów, ligandów oraz kompleksów) są zapisywane w odpowiednich folderach, które nie są wersjonowane.
