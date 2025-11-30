@@ -115,6 +115,13 @@ Projekt **mgr_AM_JL** to zestaw skryptów mających na celu automatyzację przyg
 3. **Naprawa i standaryzacja plików:**
    - Aby przygotować pliki do dalszej analizy (np. usunąć ligandy, uzupełnić atomy wodoru, wyczyścić błędy strukturalne), w folderze `Docking/` uruchom skrypt `fixing_pdb_files.py`.
    - Skrypt utworzy nowy folder `Docking/fixed_pdb/` zawierający zminimalizowane i gotowe do dokowania struktury.
+  
+     | Argument | | Description |
+     | ------ | -- |----------------------|
+     | --help | -h | Wyświetlenie pomocy  |
+     | --file | -f | Pliki wejściowe .pdb |
+     | --no-hydrogens | -nh | Uruchomienie programu bez optymalizacji wodorów |
+     | --no-sidechains | -ns | Uruchomienie programu bez optymalizacji łańcuchów bocznych |
 
 4. **Dokowanie:**
    - Uruchom skrypt `dock.py`.
